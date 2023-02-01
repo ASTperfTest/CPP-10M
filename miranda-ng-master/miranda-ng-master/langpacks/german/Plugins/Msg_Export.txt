@@ -1,0 +1,213 @@
+#muuid {46102b07-c215-4162-9c83-d377881da7cc}
+;============================================================
+;  File: Msg_Export.dll
+;  Plugin: Message export
+;  Version: 3.1.2.8
+;  Authors: Kennet Nielsen, mod by ring0
+;============================================================
+[Exports every message, URL or file you receive to a text file.]
+Exportiert jede Nachricht, URL oder Datei, die Sie empfangen, in einen Textdatei.
+;file \plugins\Msg_Export\res\resource.rc
+[Export directory]
+Export-Verzeichnis
+[Browse]
+Durchsuchen
+[Default file]
+Standard-Dateiname
+[File viewer]
+Dateibetrachter
+[Use internal viewer]
+Internen Betrachter verwenden
+[Replace Miranda history]
+Miranda-Verlauf ersetzen
+[Export format]
+Exportformat
+[Max column width]
+Max. Spaltenbreite
+[Note: 0 = no limit]
+Hinweis: 0 = unbegrenzt
+[Time format]
+Zeitformat
+[Use JSON format for export]
+JSON-Format zum Export verwenden
+[Use UTF-8 in new files]
+UTF-8 in neuen Dateien verwenden
+[Append extra new line]
+Leere Zeile einfügen
+[Use << and >>]
+Verw. << und >>
+[Help]
+Hilfe
+[Exporting old messages]
+Exportiere alte Nachrichten
+[History file for %s (%s, format %s)]
+Verlaufsdatei für %s (%s, Format %s)
+[&Find...]
+&Finden...
+[&External]
+&Externer
+[&Close]
+S&chließen
+[When filename changes]
+Wenn Dateiname geändert wird
+[Prompt for action]
+Frage nach Aktion
+[Rename file]
+Datei umbenennen
+[Do nothing]
+Nichts tun
+[When user is deleted]
+Wenn Benutzer gelöscht wird
+[Delete file]
+Datei löschen
+[Debug]
+Debug
+[User &details]
+Kontaktprofil
+[Export]
+Exportieren
+[Set to default filename]
+Standard-Dateinamen setzen
+[Select all]
+Alle auswählen
+[Select none]
+Keine auswählen
+[Auto filename]
+Autom. Dateiname
+[Clear all]
+Alles löschen
+[Copy]
+Kopieren
+;file \plugins\Msg_Export\src\FileViewer.cpp
+[Miranda database contains %d events]
+Miranda-Datenbank enthält %d Ereignisse
+[Failed to open file]
+Konnte die Datei nicht öffnen
+[Search string was not found!]
+Suchpfad wurde nicht gefunden!
+[Save as RTF]
+Als RTF speichern
+[Color...]
+Farbe...
+[Font...]
+Schrift...
+[Syntax highlight]
+Syntaxhervorhebung
+[History was saved successfully in file\r\n]
+Verlauf wurde erfolgreich gespeichert in Datei\r\n
+;file \plugins\Msg_Export\src\main.cpp
+[Export history]
+Verlauf exportieren
+[Open E&xported History]
+&Exportierten Verlauf öffnen
+;file \plugins\Msg_Export\src\options.cpp
+[Reading database information (Phase 1 of 2)]
+Lese Datenbankinformationen (Phase 1 von 2)
+[Sorting and writing database information (Phase 2 of 2)]
+Sortiere und schreibe Datenbankinformationen (Phase 2 von 2)
+[Failed to open or create file:\n]
+Konnte Datei nicht öffnen bzw. anlegen:\n
+[Max line width must be at least %d. Or use 0 for no limit.]
+Maximale Spaltenbreite muss mindestens %d sein. Verwenden Sie 0 für keine Begrenzung.
+[You need to restart Miranda to change the history function]
+Miranda muss zum Ändern der Verlauf-Funktionen neu gestartet werden
+[Executable files]
+Ausführbare Dateien
+[All files]
+Alle Dateien
+[Select Destination Directory]
+Wähle Zielverzeichnis
+[File]
+Datei
+[Nick]
+Nick
+[Account]
+Konto
+[User ID]
+Nutzer-ID
+[No contacts found to export]
+Keine Kontakte zum exportieren gefunden
+[Export accounts]
+Konten exportieren
+[Message export]
+Message Export
+[History]
+Verlauf
+[General]
+Allgemein
+[Contacts]
+Kontakte
+[Additional]
+Zusätzlich
+;file \plugins\Msg_Export\src\stdafx.h
+[Miranda NG (Message Export Plugin)]
+Miranda NG (Message Export Plugin)
+;file \plugins\Msg_Export\src\utils.cpp
+[No_Group]
+Keine_Gruppe
+[File name for the user "%s" has changed!\n\nfrom:\t%s\nto:\t%s\n\nDo you wish to rename file?]
+Dateiname von Benutzer "%s" hat sich geändert!\n\nVon:\t%s\nIn:\t%s\n\nMöchten Sie diese Datei umbenennen?
+[Failed to rename file\n\nfrom:\t%s\nto:\t%s\n\nFailed with error: %s]
+Umbenennen der Datei\n\nvon:\t%s\nzu:\t%s\n\nmit folgendem Fehler: %s fehlgeschlagen
+[\nError: ]
+\nFehler:\s
+[\nMessage has not been saved!\n]
+\nNachricht wurde nicht gespeichert!\n
+[Do you wish to save debug information?]
+Möchten Sie Debuginformationen speichern?
+[All\0*.*\0Text\0*.TXT\0\0]
+Alle\0*.*\0Text\0*.TXT\0\0
+[FirstName]
+Vorname
+[LastName]
+Nachname
+[e-mail]
+E-Mail
+[Age]
+Alter
+[Gender]
+Geschlecht
+[City]
+Stadt
+[State]
+Region
+[Phone]
+Telefon
+[Homepage]
+Homepage
+[About]
+Über
+[      History for]
+      Verlauf für
+[User]
+Benutzer
+[File: ]
+Datei:\s
+[Description: ]
+Beschreibung:\s
+[Nick      :]
+Nickname   :
+[FirstName :]
+Vorname    :
+[LastName  :]
+Nachname   :
+[e-mail    :]
+E-Mail     :
+[Reason    :]
+Grund      :
+[Invalid Database event received. Type %d, size %d]
+Unbekanntes Datenbankereignis empfangen. Typ %d, Größe %d.
+[The following user made an authorization request:]
+Der folgende User hat eine Authorisationsanfrage gestellt
+[The following user added you to their contact list:]
+Der folgende User hat dich seiner Kontaktliste hinzugefügt
+[UIN       :]
+UIN        :
+[Unknown event type %d, size %d]
+Unbekannter Ereignistyp %d, Größe %d.
+[User has been deleted. Do you want to delete the file?]
+Benutzer wurde gelöscht. Möchten Sie die Datei löschen?
+[Failed to delete the file]
+Datei konnte nicht gelöscht werden
+[No_Nick]
+Kein_Nickname

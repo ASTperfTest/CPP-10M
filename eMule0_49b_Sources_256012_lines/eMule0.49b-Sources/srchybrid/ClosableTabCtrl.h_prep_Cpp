@@ -1,0 +1,49 @@
+﻿
+
+class CClosableTabCtrl :        CTabCtrl
+{
+ //DECLARE_DYNAMIC(CClosableTabCtrl)
+
+public:
+ CClosableTabCtrl();
+ virtual ~CClosableTabCtrl();
+
+ bool m_bCloseable;
+
+protected:
+ CImageList m_ImgLstCloseButton;
+ IMAGEINFO m_iiCloseButton;
+ CPoint m_ptCtxMenu;
+
+ void InternalInit();
+ void SetAllIcons();
+ void GetCloseButtonRect(int iItem, const CRect& rcItem, CRect& rcCloseButton, bool bItemSelected, bool bVistaThemeActive);
+ int GetTabUnderContextMenu() const;
+ int GetTabUnderPoint(CPoint point) const;
+ bool SetDefaultContextMenuPos();
+
+ virtual void PreSubclassWindow();
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         void OnMButtonUp(unsigned int nFlags, CPoint point);
+         void OnLButtonDblClk(unsigned int nFlags, CPoint point);
+         void OnSysColorChange();
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+         long *  _OnThemeChanged();
+         void*  CtlColor(CDC* /*pDC*/, unsigned int /*nCtlColor*/);
+         void*  OnCtlColor(CDC* pDC, CWnd* pWnd, unsigned int nCtlColor);
+         int  OnEraseBkgnd(CDC* pDC);
+         void OnMeasureItem(int, LPMEASUREITEMSTRUCT);
+         void MeasureItem(LPMEASUREITEMSTRUCT);
+};
+
+
+
+
+
+
+ 

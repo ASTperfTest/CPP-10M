@@ -1,0 +1,77 @@
+#muuid {80dca515-973a-4a7e-8b85-5d8ec88fc5a7}
+;============================================================
+;  File: WhoUsesMyFiles.dll
+;  Plugin: Who Use My Files
+;  Version: 0.1.0.4
+;  Authors: Nikolay Redko
+;============================================================
+[Scans for network users of your shared files and notify you with popups.]
+Сканує мережу в пошуках користувачів, які використовують ваші файли, відкриті для доступу з мережі, і сповіщає в спливаючих вікнах.
+;file \plugins\WhoUsesMyFiles\res\resource.rc
+[WUMF: Current connections]
+WUMF: Поточні з'єднання
+[Popup delay settings]
+Показ спливаючих вікон
+[Timeout (seconds)]
+Тривалість (секунди)
+[Background color]
+Колір фону
+[Text color]
+Колір тексту
+[Previe&w]
+&Тест
+[Show infinitely]
+Постійно
+[Default]
+Стандартний
+[Custom]
+Вказане
+[Popup color settings]
+Кольори спливаючих вікон
+[Use Windows colors]
+Кольори Windows
+[Use default colors]
+Стандартні кольори
+[Use custom colors]
+Вказати кольори
+[File access filter && logging settings]
+Фільтри журналу та сповіщень
+[Log into text file]
+Писати у файл
+[Log folders access]
+Писати доступ до папок
+[Alerts on folders access]
+Сповіщення доступу до папок
+[Show current connections]
+Показати з'єднання
+;file \plugins\WhoUsesMyFiles\src\options.cpp
+[Common Dialog Error 0x%lx]
+Помилка діалогу 0x%lx
+[Error]
+Помилка
+[Who uses my files]
+Використання файлів
+[Services]
+Служби
+;file \plugins\WhoUsesMyFiles\src\wumf.cpp
+[User]
+Користувач
+[File]
+Файл
+[Access]
+Доступ
+[Plugin WhoUsesMyFiles requires admin privileges in order to work.]
+Для роботи плагіна WhoUsesMyFiles потрібні права адміністратора.
+[Error opening file]
+Помилка читання файлу
+[Error memory allocation]
+Помилка розподілу пам'яті
+;file \plugins\WhoUsesMyFiles\src\wumfplug.cpp
+[Error creating menu]
+Помилка створення меню
+[Show connections list]
+Показати список підключень
+[WUMF popups]
+Вікна WUMF
+[WUMF: Show connections]
+WUMF: Показати підключення

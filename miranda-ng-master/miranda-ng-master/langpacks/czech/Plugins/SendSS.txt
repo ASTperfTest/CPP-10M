@@ -1,0 +1,270 @@
+#muuid {ed39af7c-becd-404e-9499-4d04f711b9cb}
+;============================================================
+;  File: SendSS.dll
+;  Plugin: Send ScreenShot+
+;  Version: 0.9.0.2
+;  Authors: Merlin
+;============================================================
+[Take a screenshot and send it to a contact.]
+Vyfotí obrazovku a odešle obrázek kontaktu.
+;file \plugins\SendScreenshotPlus\res\resource.rc
+[Dialog]
+Dialog
+[All]
+všechno
+[None]
+---
+[Cancel]
+Zrušit
+[Send screenshot to <unknown>]
+Odeslat obrázek pro <neznámý kontakt>
+[Take a screenshot and send it to a contact]
+Vyfotit obrázek a odeslat ho kontaktu
+[Ti&med capture]
+Časované snímání
+[Time (secs):]
+Zpoždění (sec.):
+[&Format:]
+&Formát:
+[Send b&y:]
+&Metoda:
+[E&xplore]
+&Procházet
+[&Fill description textbox.]
+V&yplnit pole pro popis
+[Delete &after send]
+Po odeslání obrázek sm&azat
+[Open editor before sending]
+Před odesláním otevřít editor
+[Open again]
+Nezavírat
+[&Capture]
+&Sejmout
+[About]
+Informace
+[Copyright]
+Copyright
+[&Close]
+&Zavřít
+[Edit]
+Upravit
+[Caption:]
+Záhlaví okna:
+[Size (HxW):]
+Velikost (v×š):
+[C&lient area]
+Bez okraje okna
+[Indirect capture]
+nepřímé zachytávání
+[Target tool]
+
+[File:]
+Soubor:
+[Description:]
+Popis:
+[Result]
+VÝSLEDEK
+[Thumbnail]
+
+[&Copy]
+Z&kopírovat
+[Close]
+Zavřít
+;file \plugins\SendScreenshotPlus\src\CSend.cpp
+[Resulting URL from\n]
+
+[Copy]
+Zkopírovat
+[Copy BBCode]
+
+[Copy BBCode w/ link]
+
+[%s requires a valid contact!]
+%s vyžaduje platný kontakt!
+[Error]
+Chyba
+[GCHAT error]
+
+[An unknown error has occurred.]
+Neznámá chyba.
+;file \plugins\SendScreenshotPlus\src\CSend.h
+[Unable to initiate %s.]
+Nelze inicializovat %s.
+[MAPI error (%i):\n%s.]
+Chyba MAPI (%s):\n%s.
+[Unknown response from %s (%i)]
+Neznámá odpověď od %s (%i)
+[Got no response from %s (%i)]
+Žádná odpověď od %s (%i)
+;file \plugins\SendScreenshotPlus\src\CSendCloudFile.cpp
+[CloudFile transfer]
+Přenos přes CloudFile
+[%s (%i):\nCould not add a share to the CloudFile plugin.]
+
+;file \plugins\SendScreenshotPlus\src\CSendEmail.cpp
+[Email transfer]
+Přenost přes e-mail
+[A recipient matched more than one of the recipient descriptor structures and MAPI_DIALOG was not set]
+
+[The specified attachment was not found]
+
+[The specified attachment could not be opened]
+
+[The type of a recipient was not MAPI_TO, MAPI_CC, or MAPI_BCC]
+
+[One or more unspecified errors occurred]
+
+[There was insufficient memory to proceed]
+
+[One or more recipients were invalid or did not resolve to any address]
+
+[There was no default logon, and the user failed to log on successfully when the logon dialog box was displayed]
+
+[The text in the message was too large]
+
+[There were too many file attachments]
+
+[There were too many recipients]
+
+[A recipient did not appear in the address list]
+
+[The user canceled one of the dialog boxes]
+
+[Unknown Error]
+Neznámá chyba
+;file \plugins\SendScreenshotPlus\src\CSendFile.cpp
+[File transfer]
+Přenos souboru
+;file \plugins\SendScreenshotPlus\src\CSendFTPFile.cpp
+[FTPFile transfer]
+Přenos přes FTPFile
+[%s (%i):\nCould not add a share to the FTP File plugin.]
+
+;file \plugins\SendScreenshotPlus\src\CSendHost_ImageShack.cpp
+[Image upload]
+Upload obrázku
+;file \plugins\SendScreenshotPlus\src\CSendHost_imgur.cpp
+;file \plugins\SendScreenshotPlus\src\CSendHost_uploadpie.cpp
+;file \plugins\SendScreenshotPlus\src\CSendHTTPServer.cpp
+[HTTPServer transfer]
+Přenos přes HTTPServer
+[Could not start the HTTP Server plugin.]
+Nelze spustit doplněk HTTP Server.
+[%s (%i):\nCould not add a share to the HTTP Server plugin.]
+
+;file \plugins\SendScreenshotPlus\src\dlg_msgbox.cpp
+[Retry]
+Znovu
+[Yes]
+Ano
+[No]
+Ne
+[Abort]
+Přerušit
+[Ignore]
+Filtrování
+;file \plugins\SendScreenshotPlus\src\Main.cpp
+[Main Icon]
+Hlavní ikona
+[Target Cursor]
+
+[Target Desktop]
+
+[Help]
+Nápověda
+[Open Folder]
+Otevřít složku
+[Description off]
+
+[Description on]
+
+[Delete off]
+
+[Delete on]
+
+[Prev]
+Předchozí
+[Next]
+Další
+[Update]
+Aktualizovat
+[Edit on]
+Úpravy
+[BBCode]
+BBCode
+[BBCode link]
+
+[Down arrow]
+Šipka dolů
+[Could not create screenshot folder (error code: %d):\n%s\nDo you have write permissions?]
+
+[Could not create main dialog.]
+
+[SendSS]
+
+[Screenshots]
+
+[Buttons]
+Tlačítka
+[Take a screenshot]
+
+[Send screenshot]
+Odeslat obrázek
+[Send desktop screenshot]
+Odeslat obrázek plochy
+[Open SendSS+]
+Otevřít SendSS+
+;file \plugins\SendScreenshotPlus\src\stdafx.h
+[SendScreenshot - Error]
+
+;file \plugins\SendScreenshotPlus\src\UMainForm.cpp
+[Drag&Drop the target on the desired window.]
+Umístěte kříž na požadované okno.
+[Send screenshot to %s]
+Odeslat obrázek pro %s
+[Window]
+Okno
+[Desktop]
+Plocha
+[<Entire Desktop>]
+<Celá obrazovka>
+[Monitor]
+Monitor
+[ (primary)]
+ (primární)
+[File]
+Soubor
+[<Only save>]
+<Pouze uložit>
+[File Transfer]
+Přenos souborů
+[E-mail]
+E-mail
+[FTP File]
+Soubory přes FTP
+[Upload Pie (30m)]
+Upload Pie (30m)
+[Upload Pie (1d)]
+Upload Pie (1d)
+[Upload Pie (1w)]
+Upload Pie (1t)
+[Fill description textbox.]
+Vyplnit položku s popisem.
+[Delete after send]
+Smazat po odeslání
+[Capture]
+
+[Couldn't take a screenshot]
+
+[Select a file]
+Vyberte soubor
+[Select a target window.]
+Vyberte prosím požadované okno.
+[Screenshot of "%s"]
+Obrázek "%s"
+[Screenshot for client area of "%s" window]
+Obrázek pro vybranou oblast okna "%s"
+[Screenshot of "%s" window]
+Obrázek okna "%s"
+[Send screenshot?]
+Odeslat obrázek?

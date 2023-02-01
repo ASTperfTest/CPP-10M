@@ -1,0 +1,131 @@
+#muuid {748f8934-781a-528d-5208-001265404ab3}
+;============================================================
+;  File: Tlen.dll
+;  Plugin: Tlen protocol
+;  Version: 2.1.0.0
+;  Authors: Santithorn Bunchua, Adam Strzelecki, Piotr Piastucki
+;============================================================
+[Username:]
+Потребител:
+[Password:]
+Парола:
+[Save password]
+Запис на паролата
+[Create new account]
+Създаване на акаунт
+[Options]
+Настройки
+[Automatically delete contacts not in my roster]
+Автоизтриване на контакти, които не са в моя списък с хора
+[Enable avatars]
+Ползване на аватари
+[Login server:]
+Сървър за вписване:
+[Port:]
+Порт:
+[Keep connection alive]
+Поддържане на връзката
+[Enable encryption]
+Шифроване на базата от данни
+[Colors]
+Цветове
+[Background]
+Фон
+[Text]
+Текст
+[Delay]
+Закъснение
+[&Custom]
+Избор
+[P&ermanent]
+Постоянно
+[Preview]
+Образец
+[Cancel]
+Отказ
+[Nickname:]
+Прякор:
+[First name:]
+Име:
+[Last name:]
+Фамилия:
+[E-mail:]
+Имейл:
+[Gender:]
+Пол:
+[City:]
+Град:
+[Occupation:]
+Работа:
+[Save changes]
+Запис на промените
+[Avatar]
+Аватар
+[Avatar Options]
+Настройки на аватара
+[Version:]
+Версия:
+[Age:]
+Възраст:
+[to]
+до
+[Status:]
+Състояние:
+[Quality]
+Качество
+[Finish]
+Готово
+[&Accept]
+Приемане
+[From:]
+От:
+[Protocol icon]
+Икона на протокола
+[Group chats]
+Групови чатове
+[Multi-User Conference]
+Конференция
+[Request authorization]
+Молба за упълномощаване
+[Grant authorization]
+Даване на пълномощно
+[%d Files]
+%d файла
+[Authentication failed for %s@%s.]
+Неуспешно удостоверяване за %s@%s.
+[General]
+Основни
+[Advanced]
+Разширени
+[Notifications]
+Уведомявания
+[Network]
+Мрежа
+[These changes will take effect the next time you connect to the Tlen network.]
+Промените ще бъдат осъществени при следващо свързване към мрежата Tlen.
+[%S mail]
+%s имейл
+[Enter password for %s]
+Въведете парола за %s
+[From]
+От
+[E-mail]
+Имейл
+[%s mail]
+%s имейл
+[Subject]
+Тема
+[Account]
+Акаунт
+[both]
+и двамата
+[from]
+от
+[none]
+няма
+[not on roster]
+не е в списъка с хора
+[Default]
+Стандарт
+[%s connection]
+%s връзка

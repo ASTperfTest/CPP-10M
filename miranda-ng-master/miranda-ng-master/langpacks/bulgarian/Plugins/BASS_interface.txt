@@ -1,0 +1,70 @@
+#muuid {2f07ea05-05b5-4ff0-875d-c590da2ddac1}
+;============================================================
+;  File: BASS_interface.dll
+;  Plugin: BASS Interface
+;  Version: 0.0.0.14
+;  Authors: tico-tico
+;============================================================
+[Un4seen's BASS interface Miranda NG plugin.]
+Приставката е интерфейс за библиотеката BASS на Un4seen
+;file \plugins\BASS_interface\res\Bass.rc
+[Un4seen's BASS interface]
+Интерфейс за библиотеката BASS на Un4seen
+[bass.dll loading error]
+Грешка при зареждането на bass.dll
+[Current bass.dll path:]
+Път до bass.dll:
+[Maximum number of BASS internal channels:]
+Максимален брой вътрешни канали
+[Output device:]
+Изходни устройства:
+[Volume:]
+Сила на звука:
+[Quiet time:]
+Тишина:
+[download BASS library]
+сваляне на библиотеката BASS
+[Play only if]
+При състояние
+[Offline]
+Извън линия
+[Online]
+На линия
+[Away]
+Отсъстващ
+[Not available]
+Недостъпен
+[Occupied]
+Зает
+[Do not disturb]
+Не безпокойте
+[Free for chat]
+Готов за чат
+[Invisible]
+Невидим
+[Preview]
+Образец
+;file \plugins\BASS_interface\src\Main.cpp
+[Un4seen's BASS version: %d.%d.%d.%d]
+Версия на библиотеката BASS: %d.%d.%d.%d
+[--default device--]
+--стандартно устройство--
+[Sounds]
+Звук
+[Disable sounds]
+Изключване на звука
+[Enable sounds]
+Включване на звука
+[Frame background]
+Фон на рамката
+[BASS Interface]
+BASS интерфейс
+[Bass Interface]
+BASS интерфейс
+[Bass library]
+Библиотеката BASS
+[Sounds enabled]
+Звукът е включен
+[Sounds disabled]
+Звукът е изключен
+;file \plugins\BASS_interface\src\stdafx.h

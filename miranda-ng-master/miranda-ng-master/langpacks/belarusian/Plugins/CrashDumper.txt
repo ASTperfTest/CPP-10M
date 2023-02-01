@@ -1,0 +1,82 @@
+#muuid {f62c1d7a-ffa4-4065-a251-4c9dd9101cc8}
+;============================================================
+;  File: CrashDumper.dll
+;  Plugin: Crash dumper
+;  Version: 0.2.0.1
+;  Authors: borkra
+;============================================================
+[Crash Dumper and Version Information for Miranda NG.]
+
+;file \plugins\CrashDumper\res\crshdmp.rc
+[View Version Information]
+Інфармацыя пра версіі
+[Close]
+Зачыніць
+[Copy To Clipboard]
+Капіяваць у буфер
+[To File]
+У файл
+[Crash reports]
+
+[Generate crash reports]
+
+[Create reports in subfolders naming as current date]
+Рабіць справаздачы ў тэчкі, названыя датай
+[Use classic dates]
+Класічны фармат часу і даты
+[* You need to restart Miranda NG to apply changes]
+
+[Display popups about successful actions]
+
+[View]
+Выгляд
+[&Copy]
+&Капіяваць
+[Co&py All]
+Ка&піяваць усе
+[Select &All]
+Вылучыць &усё
+;file \plugins\CrashDumper\src\crshdmp.cpp
+[Version Info stored into file %s]
+Версіі захаваны ў файле %s
+[Version Info file %s is inaccessible]
+Файл %s недасяжны
+[Version Information To Clipboard]
+Версіі ў буфер абмену
+[Version Information To File]
+Версіі ў файл
+[Show Version Information]
+Паказаць версіі
+[Version Information]
+Версіі
+[Copy to clipboard]
+Капіяваць у буфер абмену
+[Store to file]
+Захаваць у файл
+[Show]
+Паказаць
+[Show with DLLs]
+З бібліятэкамі
+[Open crash report directory]
+Тэчка захавання справаздач
+[Copy Version Info to clipboard]
+Капіяваць версіі ў буфер абмену
+[Show Version Info]
+Паказаць версіі
+;file \plugins\CrashDumper\src\crshdmp_icons.cpp
+[Upload]
+Загрузіць
+[Copy link to clipboard]
+Капіяваць спасылку ў буфер
+[Crash Dumper]
+Справаздача пра памылкі
+;file \plugins\CrashDumper\src\exhndlr.cpp
+[Crash Report write location is not available]
+Шлях для запісу справаздачы пра памылку недасяжны
+[Miranda crashed. Crash report stored in the folder:\n %s\n\n Would you like store it in the clipboard as well?]
+Miranda NG была завершана аварыйна. Справаздача захавана ў \n %s\n\nЦі жадаеце вы захаваць яе ў буфер абмену?
+;file \plugins\CrashDumper\src\ui.cpp
+[View Version Information (with DLLs)]
+Інфармацыя пра версіі(з бібліятэкамі)
+[Services]
+Службы

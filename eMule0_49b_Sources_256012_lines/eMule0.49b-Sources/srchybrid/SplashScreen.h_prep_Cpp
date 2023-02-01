@@ -1,0 +1,32 @@
+﻿
+
+void INCLUDEREPLACE(){CX_INCL("enbitmap.h");}
+
+class CSplashScreen :        CDialog
+{
+ //DECLARE_DYNAMIC(CSplashScreen)
+
+public:
+ CSplashScreen(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CSplashScreen();
+
+// Dialog Data
+ enum { IDD = IDD_SPLASH };
+
+protected:
+ CBitmap m_imgSplash;
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ int  OnInitDialog();
+ int  PreTranslateMessage(MSG* pMsg);
+
+
+ void OnPaint();
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,859 @@
+#muuid {9584da04-fb4f-40c1-9325-e4f9caafcb5d}
+;============================================================
+;  File: Actman.dll
+;  Plugin: Action manager
+;  Version: 0.3.0.1
+;  Authors: Awkward
+;============================================================
+[Plugin for manage hotkeys to open contact window, insert text, run program and call services]
+Плагін для кіравання "гарачымі" клавішамі і дзеяннямі, такімі як адкрыццё гутаркі, устаўка тэксту, запуск іншых праграм і выклік сэрвісаў.
+[Apply]
+Ужыць
+[New]
+Стварыць
+[Delete]
+Выдаліць
+[Up]
+Уверх
+[Down]
+Уніз
+[Test]
+Прагляд
+[Import]
+Імпартаваць
+[Action "$" exists, do you want to rewrite it?]
+Дзеянне "$" ужо існуе, ці жадаеце вы перапісаць яго?
+[Choose action]
+Абярыце аперацыю
+[&Yes]
+&Так
+[&No]
+&Не
+[A&ppend]
+Дадаць
+[Yes to &All]
+Да для ўсіх
+[N&o to All]
+Не для ўсіх
+[Export]
+Экспарт
+[Reload/Refresh]
+
+[Registered actions]
+Зарэгістраваныя дзеянні
+[Your Actman settings are for old version. If you are ready to upgrade settings, press OK. Else press Cancel and change manually Actman plugin back to old version or make settings backup. To keep previously exported macros please import them back before conversion.]
+
+[Please, don't use macro test for non-saved macros. If you had 'Advanced' or file writing actions previously, check them - their logic was changed.]
+
+[Actman settings converted to new version]
+
+[Actions]
+Дзеянні
+[No description]
+Няма апісання
+[Reload]
+Перагрузіць
+[Append data to file?]
+Дапісаць у файл?
+[Help]
+Дапамога
+[Action]
+Дзеянне
+[Notes]
+Нататкі
+[INI]
+
+[Read]
+Чытанне
+[Write]
+Запіс
+[INI file name]
+
+[Text Editor]
+Тэкставы рэдактар
+[Script]
+Скрыпт
+[Wrap Text]
+Перанос радкоў
+[C&ancel]
+Скасаваць
+[Section]
+
+[Parameter]
+Параметр
+[Value]
+Значэнне
+[Use LastResult]
+
+[UTF-8 encoding]
+
+[Function call]
+Вызаў функцыі
+[Function name]
+Імя функцыі
+[DLL name]
+Імя DLL
+[Call type]
+Тып вызаву
+[Arguments]
+Аргументы
+[Number of arguments]
+Колькасць аргументаў
+[Argument]
+
+[Param]
+Параметр
+[Param type]
+
+[number value]
+лік
+[ANSI string]
+радок ANSI
+[Unicode string]
+радок Unicode
+[current contact]
+бягучы кантакт
+[last result]
+апошні вынік
+[parameter]
+параметр
+[structure]
+структура
+[ANSI message]
+
+[ANSI caption]
+
+[Structure]
+Структура
+[Structure editor]
+Рэдактар структур
+[alias]
+імя
+[type]
+тып
+[length]
+даўжыня
+[data]
+дадзеныя
+[Data align]
+Выраўнаванне дадзеных
+[Native]
+Убудаваны
+[Packed]
+Спакаваныя
+[2 bytes]
+2 байта
+[4 bytes]
+4 байта
+[8 bytes]
+8 байт
+[Byte]
+Байт
+[Word]
+Слова
+[DWord]
+Дв. слова
+[QWord]
+Чацв. слова
+[NativeInt]
+Сістэмнае цэлае
+[Byte Array]
+Масіў байт
+[Word Array]
+Масіў слоў
+[Pointer to bytes]
+Паказальнік на байты
+[Pointer to words]
+Паказальнік на словы
+[Last result]
+Апошні вынік
+[Data length]
+даўжыня
+[Use Variables]
+Уключыць зменныя
+[V]
+
+[Structure size]
+
+[Use MMI]
+
+[Structure help]
+Дапамога па структуры
+[Name]
+Імя
+[Plugin]
+Плагін
+[Description]
+Апісанне
+[&Change]
+Змяніць
+[Result]
+Вынік
+[Result type]
+Вынік вызаву службы
+[Free memory]
+чысціць памяць
+[DLL Handle Cache]
+Кэш дэскрыптараў DLL
+[Keep to end]
+Трымаць да канца
+[Close immediately]
+Зачыніць адразу
+[Close for macro]
+Зачыніць да макраса
+[Contact]
+Адчыніць гутарку
+[Choose contact]
+Абраць кантакт
+[Refresh]
+Абнавіць
+[Keep handle only]
+Захоўваць handle, не адкрываючы вокны
+[Get from active window]
+З актыўнага вакна
+[Chain]
+Спасылка
+[Other Action groups]
+Іншыя гурты дзеянняў
+[not defined]
+не вызначана
+[Keep old result]
+Захаваць папярэдні вынік
+[Same thread]
+У тым жа патоке
+[Do not wait until the end of execution]
+Не чакаць сканчэння выканання
+[Program]
+Выканаць
+[Text <last> replacing\r\nby last result\r\n\r\nText <param> replacing\r\nby parameter]
+Тэкст <last> замяняецца\r\nапошнім вынікам\r\n\r\nТэкст <param> замяняецца\r\nпараметрам
+[Process options]
+Налады працэсу
+[Parallel]
+Паралельны
+[Continued]
+Працягнуты
+[Process time, ms]
+Час працэсу, мсек
+[Current path]
+Цяперашні шлях
+[Window option]
+Налады вакна
+[Start normal]
+Звычайны запуск
+[Start hidden]
+Запуск утоеным
+[Start minimized]
+Запуск згорнутым
+[Start maximized]
+Запуск разгорнутым
+[Program path]
+Пуць
+[Program arguments]
+Аргументы
+[Service]
+Служба
+[Miranda service help]
+Дапамога па сэрвісам
+[Alias]
+Аліас
+[Return]
+Якое вяртаецца
+[Effect]
+Эффект
+['<proto>' in service name will be replaced by protocol name for contact handle in parameter]
+'<proto>' у назве службы будзе замяняцца імем пратаколу з параметраў кантакту
+[Service:]
+Cлужба:
+[In/Out]
+Увод/Вывад
+[Clipboard]
+Буфер абмену
+[Copy to]
+Капіяваць у
+[Paste from]
+Уставіць з
+[File]
+Файл
+[Append]
+Даданне
+[UTF8+sign]
+UTF8+сігнатура
+[UTF16+sign]
+UTF16+сігнатура
+[Message window]
+Гутарка
+[Autosend]
+Аўтаадпраўка
+[Jump]
+Пераход
+[Condition]
+Умовы
+[NOP]
+
+[Math]
+Матэм.
+[> greater]
+> больш
+[< lesser]
+< меньш
+[= equal]
+= экв.
+[^ xor]
+
+[& and]
+& і
+[Text]
+Уставіць тэкст
+[Case sensitive]
+Улік рэгістра
+[Opposite order]
+Зваротны парадак
+[empty]
+пуста
+[equal]
+экв.
+[contains]
+улучае
+[starts with]
+пачынаецца з
+[ends with]
+скончваецца на
+[NOT]
+НЕ
+[Operation]
+Аперацыя
+[BREAK]
+
+[JUMP]
+Пераход
+[^s - selected (and replaced) part\r\n^e - replaced by empty string\r\n^v - paste text from Clipboard\r\n^t - replaced by tabulation\r\n^l - replaced by last result as Unicode\r\n^h - replaced by last result as hex\r\n^f(name[,str])\r\n     paste line from text file.\r\n     brackets contents must be w/o spaces]
+^s - вылучаная (і замененая) частка\r\n^e - заменена пустым радком\r\n^v - уставіць тэкст з буфера абмену\r\n^t - заменена табуляцыяй\r\n^l - заменена апошнім вынікам, як Юнікод\r\n^h - заменена апошнім вынікам, як шаснаццатковае\r\n^f(імя[,str])\r\n     уставіць радок з тэкставага файла.\r\n     змесціва пасярод дужак абавязана быць без прабелаў
+[Process script after]
+Скрыпт пасля макраса
+[MessageBox]
+Вакно звесткі
+[Text <last> replacing\r\nby last result\r\n\r\nReturns:\r\n--------\r\nOK\t= 1\r\nCANCEL\t= 2\r\nABORT\t= 3\r\nRETRY\t= 4\r\nIGNORE\t= 5\r\nYES\t= 6\r\nNO\t= 7\r\nCLOSE\t= 8]
+Тэкст <last> замяняецца\r\nапошнім вынікам\r\n\r\nЯкое вяртаецца:\r\n--------\r\nOK\t\t= 1\r\nАдмена\t\t= 2\r\nПерапыніць\t= 3\r\nПаўтор\t\t= 4\r\nПрапусціць\t= 5\r\nТак\t\t= 6\r\nНе\t\t= 7\r\nЗачыніць\t\t= 8
+[Message title]
+Загаловак вакна
+[Message text]
+Тэкст паведамлення
+[RTL]
+
+[Right justified text]
+Выраўноўванне па праваму краі
+[Icons]
+Абразкі
+[Error]
+Памылка
+[Question]
+Пытанне
+[Warning]
+Увага
+[Info]
+Інфа
+[Buttons]
+Кнопкі
+[OK, Cancel]
+ОК, Скасаваць
+[Abort, Retry, Ignore]
+Спыніць, Паўтор, Прапусціць
+[Yes, No, Cancel]
+Так, Не, Скасаваць
+[Yes, No]
+Так, Не
+[Retry, Cancel]
+Паўтор, Скасаваць
+[Database]
+Профіль
+[Contact type]
+
+[Own settings]
+Свае налады
+[Manual]
+Ручны
+[Module]
+Плагін
+[Setting]
+Налада
+[Save value]
+Захаваць значэнне
+[Storage]
+Хранілішча
+[LastResult to ]
+Апошні вынік ў\s
+[LastResult from]
+Апошні вынік з
+[Slot 0]
+Слот 0
+[Slot 1]
+Слот 1
+[Slot 2]
+Слот 2
+[Slot 3]
+Слот 3
+[Slot 4]
+Слот 4
+[Slot 5]
+Слот 5
+[Slot 6]
+Слот 6
+[Slot 7]
+Слот 7
+[Slot 8]
+Слот 8
+[Slot 9]
+Слот 9
+[Settings]
+Налады
+[Contact list]
+Спіс кантактаў
+[Active accounts only]
+Толькі дзейсныя конты
+[Contact list format]
+Фармат спісу кантактаў
+[You can use %name%, %uid%, %account% and %group% substitutes]
+Вы можаце выкарыстоўваць зменныя %name%, %uid%, %account% і %group%
+[Service list format]
+Фармат ліста служб
+[value]
+значэнне
+[name]
+імя
+[value (name)]
+значэнне (імя)
+[name 'value']
+'імя' значэнне
+[Current Macro]
+Цяперашні макрас
+[Select for FirstRun]
+Абраць для першага запуска
+[Mark as Volatile]
+
+[Single instance]
+
+[Scheduler]
+Планоўшчык
+[Task sample]
+Прыклад задання
+[Start]
+Пачаць
+[Starting after]
+Пачаць пасля
+[Starting from]
+Пачаць з
+[Start immediately]
+Пачаць неадкладна
+[Days]
+Дзён
+[Time]
+Час
+[Date]
+Дата
+[Repeat]
+Паўтарыць
+[Repeat, times]
+Кольк. паўтораў
+[Interval]
+Затрымка
+[Break on non-zero result]
+Спыніць пры ненулявым выніку
+[Send event on start time]
+Адсылаць падзею пры старце задання
+[Send event just once]
+Адсылаць толькі пры першым запуску
+[Hooks]
+Хукі
+[Description]
+Апісанне
+[hook sample]
+прыклад хука
+[Event]
+Падзея
+[Miranda event help]
+
+[Use Actions]
+Выкарыстанне дзеянняў
+[Action list]
+Спіс дзеянняў
+[Where to use]
+Месца выкарыстання
+[TopToolbar]
+Панэль кнопак
+[TabSRMM toolbar]
+Панэль кнопак TabSRMM
+[Core Hotkey]
+Гарачая клавіша
+[Main menu]
+Галоўнае меню
+[Contact menu]
+Меню кантакту
+[Tray menu]
+Меню трэя
+[Protocol menus]
+Меню пратаколаў
+[Status menu]
+Меню статусаў
+[Common]
+Агульныя
+[2 state button/item]
+2 становішчы кнопкі/пункта
+[Save button/item state]
+Захоўваць становішча кнопкі/пункта
+[Contact related]
+Па кантактам
+[Normal button tooltip]
+Падказка да кнопкі ў звычайным становішчы
+[Pressed button tooltip]
+Падказка да кнопкі ў націснутым становішчы
+[Show only if variables return 1]
+Паказваць толькі пры вяртанні 1
+[Main settings]
+
+[Root popup:]
+Корань падменю:
+[Menu item name:]
+Назва пункта меню:
+[Custom settings]
+
+[Separated]
+Падзельнік
+[Do not translate]
+
+[Show window for new/changed profile password]
+
+[int 0, if successful]
+0 у выніку поспеху
+[Hide All Titlebars]
+
+[Show All Frames]
+Паказаць усе
+[Show All Titlebars]
+
+[will never return the user's custom name]
+
+[will return Unicode instead of AnsiChar]
+
+[will not use the cache]
+
+[Gets the string that the contact list will use to represent a contact]
+
+[int hMenu handle]
+
+[Built the context menu for a specific contact. Menu should be DestroyMenu()ed after done]
+
+[Show All Users]
+Паказваць усе кантакты
+[Show only Online Users]
+Схаваць адключаных
+[Toggle status]
+
+[Change 'hide offline contacts' option value]
+
+[Offline]
+Адключаны
+[Online]
+Далучаны
+[Away]
+Адсутнічаю
+[Do not disturb]
+Не турбаваць
+[Not available]
+Недаступны
+[Occupied]
+Заняты
+[Free for chat]
+Вольны
+[Invisible]
+Нябачны
+[Set global status]
+
+[Switch contact list status]
+
+[Closes Miranda]
+
+[Show or hide netlog console window]
+
+[int Value]
+
+[Returns contact amount, excluding user account]
+
+[ANSI Text]
+Тэкст ANSI
+[Removes all settings for the specified module]
+Выдаляе ўсе налады пазначанага модуля
+[int 0]
+цэлая частка 0
+[Import settings/contacts from file]
+Імпарт налад/кантактаў у файл
+[Opens or activate database editor]
+
+[Opens or activate user search dialog]
+
+[displays File Transfer window]
+
+[on Desktop]
+
+[parent window handle]
+
+[Show "About..." window]
+
+[Open support (originally - Miranda wiki) page]
+
+[Go to Miranda Homepage]
+
+[Open bug report page]
+
+[System]
+Сістэма
+[Shows contact history or (wParam=0) system history]
+
+[Erases contact's history. hContact can be NULL(0) to empty system history]
+
+[Show Global history search window. If already opened, bring it to front.]
+
+[Ignore all]
+Ігнараваць усё
+[Ignore messages]
+Паведамленні
+[Ignore URLs]
+Адрасы (URL)
+[Ignore files]
+Перадачы файлаў
+[Ignore User Online]
+
+[Ignore requests]
+Ігнараваць запыты
+[Ignore 'You were added']
+
+[Ignore Contact]
+Ігнараваць кантакт
+[Unignore Contact]
+
+[restart in default profile or profile manager]
+
+[restart with current profile]
+
+[Restarts Miranda]
+
+[Station name]
+Імя станцыі
+[wParam is Handle]
+
+[wParam is ANSI station name]
+
+[wParam is Unicode station name]
+
+[Starting or stopping radio station]
+
+[Stop cycle]
+
+[Start cycle]
+
+[Start/stops the cycling through protocols]
+
+[All protocols]
+
+[Protocol]
+Пратакол
+[signed -2 if proto can't set this, -1 on protocol not found, else 0]
+
+[Shows a dialog to set the avatar for all possible protocols]
+
+[Shows the next protocol in the frame]
+
+[Shows the previous protocol in the frame]
+
+[Open Options dialog]
+
+[Opens the options dialog, optionally at the specified page]
+
+[Check for updates]
+Праверыць абнаўленні
+[with confirmation]
+
+[without confirmation]
+
+[Empty updater download folder]
+
+[Popup plus (PopupPlus.dll) latest StdPopup (StdPopup.dll)]
+
+[Enables or disables popup windows]
+
+[Notify]
+Абвестка
+[StdPopup or Popup plus]
+
+[Popup window]
+Усплывальнае вакно
+[Unicode Text]
+
+[Enables or disables popup windows (maybe deprecated)]
+
+[result of protocol service call]
+
+[Send a general request through the protocol chain for a contact]
+
+[account name (string)]
+
+[Return account name associated to contact (no need to free it)]
+
+[displays the Account Manager]
+
+[Show the dialog to select the contact]
+
+[filter text]
+
+[wParam is Unicode]
+
+[wParam is ANSI]
+
+[Reserved]
+
+[Open main QuickSearch window with text filter]
+
+[Plays sound added through Skin/Sounds/AddNew. If sound not found, standard Windows sound plays]
+
+[Send Email to contact]
+
+[struct]
+
+[Returns the received files folder for a contact]
+
+[Open contact received file directory]
+
+[Send file to contact.]
+
+[Opens message window for contact with handle in wparam]
+
+[remove all temporary contacts from database]
+
+[Call avatar option dialog for contact]
+
+[Filename]
+Імя файла
+[Set (and optionally protect) a local contact picture for the given hContact. If lParam = NIL, the service will open a file selection dialog.]
+
+[Shows contact property window.]
+
+[Open URL in current window]
+
+[0 - Open URL in current window]
+
+[Open URL in default browser]
+
+[With formatting]
+
+[Don't use formatting]
+
+[Returns a string containing the versioninfo post]
+
+[Show or save (call default action) Modules version Info]
+
+[Show popup or Info window with current music information.]
+
+[log filename]
+
+[report filename]
+
+[int 0, if unsuccessful]
+
+[Create report from log and run it (if option is set). If wParam or lParam is empty then file names from options are used.]
+
+[Display birthdays window]
+Паказвае вакно дзён нараджэння
+[Manage Jabber Bookmarks]
+Упраўляе закладкамі Jabber
+[text]
+тэкст
+[Set status message]
+Усталяваць статуснае паведамленне
+[Set protocol status]
+Усталюе статус конту
+[None]
+Няма
+[Angry]
+Злуюся
+[Taking a bath]
+У ваннай
+[Tired]
+Стаміўся
+[Birthday]
+Дзень нараджэння
+[Drinking beer]
+П'ю піва
+[Thinking]
+Думаю
+[Eating]
+Ем
+[Watching TV]
+Гляджу тэлевізар
+[Meeting]
+Сустрэча
+[Coffee]
+П'ю каву
+[Listening to music]
+Слухаю музыку
+[Business]
+Справы
+[Shooting]
+Фатаграфую
+[Having fun]
+Весялюся
+[Gaming]
+Гуляю
+[Studying]
+Вучуся
+[Shopping]
+Магазін
+[Feeling sick]
+Хварэю
+[Sleeping]
+Сплю
+[Surfing]
+Серфінг
+[Browsing]
+Прагляд
+[Working]
+Працую
+[Typing]
+Набор тэксту
+[Picnic]
+Пікнік
+[Cooking]
+Гатую
+[Smoking]
+Палю
+[I'm high]
+Дзьмухаю
+[On WC]
+У туалеце
+[To be or not to be]
+Быць ці не быць?
+[Watching pro7 on TV]
+Гляджу тэлевізар
+[Love]
+Каханне
+[Sets owner current custom status]
+Усталюе xСтатус
+[Display xStatus detail]
+Паказвае падрабязны xСтатус
+[Undefined]
+Не вызначана
+[Action group list was changed: some was added or deleted]
+Спіс гуртоў дзеянняў змяніўся: некаторыя былі дададзены ці прыбраныя
+[contact list]
+спіс кантактаў
+[The context menu for a contact is about to be built]
+Пабудова кантэкстнага меню для кантакту
+[Double click on the contact list]
+Падвойная пстрычка па спісу кантактаў
+[database driver]
+
+[New contact added to database]
+Новы кантакт дададзены ў базу
+[Contact deleting]
+Выдаліць кантакт
+[Displays a modal dialog box that contains a system icon, a set of buttons, and a brief application-specific message, such as status or error information.]
+

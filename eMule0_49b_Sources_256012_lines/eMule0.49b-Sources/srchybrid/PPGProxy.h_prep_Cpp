@@ -1,0 +1,44 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("Preferences.h");}
+
+class CPPgProxy :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgProxy)
+
+public:
+ CPPgProxy();
+ virtual ~CPPgProxy();
+
+ // Dialog Data
+ enum { IDD = IDD_PPG_PROXY };
+
+ void Localize(void);
+
+protected:
+ ProxySettings proxy;
+
+ void LoadSettings();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnBnClickedEnableProxy();
+         void OnBnClickedEnableAuthentication();
+         void OnCbnSelChangeProxyType();
+         void OnEnChangeProxyName() { SetModified(TRUE); }
+         void OnEnChangeProxyPort() { SetModified(TRUE); }
+         void OnEnChangeUserName() { SetModified(TRUE); }
+         void OnEnChangePassword() { SetModified(TRUE); }
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

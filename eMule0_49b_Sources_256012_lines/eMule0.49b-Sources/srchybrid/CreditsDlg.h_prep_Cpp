@@ -1,0 +1,57 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("GDIThread.h");}
+void INCLUDEREPLACE(){CX_INCL("resource.h");}
+void INCLUDEREPLACE(){CX_INCL("enbitmap.h");}
+
+/////////////////////////////////////////////////////////////////////////////
+// CCreditsDlg dialog
+
+class CCreditsDlg :        CDialog
+{
+// Construction
+public:
+ void KillThread();
+ void StartThread();
+ CCreditsDlg(CWnd* pParent = NULL);   // standard constructor
+ CCreditsDlg::~CCreditsDlg();
+
+ CClientDC* m_pDC;
+ CRect  m_rectScreen;
+
+ CGDIThread* m_pThread;
+
+// Dialog Data
+ //{{        (CCreditsDlg)
+ enum { IDD = IDD_ABOUTBOX };
+  // NOTE: the ClassWizard will add data members here
+ //}}        
+
+
+// Overrides
+ // ClassWizard generated virtual function overrides
+ //{{           (CCreditsDlg)
+ protected:
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ //}}           
+
+// Implementation
+protected:
+
+ // Generated message map functions
+ //{{       (CCreditsDlg)
+         void OnLButtonDown(unsigned int nFlags, CPoint point);
+ virtual int  OnInitDialog();
+ virtual void OnPaint();
+         void OnDestroy();
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+ //}}       
+
+private:
+ CBitmap m_imgSplash;
+};
+
+
+
+
+
+ 

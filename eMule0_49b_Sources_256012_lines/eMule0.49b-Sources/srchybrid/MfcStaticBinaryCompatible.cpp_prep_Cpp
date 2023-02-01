@@ -1,0 +1,291 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE. See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+// ****************************************************************************
+// IMPORTANT NOTE !!!
+//
+// The reason for this file and the according compiler options is to solve the
+// binary compatibility problem with version of the     library
+// which shows up due to the defines which are specified in 'stdafx.h' of the
+// eMule project.
+//
+// The     library of VS .NET 2002 is compiled with the following     defines:
+//
+// WINVER    = 0x0501
+// _WIN32_WINNT   = 0x0501
+// _WIN32_WINDOWS = 0x0410
+// _WIN32_IE   = 0x0560
+//
+// eMule is using different to achieve backward
+// compatibility with older Windows systems.
+//
+// Depending on the code which is taken from the     library or from eMule object
+// files at linking time, it may occur that we get different structure size,
+// structure member variable offsets and other ugly things than expected and used
+// within the     library or vice versa.
+//
+// To solve this issue, some code
+ HAVE to be compiled with the same defines
+// as used by the     library compilation.
+//
+// This means, that this     file does     HAVE to be compiled with pre-compiled
+// headers is     ALLOWED to include 'stdafx.h' from the
+// eMule project. It has to be ensured in every aspect, that this     file is
+// compiled with the very same compiler settings as used for the     library!
+// ****************************************************************************
+//#include "stdafx.h" // please read the comment above!!
+
+// Disable some warnings which are only generated when using "/Wall"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("afxwin.h");}
+void INCLUDEREPLACE(){CX_INCL("afxpriv.h");}
+void INCLUDEREPLACE(){CX_INCL("afxstat_.h");}
+void INCLUDEREPLACE(){CX_INCL("INVALID_INCLUDE_FILE_NAME_..srcmfcwinhand_.h");}
+
+// Enable warnings which were disabled for Windows/MFC/ATL headers
+
+
+
+// NOTE: Although the function is currently not used any longer, the source file
+// is kept because of the above comment. Hopefully we will never need that file
+// again.
+/*void Mfc_IdleUpdateCmdUiTopLevelFrameList(CWnd* pMainFrame)
+{
+
+ // Can't link this in a Release build, see    Q316312
+                        * pState = AfxGetAppModuleState()->m_thread;
+
+
+
+ CFrameWnd* pFrameWnd = pState->m_frameList;
+ while (pFrameWnd != NULL)
+ {
+  if (pFrameWnd->m_hWnd != NULL && pFrameWnd != pMainFrame)
+  {
+   if (pFrameWnd->m_nShowDelay == SW_HIDE)
+    pFrameWnd->ShowWindow(pFrameWnd->m_nShowDelay);
+   if (pFrameWnd->IsWindowVisible() || pFrameWnd->m_nShowDelay >= 0)
+   {
+    AfxCallWndProc(pFrameWnd, pFrameWnd->m_hWnd, WM_IDLEUPDATECMDUI, (int * )TRUE, 0);
+    pFrameWnd->SendMessageToDescendants(WM_IDLEUPDATECMDUI, (int * )TRUE, 0, TRUE, TRUE);
+   }
+   if (pFrameWnd->m_nShowDelay > SW_HIDE)
+    pFrameWnd->ShowWindow(pFrameWnd->m_nShowDelay);
+   pFrameWnd->m_nShowDelay = -1;
+  }
+  pFrameWnd = pFrameWnd->m_pNextFrameWnd;
+ }
+}*/
+
+
+
+
+class _CHandleMap
+{
+private: // implementation
+ CFixedAllocNoSync m_alloc;
+ void (      * m_pfnConstructObject)(CObject* pObject);
+ void (      * m_pfnDestructObject)(CObject* pObject);
+ CMapPtrToPtr m_permanentMap;
+ CMapPtrToPtr m_temporaryMap;
+ CRuntimeClass* m_pClass;
+ size_t m_nOffset;  // offset of handles in the object
+ int m_nHandles;   // 1 or 2 (for CDC)
+
+// Constructor/Destructor
+public:
+ _CHandleMap(CRuntimeClass* pClass,
+  void (      * pfnConstructObject)(CObject* pObject),
+  void (      * pfnDestructObject)(CObject* pObject),
+  size_t nOffset, int nHandles = 1);
+
+ ~_CHandleMap()
+
+
+
+  { DeleteTemp(); }
+
+// Operations
+public:
+ CObject* FromHandle(void * h);
+ void DeleteTemp();
+
+ void SetPermanent(void * h, CObject* permOb);
+ void RemoveHandle(void * h);
+
+ CObject* LookupPermanent(void * h);
+ CObject* LookupTemporary(void * h);
+
+ friend void Mfc_IdleFreeTempMaps();
+ friend class CWinThread;
+};
+
+
+
+
+
+void Mfc_IdleFreeTempMaps()
+{
+
+ // check MFC's
+ if (_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) & _CRTDBG_CHECK_ALWAYS_DF)
+  ASSERT(AfxCheckMemory());
+
+
+
+ // Can't link this in a Release build, see    Q316312
+                        * pState = AfxGetAppModuleState()->m_thread;
+
+
+
+ if (pState->m_nTempMapLock == 0)
+ {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  bool bDumpMaps = false;
+  static int s_iOld_m_pmapHWND m_permanentMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.GetCount() !=                   m_permanentMap) { bDumpMaps = true; };
+  static int s_iOld_m_pmapHWND m_temporaryMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.GetCount() !=                   m_temporaryMap) { bDumpMaps = true; };
+
+  static int s_iOld_m_pmapHMENU m_permanentMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.GetCount() !=                    m_permanentMap) { bDumpMaps = true; };
+  static int s_iOld_m_pmapHMENU m_temporaryMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.GetCount() !=                    m_temporaryMap) { bDumpMaps = true; };
+
+  static int s_iOld_m_pmapHDC m_permanentMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.GetCount() !=                  m_permanentMap) { bDumpMaps = true; };
+  static int s_iOld_m_pmapHDC m_temporaryMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.GetCount() !=                  m_temporaryMap) { bDumpMaps = true; };
+
+  static int s_iOld_m_pmapHGDIOBJ m_permanentMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.GetCount() !=                      m_permanentMap) { bDumpMaps = true; };
+  static int s_iOld_m_pmapHGDIOBJ m_temporaryMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.GetCount() !=                      m_temporaryMap) { bDumpMaps = true; };
+
+  static int s_iOld_m_pmapHIMAGELIST m_permanentMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.GetCount() !=                         m_permanentMap) { bDumpMaps = true; };
+  static int s_iOld_m_pmapHIMAGELIST m_temporaryMap = 0; if (!bDumpMaps && ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.GetCount() !=                         m_temporaryMap) { bDumpMaps = true; };
+
+  if (bDumpMaps)
+  {
+   TRACE("---Dump start\n");
+   TRACE("m_pmapHWND"     "->" " m_permanentMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.GetCount() !=                   m_permanentMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.GetCount() - s_iOld_m_pmapHWND m_permanentMap); s_iOld_m_pmapHWND m_permanentMap = ((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.GetCount(); } TRACE("\n");;
+   TRACE("m_pmapHWND"     "->" " m_temporaryMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.GetCount() !=                   m_temporaryMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.GetCount() - s_iOld_m_pmapHWND m_temporaryMap); s_iOld_m_pmapHWND m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.GetCount(); } TRACE("\n");;
+
+   TRACE("m_pmapHMENU"     "->" " m_permanentMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.GetCount() !=                    m_permanentMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.GetCount() - s_iOld_m_pmapHMENU m_permanentMap); s_iOld_m_pmapHMENU m_permanentMap = ((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.GetCount(); } TRACE("\n");;
+   TRACE("m_pmapHMENU"     "->" " m_temporaryMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.GetCount() !=                    m_temporaryMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.GetCount() - s_iOld_m_pmapHMENU m_temporaryMap); s_iOld_m_pmapHMENU m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.GetCount(); } TRACE("\n");;
+
+   TRACE("m_pmapHDC"     "->" " m_permanentMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.GetCount() !=                  m_permanentMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.GetCount() - s_iOld_m_pmapHDC m_permanentMap); s_iOld_m_pmapHDC m_permanentMap = ((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.GetCount(); } TRACE("\n");;
+   TRACE("m_pmapHDC"     "->" " m_temporaryMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.GetCount() !=                  m_temporaryMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.GetCount() - s_iOld_m_pmapHDC m_temporaryMap); s_iOld_m_pmapHDC m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.GetCount(); } TRACE("\n");;
+
+   TRACE("m_pmapHGDIOBJ"     "->" " m_permanentMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.GetCount() !=                      m_permanentMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.GetCount() - s_iOld_m_pmapHGDIOBJ m_permanentMap); s_iOld_m_pmapHGDIOBJ m_permanentMap = ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.GetCount(); } TRACE("\n");;
+   TRACE("m_pmapHGDIOBJ"     "->" " m_temporaryMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.GetCount() !=                      m_temporaryMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.GetCount() - s_iOld_m_pmapHGDIOBJ m_temporaryMap); s_iOld_m_pmapHGDIOBJ m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.GetCount(); } TRACE("\n");;
+
+   TRACE("m_pmapHIMAGELIST"     "->" " m_permanentMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.GetCount() !=                         m_permanentMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.GetCount() - s_iOld_m_pmapHIMAGELIST m_permanentMap); s_iOld_m_pmapHIMAGELIST m_permanentMap = ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.GetCount(); } TRACE("\n");;
+   TRACE("m_pmapHIMAGELIST"     "->" " m_temporaryMap"     ": %d", ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.GetCount()); if (((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.GetCount() !=                         m_temporaryMap) { TRACE("  (%d)", ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.GetCount() - s_iOld_m_pmapHIMAGELIST m_temporaryMap); s_iOld_m_pmapHIMAGELIST m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.GetCount(); } TRACE("\n");;
+  }
+
+
+
+
+
+
+  ((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.AssertValid(); int iOld_m_pmapHWND m_permanentMap = ((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.GetCount();;
+  ((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.AssertValid(); int iOld_m_pmapHWND m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.GetCount();;
+
+  ((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.AssertValid(); int iOld_m_pmapHMENU m_permanentMap = ((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.GetCount();;
+  ((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.AssertValid(); int iOld_m_pmapHMENU m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.GetCount();;
+
+  ((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.AssertValid(); int iOld_m_pmapHDC m_permanentMap = ((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.GetCount();;
+  ((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.AssertValid(); int iOld_m_pmapHDC m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.GetCount();;
+
+  ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.AssertValid(); int iOld_m_pmapHGDIOBJ m_permanentMap = ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.GetCount();;
+  ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.AssertValid(); int iOld_m_pmapHGDIOBJ m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.GetCount();;
+
+  ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.AssertValid(); int iOld_m_pmapHIMAGELIST m_permanentMap = ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.GetCount();;
+  ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.AssertValid(); int iOld_m_pmapHIMAGELIST m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.GetCount();;
+
+
+  // free temp maps, OLE DLLs, etc.
+  //AfxLockTempMaps();
+  //AfxUnlockTempMaps();
+
+
+
+
+
+
+
+  int iNew_m_pmapHWND m_permanentMap = ((_CHandleMap*)(pState->m_pmapHWND))-> m_permanentMap.GetCount(); if (iNew_m_pmapHWND m_permanentMap !=                 m_permanentMap) TRACE("m_pmapHWND"     "->" " m_permanentMap"     ": %d\n", iNew_m_pmapHWND m_permanentMap - iOld_m_pmapHWND m_permanentMap);;
+  int iNew_m_pmapHWND m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHWND))-> m_temporaryMap.GetCount(); if (iNew_m_pmapHWND m_temporaryMap !=                 m_temporaryMap) TRACE("m_pmapHWND"     "->" " m_temporaryMap"     ": %d\n", iNew_m_pmapHWND m_temporaryMap - iOld_m_pmapHWND m_temporaryMap);;
+
+  int iNew_m_pmapHMENU m_permanentMap = ((_CHandleMap*)(pState->m_pmapHMENU))-> m_permanentMap.GetCount(); if (iNew_m_pmapHMENU m_permanentMap !=                  m_permanentMap) TRACE("m_pmapHMENU"     "->" " m_permanentMap"     ": %d\n", iNew_m_pmapHMENU m_permanentMap - iOld_m_pmapHMENU m_permanentMap);;
+  int iNew_m_pmapHMENU m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHMENU))-> m_temporaryMap.GetCount(); if (iNew_m_pmapHMENU m_temporaryMap !=                  m_temporaryMap) TRACE("m_pmapHMENU"     "->" " m_temporaryMap"     ": %d\n", iNew_m_pmapHMENU m_temporaryMap - iOld_m_pmapHMENU m_temporaryMap);;
+
+  int iNew_m_pmapHDC m_permanentMap = ((_CHandleMap*)(pState->m_pmapHDC))-> m_permanentMap.GetCount(); if (iNew_m_pmapHDC m_permanentMap !=                m_permanentMap) TRACE("m_pmapHDC"     "->" " m_permanentMap"     ": %d\n", iNew_m_pmapHDC m_permanentMap - iOld_m_pmapHDC m_permanentMap);;
+  int iNew_m_pmapHDC m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHDC))-> m_temporaryMap.GetCount(); if (iNew_m_pmapHDC m_temporaryMap !=                m_temporaryMap) TRACE("m_pmapHDC"     "->" " m_temporaryMap"     ": %d\n", iNew_m_pmapHDC m_temporaryMap - iOld_m_pmapHDC m_temporaryMap);;
+
+  int iNew_m_pmapHGDIOBJ m_permanentMap = ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_permanentMap.GetCount(); if (iNew_m_pmapHGDIOBJ m_permanentMap !=                    m_permanentMap) TRACE("m_pmapHGDIOBJ"     "->" " m_permanentMap"     ": %d\n", iNew_m_pmapHGDIOBJ m_permanentMap - iOld_m_pmapHGDIOBJ m_permanentMap);;
+  int iNew_m_pmapHGDIOBJ m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHGDIOBJ))-> m_temporaryMap.GetCount(); if (iNew_m_pmapHGDIOBJ m_temporaryMap !=                    m_temporaryMap) TRACE("m_pmapHGDIOBJ"     "->" " m_temporaryMap"     ": %d\n", iNew_m_pmapHGDIOBJ m_temporaryMap - iOld_m_pmapHGDIOBJ m_temporaryMap);;
+
+  int iNew_m_pmapHIMAGELIST m_permanentMap = ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_permanentMap.GetCount(); if (iNew_m_pmapHIMAGELIST m_permanentMap !=                       m_permanentMap) TRACE("m_pmapHIMAGELIST"     "->" " m_permanentMap"     ": %d\n", iNew_m_pmapHIMAGELIST m_permanentMap - iOld_m_pmapHIMAGELIST m_permanentMap);;
+  int iNew_m_pmapHIMAGELIST m_temporaryMap = ((_CHandleMap*)(pState->m_pmapHIMAGELIST))-> m_temporaryMap.GetCount(); if (iNew_m_pmapHIMAGELIST m_temporaryMap !=                       m_temporaryMap) TRACE("m_pmapHIMAGELIST"     "->" " m_temporaryMap"     ": %d\n", iNew_m_pmapHIMAGELIST m_temporaryMap - iOld_m_pmapHIMAGELIST m_temporaryMap);;
+
+ }
+
+
+ // check MFC's
+ if (_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) & _CRTDBG_CHECK_ALWAYS_DF)
+  ASSERT(AfxCheckMemory());
+
+}
+
+
+
+
+
+
+
+ 

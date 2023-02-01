@@ -1,0 +1,13 @@
+#muuid {60558872-2aab-45aa-888d-097691c9b683}
+;============================================================
+;  File: Sessions.dll
+;  Plugin: Sessions
+;  Version: 0.2.0.1
+;  Authors: MaD_CLuSTeR
+;============================================================
+[Show Favorite Sessions Menu]
+Show Favourite Sessions Menu
+[Favorite Session]
+Favourite Session
+[Not favorite Session]
+Not favourite Session

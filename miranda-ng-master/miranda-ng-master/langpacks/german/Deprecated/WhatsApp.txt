@@ -1,0 +1,139 @@
+#muuid {4f1ff7fa-4d75-44b9-93b0-2ced2e4f9e3e}
+;============================================================
+;  File: WhatsApp.dll
+;  Plugin: WhatsApp protocol
+;  Version: 0.1.3.3
+;  Authors: Uli Hecht
+;============================================================
+[WhatsApp protocol support for Miranda NG.]
+WhatsApp-Protokollunterstützung für Miranda NG.
+;file \protocols\WhatsApp\res\whatsapp.rc
+[Phone number]
+Telefonnummer
+[Nickname]
+Nickname
+[Default group:]
+Standardgruppe:
+[Use SSL connection (port 443)]
+SSL-Verbindung verwenden (Port 443)
+[Use remote message timestamps]
+Serverseitige Nachrichtenzeitstempel verwenden
+[Automatically open group chats]
+Gruppenchats automatisch öffnen
+[Registration]
+Registrierung
+[Enter code]
+Code eing.
+[Request SMS code]
+SMS-Code anfordern
+[Request Voice code]
+Anruf-Code anfordern
+[Register code]
+Code registrieren
+[Including country code, without '+' or '00']
+Inklusive Landescode, ohne '+' oder '00'
+[Invite users]
+Benutzer einladen
+[Choose a user]
+Benutzer auswählen
+[Other user:]
+Anderer Benutzer:
+[&Invite]
+E&inladen
+[Cancel]
+Abbrechen
+;file \protocols\WhatsApp\src\chat.cpp
+[Members]
+Mitglieder
+[Owners]
+Besitzer
+[&Invite a user]
+Einen Benutzer e&inladen
+[&Room options]
+&Raumeinstellungen
+[View/change &topic]
+&Thema ansehen/ändern
+[&Quit chat session]
+Chatsitzung &beenden
+[Set &avatar]
+&Avatar setzen
+[Copy room &JID]
+Raum-&JID kopieren
+[Copy room topic]
+Thema des Raums kopieren
+[Set new subject for %s]
+Neues Thema für %s setzen
+[&Add to roster]
+Zu Server-Kont&aktliste hinzufügen
+[&Kick]
+&Kick
+[Copy &nickname]
+&Nicknamen kopieren
+[Copy real &JID]
+Echte &JID kopieren
+[Unknown user]
+Unbekannter Benutzer
+;file \protocols\WhatsApp\src\connection.cpp
+[Please enter a country code.]
+Bitte geben Sie einen Landescode ein.
+[Please enter a phone number without country code.]
+Bitte geben Sie eine Telefonnummer ohne Landescode ein.
+[Please enter a nickname.]
+Bitte geben Sie einen Nicknamen ein.
+[Please enter a password.]
+Bitte geben Sie ein Passwort ein.
+;file \protocols\WhatsApp\src\contacts.cpp
+[is now known as '%s']
+ist nun bekannt als %s
+[Last online on %x at %X]
+Zuletzt online am %x um %X
+[Denied: Last online on %x at %X]
+Abgewiesen: Zuletzt online am %x um %X
+[Last seen on %x at %X]
+Zuletzt gesehen am %x um %X
+;file \protocols\WhatsApp\src\dialogs.cpp
+[An SMS with registration code will be sent to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+Eine SMS mit dem Registrierungscode wird an Ihr Mobiltelefon geschickt.\nBeachten Sie, dass Sie das richtige WhatsApp und dieses Plugin nicht gleichzeitig nutzen können.\nFortfahren?
+[A call with registration code will be made to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+Ein Anruf mit dem Registrierungscode wird an Ihr Mobiltelefon gemacht.\nBeachten Sie, dass Sie das richtige WhatsApp und dieses Plugin nicht gleichzeitig nutzen können.\nFortfahren?
+[Your password has been set automatically. You can proceed with login now.]
+Ihr Passwort wurde automatisch gesetzt. Sie können sich nun anmelden.
+[Please correctly specify your registration code received by SMS/Voice.]
+Bitte geben Sie den per SMS/Anruf erhaltenen Code korrekt ein.
+[Changes will be applied after protocol restart]
+Änderungen werden erst nach einem Neustart des Protokolls aktiv.
+[Network]
+Netzwerk
+[Account]
+Konto
+;file \protocols\WhatsApp\src\messages.cpp
+[server]
+Server
+[Message received: %s by %s]
+Nachricht empfangen: %s von %s
+;file \protocols\WhatsApp\src\proto.cpp
+[%s server connection]
+%s Serververbindung
+[Unable to initialize Netlib for %s.]
+Kann Netlib-Verbindung für %s nicht initialisieren.
+[Network connection error.]
+Netzwerkverbindungsfehler.
+[Registration failed. Invalid server response.]
+Registrierung fehlgeschlagen. Ungültige Serverantwort.
+[Registration failed due to stale code. Please request a new code]
+Registrierung wegen abgelaufenem Code fehlgeschlagen. Bitte fordern Sie einen neuen Code an.
+[Registration failed. Reason: %s]
+Registrierung fehlgeschlagen. Grund: %s
+[Please try again in %i seconds]
+Bitte versuchen Sie es in %i Sekunden erneut
+[Registration code has been sent to your phone.]
+Registrierungscode wurde an Ihr Telefon geschickt.
+[Registration failed.]
+Registrierung fehlgeschlagen.
+;file \protocols\WhatsApp\src\theme.cpp
+[WhatsApp icon]
+WhatsApp Icon
+[Create chat group]
+Gruppenchat erstellen
+[Create group]
+Gruppe erstellen

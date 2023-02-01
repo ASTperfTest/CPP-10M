@@ -1,0 +1,115 @@
+﻿//this file is part of eMule
+//Copyright (C)2005 Merkur ( devs@emule-project.net / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE. See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ class RAROpenArchiveDataEx
+{
+ char   *ArcName;
+ long   *ArcNameW;
+ unsigned long OpenMode;
+ unsigned long OpenResult;
+ char   *CmtBuf;
+ unsigned long CmtBufSize;
+ unsigned long CmtSize;
+ unsigned long CmtState;
+ unsigned long Flags;
+ unsigned long Reserved[32];
+};
+
+
+
+ class RARHeaderDataEx
+{
+ char    ArcName[1024];
+ long  ArcNameW[1024];
+ char    FileName[1024];
+ long  FileNameW[1024];
+ unsigned long Flags;
+ unsigned long PackSize;
+ unsigned long PackSizeHigh;
+ unsigned long UnpSize;
+ unsigned long UnpSizeHigh;
+ unsigned long HostOS;
+ unsigned long FileCRC;
+ unsigned long FileTime;
+ unsigned long UnpVer;
+ unsigned long Method;
+ unsigned long FileAttr;
+ char   *CmtBuf;
+ unsigned long CmtBufSize;
+ unsigned long CmtSize;
+ unsigned long CmtState;
+ unsigned long Reserved[1024];
+};
+
+
+class CRARFile
+{
+public:
+ CRARFile();
+ ~CRARFile();
+
+ bool Open(const char* pszArchiveFilePath);
+ void Close();
+ bool GetNextFile(CString& strFile);
+ bool Extract(const char* pszDstFilePath);
+ bool Skip();
+
+protected:
+ void *  m_hLibUnRar;
+ CString m_strArchiveFilePath;
+ void * m_hArchive;
+
+ bool InitUnRarLib();
+ void * (       *m_pfnRAROpenArchiveEx)(       RAROpenArchiveDataEx* ArchiveData) throw(...);
+ int (       *m_pfnRARCloseArchive)(void * hArcData) throw(...);
+ int (       *m_pfnRARReadHeaderEx)(void * hArcData,        RARHeaderDataEx* HeaderData) throw(...);
+ int (       *m_pfnRARProcessFileW)(void * hArcData, int iOperation, const long * pszDestFolder, const long * pszDestName) throw(...);
+};
+
+
+
+
+
+
+ 

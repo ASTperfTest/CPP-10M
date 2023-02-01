@@ -1,0 +1,91 @@
+﻿// ------------------------------------------------------------
+//  CDialogMinTrayBtn template class
+//  MFC CDialog with minimize to systemtray button (0.04)
+//  Supports WinXP styles (thanks to David Yuheng Zhao for CVisualStylesXP - yuheng_zhao@yahoo.com)
+// ------------------------------------------------------------
+//  DialogMinTrayBtn.h
+//  zegzav - 2002,2003 - eMule project (http://www.emule-project.net)
+// ------------------------------------------------------------
+
+
+
+//bluecow/sony: moved out of class for    2003 compatiblity; zegzav: made extern for proper
+extern int  (       *_TransparentBlt)(void*, int, int, int, int, void*, int, int, int, int, unsigned int);
+
+template <class BASE= CDialog> class CDialogMinTrayBtn :        BASE
+{
+public:
+    // constructor
+    CDialogMinTrayBtn();
+    CDialogMinTrayBtn(const char* lpszTemplateName, CWnd* pParentWnd = NULL);
+    CDialogMinTrayBtn(unsigned int nIDTemplate, CWnd* pParentWnd = NULL);
+
+    // methods
+    void MinTrayBtnShow();
+    void MinTrayBtnHide();
+ __inline int  MinTrayBtnIsVisible() const { return m_bMinTrayBtnVisible; }
+
+    void MinTrayBtnEnable();
+    void MinTrayBtnDisable();
+ __inline int  MinTrayBtnIsEnabled() const { return m_bMinTrayBtnEnabled; }
+
+ void SetWindowText(const char* lpszString);
+
+protected:
+    // messages
+    virtual int  OnInitDialog();
+            void OnNcPaint();
+            int  OnNcActivate(int  bActive);
+
+         long *  OnNcHitTest(CPoint point);
+
+
+
+            void OnNcLButtonDown(unsigned int nHitTest, CPoint point);
+            void OnNcRButtonDown(unsigned int nHitTest, CPoint point);
+            void OnMouseMove(unsigned int nFlags, CPoint point);
+            void OnLButtonUp(unsigned int nFlags, CPoint point);
+            void OnTimer(unsigned int nIDEvent);
+         long *  _OnThemeChanged();
+
+
+private:
+    // internal methods
+    void MinTrayBtnInit();
+    void MinTrayBtnDraw();
+    int  MinTrayBtnHitTest(CPoint point) const;
+    void MinTrayBtnUpdatePosAndSize();
+
+    void MinTrayBtnSetUp();
+    void MinTrayBtnSetDown();
+
+ __inline const CPoint &MinTrayBtnGetPos() const { return m_MinTrayBtnPos; }
+ __inline const CSize &MinTrayBtnGetSize() const { return m_MinTrayBtnSize; }
+ __inline CRect MinTrayBtnGetRect() const { return CRect(MinTrayBtnGetPos(), MinTrayBtnGetSize()); }
+
+    int  IsWindowsClassicStyle() const;
+ int GetVisualStylesXPColor() const;
+
+ int  MinTrayBtnInitBitmap();
+
+    // data members
+    CPoint m_MinTrayBtnPos;
+    CSize  m_MinTrayBtnSize;
+    int    m_bMinTrayBtnVisible;
+    int    m_bMinTrayBtnEnabled;
+    int    m_bMinTrayBtnUp;
+    int    m_bMinTrayBtnCapture;
+    int    m_bMinTrayBtnActive;
+    int    m_bMinTrayBtnHitTest;
+    unsigned int m_nMinTrayBtnTimerId;
+ CBitmap m_bmMinTrayBtnBitmap;
+ int  m_bMinTrayBtnWindowsClassicStyle;
+ static const char  *m_pszMinTrayBtnBmpName[];
+};
+
+
+
+
+
+
+ 

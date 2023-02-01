@@ -1,0 +1,39 @@
+# Visual Studio files
+Debug/
+Debug64/
+Release/
+Release64/
+ipch/
+.idea/
+.vs/
+*.VC.db
+*.VC.VC.opendb
+*.sdf
+*.sln
+*.suo
+*.user
+*.aps
+*.opensdf
+*.map
+*.log
+
+#codelite files
+codelite/obj/
+compile_flags.txt
+
+# Keep predefined Miranda solutions
+!/bin*/*.sln
+/bin*/my.sln
+/bin*/my_icons.sln
+
+# Miranda files
+include/m_version.h
+export.cmd
+vsbuild.cmd
+
+#Langpacks Tools Template
+langpacks/tool/VersionInfo.txt
+
+# WhatsApp generated protobuf descriptions
+protocols/WhatsAppWeb/src/pmsg.pb.cc
+protocols/WhatsAppWeb/src/pmsg.pb.h

@@ -1,0 +1,30 @@
+﻿
+
+        unsigned char  uchar = "CX_TYPEDEF";
+        unsigned char  uint8 = "CX_TYPEDEF";
+          signed char  sint8 = "CX_TYPEDEF";
+
+        unsigned short  uint16 = "CX_TYPEDEF";
+          signed short  sint16 = "CX_TYPEDEF";
+
+        unsigned int  uint32 = "CX_TYPEDEF";
+          signed int  sint32 = "CX_TYPEDEF";
+
+        unsigned __int64 uint64 = "CX_TYPEDEF";
+          signed __int64 sint64 = "CX_TYPEDEF";
+
+
+void INCLUDEREPLACE(){CX_INCL("Debug_FileSize.h");}
+
+        CEMFileSize   EMFileSize = "CX_TYPEDEF";
+
+
+
+
+
+
+
+
+
+
+ 

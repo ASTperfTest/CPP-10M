@@ -1,0 +1,98 @@
+﻿/*
+Copyright (C)2003 Barry
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the     General Public License
+as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but         ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the     General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*/
+
+// Note To Mods //
+/*
+Please do not change anything here and release it..
+There is going to be a neW forum created just for the Kademlia side of the client..
+If you feel there is an error or a way to improve something, please
+post it in the forum first and let us look at it.. If it is a real improvement,
+it will be added to the offical client.. Changing something without knowing
+what all it does can cause great harm to the network if released in mass form..
+Any mod that changes anything within the Kademlia side will not be allowed to advertise
+there client on the eMule forum..
+*/
+
+
+
+namespace Kademlia
+{
+ class CUInt128
+ {
+  public:
+   CUInt128();
+   CUInt128(bool bFill);
+   CUInt128(unsigned long uValue);
+   CUInt128(const byte *pbyValueBE);
+   //Generates a neW number, copying the most significant 'numBits' bits from 'value'.
+   //The remaining bits are randomly generated.
+   CUInt128(const CUInt128 &uValue, unsigned int uNumBits = 128);
+
+   const byte* GetData() const;
+   byte* GetDataPtr() const;
+   /** Bit at level 0 being most significant. */
+   unsigned int GetBitNumber(unsigned int uBit) const;
+   int CompareTo(const CUInt128 &uOther) const;
+   int CompareTo(unsigned long uValue) const;
+   void ToHexString(CString *pstr) const;
+   CString ToHexString() const;
+   void ToBinaryString(CString *pstr, bool bTrim = false) const;
+   void ToByteArray(byte *pby) const;
+   unsigned long Get32BitChunk(int iVal) const;
+   CUInt128& SetValue(const CUInt128 &uValue);
+   CUInt128& SetValue(unsigned long uValue);
+   CUInt128& SetValueBE(const byte *pbyValueBE);
+   CUInt128& SetValueRandom();
+   CUInt128& SetValueGUID();
+   CUInt128& SetBitNumber(unsigned int uBit, unsigned int uValue);
+   CUInt128& ShiftLeft(unsigned int uBits);
+   CUInt128& Add(const CUInt128 &uValue);
+   CUInt128& Add(unsigned long uValue);
+   CUInt128& Subtract(const CUInt128 &uValue);
+   CUInt128& Subtract(unsigned long uValue);
+   CUInt128& Xor(const CUInt128 &uValue);
+   CUInt128& XorBE(const byte *pbyValueBE);
+   void operator__Addition  (const CUInt128 &uValue);
+   void operator__Subtraction  (const CUInt128 &uValue);
+   void operator__Assign  (const CUInt128 &uValue);
+   bool operator__Less  (const CUInt128 &uValue) const;
+   bool operator__Greater  (const CUInt128 &uValue) const;
+   bool operator__LessEqual (const CUInt128 &uValue) const;
+   bool operator__GreaterEqual (const CUInt128 &uValue) const;
+   bool operator__Equal (const CUInt128 &uValue) const;
+   bool operator__NotEqual (const CUInt128 &uValue) const;
+   void operator__Addition  (unsigned long uValue);
+   void operator__Subtraction  (unsigned long uValue);
+   void operator__Assign  (unsigned long uValue);
+   bool operator__Less  (unsigned long uValue) const;
+   bool operator__Greater  (unsigned long uValue) const;
+   bool operator__LessEqual (unsigned long uValue) const;
+   bool operator__GreaterEqual (unsigned long uValue) const;
+   bool operator__Equal (unsigned long uValue) const;
+   bool operator__NotEqual (unsigned long uValue) const;
+  private:
+   unsigned long  m_uData[4];
+ };
+}
+
+
+
+
+
+
+ 

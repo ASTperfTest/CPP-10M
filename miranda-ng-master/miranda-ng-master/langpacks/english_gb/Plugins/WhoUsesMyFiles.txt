@@ -1,0 +1,19 @@
+#muuid {80dca515-973a-4a7e-8b85-5d8ec88fc5a7}
+;============================================================
+;  File: WhoUsesMyFiles.dll
+;  Plugin: Who Use My Files
+;  Version: 0.1.0.4
+;  Authors: Nikolay Redko
+;============================================================
+[Background color]
+Background colour
+[Text color]
+Text colour
+[Popup color settings]
+Popup colour settings
+[Use Windows colors]
+Use Windows colours
+[Use default colors]
+Use default colours
+[Use custom colors]
+Use custom colours

@@ -1,0 +1,71 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("PPgGeneral.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgConnection.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgServer.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgDirectories.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgFiles.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgStats.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgNotify.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgIRC.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgTweaks.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgDisplay.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgSecurity.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgWebServer.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgScheduler.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgProxy.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgMessages.h");}
+
+void INCLUDEREPLACE(){CX_INCL("PPgDebug.h");}
+
+void INCLUDEREPLACE(){CX_INCL("otherfunctions.h");}
+void INCLUDEREPLACE(){CX_INCL("TreePropSheet.h");}
+
+class CPreferencesDlg :        CTreePropSheet
+{
+ //DECLARE_DYNAMIC(CPreferencesDlg)
+
+public:
+ CPreferencesDlg();
+ virtual ~CPreferencesDlg();
+
+ CPPgGeneral  m_wndGeneral;
+ CPPgConnection m_wndConnection;
+ CPPgServer  m_wndServer;
+ CPPgDirectories m_wndDirectories;
+ CPPgFiles  m_wndFiles;
+ CPPgStats  m_wndStats;
+ CPPgNotify  m_wndNotify;
+ CPPgIRC   m_wndIRC;
+ CPPgTweaks  m_wndTweaks;
+ CPPgDisplay  m_wndDisplay;
+ CPPgSecurity m_wndSecurity;
+ CPPgWebServer m_wndWebServer;
+ CPPgScheduler m_wndScheduler;
+ CPPgProxy  m_wndProxy;
+ CPPgMessages m_wndMessages;
+
+ CPPgDebug  m_wndDebug;
+
+
+ void Localize();
+ void SetStartPage(unsigned int uStartPageID);
+
+protected:
+ const char* m_pPshStartPage;
+ bool m_bSaveIniFile;
+
+ virtual int  OnInitDialog();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnDestroy();
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

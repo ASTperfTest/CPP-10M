@@ -1,0 +1,13 @@
+#muuid {3503D584-6234-4BEF-A553-6C1B9CD471F2}
+;============================================================
+;  File: NewEventNotify.dll
+;  Plugin: NewEventNotify
+;  Version: 0.2.2.6
+;  Authors: icebreaker, Prezes, vj, vlko, Joe @ Whale
+;============================================================
+[Use default colors]
+Use default colours
+[ requested authorization]
+ requested authorisation
+[Requests your authorization]
+Requests your authorisation

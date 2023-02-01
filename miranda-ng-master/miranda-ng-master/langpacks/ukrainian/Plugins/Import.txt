@@ -1,0 +1,205 @@
+#muuid {2d77a746-00a6-4343-bfc5-f808cdd772ea}
+;============================================================
+;  File: Import.dll
+;  Plugin: Import contacts and messages
+;  Version: 0.95.11.1
+;  Authors: Miranda team
+;============================================================
+[Imports contacts and messages from another Miranda profile or from an external program.]
+Імпортує контакти та повідомлення з інших профілів Miranda NG або сторонніх програм.
+;file \plugins\Import\res\resource.rc
+[This wizard will help you import contacts and message history from another Miranda profile or from an external program.]
+Цей майстер допоможе вам імпортувати контакти та історію з інших профілів Miranda NG або сторонніх програм.
+[Click "Next" to choose the information you wish to import, or click "Cancel" to exit the wizard and continue using Miranda.]
+Натисніть "Далі", щоб вибрати інформацію для імпортування, або "Скасувати", щоб вийти з цього майстра.
+[It is recommended that you create a backup of your current Miranda profile before importing.]
+Рекомендується створити резервну копію поточного профілю перед імпортуванням.
+[If you wish to import more information, click "Next" to return to the start of the wizard, otherwise click "Finish" to start using Miranda.]
+Натисніть "Далі", щоб імпортувати ще одну базу, або "Завершити", щоб запустити Miranda NG
+[You will probably never need to use this wizard again, so you can save memory by not loading it every time you start Miranda. This will mean that the import menu item will no longer be available.]
+Імовірно, вам більше не знадобиться цей майстер. Ви можете звільнити пам'ять, не завантажуючи його при запуску Miranda NG.
+[Do not load the import plugin at startup again]
+Не завантажувати майстер при наступному запуску
+[Import completed]
+Імпорт завершено
+[If at a future date you wish to use the wizard again, you can make it load again by going to the Plugins section of the Options dialog box.]
+Якщо вам у майбутньому знадобиться цей майстер, увімкніть плагін import.dll у налаштуваннях (розділ "Плагіни").
+[Choose import type:]
+
+[Choose directory]
+
+[Choose file]
+
+[&Filename:]
+&Ім'я файлу:
+[Now importing...]
+Імпортується...
+[Import Information Wizard]
+Майстер імпорту
+[&Next >]
+&Далі >
+[Cancel]
+Скасувати
+[< &Back]
+< &Назад
+[Import all settings, contacts and all messages]
+Імпортувати всі налаштування, контакти і повідомлення
+[Import all contacts and all messages]
+Імпортувати контакти і повідомлення
+[Only import contacts]
+Імпортувати контакти
+[Custom import]
+Імпорт вручну
+[Makes precise copy of the original profile, including all settings, contacts and history.]
+Створює точну копію оригінального профілю з усіма налаштуваннями, контактами та історією.
+[Imports only contacts and history, and a few settings. Ideal for synchronizing.]
+Імпортує контакти, історію повідомлень і деякі налаштування (рекомендується).
+[Imports contacts only, doesn't import any message history.]
+Імпортує тільки контакти (без історії повідомлень).
+[Custom schema: you can choose what to import.]
+Ви вибираєте, що саме імпортувати.
+[Check duplicates]
+
+[New contacts && groups]
+Нові контакти і групи
+[System history]
+Системна історія
+[Select items to import:]
+Виберіть, що імпортувати:
+[Incoming]
+Вхідні
+[Outgoing]
+Вихідні
+[Only since:]
+Лише з:
+[Messages]
+Повідомлення
+[File Transfers]
+Передачі файлів
+[Other]
+Інше
+[Choose appropriate accounts for import]
+Пошук відповідних облікових записів
+[Choose file type:]
+
+[Enter file name for import:]
+
+[Copy]
+Копіювати
+;file \plugins\Import\src\import.cpp
+[<New account>]
+<Новий обліковий запис>
+[Old account]
+Старий обліковий запис
+[New account]
+Новий обліковий запис
+[Protocol %S is not loaded, skipping account %s creation]
+Протокол %S не завантажений, пропуск створення облікового запису %s
+[Unable to create an account %s of protocol %S]
+Не вдалося створити обліковий запис %s протоколу %S
+[Metacontact cannot be imported due to its ambiguity.]
+Неможливо імпортувати метаконтакт через неоднозначну належність.
+[Added metacontact '%s']
+Додано метаконтакт %s
+[Added metacontact]
+Додано метаконтакт
+[Skipping contact with no protocol]
+Пропуск контактів без протоколу
+[Skipping contact, account %S cannot be mapped.]
+Пропуск контакту, неможливо імпортувати обліковий запис %S
+[Skipping contact, %S not installed.]
+Пропуск контакту, %S не встановлено.
+[Skipping non-IM contact (%S)]
+Пропуск не-IM контакту (%S)
+[Skipping duplicate %S contact %s]
+Пропуск дубліката %S контакт %s
+[Failed to create contact %s (%s)]
+
+[Failed to add %S contact %s]
+Не вдалося додати %S контакт %s
+[Added %S contact %s, '%s']
+Додано %S контакт %s, '%s'
+[Added %S contact %s]
+Додано %S контакт %s
+[Failed to add message]
+Не вдалося додати повідомлення
+[Error retrieving current profile, exiting.]
+Помилка читання поточного профілю, вихід.
+[There's no database driver to open the input file, exiting.]
+Немає драйвера для відкриття вказаного файлу, вихід.
+[Error loading source file, exiting.]
+Помилка завантаження файлу-джерела, вихід.
+[Number of contacts in database: %d]
+Кількість контактів у базі: %d
+[Error mapping accounts, exiting.]
+Не знайдено відповідних облікових записів.
+[Importing groups.]
+Імпорт груп.
+[Group import failed.]
+Помилка імпорту групи
+[Importing contacts.]
+Імпорт контактів.
+[Skipping new contacts import.]
+Пропуск імпорту нових контактів.
+[Importing system history.]
+Імпорт системної історії.
+[Skipping system history import.]
+Пропуск імпорту системної історії.
+[Importing history.]
+Імпорт історії.
+[Skipping history import.]
+Пропуск імпорту історії.
+[Import completed in %d seconds.]
+Імпорт завершено за %d секунд.
+[Added %d contacts and %d groups.]
+Додано %d контактів та %d груп.
+[Added %d contacts, %d groups and %d events.]
+Додано %d контактів, %d груп та %d подій.
+[Skipped %d contacts.]
+Пропущено %d контактів.
+[Skipped %d duplicates and %d filtered events.]
+Пропущено %d дублікатів та %d відфільтрованих подій.
+;file \plugins\Import\src\main.cpp
+[&Import...]
+&Імпорт...
+;file \plugins\Import\src\miranda.cpp
+[Miranda NG database]
+База даних Miranda NG
+[The given file does not exist. Please check that you have entered the name correctly.]
+Даний файл не існує. Перевірте ім'я файлу.
+[Miranda Import]
+Імпорт Miranda NG
+[All Files]
+Усі файли
+[You cannot import your current profile into itself]
+
+[Importing whole directory]
+
+;file \plugins\Import\src\patterns.cpp
+[Invalid file header]
+
+[Cannot parse file header, skipping file]
+
+[Loading file '%s'...]
+
+[Failed to open file <%s> for import: %d]
+
+[Failed to mmap file <%s> for import: %d]
+
+[Failed to map view of file <%s> for import: %d]
+
+;file \plugins\Import\src\ui.cpp
+[Import history for %s]
+
+[Miranda NG database/mContacts]
+База даних Miranda NG/mContacts
+[JSON file]
+
+;file \plugins\Import\src\utils.cpp
+[Skipping duplicate group %s.]
+Пропуск дубліката групи %s
+[Import...]
+Імпорт...
+;file \plugins\Import\src\wizard.cpp
+[Finish]
+Завершити

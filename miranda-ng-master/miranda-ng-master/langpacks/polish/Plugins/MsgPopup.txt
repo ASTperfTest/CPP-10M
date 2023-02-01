@@ -1,0 +1,44 @@
+#muuid {cf25d645-4dab-4b0a-b9f1-de1e86231f9b}
+;============================================================
+;  File: MsgPopup.dll
+;  Plugin: Message popup
+;  Version: 0.1.2.2
+;  Authors: StDenis
+;============================================================
+[Plugin replaces message boxes (those having only OK button) with popups.]
+Zastępuje "okna komunikatów" (tych tylko z przyciskiem OK), powiadomieniami.
+;file \plugins\MsgPopup\res\MsgPopup.rc
+[ASTERISK style]
+Styl gwiazdki
+[Background color]
+Kolor tła
+[Text color]
+Kolor tekstu
+[ERROR style]
+Styl błędu
+[EXCLAMATION style]
+Styl wykrzyknienia
+[QUESTION style]
+Styl pytania
+[Preview]
+Podgląd
+[Timeout]
+Wyświetl
+[Special values of the "Timeout":\n -1 - infinity, 0 - use default timeout value]
+Specjalne wartości czasu oczekiwania:\n0 - domyślnie, -1 - nie chowaj
+[Emit a sound]
+Włącz dźwięki
+;file \plugins\MsgPopup\src\main.cpp
+[MessagePopup]
+MessagePopup
+[Popups]
+Powiadomienia
+;file \plugins\MsgPopup\src\options.cpp
+[Message with question]
+Wiadomość z pytaniem
+[Message with exclamation]
+Wiadomość z wykrzyknieniem
+[Message with error]
+Wiadomość z błędem
+[Message with asterisk]
+Wiadomość z gwiazdką

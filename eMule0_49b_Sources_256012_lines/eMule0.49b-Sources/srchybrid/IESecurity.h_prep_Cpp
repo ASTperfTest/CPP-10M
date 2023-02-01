@@ -1,0 +1,35 @@
+﻿
+
+class CMuleBrowserControlSite :        CBrowserControlSite
+{
+public:
+ CMuleBrowserControlSite(COleControlContainer* pCtrlCont, CDHtmlDialog *pHandler);
+
+protected:
+ URLZONE m_eUrlZone;
+ void InitInternetSecurityZone();
+
+ DECLARE_INTERFACE_MAP();
+
+
+  STDMETHOD(SetSecuritySite)(IInternetSecurityMgrSite*);
+  STDMETHOD(GetSecuritySite)(IInternetSecurityMgrSite**);
+  STDMETHOD(MapUrlToZone)(const long*,unsigned long*, unsigned long);
+  STDMETHOD(GetSecurityId)(const long*,unsigned char*, unsigned long*, unsigned long);
+  STDMETHOD(ProcessUrlAction)(const long* pwszUrl, unsigned long dwAction, unsigned char __RPC_FAR *pPolicy, unsigned long cbPolicy, unsigned char __RPC_FAR *pContext, unsigned long cbContext, unsigned long dwFlags, unsigned long dwReserved = 0);
+  STDMETHOD(QueryCustomPolicy)(const long*, GUID * , unsigned char**, unsigned long*, unsigned char*, unsigned long, unsigned long);
+  STDMETHOD(SetZoneMapping)(unsigned long, const long*, unsigned long);
+  STDMETHOD(GetZoneMappings)(unsigned long, IEnumString**, unsigned long);
+
+
+
+  STDMETHOD(QueryService)(GUID * , IID * , void**);
+
+};
+
+
+
+
+
+
+ 

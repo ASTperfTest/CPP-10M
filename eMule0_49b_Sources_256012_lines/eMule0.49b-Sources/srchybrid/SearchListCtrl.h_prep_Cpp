@@ -1,0 +1,126 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("MuleListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("TitleMenu.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlItemWalk.h");}
+
+
+
+class CSearchList;
+class CSearchFile;
+class CToolTipCtrlX;
+
+enum EFileSizeFormat {
+ fsizeDefault,
+ fsizeKByte,
+ fsizeMByte
+};
+
+ class SearchCtrlItem_Struct{
+   CSearchFile*  value;
+   CSearchFile*     owner;
+   uchar   filehash[16];
+   uint16   childcount;
+};
+
+class CSortSelectionState{
+public:
+ uint32 m_nSortItem;
+ bool m_bSortAscending;
+ uint32 m_nScrollPosition;
+ CArray           m_aSelectedItems;
+};
+
+class CSearchListCtrl :        CMuleListCtrl,        CListCtrlItemWalk
+{
+ //DECLARE_DYNAMIC(CSearchListCtrl)
+
+public:
+ CSearchListCtrl();
+ virtual ~CSearchListCtrl();
+
+ void Init(CSearchList* in_searchlist);
+ void CreateMenues();
+ void UpdateSources(const CSearchFile* toupdate);
+ void AddResult(const CSearchFile* toshow);
+ void RemoveResult(const CSearchFile* toremove);
+ void Localize();
+ void ShowResults(uint32 nResultsID);
+ void ClearResultViewState(uint32 nResultsID);
+ void NoTabs() { m_nResultsID = 0; }
+ void UpdateSearch(CSearchFile* toupdate);
+ EFileSizeFormat GetFileSizeFormat() const { return m_eFileSizeFormat; }
+ void SetFileSizeFormat(EFileSizeFormat eFormat);
+
+protected:
+ uint32  m_nResultsID;
+ CTitleMenu m_SearchFileMenu;
+ CSearchList* searchlist;
+ CToolTipCtrlX* m_tooltip;
+ CImageList m_ImageList;
+ unsigned long m_crSearchResultDownloading;
+ unsigned long m_crSearchResultDownloadStopped;
+ unsigned long m_crSearchResultKnown;
+ unsigned long m_crSearchResultShareing;
+ unsigned long m_crSearchResultCancelled;
+ unsigned long m_crShades[13             ];
+ EFileSizeFormat m_eFileSizeFormat;
+
+ CMap                                                       m_mapSortSelectionStates;
+
+ unsigned long GetSearchItemColor(/*const*/ CSearchFile* src);
+ CString GetCompleteSourcesDisplayString(const CSearchFile* pFile, unsigned int uSources, bool* pbComplete = NULL) const;
+ void ExpandCollapseItem(int iItem, int iAction);
+ void HideSources(CSearchFile* toCollapse);
+ void SetStyle();
+ void SetHighlightColors();
+ void SetAllIcons();
+ CString FormatFileSize(unsigned long ullFileSize) const;
+ void GetItemDisplayText(const CSearchFile* src, int iSubItem, char * pszText, int cchTextMax) const;
+ bool IsFilteredItem(const CSearchFile* pSearchFile) const;
+
+ void DrawSourceParent(CDC *dc, int nColumn, LPRECT lpRect, /*const*/ CSearchFile* src);
+ void DrawSourceChild(CDC *dc, int nColumn, LPRECT lpRect, /*const*/ CSearchFile* src);
+
+ static int Compare(const CSearchFile* item1, const CSearchFile* item2, long * lParamSort, bool bSortMod);
+ static int CompareChild(const CSearchFile* file1, const CSearchFile* file2, long * lParamSort);
+ static int          SortProc(long * lParam1, long * lParam2, long * lParamSort);
+
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+
+
+         void OnSysColorChange();
+         void OnColumnClick( NMHDR* pNMHDR, long * * pResult);
+         void OnContextMenu(CWnd* /*pWnd*/, CPoint /*point*/);
+         void OnLvnDeleteAllItems(NMHDR *pNMHDR, long *  *pResult);
+         void OnLvnGetInfoTip(NMHDR *pNMHDR, long *  *pResult);
+         void OnClick(NMHDR *pNMHDR, long *  *pResult);
+         void OnDblClick(NMHDR *pNMHDR, long *  *pResult);
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         void OnLvnKeyDown(NMHDR *pNMHDR, long *  *pResult);
+         void OnLvnGetDispInfo(NMHDR *pNMHDR, long *  *pResult);
+         void OnDestroy();
+};
+
+
+
+
+
+
+ 

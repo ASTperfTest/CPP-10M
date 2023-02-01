@@ -1,0 +1,116 @@
+#muuid {bc09a71b-b86e-4d33-b18d-82d30451dd3c}
+;============================================================
+;  File: Twitter.dll
+;  Plugin: Twitter protocol
+;  Version: 1.3.1.7
+;  Authors: dentist, omniwolf, Thief
+;============================================================
+[Twitter protocol support for Miranda NG.]
+Підтримка протоколу Twitter у Miranda NG.
+;file \protocols\Twitter\res\twitter.rc
+[Create a new Twitter account]
+Створити новий обліковий запис Twitter
+[Default group:]
+Група:
+[Username:]
+Користувач:
+[<Sign in to link your Twitter account>]
+<Увійдіть, щоб налаштувати обліковий запис Twitter>
+[Send Tweet]
+Надіслати твіт
+[Send]
+Надіслати
+[Cancel]
+Скасувати
+[Miscellaneous options]
+Дод. налаштування
+[Use group chat for Twitter feed]
+Повідомлення у вигляді чату
+[Polling rate:]
+Опитувати
+[Once every]
+кожні
+[sec]
+с
+[These changes will take effect the next time you connect to the Twitter network.]
+Зміни наберуть чинності при наступному вході в мережу Twitter.
+[Treat tweets as messages]
+Твіти як повідомлення
+[Enable popup notifications for tweets]
+Сповіщати про твіти спливаючими вікнам
+[Colors]
+Кольори
+[Use Windows colors]
+Кольори Windows
+[Use default colors]
+Стандартні кольори
+[Use custom colors]
+Вказати кольори
+[Back]
+Фон
+[Text]
+Текст
+[Timeout]
+Перериви
+[Default]
+Стандартний
+[Custom]
+Налаштувати
+[Permanent]
+Постійно
+[Preview]
+Тест
+[But not during sign-on]
+Але не під час входу
+[Enter Twitter PIN]
+Введіть PIN-код з Twitter-у
+[Enter the PIN provided by Twitter to complete your sign in. This is a one time process until you recreate your Miranda Twitter account.]
+Введіть PIN-код, наданий Twitter, щоб завершити процес входу. Це потрібно зробити один раз, поки ви не створите свій обліковий запис Twitter у Miranda заново.
+;file \protocols\Twitter\src\chat.cpp
+[Normal]
+Звичайний
+;file \protocols\Twitter\src\connection.cpp
+[OAuth variables are out of sequence, they have been reset. Please reconnect and reauthorize Miranda to Twitter.com (do the PIN stuff again)]
+Змінні OAuth втратили послідовність і були обнулені. Будь ласка, з'єднайтеся знову і авторизуйте Miranda на Twitter.com (ще раз з PIN-кодом)
+[Failed to get Twitter Access Tokens, please go offline and try again. If this keeps happening, check your internet connection.]
+Не вдалося отримати токени доступу Twitter, відключіться і спробуйте знову. Якщо наступна спроба буде невдалою, перевірте з'єднання з Інтернетом.
+[You're missing the Nick key in the database. This isn't really a big deal, but you'll notice some minor quirks (self contact in list, no group chat outgoing message highlighting, etc). To fix it either add it manually or recreate your Miranda Twitter account]
+У базі відсутнє налаштування "Nick". Це може спричинити незначні помилки, як-от появу самого себе у списку, відсутність підсвітки вихідних повідомлень у групових чатах тощо. Щоб їх уникнути, додайте це налаштування вручну або створіть свій обліковий запис Twitter у Miranda заново.
+;file \protocols\Twitter\src\proto.cpp
+[%s (server)]
+%s (сервер)
+[Unable to initialize Netlib for %s.]
+Не вдається встановити з'єднання Netlib для %s.
+[%s (avatar)]
+%s (аватар)
+[Twitter (avatars)]
+Twitter (аватари)
+[User name]
+Ім'я користувача
+[Send Tweet...]
+Надіслати твіт...
+[Network]
+Мережа
+[Basic]
+Основні
+[Popups]
+Спливаючі вікна
+[%s Protocol]
+Протокол %s
+[Don't be crazy! Everyone knows the max tweet size is 140, and you're trying to fit %d chars in there?]
+Максимальна довжина твіта становить 140 символів. Навіщо ви намагаєтесь умістити сюди %d символів?
+;file \protocols\Twitter\src\theme.cpp
+[Twitter Icon]
+Значок Twitter
+[Tweet]
+Написати твіт
+[Reply to Tweet]
+Відповісти на твіт
+[Visit Homepage]
+Сайт
+[First tweet from new contact]
+Перший твіт від нового контакту
+[New tweet]
+Новий твіт
+[Reply...]
+Відповідь...

@@ -1,0 +1,426 @@
+#muuid {3750a5a3-bf0d-490e-b65d-41ac4d29aeb3}
+;============================================================
+;  File: AIM.dll
+;  Plugin: AIM protocol
+;  Version: 0.11.0.1
+;  Authors: Boris Krasnovskiy, Aaron Myles Landwehr
+;============================================================
+[AOL Instant Messenger (AIM) protocol support for Miranda NG.]
+Zapewnia obsługę protokołu AOL Instant Messenger (AIM) w Mirandzie NG.
+;file \protocols\AimOscar\res\aim.rc
+[AIM user details]
+Dane użytkownika AIM
+[Screen name:]
+Nazwa:
+[Display name:]
+Nazwa wyświetlana:
+[Password:]
+Hasło:
+[AIM options]
+Opcje AIM
+[Message delivery confirmation]
+Potwierdzenie dostarczenia wiadomości
+[Do not autoreply when away]
+Nie odpowiadaj automatycznie gdy zaraz wracam
+[Convert incoming messages to BBCode]
+Konwertuj przychodzące wiadomości do BBCode
+[Convert outgoing messages to HTML]
+Konwertuj wychodzące wiadomości do HTML
+[Disable avatars]
+Wyłącz Awatary
+[Disable account type icons]
+Wyłącz ikony rodzaju konta
+[Disable extended status icons]
+Wyłącz rozszerzone ikony statusu
+[Notify about new mail]
+Powiadom o nowych e-mailach
+[Manage server groups]
+Zarządzaj grupami serwera
+[Advanced options]
+Zaawansowane opcje
+[Instant idle on login]
+Chwilowa bezczynność przy logowaniu
+[Force proxy file transfers]
+Wymuszanie transferu plików przez proxy
+[Masquerade as a Sidekick/Hiptop user]
+Wystąp jako użytkownik Sidekick/Hiptop
+[Connection]
+Połączenie
+[Login server:]
+Serwer:
+[Port:]
+Port:
+[Reset]
+Domyślne
+[Disable SSL]
+Wyłącz SSL
+[Force single client]
+Wymuś pojedynczego klienta.
+[Use "clientlogin" (recommended)]
+Uzyj "clientlogin" (zalecane)
+[* Some changes will take effect the next time you connect to the AIM network]
+* Niektóre zmiany zostaną wprowadzone gdy ponownie połączysz się z siecią AIM
+[Save profile]
+Zapisz profil
+[Create a new AIM account]
+Utwórz nowe konto AIM
+[AIM instant idler]
+AIM chwilowy leń
+[Number of hours:]
+Liczba godzin:
+[Number of minutes:]
+Liczba minut:
+[Set idle]
+Wybierz bezczynność
+[Unset idle]
+Odznacz bezczynność
+[Users who can contact me:]
+Zezwalaj na kontakt ze mną użytkownikom:
+[Allow all users]
+Wszystkim
+[Allow only users on contact list]
+Tylko z listy kontaktów
+[Allow only users below]
+Tylko z listy poniżej
+[Block all users]
+Blokuj wszystkich
+[Block only users below]
+Blokuj tylko z listy poniżej
+[Add]
+Dodaj
+[Remove]
+Usuń
+[Idle]
+Bezczynność
+[Allow contacts to be notified of:]
+Zezwalaj na powiadomienia:
+[Join chat room]
+Dołącz do czatu
+[Chat room]
+Pokój
+[&Join]
+&Dołącz
+[&Cancel]
+&Anuluj
+[This allows access to user defined chat rooms. To access predefined chat rooms use web links]
+Pozwala na dostęp do zdefiniowanych przez użytkownika czatów.
+[Change password]
+Zmień hasło
+[Original]
+Oryginalne
+[New]
+Nowe
+[Repeat]
+Powtórz
+[*Passwords don't match.]
+*Hasła nie są identyczne.
+[Screen name]
+Wyświetlana nazwa
+[E-mail]
+E-mail
+[Confirm account]
+Potwierdź konto
+[*Applied upon reconnect]
+*Po ponownym połączeniu
+[Save changes]
+Zapisz zmiany
+[Invite buddy to chat room]
+Zaproś znajomego do czatu
+[&Invite]
+&Zaproś
+[Invitation reason]
+Powód zaproszenia
+[Chat room invitation request]
+Prośba o dołączenie do pokoju
+[&Deny]
+&Odrzuć
+[Message]
+Wiadomość
+[Room]
+Pokój
+;file \protocols\AimOscar\src\chat.cpp
+[Me]
+Ja
+[Others]
+Inne
+[&Invite user...]
+&Zaproś użytkownika...
+[&Leave chat session]
+&Opuść pokój
+[User &details]
+&Dane kontaktu
+[User &history]
+&Historia użytkownika
+;file \protocols\AimOscar\src\error.cpp
+[Invalid screen name or password.]
+Niepoprawna nazwa okna lub hasło.
+[Mismatched screen name or password.]
+Niezgodność nazwy ekranu lub hasła.
+[You are connecting too frequently. Try waiting 10 minutes to reconnect.]
+Zbyt dużo prób połączenia. Spróbuj za 10 minut.
+[Unknown error occurred when attempting to connect.]
+Wystąpił nieznany błąd przy próbie połączenia.
+[Invalid SNAC header.]
+Niepoprawny nagłówek SNAC.
+[Server rate limit exceeded.]
+Przekroczono limit serwera.
+[Client rate limit exceeded]
+Przekroczono limit klienta.
+[Recipient is not logged in.]
+Odbiorca nie jest zalogowany.
+[Requested service is unavailable.]
+Żądana usługa jest niedostępna.
+[Requested service is not defined.]
+Żądana usługa nie jest zdefiniowana.
+[You sent obsolete SNAC.]
+Wysłałeś przestarzały SNAC.
+[Not supported by server.]
+Nie obsługiwane przez serwer.
+[Not supported by the client.]
+Nie obsługiwane przez klienta.
+[Refused by client.]
+Odrzucone przez klienta.
+[Reply too big.]
+Odpowiedź zbyt duża.
+[Response lost.]
+Odpowiedź zagubiona.
+[Request denied.]
+Żądanie odrzucone.
+[Incorrect SNAC format.]
+Błędny format SNAC.
+[Insufficient rights.]
+Zbyt niskie uprawnienia.
+[Recipient blocked.]
+Odbiorca zablokowany.
+[Sender too evil.]
+Nadawca jest złym człowiekiem.
+[Receiver too evil.]
+Odbiorca jest złym człowiekiem.
+[User temporarily unavailable.]
+Użytkownik tymczasowo niedostępny.
+[No match.]
+Nie zaleziono.
+[List overflow.]
+Przepełnienie listy.
+[Request ambiguous.]
+Niejednoznaczne żądanie.
+[Server queue full.]
+Kolejka serwera jest pełna.
+[Not while on AOL.]
+Niedostępne, kiedy jesteś zalogowany na AOL.
+[Check your screen name.]
+Sprawdź nazwę okna.
+[Check your password.]
+Sprawdź hasło.
+[Check your email address.]
+Sprawdź adres e-mail.
+[Service temporarily unavailable.]
+Usługa tymczasowo niedostępna.
+[Field change temporarily unavailable.]
+Zmiana tymczasowo niemożliwa.
+[Invalid screen name.]
+Niepoprawna nazwa okna.
+[Invalid password.]
+Niepoprawne hasło.
+[Invalid email.]
+Niepoprawny e-mail.
+[Invalid registration preference.]
+Niepoprawne preferencje rejestracji.
+[Invalid old password.]
+Niepoprawne stare hasło.
+[Invalid screen name Length.]
+Niepoprawna długość nazwy okna.
+[Invalid password length.]
+Niepoprawna długość hasła.
+[Invalid email length.]
+Niepoprawna długość e-maila.
+[Invalid old password length.]
+Niepoprawna długość starego hasła.
+[Need old password.]
+Potrzebne stare hasło.
+[Read only field.]
+Pole "tylko do odczytu".
+[Write only field.]
+Pole "tylko do zapisu".
+[Unsupported type.]
+Nieobsługiwany typ.
+[An error has occurred.]
+Wystąpił błąd.
+[Invalid account.]
+Niepoprawne konto.
+[Deleted account.]
+Konto usunięte.
+[Expired account.]
+Konto wygasło.
+[No database access.]
+Brak dostępu do profilu.
+[Invalid database fields.]
+Niepoprawne pola profilu.
+[Bad database status.]
+Błędny status profilu.
+[Migration cancel.]
+Anuluj migrację.
+[Internal error.]
+Wewnętrzny błąd.
+[There is already a pending request for this screen name.]
+Jest już prośba o zatwierdzenie dla tej nazwy ekranu.
+[Not DT status.]
+To nie jest status DT.
+[Outstanding confirmation.]
+Wybitne potwierdzenie.
+[No email address.]
+Brak adresu e-mail.
+[Over limit.]
+Ponad limit.
+[Email host fail.]
+Błąd hosta e-mail.
+[DNS fail.]
+Błąd DNS.
+;file \protocols\AimOscar\src\file.cpp
+[Failed to open file: %s : %s]
+Nie udało się otworzyć pliku: %s : %s
+;file \protocols\AimOscar\src\links.cpp
+[AIM link protocol]
+Powiązanie protokołu AIM
+;file \protocols\AimOscar\src\popup.cpp
+[%s protocol]
+Protokół %s
+[Open mail account?]
+Otworzyć pocztę?
+;file \protocols\AimOscar\src\proto.cpp
+[%s server connection]
+Połączenie %s
+[%s client-to-client connections]
+Połączenie Klient-do-Klienta %s
+;file \protocols\AimOscar\src\server.cpp
+[[Auto-response]:]
+\[Autoodpowiedź]:
+[Contact tried to open an audio/video conference (not currently supported)]
+Kontakt próbował utworzyć konferencję audio/wideo (obecnie nie obsługiwane)
+[No information has been provided by the server.]
+Żadna informacja została przekazana przez serwer.
+[Item you want to delete not found in list.]
+Elementu wybranego do skasowania nie ma na liście.
+[Failed to add buddy to list: Item already exist.]
+Dodanie znajomego nie powiodło się: Kontakt już istnieje.
+[Error adding buddy (invalid ID or already in list?)]
+Błąd przy dodawaniu znajomego (błędne ID lub już na liście?)
+[Cannot add buddy. Limit for this type of item exceeded.]
+Nie można dodać znajomego. Przekroczono limit.
+[Error? Attempting to add ICQ contact to an AIM list.]
+Błąd? Próba dodania kontaktu ICQ do listy AIM.
+[Cannot add this buddy because it requires authorization.]
+Nie można dodać znajomego, ponieważ ta czynność wymaga autoryzacji.
+[Unknown error when adding buddy to list. Error code %#x]
+Wystąpił nieznany błąd podczas dodawania znajomego. Kod błędu: %#x
+[Item you want to modify not found in list.]
+Elementu wybranego do zmodyfikowania nie ma na liście.
+[Unknown error when attempting to modify a group. Error code %#x]
+Wystąpił nieznany błąd podczas próby zmodyfikowania grupy. Kod błędu: %#x
+[You've got mail! Checked at]
+Masz maila! Sprawdzono
+[Error uploading avatar. (Too small)]
+Błąd przy wgrywaniu awatara. (Zbyt mały).
+[Error uploading avatar. (Too big)]
+Błąd przy wgrywaniu awatara. (Zbyt duży)
+[Error uploading avatar. (Wrong type)]
+Błąd przy wgrywaniu awatara. (Zły rodzaj).
+[Error uploading avatar. (Is banned)]
+Błąd przy wgrywaniu awatara. (Zabronione)
+[Error uploading avatar. (Unknown error)]
+Błąd przy wgrywaniu awatara. (Nieznany błąd).
+[A confirmation message has been sent to the new email address. Please follow its instructions.]
+Wiadomość została wysłana na nową skrzynkę pocztową. Wykonaj polecenia, które zostały w niej zawarte.
+[A confirmation message has been sent to your email address. Please follow its instructions.]
+Wiadomość potwierdzająca została wysłana na adres e-mail. Postępuj zgodnie z zawartymi instrukcjami.
+[Unable to confirm at this time. Please try again later.]
+W chwili obecnej nie można uzyskać potwierdzenia. Spróbuj później.
+[Your account has already been confirmed.]
+Twoje konto jest już zatwierdzone.
+[Can't start the confirmation procedure.]
+Nie można rozpocząć procedury potwierdzającej.
+;file \protocols\AimOscar\src\theme.cpp
+[Block]
+Blokuj
+[Profile]
+Profil
+[AOL mail]
+AOL Mail
+[AIM icon]
+AIM
+[Hiptop]
+Hiptop
+[AOL bot]
+AOL Bot
+[Admin]
+Admin
+[Confirmed]
+Zaakceptowany
+[Not confirmed]
+Nie zaakceptowany
+[Blocked list]
+Lista zablokowanych
+[Foreground color]
+Kolor pierwszoplanowy
+[Background color]
+Kolor tła
+[Bold]
+Pogrubienie
+[Not bold]
+Nie pogrubiony
+[Italic]
+Kursywa
+[Not italic]
+Nie kursywa
+[Underline]
+Podkreślenie
+[Not underline]
+Nie podkreślony
+[Subscript]
+Indeks dolny
+[Not subscript]
+Nie indeks dolny
+[Superscript]
+Indeks górny
+[Not superscript]
+Nie indeks górny
+[Normal script]
+Poziom wyrównany
+[Not normal script]
+Poziom niewyrównany
+[Profile editor]
+Edycja profilu
+[AIM account type]
+Typ konta AIM
+[AIM extended status]
+Rozszerzony status AIM
+[&Block]
+&Zablokuj
+[&Unblock]
+&Odblokuj
+[Manage account]
+Zarządzaj kontem
+[Instant idle]
+Chwilowa bezczynność
+[Read &HTML away message]
+Czytaj opis &HTML
+[Read profile]
+Wczytaj profil
+[Add to server list]
+Dodaj do listy na serwerze
+;file \protocols\AimOscar\src\ui.cpp
+[Network]
+Protokoły
+[Basic]
+Podstawowe
+[Privacy]
+Prywatność
+[Join me in this buddy chat!]
+Dołącz do mnie na tym czacie!
+;file \protocols\AimOscar\src\utility.cpp
+[Please, enter a user name in the options dialog.]
+Wprowadź nazwę użytkownika w opcjach.
+[Please, enter a password in the options dialog.]
+Wprowadź hasło w opcjach.
+[Failed to open file: %s %s]
+Nie udało się otworzyć pliku: %s %s

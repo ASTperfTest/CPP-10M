@@ -1,0 +1,55 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("TreeOptionsCtrlEx.h");}
+
+
+
+
+class CPPgDebug :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgDebug)
+
+public:
+ CPPgDebug();
+ virtual ~CPPgDebug();
+
+// Dialog Data
+ enum { IDD = IDD_PPG_DEBUG };
+
+protected:
+ HTREEITEM m_htiServer;
+ HTREEITEM m_htiClient;
+
+ // detail level items
+ HTREEITEM m_cb[7               ];
+ HTREEITEM m_lv[7               ];
+ int  m_checks[7               ];
+ int m_levels[7               ];
+
+ // integer items
+ HTREEITEM m_htiInteger[1                ];
+ int m_iValInteger[1                ];
+
+ CTreeOptionsCtrlEx m_ctrlTreeOptions;
+ bool m_bInitializedTreeOpts;
+
+ void ClearAllMembers();
+
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnKillActive();
+ virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnDestroy();
+         long *  OnTreeOptsCtrlNotify(int *  wParam, long * lParam);
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

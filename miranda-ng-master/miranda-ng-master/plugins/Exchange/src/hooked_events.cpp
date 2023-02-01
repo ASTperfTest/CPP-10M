@@ -1,0 +1,157 @@
+/*
+Exchange notifier plugin for Miranda IM
+
+Copyright © 2006 Cristian Libotean, Attila Vajda
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+
+#include "stdafx.h"
+#include "dlg_handlers.h"
+#include "hooked_events.h"
+
+UINT_PTR hCheckTimer = NULL;
+UINT_PTR hReconnectTimer = NULL;
+UINT_PTR hFirstCheckTimer = NULL;
+
+int HookEvents()
+{
+	HookEvent(ME_SYSTEM_MODULESLOADED, OnModulesLoaded);
+	HookEvent(ME_OPT_INITIALISE, OnOptionsInitialise);
+	HookEvent(ME_SYSTEM_PRESHUTDOWN, OnSystemPreShutdown);
+	return 0;
+}
+
+int UnhookEvents()
+{
+	KillTimers();
+	return 0;
+}
+
+int OnModulesLoaded(WPARAM, LPARAM)
+{
+	UpdateTimers();
+
+	CMenuItem mi(&g_plugin);
+	SET_UID(mi, 0xcbfbfd3d, 0x5002, 0x4c64, 0x92, 0xb, 0x9c, 0x12, 0x4b, 0x6, 0x51, 0x2a);
+	mi.hIcolibItem = hiMailIcon;
+	mi.position = 10000000;
+	mi.pszService = MS_EXCHANGE_CHECKEMAIL;
+	mi.flags = CMIF_UNICODE;
+	mi.name.w = LPGENW("Check exchange mailbox");
+	Menu_AddMainMenuItem(&mi);
+	
+	hEmailsDlg = nullptr;
+	FirstTimeCheck();	
+	return 0;
+}
+
+//add the exchange options dialog to miranda
+int OnOptionsInitialise(WPARAM wParam, LPARAM)
+{
+	OPTIONSDIALOGPAGE odp = {};
+	odp.position = 100000000;
+	odp.pszTemplate = MAKEINTRESOURCEA(IDD_OPT_EXCHANGE);
+	odp.szTitle.w = LPGENW("Exchange notify");
+	odp.szGroup.w = LPGENW("Plugins");
+	odp.flags = ODPF_BOLDGROUPS | ODPF_UNICODE;
+	odp.pfnDlgProc = DlgProcOptions;
+	g_plugin.addOptions(wParam, &odp);
+	return 0;
+}
+
+int OnSystemPreShutdown(WPARAM, LPARAM)
+{
+	if (hEmailsDlg)
+	{
+		SendMessage(hEmailsDlg, WM_CLOSE, 0, 0); //close the window if it's opened
+	}
+	
+	exchangeServer.Disconnect();
+	
+	return 0;
+}
+
+void FirstTimeCheck()
+{
+	hFirstCheckTimer = SetTimer(nullptr, 0, 5 * 1000, OnFirstCheckTimer);
+}
+
+int UpdateTimers()
+{
+	KillTimers();
+	int interval;
+	interval = g_plugin.getDword("Interval", DEFAULT_INTERVAL);
+	interval *= 1000; //go from miliseconds to seconds
+	hCheckTimer = SetTimer(nullptr, 0, interval, (TIMERPROC) OnCheckTimer);
+	
+	int bReconnect = g_plugin.getByte("Reconnect", 0);
+	if (bReconnect) //user wants to forcefully reconnect every x minutes
+		{
+			interval = g_plugin.getDword("ReconnectInterval", DEFAULT_RECONNECT_INTERVAL);
+			interval *= 1000 * 60; //go from miliseconds to seconds to minutes
+			hReconnectTimer = SetTimer(nullptr, 0, interval, (TIMERPROC) OnReconnectTimer);
+		}
+	
+	return 0;
+}
+
+int KillTimers()
+{
+	if (hCheckTimer)
+		{
+			KillTimer(nullptr, hCheckTimer);
+			hCheckTimer = NULL;
+		}
+	if (hReconnectTimer)
+		{
+			KillTimer(nullptr, hReconnectTimer);
+			hReconnectTimer = NULL;
+		}
+	return 0;
+}
+
+VOID CALLBACK OnCheckTimer(HWND, UINT, UINT_PTR, DWORD)
+{
+	/*if (exchangeServer.IsConnected())
+		{
+			exchangeServer.Check();
+		}
+		else{
+			exchangeServer.Connect();
+		}*/
+	int bCheck = g_plugin.getByte("Check", 1);
+	
+	if (bCheck) //only check if we were told to
+		{
+			ThreadCheckEmail(FALSE);
+		}
+}
+
+VOID CALLBACK OnReconnectTimer(HWND, UINT, UINT_PTR, DWORD)
+{
+
+	_popupUtil(TranslateT("Forcefully reconnecting to Exchange server ..."));
+	
+	exchangeServer.Reconnect(); //reconnect
+}
+
+VOID CALLBACK OnFirstCheckTimer(HWND hWnd, UINT msg, UINT_PTR idEvent, DWORD dwTime)
+{
+	KillTimer(nullptr, hFirstCheckTimer);
+	OnCheckTimer(hWnd, msg, idEvent, dwTime);
+	
+	hFirstCheckTimer = NULL;
+}

@@ -1,0 +1,27 @@
+﻿
+
+class CEnBitmap :        CBitmap
+{
+public:
+ CEnBitmap();
+ virtual ~CEnBitmap();
+
+ int  LoadImage(const char* pszImagePath, unsigned long crBack = 0);
+ int  LoadImage(unsigned int uIDRes, const char* pszResourceType, void *  hInst = NULL, unsigned long crBack = 0);
+ int  LoadImage(const char* lpszResourceName, const char* pszResourceType, void *  hInst = NULL, unsigned long crBack = 0);
+
+ // helpers
+ static int  GetResource(const char* lpName, const char* lpType, void *  hInst, void* pResource, int& nBufSize);
+ static IPicture* LoadFromBuffer(unsigned char* pBuff, int nSize);
+
+protected:
+ int  Attach(IPicture* pPicture, unsigned long crBack);
+
+};
+
+
+
+
+
+
+ 

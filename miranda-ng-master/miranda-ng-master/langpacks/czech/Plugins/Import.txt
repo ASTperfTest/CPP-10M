@@ -1,0 +1,205 @@
+#muuid {2d77a746-00a6-4343-bfc5-f808cdd772ea}
+;============================================================
+;  File: Import.dll
+;  Plugin: Import contacts and messages
+;  Version: 0.95.11.1
+;  Authors: Miranda team
+;============================================================
+[Imports contacts and messages from another Miranda profile or from an external program.]
+Importuje kontakty a zprávy z jiného profilu Mirandy nebo externího programu.
+;file \plugins\Import\res\resource.rc
+[This wizard will help you import contacts and message history from another Miranda profile or from an external program.]
+Tento průvodce vám pomůže importovat kontakty a historii zpráv z jiného profilu Mirandy nebo externího programu.
+[Click "Next" to choose the information you wish to import, or click "Cancel" to exit the wizard and continue using Miranda.]
+Po kliknutí na tlačítko "Další" přejdete k výběru z možností importu dat. Tlačítkem "Zrušit" průvodce ukončíte.
+[It is recommended that you create a backup of your current Miranda profile before importing.]
+Předtím než budete pokračovat, doporučujeme vám zazálohovat stávající profil.
+[If you wish to import more information, click "Next" to return to the start of the wizard, otherwise click "Finish" to start using Miranda.]
+Chcete-li importovat další data, klikněte na tlačítko "Další". Pokud ne, klikněte na tlačítko "Dokončit".
+[You will probably never need to use this wizard again, so you can save memory by not loading it every time you start Miranda. This will mean that the import menu item will no longer be available.]
+Je pravděpodobné, že Průvodce importem dat již nebudete potřebovat, a proto doporučujeme příslušný doplněk (Import) deaktivovat.
+[Do not load the import plugin at startup again]
+Nadále již doplněk Import nespouštět
+[Import completed]
+Import dat dokončen
+[If at a future date you wish to use the wizard again, you can make it load again by going to the Plugins section of the Options dialog box.]
+Pokud byste v budoucnu přece jen chtěli Průvodce importem dat použít, stačí aktivovat příslušný doplněk (Import) v Nastavení, sekci Doplňky.
+[Choose import type:]
+
+[Choose directory]
+
+[Choose file]
+
+[&Filename:]
+&Soubor:
+[Now importing...]
+Import dat...
+[Import Information Wizard]
+Průvodce importem dat
+[&Next >]
+&Další >
+[Cancel]
+Zrušit
+[< &Back]
+< &Zpět
+[Import all settings, contacts and all messages]
+Importovat všechno nastavení, kontakty a zprávy
+[Import all contacts and all messages]
+Importovat všechny kontakty a zprávy
+[Only import contacts]
+Importovat pouze kontakty
+[Custom import]
+Vlastní import
+[Makes precise copy of the original profile, including all settings, contacts and history.]
+Vytvoří přesnou kopii originálního profilu včetně všech nastavení, kontaktů a historie.
+[Imports only contacts and history, and a few settings. Ideal for synchronizing.]
+Importuje pouze kontakty, historii a pár nastavení. Ideální pro synchronizaci.
+[Imports contacts only, doesn't import any message history.]
+Importuje pouze kontakty, neimportuje žádnou historii zpráv.
+[Custom schema: you can choose what to import.]
+Vlastní schéma: můžete zvolit, co si přejete importovat.
+[Check duplicates]
+
+[New contacts && groups]
+Nové kontakty a skupiny
+[System history]
+Historie systému
+[Select items to import:]
+Zvolte položky pro import:
+[Incoming]
+Příchozí
+[Outgoing]
+Odchozí
+[Only since:]
+Pouze od:
+[Messages]
+Zprávy
+[File Transfers]
+Přenos souborů
+[Other]
+Ostatní
+[Choose appropriate accounts for import]
+Zvolte požadované účty pro import
+[Choose file type:]
+
+[Enter file name for import:]
+
+[Copy]
+Zkopírovat
+;file \plugins\Import\src\import.cpp
+[<New account>]
+<Nový účet>
+[Old account]
+Starý účet
+[New account]
+Nový účet
+[Protocol %S is not loaded, skipping account %s creation]
+Protokol %S není načten, přeskakuji vytvoření účtu %s
+[Unable to create an account %s of protocol %S]
+Nelze vytvořit účet %s protokolu %S
+[Metacontact cannot be imported due to its ambiguity.]
+Metakontakt nemůže být naimportován z důvodu nejednoznačnosti.
+[Added metacontact '%s']
+Přidán metakontakt '%s'
+[Added metacontact]
+Přidán metakontakt
+[Skipping contact with no protocol]
+Přeskakování kontaktu bez protokolu
+[Skipping contact, account %S cannot be mapped.]
+Přeskakování kontaktu, účet %S nemůže být přiřazen.
+[Skipping contact, %S not installed.]
+Přeskakování kontaktu, %S není nainstalován
+[Skipping non-IM contact (%S)]
+Přeskakování ne-IM kontaktu (%S)
+[Skipping duplicate %S contact %s]
+Přeskakování duplicitního %S kontaktu %s
+[Failed to create contact %s (%s)]
+
+[Failed to add %S contact %s]
+Nepodařilo se přidat %S kontakt %s
+[Added %S contact %s, '%s']
+Přidán %S kontakt %s, '%s'
+[Added %S contact %s]
+Přidán %S kontakt %s
+[Failed to add message]
+Nepodařilo se přidat zprávu
+[Error retrieving current profile, exiting.]
+Chyba při získávání stávajícího profilu, ukončování.
+[There's no database driver to open the input file, exiting.]
+Neexistuje žádný ovladač databáze pro otevření vstupního souboru, ukončování.
+[Error loading source file, exiting.]
+Chyba načítání vstupního souboru, ukončování.
+[Number of contacts in database: %d]
+Počet kontaktů v databázi: %d
+[Error mapping accounts, exiting.]
+Chyba při mapování účtů, ukončování.
+[Importing groups.]
+Importování skupin.
+[Group import failed.]
+Import skupiny se nezdařil.
+[Importing contacts.]
+Importování kontaktů.
+[Skipping new contacts import.]
+Přeskakování
+[Importing system history.]
+Importování historie systému.
+[Skipping system history import.]
+Přeskakování importu historie systému.
+[Importing history.]
+Importování historie.
+[Skipping history import.]
+Přeskakování importu historie.
+[Import completed in %d seconds.]
+Importování dokončeno za %d sekund.
+[Added %d contacts and %d groups.]
+Přidáno %d kontaktů a %d skupin.
+[Added %d contacts, %d groups and %d events.]
+Přidáno %d kontaktů, %d skupin a %d událostí.
+[Skipped %d contacts.]
+Přeskočeno %d kontaktů.
+[Skipped %d duplicates and %d filtered events.]
+Přeskočeno %d duplicit a %d filtrovaných událostí.
+;file \plugins\Import\src\main.cpp
+[&Import...]
+&Importovat...
+;file \plugins\Import\src\miranda.cpp
+[Miranda NG database]
+Databáze Mirandy NG
+[The given file does not exist. Please check that you have entered the name correctly.]
+Požadovaný soubor neexistuje. Zkontrolujte prosím, zda je zadaný název v pořádku.
+[Miranda Import]
+Miranda - import dat
+[All Files]
+Všechny soubory
+[You cannot import your current profile into itself]
+
+[Importing whole directory]
+
+;file \plugins\Import\src\patterns.cpp
+[Invalid file header]
+
+[Cannot parse file header, skipping file]
+
+[Loading file '%s'...]
+
+[Failed to open file <%s> for import: %d]
+
+[Failed to mmap file <%s> for import: %d]
+
+[Failed to map view of file <%s> for import: %d]
+
+;file \plugins\Import\src\ui.cpp
+[Import history for %s]
+
+[Miranda NG database/mContacts]
+Databáze Mirandy NG/mContacts
+[JSON file]
+
+;file \plugins\Import\src\utils.cpp
+[Skipping duplicate group %s.]
+Přeskakování duplicitní skupiny %s.
+[Import...]
+Importovat...
+;file \plugins\Import\src\wizard.cpp
+[Finish]
+Dokončit

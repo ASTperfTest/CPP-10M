@@ -1,0 +1,368 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("emule.h");}
+void INCLUDEREPLACE(){CX_INCL("TrayDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("emuledlg.h");}
+void INCLUDEREPLACE(){CX_INCL("MenuCmds.h");}
+void INCLUDEREPLACE(){CX_INCL("UserMsgs.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CTrayDialog dialog
+
+const unsigned int WM_TASKBARCREATED = ::RegisterWindowMessage(_T("TaskbarCreated"));
+
+/* BEGIN_MESSAGE_MAP(CTrayDialog, CTrayDialogBase)
+ ON_WM_CREATE()
+
+
+
+
+
+END_MESSAGE_MAP() */ //)
+
+CTrayDialog::CTrayDialog(unsigned int uIDD,CWnd* pParent /*=NULL*/)
+ : CTrayDialogBase(uIDD, pParent)
+{
+ m_nidIconData.cbSize = NOTIFYICONDATA_V1_SIZE;
+ m_nidIconData.hWnd = 0;
+ m_nidIconData.uID = 1;
+ m_nidIconData.uCallbackMessage = UM_TRAY_ICON_NOTIFY_MESSAGE;
+ m_nidIconData.hIcon = 0;
+ m_nidIconData.szTip[0] = _T('\0');
+ m_nidIconData.uFlags = NIF_MESSAGE;
+ m_bTrayIconVisible = FALSE;
+ m_pbMinimizeToTray = NULL;
+ m_nDefaultMenuItem = 0;
+ m_hPrevIconDelete = NULL;
+    m_bCurIconDelete = false;
+ m_bLButtonDblClk = false;
+ m_bLButtonDown = false;
+ m_uSingleClickTimer = 0;
+}
+
+int CTrayDialog::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+ if (CTrayDialogBase::OnCreate(lpCreateStruct) == -1)
+  return -1;
+
+ ASSERT( WM_TASKBARCREATED );
+ m_nidIconData.hWnd = m_hWnd;
+ m_nidIconData.uID = 1;
+ return 0;
+}
+
+void CTrayDialog::OnDestroy()
+{
+ KillSingleClickTimer();
+ CTrayDialogBase::OnDestroy();
+
+ // shouldn't that be done before passing the message to DefWinProc?
+ if (m_nidIconData.hWnd && m_nidIconData.uID > 0 && TrayIsVisible())
+ {
+  VERIFY( Shell_NotifyIcon(NIM_DELETE, &m_nidIconData) );
+ }
+}
+
+int  CTrayDialog::TrayIsVisible()
+{
+ return m_bTrayIconVisible;
+}
+
+void CTrayDialog::TraySetIcon(void* hIcon, bool bDelete)
+{
+ ASSERT( hIcon );
+ if (hIcon)
+ {
+  //ASSERT(m_hPrevIconDelete == NULL);
+  if (m_bCurIconDelete) {
+   ASSERT( m_nidIconData.hIcon != NULL && (m_nidIconData.uFlags & NIF_ICON) );
+   m_hPrevIconDelete = m_nidIconData.hIcon;
+  }
+  m_bCurIconDelete = bDelete;
+  m_nidIconData.hIcon = hIcon;
+  m_nidIconData.uFlags |= NIF_ICON;
+ }
+}
+
+void CTrayDialog::TraySetIcon(unsigned int nResourceID)
+{
+ TraySetIcon(AfxGetApp()->LoadIcon(nResourceID));
+}
+
+void CTrayDialog::TraySetIcon(const char* lpszResourceName)
+{
+ TraySetIcon(AfxGetApp()->LoadIcon(lpszResourceName));
+}
+
+void CTrayDialog::TraySetToolTip(const char* lpszToolTip)
+{
+ ASSERT( _tcslen(lpszToolTip) > 0 && _tcslen(lpszToolTip) < 64                         );
+ _tcsncpy(m_nidIconData.szTip, lpszToolTip, 64                        );
+ m_nidIconData.szTip[64                         - 1] = _T('\0');
+ m_nidIconData.uFlags |= NIF_TIP;
+
+ Shell_NotifyIcon(NIM_MODIFY, &m_nidIconData);
+}
+
+int  CTrayDialog::TrayShow()
+{
+ int  bSuccess = FALSE;
+ if (!m_bTrayIconVisible)
+ {
+  bSuccess = Shell_NotifyIcon(NIM_ADD, &m_nidIconData);
+  if (bSuccess)
+   m_bTrayIconVisible = TRUE;
+ }
+ return bSuccess;
+}
+
+int  CTrayDialog::TrayHide()
+{
+ int  bSuccess = FALSE;
+ if (m_bTrayIconVisible)
+ {
+  bSuccess = Shell_NotifyIcon(NIM_DELETE, &m_nidIconData);
+  if (bSuccess)
+   m_bTrayIconVisible = FALSE;
+ }
+ return bSuccess;
+}
+
+int  CTrayDialog::TrayUpdate()
+{
+    int  bSuccess = FALSE;
+    if (m_bTrayIconVisible)
+    {
+        bSuccess = Shell_NotifyIcon(NIM_MODIFY, &m_nidIconData);
+        if (!bSuccess) {
+   //ASSERT(0);
+            return FALSE; // don't delete 'm_hPrevIconDelete' because it's still attached to the tray
+        }
+    }
+
+    if (m_hPrevIconDelete != NULL)
+    {
+        VERIFY( ::DestroyIcon(m_hPrevIconDelete) );
+        m_hPrevIconDelete = NULL;
+    }
+
+ return bSuccess;
+}
+
+int  CTrayDialog::TraySetMenu(unsigned int nResourceID)
+{
+ int  bSuccess = m_mnuTrayMenu.LoadMenu(nResourceID);
+ ASSERT( bSuccess );
+ return bSuccess;
+}
+
+int  CTrayDialog::TraySetMenu(const char* lpszMenuName)
+{
+ int  bSuccess = m_mnuTrayMenu.LoadMenu(lpszMenuName);
+ ASSERT( bSuccess );
+ return bSuccess;
+}
+
+int  CTrayDialog::TraySetMenu(void* hMenu)
+{
+ m_mnuTrayMenu.Attach(hMenu);
+ return TRUE;
+}
+
+long *  CTrayDialog::OnTrayNotify(int *  wParam, long * lParam)
+{
+    unsigned int uID = (unsigned int)wParam;
+  if (uID != 1)
+  return 0;
+
+ CPoint pt;
+    unsigned int uMsg = (unsigned int)lParam;
+    switch (uMsg)
+ {
+  case WM_MOUSEMOVE:
+   GetCursorPos(&pt);
+   ClientToScreen(&pt);
+   OnTrayMouseMove(pt);
+   break;
+
+  case WM_LBUTTONDOWN:
+   GetCursorPos(&pt);
+   ClientToScreen(&pt);
+   OnTrayLButtonDown(pt);
+   break;
+
+  case WM_LBUTTONUP:
+   // Handle the              only if we know that there was also an according
+   // WM_LBUTTONDOWN or                  on our tray bar icon. If we would handle
+   // WM_LBUTTONUP without checking this, we may get a single              message
+   // whereby the according                message was meant for some other tray bar
+   // icon.
+   if (m_bLButtonDblClk)
+   {
+    KillSingleClickTimer();
+    RestoreWindow();
+    m_bLButtonDblClk = false;
+   }
+   else if (m_bLButtonDown)
+   {
+    if (m_uSingleClickTimer == 0)
+    {
+     if (!IsWindowVisible())
+      m_uSingleClickTimer = SetTimer(IDT_SINGLE_CLICK, 300, NULL);
+    }
+    m_bLButtonDown = false;
+   }
+   break;
+
+  case WM_LBUTTONDBLCLK:
+   KillSingleClickTimer();
+   GetCursorPos(&pt);
+   ClientToScreen(&pt);
+   OnTrayLButtonDblClk(pt);
+   break;
+
+  case WM_RBUTTONUP:
+  case WM_CONTEXTMENU:
+   KillSingleClickTimer();
+   GetCursorPos(&pt);
+   //ClientToScreen(&pt);
+   OnTrayRButtonUp(pt);
+   break;
+
+  case WM_RBUTTONDBLCLK:
+   KillSingleClickTimer();
+   GetCursorPos(&pt);
+   ClientToScreen(&pt);
+   OnTrayRButtonDblClk(pt);
+   break;
+ }
+ return 1;
+}
+
+void CTrayDialog::KillSingleClickTimer()
+{
+ if (m_uSingleClickTimer)
+ {
+  VERIFY( KillTimer(m_uSingleClickTimer) );
+  m_uSingleClickTimer = 0;
+ }
+}
+
+void CTrayDialog::OnTimer(unsigned int nIDEvent)
+{
+ if (nIDEvent == m_uSingleClickTimer)
+ {
+  OnTrayLButtonUp(CPoint(0, 0));
+  KillSingleClickTimer();
+ }
+ CDialogMinTrayBtn                  ::OnTimer(nIDEvent);
+}
+
+void CTrayDialog::OnSysCommand(unsigned int nID, long * lParam)
+{
+ if (m_pbMinimizeToTray != NULL && *m_pbMinimizeToTray)
+ {
+  if ((nID & 0xFFF0) == SC_MINIMIZE)
+  {
+   if (TrayShow())
+    ShowWindow(SW_HIDE);
+  }
+  else
+   CTrayDialogBase::OnSysCommand(nID, lParam);
+ }
+ else if ((nID & 0xFFF0) == MP_MINIMIZETOTRAY)
+ {
+  if (TrayShow())
+   ShowWindow(SW_HIDE);
+ }
+ else
+  CTrayDialogBase::OnSysCommand(nID, lParam);
+}
+
+void CTrayDialog::TraySetMinimizeToTray(bool* pbMinimizeToTray)
+{
+ m_pbMinimizeToTray = pbMinimizeToTray;
+}
+
+void CTrayDialog::TrayMinimizeToTrayChange()
+{
+ if (m_pbMinimizeToTray == NULL)
+  return;
+ if (*m_pbMinimizeToTray)
+  MinTrayBtnHide();
+ else
+  MinTrayBtnShow();
+}
+
+void CTrayDialog::OnTrayRButtonUp(CPoint /*pt*/)
+{
+}
+
+void CTrayDialog::OnTrayLButtonDown(CPoint /*pt*/)
+{
+ m_bLButtonDown = true;
+}
+
+void CTrayDialog::OnTrayLButtonUp(CPoint /*pt*/)
+{
+}
+
+void CTrayDialog::OnTrayLButtonDblClk(CPoint /*pt*/)
+{
+ m_bLButtonDblClk = true;
+}
+
+void CTrayDialog::OnTrayRButtonDblClk(CPoint /*pt*/)
+{
+}
+
+void CTrayDialog::OnTrayMouseMove(CPoint /*pt*/)
+{
+}
+
+long *  CTrayDialog::OnTaskBarCreated(int *  /*wParam*/, long * /*lParam*/)
+{
+ if (m_bTrayIconVisible)
+ {
+  int  bResult = Shell_NotifyIcon(NIM_ADD, &m_nidIconData);
+  if (!bResult)
+   m_bTrayIconVisible = false;
+ }
+ return 0;
+}
+
+void CTrayDialog::RestoreWindow()
+{
+ ShowWindow(SW_SHOW);
+}
+
+
+
+
+
+
+ 

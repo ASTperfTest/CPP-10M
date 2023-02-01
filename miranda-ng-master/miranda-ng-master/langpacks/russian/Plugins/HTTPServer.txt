@@ -1,0 +1,131 @@
+#muuid {67848b07-83d2-49e9-8844-7e3de268e304}
+;============================================================
+;  File: HTTPServer.dll
+;  Plugin: HTTPServer
+;  Version: 0.1.2.4
+;  Authors: Kennet Nielsen, modified by Vampik, Houdini
+;============================================================
+[HTTP Web Server plugin for Miranda.]
+HTTP веб-сервер для Miranda.
+;file \plugins\HTTPServer\res\resource.rc
+[IPAddress1]
+IP-адрес 1
+[IPAddress2]
+IP-адрес 2
+[Max downloads]
+Макс. закачки
+[Address]
+Адрес
+[Mask]
+Маска
+[Share name]
+Имя шары
+[Allowed IP]
+Разрешённые IP
+[HTTP Server statistics view]
+Статистика просмотров HTTP сервера
+[Display hidden shares]
+
+[New share]
+
+[Set to default]
+По умолчанию
+[External server name]
+Внешнее имя сервера
+[This is the link pasted to the message window]
+Это ссылка, вставленная в окно сообщений
+[Write log file]
+Записывать лог
+[Open log]
+Открыть лог
+[Show popups]
+Показывать всплывающие окна
+[Page keyword]
+Ключ. слова
+[URL address]
+Адрес URL
+[%ExternalIP% variable]
+Переменная %ExternalIP%
+[Test]
+Тест
+[Transfer limit (Kb/s)]
+Ограничение скорости (Кб/с)
+[No control when Away or Not available]
+Откл., если Отсутствую/Недоступен
+[Connection control]
+Контроль соединений
+[Index creation]
+Создание индекса
+[Disable]
+Выключить
+[Create HTML (compatibility)]
+Создать HTML (совместимо)
+[Create XML]
+Создать XML
+[Notifications]
+Уведомления
+[Total connection limit]
+Максимально соединений
+[Connections per user limit]
+Ограничение на пользователя
+[Default download limit]
+Ограничение загрузок по умолч.
+[&Edit share]
+&Изм. общее
+[&Remove share]
+&Удалить общее
+[&Open in Browser]
+&Открыть в браузере
+[&Copy link]
+&Копировать ссылку
+;file \plugins\HTTPServer\src\GuiElements.cpp
+[Share Current Directory]
+Сделать текущую папку общей
+[All files]
+Все файлы
+[Specify a file to share]
+Файл для доступа
+[Failed to share new file]
+
+[Max Downloads]
+Макс. закачки
+[Allowed Mask]
+Разрешённая маска
+[Real path]
+Реальный путь
+[User]
+Пользователь
+[Agent]
+Агент
+[Completed]
+Завершено
+[Speed]
+Скорость
+[Current IP Address: ]
+Текущий IP-адрес:\s
+[Current Address: ]
+Текущий адрес:\s
+[IP Address: ]
+IP-адрес:\s
+[You are browsing from]
+
+[Your external IP was detected as %d.%d.%d.%d\r\nby: %s]
+Ваш внешний IP определён как %d.%d.%d.%d\r\nс: %s
+[HTTP Server]
+HTTP сервер
+[Network]
+Сеть
+[HTTP Share new file]
+HTTP Новый общий файл
+[Show HTTP server statistics]
+Статистика НТТР сервера
+;file \plugins\HTTPServer\src\HttpUser.cpp
+[Share removed]
+Общее удалено
+;file \plugins\HTTPServer\src\main.cpp
+[Failed to bind to port %s\r\nThis is most likely because another program or service is using this port]
+Не удалось выполнить привязку к порту %s\r\nВероятно, это вызвано тем, что этот порт уже используется другой программой или службой
+[Disable HTTP server]
+Отключить HTTP сервер
+[Enable HTTP server]
+Включить HTTP сервер

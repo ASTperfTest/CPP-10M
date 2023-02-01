@@ -1,0 +1,1551 @@
+LIBRARY mir_core.mir
+
+EXPORTS
+?g_pCurrDb@@3PAVMDatabaseCommon@@A @1 NONAME
+BeginMessageLoop                @2 NONAME
+EnterMessageLoop                @3 NONAME
+LeaveMessageLoop                @4 NONAME
+CallFunctionAsync               @5
+DeleteDirectoryTreeW            @6
+CallPluginEventHook             @7
+CallService                     @8
+CallServiceSync                 @9
+CreateDirectoryTree            @10
+CreateDirectoryTreeW           @11
+CreateHookableEvent            @12
+CreatePathToFile               @13
+CreatePathToFileW              @14
+CreateServiceFunction          @15
+CreateServiceFunctionObj       @16
+CreateServiceFunctionObjParam  @17
+CreateServiceFunctionParam     @18
+DestroyHookableEvent           @19
+DestroyServiceFunction         @20
+GetExceptionFilter             @21
+Miranda_GetIdle                @22 NONAME
+HookEvent                      @23
+HookEventMessage               @24
+HookEventObj                   @25
+HookEventObjParam              @26
+HookEventParam                 @27
+KillModuleEventHooks           @28
+KillModuleServices             @29
+KillObjectEventHooks           @30
+KillObjectServices             @31
+KillObjectThreads              @32
+Langpack_SortDuplicates        @33
+Langpack_GetDefaultCodePage    @34
+Langpack_GetDefaultLocale      @35
+Langpack_PcharToTchar          @36
+List_Copy                      @37
+List_Create                    @38
+List_Destroy                   @39
+List_Find                      @40
+List_GetIndex                  @41
+List_IndexOf                   @42
+List_Insert                    @43
+List_InsertPtr                 @44
+List_ObjCopy                   @45
+List_Remove                    @46
+List_RemovePtr                 @47
+LoadLangPack                   @48
+LoadLangPackModule             @49
+NotifyEventHooks               @50
+PathToAbsolute                 @51
+PathToAbsoluteW                @52
+PathToRelative                 @53
+PathToRelativeW                @54
+ReloadLangpack                 @56
+ServiceExists                  @57
+SetExceptionFilter             @58
+SetHookDefaultForHookableEvent @59
+Thread_Pop                     @60
+Thread_Push                    @61
+Thread_Wait                    @62
+TranslateA_LP                  @63
+TranslateDialog_LP             @64
+TranslateMenu_LP               @65
+TranslateW_LP                  @66
+mir_utf8lenW                   @67
+UnhookEvent                    @68
+mir_utf8decode                 @70
+mir_utf8decodecp               @71
+mir_utf8decodeW                @72
+mir_utf8encode                 @73
+mir_utf8encodecp               @74
+mir_utf8encodeW                @75
+mir_forkthread                 @76
+mir_forkthreadex               @77
+ltrim                          @78
+ltrimp                         @79
+mir_a2u                        @80
+mir_a2u_cp                     @81
+mir_alloc                      @82
+mir_calloc                     @83
+mir_free                       @84
+mir_hash                       @85
+mir_md5_append                 @86
+mir_md5_finish                 @87
+mir_md5_hash                   @88
+mir_md5_init                   @89
+mir_realloc                    @90
+mir_sha1_append                @91
+mir_sha1_finish                @92
+mir_sha1_hash                  @93
+mir_sha1_init                  @94
+mir_strdup                     @95
+mir_strndup                    @96
+mir_u2a                        @97
+mir_u2a_cp                     @98
+mir_vsnprintf                  @99
+mir_vsnwprintf                @100
+mir_wstrdup                   @101
+rtrim                         @102
+wildcmp                       @103
+rtrimw                        @104
+mir_snprintf                  @105
+mir_snwprintf                 @106
+db_unset                      @107
+db_free                       @108
+db_get                        @109
+db_get_b                      @110
+db_get_dw                     @111
+db_get_s                      @112
+db_get_sa                     @113
+db_get_w                      @114
+db_get_wsa                    @115
+db_set_b                      @116
+db_set_blob                   @117
+db_set_dw                     @118
+db_set_s                      @119
+db_set_utf                    @120
+db_set_w                      @121
+db_set_ws                     @122
+UnloadCoreModule              @123
+Thread_SetName                @124
+replaceStr                    @125
+replaceStrW                   @126
+db_setCurrent                 @127
+CmdLine_GetOption             @128
+CmdLine_Parse                 @129
+Utf8CheckString               @130
+GetSubscribersCount           @131
+NotifyFastHook                @132
+db_find_first                 @133
+db_find_next                  @134
+Icon_Register                 @135
+Icon_RegisterT                @136
+mir_subclassWindow            @137
+mir_callNextSubclass          @138
+KillModuleSubclassing         @139
+mir_wstrndup                  @140
+mir_unsubclassWindow          @141
+mir_urlEncode                 @142
+db_event_add                  @143
+db_event_count                @144
+db_event_delete               @145
+db_event_first                @146
+db_event_firstUnread          @147
+db_event_get                  @148
+db_event_getBlobSize          @149
+db_event_getContact           @150
+db_event_last                 @151
+db_event_markRead             @152
+db_event_next                 @153
+db_event_prev                 @154
+ltrimw                        @155
+ltrimpw                       @156
+wildcmpw                      @157
+wildcmpi                      @158
+wildcmpiw                     @159
+mir_base64_encode             @160
+mir_base64_decode             @161
+mir_urlDecode                 @162
+db_set_resident               @165
+db_set                        @166
+mir_subclassWindowFull        @218
+mir_createLog                 @223
+mir_writeLogA                 @224
+mir_writeLogW                 @225
+mir_writeLogVA                @226
+mir_writeLogVW                @227
+bin2hex                       @228
+bin2hexW                      @229
+mir_base64_encodebuf          @231
+mirstr_allocate               @232
+mirstr_free                   @233
+mirstr_realloc                @234
+mirstr_getNil                 @235
+mirstr_lock                   @236
+mirstr_release                @237
+mirstr_unlock                 @238
+IsWinVerVistaPlus             @239
+IsWinVer7Plus                 @240
+IsFullScreen                  @241
+IsWorkstationLocked           @242
+IsScreenSaverRunning          @243
+db_get_static                 @246
+db_get_wstatic                @247
+db_get_static_utf             @248
+db_get_contact                @252
+mir_closeLog                  @259
+LoadLangPackDescr             @262
+PathIsAbsolute                @263
+PathIsAbsoluteW               @264
+mir_wstrstri                  @265
+mir_strlen                    @267
+mir_wstrlen                   @268
+mir_strcpy                    @269
+mir_wstrcpy                   @270
+mir_strncpy                   @271
+mir_wstrncpy                  @272
+mir_strcat                    @273
+mir_wstrcat                   @274
+mir_strncat                   @275
+mir_wstrncat                  @276
+mir_strcmp                    @277
+mir_strcmpi                   @278
+mir_wstrcmp                   @279
+mir_wstrcmpi                  @280
+??$?HDV?$ChTraitsCRT@D@@@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@ABV0@0@Z @281 NONAME
+??$?HDV?$ChTraitsCRT@D@@@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@ABV0@D@Z @282 NONAME
+??$?HDV?$ChTraitsCRT@D@@@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@ABV0@PBD@Z @283 NONAME
+??$?HDV?$ChTraitsCRT@D@@@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@ABV0@_W@Z @284 NONAME
+??$?HDV?$ChTraitsCRT@D@@@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@DABV0@@Z @285 NONAME
+??$?HDV?$ChTraitsCRT@D@@@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@PBDABV0@@Z @286 NONAME
+??$?HDV?$ChTraitsCRT@D@@@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@_WABV0@@Z @287 NONAME
+??$?H_WV?$ChTraitsCRT@_W@@@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@ABV0@0@Z @288 NONAME
+??$?H_WV?$ChTraitsCRT@_W@@@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@ABV0@D@Z @289 NONAME
+??$?H_WV?$ChTraitsCRT@_W@@@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@ABV0@PB_W@Z @290 NONAME
+??$?H_WV?$ChTraitsCRT@_W@@@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@ABV0@_W@Z @291 NONAME
+??$?H_WV?$ChTraitsCRT@_W@@@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@DABV0@@Z @292 NONAME
+??$?H_WV?$ChTraitsCRT@_W@@@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@PB_WABV0@@Z @293 NONAME
+??$?H_WV?$ChTraitsCRT@_W@@@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@_WABV0@@Z @294 NONAME
+??0?$CMSimpleStringT@D@@QAE@ABV0@@Z @295 NONAME
+??0?$CMSimpleStringT@D@@QAE@PBD@Z @296 NONAME
+??0?$CMSimpleStringT@D@@QAE@PBDH@Z @297 NONAME
+??0?$CMSimpleStringT@D@@QAE@XZ @298 NONAME
+??0?$CMSimpleStringT@_W@@QAE@ABV0@@Z @299 NONAME
+??0?$CMSimpleStringT@_W@@QAE@PB_W@Z @300 NONAME
+??0?$CMSimpleStringT@_W@@QAE@PB_WH@Z @301 NONAME
+??0?$CMSimpleStringT@_W@@QAE@XZ @302 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAA@W4CMStringDataFormat@@PBDZZ @303 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@ABV0@@Z @304 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@DH@Z @305 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@PBD@Z @306 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@PBDH@Z @307 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@PBE@Z @308 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@PB_W@Z @309 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@PB_WH@Z @310 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@XZ @311 NONAME
+??0?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@_WH@Z @312 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAA@W4CMStringDataFormat@@PB_WZZ @313 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@ABV0@@Z @314 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@DH@Z @315 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@PBD@Z @316 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@PBDH@Z @317 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@PBE@Z @318 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@PB_W@Z @319 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@PB_WH@Z @320 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@XZ @321 NONAME
+??0?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@_WH@Z @322 NONAME
+??1?$CMSimpleStringT@D@@QAE@XZ @323 NONAME
+??1?$CMSimpleStringT@_W@@QAE@XZ @324 NONAME
+??1?$CMStringT@DV?$ChTraitsCRT@D@@@@QAE@XZ @325 NONAME
+??1?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAE@XZ @326 NONAME
+??4?$CMSimpleStringT@D@@QAEAAV0@ABV0@@Z @327 NONAME
+??4?$CMSimpleStringT@D@@QAEAAV0@PBD@Z @328 NONAME
+??4?$CMSimpleStringT@_W@@QAEAAV0@ABV0@@Z @329 NONAME
+??4?$CMSimpleStringT@_W@@QAEAAV0@PB_W@Z @330 NONAME
+??4?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@ABV0@@Z @331 NONAME
+??4?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@D@Z @332 NONAME
+??4?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@PBD@Z @333 NONAME
+??4?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@PBE@Z @334 NONAME
+??4?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@PB_W@Z @335 NONAME
+??4?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@_W@Z @336 NONAME
+??4?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@ABV0@@Z @337 NONAME
+??4?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@D@Z @338 NONAME
+??4?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@PBD@Z @339 NONAME
+??4?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@PBE@Z @340 NONAME
+??4?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@PB_W@Z @341 NONAME
+??4?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@_W@Z @342 NONAME
+??A?$CMSimpleStringT@D@@QBEDH@Z @343 NONAME
+??A?$CMSimpleStringT@_W@@QBE_WH@Z @344 NONAME
+??B?$CMSimpleStringT@D@@QBEPBDXZ @346 NONAME
+??B?$CMSimpleStringT@_W@@QBEPB_WXZ @348 NONAME
+??Y?$CMSimpleStringT@D@@QAEAAV0@ABV0@@Z @349 NONAME
+??Y?$CMSimpleStringT@D@@QAEAAV0@D@Z @350 NONAME
+??Y?$CMSimpleStringT@D@@QAEAAV0@E@Z @351 NONAME
+??Y?$CMSimpleStringT@D@@QAEAAV0@PBD@Z @352 NONAME
+??Y?$CMSimpleStringT@D@@QAEAAV0@_W@Z @353 NONAME
+??Y?$CMSimpleStringT@_W@@QAEAAV0@ABV0@@Z @354 NONAME
+??Y?$CMSimpleStringT@_W@@QAEAAV0@D@Z @355 NONAME
+??Y?$CMSimpleStringT@_W@@QAEAAV0@E@Z @356 NONAME
+??Y?$CMSimpleStringT@_W@@QAEAAV0@PB_W@Z @357 NONAME
+??Y?$CMSimpleStringT@_W@@QAEAAV0@_W@Z @358 NONAME
+??Y?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@ABV0@@Z @359 NONAME
+??Y?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@ABV?$CMSimpleStringT@D@@@Z @360 NONAME
+??Y?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@D@Z @361 NONAME
+??Y?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@E@Z @362 NONAME
+??Y?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@PBD@Z @363 NONAME
+??Y?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@PB_W@Z @364 NONAME
+??Y?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV0@_W@Z @365 NONAME
+??Y?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@ABV0@@Z @366 NONAME
+??Y?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@ABV?$CMSimpleStringT@_W@@@Z @367 NONAME
+??Y?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@D@Z @368 NONAME
+??Y?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@E@Z @369 NONAME
+??Y?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@PBD@Z @370 NONAME
+??Y?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@PB_W@Z @371 NONAME
+??Y?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV0@_W@Z @372 NONAME
+?Append@?$CMSimpleStringT@D@@QAEXABV1@@Z @375 NONAME
+?Append@?$CMSimpleStringT@D@@QAEXPBD@Z @376 NONAME
+?Append@?$CMSimpleStringT@D@@QAEXPBDH@Z @377 NONAME
+?Append@?$CMSimpleStringT@_W@@QAEXABV1@@Z @378 NONAME
+?Append@?$CMSimpleStringT@_W@@QAEXPB_W@Z @379 NONAME
+?Append@?$CMSimpleStringT@_W@@QAEXPB_WH@Z @380 NONAME
+?AppendChar@?$CMSimpleStringT@D@@QAEXD@Z @381 NONAME
+?AppendChar@?$CMSimpleStringT@_W@@QAEX_W@Z @382 NONAME
+?AppendFormat@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAAPBDPBDZZ @383 NONAME
+?AppendFormat@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAAPB_WPB_WZZ @384 NONAME
+?AppendFormatV@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEXPBDPAD@Z @385 NONAME
+?AppendFormatV@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEXPB_WPAD@Z @386 NONAME
+?Attach@?$CMSimpleStringT@D@@AAEXPAUCMStringData@@@Z @387 NONAME
+?Attach@?$CMSimpleStringT@_W@@AAEXPAUCMStringData@@@Z @388 NONAME
+?CharToOemA@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEXXZ @389 NONAME
+?CharToOemA@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEXXZ @390 NONAME
+?CloneData@?$CMSimpleStringT@D@@CGPAUCMStringData@@PAU2@@Z @391 NONAME
+?CloneData@?$CMSimpleStringT@_W@@CGPAUCMStringData@@PAU2@@Z @392 NONAME
+?Collate@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHPBD@Z @393 NONAME
+?Collate@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEHPB_W@Z @394 NONAME
+?CollateNoCase@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHPBD@Z @395 NONAME
+?CollateNoCase@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEHPB_W@Z @396 NONAME
+?Compare@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHPBD@Z @397 NONAME
+?Compare@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEHPB_W@Z @398 NONAME
+?CompareNoCase@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHPBD@Z @399 NONAME
+?CompareNoCase@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEHPB_W@Z @400 NONAME
+?Concatenate@?$CMSimpleStringT@D@@SGXAAV1@PBDH1H@Z @401 NONAME
+?Concatenate@?$CMSimpleStringT@_W@@SGXAAV1@PB_WH1H@Z @402 NONAME
+?CopyChars@?$CMSimpleStringT@D@@SGXPADIPBDH@Z @403 NONAME
+?CopyChars@?$CMSimpleStringT@D@@SGXPADPBDH@Z @404 NONAME
+?CopyChars@?$CMSimpleStringT@_W@@SGXPA_WIPB_WH@Z @405 NONAME
+?CopyChars@?$CMSimpleStringT@_W@@SGXPA_WPB_WH@Z @406 NONAME
+?CopyCharsOverlapped@?$CMSimpleStringT@D@@SGXPADIPBDH@Z @407 NONAME
+?CopyCharsOverlapped@?$CMSimpleStringT@D@@SGXPADPBDH@Z @408 NONAME
+?CopyCharsOverlapped@?$CMSimpleStringT@_W@@SGXPA_WIPB_WH@Z @409 NONAME
+?CopyCharsOverlapped@?$CMSimpleStringT@_W@@SGXPA_WPB_WH@Z @410 NONAME
+?Delete@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEHHH@Z @411 NONAME
+?Delete@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEHHH@Z @412 NONAME
+?Empty@?$CMSimpleStringT@D@@QAEXXZ @413 NONAME
+?Empty@?$CMSimpleStringT@_W@@QAEXXZ @414 NONAME
+?Find@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHDH@Z @415 NONAME
+?Find@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHPBDH@Z @416 NONAME
+?Find@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEHPB_WH@Z @417 NONAME
+?Find@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEH_WH@Z @418 NONAME
+?FindOneOf@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHPBD@Z @419 NONAME
+?FindOneOf@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEHPB_W@Z @420 NONAME
+?Fork@?$CMSimpleStringT@D@@AAEXH@Z @421 NONAME
+?Fork@?$CMSimpleStringT@_W@@AAEXH@Z @422 NONAME
+?Format@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAAPBDPBDZZ @423 NONAME
+?Format@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAAPB_WPB_WZZ @424 NONAME
+?FormatV@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEPBDPBDPAD@Z @425 NONAME
+?FormatV@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEPB_WPB_WPAD@Z @426 NONAME
+?FreeExtra@?$CMSimpleStringT@D@@QAEXXZ @427 NONAME
+?FreeExtra@?$CMSimpleStringT@_W@@QAEXXZ @428 NONAME
+?GetAllocLength@?$CMSimpleStringT@D@@QBEHXZ @429 NONAME
+?GetAllocLength@?$CMSimpleStringT@_W@@QBEHXZ @430 NONAME
+?GetAt@?$CMSimpleStringT@D@@QBEDH@Z @431 NONAME
+?GetAt@?$CMSimpleStringT@_W@@QBE_WH@Z @432 NONAME
+?GetBuffer@?$CMSimpleStringT@D@@QAEPADH@Z @433 NONAME
+?GetBuffer@?$CMSimpleStringT@D@@QAEPADXZ @434 NONAME
+?GetBuffer@?$CMSimpleStringT@_W@@QAEPA_WH@Z @435 NONAME
+?GetBuffer@?$CMSimpleStringT@_W@@QAEPA_WXZ @436 NONAME
+?GetBufferSetLength@?$CMSimpleStringT@D@@QAEPADH@Z @437 NONAME
+?GetBufferSetLength@?$CMSimpleStringT@_W@@QAEPA_WH@Z @438 NONAME
+?GetData@?$CMSimpleStringT@D@@ABEPAUCMStringData@@XZ @439 NONAME
+?GetData@?$CMSimpleStringT@_W@@ABEPAUCMStringData@@XZ @440 NONAME
+?GetEnvironmentVariableW@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEHPBD@Z @441 NONAME
+?GetEnvironmentVariableW@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEHPB_W@Z @442 NONAME
+?GetLength@?$CMSimpleStringT@D@@QBEHXZ @443 NONAME
+?GetLength@?$CMSimpleStringT@_W@@QBEHXZ @444 NONAME
+?GetString@?$CMSimpleStringT@D@@QBEPBDXZ @445 NONAME
+?GetString@?$CMSimpleStringT@_W@@QBEPB_WXZ @446 NONAME
+?GetTail@?$CMSimpleStringT@D@@QBEPBDXZ @447 NONAME
+?GetTail@?$CMSimpleStringT@_W@@QBEPB_WXZ @448 NONAME
+?Insert@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEHHD@Z @449 NONAME
+?Insert@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEHHPBD@Z @450 NONAME
+?Insert@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEHHPB_W@Z @451 NONAME
+?Insert@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEHH_W@Z @452 NONAME
+?IsEmpty@?$CMSimpleStringT@D@@QBE_NXZ @453 NONAME
+?IsEmpty@?$CMSimpleStringT@_W@@QBE_NXZ @454 NONAME
+?Left@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBE?AV1@H@Z @455 NONAME
+?Left@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBE?AV1@H@Z @456 NONAME
+?LockBuffer@?$CMSimpleStringT@D@@QAEPADXZ @457 NONAME
+?LockBuffer@?$CMSimpleStringT@_W@@QAEPA_WXZ @458 NONAME
+?MakeLower@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@XZ @459 NONAME
+?MakeLower@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@XZ @460 NONAME
+?MakeReverse@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@XZ @461 NONAME
+?MakeReverse@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@XZ @462 NONAME
+?MakeUpper@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@XZ @463 NONAME
+?MakeUpper@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@XZ @464 NONAME
+?Mid@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBE?AV1@H@Z @465 NONAME
+?Mid@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBE?AV1@HH@Z @466 NONAME
+?Mid@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBE?AV1@H@Z @467 NONAME
+?Mid@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBE?AV1@HH@Z @468 NONAME
+?OemToCharA@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEXXZ @469 NONAME
+?OemToCharA@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEXXZ @470 NONAME
+?Preallocate@?$CMSimpleStringT@D@@QAEXH@Z @471 NONAME
+?Preallocate@?$CMSimpleStringT@_W@@QAEXH@Z @472 NONAME
+?PrepareWrite2@?$CMSimpleStringT@D@@AAEXH@Z @473 NONAME
+?PrepareWrite2@?$CMSimpleStringT@_W@@AAEXH@Z @474 NONAME
+?PrepareWrite@?$CMSimpleStringT@D@@AAEPADH@Z @475 NONAME
+?PrepareWrite@?$CMSimpleStringT@_W@@AAEPA_WH@Z @476 NONAME
+?Reallocate@?$CMSimpleStringT@D@@AAEXH@Z @477 NONAME
+?Reallocate@?$CMSimpleStringT@_W@@AAEXH@Z @478 NONAME
+?ReleaseBuffer@?$CMSimpleStringT@D@@QAEXH@Z @479 NONAME
+?ReleaseBuffer@?$CMSimpleStringT@_W@@QAEXH@Z @480 NONAME
+?ReleaseBufferSetLength@?$CMSimpleStringT@D@@QAEXH@Z @481 NONAME
+?ReleaseBufferSetLength@?$CMSimpleStringT@_W@@QAEXH@Z @482 NONAME
+?Remove@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEHD@Z @483 NONAME
+?Remove@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEH_W@Z @484 NONAME
+?Replace@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEHDD@Z @485 NONAME
+?Replace@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEHPBD0@Z @486 NONAME
+?Replace@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEHPB_W0@Z @487 NONAME
+?Replace@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEH_W0@Z @488 NONAME
+?ReverseFind@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEHD@Z @489 NONAME
+?ReverseFind@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEH_W@Z @490 NONAME
+?Right@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBE?AV1@H@Z @491 NONAME
+?Right@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBE?AV1@H@Z @492 NONAME
+?SetAt@?$CMSimpleStringT@D@@QAEXHD@Z @493 NONAME
+?SetAt@?$CMSimpleStringT@_W@@QAEXH_W@Z @494 NONAME
+?SetLength@?$CMSimpleStringT@D@@AAEXH@Z @495 NONAME
+?SetLength@?$CMSimpleStringT@_W@@AAEXH@Z @496 NONAME
+?SetString@?$CMSimpleStringT@D@@QAEXPBD@Z @497 NONAME
+?SetString@?$CMSimpleStringT@D@@QAEXPBDH@Z @498 NONAME
+?SetString@?$CMSimpleStringT@_W@@QAEXPB_W@Z @499 NONAME
+?SetString@?$CMSimpleStringT@_W@@QAEXPB_WH@Z @500 NONAME
+?SpanExcluding@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBE?AV1@PBD@Z @503 NONAME
+?SpanExcluding@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBE?AV1@PB_W@Z @504 NONAME
+?SpanIncluding@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBE?AV1@PBD@Z @505 NONAME
+?SpanIncluding@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBE?AV1@PB_W@Z @506 NONAME
+?StringLength@?$CMSimpleStringT@D@@SGHPBD@Z @507 NONAME
+?StringLength@?$CMSimpleStringT@D@@SGHPB_W@Z @508 NONAME
+?StringLength@?$CMSimpleStringT@_W@@SGHPBD@Z @509 NONAME
+?StringLength@?$CMSimpleStringT@_W@@SGHPB_W@Z @510 NONAME
+?StringLengthN@?$CMSimpleStringT@D@@SGHPBDI@Z @511 NONAME
+?StringLengthN@?$CMSimpleStringT@D@@SGHPB_WI@Z @512 NONAME
+?StringLengthN@?$CMSimpleStringT@_W@@SGHPBDI@Z @513 NONAME
+?StringLengthN@?$CMSimpleStringT@_W@@SGHPB_WI@Z @514 NONAME
+?Tokenize@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBE?AV1@PBDAAH@Z @515 NONAME
+?Tokenize@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBE?AV1@PB_WAAH@Z @516 NONAME
+?Trim@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@D@Z @517 NONAME
+?Trim@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@PBD@Z @518 NONAME
+?Trim@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@XZ @519 NONAME
+?Trim@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@PB_W@Z @520 NONAME
+?Trim@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@XZ @521 NONAME
+?Trim@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@_W@Z @522 NONAME
+?TrimLeft@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@D@Z @523 NONAME
+?TrimLeft@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@PBD@Z @524 NONAME
+?TrimLeft@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@XZ @525 NONAME
+?TrimLeft@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@PB_W@Z @526 NONAME
+?TrimLeft@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@XZ @527 NONAME
+?TrimLeft@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@_W@Z @528 NONAME
+?TrimRight@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@D@Z @529 NONAME
+?TrimRight@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@PBD@Z @530 NONAME
+?TrimRight@?$CMStringT@DV?$ChTraitsCRT@D@@@@QAEAAV1@XZ @531 NONAME
+?TrimRight@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@PB_W@Z @532 NONAME
+?TrimRight@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@XZ @533 NONAME
+?TrimRight@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QAEAAV1@_W@Z @534 NONAME
+?Truncate@?$CMSimpleStringT@D@@QAEXH@Z @535 NONAME
+?Truncate@?$CMSimpleStringT@_W@@QAEXH@Z @536 NONAME
+?UnlockBuffer@?$CMSimpleStringT@D@@QAEXXZ @537 NONAME
+?UnlockBuffer@?$CMSimpleStringT@_W@@QAEXXZ @538 NONAME
+?c_str@?$CMSimpleStringT@D@@QBEPBDXZ @539 NONAME
+?c_str@?$CMSimpleStringT@_W@@QBEPB_WXZ @540 NONAME
+?EndModal@CDlgBase@@QAEXH@Z @541 NONAME
+??0CCtrlBase@@QAE@PAVCDlgBase@@H@Z @610 NONAME
+??0CCtrlButton@@QAE@PAVCDlgBase@@H@Z @612 NONAME
+??0CCtrlCheck@@QAE@PAVCDlgBase@@H@Z @614 NONAME
+??0CCtrlClc@@QAE@PAVCDlgBase@@H@Z @616 NONAME
+??0CCtrlCombo@@QAE@PAVCDlgBase@@H@Z @618 NONAME
+??0CCtrlData@@QAE@PAVCDlgBase@@H@Z @620 NONAME
+??0CCtrlEdit@@QAE@PAVCDlgBase@@H@Z @622 NONAME
+??0CCtrlHyperlink@@QAE@PAVCDlgBase@@HPBD@Z @624 NONAME
+??0CCtrlListBox@@QAE@PAVCDlgBase@@H@Z @626 NONAME
+??0CCtrlListView@@QAE@PAVCDlgBase@@H@Z @628 NONAME
+??0CCtrlMButton@@QAE@PAVCDlgBase@@HHPBD@Z @630 NONAME
+??0CCtrlMButton@@QAE@PAVCDlgBase@@HPAUHICON__@@PBD@Z @631 NONAME
+??0CCtrlPages@@QAE@PAVCDlgBase@@H@Z @633 NONAME
+??0CCtrlTreeView@@QAE@PAVCDlgBase@@H@Z @635 NONAME
+??0CDataLink@@QAE@ABV0@@Z @636 NONAME
+??0CDataLink@@QAE@E@Z @637 NONAME
+??0CDbLink@@QAE@ABV0@@Z @638 NONAME
+??0CDbLink@@QAE@PBD0EI@Z @639 NONAME
+??0CDbLink@@QAE@PBD0EPA_W@Z @640 NONAME
+??0CDlgBase@@QAE@ABV0@@Z @641 NONAME
+??0CDlgBase@@QAE@AAVCMPluginBase@@H@Z @642 NONAME
+??1CCtrlBase@@UAE@XZ @645 NONAME
+??1CCtrlButton@@UAE@XZ @646 NONAME
+??1CCtrlCheck@@UAE@XZ @647 NONAME
+??1CCtrlClc@@UAE@XZ @648 NONAME
+??1CCtrlCombo@@UAE@XZ @649 NONAME
+??1CCtrlData@@UAE@XZ @650 NONAME
+??1CCtrlEdit@@UAE@XZ @651 NONAME
+??1CCtrlHyperlink@@UAE@XZ @652 NONAME
+??1CCtrlListBox@@UAE@XZ @653 NONAME
+??1CCtrlListView@@UAE@XZ @654 NONAME
+??1CCtrlMButton@@UAE@XZ @655 NONAME
+??1CCtrlPages@@UAE@XZ @656 NONAME
+??1CCtrlTreeView@@UAE@XZ @657 NONAME
+??1CDataLink@@UAE@XZ @658 NONAME
+??1CDbLink@@UAE@XZ @659 NONAME
+??1CDlgBase@@UAE@XZ @660 NONAME
+??4CDataLink@@QAEAAV0@ABV0@@Z @675 NONAME
+??4CDbLink@@QAEAAV0@ABV0@@Z @676 NONAME
+??_7CCtrlBase@@6B@ @679 NONAME
+??_7CCtrlButton@@6B@ @680 NONAME
+??_7CCtrlCheck@@6B@ @681 NONAME
+??_7CCtrlClc@@6B@ @682 NONAME
+??_7CCtrlCombo@@6B@ @683 NONAME
+??_7CCtrlData@@6B@ @684 NONAME
+??_7CCtrlEdit@@6B@ @685 NONAME
+??_7CCtrlHyperlink@@6B@ @686 NONAME
+??_7CCtrlListBox@@6B@ @687 NONAME
+??_7CCtrlListView@@6B@ @688 NONAME
+??_7CCtrlMButton@@6B@ @689 NONAME
+??_7CCtrlPages@@6B@ @690 NONAME
+??_7CCtrlTreeView@@6B@ @691 NONAME
+??_7CDataLink@@6B@ @692 NONAME
+??_7CDbLink@@6B@ @693 NONAME
+??_7CDlgBase@@6B@ @694 NONAME
+?ActivatePage@CCtrlPages@@QAEXH@Z @696 NONAME
+?AddColumn@CCtrlListView@@QAEXHPB_WH@Z @698 NONAME
+?AddContact@CCtrlClc@@QAEXI@Z @699 NONAME
+?AddControl@CDlgBase@@IAEXPAVCCtrlBase@@@Z @700 NONAME
+?AddGroup@CCtrlClc@@QAEXPAX@Z @701 NONAME
+?AddGroup@CCtrlListView@@QAEXHPB_W@Z @702 NONAME
+?AddInfoItem@CCtrlClc@@QAEPAXPAUCLCINFOITEM@@@Z @703 NONAME
+?AddItem@CCtrlListView@@QAEHPB_WHJH@Z @704 NONAME
+?AddPage@CCtrlPages@@QAEXPB_WPAUHICON__@@PAVCDlgBase@@@Z @705 NONAME
+?AddString@CCtrlCombo@@QAEHPB_WJ@Z @706 NONAME
+?AddString@CCtrlListBox@@QAEHPB_WJ@Z @707 NONAME
+?AddStringA@CCtrlCombo@@QAEHPBDJ@Z @708 NONAME
+?ApproximateViewRect@CCtrlListView@@QAEIHHH@Z @709 NONAME
+?Arrange@CCtrlListView@@QAEXI@Z @710 NONAME
+?AutoRebuild@CCtrlClc@@QAEXXZ @712 NONAME
+?CancelEditLabel@CCtrlListView@@QAEXXZ @713 NONAME
+?Close@CDlgBase@@QAEXXZ @714 NONAME
+?Create@CDlgBase@@QAEXXZ @715 NONAME
+?CreateDbLink@CCtrlData@@QAEXPAVCDataLink@@@Z @716 NONAME
+?CreateDbLink@CCtrlData@@QAEXPBD0EI@Z @717 NONAME
+?CreateDbLink@CCtrlData@@QAEXPBD0PA_W@Z @718 NONAME
+?CreateDragImage@CCtrlListView@@QAEPAU_IMAGELIST@@HPAUtagPOINT@@@Z @719 NONAME
+?CreateDragImage@CCtrlTreeView@@QAEPAU_IMAGELIST@@PAU_TREEITEM@@@Z @720 NONAME
+?CreateImageList@CCtrlListView@@QAEPAU_IMAGELIST@@H@Z @721 NONAME
+?CustomWndProc@CCtrlBase@@MAEJIIJ@Z @724 NONAME
+?CustomWndProc@CCtrlPages@@MAEJIIJ@Z @725 NONAME
+?DeleteAllItems@CCtrlListView@@QAEXXZ @726 NONAME
+?DeleteAllItems@CCtrlTreeView@@QAEXXZ @727 NONAME
+?DeleteColumn@CCtrlListView@@QAEXH@Z @728 NONAME
+?DeleteItem@CCtrlClc@@QAEXPAX@Z @729 NONAME
+?DeleteItem@CCtrlListView@@QAEXH@Z @730 NONAME
+?DeleteItem@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @731 NONAME
+?DeleteString@CCtrlCombo@@QAEXH@Z @732 NONAME
+?DeleteString@CCtrlListBox@@QAEXH@Z @733 NONAME
+?Detach@?$CMStringT@DV?$ChTraitsCRT@D@@@@QBEPADXZ @734 NONAME
+?Detach@?$CMStringT@_WV?$ChTraitsCRT@_W@@@@QBEPA_WXZ @735 NONAME
+?Disable@CCtrlBase@@QAEXXZ @736 NONAME
+?DlgProc@CDlgBase@@MAEHIIJ@Z @737 NONAME
+?DoModal@CDlgBase@@QAEHXZ @739 NONAME
+?SetParent@CDlgBase@@QAEXPAUHWND__@@@Z @740 NONAME
+?EditLabel@CCtrlClc@@QAEXPAX@Z @741 NONAME
+?EditLabel@CCtrlListView@@QAEPAUHWND__@@H@Z @742 NONAME
+?EditLabel@CCtrlTreeView@@QAEPAUHWND__@@PAU_TREEITEM@@@Z @743 NONAME
+?Enable@CCtrlBase@@QAEX_N@Z @744 NONAME
+?EnableGroupView@CCtrlListView@@QAEHH@Z @745 NONAME
+?Enabled@CCtrlBase@@QBE_NXZ @746 NONAME
+?EndEditLabel@CCtrlClc@@QAEX_N@Z @747 NONAME
+?EndEditLabelNow@CCtrlTreeView@@QAEXH@Z @748 NONAME
+?EnsureVisible@CCtrlClc@@QAEXPAX_N@Z @749 NONAME
+?EnsureVisible@CCtrlListView@@QAEHHH@Z @750 NONAME
+?EnsureVisible@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @751 NONAME
+?Expand@CCtrlClc@@QAEXPAXI@Z @752 NONAME
+?Expand@CCtrlTreeView@@QAEXPAU_TREEITEM@@I@Z @753 NONAME
+?FindContact@CCtrlClc@@QAEPAXI@Z @754 NONAME
+?FindGroup@CCtrlClc@@QAEPAXH@Z @756 NONAME
+?FindItem@CCtrlListView@@QAEHHPBUtagLVFINDINFOW@@@Z @757 NONAME
+?FindNamedItem@CCtrlTreeView@@QAEPAU_TREEITEM@@PAU2@PB_W@Z @758 NONAME
+?FindString@CCtrlCombo@@QAEHPB_WH_N@Z @759 NONAME
+?FindString@CCtrlListBox@@QAEHPB_WH_N@Z @760 NONAME
+?FindStringA@CCtrlCombo@@QAEHPBDH_N@Z @761 NONAME
+?GetBkColor@CCtrlClc@@QBEKXZ @762 NONAME
+?GetBkColor@CCtrlListView@@QBEKXZ @763 NONAME
+?GetBkColor@CCtrlTreeView@@QBEKXZ @764 NONAME
+?GetBkImage@CCtrlListView@@QBEXPAUtagLVBKIMAGEW@@@Z @765 NONAME
+?GetCallbackMask@CCtrlListView@@QBEIXZ @766 NONAME
+?GetCheck@CCtrlClc@@QBE_NPAX@Z @767 NONAME
+?GetCheckState@CCtrlListView@@QBEHI@Z @768 NONAME
+?GetCheckState@CCtrlTreeView@@QBEIPAU_TREEITEM@@@Z @769 NONAME
+?GetChild@CCtrlTreeView@@QBEPAU_TREEITEM@@PAU2@@Z @770 NONAME
+?GetColumn@CCtrlListView@@QBEXHPAUtagLVCOLUMNW@@@Z @771 NONAME
+?GetColumnOrderArray@CCtrlListView@@QBEXHPAH@Z @772 NONAME
+?GetColumnWidth@CCtrlListView@@QBEHH@Z @773 NONAME
+?GetCount@CCtrlClc@@QBEHXZ @774 NONAME
+?GetCount@CCtrlCombo@@QBEHXZ @775 NONAME
+?GetCount@CCtrlListBox@@QBEHXZ @776 NONAME
+?GetCount@CCtrlTreeView@@QBEHXZ @777 NONAME
+?GetCountPerPage@CCtrlListView@@QBEHXZ @778 NONAME
+?GetCtrlId@CCtrlBase@@QBEHXZ @779 NONAME
+?GetCurSel@CCtrlCombo@@QBEHXZ @780 NONAME
+?GetCurSel@CCtrlListBox@@QBEHXZ @781 NONAME
+?GetDataType@CCtrlData@@IAEEXZ @782 NONAME
+?GetDataType@CDataLink@@QBEEXZ @783 NONAME
+?GetDropHilight@CCtrlTreeView@@QBEPAU_TREEITEM@@XZ @784 NONAME
+?GetDroppedState@CCtrlCombo@@QBE_NXZ @785 NONAME
+?GetEditControl@CCtrlClc@@QBEPAUHWND__@@XZ @786 NONAME
+?GetEditControl@CCtrlListView@@QBEPAUHWND__@@XZ @787 NONAME
+?GetEditControl@CCtrlTreeView@@QBEPAUHWND__@@XZ @788 NONAME
+?GetExStyle@CCtrlClc@@QBEIXZ @789 NONAME
+?GetExpand@CCtrlClc@@QBEIPAX@Z @790 NONAME
+?GetExtendedListViewStyle@CCtrlListView@@QBEIXZ @791 NONAME
+?GetExtraColumns@CCtrlClc@@QBEHXZ @792 NONAME
+?GetExtraImage@CCtrlClc@@QBEEPAXH@Z @793 NONAME
+?GetExtraImageList@CCtrlClc@@QBEPAU_IMAGELIST@@XZ @794 NONAME
+?GetFirstVisible@CCtrlTreeView@@QBEPAU_TREEITEM@@XZ @795 NONAME
+?GetFont@CCtrlClc@@QBEPAUHFONT__@@H@Z @796 NONAME
+?GetGroupMetrics@CCtrlListView@@QBEXPAUtagLVGROUPMETRICS@@@Z @797 NONAME
+?GetHeader@CCtrlListView@@QBEPAUHWND__@@XZ @798 NONAME
+?GetHideOfflineRoot@CCtrlClc@@QBE_NXZ @799 NONAME
+?GetHotCursor@CCtrlListView@@QBEPAUHICON__@@XZ @800 NONAME
+?GetHotItem@CCtrlListView@@QBEHXZ @801 NONAME
+?GetHoverTime@CCtrlListView@@QBEIXZ @802 NONAME
+?GetHwnd@CCtrlBase@@QBEPAUHWND__@@XZ @803 NONAME
+?GetHwnd@CDlgBase@@QBEPAUHWND__@@XZ @804 NONAME
+?GetISearchString@CCtrlListView@@QBEHPAD@Z @805 NONAME
+?GetImageList@CCtrlListView@@QBEPAU_IMAGELIST@@H@Z @806 NONAME
+?GetImageList@CCtrlTreeView@@QBEPAU_IMAGELIST@@H@Z @807 NONAME
+?GetIndent@CCtrlTreeView@@QBEHXZ @808 NONAME
+?GetInsertMark@CCtrlListView@@QBEHPAULVINSERTMARK@@@Z @809 NONAME
+?GetInsertMarkColor@CCtrlListView@@QBEKXZ @810 NONAME
+?GetInsertMarkColor@CCtrlTreeView@@QBEKXZ @811 NONAME
+?GetInsertMarkRect@CCtrlListView@@QBEHPAUtagRECT@@@Z @812 NONAME
+?GetInt@CCtrlBase@@QBEHXZ @813 NONAME
+?GetItem@CCtrlListView@@QBE_NPAUtagLVITEMW@@@Z @814 NONAME
+?GetItem@CCtrlTreeView@@QBEXPAU_TREEITEM@@PAUtagTVITEMEXW@@@Z @815 NONAME
+?GetItem@CCtrlTreeView@@QBEXPAU_TREEITEM@@PAUtagTVITEMEXW@@PA_WH@Z @816 NONAME
+?GetItem@CCtrlTreeView@@QBE_NPAUtagTVITEMEXW@@@Z @817 NONAME
+?GetItemCount@CCtrlListView@@QBEHXZ @818 NONAME
+?GetItemData@CCtrlCombo@@QBEJH@Z @819 NONAME
+?GetItemData@CCtrlListBox@@QBEJH@Z @820 NONAME
+?GetItemData@CCtrlListView@@QBEJH@Z @821 NONAME
+?GetItemHeight@CCtrlTreeView@@QBEHXZ @822 NONAME
+?GetItemPosition@CCtrlListView@@QBEXHPAUtagPOINT@@@Z @823 NONAME
+?GetItemRect@CCtrlListView@@QBEXHPAUtagRECT@@H@Z @824 NONAME
+?GetItemRect@CCtrlTreeView@@QBEXPAU_TREEITEM@@PAUtagRECT@@H@Z @825 NONAME
+?GetItemSpacing@CCtrlListView@@QBEIH@Z @826 NONAME
+?GetItemState@CCtrlListView@@QBEIHI@Z @827 NONAME
+?GetItemState@CCtrlTreeView@@QBEIPAU_TREEITEM@@I@Z @828 NONAME
+?GetItemText@CCtrlCombo@@QBEPA_WH@Z @829 NONAME
+?GetItemText@CCtrlCombo@@QBEPA_WHPA_WH@Z @830 NONAME
+?GetItemText@CCtrlListBox@@QBEPA_WH@Z @831 NONAME
+?GetItemText@CCtrlListBox@@QBEPA_WHPA_WH@Z @832 NONAME
+?GetItemText@CCtrlListView@@QBEXHHPA_WH@Z @833 NONAME
+?GetItemType@CCtrlClc@@QBEHPAX@Z @834 NONAME
+?GetLastVisible@CCtrlTreeView@@QBEPAU_TREEITEM@@XZ @835 NONAME
+?GetLineColor@CCtrlTreeView@@QBEKXZ @837 NONAME
+?GetNextItem@CCtrlClc@@QBEPAXPAXI@Z @838 NONAME
+?GetNextItem@CCtrlListView@@QBEHHI@Z @839 NONAME
+?GetNextItem@CCtrlTreeView@@QBEPAU_TREEITEM@@PAU2@I@Z @840 NONAME
+?GetNextSibling@CCtrlTreeView@@QBEPAU_TREEITEM@@PAU2@@Z @841 NONAME
+?GetNextVisible@CCtrlTreeView@@QBEPAU_TREEITEM@@PAU2@@Z @842 NONAME
+?GetNumberOfWorkAreas@CCtrlListView@@QBEHPAI@Z @843 NONAME
+?GetOrigin@CCtrlListView@@QBEHPAUtagPOINT@@@Z @844 NONAME
+?GetOutlineColor@CCtrlListView@@QBEKXZ @845 NONAME
+?GetParent@CCtrlBase@@QBEPAVCDlgBase@@XZ @846 NONAME
+?GetParent@CCtrlTreeView@@QBEPAU_TREEITEM@@PAU2@@Z @847 NONAME
+?GetPrevSibling@CCtrlTreeView@@QBEPAU_TREEITEM@@PAU2@@Z @848 NONAME
+?GetPrevVisible@CCtrlTreeView@@QBEPAU_TREEITEM@@PAU2@@Z @849 NONAME
+?GetRoot@CCtrlTreeView@@QBEPAU_TREEITEM@@XZ @851 NONAME
+?GetScrollTime@CCtrlTreeView@@QBEIXZ @852 NONAME
+?GetSel@CCtrlListBox@@QBE_NH@Z @853 NONAME
+?GetSelCount@CCtrlListBox@@QBEHXZ @854 NONAME
+?GetSelItems@CCtrlListBox@@QBEPAHPAHH@Z @855 NONAME
+?GetSelItems@CCtrlListBox@@QBEPAHXZ @856 NONAME
+?GetSelectedColumn@CCtrlListView@@QBEIXZ @857 NONAME
+?GetSelectedCount@CCtrlListView@@QBEIXZ @858 NONAME
+?GetSelection@CCtrlClc@@QBEPAXXZ @859 NONAME
+?GetSelection@CCtrlTreeView@@QBEPAU_TREEITEM@@XZ @860 NONAME
+?GetSelectionMark@CCtrlListView@@QBEHXZ @861 NONAME
+?GetState@CCtrlCheck@@QBEHXZ @862 NONAME
+?GetStringWidth@CCtrlListView@@QBEHPBD@Z @863 NONAME
+?GetSubItemRect@CCtrlListView@@QBEHHHHPAUtagRECT@@@Z @864 NONAME
+?GetText@CCtrlBase@@QBEPA_WPA_WI@Z @865 NONAME
+?GetText@CCtrlBase@@QBEPA_WXZ @866 NONAME
+?GetTextA@CCtrlBase@@QBEPADPADI@Z @867 NONAME
+?GetTextA@CCtrlBase@@QBEPADXZ @868 NONAME
+?GetTextBkColor@CCtrlListView@@QBEKXZ @869 NONAME
+?GetTextColor@CCtrlListView@@QBEKXZ @870 NONAME
+?GetTextColor@CCtrlTreeView@@QBEKXZ @871 NONAME
+?GetTileInfo@CCtrlListView@@QBEXPAUtagLVTILEINFO@@@Z @873 NONAME
+?GetTileViewInfo@CCtrlListView@@QBEXPAUtagLVTILEVIEWINFO@@@Z @874 NONAME
+?GetToolTips@CCtrlListView@@QBEPAUHWND__@@XZ @875 NONAME
+?GetToolTips@CCtrlTreeView@@QBEPAUHWND__@@XZ @876 NONAME
+?GetTopIndex@CCtrlListView@@QBEHXZ @877 NONAME
+?GetUnicodeFormat@CCtrlListView@@QBEHXZ @878 NONAME
+?GetUnicodeFormat@CCtrlTreeView@@QBEHXZ @879 NONAME
+?GetView@CCtrlListView@@QBEIXZ @880 NONAME
+?GetViewRect@CCtrlListView@@QBEHPAUtagRECT@@@Z @881 NONAME
+?GetVisibleCount@CCtrlTreeView@@QBEIXZ @882 NONAME
+?GetWorkAreas@CCtrlListView@@QBEXHPAUtagRECT@@@Z @883 NONAME
+?GlobalDlgProc@CDlgBase@@CGHPAUHWND__@@IIJ@Z @884 NONAME
+?GlobalDlgResizer@CDlgBase@@CAHPAUHWND__@@JPAUUTILRESIZECONTROL@@@Z @885 NONAME
+?GlobalSubclassWndProc@CCtrlBase@@CGJPAUHWND__@@IIJ@Z @886 NONAME
+?HasGroup@CCtrlListView@@QAEHH@Z @887 NONAME
+?HitTest@CCtrlClc@@QBEPAXHHPAI@Z @888 NONAME
+?HitTest@CCtrlListView@@QBEHPAUtagLVHITTESTINFO@@@Z @889 NONAME
+?HitTest@CCtrlTreeView@@QBEPAU_TREEITEM@@PAUtagTVHITTESTINFO@@@Z @890 NONAME
+?InsertColumn@CCtrlListView@@QAEHHPBUtagLVCOLUMNW@@@Z @891 NONAME
+?InsertGroup@CCtrlListView@@QAEHHPAUtagLVGROUP@@@Z @892 NONAME
+?InsertGroupSorted@CCtrlListView@@QAEXPAUtagLVINSERTGROUPSORTED@@@Z @893 NONAME
+?InsertItem@CCtrlListView@@QAEHPBUtagLVITEMW@@@Z @894 NONAME
+?InsertItem@CCtrlTreeView@@QAEPAU_TREEITEM@@PAUtagTVINSERTSTRUCTW@@@Z @895 NONAME
+?InsertMarkHitTest@CCtrlListView@@QAEHPAUtagPOINT@@PAULVINSERTMARK@@@Z @896 NONAME
+?InsertString@CCtrlCombo@@QAEHPB_WHJ@Z @897 NONAME
+?InsertString@CCtrlListBox@@QAEHPB_WHJ@Z @898 NONAME
+?IsChanged@CCtrlBase@@QBE_NXZ @899 NONAME
+?IsGroupViewEnabled@CCtrlListView@@QAEHXZ @900 NONAME
+?IsInitialized@CDlgBase@@QBE_NXZ @901 NONAME
+?LoadInt@CCtrlData@@IAEIXZ @902 NONAME
+?LoadInt@CDbLink@@UAEIXZ @903 NONAME
+?LoadText@CCtrlData@@IAEPB_WXZ @904 NONAME
+?LoadText@CDbLink@@UAEPA_WXZ @905 NONAME
+?MakeFlat@CCtrlMButton@@QAEXXZ @906 NONAME
+?MakePush@CCtrlMButton@@QAEXXZ @907 NONAME
+?MapIDToIndex@CCtrlListView@@QAEII@Z @908 NONAME
+?MapIndexToID@CCtrlListView@@QAEII@Z @909 NONAME
+?NotifyChange@CCtrlBase@@QAEXXZ @910 NONAME
+?NotifyControls@CDlgBase@@AAEXP8CCtrlBase@@AEXXZ@Z @911 NONAME
+?OnApply@CCtrlBase@@UAE_NXZ @912 NONAME
+?OnApply@CCtrlCheck@@UAE_NXZ @913 NONAME
+?OnApply@CCtrlCombo@@UAE_NXZ @914 NONAME
+?OnApply@CCtrlEdit@@UAE_NXZ @915 NONAME
+?OnApply@CDlgBase@@MAE_NXZ @916 NONAME
+?OnChange@CDlgBase@@MAEXXZ @917 NONAME
+?OnClose@CDlgBase@@MAE_NXZ @918 NONAME
+?OnCommand@CCtrlBase@@UAEHPAUHWND__@@GG@Z @919 NONAME
+?OnCommand@CCtrlButton@@UAEHPAUHWND__@@GG@Z @920 NONAME
+?OnCommand@CCtrlCheck@@UAEHPAUHWND__@@GG@Z @921 NONAME
+?OnCommand@CCtrlCombo@@UAEHPAUHWND__@@GG@Z @922 NONAME
+?OnCommand@CCtrlEdit@@UAEHPAUHWND__@@GG@Z @923 NONAME
+?OnCommand@CCtrlHyperlink@@UAEHPAUHWND__@@GG@Z @924 NONAME
+?OnCommand@CCtrlListBox@@MAEHPAUHWND__@@GG@Z @925 NONAME
+?OnDeleteItem@CCtrlBase@@UAEHPAUtagDELETEITEMSTRUCT@@@Z @926 NONAME
+?OnDestroy@CCtrlBase@@UAEXXZ @927 NONAME
+?OnDestroy@CCtrlPages@@MAEXXZ @928 NONAME
+?OnDestroy@CDlgBase@@MAEXXZ @929 NONAME
+?OnDrawItem@CCtrlBase@@UAEHPAUtagDRAWITEMSTRUCT@@@Z @930 NONAME
+?OnInit@CCtrlBase@@UAEXXZ @931 NONAME
+?OnInit@CCtrlCombo@@UAEXXZ @933 NONAME
+?OnInit@CCtrlData@@UAEXXZ @934 NONAME
+?OnInit@CCtrlMButton@@UAEXXZ @936 NONAME
+?OnInit@CCtrlPages@@MAEXXZ @937 NONAME
+?OnInitDialog@CDlgBase@@MAE_NXZ @938 NONAME
+?OnMeasureItem@CCtrlBase@@UAEHPAUtagMEASUREITEMSTRUCT@@@Z @939 NONAME
+?OnNotify@CCtrlBase@@UAEHHPAUtagNMHDR@@@Z @940 NONAME
+?OnNotify@CCtrlClc@@MAEHHPAUtagNMHDR@@@Z @941 NONAME
+?OnNotify@CCtrlListView@@MAEHHPAUtagNMHDR@@@Z @942 NONAME
+?OnNotify@CCtrlPages@@MAEHHPAUtagNMHDR@@@Z @943 NONAME
+?OnNotify@CCtrlTreeView@@MAEHHPAUtagNMHDR@@@Z @944 NONAME
+?OnReset@CCtrlBase@@UAEXXZ @948 NONAME
+?OnReset@CCtrlCheck@@UAEXXZ @949 NONAME
+?OnReset@CCtrlCombo@@UAEXXZ @950 NONAME
+?OnReset@CCtrlEdit@@UAEXXZ @951 NONAME
+?OnReset@CDlgBase@@MAEXXZ @952 NONAME
+?RedrawItems@CCtrlListView@@QAEHHH@Z @953 NONAME
+?RemoveAllGroups@CCtrlListView@@QAEXXZ @954 NONAME
+?RemoveGroup@CCtrlListView@@QAEHH@Z @955 NONAME
+?ResetContent@CCtrlCombo@@QAEXXZ @956 NONAME
+?ResetContent@CCtrlListBox@@QAEXXZ @957 NONAME
+?Resizer@CDlgBase@@MAEHPAUUTILRESIZECONTROL@@@Z @958 NONAME
+?SaveInt@CCtrlData@@IAEXI@Z @959 NONAME
+?SaveInt@CDbLink@@UAEXI@Z @960 NONAME
+?SaveText@CCtrlData@@IAEXPA_W@Z @961 NONAME
+?SaveText@CDbLink@@UAEXPA_W@Z @962 NONAME
+?Scroll@CCtrlListView@@QAEHHH@Z @963 NONAME
+?Select@CCtrlTreeView@@QAEXPAU_TREEITEM@@I@Z @964 NONAME
+?SelectDropTarget@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @965 NONAME
+?SelectItem@CCtrlClc@@QAEXPAX@Z @966 NONAME
+?SelectItem@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @967 NONAME
+?SelectSetFirstVisible@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @968 NONAME
+?SelectString@CCtrlCombo@@QAEHPB_W@Z @969 NONAME
+?SelectString@CCtrlListBox@@QAEHPB_W@Z @970 NONAME
+?SendMsg@CCtrlBase@@QBEJIIJ@Z @971 NONAME
+?SetBkColor@CCtrlClc@@QAEXK@Z @973 NONAME
+?SetBkColor@CCtrlListView@@QAEHK@Z @974 NONAME
+?SetBkColor@CCtrlTreeView@@QAEKK@Z @975 NONAME
+?SetBkImage@CCtrlListView@@QAEHPAUtagLVBKIMAGEW@@@Z @976 NONAME
+?SetCallbackMask@CCtrlListView@@QAEHI@Z @977 NONAME
+?SetCheck@CCtrlClc@@QAEXPAX_N@Z @978 NONAME
+?SetCheckState@CCtrlListView@@QAEXIH@Z @979 NONAME
+?SetCheckState@CCtrlTreeView@@QAEXPAU_TREEITEM@@I@Z @980 NONAME
+?SetColumn@CCtrlListView@@QAEHHPAUtagLVCOLUMNW@@@Z @981 NONAME
+?SetColumnOrderArray@CCtrlListView@@QAEHHPAH@Z @982 NONAME
+?SetColumnWidth@CCtrlListView@@QAEHHH@Z @983 NONAME
+?SetCurSel@CCtrlCombo@@QAEHH@Z @984 NONAME
+?SetCurSel@CCtrlListBox@@QAEHH@Z @985 NONAME
+?SetExStyle@CCtrlClc@@QAEXI@Z @986 NONAME
+?SetExtendedListViewStyle@CCtrlListView@@QAEXI@Z @987 NONAME
+?SetExtendedListViewStyleEx@CCtrlListView@@QAEXII@Z @988 NONAME
+?SetExtraColumns@CCtrlClc@@QAEXH@Z @989 NONAME
+?SetExtraImage@CCtrlClc@@QAEXPAXHH@Z @990 NONAME
+?SetExtraImageList@CCtrlClc@@QAEXPAU_IMAGELIST@@@Z @991 NONAME
+?SetFont@CCtrlClc@@QAEXHPAX_N@Z @992 NONAME
+?SetGroupInfo@CCtrlListView@@QAEHHPAUtagLVGROUP@@@Z @994 NONAME
+?SetGroupMetrics@CCtrlListView@@QAEXPAUtagLVGROUPMETRICS@@@Z @995 NONAME
+?SetHideEmptyGroups@CCtrlClc@@QAEX_N@Z @996 NONAME
+?SetHideOfflineRoot@CCtrlClc@@QAEX_N@Z @997 NONAME
+?SetHotCursor@CCtrlListView@@QAEPAUHICON__@@PAU2@@Z @998 NONAME
+?SetHotItem@CCtrlListView@@QAEHH@Z @999 NONAME
+?SetHoverTime@CCtrlListView@@QAEXI@Z @1000 NONAME
+?SetIconSpacing@CCtrlListView@@QAEIHH@Z @1001 NONAME
+?SetImageList@CCtrlListView@@QAEPAU_IMAGELIST@@PAU2@H@Z @1002 NONAME
+?SetImageList@CCtrlTreeView@@QAEPAU_IMAGELIST@@PAU2@H@Z @1003 NONAME
+?SetIndent@CCtrlTreeView@@QAEXH@Z @1005 NONAME
+?SetInfoTip@CCtrlListView@@QAEHPAUtagLVSETINFOTIP@@@Z @1006 NONAME
+?SetInsertMark@CCtrlListView@@QAEHPAULVINSERTMARK@@@Z @1007 NONAME
+?SetInsertMark@CCtrlTreeView@@QAEXPAU_TREEITEM@@H@Z @1008 NONAME
+?SetInsertMarkColor@CCtrlListView@@QAEKK@Z @1009 NONAME
+?SetInsertMarkColor@CCtrlTreeView@@QAEKK@Z @1010 NONAME
+?SetInt@CCtrlBase@@QAEXH@Z @1011 NONAME
+?SetItem@CCtrlListView@@QAEHPBUtagLVITEMW@@@Z @1012 NONAME
+?SetItem@CCtrlListView@@QAEXHHPB_WH@Z @1013 NONAME
+?SetItem@CCtrlTreeView@@QAEXPAUtagTVITEMEXW@@@Z @1014 NONAME
+?SetItemCount@CCtrlListView@@QAEXH@Z @1015 NONAME
+?SetItemCountEx@CCtrlListView@@QAEXHI@Z @1016 NONAME
+?SetItemData@CCtrlCombo@@QAEXHJ@Z @1017 NONAME
+?SetItemData@CCtrlListBox@@QAEXHJ@Z @1018 NONAME
+?SetItemHeight@CCtrlTreeView@@QAEXF@Z @1019 NONAME
+?SetItemPosition32@CCtrlListView@@QAEXHHH@Z @1020 NONAME
+?SetItemPosition@CCtrlListView@@QAEHHHH@Z @1021 NONAME
+?SetItemState@CCtrlListView@@QAEXHII@Z @1022 NONAME
+?SetItemState@CCtrlTreeView@@QAEXPAU_TREEITEM@@II@Z @1023 NONAME
+?SetItemText@CCtrlClc@@QAEXPAXPAD@Z @1024 NONAME
+?SetItemText@CCtrlListView@@QAEXHHPB_W@Z @1025 NONAME
+?SetLineColor@CCtrlTreeView@@QAEKK@Z @1027 NONAME
+?SetOfflineModes@CCtrlClc@@QAEXI@Z @1028 NONAME
+?SetOutlineColor@CCtrlListView@@QAEKK@Z @1029 NONAME
+?SetScrollTime@CCtrlTreeView@@QAEXI@Z @1030 NONAME
+?SetSel@CCtrlListBox@@QAEXH_N@Z @1031 NONAME
+?SetSelectedColumn@CCtrlListView@@QAEXH@Z @1032 NONAME
+?SetSelectionMark@CCtrlListView@@QAEHH@Z @1033 NONAME
+?SetState@CCtrlCheck@@QAEXH@Z @1034 NONAME
+?SetText@CCtrlBase@@QAEXPB_W@Z @1036 NONAME
+?SetTextA@CCtrlBase@@QAEXPBD@Z @1037 NONAME
+?SetTextBkColor@CCtrlListView@@QAEHK@Z @1038 NONAME
+?SetTextColor@CCtrlListView@@QAEHK@Z @1040 NONAME
+?SetTextColor@CCtrlTreeView@@QAEKK@Z @1041 NONAME
+?SetTileInfo@CCtrlListView@@QAEHPAUtagLVTILEINFO@@@Z @1042 NONAME
+?SetTileViewInfo@CCtrlListView@@QAEHPAUtagLVTILEVIEWINFO@@@Z @1043 NONAME
+?SetToolTips@CCtrlListView@@QAEPAUHWND__@@PAU2@@Z @1044 NONAME
+?SetToolTips@CCtrlTreeView@@QAEPAUHWND__@@PAU2@@Z @1045 NONAME
+?SetUnicodeFormat@CCtrlListView@@QAEHH@Z @1046 NONAME
+?SetUnicodeFormat@CCtrlTreeView@@QAEHH@Z @1047 NONAME
+?SetUseGroups@CCtrlClc@@QAEX_N@Z @1048 NONAME
+?SetView@CCtrlListView@@QAEHI@Z @1049 NONAME
+?SetWorkAreas@CCtrlListView@@QAEXHPAUtagRECT@@@Z @1050 NONAME
+?Show@CDlgBase@@QAEXH@Z @1051 NONAME
+?ShowDropdown@CCtrlCombo@@QAEX_N@Z @1052 NONAME
+?ShowPage@CCtrlPages@@AAEXPAVCDlgBase@@@Z @1053 NONAME
+?SortChildren@CCtrlTreeView@@QAEXPAU_TREEITEM@@H@Z @1054 NONAME
+?SortChildrenCB@CCtrlTreeView@@QAEXPAUtagTVSORTCB@@H@Z @1055 NONAME
+?SortGroups@CCtrlListView@@QAEHP6GHHHPAX@Z0@Z @1056 NONAME
+?SortItems@CCtrlListView@@QAEHP6GHJJJ@ZJ@Z @1057 NONAME
+?SortItemsEx@CCtrlListView@@QAEHP6GHJJJ@ZJ@Z @1058 NONAME
+?SubItemHitTest@CCtrlListView@@QBEHPAUtagLVHITTESTINFO@@@Z @1059 NONAME
+?Subclass@CCtrlBase@@IAEXXZ @1060 NONAME
+?ThemeDialogBackground@CDlgBase@@IAEXH@Z @1061 NONAME
+?TranslateItem@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @1062 NONAME
+?TranslateTree@CCtrlTreeView@@QAEXXZ @1063 NONAME
+?Unsubclass@CCtrlBase@@IAEXXZ @1064 NONAME
+?Update@CCtrlListView@@QAEHH@Z @1065 NONAME
+?GetInst@CDlgBase@@QBEPAUHINSTANCE__@@XZ @1075 NONAME
+?Find@CDlgBase@@SAPAV1@PAUHWND__@@@Z @1076 NONAME
+?SetCaption@CDlgBase@@QAEXPB_W@Z @1077 NONAME
+?NotifyChange@CDlgBase@@QAEXXZ @1078 NONAME
+?InvertCheck@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @1079 NONAME
+?SetFlags@CCtrlTreeView@@QAEXI@Z @1080 NONAME
+?CustomWndProc@CCtrlTreeView@@MAEJIIJ@Z @1081 NONAME
+?OnInit@CCtrlTreeView@@MAEXXZ @1082 NONAME
+?DropHilite@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @1083 NONAME
+?DropUnhilite@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @1084 NONAME
+?GetNumSelected@CCtrlTreeView@@QAEHXZ @1085 NONAME
+?GetSelected@CCtrlTreeView@@QAEXAAU?$LIST@U_TREEITEM@@@@@Z @1086 NONAME
+?IsSelected@CCtrlTreeView@@QAE_NPAU_TREEITEM@@@Z @1087 NONAME
+?Select@CCtrlTreeView@@QAEXAAU?$LIST@U_TREEITEM@@@@@Z @1088 NONAME
+?Select@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @1089 NONAME
+?SelectAll@CCtrlTreeView@@QAEXXZ @1090 NONAME
+?SelectRange@CCtrlTreeView@@QAEXPAU_TREEITEM@@0@Z @1091 NONAME
+?Unselect@CCtrlTreeView@@QAEXPAU_TREEITEM@@@Z @1092 NONAME
+?UnselectAll@CCtrlTreeView@@QAEXXZ @1093 NONAME
+?MoveItemAbove@CCtrlTreeView@@AAEPAU_TREEITEM@@PAU2@00@Z @1094 NONAME
+?GetCurrPage@CCtrlPages@@AAEPAUTPageInfo@1@XZ @1095 NONAME
+?OnApply@CCtrlPages@@MAE_NXZ @1097 NONAME
+?OnReset@CCtrlPages@@MAEXXZ @1098 NONAME
+Bitmap_GetFilter @1099
+Bitmap_Load @1100
+CreateProtoServiceFunction @1101
+WindowList_Add @1102
+WindowList_Broadcast @1103
+WindowList_BroadcastAsync @1104
+WindowList_Create @1105
+WindowList_Destroy @1106
+WindowList_Find @1107
+WindowList_Remove @1108
+?SetSilent@CCtrlBase@@QAEX_N@Z @1109 NONAME
+Utils_AssertInsideScreen @1110
+Utils_RestoreWindowPosition @1111
+Utils_SaveWindowPosition @1112
+OS_GetShortString @1113
+TimeZone_CreateByContact @1114
+TimeZone_CreateByName @1115
+TimeZone_GetDescription @1116
+TimeZone_GetInfo @1117
+TimeZone_GetName @1118
+TimeZone_GetTimeZoneTime @1119
+TimeZone_PrepareList @1120
+TimeZone_PrintDateTime @1121
+TimeZone_PrintTimeStamp @1122
+TimeZone_SelectListItem @1123
+TimeZone_StoreByContact @1124
+TimeZone_StoreListResult @1125
+TimeZone_ToLocal @1126
+TimeZone_ToString @1127
+TimeZone_ToStringW @1128
+TimeZone_UtcToLocal @1129
+Utils_ResizeDialog @1130
+Utils_GetRandom @1131
+Utils_OpenUrl @1132
+Utils_OpenUrlW @1133
+OS_GetDisplayString @1134
+IsWinVer10Plus @1135
+IsWinVer81Plus @1136
+IsWinVer8Plus @1137
+mir_strncmp @1138
+mir_strncmpi @1139
+mir_wstrncmp @1140
+mir_wstrncmpi @1141
+strdel @1142
+strdelw @1143
+mir_sha256_final @1144
+mir_sha256_hash @1145
+mir_sha256_init @1146
+mir_sha256_write @1147
+mir_forkthreadowner @1148
+hex2bin @1149
+hex2binW @1150
+Utf8toUcs2 @1152
+db_add_contact @1153
+db_delete_contact @1154
+db_enum_modules @1155
+db_enum_residents @1156
+db_enum_settings @1157
+db_get_contact_count @1158
+db_is_contact @1159
+db_set_safety_mode @1160
+db_delete_module @1161
+??0CCtrlSpin@@QAE@PAVCDlgBase@@HFF@Z @1163 NONAME
+??1CCtrlSpin@@UAE@XZ @1164 NONAME
+??_7CCtrlSpin@@6B@ @1166 NONAME
+?SetMaxLength@CCtrlEdit@@QAEXI@Z @1167 NONAME
+db_get_current @1169
+CallFunctionSync @1170
+??0CCtrlProgress@@QAE@PAVCDlgBase@@H@Z @1172 NONAME
+??0CTimer@@QAE@ABV0@@Z @1173 NONAME
+??0CTimer@@QAE@PAVCDlgBase@@I@Z @1174 NONAME
+??1CCtrlProgress@@UAE@XZ @1175 NONAME
+??4CTimer@@QAEAAV0@ABV0@@Z @1177 NONAME
+??_7CCtrlProgress@@6B@ @1178 NONAME
+??_7CTimer@@6B@ @1179 NONAME
+?FindTimer@CDlgBase@@AAEPAVCTimer@@H@Z @1180 NONAME
+?GetEventId@CTimer@@QBEIXZ @1181 NONAME
+?Move@CCtrlProgress@@QAEGG@Z @1182 NONAME
+?OnTimer@CDlgBase@@MAEXPAVCTimer@@@Z @1183 NONAME
+?OnTimer@CTimer@@UAEHXZ @1184 NONAME
+?SetPosition@CCtrlProgress@@QAEXG@Z @1185 NONAME
+?SetRange@CCtrlProgress@@QAEXGG@Z @1186 NONAME
+?SetStep@CCtrlProgress@@QAEXG@Z @1187 NONAME
+?Start@CTimer@@QAEXH@Z @1188 NONAME
+?Stop@CTimer@@QAE_NXZ @1189 NONAME
+?AddTimer@CDlgBase@@IAEXPAVCTimer@@@Z @1190 NONAME
+?GetItemRect@CCtrlListBox@@QBEHHPAUtagRECT@@@Z @1193 NONAME
+?SetItemHeight@CCtrlListBox@@QAEXHH@Z @1194 NONAME
+?UseSystemColors@CCtrlBase@@QAEXXZ @1195 NONAME
+?GetPosition@CCtrlSpin@@QAEFXZ @1196 NONAME
+?SetPosition@CCtrlSpin@@QAEXF@Z @1197 NONAME
+?OnNotify@CCtrlSpin@@EAEHHPAUtagNMHDR@@@Z @1198 NONAME
+?GetCount@CCtrlPages@@QAEHXZ @1199 NONAME
+?GetActivePage@CCtrlPages@@QBEPAVCDlgBase@@XZ @1200 NONAME
+?InsertPage@CCtrlPages@@AAEXPAUTPageInfo@1@@Z @1201 NONAME
+?GetDlgIndex@CCtrlPages@@QAEHPAVCDlgBase@@@Z @1202 NONAME
+?GetNthPage@CCtrlPages@@QAEPAVCDlgBase@@H@Z @1203 NONAME
+?GetItemPage@CCtrlPages@@AAEPAUTPageInfo@1@H@Z @1204 NONAME
+?RemovePage@CCtrlPages@@QAEXH@Z @1205 NONAME
+??0MBinBuffer@@QAE@XZ @1206 NONAME
+??1MBinBuffer@@QAE@XZ @1207 NONAME
+??4MBinBuffer@@QAEAAV0@$$QAV0@@Z @1208 NONAME
+?append@MBinBuffer@@QAEXPBXI@Z @1209 NONAME
+?appendBefore@MBinBuffer@@QAEXPBXI@Z @1210 NONAME
+?data@MBinBuffer@@QBEPAEXZ @1211 NONAME
+?isEmpty@MBinBuffer@@QBE_NXZ @1212 NONAME
+?length@MBinBuffer@@QBEIXZ @1213 NONAME
+?remove@MBinBuffer@@QAEXI@Z @1214 NONAME
+??ACDlgBase@@QAEPAVCCtrlBase@@H@Z @1215 NONAME
+??0CSplitter@@QAE@PAVCDlgBase@@H@Z @1217 NONAME
+??1CSplitter@@UAE@XZ @1218 NONAME
+??_7CSplitter@@6B@ @1220 NONAME
+?CustomWndProc@CSplitter@@MAEJIIJ@Z @1221 NONAME
+?GetPos@CSplitter@@QBEHXZ @1222 NONAME
+?OnInit@CSplitter@@MAEXXZ @1223 NONAME
+?SwapPages@CCtrlPages@@QAEXHH@Z @1224 NONAME
+?IsPushed@CCtrlButton@@QBE_NXZ @1225 NONAME
+?Push@CCtrlButton@@QAEX_N@Z @1226 NONAME
+?Hide@CCtrlBase@@QAEXXZ @1227 NONAME
+?Show@CCtrlBase@@QAEX_N@Z @1228 NONAME
+??0CCtrlRichEdit@@QAE@PAVCDlgBase@@H@Z @1229 NONAME
+??1CCtrlRichEdit@@UAE@XZ @1230 NONAME
+??_7CCtrlRichEdit@@6B@ @1231 NONAME
+?GetRichTextLength@CCtrlRichEdit@@QBEHH@Z @1232 NONAME
+?SetRichText@CCtrlRichEdit@@QAEHPB_W@Z @1233 NONAME
+?SetRichTextRtf@CCtrlRichEdit@@QAEHPBD@Z @1234 NONAME
+?GetRichTextRtf@CCtrlRichEdit@@QBEPAD_N0@Z @1236 NONAME
+?SetReadOnly@CCtrlRichEdit@@QAEX_N@Z @1237 NONAME
+?Hide@CDlgBase@@QAEXXZ @1238 NONAME
+?Resize@CDlgBase@@QAEXXZ @1239 NONAME
+Utils_IsRtl @1240
+HookTemporaryEvent @1241
+?Click@CCtrlButton@@QAEXXZ @1242 NONAME
+??1CTimer@@QAE@XZ @1243 NONAME
+?RemoveTimer@CDlgBase@@IAEXI@Z @1244 NONAME
+IsTerminalDisconnected @1245
+?FindControl@CDlgBase@@QAEPAVCCtrlBase@@H@Z @1246 NONAME
+?FindControl@CDlgBase@@QAEPAVCCtrlBase@@PAUHWND__@@@Z @1247 NONAME
+?GlobalFieldEnum@CDlgBase@@CGHPAUHWND__@@J@Z @1248 NONAME
+?GetUrl@CCtrlHyperlink@@QAEPBDXZ @1250 NONAME
+?IsChecked@CCtrlCheck@@QAE_NXZ @1251 NONAME
+?OnApply@CCtrlSpin@@UAE_NXZ @1252 NONAME
+?OnReset@CCtrlSpin@@UAEXXZ @1253 NONAME
+?SetUrl@CCtrlHyperlink@@QAEXPBD@Z @1254 NONAME
+?Default_OnClick@CCtrlHyperlink@@IAEXPAV1@@Z @1255 NONAME
+??0CCtrlLabel@@QAE@PAVCDlgBase@@H@Z @1256 NONAME
+??1CCtrlLabel@@UAE@XZ @1257 NONAME
+??_7CCtrlLabel@@6B@ @1258 NONAME
+CallObjectEventHook @1259
+?db_get_sm@@YG?AV?$CMStringT@DV?$ChTraitsCRT@D@@@@IPBD00@Z @1682 NONAME
+?db_get_wsm@@YG?AV?$CMStringT@_WV?$ChTraitsCRT@_W@@@@IPBD0PB_W@Z @1683 NONAME
+?CreateLink@CDlgBase@@IAEXAAVCCtrlData@@PBDEI@Z @1262 NONAME
+?CreateLink@CDlgBase@@IAEXAAVCCtrlData@@PBDPA_W@Z @1263 NONAME
+?CheckRowCount@CCtrlPages@@AAEXXZ @1264 NONAME
+?VerifyControls@CDlgBase@@AAE_NP8CCtrlBase@@AE_NXZ@Z @1265 NONAME
+db_event_getById @1266
+db_event_edit @1268
+??0StrPair@tinyxml2@@QAE@XZ @1269 NONAME
+??0XMLAttribute@tinyxml2@@AAE@XZ @1270 NONAME
+??0XMLComment@tinyxml2@@IAE@PAVXMLDocument@1@@Z @1271 NONAME
+??0XMLConstHandle@tinyxml2@@QAE@ABV01@@Z @1272 NONAME
+??0XMLConstHandle@tinyxml2@@QAE@ABVXMLNode@1@@Z @1273 NONAME
+??0XMLConstHandle@tinyxml2@@QAE@PBVXMLNode@1@@Z @1274 NONAME
+??0XMLDeclaration@tinyxml2@@IAE@PAVXMLDocument@1@@Z @1275 NONAME
+??0XMLDocument@tinyxml2@@QAE@_NW4Whitespace@1@@Z @1276 NONAME
+??0XMLElement@tinyxml2@@AAE@PAVXMLDocument@1@@Z @1277 NONAME
+??0XMLHandle@tinyxml2@@QAE@AAVXMLNode@1@@Z @1278 NONAME
+??0XMLHandle@tinyxml2@@QAE@ABV01@@Z @1279 NONAME
+??0XMLHandle@tinyxml2@@QAE@PAVXMLNode@1@@Z @1280 NONAME
+??0XMLNode@tinyxml2@@IAE@PAVXMLDocument@1@@Z @1281 NONAME
+??0XMLPrinter@tinyxml2@@QAE@PAU_iobuf@@_NH@Z @1282 NONAME
+??0XMLText@tinyxml2@@IAE@PAVXMLDocument@1@@Z @1283 NONAME
+??0XMLUnknown@tinyxml2@@IAE@PAVXMLDocument@1@@Z @1284 NONAME
+??0XMLVisitor@tinyxml2@@QAE@ABV01@@Z @1285 NONAME
+??0XMLVisitor@tinyxml2@@QAE@XZ @1286 NONAME
+??1StrPair@tinyxml2@@QAE@XZ @1287 NONAME
+??1XMLAttribute@tinyxml2@@EAE@XZ @1288 NONAME
+??1XMLComment@tinyxml2@@MAE@XZ @1289 NONAME
+??1XMLDeclaration@tinyxml2@@MAE@XZ @1290 NONAME
+??1XMLDocument@tinyxml2@@UAE@XZ @1291 NONAME
+??1XMLElement@tinyxml2@@EAE@XZ @1292 NONAME
+??1XMLNode@tinyxml2@@MAE@XZ @1293 NONAME
+??1XMLPrinter@tinyxml2@@UAE@XZ @1294 NONAME
+??1XMLText@tinyxml2@@MAE@XZ @1295 NONAME
+??1XMLUnknown@tinyxml2@@MAE@XZ @1296 NONAME
+??1XMLVisitor@tinyxml2@@UAE@XZ @1297 NONAME
+??4XMLConstHandle@tinyxml2@@QAEAAV01@ABV01@@Z @1298 NONAME
+??4XMLHandle@tinyxml2@@QAEAAV01@ABV01@@Z @1299 NONAME
+??4XMLUtil@tinyxml2@@QAEAAV01@$$QAV01@@Z @1300 NONAME
+??4XMLUtil@tinyxml2@@QAEAAV01@ABV01@@Z @1301 NONAME
+??4XMLVisitor@tinyxml2@@QAEAAV01@ABV01@@Z @1302 NONAME
+??_7XMLAttribute@tinyxml2@@6B@ @1303 NONAME
+??_7XMLComment@tinyxml2@@6B@ @1304 NONAME
+??_7XMLDeclaration@tinyxml2@@6B@ @1305 NONAME
+??_7XMLDocument@tinyxml2@@6B@ @1306 NONAME
+??_7XMLElement@tinyxml2@@6B@ @1307 NONAME
+??_7XMLNode@tinyxml2@@6B@ @1308 NONAME
+??_7XMLPrinter@tinyxml2@@6B@ @1309 NONAME
+??_7XMLText@tinyxml2@@6B@ @1310 NONAME
+??_7XMLUnknown@tinyxml2@@6B@ @1311 NONAME
+??_7XMLVisitor@tinyxml2@@6B@ @1312 NONAME
+??_FXMLDocument@tinyxml2@@QAEXXZ @1313 NONAME
+??_FXMLPrinter@tinyxml2@@QAEXXZ @1314 NONAME
+?Accept@XMLComment@tinyxml2@@UBE_NPAVXMLVisitor@2@@Z @1315 NONAME
+?Accept@XMLDeclaration@tinyxml2@@UBE_NPAVXMLVisitor@2@@Z @1316 NONAME
+?Accept@XMLDocument@tinyxml2@@UBE_NPAVXMLVisitor@2@@Z @1317 NONAME
+?Accept@XMLElement@tinyxml2@@UBE_NPAVXMLVisitor@2@@Z @1318 NONAME
+?Accept@XMLText@tinyxml2@@UBE_NPAVXMLVisitor@2@@Z @1319 NONAME
+?Accept@XMLUnknown@tinyxml2@@UBE_NPAVXMLVisitor@2@@Z @1320 NONAME
+?Attribute@XMLElement@tinyxml2@@QBEPBDPBD0@Z @1321 NONAME
+?BoolAttribute@XMLElement@tinyxml2@@QBE_NPBD_N@Z @1322 NONAME
+?BoolText@XMLElement@tinyxml2@@QBE_N_N@Z @1323 NONAME
+?BoolValue@XMLAttribute@tinyxml2@@QBE_NXZ @1324 NONAME
+?CData@XMLText@tinyxml2@@QBE_NXZ @1325 NONAME
+?CStr@XMLPrinter@tinyxml2@@QBEPBDXZ @1326 NONAME
+?CStrSize@XMLPrinter@tinyxml2@@QBEHXZ @1327 NONAME
+?Clear@XMLDocument@tinyxml2@@QAEXXZ @1328 NONAME
+?ClearBuffer@XMLPrinter@tinyxml2@@QAEX_N@Z @1329 NONAME
+?ClearError@XMLDocument@tinyxml2@@QAEXXZ @1330 NONAME
+?CloseElement@XMLPrinter@tinyxml2@@UAEX_N@Z @1331 NONAME
+?ClosingType@XMLElement@tinyxml2@@QBE?AW4ElementClosingType@12@XZ @1332 NONAME
+?CollapseWhitespace@StrPair@tinyxml2@@AAEXXZ @1333 NONAME
+?CompactMode@XMLPrinter@tinyxml2@@MAE_NABVXMLElement@2@@Z @1334 NONAME
+?ConvertUTF32ToUTF8@XMLUtil@tinyxml2@@SAXKPADPAH@Z @1335 NONAME
+?CreateAttribute@XMLElement@tinyxml2@@AAEPAVXMLAttribute@2@XZ @1336 NONAME
+?DeepClone@XMLNode@tinyxml2@@QBEPAV12@PAVXMLDocument@2@@Z @1337 NONAME
+?DeepCopy@XMLDocument@tinyxml2@@QBEXPAV12@@Z @1338 NONAME
+?DeleteAttribute@XMLElement@tinyxml2@@CAXPAVXMLAttribute@2@@Z @1339 NONAME
+?DeleteAttribute@XMLElement@tinyxml2@@QAEXPBD@Z @1340 NONAME
+?DeleteChild@XMLNode@tinyxml2@@QAEXPAV12@@Z @1341 NONAME
+?DeleteChildren@XMLNode@tinyxml2@@QAEXXZ @1342 NONAME
+?DeleteNode@XMLDocument@tinyxml2@@QAEXPAVXMLNode@2@@Z @1343 NONAME
+?DeleteNode@XMLNode@tinyxml2@@CAXPAV12@@Z @1344 NONAME
+?DoubleAttribute@XMLElement@tinyxml2@@QBENPBDN@Z @1345 NONAME
+?DoubleText@XMLElement@tinyxml2@@QBENN@Z @1346 NONAME
+?DoubleValue@XMLAttribute@tinyxml2@@QBENXZ @1347 NONAME
+?Empty@StrPair@tinyxml2@@QBE_NXZ @1348 NONAME
+?Error@XMLDocument@tinyxml2@@QBE_NXZ @1349 NONAME
+?ErrorID@XMLDocument@tinyxml2@@QBE?AW4XMLError@2@XZ @1350 NONAME
+?ErrorIDToName@XMLDocument@tinyxml2@@SAPBDW4XMLError@2@@Z @1351 NONAME
+?ErrorLineNum@XMLDocument@tinyxml2@@QBEHXZ @1352 NONAME
+?ErrorName@XMLDocument@tinyxml2@@QBEPBDXZ @1353 NONAME
+?ErrorStr@XMLDocument@tinyxml2@@QBEPBDXZ @1354 NONAME
+?FindAttribute@XMLElement@tinyxml2@@QBEPBVXMLAttribute@2@PBD@Z @1355 NONAME
+?FindOrCreateAttribute@XMLElement@tinyxml2@@AAEPAVXMLAttribute@2@PBD@Z @1356 NONAME
+?FirstAttribute@XMLElement@tinyxml2@@QBEPBVXMLAttribute@2@XZ @1357 NONAME
+?FirstChild@XMLConstHandle@tinyxml2@@QBE?BV12@XZ @1358 NONAME
+?FirstChild@XMLHandle@tinyxml2@@QAE?AV12@XZ @1359 NONAME
+?FirstChild@XMLNode@tinyxml2@@QAEPAV12@XZ @1360 NONAME
+?FirstChild@XMLNode@tinyxml2@@QBEPBV12@XZ @1361 NONAME
+?FirstChildElement@XMLConstHandle@tinyxml2@@QBE?BV12@PBD@Z @1362 NONAME
+?FirstChildElement@XMLHandle@tinyxml2@@QAE?AV12@PBD@Z @1363 NONAME
+?FirstChildElement@XMLNode@tinyxml2@@QAEPAVXMLElement@2@PBD@Z @1364 NONAME
+?FirstChildElement@XMLNode@tinyxml2@@QBEPBVXMLElement@2@PBD@Z @1365 NONAME
+?FloatAttribute@XMLElement@tinyxml2@@QBEMPBDM@Z @1366 NONAME
+?FloatText@XMLElement@tinyxml2@@QBEMM@Z @1367 NONAME
+?FloatValue@XMLAttribute@tinyxml2@@QBEMXZ @1368 NONAME
+?GetCharacterRef@XMLUtil@tinyxml2@@SAPBDPBDPADPAH@Z @1369 NONAME
+?GetDocument@XMLNode@tinyxml2@@QAEPAVXMLDocument@2@XZ @1370 NONAME
+?GetDocument@XMLNode@tinyxml2@@QBEPBVXMLDocument@2@XZ @1371 NONAME
+?GetLineNum@XMLAttribute@tinyxml2@@QBEHXZ @1372 NONAME
+?GetLineNum@XMLNode@tinyxml2@@QBEHXZ @1373 NONAME
+?GetStr@StrPair@tinyxml2@@QAEPBDXZ @1374 NONAME
+?GetText@XMLElement@tinyxml2@@QBEPBDXZ @1375 NONAME
+?GetUserData@XMLNode@tinyxml2@@QBEPAXXZ @1376 NONAME
+?HasBOM@XMLDocument@tinyxml2@@QBE_NXZ @1377 NONAME
+?Identify@XMLDocument@tinyxml2@@QAEPADPADPAPAVXMLNode@2@@Z @1378 NONAME
+?InsertAfterChild@XMLNode@tinyxml2@@QAEPAV12@PAV12@0@Z @1379 NONAME
+?InsertChildPreamble@XMLNode@tinyxml2@@ABEXPAV12@@Z @1380 NONAME
+?InsertEndChild@XMLNode@tinyxml2@@QAEPAV12@PAV12@@Z @1381 NONAME
+?InsertFirstChild@XMLNode@tinyxml2@@QAEPAV12@PAV12@@Z @1382 NONAME
+?Int64Attribute@XMLElement@tinyxml2@@QBE_JPBD_J@Z @1383 NONAME
+?Int64Text@XMLElement@tinyxml2@@QBE_J_J@Z @1384 NONAME
+?Int64Value@XMLAttribute@tinyxml2@@QBE_JXZ @1385 NONAME
+?IntAttribute@XMLElement@tinyxml2@@QBEHPBDH@Z @1386 NONAME
+?IntText@XMLElement@tinyxml2@@QBEHH@Z @1387 NONAME
+?IntValue@XMLAttribute@tinyxml2@@QBEHXZ @1388 NONAME
+?IsNameChar@XMLUtil@tinyxml2@@SA_NE@Z @1389 NONAME
+?IsNameStartChar@XMLUtil@tinyxml2@@SA_NE@Z @1390 NONAME
+?IsUTF8Continuation@XMLUtil@tinyxml2@@SA_ND@Z @1391 NONAME
+?IsWhiteSpace@XMLUtil@tinyxml2@@SA_ND@Z @1392 NONAME
+?LastChild@XMLConstHandle@tinyxml2@@QBE?BV12@XZ @1393 NONAME
+?LastChild@XMLHandle@tinyxml2@@QAE?AV12@XZ @1394 NONAME
+?LastChild@XMLNode@tinyxml2@@QAEPAV12@XZ @1395 NONAME
+?LastChild@XMLNode@tinyxml2@@QBEPBV12@XZ @1396 NONAME
+?LastChildElement@XMLConstHandle@tinyxml2@@QBE?BV12@PBD@Z @1397 NONAME
+?LastChildElement@XMLHandle@tinyxml2@@QAE?AV12@PBD@Z @1398 NONAME
+?LastChildElement@XMLNode@tinyxml2@@QAEPAVXMLElement@2@PBD@Z @1399 NONAME
+?LastChildElement@XMLNode@tinyxml2@@QBEPBVXMLElement@2@PBD@Z @1400 NONAME
+?LinkEndChild@XMLNode@tinyxml2@@QAEPAV12@PAV12@@Z @1401 NONAME
+?LoadFile@XMLDocument@tinyxml2@@QAE?AW4XMLError@2@PAU_iobuf@@@Z @1402 NONAME
+?LoadFile@XMLDocument@tinyxml2@@QAE?AW4XMLError@2@PBD@Z @1403 NONAME
+?MarkInUse@XMLDocument@tinyxml2@@QAEXQBVXMLNode@2@@Z @1404 NONAME
+?Name@XMLAttribute@tinyxml2@@QBEPBDXZ @1405 NONAME
+?Name@XMLElement@tinyxml2@@QBEPBDXZ @1406 NONAME
+?NewComment@XMLDocument@tinyxml2@@QAEPAVXMLComment@2@PBD@Z @1407 NONAME
+?NewDeclaration@XMLDocument@tinyxml2@@QAEPAVXMLDeclaration@2@PBD@Z @1408 NONAME
+?NewElement@XMLDocument@tinyxml2@@QAEPAVXMLElement@2@PBD@Z @1409 NONAME
+?NewText@XMLDocument@tinyxml2@@QAEPAVXMLText@2@PBD@Z @1410 NONAME
+?NewUnknown@XMLDocument@tinyxml2@@QAEPAVXMLUnknown@2@PBD@Z @1411 NONAME
+?Next@XMLAttribute@tinyxml2@@QBEPBV12@XZ @1412 NONAME
+?NextSibling@XMLConstHandle@tinyxml2@@QBE?BV12@XZ @1413 NONAME
+?NextSibling@XMLHandle@tinyxml2@@QAE?AV12@XZ @1414 NONAME
+?NextSibling@XMLNode@tinyxml2@@QAEPAV12@XZ @1415 NONAME
+?NextSibling@XMLNode@tinyxml2@@QBEPBV12@XZ @1416 NONAME
+?NextSiblingElement@XMLConstHandle@tinyxml2@@QBE?BV12@PBD@Z @1417 NONAME
+?NextSiblingElement@XMLHandle@tinyxml2@@QAE?AV12@PBD@Z @1418 NONAME
+?NextSiblingElement@XMLNode@tinyxml2@@QAEPAVXMLElement@2@PBD@Z @1419 NONAME
+?NextSiblingElement@XMLNode@tinyxml2@@QBEPBVXMLElement@2@PBD@Z @1420 NONAME
+?NoChildren@XMLNode@tinyxml2@@QBE_NXZ @1421 NONAME
+?OpenElement@XMLPrinter@tinyxml2@@QAEXPBD_N@Z @1422 NONAME
+?Parent@XMLNode@tinyxml2@@QAEPAV12@XZ @1423 NONAME
+?Parent@XMLNode@tinyxml2@@QBEPBV12@XZ @1424 NONAME
+?Parse@XMLDocument@tinyxml2@@AAEXXZ @1425 NONAME
+?Parse@XMLDocument@tinyxml2@@QAE?AW4XMLError@2@PBDI@Z @1426 NONAME
+?ParseAttributes@XMLElement@tinyxml2@@AAEPADPADPAH@Z @1427 NONAME
+?ParseDeep@XMLAttribute@tinyxml2@@AAEPADPAD_NPAH@Z @1428 NONAME
+?ParseDeep@XMLComment@tinyxml2@@MAEPADPADPAVStrPair@2@PAH@Z @1429 NONAME
+?ParseDeep@XMLDeclaration@tinyxml2@@MAEPADPADPAVStrPair@2@PAH@Z @1430 NONAME
+?ParseDeep@XMLElement@tinyxml2@@MAEPADPADPAVStrPair@2@PAH@Z @1431 NONAME
+?ParseDeep@XMLNode@tinyxml2@@MAEPADPADPAVStrPair@2@PAH@Z @1432 NONAME
+?ParseDeep@XMLText@tinyxml2@@MAEPADPADPAVStrPair@2@PAH@Z @1433 NONAME
+?ParseDeep@XMLUnknown@tinyxml2@@MAEPADPADPAVStrPair@2@PAH@Z @1434 NONAME
+?ParseName@StrPair@tinyxml2@@QAEPADPAD@Z @1435 NONAME
+?ParseText@StrPair@tinyxml2@@QAEPADPADPBDHPAH@Z @1436 NONAME
+?PopDepth@XMLDocument@tinyxml2@@AAEXXZ @1437 NONAME
+?PreviousSibling@XMLConstHandle@tinyxml2@@QBE?BV12@XZ @1438 NONAME
+?PreviousSibling@XMLHandle@tinyxml2@@QAE?AV12@XZ @1439 NONAME
+?PreviousSibling@XMLNode@tinyxml2@@QAEPAV12@XZ @1440 NONAME
+?PreviousSibling@XMLNode@tinyxml2@@QBEPBV12@XZ @1441 NONAME
+?PreviousSiblingElement@XMLConstHandle@tinyxml2@@QBE?BV12@PBD@Z @1442 NONAME
+?PreviousSiblingElement@XMLHandle@tinyxml2@@QAE?AV12@PBD@Z @1443 NONAME
+?PreviousSiblingElement@XMLNode@tinyxml2@@QAEPAVXMLElement@2@PBD@Z @1444 NONAME
+?PreviousSiblingElement@XMLNode@tinyxml2@@QBEPBVXMLElement@2@PBD@Z @1445 NONAME
+?Print@XMLDocument@tinyxml2@@QBEXPAVXMLPrinter@2@@Z @1446 NONAME
+?Print@XMLPrinter@tinyxml2@@MAAXPBDZZ @1447 NONAME
+?PrintError@XMLDocument@tinyxml2@@QBEXXZ @1448 NONAME
+?PrintSpace@XMLPrinter@tinyxml2@@MAEXH@Z @1449 NONAME
+?PrintString@XMLPrinter@tinyxml2@@AAEXPBD_N@Z @1450 NONAME
+?ProcessEntities@XMLDocument@tinyxml2@@QBE_NXZ @1451 NONAME
+?PushAttribute@XMLPrinter@tinyxml2@@QAEXPBD0@Z @1452 NONAME
+?PushAttribute@XMLPrinter@tinyxml2@@QAEXPBDH@Z @1453 NONAME
+?PushAttribute@XMLPrinter@tinyxml2@@QAEXPBDI@Z @1454 NONAME
+?PushAttribute@XMLPrinter@tinyxml2@@QAEXPBDN@Z @1455 NONAME
+?PushAttribute@XMLPrinter@tinyxml2@@QAEXPBD_J@Z @1456 NONAME
+?PushAttribute@XMLPrinter@tinyxml2@@QAEXPBD_N@Z @1457 NONAME
+?PushComment@XMLPrinter@tinyxml2@@QAEXPBD@Z @1458 NONAME
+?PushDeclaration@XMLPrinter@tinyxml2@@QAEXPBD@Z @1459 NONAME
+?PushDepth@XMLDocument@tinyxml2@@AAEXXZ @1460 NONAME
+?PushHeader@XMLPrinter@tinyxml2@@QAEX_N0@Z @1461 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEXH@Z @1462 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEXI@Z @1463 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEXM@Z @1464 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEXN@Z @1465 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEXPBD_N@Z @1466 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEX_J@Z @1467 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEX_N@Z @1468 NONAME
+?PushUnknown@XMLPrinter@tinyxml2@@QAEXPBD@Z @1469 NONAME
+?Putc@XMLPrinter@tinyxml2@@MAEXD@Z @1470 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAH@Z @1471 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAI@Z @1472 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAM@Z @1473 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAN@Z @1474 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPA_J@Z @1475 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPA_N@Z @1476 NONAME
+?QueryBoolAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPA_N@Z @1477 NONAME
+?QueryBoolText@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PA_N@Z @1478 NONAME
+?QueryBoolValue@XMLAttribute@tinyxml2@@QBE?AW4XMLError@2@PA_N@Z @1479 NONAME
+?QueryDoubleAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAN@Z @1480 NONAME
+?QueryDoubleText@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PAN@Z @1481 NONAME
+?QueryDoubleValue@XMLAttribute@tinyxml2@@QBE?AW4XMLError@2@PAN@Z @1482 NONAME
+?QueryFloatAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAM@Z @1483 NONAME
+?QueryFloatText@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PAM@Z @1484 NONAME
+?QueryFloatValue@XMLAttribute@tinyxml2@@QBE?AW4XMLError@2@PAM@Z @1485 NONAME
+?QueryInt64Attribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPA_J@Z @1486 NONAME
+?QueryInt64Text@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PA_J@Z @1487 NONAME
+?QueryInt64Value@XMLAttribute@tinyxml2@@QBE?AW4XMLError@2@PA_J@Z @1488 NONAME
+?QueryIntAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAH@Z @1489 NONAME
+?QueryIntText@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PAH@Z @1490 NONAME
+?QueryIntValue@XMLAttribute@tinyxml2@@QBE?AW4XMLError@2@PAH@Z @1491 NONAME
+?QueryStringAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAPBD@Z @1492 NONAME
+?QueryUnsignedAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAI@Z @1493 NONAME
+?QueryUnsignedText@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PAI@Z @1494 NONAME
+?QueryUnsignedValue@XMLAttribute@tinyxml2@@QBE?AW4XMLError@2@PAI@Z @1495 NONAME
+?ReadBOM@XMLUtil@tinyxml2@@SAPBDPBDPA_N@Z @1496 NONAME
+?Reset@StrPair@tinyxml2@@QAEXXZ @1497 NONAME
+?RootElement@XMLDocument@tinyxml2@@QAEPAVXMLElement@2@XZ @1498 NONAME
+?RootElement@XMLDocument@tinyxml2@@QBEPBVXMLElement@2@XZ @1499 NONAME
+?SaveFile@XMLDocument@tinyxml2@@QAE?AW4XMLError@2@PAU_iobuf@@_N@Z @1500 NONAME
+?SaveFile@XMLDocument@tinyxml2@@QAE?AW4XMLError@2@PBD_N@Z @1501 NONAME
+?SealElementIfJustOpened@XMLPrinter@tinyxml2@@IAEXXZ @1502 NONAME
+?Set@StrPair@tinyxml2@@QAEXPAD0H@Z @1503 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEXH@Z @1504 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEXI@Z @1505 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEXM@Z @1506 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEXN@Z @1507 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEXPBD@Z @1508 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEX_J@Z @1509 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEX_N@Z @1510 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBD0@Z @1511 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBDH@Z @1512 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBDI@Z @1513 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBDM@Z @1514 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBDN@Z @1515 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBD_J@Z @1516 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBD_N@Z @1517 NONAME
+?SetBOM@XMLDocument@tinyxml2@@QAEX_N@Z @1518 NONAME
+?SetBoolSerialization@XMLUtil@tinyxml2@@SAXPBD0@Z @1519 NONAME
+?SetCData@XMLText@tinyxml2@@QAEX_N@Z @1520 NONAME
+?SetError@XMLDocument@tinyxml2@@AAAXW4XMLError@2@HPBDZZ @1521 NONAME
+?SetInternedStr@StrPair@tinyxml2@@QAEXPBD@Z @1522 NONAME
+?SetName@XMLAttribute@tinyxml2@@AAEXPBD@Z @1523 NONAME
+?SetName@XMLElement@tinyxml2@@QAEXPBD_N@Z @1524 NONAME
+?SetStr@StrPair@tinyxml2@@QAEXPBDH@Z @1525 NONAME
+?SetText@XMLElement@tinyxml2@@QAEXH@Z @1526 NONAME
+?SetText@XMLElement@tinyxml2@@QAEXI@Z @1527 NONAME
+?SetText@XMLElement@tinyxml2@@QAEXM@Z @1528 NONAME
+?SetText@XMLElement@tinyxml2@@QAEXN@Z @1529 NONAME
+?SetText@XMLElement@tinyxml2@@QAEXPBD@Z @1530 NONAME
+?SetText@XMLElement@tinyxml2@@QAEX_J@Z @1531 NONAME
+?SetText@XMLElement@tinyxml2@@QAEX_N@Z @1532 NONAME
+?SetUserData@XMLNode@tinyxml2@@QAEXPAX@Z @1533 NONAME
+?SetValue@XMLNode@tinyxml2@@QAEXPBD_N@Z @1534 NONAME
+?ShallowClone@XMLComment@tinyxml2@@UBEPAVXMLNode@2@PAVXMLDocument@2@@Z @1535 NONAME
+?ShallowClone@XMLDeclaration@tinyxml2@@UBEPAVXMLNode@2@PAVXMLDocument@2@@Z @1536 NONAME
+?ShallowClone@XMLDocument@tinyxml2@@UBEPAVXMLNode@2@PAV12@@Z @1537 NONAME
+?ShallowClone@XMLElement@tinyxml2@@UBEPAVXMLNode@2@PAVXMLDocument@2@@Z @1538 NONAME
+?ShallowClone@XMLText@tinyxml2@@UBEPAVXMLNode@2@PAVXMLDocument@2@@Z @1539 NONAME
+?ShallowClone@XMLUnknown@tinyxml2@@UBEPAVXMLNode@2@PAVXMLDocument@2@@Z @1540 NONAME
+?ShallowEqual@XMLComment@tinyxml2@@UBE_NPBVXMLNode@2@@Z @1541 NONAME
+?ShallowEqual@XMLDeclaration@tinyxml2@@UBE_NPBVXMLNode@2@@Z @1542 NONAME
+?ShallowEqual@XMLDocument@tinyxml2@@UBE_NPBVXMLNode@2@@Z @1543 NONAME
+?ShallowEqual@XMLElement@tinyxml2@@UBE_NPBVXMLNode@2@@Z @1544 NONAME
+?ShallowEqual@XMLText@tinyxml2@@UBE_NPBVXMLNode@2@@Z @1545 NONAME
+?ShallowEqual@XMLUnknown@tinyxml2@@UBE_NPBVXMLNode@2@@Z @1546 NONAME
+?SkipWhiteSpace@XMLUtil@tinyxml2@@SAPADQADPAH@Z @1547 NONAME
+?SkipWhiteSpace@XMLUtil@tinyxml2@@SAPBDPBDPAH@Z @1548 NONAME
+?StringEqual@XMLUtil@tinyxml2@@SA_NPBD0H@Z @1549 NONAME
+?ToBool@XMLUtil@tinyxml2@@SA_NPBDPA_N@Z @1550 NONAME
+?ToComment@XMLComment@tinyxml2@@UAEPAV12@XZ @1551 NONAME
+?ToComment@XMLComment@tinyxml2@@UBEPBV12@XZ @1552 NONAME
+?ToComment@XMLNode@tinyxml2@@UAEPAVXMLComment@2@XZ @1553 NONAME
+?ToComment@XMLNode@tinyxml2@@UBEPBVXMLComment@2@XZ @1554 NONAME
+?ToDeclaration@XMLConstHandle@tinyxml2@@QBEPBVXMLDeclaration@2@XZ @1555 NONAME
+?ToDeclaration@XMLDeclaration@tinyxml2@@UAEPAV12@XZ @1556 NONAME
+?ToDeclaration@XMLDeclaration@tinyxml2@@UBEPBV12@XZ @1557 NONAME
+?ToDeclaration@XMLHandle@tinyxml2@@QAEPAVXMLDeclaration@2@XZ @1558 NONAME
+?ToDeclaration@XMLNode@tinyxml2@@UAEPAVXMLDeclaration@2@XZ @1559 NONAME
+?ToDeclaration@XMLNode@tinyxml2@@UBEPBVXMLDeclaration@2@XZ @1560 NONAME
+?ToDocument@XMLDocument@tinyxml2@@UAEPAV12@XZ @1561 NONAME
+?ToDocument@XMLDocument@tinyxml2@@UBEPBV12@XZ @1562 NONAME
+?ToDocument@XMLNode@tinyxml2@@UAEPAVXMLDocument@2@XZ @1563 NONAME
+?ToDocument@XMLNode@tinyxml2@@UBEPBVXMLDocument@2@XZ @1564 NONAME
+?ToDouble@XMLUtil@tinyxml2@@SA_NPBDPAN@Z @1565 NONAME
+?ToElement@XMLConstHandle@tinyxml2@@QBEPBVXMLElement@2@XZ @1566 NONAME
+?ToElement@XMLElement@tinyxml2@@UAEPAV12@XZ @1567 NONAME
+?ToElement@XMLElement@tinyxml2@@UBEPBV12@XZ @1568 NONAME
+?ToElement@XMLHandle@tinyxml2@@QAEPAVXMLElement@2@XZ @1569 NONAME
+?ToElement@XMLNode@tinyxml2@@UAEPAVXMLElement@2@XZ @1570 NONAME
+?ToElement@XMLNode@tinyxml2@@UBEPBVXMLElement@2@XZ @1571 NONAME
+?ToElementWithName@XMLNode@tinyxml2@@ABEPBVXMLElement@2@PBD@Z @1572 NONAME
+?ToFloat@XMLUtil@tinyxml2@@SA_NPBDPAM@Z @1573 NONAME
+?ToInt64@XMLUtil@tinyxml2@@SA_NPBDPA_J@Z @1574 NONAME
+?ToInt@XMLUtil@tinyxml2@@SA_NPBDPAH@Z @1575 NONAME
+?ToNode@XMLConstHandle@tinyxml2@@QBEPBVXMLNode@2@XZ @1576 NONAME
+?ToNode@XMLHandle@tinyxml2@@QAEPAVXMLNode@2@XZ @1577 NONAME
+?ToStr@XMLUtil@tinyxml2@@SAXHPADH@Z @1578 NONAME
+?ToStr@XMLUtil@tinyxml2@@SAXIPADH@Z @1579 NONAME
+?ToStr@XMLUtil@tinyxml2@@SAXMPADH@Z @1580 NONAME
+?ToStr@XMLUtil@tinyxml2@@SAXNPADH@Z @1581 NONAME
+?ToStr@XMLUtil@tinyxml2@@SAX_JPADH@Z @1582 NONAME
+?ToStr@XMLUtil@tinyxml2@@SAX_NPADH@Z @1583 NONAME
+?ToText@XMLConstHandle@tinyxml2@@QBEPBVXMLText@2@XZ @1584 NONAME
+?ToText@XMLHandle@tinyxml2@@QAEPAVXMLText@2@XZ @1585 NONAME
+?ToText@XMLNode@tinyxml2@@UAEPAVXMLText@2@XZ @1586 NONAME
+?ToText@XMLNode@tinyxml2@@UBEPBVXMLText@2@XZ @1587 NONAME
+?ToText@XMLText@tinyxml2@@UAEPAV12@XZ @1588 NONAME
+?ToText@XMLText@tinyxml2@@UBEPBV12@XZ @1589 NONAME
+?ToUnknown@XMLConstHandle@tinyxml2@@QBEPBVXMLUnknown@2@XZ @1590 NONAME
+?ToUnknown@XMLHandle@tinyxml2@@QAEPAVXMLUnknown@2@XZ @1591 NONAME
+?ToUnknown@XMLNode@tinyxml2@@UAEPAVXMLUnknown@2@XZ @1592 NONAME
+?ToUnknown@XMLNode@tinyxml2@@UBEPBVXMLUnknown@2@XZ @1593 NONAME
+?ToUnknown@XMLUnknown@tinyxml2@@UAEPAV12@XZ @1594 NONAME
+?ToUnknown@XMLUnknown@tinyxml2@@UBEPBV12@XZ @1595 NONAME
+?ToUnsigned@XMLUtil@tinyxml2@@SA_NPBDPAI@Z @1596 NONAME
+?TransferTo@StrPair@tinyxml2@@QAEXPAV12@@Z @1597 NONAME
+?Unlink@XMLNode@tinyxml2@@AAEXPAV12@@Z @1598 NONAME
+?UnsignedAttribute@XMLElement@tinyxml2@@QBEIPBDI@Z @1599 NONAME
+?UnsignedText@XMLElement@tinyxml2@@QBEII@Z @1600 NONAME
+?UnsignedValue@XMLAttribute@tinyxml2@@QBEIXZ @1601 NONAME
+?Value@XMLAttribute@tinyxml2@@QBEPBDXZ @1602 NONAME
+?Value@XMLNode@tinyxml2@@QBEPBDXZ @1603 NONAME
+?Visit@XMLPrinter@tinyxml2@@UAE_NABVXMLComment@2@@Z @1604 NONAME
+?Visit@XMLPrinter@tinyxml2@@UAE_NABVXMLDeclaration@2@@Z @1605 NONAME
+?Visit@XMLPrinter@tinyxml2@@UAE_NABVXMLText@2@@Z @1606 NONAME
+?Visit@XMLPrinter@tinyxml2@@UAE_NABVXMLUnknown@2@@Z @1607 NONAME
+?Visit@XMLVisitor@tinyxml2@@UAE_NABVXMLComment@2@@Z @1608 NONAME
+?Visit@XMLVisitor@tinyxml2@@UAE_NABVXMLDeclaration@2@@Z @1609 NONAME
+?Visit@XMLVisitor@tinyxml2@@UAE_NABVXMLText@2@@Z @1610 NONAME
+?Visit@XMLVisitor@tinyxml2@@UAE_NABVXMLUnknown@2@@Z @1611 NONAME
+?VisitEnter@XMLPrinter@tinyxml2@@UAE_NABVXMLDocument@2@@Z @1612 NONAME
+?VisitEnter@XMLPrinter@tinyxml2@@UAE_NABVXMLElement@2@PBVXMLAttribute@2@@Z @1613 NONAME
+?VisitEnter@XMLVisitor@tinyxml2@@UAE_NABVXMLDocument@2@@Z @1614 NONAME
+?VisitEnter@XMLVisitor@tinyxml2@@UAE_NABVXMLElement@2@PBVXMLAttribute@2@@Z @1615 NONAME
+?VisitExit@XMLPrinter@tinyxml2@@UAE_NABVXMLDocument@2@@Z @1616 NONAME
+?VisitExit@XMLPrinter@tinyxml2@@UAE_NABVXMLElement@2@@Z @1617 NONAME
+?VisitExit@XMLVisitor@tinyxml2@@UAE_NABVXMLDocument@2@@Z @1618 NONAME
+?VisitExit@XMLVisitor@tinyxml2@@UAE_NABVXMLElement@2@@Z @1619 NONAME
+?WhitespaceMode@XMLDocument@tinyxml2@@QBE?AW4Whitespace@2@XZ @1620 NONAME
+?Write@XMLPrinter@tinyxml2@@IAEXPBD@Z @1621 NONAME
+?Write@XMLPrinter@tinyxml2@@MAEXPBDI@Z @1622 NONAME
+?_errorNames@XMLDocument@tinyxml2@@0PAPBDA @1623 NONAME
+?writeBoolFalse@XMLUtil@tinyxml2@@0PBDB @1624 NONAME
+?writeBoolTrue@XMLUtil@tinyxml2@@0PBDB @1625 NONAME
+?SetText@XMLElement@tinyxml2@@QAEXPB_W@Z @1626 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEXPB_W@Z @1627 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBDPB_W@Z @1628 NONAME
+??AXMLConstHandle@tinyxml2@@QBE?BV01@PBD@Z @1629 NONAME
+??AXMLHandle@tinyxml2@@QAE?AV01@PBD@Z @1630 NONAME
+db_get_utfa @1631
+?GetTextU@CCtrlBase@@QBEPADPADI@Z @1632 NONAME
+?GetTextU@CCtrlBase@@QBEPADXZ @1633 NONAME
+?BytesParsed@XMLDocument@tinyxml2@@QBEHXZ @1634 NONAME
+TranslateU_LP @1635
+XmlAddAttr @1636
+XmlAddChild @1637
+XmlAddChildA @1638
+XmlAddChildI @1639
+XmlFirstChild @1640
+XmlGetAttr @1641
+XmlGetChildByTag @1642
+XmlGetChildCount @1643
+XmlGetChildInt @1644
+XmlGetChildText @1645
+??0CCtrlDate@@QAE@PAVCDlgBase@@H@Z @1646 NONAME
+??1CCtrlDate@@UAE@XZ @1647 NONAME
+??_7CCtrlDate@@6B@ @1648 NONAME
+?GetTime@CCtrlDate@@QAEXPAU_SYSTEMTIME@@@Z @1649 NONAME
+?OnNotify@CCtrlDate@@EAEHHPAUtagNMHDR@@@Z @1650 NONAME
+?SetTime@CCtrlDate@@QAEXPAU_SYSTEMTIME@@@Z @1651 NONAME
+?SetMinSize@CDlgBase@@QAEXHH@Z @1652 NONAME
+?PushAttribute@XMLPrinter@tinyxml2@@QAEXPBD_K@Z @1653 NONAME
+?PushText@XMLPrinter@tinyxml2@@QAEX_K@Z @1654 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPA_K@Z @1655 NONAME
+?QueryUnsigned64Attribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPA_K@Z @1656 NONAME
+?QueryUnsigned64Text@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PA_K@Z @1657 NONAME
+?QueryUnsigned64Value@XMLAttribute@tinyxml2@@QBE?AW4XMLError@2@PA_K@Z @1658 NONAME
+?SetAttribute@XMLAttribute@tinyxml2@@QAEX_K@Z @1659 NONAME
+?SetAttribute@XMLElement@tinyxml2@@QAEXPBD_K@Z @1660 NONAME
+?SetText@XMLElement@tinyxml2@@QAEX_K@Z @1661 NONAME
+?ToStr@XMLUtil@tinyxml2@@SAX_KPADH@Z @1662 NONAME
+?ToUnsigned64@XMLUtil@tinyxml2@@SA_NPBDPA_K@Z @1663 NONAME
+?Unsigned64Attribute@XMLElement@tinyxml2@@QBE_KPBD_K@Z @1664 NONAME
+?Unsigned64Text@XMLElement@tinyxml2@@QBE_K_K@Z @1665 NONAME
+?Unsigned64Value@XMLAttribute@tinyxml2@@QBE_KXZ @1666 NONAME
+?RemoveControl@CDlgBase@@IAEXPAVCCtrlBase@@@Z @1667 NONAME
+?assign@MBinBuffer@@QAEXPBXI@Z @1668 NONAME
+?GetHwnd@CTimer@@QBEPAUHWND__@@XZ @1669 NONAME
+??0MNonCopyable@@QAE@XZ @1670 NONAME
+??0mir_cs@@QAE@XZ @1671 NONAME
+??1mir_cs@@QAE@XZ @1672 NONAME
+?Lock@mir_cs@@QAEXXZ @1673 NONAME
+?Unlock@mir_cs@@QAEXXZ @1674 NONAME
+?StartSafe@CTimer@@QAEXH@Z @1675 NONAME
+?StopSafe@CTimer@@QAEXXZ @1676 NONAME
+?InsertNewChildElement@XMLElement@tinyxml2@@QAEPAV12@PBD@Z @1677 NONAME
+?InsertNewComment@XMLElement@tinyxml2@@QAEPAVXMLComment@2@PBD@Z @1678 NONAME
+?InsertNewDeclaration@XMLElement@tinyxml2@@QAEPAVXMLDeclaration@2@PBD@Z @1679 NONAME
+?InsertNewText@XMLElement@tinyxml2@@QAEPAVXMLText@2@PBD@Z @1680 NONAME
+?InsertNewUnknown@XMLElement@tinyxml2@@QAEPAVXMLUnknown@2@PBD@Z @1681 NONAME
+??1EventCursor@DB@@UAE@XZ @1684 NONAME
+??0EventCursor@DB@@QAE@ABV01@@Z @1685 NONAME
+??0EventCursor@DB@@QAE@I@Z @1686 NONAME
+??_7EventCursor@DB@@6B@ @1687 NONAME
+?Events@DB@@YGPAVEventCursor@1@II@Z @1688 NONAME
+?EventsRev@DB@@YGPAVEventCursor@1@II@Z @1689 NONAME
+?begin@EventCursor@DB@@QAEIXZ @1690 NONAME
+?end@EventCursor@DB@@QAEIXZ @1691 NONAME
+TimeZone_GetSystemTime @1692
+??0ECPTR@DB@@QAE@PAVEventCursor@1@@Z @1693 NONAME
+??1ECPTR@DB@@QAE@XZ @1694 NONAME
+??4EventCursor@DB@@QAEAAV01@ABV01@@Z @1695 NONAME
+?DeleteEvent@ECPTR@DB@@QAEXXZ @1696 NONAME
+?FetchNext@ECPTR@DB@@QAEIXZ @1697 NONAME
+??0CCtrlTreeOpts@@QAE@PAVCDlgBase@@H@Z @1698 NONAME
+??1CCtrlTreeOpts@@UAE@XZ @1699 NONAME
+??_7CCtrlTreeOpts@@6B@ @1700 NONAME
+?AddOption@CCtrlTreeOpts@@QAEXPB_W0AAV?$CMOption@_N@@@Z @1701 NONAME
+?OnApply@CCtrlTreeOpts@@UAE_NXZ @1702 NONAME
+?OnDestroy@CCtrlTreeOpts@@UAEXXZ @1703 NONAME
+?OnInit@CCtrlTreeOpts@@UAEXXZ @1704 NONAME
+?OnNotify@CCtrlTreeOpts@@UAEHHPAUtagNMHDR@@@Z @1705 NONAME
+?ProcessItemClick@CCtrlTreeOpts@@IAEXPAU_TREEITEM@@@Z @1706 NONAME
+??0CCtrlColor@@QAE@PAVCDlgBase@@H@Z @1707 NONAME
+??1CCtrlColor@@UAE@XZ @1708 NONAME
+??_7CCtrlColor@@6B@ @1709 NONAME
+?GetColor@CCtrlColor@@QAEIXZ @1710 NONAME
+?OnApply@CCtrlColor@@UAE_NXZ @1711 NONAME
+?OnCommand@CCtrlColor@@UAEHPAUHWND__@@GG@Z @1712 NONAME
+?OnReset@CCtrlColor@@UAEXXZ @1713 NONAME
+?SetColor@CCtrlColor@@QAEXI@Z @1714 NONAME
+??0CCtrlSlider@@QAE@PAVCDlgBase@@HHH@Z @1715 NONAME
+??1CCtrlSlider@@UAE@XZ @1716 NONAME
+??_7CCtrlSlider@@6B@ @1717 NONAME
+?GetPosition@CCtrlSlider@@QBEHXZ @1718 NONAME
+?OnApply@CCtrlSlider@@UAE_NXZ @1719 NONAME
+?OnCommand@CCtrlSlider@@MAEHPAUHWND__@@GG@Z @1720 NONAME
+?OnReset@CCtrlSlider@@UAEXXZ @1721 NONAME
+?SetPosition@CCtrlSlider@@QAEXH@Z @1722 NONAME
+?GetCaretPos@CCtrlBase@@MBEXAAUCContextMenuPos@@@Z @1723 NONAME
+?GetCaretPos@CCtrlListBox@@MBEXAAUCContextMenuPos@@@Z @1724 NONAME
+?GetCaretPos@CCtrlListView@@MBEXAAUCContextMenuPos@@@Z @1725 NONAME
+?GetCaretPos@CCtrlTreeView@@MBEXAAUCContextMenuPos@@@Z @1726 NONAME
+?MoveItem@CCtrlListView@@QAEHHH@Z @1727 NONAME
+?SelectData@CCtrlCombo@@QAEHJ@Z @1728 NONAME
+?SetCurSel@CCtrlListView@@QAEXH@Z @1729 NONAME
+?GetCurData@CCtrlCombo@@QBEJXZ @1730 NONAME
+?SetDraw@CCtrlBase@@QAEX_N@Z @1731 NONAME
+?SetDraw@CDlgBase@@QAEX_N@Z @1732 NONAME
+?IsPrefixHex@XMLUtil@tinyxml2@@SA_NPBD@Z @1733 NONAME
+?PrepareForNewNode@XMLPrinter@tinyxml2@@AAEX_N@Z @1734 NONAME
+?QueryAttribute@XMLElement@tinyxml2@@QBE?AW4XMLError@2@PBDPAPBD@Z @1735 NONAME
+db_copy_module @1736
+?db_is_module_empty@@YG_NIPBD@Z @1737 NONAME
+?AddOption@CCtrlTreeOpts@@QAEXPB_W0AA_N@Z @1738 NONAME
+?AddOption@CCtrlTreeOpts@@QAEXPB_W0AAII@Z @1739 NONAME
+??0MFileIterator@MFilePath@@QAE@PB_W@Z @1740 NONAME
+??0MFilePath@@QAE@$$QAV0@@Z @1741 NONAME
+??0MFilePath@@QAE@ABV0@@Z @1742 NONAME
+??0MFilePath@@QAE@PB_W@Z @1743 NONAME
+??0MFilePath@@QAE@XZ @1744 NONAME
+??1MFileIterator@MFilePath@@QAE@XZ @1745 NONAME
+??1MFilePath@@QAE@XZ @1746 NONAME
+??4MFileIterator@MFilePath@@QAEAAV01@ABV01@@Z @1747 NONAME
+??4MFilePath@@QAEAAV0@$$QAV0@@Z @1748 NONAME
+??4MFilePath@@QAEAAV0@ABV0@@Z @1749 NONAME
+?begin@MFileIterator@MFilePath@@QAE?AViterator@12@XZ @1750 NONAME
+?end@MFileIterator@MFilePath@@QAE?AViterator@12@XZ @1751 NONAME
+?getPath@MFileIterator@MFilePath@@QBEPB_WXZ @1752 NONAME
+?isDir@MFileIterator@MFilePath@@QBE_NXZ @1753 NONAME
+?isExist@MFilePath@@QBE_NXZ @1754 NONAME
+?move@MFilePath@@QAE_NPB_W@Z @1755 NONAME
+?search@MFilePath@@QAE?AVMFileIterator@1@XZ @1756 NONAME
+??Eiterator@MFileIterator@MFilePath@@QAE?AV012@XZ @1757 NONAME
+Miranda_IsTerminated @1758
+Miranda_SetTerminated @1759
+Miranda_WaitOnHandle @1760
+Miranda_WaitOnHandleEx @1761
+_Utils_CorrectFontSize@4 @1762 NONAME
+?OnResize@CDlgBase@@MAEXXZ @1763 NONAME
+??0MBinBuffer@@QAE@ABV0@@Z @1764 NONAME
+??0MBinBuffer@@QAE@I@Z @1765 NONAME
+?Utils_ClipboardCopy@@YGXPBD@Z @1766 NONAME
+?Utils_ClipboardCopy@@YGXPB_W@Z @1767 NONAME
+?mir_base64_encode@@YGPADABVMBinBuffer@@@Z @1768 NONAME
+?append@MBinBuffer@@QAEXABV1@@Z @1769 NONAME
+?appendBefore@MBinBuffer@@QAEXABV1@@Z @1770 NONAME
+db_event_replace @1771
+db_event_updateId @1772

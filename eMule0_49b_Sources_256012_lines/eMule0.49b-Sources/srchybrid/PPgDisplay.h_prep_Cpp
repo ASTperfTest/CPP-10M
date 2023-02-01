@@ -1,0 +1,50 @@
+﻿
+
+void INCLUDEREPLACE(){CX_INCL("3dpreviewcontrol.h");}
+
+class CPPgDisplay :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgDisplay)
+
+public:
+ CPPgDisplay();
+ virtual ~CPPgDisplay();
+
+// Dialog Data
+ enum { IDD = IDD_PPG_DISPLAY };
+
+ void Localize(void);
+
+protected:
+ enum ESelectFont
+ {
+  sfServer,
+  sfLog
+ } m_eSelectFont;
+ void LoadSettings(void);
+
+ void DrawPreview();  //Cax2 - aqua bar
+ C3DPreviewControl m_3DPreview;
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+ static unsigned int          ChooseFontHook(void* hdlg, unsigned int uiMsg, int *  wParam, long * lParam);
+
+
+         void OnHScroll(unsigned int nSBCode, unsigned int nPos, CScrollBar* pScrollBar);
+         void OnSettingsChange()     { SetModified(); }
+         void OnBnClickedSelectHypertextFont();
+         void OnBtnClickedResetHist();
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

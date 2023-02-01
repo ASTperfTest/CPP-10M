@@ -1,0 +1,267 @@
+{}
+
+const
+  client_id  = 'wat';//'wat'; 'tst'
+  client_ver = '1.0';
+  api_key    = '51f5d25159da31b0814609c3a12900e2';
+
+const
+  defreq = 'http://post.audioscrobbler.com/?hs=true&p=1.2.1&c=<client-id>&v=<client-ver>&u=<user>&t=<timestamp>&a=<auth>';
+  scraddr = 'http://ws.audioscrobbler.com/2.0/';
+
+function GetMD5Str(const digest:TMD5Hash; buf:pAnsiChar):PAnsiChar;
+begin
+  buf[00]:=HexDigitChrLo[digest[00] shr 4]; buf[01]:=HexDigitChrLo[digest[00] and $0F];
+  buf[02]:=HexDigitChrLo[digest[01] shr 4]; buf[03]:=HexDigitChrLo[digest[01] and $0F];
+  buf[04]:=HexDigitChrLo[digest[02] shr 4]; buf[05]:=HexDigitChrLo[digest[02] and $0F];
+  buf[06]:=HexDigitChrLo[digest[03] shr 4]; buf[07]:=HexDigitChrLo[digest[03] and $0F];
+  buf[08]:=HexDigitChrLo[digest[04] shr 4]; buf[09]:=HexDigitChrLo[digest[04] and $0F];
+  buf[10]:=HexDigitChrLo[digest[05] shr 4]; buf[11]:=HexDigitChrLo[digest[05] and $0F];
+  buf[12]:=HexDigitChrLo[digest[06] shr 4]; buf[13]:=HexDigitChrLo[digest[06] and $0F];
+  buf[14]:=HexDigitChrLo[digest[07] shr 4]; buf[15]:=HexDigitChrLo[digest[07] and $0F];
+  buf[16]:=HexDigitChrLo[digest[08] shr 4]; buf[17]:=HexDigitChrLo[digest[08] and $0F];
+  buf[18]:=HexDigitChrLo[digest[09] shr 4]; buf[19]:=HexDigitChrLo[digest[09] and $0F];
+  buf[20]:=HexDigitChrLo[digest[10] shr 4]; buf[21]:=HexDigitChrLo[digest[10] and $0F];
+  buf[22]:=HexDigitChrLo[digest[11] shr 4]; buf[23]:=HexDigitChrLo[digest[11] and $0F];
+  buf[24]:=HexDigitChrLo[digest[12] shr 4]; buf[25]:=HexDigitChrLo[digest[12] and $0F];
+  buf[26]:=HexDigitChrLo[digest[13] shr 4]; buf[27]:=HexDigitChrLo[digest[13] and $0F];
+  buf[28]:=HexDigitChrLo[digest[14] shr 4]; buf[29]:=HexDigitChrLo[digest[14] and $0F];
+  buf[30]:=HexDigitChrLo[digest[15] shr 4]; buf[31]:=HexDigitChrLo[digest[15] and $0F];
+  buf[32]:=#0;
+  result:=@buf;
+end;
+
+function GetMD5(const data;datalen:integer;var digest:TMD5Hash):TMD5Hash;
+begin
+  FillChar(digest,16,0);
+
+  mir_md5_hash(pbyte(data),datalen,digest);
+
+  result:=digest;
+end;
+
+function HandShake(login, password:PAnsiChar; notify:bool=false):bool;
+var
+  buf:array [0..32] of AnsiChar;
+  digest:TMD5Hash;
+  stat:mir_md5_state_t;
+  timestamp:array [0..31] of AnsiChar;
+  request:array [0..511] of AnsiChar;
+  tmp,res:pAnsiChar;
+begin
+  result:=false;
+  GetMD5Str(GetMD5(password,StrLen(password),digest),buf);
+  mir_md5_init(@stat);
+  mir_md5_append(@stat,@buf,32);
+  IntToStr(timestamp,GetCurrentTimestamp);
+  mir_md5_append(@stat,@timestamp,StrLen(timestamp));
+  mir_md5_finish(@stat,digest);
+  GetMD5Str(digest,buf);
+  StrCopy(request,defreq);
+  StrReplace(request,'<client-id>' ,client_id);
+  StrReplace(request,'<client-ver>',client_ver);
+  StrReplace(request,'<user>'      ,login);
+  StrReplace(request,'<timestamp>' ,timestamp);
+  StrReplace(request,'<auth>'      ,buf);
+
+  res:=SendRequest(request,REQUEST_GET);
+  if (res<>nil) and (uint_ptr(res)>$0FFF) then
+  begin
+    if StrCmp(CharReplace(res,#10,#0),'OK')=0 then
+    begin
+      result:=true;
+      tmp:=StrEnd(res)+1; StrDup(session_id,tmp);
+      tmp:=StrEnd(tmp)+1; StrDup(np_url    ,tmp);
+      tmp:=StrEnd(tmp)+1; StrDup(sub_url   ,tmp);
+    end
+    else if notify then
+    begin
+      tmp:=StrCopyE(request,Translate('Last.fm error: '));
+      if      StrCmp(res,'BANNED'  )=0 then StrCopy(tmp,Translate('Client is banned'))
+      else if StrCmp(res,'BADAUTH' )=0 then StrCopy(tmp,Translate('Bad Auth. Check login and password'))
+      else if StrCmp(res,'BADTIME' )=0 then StrCopy(tmp,Translate('Bad TimeStamp'))
+      else if StrCmp(res,'FAILED',6)=0 then StrCopy(tmp,res+7);
+      PUShowMessage(@request,SM_ERROR);
+    end;
+    mFreeMem(res);
+  end;
+end;
+
+function Encode(dst,src:pAnsiChar):PAnsiChar;
+begin
+  while src^<>#0 do
+  begin
+    if not (src^ in [' ','%','+','&','?',#128..#255]) then
+      dst^:=src^
+    else
+    begin
+      dst^:='%'; inc(dst);
+      dst^:=HexDigitChr[ord(src^) shr 4]; inc(dst);
+      dst^:=HexDigitChr[ord(src^) and $0F];
+    end;
+    inc(src);
+    inc(dst);
+  end;
+  dst^:=#0;
+  result:=dst;
+end;
+
+function SendNowPlaying:integer;
+var
+  si:pSongInfoA;
+  buf    :array [0..31  ] of AnsiChar;
+  args   :array [0..1023] of AnsiChar;
+  res,pc:PAnsiChar;
+begin
+  result:=-1;
+  if session_id<>nil then
+  begin
+    si:=pointer(CallService(MS_WAT_RETURNGLOBAL,WAT_INF_UTF8,0));
+
+    pc:=@args;
+    pc:=StrCopyE(pc,'s='); pc:=StrCopyE(pc,session_id); //'?s='
+    pc:=StrCopyE(pc,'&a=');
+    if si^.artist=nil then pc:=StrCopyE(pc,'Unknown')
+    else                   pc:=Encode(pc,si^.artist);
+    pc:=StrCopyE(pc,'&t=');
+    if si^.title =nil then pc:=StrCopyE(pc,'Unknown')
+    else                   pc:=Encode(pc,si^.title);
+    pc:=StrCopyE(pc,'&l='); if si^.total>0 then pc:=StrCopyE(pc,IntToStr(buf,si^.total));
+    pc:=StrCopyE(pc,'&b='); pc:=Encode(pc,si^.album);
+    pc:=StrCopyE(pc,'&n=');
+    if si^.track<>0 then
+      {pc:=}StrCopyE(pc,IntToStr(buf,si^.track));
+
+    res:=SendRequest(np_url,REQUEST_POST,args);
+    if (res<>nil) and (uint_ptr(res)>$0FFF) then
+    begin
+      if StrCmp(CharReplace(res,#10,#0),'OK')=0 then
+        result:=1
+      else if StrCmp(res,'BADSESSION')=0 then
+        result:=-1;
+      mFreeMem(res);
+    end;
+  end;
+end;
+
+function Scrobble:integer;
+var
+  si:pSongInfoA;
+  buf,timestamp:array [0..31] of AnsiChar;
+  args   :array [0..1023] of AnsiChar;
+  res,pc:PAnsiChar;
+begin
+  result:=-1;
+  if session_id<>nil then
+  begin
+    si:=pointer(CallService(MS_WAT_RETURNGLOBAL,WAT_INF_UTF8,0));
+    IntToStr(timestamp,GetCurrentTimestamp);
+
+    pc:=@args;
+    pc:=StrCopyE(pc,'s='  ); pc:=StrCopyE(pc,session_id);
+    pc:=StrCopyE(pc,'&a[0]=');
+    if si^.artist=nil then pc:=StrCopyE(pc,'Unknown')
+    else                   pc:=Encode(pc,si^.artist);
+    pc:=StrCopyE(pc,'&t[0]=');
+    if si^.title =nil then pc:=StrCopyE(pc,'Unknown')
+    else                   pc:=Encode(pc,si^.title);
+    pc:=StrCopyE(pc,'&i[0]='); pc:=StrCopyE(pc,timestamp);
+    pc:=StrCopyE(pc,'&r[0]=&m[0]=');
+    pc:=StrCopyE(pc,'&l[0]=');
+    if si^.total>0 then
+    begin
+      pc:=StrCopyE(pc,IntToStr(buf,si^.total));
+      pc:=StrCopyE(pc,'&o[0]=P');
+    end
+    else
+    begin
+      pc:=StrCopyE(pc,'&o[0]=R');
+    end;
+    pc:=StrCopyE(pc,'&b[0]='); pc:=Encode(pc,si^.album);
+    pc:=StrCopyE(pc,'&n[0]=');
+    if si^.track<>0 then
+      {pc:=}StrCopyE(pc,IntToStr(buf,si^.track));
+
+    res:=SendRequest(sub_url,REQUEST_POST,args);
+    if (res<>nil) and (uint_ptr(res)>$0FFF) then
+    begin
+      if StrCmp(CharReplace(res,#10,#0),'OK')=0 then
+        result:=1
+      else if StrCmp(res,'BADSESSION')=0 then
+      begin
+        result:=-1;
+      end
+      else if StrCmp(res,'FAILED',6)=0 then
+      begin
+        StrCopy(StrCopyE(args,Translate('Last.fm error: ')),res+7);
+        PUShowMessage(@args,SM_NOTIFY);
+        result:=0;
+      end;
+      mFreeMem(res);
+    end;
+  end;
+end;
+
+//----- Get Info service functions -----
+
+function FullEncode(dst,src:pAnsiChar):PAnsiChar;
+begin
+  while src^<>#0 do
+  begin
+    if src^ in ['A'..'Z','a'..'z','0'..'9'] then
+      dst^:=src^
+    else
+    begin
+      dst^:='%'; inc(dst);
+      dst^:=HexDigitChr[ord(src^) shr 4]; inc(dst);
+      dst^:=HexDigitChr[ord(src^) and $0F];
+    end;
+    inc(src);
+    inc(dst);
+  end;
+  dst^:=#0;
+  result:=dst;
+end;
+
+function FixInfo(Info:pWideChar):pWideChar;
+var
+  pc,ppc:pWideChar;
+  cnt:cardinal;
+  need:boolean;
+begin
+  pc:=Info;
+  cnt:=0;
+  need:=false;
+  while pc^<>#0 do
+  begin
+    if pc^=#$0D then
+    begin
+      inc(cnt);
+      inc(pc);
+      if pc^<>#$0A then
+        need:=true;
+    end
+    else
+      inc(pc);
+  end;
+  if need then
+  begin
+    mGetMem(result,(StrLenW(Info)+1+cnt)*SizeOf(WideChar));
+    pc:=Info;
+    ppc:=result;
+    while pc^<>#0 do
+    begin
+      ppc^:=pc^;
+      if pc^=#$0D then
+      begin
+        inc(ppc);
+        ppc^:=#$0A;
+      end;
+      inc(pc);
+      inc(ppc);
+    end;
+    ppc^:=#0;
+  end
+  else
+    StrDupW(result,Info);
+end;

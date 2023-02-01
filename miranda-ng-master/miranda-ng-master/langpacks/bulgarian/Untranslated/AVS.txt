@@ -1,0 +1,7 @@
+[Number of points to define background:]
+[Protect the picture and prevent automatic avatars from overwriting it]
+[Contact picture]
+[Try to make picture background transparent]
+[Use defaults]
+[Color diff:]
+[My Global Avatar Cache]

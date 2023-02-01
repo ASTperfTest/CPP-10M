@@ -1,0 +1,105 @@
+#muuid {bd542bb4-5ae4-4d0e-a435-ba8dbe39607f}
+;============================================================
+;  File: SmileyAdd.dll
+;  Plugin: SmileyAdd
+;  Version: 0.3.2.2
+;  Authors: Peacow, nightwish, bid, borkra
+;============================================================
+[Smiley support for Miranda NG.]
+Падтрымка смайлаў у Miranda NG.
+;file \plugins\SmileyAdd\res\resource.rc
+[Display]
+Паказваць
+[Replace only smileys surrounded by spaces]
+Замяняць толькі смайлы акружаныя прабеламі
+[Scale smiley to text height]
+Маштабаваць смайлы пад тэкст
+[High quality smiley scaling]
+Якаснае маштабаванне
+[Animate]
+Анімацыя
+[Maximum sticker height]
+
+[Minimum smiley height]
+Мін. вышыня смайлаў
+[Smiley selector]
+Выбар смайла
+[Input area]
+Поле ўводу
+[Enable smileys]
+Уключыць смайлы
+[Don't replace at cursor]
+Не замяняць пад курсорам
+[Surround inserted smiley with spaces]
+Уставіць смайл з прабеламі
+[Use first smiley for selection size]
+Памер усіх смайлаў як у першага
+[IEView style window]
+Акно ў стылі IEView
+[Horizontal sorting]
+
+[Download more smileys]
+
+[Specify smiley pack for each category]
+Катэгорыі з унікальнымі наборамі смайлаў
+[Name:]
+Імя:
+[Author:]
+Аўтар:
+[Version:]
+Версія:
+[Preview]
+Прагляд
+[Use per protocol global smiley packs]
+
+;file \plugins\SmileyAdd\src\dlgboxsubclass.cpp
+[Show smiley selection window]
+Акно выбару эмоцый
+;file \plugins\SmileyAdd\src\download.cpp
+[SmileyAdd]
+Смайлы
+[Smiley packs' folder]
+
+[Smiley cache]
+Кэш смайлаў
+;file \plugins\SmileyAdd\src\main.cpp
+[Button smiley]
+Кнопка смайла
+[Assign smiley category]
+Катэгорыя смайлаў
+[Background color]
+Колер фону
+[Only one instance of SmileyAdd could be executed.\nRemove duplicate instances from 'Plugins' directory]
+Толькі адна копія SmileyAdd можа быць запушчана.\nУдаліце дублікат з тэчкі "Plugins"
+;file \plugins\SmileyAdd\src\options.cpp
+[Smiley packs]
+Набор смайлаў
+[All files]
+Усе файлы
+[Smileys]
+Смайлы
+[Customize]
+Тонкая налада
+[General]
+Агульнае
+[Categories]
+Катэгорыі
+;file \plugins\SmileyAdd\src\services.cpp
+[Protocol specific]
+У адпаведнасці з пратаколам
+;file \plugins\SmileyAdd\src\smileys.cpp
+[Smiley pack %s for category "%s" not found.\nSelect correct smiley pack in the Options -> Customize -> Smileys.]
+
+[There were problems loading smiley pack (it should be corrected).\nSee network log for details.]
+Праблемы з загрузкай набору смайлаў (неабходна выправіць).\nДля падрабязнасцяў гледзіце сеткавы дзённік.
+[Smiley #%u in file %s for smiley pack %s not found.]
+Смайл #%u у файле %s для набору смайлікаў %s не знойдзены.
+[%s global smiley pack]
+
+[Standard]
+Стандартныя
+[Regular expression "%s" in smiley pack "%s" malformed.]
+Рэгулярны выраз "%s" у наборы смайлаў "%s" пашкоджана.
+;file \plugins\SmileyAdd\src\smltool.cpp
+[d'Oh!]
+Ох!

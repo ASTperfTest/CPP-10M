@@ -1,0 +1,45 @@
+#muuid {1acb2ed1-c1ed-43ee-89bd-086686f6ebb5}
+;============================================================
+;  File: StatusChange.dll
+;  Plugin: Status change
+;  Version: 1.3.0.0
+;  Authors: Angelo Luiz Tartari
+;============================================================
+[Change status when you send/receive an event.]
+Doplněk umožňuje změnu stavu při odeslání/přijetí zprávy, odkazu či souboru.
+;file \plugins\StatusChange\res\resource.rc
+[Offline]
+Offline
+[Online]
+Online
+[Away]
+Na chvíli pryč
+[Not available]
+Nejsem tady
+[Occupied]
+Nemám čas
+[Do not disturb]
+Nerušit!
+[Free for chat]
+Mám volno
+[Invisible]
+Neviditelný
+[On events...]
+Pro události...
+[Send]
+Odeslání
+[Receive]
+Přijetí
+[Message]
+Zpráva
+[File transfer]
+Přenos souboru
+[...change status to...]
+...změnit stav na...
+[...if status is...]
+...pokud je aktuální stav...
+;file \plugins\StatusChange\src\main.cpp
+[Status Change]
+Změna stavu
+[Status]
+Stavy

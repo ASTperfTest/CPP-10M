@@ -1,0 +1,86 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("UploadBandwidthThrottler.h");}
+void INCLUDEREPLACE(){CX_INCL("EncryptedDatagramSocket.h");}
+
+class CServerConnect;
+       SServerUDPPacket;
+       SServerDNSRequest;
+class CUDPSocket;
+class Packet;
+class CServer;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CUDPSocketWnd
+
+class CUDPSocketWnd :        CWnd
+{
+// Construction
+public:
+ CUDPSocketWnd() {};
+ CUDPSocket* m_pOwner;
+
+protected:
+
+         long *  OnDNSLookupDone(int *  wParam, long * lParam);
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CUDPSocket
+
+class CUDPSocket :        CAsyncSocket,        CEncryptedDatagramSocket,        ThrottledControlSocket // ZZ:UploadBandWithThrottler (UDP)
+{
+ friend class CServerConnect;
+
+public:
+ CUDPSocket();
+ virtual ~CUDPSocket();
+
+ bool Create();
+    SocketSentBytes SendControlData(uint32 maxNumberOfBytesToSend, uint32 minFragSize); // ZZ:UploadBandWithThrottler (UDP)
+ void SendPacket(Packet* packet, CServer* pServer, uint16 nSpecialPort = 0, unsigned char* pRawPacket = 0, uint32 nRawLen = 0);
+ void DnsLookupDone(int *  wp, long * lp);
+
+protected:
+ virtual void OnSend(int nErrorCode);
+ virtual void OnReceive(int nErrorCode);
+
+private:
+ void* m_hWndResolveMessage;
+ CUDPSocketWnd m_udpwnd;
+ CTypedPtrList                               m_aDNSReqs;
+
+ void SendBuffer(uint32 nIP, uint16 nPort, unsigned char* pPacket, unsigned int uSize);
+ bool ProcessPacket(const unsigned char* packet, unsigned int size, unsigned int opcode, uint32 nIP, uint16 nUDPPort);
+ void ProcessPacketError(unsigned int size, unsigned int opcode, uint32 nIP, uint16 nUDPPort, const char* pszError);
+ bool IsBusy() const { return m_bWouldBlock; }
+ int SendTo(unsigned char* lpBuf, int nBufLen, uint32 dwIP, uint16 nPort);
+
+ bool m_bWouldBlock;
+ CTypedPtrList                              controlpacket_queue;
+    CCriticalSection sendLocker; // ZZ:UploadBandWithThrottler (UDP)
+};
+
+
+
+
+
+
+ 

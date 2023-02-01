@@ -1,0 +1,75 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("TreeOptionsCtrlEx.h");}
+
+class CPPgIRC :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgIRC)
+
+public:
+ CPPgIRC();
+ virtual ~CPPgIRC();
+
+// Dialog Data
+ enum { IDD = IDD_PPG_IRC };
+
+ void Localize(void);
+
+protected:
+ bool m_bTimeStamp;
+ bool m_bSoundEvents;
+ bool m_bMiscMessage;
+ bool m_bJoinMessage;
+ bool m_bPartMessage;
+ bool m_bQuitMessage;
+ bool m_bEmuleAddFriend;
+ bool m_bEmuleAllowAddFriend;
+ bool m_bEmuleSendLink;
+ bool m_bAcceptLinks;
+ bool m_bIRCAcceptLinksFriendsOnly;
+ bool m_bHelpChannel;
+ bool m_bChannelsOnConnect;
+ bool m_bIRCEnableSmileys;
+
+ CTreeOptionsCtrlEx m_ctrlTreeOptions;
+ bool m_bInitializedTreeOpts;
+ HTREEITEM m_htiSoundEvents;
+ HTREEITEM m_htiTimeStamp;
+ HTREEITEM m_htiInfoMessage;
+ HTREEITEM m_htiMiscMessage;
+ HTREEITEM m_htiJoinMessage;
+ HTREEITEM m_htiPartMessage;
+ HTREEITEM m_htiQuitMessage;
+ HTREEITEM m_htiEmuleProto;
+ HTREEITEM m_htiEmuleAddFriend;
+ HTREEITEM m_htiEmuleAllowAddFriend;
+ HTREEITEM m_htiEmuleSendLink;
+ HTREEITEM m_htiAcceptLinks;
+ HTREEITEM m_htiAcceptLinksFriends;
+ HTREEITEM m_htiHelpChannel;
+ HTREEITEM m_htiChannelsOnConnect;
+ HTREEITEM m_htiSmileys;
+
+ void LoadSettings(void);
+ void UpdateControls();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnKillActive();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnDestroy();
+         void OnSettingsChange()     { SetModified(); }
+         void OnBtnClickPerform();
+         long *  OnTreeOptsCtrlNotify(int *  wParam, long * lParam);
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

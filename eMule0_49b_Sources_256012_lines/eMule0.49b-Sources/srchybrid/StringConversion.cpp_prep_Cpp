@@ -1,0 +1,292 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("StringConversion.h");}
+void INCLUDEREPLACE(){CX_INCL("atlenc.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+int utf8towc(const char* pcUtf8, unsigned int uUtf8Size, long*  pwc, unsigned int uWideCharSize)
+{
+ long*  pwc0 = pwc;
+
+    while (uUtf8Size && uWideCharSize)
+    {
+        unsigned char ucChar = *pcUtf8++;
+        if (ucChar < 0x80)
+  {
+            uUtf8Size--;
+            uWideCharSize--;
+            *(pwc++) = ucChar;
+        }
+  else if ((ucChar & 0xC0) != 0xC0)
+  {
+            return -1; // Invalid      string..
+        }
+        else
+        {
+            unsigned char ucMask = 0xE0;
+            unsigned int uExpectedBytes = 1;
+            while ((ucChar & ucMask) == ucMask)
+   {
+                ucMask |= ucMask >> 1;
+                if (++uExpectedBytes > 3)
+                    return -1; // Invalid      string..
+            }
+
+            if (uUtf8Size <= uExpectedBytes)
+                return -1; // Invalid      string..
+
+            unsigned int uProcessedBytes = 1 + uExpectedBytes;
+            unsigned int uWideChar = (unsigned int)(ucChar & ~ucMask);
+            if (uExpectedBytes == 1)
+   {
+                if ((uWideChar & 0x1E) == 0)
+                    return -1; // Invalid      string..
+            }
+            else
+   {
+                if (uWideChar == 0 && ((unsigned char)*pcUtf8 & 0x3F & (ucMask << 1)) == 0)
+                    return -1; // Invalid      string..
+
+                if (uExpectedBytes == 2)
+    {
+                    //if (uWideChar == 0x0D && ((unsigned char)*pcUtf8 & 0x20))
+                    //    return -1;
+                }
+                else if (uExpectedBytes == 3)
+    {
+                    if (uWideChar > 4)
+                        return -1; // Invalid      string..
+                    if (uWideChar == 4 && ((unsigned char)*pcUtf8 & 0x30))
+                        return -1; // Invalid      string..
+                }
+            }
+
+            if (uWideCharSize < (unsigned int)(uExpectedBytes > 2) + 1)
+                break; // buffer full
+
+            while (uExpectedBytes--)
+            {
+                if (((ucChar = (unsigned char)*(pcUtf8++)) & 0xC0) != 0x80)
+                    return -1; // Invalid      string..
+                uWideChar <<= 6;
+                uWideChar |= (ucChar & 0x3F);
+            }
+            uUtf8Size -= uProcessedBytes;
+
+            if (uWideChar < 0x10000)
+            {
+                uWideCharSize--;
+                *(pwc++) = (long )uWideChar;
+            }
+            else
+            {
+                uWideCharSize -= 2;
+                uWideChar -= 0x10000;
+                *(pwc++) = (long )(0xD800 | (uWideChar >> 10));
+                *(pwc++) = (long )(0xDC00 | (uWideChar & 0x03FF));
+            }
+        }
+    }
+
+    return pwc - pwc0;
+}
+
+int ByteStreamToWideChar(const char* pcUtf8, unsigned int uUtf8Size, long*  pwc, unsigned int uWideCharSize)
+{
+ int iWideChars = utf8towc(pcUtf8, uUtf8Size, pwc, uWideCharSize);
+ if (iWideChars < 0)
+ {
+  long*  pwc0 = pwc;
+  while (uUtf8Size && uWideCharSize)
+  {
+   if ((*pwc++ = (unsigned char)*pcUtf8++) ==  '\0')
+    break;
+   uUtf8Size--;
+   uWideCharSize--;
+  }
+  iWideChars = pwc - pwc0;
+ }
+ return iWideChars;
+}
+
+//void CreateBOMUTF8String(const CStringW& rwstr, CStringA& rstrUTF8)
+//{
+// int iChars = AtlUnicodeToUTF8(rwstr, rwstr.GetLength(), NULL, 0);
+// int iRawChars = 3 + iChars;
+// char* pszUTF8 = rstrUTF8.GetBuffer(iRawChars);
+// *pszUTF8++ = 0xEFU;
+// *pszUTF8++ = 0xBBU;
+// *pszUTF8++ = 0xBFU;
+// AtlUnicodeToUTF8(rwstr, rwstr.GetLength(), pszUTF8, iRawChars);
+// rstrUTF8.ReleaseBuffer(iRawChars);
+//}
+
+CStringA wc2utf8(const CStringW& rwstr)
+{
+ CStringA strUTF8;
+ int iChars = AtlUnicodeToUTF8(rwstr, rwstr.GetLength(), NULL, 0);
+ if (iChars > 0)
+ {
+  char* pszUTF8 = strUTF8.GetBuffer(iChars);
+  AtlUnicodeToUTF8(rwstr, rwstr.GetLength(), pszUTF8, iChars);
+  strUTF8.ReleaseBuffer(iChars);
+ }
+ return strUTF8;
+}
+
+CString OptUtf8ToStr(const CStringA& rastr)
+{
+ CStringW wstr;
+ int iMaxWideStrLen = rastr.GetLength();
+ long*  pwsz = wstr.GetBuffer(iMaxWideStrLen);
+ int iWideChars = utf8towc(rastr, rastr.GetLength(), pwsz, iMaxWideStrLen);
+ if (iWideChars <= 0)
+ {
+  // invalid      string...
+  wstr.ReleaseBuffer(0);
+  wstr = rastr;    // convert with local codepage
+ }
+ else
+  wstr.ReleaseBuffer(iWideChars);
+ return wstr;     // just return the string
+}
+
+CString OptUtf8ToStr(const char* psz, int iLen)
+{
+ CStringW wstr;
+ int iMaxWideStrLen = iLen;
+ long*  pwsz = wstr.GetBuffer(iMaxWideStrLen);
+ int iWideChars = utf8towc(psz, iLen, pwsz, iMaxWideStrLen);
+ if (iWideChars <= 0)
+ {
+  // invalid      string...
+  wstr.ReleaseBuffer(0);
+  wstr = psz;    // convert with local codepage
+ }
+ else
+  wstr.ReleaseBuffer(iWideChars);
+ return wstr;     // just return the string
+}
+
+CString OptUtf8ToStr(const CStringW& rwstr)
+{
+ CStringA astr;
+ for (int i = 0; i < rwstr.GetLength(); i++)
+ {
+  if (rwstr[i] > 0xFF)
+  {
+   // this is no      string (it's already an Unicode string)...
+   return rwstr;   // just return the string
+  }
+  astr += (unsigned char)rwstr[i];
+ }
+ return OptUtf8ToStr(astr);
+}
+
+CStringA StrToUtf8(const CString& rstr)
+{
+ return wc2utf8(rstr);
+}
+
+bool IsValidEd2kString(const char* psz)
+{
+ while (*psz != _T('\0'))
+ {
+  // NOTE: The '?' is the character which is returned by windows if user entered an Unicode string into
+  // an edit control (although application runs in      mode).
+  // The '?' is also invalid for search expressions and filenames.
+  if (*psz == _T('?'))
+   return false;
+  psz++;
+ }
+ return true;
+}
+
+bool IsValidEd2kStringA(const char* psz)
+{
+ while (*psz != '\0')
+ {
+  // NOTE: The '?' is the character which is returned by windows if user entered an Unicode string into
+  // an edit control (although application runs in      mode).
+  // The '?' is also invalid for search expressions and filenames.
+  if (*psz == '?')
+   return false;
+  psz++;
+ }
+ return true;
+}
+
+CString EncodeUrlUtf8(const CString& rstr)
+{
+ CString url;
+ CStringA utf8(StrToUtf8(rstr));
+ for (int i = 0; i < utf8.GetLength(); i++)
+ {
+  if ((unsigned char)utf8[i] >= 0x7F)
+   url.AppendFormat(_T("%%%02X"), (unsigned char)utf8[i]);
+  else
+   url += utf8[i];
+ }
+ return url;
+}
+
+CStringW DecodeDoubleEncodedUtf8(const long* pszFileName)
+{
+ size_t nChars = wcslen(pszFileName);
+
+ // Check if all characters are valid for UTF-8 value range
+ //
+ for (unsigned int i = 0; i < nChars; i++) {
+  if ((_TUCHAR)pszFileName[i] > 0xFFU)
+   return pszFileName; // string is already using Unicode character value range; return original
+ }
+
+ // Transform Unicode string to UTF-8 byte sequence
+ //
+ CStringA strA;
+ char* pszA = strA.GetBuffer(nChars);
+ for (unsigned int i = 0; i < nChars; i++)
+  pszA[i] = (char)pszFileName[i];
+ strA.ReleaseBuffer(nChars);
+
+ // Decode the string with UTF-8
+ //
+ CStringW strW;
+ long*  pszW = strW.GetBuffer(nChars);
+ int iNewChars = utf8towc(strA, nChars, pszW, nChars);
+ if (iNewChars < 0) {
+  strW.ReleaseBuffer(0);
+  return pszFileName;  // conversion error (not a valid UTF-8 string); return original
+ }
+ strW.ReleaseBuffer(iNewChars);
+
+ return strW;
+}
+
+
+
+
+
+
+ 

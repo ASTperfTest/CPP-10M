@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files\dbrw">
+      <UniqueIdentifier>{e176f3a4-8c75-4335-a753-570c376ad1ae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\import.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mcontacts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\miranda.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patterns.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\progress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stdafx.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textjson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wizard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dbrw\dbcontacts.cpp">
+      <Filter>Source Files\dbrw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dbrw\dbevents.cpp">
+      <Filter>Source Files\dbrw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dbrw\dbintf.cpp">
+      <Filter>Source Files\dbrw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dbrw\dbrw.cpp">
+      <Filter>Source Files\dbrw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dbrw\dbsettings.cpp">
+      <Filter>Source Files\dbrw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dbrw\dbsql.cpp">
+      <Filter>Source Files\dbrw</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dbrw\dbintf.h">
+      <Filter>Source Files\dbrw</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dbrw\dbrw.h">
+      <Filter>Source Files\dbrw</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="res\Version.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\import.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <Import Project="$(ProjectDir)..\..\build\vc.common\common.filters" />
+</Project>

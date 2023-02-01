@@ -1,0 +1,196 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("ToolBarCtrlX.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+//IMPLEMENT_DYNAMIC(CToolBarCtrlX, CToolBarCtrl)
+
+/* BEGIN_MESSAGE_MAP(CToolBarCtrlX, CToolBarCtrl)
+END_MESSAGE_MAP() */ //)
+
+CToolBarCtrlX::CToolBarCtrlX()
+{
+}
+
+CToolBarCtrlX::~CToolBarCtrlX()
+{
+}
+
+void CToolBarCtrlX::DeleteAllButtons()
+{
+ int iButtons = GetButtonCount();
+ for (int i = 0; i < iButtons; i++)
+  DeleteButton(0);
+}
+
+unsigned long CToolBarCtrlX::GetBtnStyle(int id)
+{
+ TBBUTTONINFO tbbi = {0};
+ tbbi.cbSize = sizeof tbbi;
+ tbbi.dwMask = TBIF_STYLE;
+ (void)GetButtonInfo(id, &tbbi);
+ return tbbi.fsStyle;
+}
+
+unsigned long CToolBarCtrlX::AddBtnStyle(int id, unsigned long dwStyle)
+{
+ TBBUTTONINFO tbbi = {0};
+ tbbi.cbSize = sizeof tbbi;
+ tbbi.dwMask = TBIF_STYLE;
+ (void)GetButtonInfo(id, &tbbi);
+ unsigned long dwOldStyle = tbbi.fsStyle;
+ tbbi.fsStyle |= dwStyle;
+ SetButtonInfo(id, &tbbi);
+ return dwOldStyle;
+}
+
+unsigned long CToolBarCtrlX::RemoveBtnStyle(int id, unsigned long dwStyle)
+{
+ TBBUTTONINFO tbbi = {0};
+ tbbi.cbSize = sizeof tbbi;
+ tbbi.dwMask = TBIF_STYLE;
+ (void)GetButtonInfo(id, &tbbi);
+ unsigned long dwOldStyle = tbbi.fsStyle;
+ tbbi.fsStyle &= ~dwStyle;
+ SetButtonInfo(id, &tbbi);
+ return dwOldStyle;
+}
+
+int CToolBarCtrlX::GetBtnWidth(int nID)
+{
+ TBBUTTONINFO tbbi = {0};
+ tbbi.cbSize = sizeof tbbi;
+ tbbi.dwMask = TBIF_SIZE;
+ (void)GetButtonInfo(nID, &tbbi);
+ return tbbi.cx;
+}
+
+void CToolBarCtrlX::SetBtnWidth(int nID, int iWidth)
+{
+ TBBUTTONINFO tbbi = {0};
+ tbbi.cbSize = sizeof tbbi;
+ tbbi.dwMask = TBIF_SIZE;
+ tbbi.cx = (unsigned short)iWidth;
+ SetButtonInfo(nID, &tbbi);
+}
+
+CString CToolBarCtrlX::GetBtnText(int nID)
+{
+ char  szString[512];
+ TBBUTTONINFO tbbi = {0};
+ tbbi.cbSize = sizeof tbbi;
+ tbbi.dwMask = TBIF_TEXT;
+ tbbi.pszText = szString;
+ tbbi.cchText = _countof(szString);
+ GetButtonInfo(nID, &tbbi);
+ return szString;
+}
+
+void CToolBarCtrlX::SetBtnText(int nID, const char* pszString)
+{
+ TBBUTTONINFO tbbi = {0};
+ tbbi.cbSize = sizeof tbbi;
+ tbbi.dwMask = TBIF_TEXT;
+ tbbi.pszText = const_cast        (pszString);
+ SetButtonInfo(nID, &tbbi);
+}
+
+CSize CToolBarCtrlX::GetPadding()
+{
+ unsigned long dwPadding = SendMessage(TB_GETPADDING);
+ return CSize(LOWORD(dwPadding), HIWORD(dwPadding));
+}
+
+void CToolBarCtrlX::SetPadding(CSize sizPadding)
+{
+ SendMessage(TB_SETPADDING, 0, MAKELPARAM(sizPadding.cx, sizPadding.cy));
+}
+
+
+void CToolBarCtrlX::AdjustFont(int iMaxPointSize, CSize sizButton)
+{
+ // The toolbar control uses the font which is specified in the current system
+ // metrics. It does not use the font which is used by the parent. So, if user
+ // switched to "Large Font" mode in Windows System applet, we have to do some
+ // adjustements because our toolbar is of fixed size and designed for 8 pt "MS Shell Dlg".
+ //
+ // This function is only needed when the toolbar control is dynamically created.
+ // If it's created via a dialog resource the font property is handled as
+ // expected even when the font is changed in system applet during runtime.
+ //
+ // -> Avoid to use this function, it most likely creates glitches on some systems.
+
+ // Toolbar control is very sensitive to font changes, adjust the font
+ // only if really needed.
+ CFont* pFont = GetFont();
+ if (pFont)
+ {
+  LOGFONT lf = {0};
+  if (pFont->GetLogFont(&lf) > 0)
+  {
+   void* hDC = ::GetDC(HWND_DESKTOP);
+   int iPointSize = -MulDiv(lf.lfHeight, 72, GetDeviceCaps(hDC, LOGPIXELSY));
+   ::ReleaseDC(NULL, hDC);
+   if (iPointSize > iMaxPointSize)
+   {
+    CWnd* pwndParent = GetParent();
+    ASSERT( pwndParent != NULL );
+    if (pwndParent)
+    {
+     CFont* pFontDlg = pwndParent->GetFont();
+     ASSERT( pFontDlg != NULL );
+     if (pFontDlg)
+     {
+      SetFont(pFontDlg);
+
+      // Toolbar control likes to resize buttons and stuff
+      // when                         is applied.
+      if ((GetExtendedStyle() & TBSTYLE_EX_DRAWDDARROWS) != 0)
+      {
+       SetPadding(CSize(0, 0));
+       SetButtonSize(sizButton);
+      }
+     }
+    }
+   }
+  }
+ }
+}
+
+void CToolBarCtrlX::RecalcLayout()
+{
+ // Force a recalc of the toolbar's layout to work around a comctl bug
+ int iTextRows = GetMaxTextRows();
+ SetRedraw(FALSE);
+ SetMaxTextRows(iTextRows+1);
+ SetMaxTextRows(iTextRows);
+ SetRedraw(TRUE);
+}
+
+
+
+
+
+
+ 

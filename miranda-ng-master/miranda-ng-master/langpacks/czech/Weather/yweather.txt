@@ -1,0 +1,102 @@
+;============================================================
+;  File: yweather.ini
+;  Plugin: Weather
+;============================================================
+[ENE]
+VSV
+[ESE]
+VJV
+[E]
+V
+[East]
+Východní
+[Feel]
+Subj.
+[Forecast Day 1 Condition]
+Předpověď na 1. den - počasí
+[Forecast Day 1 Date]
+Předpověď na 1. den - datum
+[Forecast Day 1 Day]
+Předpověď na 1. den - denní
+[Forecast Day 1 High]
+Předpověď na 1. den - nejvyšší
+[Forecast Day 1 Low]
+Předpověď na 1. den - nejnižší
+[Forecast Day 1]
+Předpověď na 1. den
+[Fri]
+Pá
+[Heat Index]
+Teplotní index
+[Mon]
+Po
+[Mostly Clear]
+převážně jasno
+[Mostly Cloudy]
+převážně oblačno
+[Mostly Sunny]
+převážně slunečno
+[NE]
+SV
+[NNE]
+SSV
+[NNW]
+SSZ
+[NW]
+SZ
+[N]
+S
+[North]
+Severní
+[Northeast]
+Severovýchodní
+[Northwest]
+Severozápadní
+[Partly Cloudy]
+částečně oblačno
+[Partly Sunny]
+částečně slunečno
+[SE]
+JV
+[SSE]
+JJV
+[SSW]
+JJZ
+[SW]
+JZ
+[S]
+J
+[Sat]
+So
+[Scattered Clouds]
+střídavě oblačno
+[South]
+Jižní
+[Southeast]
+Jihovýchodní
+[Southwest]
+Jihozápadní
+[Sun]
+Ne
+[Sunny]
+slunečno
+[Thu]
+Čt
+[Tue]
+Út
+[WNW]
+ZSZ
+[WSW]
+ZJZ
+[W]
+Z
+[Wed]
+St
+[West]
+Západní
+[Wind Direction Degrees]
+Směr větru (stupně)
+[Wind Direction]
+Směr větru
+[Wind Speed]
+Rychlost větru

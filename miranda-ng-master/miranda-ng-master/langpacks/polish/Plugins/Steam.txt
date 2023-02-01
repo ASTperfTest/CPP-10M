@@ -1,0 +1,99 @@
+#muuid {68f5a030-ba32-48ec-9507-5c2fbdea5217}
+;============================================================
+;  File: Steam.dll
+;  Plugin: Steam protocol
+;  Version: 0.96.1.1
+;  Authors: Miranda NG team, Robert Pösel
+;============================================================
+[Steam protocol support for Miranda NG.]
+Zapewnia obsługę protokołu Steam.
+;file \protocols\Steam\res\Resource.rc
+[Username:]
+Użytkownik:
+[Password:]
+Hasło:
+[Default group:]
+Domyślna grupa:
+[Account]
+Konto
+[Contacts]
+Kontakty
+[Use bigger avatars]
+Używaj większych awatarów
+[Message sessions]
+Okno rozmowy
+[Show chat state events (i.e., user closed chat session)]
+Wyświetlaj zdarzenia stanu czatu (np. rozmówca zakończył sesję rozmowy)
+[Connection]
+Połączenie
+[Error limit before logout:]
+Limit błędów przed wylogowaniem:
+[Captcha]
+Kod Captcha
+[Cancel]
+Anuluj
+[As an added account security measure, you'll need to grant access by entering the special code we've just sent to your email address.]
+Jako środek bezpieczeństwa dodanego konta, będziesz musiał udzielić dostępu podając specjalny kod, który właśnie wysłaliśmy na twój adres e-mail.
+[Go to email domain]
+Przejdź do domeny e-mail
+[Block]
+Zablokuj
+[Enter password]
+Wprowadź hasło
+[Save password]
+Zapisz hasło
+[Enter the password to continue.]
+Wprowadź hasło, by kontynuować.
+[Security code]
+Kod bezpieczeństwa
+[As an added account security measure, you'll need to grant access by entering the SMS code we've just sent to your mobile phone.]
+Jako dodatkowy środek bezpieczeństwa na koncie, musisz przyznać dostęp, wprowadzając kod SMS, który właśnie wysłaliśmy na Twój telefon komórkowy.
+;file \protocols\Steam\src\main.cpp
+[Steam game]
+Gra Steam
+;file \protocols\Steam\src\steam_contacts.cpp
+[Looking to play]
+Szuka partnera do gry
+[ (Non-Steam)]
+ (z poza Steam)
+[ on server %S]
+ na serwerze %S
+[Playing]
+Gra
+[%s is back in your contact list]
+%s jest z powrotem na twojej liście kontaktów
+[%s has been removed from your contact list]
+%s został usunięty z listy kontaktów
+[%s has added you to contact list]
+%s dodał(a) Cię do kontaktów
+;file \protocols\Steam\src\steam_login.cpp
+[Cannot obtain connection token.]
+Nie można uzyskać tokenu połączenia.
+;file \protocols\Steam\src\steam_menus.cpp
+[Steam menu chooser]
+Wybór menu Steam
+[Unblock]
+Odblokuj
+[Join to game]
+Dołącz do gry
+;file \protocols\Steam\src\steam_messages.cpp
+[Unknown error]
+Nieznany błąd
+;file \protocols\Steam\src\steam_options.cpp
+[Name]
+Nazwa
+[Network]
+Sieć
+;file \protocols\Steam\src\steam_proto.cpp
+[Protocols]
+Protokoły
+[Protocol icon]
+Ikona protokołu
+[Gaming icon]
+Ikona grania
+[You cannot send messages when you are offline.]
+Nie można wysłać wiadomości, gdy jesteś offline.
+;file \protocols\Steam\src\steam_utils.cpp
+[closed chat session]
+rozmówca zakończył sesję rozmowy
+;file \protocols\Steam\src\steam_xstatus.cpp

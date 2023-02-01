@@ -1,0 +1,11 @@
+#muuid {9584da04-fb4f-40c1-9325-e4f9caafcb5d}
+;============================================================
+;  File: Actman.dll
+;  Plugin: Action manager
+;  Version: 0.3.0.1
+;  Authors: Awkward
+;============================================================
+[Start minimized]
+Start minimised
+[Start maximized]
+Start maximised

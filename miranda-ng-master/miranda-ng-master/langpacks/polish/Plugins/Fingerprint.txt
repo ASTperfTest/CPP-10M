@@ -1,0 +1,200 @@
+#muuid {687364af-58b0-4af2-a4ee-20f40a8d9afb}
+;============================================================
+;  File: Fingerprint.dll
+;  Plugin: Fingerprint NG
+;  Version: 0.2.0.1
+;  Authors: faith_healer, ghazan, Mataes
+;============================================================
+[Fingerprint NG (client version) icons module for Miranda NG.]
+Wyświetla ikony klientów używanych przez twoje kontakty.
+;file \plugins\FingerprintNG\res\resource.rc
+[Fingerprint overlays icons]
+Ikony nakładek
+[Miranda clients]
+Klienty Mirandy
+[Miranda packs overlays]
+Nakładki paczek
+[Show Miranda version at Overlay#2]
+Pokaż nakładkę wersji Mirandy #2
+[Resource overlays]
+Nakładki zasobów
+[Platform overlays]
+Nakładki platform
+[Protocols overlays]
+Nakładki protokołów
+[Unicode overlay]
+Nakładka Unicode
+[Secure overlays]
+Nakładki bezpieczeństwa
+[Select protocols]
+Zaznacz protokoły
+[Facebook clients]
+Klienty Facebooka
+[Gadu-Gadu clients]
+Klienty Gadu-Gadu
+[ICQ clients]
+Klienty ICQ
+[IRC clients]
+Klienty IRC
+[Jabber clients]
+Klienty Jabber
+[RSS clients]
+Klienty RSS
+[VKontakte clients]
+Klienty VKontakte
+[Weather clients]
+Klienty Pogodowe
+[Multi-protocol clients]
+Multikomunikatory
+[Other (rare) protocols]
+Inne (rzadkie) protokoły
+[Other icons]
+Inne ikony
+[Show client icon in message window status bar]
+Pokaż ikonę klienta w pasku stanu okna rozmowy
+;file \plugins\FingerprintNG\src\fingerprint.cpp
+[Fingerprint]
+Ikony klientów
+;file \plugins\FingerprintNG\src\finger_groups.h
+[Client icons]
+Ikony klientów
+[Pack overlays]
+Nakładki paczek
+[Multi-proto clients]
+Multikomunikatory
+[Other protocols]
+Inne protokoły
+[Overlays]
+Nakładki
+[Resource]
+Zasób
+[Platform]
+Platformy
+[Security]
+Bezpieczeństwo
+[Protocol]
+Protokół
+;file \plugins\FingerprintNG\src\masks.cpp
+[Miranda NG stable]
+Stabilna Miranda NG
+[Miranda IM (old versions)]
+Miranda IM (starsza wersja)
+[Miranda (unknown)]
+Miranda (nieznana)
+[PHP Jabber Client]
+Klient PHP Jabber
+[MP3 Script for mIRC]
+Skrypt MP3 dla mIRC
+[Gadu-Gadu client]
+Klient Gadu-Gadu
+[Python-based clients]
+Klient bazujący na Phytonie
+[Jabber client]
+Klient Jabber
+[XMPP client]
+Klient XMPP
+[Client not found]
+Klient nie znaleziony
+[Unknown client]
+Nieznany klient
+[Undetected client]
+Nie wykryty klient
+[ICQ overlay]
+Nakładka ICQ
+[IRC overlay]
+Nakładka IRC
+[JGmail overlay]
+Nakładka JGmail
+[JGTalk overlay]
+Nakładka JGTalk
+[Jabber overlay]
+Nakładka Jabber
+[VK overlay]
+Nakładka VK
+[Skype overlay]
+Nakładka Skype
+[ICQ v8.x overlay]
+Nakładka ICQ v8.x
+[Gadu-Gadu v11 client]
+Klient Gadu-Gadu v11
+[Gadu-Gadu v10 client]
+Klient Gadu-Gadu v10
+[Gadu-Gadu v9 client]
+Klient Gadu-Gadu v9
+[Gadu-Gadu v8 client]
+Klient Gadu-Gadu v8
+[Windows overlay]
+Nakładka Windows
+[iOS overlay (iPhone/iPad)]
+Nakładka iOS (iPhone/iPad)
+[MacOS overlay]
+Nakładka MacOS
+[Linux overlay]
+Nakładka Linux
+[Flash overlay]
+Nakładka Flash
+[Java overlay]
+Nakładka Java
+[Symbian overlay]
+Nakładka Symbian
+[Amiga overlay]
+Nakładka Amiga
+[Android overlay]
+Nakładka Android
+[Website overlay]
+Nakładka stron internetowych
+[Windows Phone overlay]
+Nakładka Windows Phone
+[Mobile overlay]
+Nakładka mobilna
+[debug overlay]
+Nakładka Kodowanie
+[office overlay]
+Nakładka Biuro
+[mobile overlay]
+Nakładka Mobilny
+[home overlay]
+Nakładka Dom
+[work overlay]
+Nakładka Praca
+[notebook overlay]
+Nakładka Notebook
+[Miranda NG v0.6 #2 overlay]
+Nakładka Miranda NG v0.6 #2
+[Miranda NG v0.5 #2 overlay]
+Nakładka Miranda NG v0.5 #2
+[Miranda NG v0.4 #2 overlay]
+Nakładka Miranda NG v0.4 #2
+[Miranda NG v0.3 #2 overlay]
+Nakładka Miranda NG v0.3 #2
+[Miranda NG v0.2 #2 overlay]
+Nakładka Miranda NG v0.2 #2
+[Miranda NG v0.1 #2 overlay]
+Nakładka Miranda NG v0.1 #2
+[Miranda IM v0.10 #2 overlay]
+Nakładka Miranda IM v0.10 #2
+[Miranda IM v0.9 #2 overlay]
+Nakładka Miranda IM v0.9 #2
+[Miranda IM v0.8 #2 overlay]
+Nakładka Miranda IM v0.8 #2
+[Miranda IM v0.7 #2 overlay]
+Nakładka Miranda IM v0.7 #2
+[Miranda IM v0.6 #2 overlay]
+Nakładka Miranda IM v0.6 #2
+[Miranda IM v0.5 #2 overlay]
+Nakładka Miranda IM v0.5 #2
+[Miranda IM v0.4 #2 overlay]
+Nakładka Miranda IM v0.4 #2
+[x64 overlay]
+Nakładka x64
+[x32 overlay]
+Nakładka x32
+[NewGPG overlay]
+Nakładka NewGPG
+[MirOTR overlay]
+Nakładka MirOTR
+[SecureIM overlay]
+Nakładka SecureIM
+;file \plugins\FingerprintNG\src\options.cpp
+[Icons]
+Ikony

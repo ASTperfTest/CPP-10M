@@ -1,0 +1,141 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2005 Merkur ( devs@emule-project.net / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+enum E_DebugFSAtion{
+ DFSA_ADD = 0,
+ DFSA_SUB,
+ DFSA_MUL,
+ DFSA_DIV
+};
+
+class CEMFileSize {
+public:
+ CEMFileSize()               {m_nSize = (uint64)(-1);}
+ CEMFileSize(uint64 nSize)            {m_nSize = nSize; Check();}
+                                                                                ;}
+
+ CEMFileSize& operator__Assign(const CEMFileSize& k1)       {m_nSize = k1.m_nSize; Check(); return *this; }
+ CEMFileSize& operator__Assign(uint64 k1)          {m_nSize = k1; Check(); return *this; }
+                                                                                   ; return *this; }
+                                                                                   ; return *this; }
+                                                                                   ; return *this; }
+
+ CEMFileSize& operator__SubtractionAssign(const CEMFileSize& k1)       {Check(); m_nSize -= k1.m_nSize; Check(); return *this; }
+ CEMFileSize& operator__SubtractionAssign(uint64 k1)          {Check(); m_nSize -= k1; Check(); return *this; }
+                                                                                              ; return *this; }
+                                                                                              ; return *this; }
+                                                                                              ; return *this; }
+
+ CEMFileSize& operator__AdditionAssign(const CEMFileSize& k1)       {Check(); m_nSize += k1.m_nSize; Check(); return *this; }
+ CEMFileSize& operator__AdditionAssign(uint64 k1)          {Check(); m_nSize += k1; Check(); return *this; }
+                                                                                              ; return *this; }
+                                                                                              ; return *this; }
+                                                                                              ; return *this; }
+
+
+ operator__2() const             {return m_nSize;}
+ operator__3() const             {return (double)m_nSize;}
+ /*                                                                    m_nSize;}
+ /*                                                                      m_nSize;}
+                                                                                                      m_nSize;}
+                                                                                                      m_nSize;}
+
+ friend bool operator__Equal(const CEMFileSize& k1,const CEMFileSize& k2)  {return k1.m_nSize == k2.m_nSize;}
+ friend bool operator__Equal(const CEMFileSize& k1,uint64 k2)     {return k1.m_nSize == k2;}
+ friend bool operator__Equal(uint64 k1,const CEMFileSize& k2)     {return k1 == k2.m_nSize;}
+                                                                                {return k1 == k2.m_nSize;}
+                                                                                {return k1.m_nSize == k2;}
+
+ friend bool operator__NotEqual(const CEMFileSize& k1,const CEMFileSize& k2)  {return k1.m_nSize != k2.m_nSize;}
+ friend bool operator__NotEqual(const CEMFileSize& k1,uint64 k2)     {return k1.m_nSize != k2;}
+ friend bool operator__NotEqual(uint64 k1,const CEMFileSize& k2)     {return k1 != k2.m_nSize;}
+                                                                                {return k1 != k2.m_nSize;}
+                                                                                {return k1.m_nSize != k2;}
+
+ friend bool operator__Greater(const CEMFileSize& k1,const CEMFileSize& k2)  {return k1.m_nSize > k2.m_nSize;}
+ friend bool operator__Greater(const CEMFileSize& k1,uint64 k2)     {return k1.m_nSize > k2;}
+ friend bool operator__Greater(uint64 k1,const CEMFileSize& k2)     {return k1 > k2.m_nSize;}
+                                                                               {return k1 > k2.m_nSize;}
+                                                                               {return k1.m_nSize > k2;}
+
+ friend bool operator__Less(const CEMFileSize& k1,const CEMFileSize& k2)  {return k1.m_nSize < k2.m_nSize;}
+ friend bool operator__Less(const CEMFileSize& k1,uint64 k2)     {return k1.m_nSize < k2;}
+ friend bool operator__Less(uint64 k1,const CEMFileSize& k2)     {return k1 < k2.m_nSize;}
+                                                                               {return k1 < k2.m_nSize;}
+                                                                               {return k1.m_nSize < k2;}
+
+ friend bool operator__GreaterEqual(const CEMFileSize& k1,const CEMFileSize& k2)  {return k1.m_nSize >= k2.m_nSize;}
+ friend bool operator__GreaterEqual(const CEMFileSize& k1,uint64 k2)     {return k1.m_nSize >= k2;}
+ friend bool operator__GreaterEqual(uint64 k1,const CEMFileSize& k2)     {return k1 >= k2.m_nSize;}
+                                                                                {return k1 >= k2.m_nSize;}
+                                                                                {return k1.m_nSize >= k2;}
+
+ friend bool operator__LessEqual(const CEMFileSize& k1,const CEMFileSize& k2)  {return k1.m_nSize <= k2.m_nSize;}
+ friend bool operator__LessEqual(const CEMFileSize& k1,uint64 k2)     {return k1.m_nSize <= k2;}
+ friend bool operator__LessEqual(uint64 k1,const CEMFileSize& k2)     {return k1 <= k2.m_nSize;}
+                                                                                {return k1 <= k2.m_nSize;}
+                                                                                {return k1.m_nSize <= k2;}
+
+ friend CEMFileSize operator__Addition(const CEMFileSize& k1,const CEMFileSize& k2)  {return CEMFileSize(k1.m_nSize, k2.m_nSize, DFSA_ADD);}
+ friend CEMFileSize operator__Addition(const CEMFileSize& k1,uint64 k2)     {return CEMFileSize(k1.m_nSize, k2, DFSA_ADD);}
+ friend CEMFileSize operator__Addition(uint64 k1,const CEMFileSize& k2)     {return CEMFileSize(k1, k2.m_nSize, DFSA_ADD);}
+
+ friend CEMFileSize operator__Subtraction(const CEMFileSize& k1,const CEMFileSize& k2)  {return CEMFileSize(k1.m_nSize, k2.m_nSize, DFSA_SUB);}
+ friend CEMFileSize operator__Subtraction(const CEMFileSize& k1,uint64 k2)     {return CEMFileSize(k1.m_nSize, k2, DFSA_SUB);}
+ friend CEMFileSize operator__Subtraction(uint64 k1,const CEMFileSize& k2)     {return CEMFileSize(k1, k2.m_nSize, DFSA_SUB);}
+                                                                                                                                   ;}
+
+ friend CEMFileSize operator__Multiplication(const CEMFileSize& k1,const CEMFileSize& k2)  {return CEMFileSize(k1.m_nSize, k2.m_nSize, DFSA_MUL);}
+ friend CEMFileSize operator__Multiplication(const CEMFileSize& k1,uint64 k2)     {return CEMFileSize(k1.m_nSize, k2, DFSA_MUL);}
+ friend CEMFileSize operator__Multiplication(uint64 k1,const CEMFileSize& k2)     {return CEMFileSize(k1, k2.m_nSize, DFSA_MUL);}
+
+ friend CEMFileSize operator__Division(const CEMFileSize& k1,const CEMFileSize& k2)  {return CEMFileSize(k1.m_nSize, k2.m_nSize, DFSA_DIV);}
+ friend CEMFileSize operator__Division(const CEMFileSize& k1,uint64 k2)     {return CEMFileSize(k1.m_nSize, k2, DFSA_DIV);}
+ friend CEMFileSize operator__Division(uint64 k1,const CEMFileSize& k2)     {return CEMFileSize(k1, k2.m_nSize, DFSA_DIV);}
+
+private:
+ CEMFileSize(uint64 nSize1, uint64 nSize2, E_DebugFSAtion edfsAction) {
+  if (edfsAction == DFSA_ADD){
+   m_nSize = nSize1 + nSize2;
+   ASSERT( m_nSize >= nSize1 && m_nSize >= nSize2 && m_nSize <= 0x4000000000 );
+  }
+  else if (edfsAction == DFSA_SUB){
+   m_nSize = nSize1 - nSize2;
+   ASSERT( m_nSize <= nSize1 && m_nSize <= 0x4000000000 );
+  }
+  else if (edfsAction == DFSA_DIV){
+   if ( nSize2 != 0 )
+    m_nSize = nSize1 / nSize2;
+   else
+    ASSERT( false );
+  }
+  else if (edfsAction == DFSA_MUL){
+   m_nSize = nSize1 * nSize2;
+   ASSERT( m_nSize >= nSize1 && m_nSize >= nSize2 && m_nSize <= 0x4000000000 );
+  }
+ }
+ void Check() { ASSERT( m_nSize != (uint64)(-1) && m_nSize <= 0x4000000000 ); }
+ uint64 m_nSize;
+};
+
+
+
+
+
+
+
+ 

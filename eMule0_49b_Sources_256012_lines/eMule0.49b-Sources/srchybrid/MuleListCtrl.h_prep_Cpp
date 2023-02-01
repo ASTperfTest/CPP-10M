@@ -1,0 +1,214 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("Preferences.h");}
+void INCLUDEREPLACE(){CX_INCL("resource.h");}
+
+class CIni;
+
+///////////////////////////////////////////////////////////////////////////////
+// CMuleListCtrl
+
+class CMuleListCtrl :        CListCtrl
+{
+ //DECLARE_DYNAMIC(CMuleListCtrl)
+
+public:
+ CMuleListCtrl(PFNLVCOMPARE pfnCompare = SortProc, unsigned long dwParamSort = 0);
+ virtual ~CMuleListCtrl();
+
+ // Default sort proc, this does nothing
+ static int          SortProc(long * lParam1, long * lParam2, long * lParamSort);
+
+ // Sets the list name, used for hide/show menu
+ void SetName(const char* lpszName);
+
+ // Save to preferences
+ //void SaveSettings(CPreferences::Table tID);
+ void SaveSettings();
+
+ // Load from preferences
+ //void LoadSettings(CPreferences::Table tID);
+ void LoadSettings();
+
+ unsigned long SetExtendedStyle(unsigned long dwNewStyle);
+
+ // Hide the column
+ void HideColumn(int iColumn);
+
+ // Unhide the column
+ void ShowColumn(int iColumn);
+
+ // Check to see if the column is hidden
+ int  IsColumnHidden(int iColumn) const {
+  if(iColumn < 1 || iColumn >= m_iColumnsTracked)
+   return false;
+
+  return m_aColumns[iColumn].bHidden;
+ }
+
+ // Get the correct column width even if column is hidden
+ int GetColumnWidth(int iColumn) const {
+  if(iColumn < 0 || iColumn >= m_iColumnsTracked)
+   return 0;
+
+  if(m_aColumns[iColumn].bHidden)
+   return m_aColumns[iColumn].iWidth;
+  else
+   return CListCtrl::GetColumnWidth(iColumn);
+ }
+
+ // Call SetRedraw to allow changes to be redrawn or to prevent changes from being redrawn.
+ void SetRedraw(int  bRedraw = TRUE) {
+  if(bRedraw) {
+   if(m_iRedrawCount > 0 && --m_iRedrawCount == 0)
+    CListCtrl::SetRedraw(TRUE);
+  } else {
+   if(m_iRedrawCount++ == 0)
+    CListCtrl::SetRedraw(FALSE);
+  }
+ }
+
+ // Sorts the list
+ int  SortItems(PFNLVCOMPARE pfnCompare, unsigned long dwData) {
+  return CListCtrl::SortItems(pfnCompare, dwData);
+ }
+
+ // Sorts the list
+ int  SortItems(unsigned long dwData) { return CListCtrl::SortItems(m_SortProc, dwData); }
+
+ // Sets the sorting procedure
+ void SetSortProcedure(PFNLVCOMPARE funcSortProcedure) { m_SortProc = funcSortProcedure; }
+
+ // Gets the sorting procedure
+ PFNLVCOMPARE GetSortProcedure() { return m_SortProc; }
+
+ // Retrieves the associated with a particular item.
+ unsigned long GetItemData(int iItem);
+
+ // Retrieves the number of items in the control.
+ int GetItemCount() const { return m_Params.GetCount(); };
+
+ enum ArrowType { arrowDown = IDB_DOWN, arrowUp = IDB_UP,
+  arrowDoubleDown = IDB_DOWN2X, arrowDoubleUp = IDB_UP2X };
+
+ int GetSortType(ArrowType at);
+ ArrowType GetArrowType(int iat);
+ int GetSortItem() const { return m_iCurrentSortItem; }
+ bool GetSortAscending() const { return m_atSortArrow == arrowUp || m_atSortArrow == arrowDoubleUp; }
+ bool GetSortSecondValue() const { return m_atSortArrow == arrowDoubleDown || m_atSortArrow == arrowDoubleUp; }
+ // Places a sort arrow in a column
+ void SetSortArrow(int iColumn, ArrowType atType);
+ void SetSortArrow() { SetSortArrow(m_iCurrentSortItem, m_atSortArrow); }
+ void SetSortArrow(int iColumn, bool bAscending) { SetSortArrow(iColumn, bAscending ? arrowUp : arrowDown); }
+
+ HIMAGELIST ApplyImageList(HIMAGELIST himl);
+
+ // General purpose listview find dialog+functions (optional)
+ void SetGeneralPurposeFind(bool bEnable, bool bCanSearchInAllColumns = true) { m_bGeneralPurposeFind = bEnable; m_bCanSearchInAllColumns = bCanSearchInAllColumns; }
+ void DoFind(int iStartItem, int iDirection /*1=down, 0 = up*/, int  bShowError);
+ void DoFindNext(int  bShowError);
+
+ void AutoSelectItem();
+ int  GetNextSortOrder(int dwCurrentSortOrder) const;
+ void UpdateSortHistory(int dwNewOrder, int dwInverseValue = 100);
+
+ enum EUpdateMode {
+  lazy,
+  direct,
+  none
+ };
+      EUpdateMode SetUpdateMode(     EUpdateMode eMode);
+
+protected:
+ virtual void PreSubclassWindow();
+ virtual int  OnWndMsg(unsigned int message, int *  wParam, long * lParam, long * * pResult);
+ virtual int  OnChildNotify(unsigned int message, int *  wParam, long * lParam, long * * pResult);
+ virtual int  PreTranslateMessage(MSG* pMsg);
+
+
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+         void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
+         int  OnEraseBkgnd(CDC* pDC);
+         void OnSysColorChange();
+         void OnLvnGetInfoTip(NMHDR *pNMHDR, long *  *pResult);
+
+ // Checks the item to see if it is in order
+ int          UpdateLocation(int iItem);
+ // Moves the item in list and returns the neW index
+ int          MoveItem(int iOldIndex, int iNewIndex);
+ // Update the colors
+ void         SetColors(const char* pszLvKey = NULL);
+
+ CString         m_Name;
+ PFNLVCOMPARE    m_SortProc;
+ unsigned long           m_dwParamSort;
+ unsigned long        m_crWindow;
+ unsigned long        m_crWindowText;
+ unsigned long        m_crWindowTextBk;
+ unsigned long        m_crHighlight;
+ unsigned long  m_crHighlightText;
+ unsigned long  m_crGlow;
+ unsigned long        m_crFocusLine;
+ unsigned long        m_crNoHighlight;
+ unsigned long        m_crNoFocusLine;
+ NMLVCUSTOMDRAW  m_lvcd;
+ int             m_bCustomDraw;
+ CImageList  m_imlHeaderCtrl;
+ CList           m_liSortHistory;
+ unsigned int   m_uIDAccel;
+ void*    m_hAccel;
+      EUpdateMode m_eUpdateMode;
+
+ // General purpose listview find dialog+functions (optional)
+ bool m_bGeneralPurposeFind;
+ bool m_bCanSearchInAllColumns;
+ CString m_strFindText;
+ bool m_bFindMatchCase;
+ int m_iFindDirection;
+ int m_iFindColumn;
+ void OnFindStart();
+ void OnFindNext();
+ void OnFindPrev();
+
+private:
+ static int IndexToOrder(CHeaderCtrl* pHeader, int iIndex);
+
+  class MULE_COLUMN {
+  int iWidth;
+  int iLocation;
+  bool bHidden;
+ };
+
+ int          m_iColumnsTracked;
+ MULE_COLUMN *m_aColumns;
+
+ int GetHiddenColumnCount() const {
+  int iHidden = 0;
+  for(int i = 0; i < m_iColumnsTracked; i++)
+   if(m_aColumns[i].bHidden)
+    iHidden++;
+  return iHidden;
+ }
+
+ int       m_iCurrentSortItem;
+ ArrowType m_atSortArrow;
+
+ int m_iRedrawCount;
+ CList            m_Params;
+
+ unsigned long GetParamAt(POSITION pos, int iPos) {
+  long * lParam = m_Params.GetAt(pos);
+  if(lParam == 0xFEEBDEEF) //same as MLC_MAGIC!
+   m_Params.SetAt(pos, lParam = CListCtrl::GetItemData(iPos));
+  return lParam;
+ }
+};
+
+void GetContextMenuPosition(CListCtrl& lv, CPoint& point);
+
+
+
+
+
+
+ 

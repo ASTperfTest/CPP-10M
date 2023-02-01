@@ -1,0 +1,123 @@
+#muuid {88928401-2ce8-4568-aaa7-226141870cbf}
+;============================================================
+;  File: Discord.dll
+;  Plugin: Discord protocol
+;  Version: 0.6.2.10
+;  Authors: George Hazan
+;============================================================
+[Discord support for Miranda NG.]
+Unterstützung für Discord in Miranda NG.
+;file \protocols\Discord\res\discord.rc
+[User details]
+Kontaktprofil
+[E-mail:]
+E-Mail:
+[Password:]
+Passwort:
+[Contacts]
+Kontakte
+[Default group:]
+Standardgruppe:
+[Enable guilds (servers)]
+Gilden (Server) aktivieren
+[Do not open chat windows on creation]
+Chatfenster bei der Erzeugung nicht öffnen
+[Use subgroups for server channels (requires restart)]
+Untergruppen für Server-Kanäle benutzen (Neustart erforderlich)
+[Delete messages in Miranda when they are deleted from server]
+Nachrichten in Miranda löschen, wenn sie vom Server gelöscht werden
+[Nick:]
+Nick:
+;file \protocols\Discord\src\dispatch.cpp
+[edited at]
+bearbeitet am
+;file \protocols\Discord\src\groupchat.cpp
+[Change &nickname]
+&Nickname ändern
+[Channel control]
+Channel kontrollieren
+[Change &topic]
+&Thema ändern
+[&Rename channel]
+Channel &umbenennen
+[&Destroy channel]
+Channel &zerstören
+[Do you really want to destroy this channel? This action is non-revertable.]
+Möchten Sie diesen Channel wirklich zerstören? Diese Aktion kann nicht rückgängig gemacht werden.
+[Enter new channel name:]
+Neuen Channelnamen eingeben:
+[Enter new topic:]
+Neues Thema eingeben:
+[Enter your new nick name:]
+Geben Sie Ihren neuen Nicknamen ein:
+;file \protocols\Discord\src\main.cpp
+[Main icon]
+Haupticon
+[Group chats]
+Gruppenchats
+[Call]
+Anrufen
+[Call ended]
+Anruf beendet
+;file \protocols\Discord\src\menus.cpp
+[Enter channel name]
+Channelname eingeben
+[Enter invitation code you received]
+Geben Sie den empfangenen Einladungscode ein
+[Do you really want to leave the guild?]
+Möchten Sie diese Gilde wirklich verlassen?
+[Disable sync]
+Synchronisierung deaktivieren
+[Enable sync]
+Synchronisierung aktivieren
+[Join guild]
+Gilde beitreten
+[Copy my Discord ID]
+Meine Discord-ID kopieren
+[Leave guild]
+Gilde verlassen
+[Create new channel]
+Neuen Channel erstellen
+[Copy Discord ID]
+Discord-ID kopieren
+[Enable guild sync]
+Gilden-Synchronisierung aktivieren
+;file \protocols\Discord\src\options.cpp
+[Network]
+Netzwerk
+[Account]
+Konto
+;file \protocols\Discord\src\proto.cpp
+[Incoming call]
+Eingehender Anruf
+[%s server connection]
+%s Serververbindung
+[%s gateway connection]
+%s Gatewayverbindung
+[Discord voice call]
+Discord-Sprachanruf
+[User ID]
+Nutzer-ID
+[Message send failed]
+Nachricht konnte nicht gesendet werden
+[Protocol is offline or user isn't authorized yet]
+Protokoll ist offline oder Benutzer ist noch nicht autorisiert.
+;file \protocols\Discord\src\server.cpp
+[The server requires you to enter the captcha. Miranda will redirect you to a browser now]
+Der Server erfordert, dass Sie ein Captcha eingeben. Miranda wird Sie nun an einen Browser weiterleiten.
+[Connection failed.\n%s (%s).]
+Verbindung fehlgeschlagen.\n%s (%s).
+;file \protocols\Discord\src\utils.cpp
+[Owners]
+Besitzer
+[Participants]
+Teilnehmer
+[Attachment]
+Anhang
+[Embed]
+Eingebettet
+[Preview]
+Vorschau
+;file \protocols\Discord\src\voice.cpp
+[Call ended, %d seconds long]
+Anruf beendet, dauerte %d Sekunden

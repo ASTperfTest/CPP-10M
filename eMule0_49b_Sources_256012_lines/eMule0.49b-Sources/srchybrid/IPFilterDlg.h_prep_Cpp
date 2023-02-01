@@ -1,0 +1,55 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizableDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlX.h");}
+
+       SIPFilter;
+
+class CIPFilterDlg :        CResizableDialog
+{
+ //DECLARE_DYNAMIC(CIPFilterDlg)
+
+public:
+ CIPFilterDlg(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CIPFilterDlg();
+
+// Dialog Data
+ enum { IDD = IDD_IPFILTER };
+
+protected:
+ static int sm_iSortColumn;
+ CMenu* m_pMenuIPFilter;
+ CListCtrlX m_ipfilter;
+ void* m_icoDlg;
+ unsigned int m_uIPFilterItems;
+ const SIPFilter** m_ppIPFilterItems;
+ unsigned long m_ulFilteredIPs;
+
+ void SortIPFilterItems();
+ void InitIPFilters();
+ static bool FindItem(const CListCtrlX& lv, int iItem, unsigned long lParam);
+
+ virtual int  OnInitDialog();
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+
+
+         void OnDestroy();
+         void OnContextMenu(CWnd* /*pWnd*/, CPoint /*point*/);
+         void OnLvnColumnClickIPFilter(NMHDR *pNMHDR, long *  *pResult);
+         void OnLvnKeyDownIPFilter(NMHDR *pNMHDR, long *  *pResult);
+         void OnBnClickedAppend();
+         void OnBnClickedDelete();
+         void OnBnClickedSave();
+         void OnCopyIPFilter();
+         void OnDeleteIPFilter();
+         void OnSelectAllIPFilter();
+         void OnFind();
+         void OnLvnGetDispInfoIPFilter(NMHDR *pNMHDR, long *  *pResult);
+         void OnLvnDeleteItemIPFilter(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

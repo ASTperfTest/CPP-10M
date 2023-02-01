@@ -1,0 +1,62 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("TitleMenu.h");}
+
+class CLogEditCtrl :        CEdit
+{
+ //DECLARE_DYNAMIC(CLogEditCtrl)
+public:
+ CLogEditCtrl();
+ virtual ~CLogEditCtrl();
+
+ void Init(const char* pszTitle, const char* pszSkinKey = NULL);
+ void SetTitle(const char* pszTitle);
+ void Localize();
+ void ApplySkin();
+
+ void AddEntry(const char* pszMsg);
+ void Add(const char* pszMsg, int iLen = -1);
+ void Reset();
+ CString GetLastLogEntry();
+ CString GetAllLogEntries();
+ bool SaveLog(const char* pszDefName = NULL);
+
+protected:
+ bool m_bRichEdit;
+ CTitleMenu m_LogMenu;
+ int m_iMaxLogBuff;
+ bool m_bAutoScroll;
+ CStringArray m_astrBuff;
+ bool m_bNoPaint;
+ bool m_bEnErrSpace;
+ CString m_strTitle;
+ CString m_strSkinKey;
+ unsigned long m_crForeground;
+ unsigned long m_crBackground;
+ CBrush m_brBackground;
+
+ void AddLine(const char* pszMsg, int iLen);
+ void SelectAllItems();
+ void CopySelectedItems();
+ int GetMaxSize();
+ void SafeAddLine(int nPos, int iLineLen, const char* pszLine, int& nStartChar, int& nEndChar);
+ void FlushBuffer();
+ void ScrollToLastLine();
+
+ virtual long *  WindowProc(unsigned int message, int *  wParam, long * lParam);
+
+
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+ virtual int  OnCommand(int *  wParam, long * lParam);
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         void OnEnErrspace();
+         void OnEnMaxtext();
+         void OnSysColorChange();
+         void*  CtlColor(CDC* pDC, unsigned int nCtlColor);
+};
+
+
+
+
+
+
+ 

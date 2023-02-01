@@ -1,0 +1,41 @@
+﻿
+
+class TabControl:        CTabCtrl
+{
+public:
+ TabControl();
+ virtual ~TabControl();
+
+ unsigned int GetLastMovementSource() const   { return m_nSrcTab; }
+ unsigned int GetLastMovementDestionation() const { return m_nDstTab; }
+
+ int  ReorderTab(unsigned int nSrcTab, unsigned int nDstTab);
+ void SetTabTextColor(int i, unsigned long color);
+
+protected:
+ bool  m_bDragging;     // Specifies that whether drag 'n drop is in progress.
+ unsigned int  m_nSrcTab;       // Specifies the source tab that is going to be moved.
+ unsigned int  m_nDstTab;       // Specifies the destination tab (drop position).
+ bool  m_bHotTracking;  // Specifies the state of whether the tab control has hot tracking enabled.
+ CRect m_InsertPosRect;
+ CPoint m_lclickPoint;
+ CSpinButtonCtrl * m_pSpinCtrl;
+
+
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDIS);
+ int  DragDetectPlus(CWnd* Handle, CPoint p);
+ bool DrawIndicator(CPoint point);
+
+
+         void OnLButtonDown(unsigned int nFlags, CPoint point);
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+         void OnCaptureChanged(CWnd *);
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,37 @@
+﻿
+
+enum EStatusBarPane
+{
+ SBarLog = 0,
+ SBarUsers,
+ SBarUpDown,
+ SBarConnected,
+ SBarChatMsg
+};
+
+class CMuleStatusBarCtrl :        CStatusBarCtrl
+{
+ //DECLARE_DYNAMIC(CMuleStatusBarCtrl)
+
+public:
+ CMuleStatusBarCtrl();
+ virtual ~CMuleStatusBarCtrl();
+
+ void Init(void);
+
+protected:
+ int GetPaneAtPosition(CPoint& point) const;
+ CString GetPaneToolTipText(EStatusBarPane iPane) const;
+
+ virtual int OnToolHitTest(CPoint point, TOOLINFO* pTI) const;
+
+
+         void OnLButtonDblClk(unsigned int nFlags,CPoint point);
+};
+
+
+
+
+
+
+ 

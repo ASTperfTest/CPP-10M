@@ -1,0 +1,77 @@
+#muuid {80dca515-973a-4a7e-8b85-5d8ec88fc5a7}
+;============================================================
+;  File: WhoUsesMyFiles.dll
+;  Plugin: Who Use My Files
+;  Version: 0.1.0.4
+;  Authors: Nikolay Redko
+;============================================================
+[Scans for network users of your shared files and notify you with popups.]
+
+;file \plugins\WhoUsesMyFiles\res\resource.rc
+[WUMF: Current connections]
+
+[Popup delay settings]
+
+[Timeout (seconds)]
+
+[Background color]
+Couleur de fond
+[Text color]
+Couleur du texte
+[Previe&w]
+
+[Show infinitely]
+
+[Default]
+Défaut
+[Custom]
+Défini
+[Popup color settings]
+
+[Use Windows colors]
+Utiliser les couleurs Windows
+[Use default colors]
+Couleurs par défaut
+[Use custom colors]
+Couleurs personnalisées
+[File access filter && logging settings]
+
+[Log into text file]
+
+[Log folders access]
+
+[Alerts on folders access]
+
+[Show current connections]
+
+;file \plugins\WhoUsesMyFiles\src\options.cpp
+[Common Dialog Error 0x%lx]
+
+[Error]
+Erreur
+[Who uses my files]
+
+[Services]
+Services
+;file \plugins\WhoUsesMyFiles\src\wumf.cpp
+[User]
+Utilisateur
+[File]
+Fichier
+[Access]
+
+[Plugin WhoUsesMyFiles requires admin privileges in order to work.]
+
+[Error opening file]
+
+[Error memory allocation]
+
+;file \plugins\WhoUsesMyFiles\src\wumfplug.cpp
+[Error creating menu]
+
+[Show connections list]
+
+[WUMF popups]
+
+[WUMF: Show connections]
+

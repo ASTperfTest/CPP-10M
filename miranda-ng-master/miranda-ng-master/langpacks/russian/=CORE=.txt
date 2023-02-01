@@ -1,0 +1,3352 @@
+;============================================================
+;  File: miranda32/64.exe
+;  Module: Miranda Core
+;  Version: 0.96.2
+;============================================================
+;file \src\core\stdautoaway\res\resource.rc
+[Become idle if the following is left unattended:]
+Перейти в режим ожидания, если неактивны:
+[Become idle if the screen saver is active]
+Режим ожидания, если включена заставка
+[Become idle if the computer is locked]
+Режим ожидания, если компьютер заблокирован
+[Become idle if a terminal session is disconnected]
+Режим ожидания, если удалённая сессия завершена
+[Do not let protocols report any idle information]
+Не позволять протоколам сообщать информацию об ожидании
+[minute(s)]
+минут(ы)
+[for]
+в течение
+[Change my status mode to:]
+Сменить статус на:
+[Do not set status back to online when returning from idle]
+Не восстанавливать статус при возвращении из режима ожидания
+[Idle options]
+Режим ожидания
+[Become idle if application full screen]
+Режим ожидания, если приложение запущено в полноэкранном режиме
+[Disable sounds on idle]
+Отключить звуки при переходе в режим ожидания
+;file \src\core\stdaway\res\resource.rc
+[%s message for %s]
+%s сообщение для %s
+[&Cancel]
+О&тмена
+[Retrieving %s message...]
+Загрузка сообщения "%s"...
+[Status messages]
+Сообщения статуса
+[Do not reply to requests for this message]
+Не отвечать на запросы этого сообщения
+[Do not pop up dialog asking for new message]
+Не показывать диалог для нового сообщения
+[By default, use the same message as last time]
+Использовать предыдущее сообщение
+[By default, use this message:]
+Использовать сообщение:
+[Use %time% for the current time, %date% for the current date]
+%date% - сегодняшняя дата; %time% - текущее время
+[Change %s message]
+Изменить сообщение "%s"
+[Closing in %d]
+Закрыть (%d)
+;file \src\core\stdclist\res\resource.rc
+[Delete contact]
+Удалить контакт
+[No]
+Нет
+[Yes]
+Да
+[Hide from list only, in order to keep their history and ignore/visibility settings]
+Скрыть из списка (останутся история и настройки)
+[Use Options -> Contacts -> Ignore to unhide contacts.]
+Управление отображением контактов осуществляется в разделе "Настройки -> Контакты -> Игнорировать".
+[Are you sure you want to delete %s?]
+Удалить %s из списка?
+[This will erase all history and settings for this contact!]
+Будет удалена вся история и все настройки для данного контакта!
+[Contact list sorting]
+Сортировка списка контактов
+[Sort contacts by name]
+Сортировка по имени
+[Sort contacts by status]
+Сортировка по статусу
+[Sort contacts by protocol]
+Сортировка по протоколу
+[Move offline users to bottom]
+Перемещать отключённых вниз
+[Show]
+Показать
+[icon when statuses differ]
+при разных статусах
+[Cycle icons every]
+Менять каждые
+[seconds, when statuses differ]
+секунд, при разных статусах
+[Show multiple icons]
+Несколько значков
+[Only when statuses differ]
+При разных статусах
+[System tray icon when using multiple protocols]
+Значки протоколов в системном трее
+[Window]
+Окно
+[Always on top]
+Поверх всех окон
+[Tool style main window]
+Стиль панели у заголовка
+[Minimize to tray]
+Сворачивать в трей
+[Show menu bar]
+Показывать меню
+[Easy move]
+Простое перемещение
+[Show title bar]
+Показывать заголовок
+[Title bar text:]
+Заголовок окна:
+[Show drop shadow (restart required)]
+Тень (нужен перезапуск)
+[Pin to desktop]
+Прикрепить к рабочему столу
+[Hide contact list after it has been idle for]
+Скрыть список, если я неактивен более
+[seconds]
+секунд
+[Automatically resize window to height of list]
+Автоматически изменять размер окна
+[maximum]
+максимум
+[% of screen]
+% от экрана
+[Size upwards]
+Растягивать вверх
+[If window is partially covered, bring to front instead of hiding]
+Поместить окно на передний план, если оно прикрыто другими окнами
+[Enable docking]
+Парковать
+[Translucency options]
+Настройки прозрачности
+[Fade contact list in/out]
+Плавно скрывать список контактов
+[Transparent contact list]
+Прозрачный список контактов
+[Inactive opacity:]
+Окно неактивно:
+[Active opacity:]
+Окно активно:
+[Items]
+Элементы
+[Show divider between online and offline contacts]
+Граница между подкл. и откл. пользователями
+[Hot track items as mouse passes over]
+Подсветка при наведении курсора мыши
+[Disable drag and drop of items]
+Отключить перетаскивание элементов
+[Disable rename of items by clicking twice]
+Отключить переименование по дв. щелчку
+[Show selection even when list is not focused]
+Выделение, даже если окно неактивно
+[Make selection highlight translucent]
+Полупрозрачное выделение
+[Dim idle contacts]
+Затемнить неактивных пользователей
+[Groups]
+Группы
+[Draw a line alongside group names]
+Линия вдоль названий групп
+[Show counts of number of contacts in a group]
+Показать количество пользователей в группах
+[Hide group counts when there are none online]
+Скрыть счётчик, если нет пользователей в сети
+[Sort groups alphabetically]
+Сортировать группы по алфавиту
+[Quick search in open groups only]
+Быстрый поиск только в открытых группах
+[Indent groups by:]
+Отступ для групп:
+[pixels]
+пикселей
+[Visual]
+Визуальные настройки
+[Scroll list smoothly]
+Плавная прокрутка
+[Time:]
+Время:
+[milliseconds]
+мс
+[Hide vertical scroll bar]
+Скрыть полосу прокрутки
+[Left margin:]
+Левое поле:
+[Row height:]
+Высота строки:
+[Gamma correction]
+Коррекция гаммы
+[Gray out entire list when:]
+Сделать серым, если:
+[Contact list background]
+Фон списка контактов
+[Background color]
+Цвет фона
+[Selection color]
+Цвет выделения
+[Use background image]
+Использовать фон
+[Stretch to width]
+Растянуть по ширине
+[Stretch to height]
+Растянуть по высоте
+[Tile horizontally]
+Горизонтальная мозаика
+[Tile vertically]
+Вертикальная мозаика
+[Scroll with text]
+Прокручивать с текстом
+[Stretch proportionally]
+Растянуть
+[Use Windows colors]
+Цвета Windows
+[Status bar]
+Панель статусов
+[Show status bar]
+Показывать панель статусов
+[Show icons]
+Показывать значки
+[Show protocol names]
+Показывать протоколы
+[Show status text]
+Показывать текст статуса
+[Right click opens status menu]
+Правый щелчок - меню статуса
+[Right click opens Miranda NG menu]
+Правый щелчок - главное меню
+[Make sections equal width]
+Разделы равной ширины
+[Show bevels on panels]
+Бордюры на панелях
+[Show resize grip indicator]
+Индикатор изменения размера
+;file \src\core\stdfile\res\resource.rc
+[Send file(s)]
+Отправить файл(ы)
+[&Send]
+&Отправить
+[Cancel]
+Отмена
+[To:]
+Для:
+[File(s):]
+Файл(ы):
+[&Choose again...]
+&Выбрать снова...
+[Total size:]
+Общий размер:
+[Description:]
+Описание:
+[&User menu]
+Меню &пользователя
+[User &details]
+&Информация
+[&History]
+&История
+[Incoming file transfer]
+Входящий файл
+[A&ccept]
+&Принять
+[&Decline]
+&Отказать
+[From:]
+От:
+[Date:]
+Дата:
+[Files:]
+Файлы:
+[Save to:]
+Сохранять в:
+[&Add]
+&Добавить
+[&Open...]
+&Открыть...
+[Open &folder]
+Открыть &папку
+[Transfer completed, open file(s).]
+Передача завершена, открыть файл(ы).
+[No data transferred]
+Данные не переданы
+[File already exists]
+Файл уже существует
+[Resume]
+Продолжить
+[Resume all]
+Докачать всё
+[Overwrite]
+Перезаписать
+[Overwrite all]
+Перезаписать всё
+[Save as...]
+Сохранить как...
+[Auto rename]
+Автоименование
+[Skip]
+Пропустить
+[Cancel transfer]
+Отмена
+[You are about to receive the file]
+Вы принимаете файл
+[Existing file]
+Существующий файл
+[Size:]
+Размер:
+[Last modified:]
+Изменён:
+[Type:]
+Тип:
+[Open file]
+Открыть файл
+[Open folder]
+Открыть папку
+[File properties]
+Свойства файла
+[File being received]
+Принимаемый файл
+[File transfers]
+Передача файлов
+[Clear completed]
+Очистить завершённые
+[Close]
+Закрыть
+[Receiving files]
+Приём файлов
+[Received files folder:]
+Каталог для файлов:
+[Variables allowed: %userid%, %nick%, %proto%, %miranda_path%, %userprofile%]
+Переменные: %userid%, %nick%, %proto%, %miranda_path%, %userprofile%
+[Auto-accept incoming files from people on my contact list]
+Автоматически принимать файлы от людей из списка контактов
+[Minimize the file transfer window]
+Свернуть окно передачи файлов
+[Close window when transfer completes]
+Закрыть окно по окончании передачи
+[Clear completed transfers on window closing]
+Очищать завершённые передачи при закрытии окна
+[Sort file transfers in the reverse order]
+Сортировать передачи файлов в обратном порядке
+[Virus scanner]
+Антивирус
+[Scan files:]
+Проверять:
+[Never, do not use virus scanning]
+Никогда, не проверять на вирусы
+[When all files have been downloaded]
+По окончании загрузки всех файлов
+[As each file finishes downloading]
+По окончании загрузки каждого файла
+[Command line:]
+Ком. строка:
+[%f will be replaced by the file or folder name to be scanned]
+%f = имя проверяемого файла или папки
+[Warn me before opening a file that has not been scanned]
+Предупреждать при открытии непроверенного файла
+[If incoming files already exist]
+Если принимаемый файл уже есть
+[Ask me]
+Спросить
+[Rename (append " (1)", etc.)]
+Дописать " (1)" и т.д.
+[You will always be asked about files from people not on your contact list]
+Запрос всегда будет показан, если человек не в списке контактов
+;file \src\core\stdmsg\res\resource.rc
+[Automatically popup window when:]
+Открывать окно, если:
+[In background]
+В фоне
+[Maximum number of flashes (0 = indefinite)]
+Максимальное количество миганий (0 = бесконечно)
+[Close the message window on send]
+Закрывать окно после отправки
+[Minimize the message window on send]
+Сворачивать окно после отправки
+[Use the contact's status icon as the window icon]
+Использовать в качестве значка окна значок статуса контакта
+[Save the window size and location individually for each contact]
+Сохранять размер и положение окна для каждого контакта
+[Cascade new windows]
+Располагать новые окна каскадом
+[Support Ctrl+Up/Down in message area to show previously sent messages]
+Показывать старые сообщения при нажатии Ctrl+Вверх/Вниз
+[Delete temporary contacts when closing message window]
+Удалять временные контакты при закрытии окна сообщений
+[Enable avatar support in the message window]
+Поддержка аватаров в окне сообщений
+[Limit avatar height to]
+Ограничить высоту аватара
+[Show 'Send' button]
+Показывать кнопку "Отправить"
+[Show character count]
+Показывать счётчик символов
+[Show toolbar buttons on top row]
+Показывать кнопки в верхней строке
+[Show warning when message has not been received after]
+Сообщать, если сообщение не удалось отправить за
+[Send error]
+Ошибка отправки
+[An error has occurred. The protocol reported the following error:]
+Протокол вернул следующую ошибку:
+[while sending the following message:]
+при посылке следующего сообщения:
+[Try again]
+Ещё раз
+[Message window event log]
+Журнал в окне сообщений
+[Show names]
+Показывать имена
+[Show timestamp]
+Показывать время
+[Show seconds]
+Секунды
+[Show dates]
+Показывать даты
+[Show formatting]
+Показывать форматирование
+[Load history events]
+Подгрузка истории
+[Load unread events only]
+Только непрочитанные события
+[Load number of previous events]
+Предыдущие события в количестве
+[Load previous events less than]
+События, полученные менее чем
+[minutes old]
+минут назад
+[Use a tabbed interface]
+Использовать вкладки
+[Close tab on double click]
+Закрывать по двойному щелчку
+[Show tabs at the bottom]
+Вкладки внизу
+[Send typing notifications to the following users when you are typing a message to them:]
+Уведомлять отмеченных пользователей о том, что вы набираете сообщение:
+[Show typing notifications when a user is typing a message]
+Показывать уведомления о наборе текста
+[Update inactive message window icons when a user is typing]
+Обновить значок неактивного окна при наборе контактом сообщения
+[Show typing notification when no message dialog is open]
+Уведомлять о наборе текста, когда окно беседы не открыто
+[Flash in the system tray and in the contact list]
+Мигать в трее и в списке контактов
+[Show balloon popup]
+Показывать всплывающую подсказку
+[Show these events only:]
+Показывать только:
+[Actions]
+Действия
+[Messages]
+Сообщения
+[Nick changes]
+Смена ника
+[Users joining]
+Входы в чат
+[Users leaving]
+Выходы из чата
+[Topic changes]
+Смены темы
+[Status changes]
+Смены статуса
+[Information]
+Информация
+[Disconnects]
+Отключения
+[User kicks]
+Пинки
+[Notices]
+Уведомления
+[Options]
+Настройки
+[Log options]
+Настройки журнала
+[Log timestamp]
+Записывать время
+[Timestamp]
+Время
+[Other name]
+Имена других
+[Your name]
+Ваше имя
+[Enable highlighting]
+Включить выделение
+[Limit log text to (events):]
+Ограничить журнал до (событий):
+[Trim to (KB)]
+Лимит (КБ)
+[Words to highlight (wildcards allowed)]
+Слова для подсветки (разрешены маски)
+[Enable logging to disk]
+Запись журнала на диск
+[Log directory]
+Папка журнала
+[Other]
+Другое
+[Add new rooms to group:]
+Добавлять комнаты чата в группу:
+[Nick list row distance (pixels):]
+Расстояние между строками (пикселей):
+[Message]
+Сообщение
+[Undo]
+Откат
+[Redo]
+Вернуть
+[Copy]
+Копировать
+[Cut]
+Вырезать
+[Paste]
+Вставить
+[Select all]
+Выделить всё
+[Clear]
+Очистить
+[Tabs]
+Вкладки
+[&Close tab]
+&Закрыть вкладку
+[C&lose other tabs]
+За&крыть остальные вкладки
+[&Open at this position]
+&Открыть в этом месте
+[Log]
+Журнал
+[C&lear log]
+Оч&истить журнал
+[&Copy]
+&Копировать
+[Co&py all]
+Ко&пировать всё
+[Select &all]
+Выделить &всё
+[Paste and send]
+Вставить и отправить
+[Delete]
+Удалить
+;file \src\core\stdpopup\res\resource.rc
+[Popup history]
+История вспл. окон
+[Case sensitive]
+Учёт регистра
+[Default timeout]
+Длительность по умолчанию
+[Never timeout]
+Постоянно
+[Set timeout:]
+Длительность:
+[Width:]
+Ширина:
+[Maximum height:]
+Макс. высота:
+[Opacity (%):]
+Непрозрачность (%):
+[Border]
+Рамка
+[Round corners (window)]
+Округлять углы окна
+[Preview]
+Тест
+[Transparent background]
+Прозрачный фон
+[Layout]
+Размещение
+[Avatar size:]
+Аватар:
+[Disable when]
+Выключить когда
+[Global hover]
+Общее наведение
+[Sidebar width:]
+Ширина врезки:
+[Text indent:]
+Отступ текста:
+[Padding:]
+Промежуток:
+[Round corners (avatar)]
+Округлять углы аватара
+[Text color:]
+Цвет текста:
+[Background color:]
+Цвет фона:
+[Set timeout]
+Установить длительность
+[Timeout value (0 = default):]
+Длительность (0 = по умолчанию):
+;file \src\core\stduihist\res\resource.rc
+[Find]
+Найти
+[&Find next]
+&Следующий
+[Find what:]
+Найти:
+[Message history]
+История сообщений
+[&Find...]
+&Найти...
+;file \src\core\stduserinfo\res\resource.rc
+[Add phone number]
+Добавить телефон
+[Enter country, area code and phone number:]
+Введите страну, код города и номер телефона:
+[Or enter a full international number:]
+Или введите международный номер:
+[Phone can receive SMS text messages]
+Телефон может получать SMS
+[Add e-mail address]
+Добавить адрес e-mail
+[%s: user details]
+О пользователе %s
+[View personal user details and more]
+Просмотр личных данных пользователя
+[Update now]
+Обновить
+[Updating]
+Обновление
+[Nickname:]
+Ник:
+[First name:]
+Имя:
+[Gender:]
+Пол:
+[Last name:]
+Фамилия:
+[Age:]
+Возраст:
+[E-mail:]
+Почта:
+[Date of birth:]
+Дата рождения:
+[Marital status:]
+Семейное положение:
+[Phone:]
+Телефон:
+[Web page:]
+Сайт:
+[Past background:]
+Прошлое:
+[Interests:]
+Интересы:
+[About:]
+Информация:
+[My notes:]
+Мои заметки:
+[Street:]
+Улица:
+[City:]
+Город:
+[State:]
+Штат:
+[Postal code:]
+Индекс:
+[Country:]
+Страна:
+[Spoken languages:]
+Языки:
+[Timezone:]
+Часовой пояс:
+[Local time:]
+Местное время:
+[Set custom time zone]
+Установить часовой пояс
+[Company:]
+Компания:
+[Department:]
+Отдел:
+[Position:]
+Должность:
+[Website:]
+Сайт:
+;file \src\mir_app\res\resource.rc
+[Enter account name (for example, My Google)]
+Введите имя (например, Google)
+[Choose the protocol type]
+Выберите протокол
+[Specify the internal account name (optional)]
+Укажите внутреннее имя (не обязательно)
+[Add contact]
+Добавить контакт
+[Send authorization request]
+Отправить запрос авторизации
+[Open contact's chat window]
+Открыть окно беседы с контактом
+[Custom name:]
+Заданное имя:
+[Group:]
+Группа:
+[Authorization request]
+Запрос авторизации
+[&Yes]
+&Да
+[&No]
+&Нет
+[Contact display options]
+Параметры показа контактов
+[Instead of displaying contacts by their nickname,\ndrag to choose another order:]
+Вместо показа псевдонимов,\nвыберите перетаскиванием другой приоритет показа имён:
+[Miranda NG profile manager]
+Менеджер профилей Miranda NG
+[Manage your Miranda NG profile]
+Управление профилями пользователя
+[&Run]
+&Запустить
+[&Exit]
+Вы&ход
+[Start in service mode with]
+Запуск в служебном режиме с
+[Find/add contacts]
+Найти/Добавить контакты
+[Search:]
+Искать:
+[E-mail address]
+Адрес e-mail
+[Name]
+Имя
+[Nick:]
+Ник:
+[First:]
+Имя:
+[Last:]
+Фамилия:
+[Advanced]
+Дополнительно
+[Advanced >>]
+Дополнительно >>
+[&Search]
+&Искать
+[More options]
+Ещё настройки
+[Add to list]
+Добавить в список
+[Custom]
+Настроить
+[Here you can add contacts to your contact list]
+Здесь вы можете найти и добавить контакты в список контактов
+[Configure your Miranda NG options]
+Основной диалог настроек Miranda NG
+[Apply]
+Применить
+[Please select a subentry from the list]
+Выберите подраздел из списка
+[Install database settings]
+Установить настройки базы данных
+[A file containing new database settings has been placed in the Miranda NG directory.]
+Файл с новыми настройками базы данных помещён в каталог Miranda NG.
+[Do you want to import the settings now?]
+Импортировать настройки сейчас?
+[No to all]
+Нет для всех
+[&View contents]
+&Содержимое
+[Security systems to prevent malicious changes are in place and you will be warned before changes that are not known to be safe.]
+Система безопасности для предотвращения нежелательных изменений активна и вы будете предупреждены о небезопасных изменениях.
+[Database setting change]
+Изменение настроек базы данных
+[Database settings are being imported from]
+Настройки базы данных импортируются из
+[This file wishes to change the setting]
+Этот файл изменяет настройку
+[to the value]
+на значение
+[Do you want to allow this change?]
+Разрешить изменение?
+[&Allow all further changes to this section]
+&Разрешить все изменения в этой секции
+[Cancel import]
+Отменить импорт
+[Database import complete]
+Импорт базы данных завершён
+[The import has completed from]
+Импорт завершён из
+[What do you want to do with the file now?]
+Что сделать с файлом?
+[&Recycle]
+&В корзину
+[&Delete]
+&Удалить
+[&Move]
+&Переместить
+[&Leave]
+&Оставить
+[Netlib log options]
+Настройки журналирования сети
+[Received bytes]
+Полученные байты
+[Sent bytes]
+Отправленные байты
+[Additional data due to proxy communication]
+Дополнительные данные о прокси
+[SSL traffic]
+Трафик SSL
+[Text dumps where available]
+Текстовые дампы (если есть)
+[Auto-detect text]
+Автоопределение текста
+[Calling modules' names]
+Имена вызывающих модулей
+[Print dates]
+Дата
+[Log to]
+Записывать в
+[OutputDebugString()]
+Функцию OutputDebugString()
+[File]
+Файл
+[Rotate logs]
+Ротация файлов
+[Run program when Miranda NG starts (e.g., tail -f, dbgview, etc.):]
+Запускать программу вместе с Miranda NG (например, tail -f, dbgview и т.д.):
+[Run now]
+Зап. сейчас
+[Show this dialog box when Miranda NG starts]
+Показать это окно при запуске Miranda NG
+[Sounds]
+Звуки
+[&Change...]
+&Изменить...
+[&Preview]
+&Тест
+[Download more sounds]
+Загрузить с сайта Miranda NG
+[Sound information]
+Дополнительная информация
+[Location:]
+Путь:
+[Name:]
+Имя:
+[Enable sound events]
+Включить звуки событий
+[The following events are being ignored:]
+Следующие события будут проигнорированы:
+[Files]
+Файлы
+[Online notification]
+Уведомление "В сети"
+[Auth requests]
+Запросы авторизации
+[All events]
+Все события
+[None]
+Нет
+[Only the ticked contacts will be shown on the main contact list]
+Только помеченные контакты будут показаны в списке контактов
+[Ignore]
+Игнорировать
+[Typing]
+Набор текста
+[Visibility]
+Видимость
+[You are visible to this person even when in invisible mode]
+Вы всегда видимы для этого человека
+[You are never visible to this person]
+Вы всегда невидимы для этого человека
+[Icon index]
+Номер значка
+[Icon library:]
+Библиотека:
+[Drag icons to main list to assign them:]
+Перетащите значок в главное окно для замены:
+[Import multiple]
+Импорт нескольких
+[To main icons]
+Главные значки
+[To]
+В
+[<< &Import]
+<< &Импорт
+[Download more icons]
+Загрузить с сайта Miranda NG
+[To default status icons]
+Значки по умолчанию
+[Logging...]
+Журнал...
+[Outgoing connections]
+Исходящие соединения
+[Use proxy server]
+Использовать прокси-сервер
+[Host:]
+Хост:
+[Port:]
+Порт:
+[(often %d)]
+(часто %d)
+[Use custom login (domain login picked up automatically)]
+Логин пользователя (автоматический вход с доменным логином)
+[Username:]
+Пользователь:
+[Password:]
+Пароль:
+[Resolve hostnames through proxy]
+Отправлять запросы DNS через прокси
+[Port range:]
+Порты:
+[Example: 1050-1070, 2000-2010, 2500]
+Например: 1050-1070, 2000-2010, 2500
+[Validate SSL certificates]
+Проверять подпись сертификатов SSL
+[Incoming connections]
+Входящие соединения
+[Enable UPnP port mapping]
+Включить перенаправление портов UPnP
+[These changes will take effect the next time you connect to the network.]
+Эти изменения вступят в силу при следующем подключении к сети.
+[Please complete the following form to create a new user profile]
+Заполните форму для создания профиля пользователя
+[Profile]
+Профиль
+[e.g., Workplace]
+например, "Рабочий"
+[You can select a different database driver from the default, it may offer more features or abilities, if in doubt use the default.]
+Выбор драйвера базы данных. Если вы не уверены, какой выбрать - используйте драйвер по умолчанию.
+[Driver]
+Драйвер
+[Problem: Unable to find any database drivers, this means you cannot create a new profile, you need to get dbx_mdbx.dll]
+Проблема: Не найден ни один драйвер базы данных, невозможно создать новый профиль, вам нужен файл dbx_mdbx.dll
+[Download more plugins]
+Скачать плагины
+[Author(s):]
+Автор(ы):
+[Homepage:]
+Сайт:
+[Unique ID:]
+Уникальный ID:
+[Copyright:]
+Авторские права:
+[Please restart Miranda NG for your changes to take effect.]
+Изменения вступят в силу после перезапуска программы.
+[Fonts and colors]
+Шрифты и цвета
+[Reset]
+Сброс
+[Export...]
+Экспорт...
+[Color/background]
+Цвет/фон
+[Text effect]
+Эффект
+[Text color]
+Цвет текста
+[Choose font]
+Выбор шрифта
+[Icons]
+Значки
+[&Load icon set...]
+&Выбрать набор значков...
+[&Import icons >>]
+&Импорт значков >>
+[Menu objects]
+Виды меню
+[Menu items]
+Пункты меню
+[Protocol menus]
+Меню протоколов
+[Move to the main menu]
+В главном меню
+[Move to the status bar]
+В панели статусов
+[Warning!\r\nThis menu object not support user defined options.]
+Внимание!\r\nЭтот вид меню не поддаётся настройке.
+[Insert submenu]
+Вставить вложенное меню
+[Insert separator]
+Вставить разделитель
+[Module:]
+Модуль:
+[Service:]
+Служба:
+[Default]
+По умолчанию
+[Set]
+Установить
+[Enable icons]
+Включить значки
+[Show accounts in the following order,\ndrag to choose another order:]
+Порядок отображения учётных записей.\nПеретаскивайте для изменения:
+[Account order and visibility]
+Порядок учётных записей
+[Key bindings]
+Горячие клавиши
+[Shortcut:]
+Сочетание:
+[Add]
+Добавить
+[Remove]
+Удалить
+[Undo changes]
+Отменить изменения
+[Reset to default]
+Сброс на умолчания
+[Hotkeys]
+Горячие клавиши
+[Accounts]
+Учётные записи
+[Configure your IM accounts]
+Настройка ваших учётных записей
+[Account information:]
+Учётная запись:
+[Additional:]
+Дополнительно:
+[Configure network...]
+Настройка сети...
+[Get more protocols...]
+Загрузка протоколов...
+[&Add...]
+&Добавить...
+[&Edit]
+&Править
+[&Options]
+&Настройки
+[&Upgrade]
+&Обновить
+[&Remove...]
+&Удалить...
+[Miranda NG is being restarted.\nPlease wait...]
+Miranda NG перезапускается.\nПожалуйста, подождите...
+[Error console]
+Консоль ошибок
+[Error notifications]
+Уведомления об ошибках
+[Font effect]
+Эффект шрифта
+[Effect:]
+Эффект:
+[Base color:]
+Основной цвет:
+[opacity:]
+непрозрачность:
+[Secondary color:]
+Вторичный цвет:
+[Select the extra icons to be shown in the contact list:]
+Выберите, какие экстра значки будут отображаться в списке контактов:
+[*only the first %d icons will be shown]
+* будут отображаться только первые %d значков
+[You can group/ungroup icons by selecting them (Ctrl+left click) and using the popup menu (right click)]
+Вы можете группировать/разгруппировывать значки, выделяя их (Ctrl+клик левой кнопкой мыши) и вызывая меню с помощью правой кнопки мыши.
+[Add to existing metacontact]
+Добавить к метаконтакту
+[Please select a metacontact:]
+Выберите метаконтакт
+[Sort alphabetically]
+По алфавиту
+[Editing]
+Редактирование
+[Contacts]
+Контакты
+[&Remove]
+&Удалить
+[&Set as default]
+&По умолчанию
+[Move &up]
+&Вверх
+[Move &down]
+&Вниз
+[Send &offline]
+В &оффлайн
+[&Apply]
+&Применить
+[Context menu]
+Контекстное меню
+[Use contact's unique ID]
+UIN, E-mail и т.д.
+[Use contact's display name]
+Использовать имя
+[Contact labels]
+Метки контактов
+[When I click on a sub in the popup menu...]
+При щелчке по контакту в меню субконтактов...
+[Set default and open message window]
+Открыть окно сообщений
+[Show subcontact context menu]
+Показывать контекстное меню
+[Show user information]
+Показывать инфо пользователя
+[Contact list]
+Список контактов
+[Display subcontact nickname]
+Использовать ник субконтакта
+[Display subcontact display name]
+Использовать отображаемое имя
+[Lock name to first contact]
+Фиксировать имя
+[Choose needed logger from listed below:]
+Выберите желаемый просмотрщик из перечисленных ниже:
+[Enable custom log controls in group chats]
+Использовать сторонний просмотрщик в групповых чатах
+[Current language:]
+Язык интерфейса:
+[Last modified using:]
+Проверен на версии:
+[Locale:]
+Язык:
+[Reload langpack]
+Перезагрузить языковой пакет
+[Download more language packs]
+Загрузить дополнительные переводы
+[Show in IM chats]
+Показывать в обычном окне
+[Show in chat rooms]
+Показывать в окне чата
+[Gap between buttons:]
+Промежуток кнопок:
+[Hide if there isn't enough space]
+Скрыть, если не хватает места
+[&Authorize]
+&Разрешить
+[&Deny]
+&Запретить
+[Decide &later]
+Решить &позже
+[Reason:]
+Причина:
+[Denial reason:]
+Причина отказа:
+[Add to contact list if authorized]
+Добавить в список контактов после авторизации
+[You were added]
+Вас добавили
+[&Close]
+&Закрыть
+[About Miranda NG]
+О программе
+[Credits >]
+Благодарности >
+[Hide offline users]
+Скрыть отключённых
+[Hide empty groups]
+Скрыть пустые группы
+[Enable groups]
+Включить группы
+[Ask before deleting contacts]
+Подтверждение удаления
+[Remove temporary contacts on exit]
+Удалять временные контакты при выходе
+[Enable icon blinking]
+Включить мигание
+[Search works as filter]
+Поиск по списку контактов с фильтрацией результатов
+['Hide offline' means to hide:]
+'Скрыть отключённых' - скрыть:
+[Tray]
+Трей
+[ms delay]
+Задержка (мс)
+[Single click interface]
+Один щелчок
+[Always show status in tooltip]
+Всегда показывать статус в подсказке
+[Default settings for known event types]
+Настройки для известных типов событий
+[Show when filter is active]
+Показывать при вкл. фильтре
+[Popup]
+Всплывающее окно
+[Sound]
+Звук
+[Log to file]
+Запись в файл
+[Show icons in tray only when the chat room is not active]
+Показывать значки в трее только когда окно чата не активно
+[Highlight event]
+Подсветка
+[Show popups only when the chat room is not active]
+Показывать всплывающие окна только когда окно чата не активно
+[Show button menus when right clicking the buttons]
+Показывать меню кнопки по правому щелчку
+[Hidden window]
+Скрытое окно
+[Select crypto provider]
+Выберите поставщика криптографии
+[Login to Miranda NG]
+Вход в Miranda NG
+[New password]
+Новый пароль
+[Please enter your new password]
+Пожалуйста, введите новый пароль
+[Enter password]
+Введите пароль
+[Change password]
+Изменить пароль
+[Change]
+Изменить
+[Old password]
+Старый пароль
+[Database encryption mode]
+Режим шифрования базы
+[Standard]
+Стандартный
+[Total]
+Полный
+[Only critical data are encrypted (passwords, security tokens, etc.). All other settings and history remains unencrypted.]
+Шифрование только критических данных (пароли, токены авторизации и т.п.). Остальные настройки и история остаются незашифрованными.
+[All string settings and all events in histories are encrypted. It also makes Miranda much slower and creates a risk of losing everything you've stored in a database in case of losing password.]
+Шифрование всех строковых настроек и событий истории. Замедляет работу программы, а в случае утери пароля создаёт риск потери всего сохранённого в базе.
+[Set password]
+Установить пароль
+[Group chats]
+Чаты
+[Use same style as in the message log]
+Тот же стиль, что и в журнале
+[Use default colors]
+Цвета по умолчанию
+[Use custom colors]
+Задать цвета
+[Timeout (s)]
+Длительность (с)
+[Text]
+Текст
+[Background]
+Фон
+[(Setting timeout to 0 means default setting and -1 means indefinite time)]
+(Установка таймаута в 0 = значение по умолчанию, -1 = бесконечно)
+[&Hide/Show]
+С&крыть/Показать
+[E&xit]
+Вы&ход
+[Nowhere]
+Нигде
+[&New group]
+Со&здать группу
+[&Hide offline users]
+&Скрыть отключённых
+[Hide &offline users out here]
+Скрыть &отключённых вне группы
+[Hide &empty groups]
+Скрыть &пустые группы
+[Disable &groups]
+Отключить &группы
+[Hide Miranda]
+Скрыть список контактов
+[Group]
+Группа
+[&New subgroup]
+&Создать подгруппу
+[&Hide offline users in here]
+&Скрыть отключённых в группе
+[&Rename group]
+&Переименовать группу
+[&Delete group]
+&Удалить группу
+[&Reset to default]
+&Сбросить
+[find/add]
+найти/добавить
+[&Add to list]
+&Добавить в список
+[Send &message]
+Отправить &сообщение
+[&Open link]
+&Открыть ссылку
+[&Copy link]
+&Копировать ссылку
+[Cancel change]
+Откатить изменения
+[Ungroup]
+Разгруппировать
+[List]
+Список
+[&Message]
+&Сообщение
+[Clear lo&g]
+Очистить ча&т
+[Word lookup]
+Найти слово
+[Yandex]
+Яндекс
+[Wikipedia (en)]
+Википедия (англ.)
+[Google Maps]
+Google Карты
+[Google Translate]
+Переводчик Google
+[&Main menu]
+&Главное меню
+[&Status]
+&Статус
+[&Offline\tCtrl+0]
+Не в с&ети\tCtrl+0
+[On&line\tCtrl+1]
+В &сети\tCtrl+1
+[&Away\tCtrl+2]
+&Отсутствую\tCtrl+2
+[&Not available\tCtrl+3]
+Не&доступен\tCtrl+3
+[Occ&upied\tCtrl+4]
+&Занят\tCtrl+4
+[&Do not disturb\tCtrl+5]
+Не &беспокоить\tCtrl+5
+[&Free for chat\tCtrl+6]
+&Готов болтать\tCtrl+6
+[&Invisible\tCtrl+7]
+&Невидимый\tCtrl+6
+;file \src\core\stdautoaway\src\options.cpp
+[Status]
+Статус
+[Idle]
+Ожидание
+;file \src\core\stdaway\src\awaymsg.cpp
+[Re&ad %s message]
+&Прочитать сообщение "%s"
+[Re&ad status message]
+Пр&очитать статусное сообщение
+;file \src\core\stdaway\src\options.cpp
+;file \src\core\stdaway\src\sendmsg.cpp
+[I've been away since %time%.]
+Отсутствую с %time%.
+[Give it up, I'm not in!]
+Ну нет меня сейчас, нет...
+[Not right now.]
+Не сейчас.
+[Give a guy some peace, would ya?]
+Прошу не тревожить...
+[I'm a chatbot!]
+Свободен.
+[Yep, I'm here.]
+Да, я здесь.
+[Nope, not here.]
+Нет, меня здесь нет.
+[I'm hiding from the mafia.]
+Я прячусь от мафии.
+[idleeeeeeee]
+ожидание...
+;file \src\core\stdclist\src\clcfonts.cpp
+[Standard contacts]
+Стандартные контакты
+[Online contacts to whom you have a different visibility]
+Контакты с изменённой видимостью (в сети)
+[Offline contacts]
+Отключённые контакты
+[Contacts which are 'not on list']
+Контакты 'не в списке'
+[Group member counts]
+Счётчики групп
+[Dividers]
+Разделители
+[Offline contacts to whom you have a different visibility]
+Контакты с изменённой видимостью (отключённые)
+[Selected text]
+Выделенный текст
+[Hottrack text]
+Под курсором
+[Quicksearch text]
+Быстрый поиск
+;file \src\core\stdclist\src\clcopts.cpp
+[Not focused]
+Не в фокусе
+[Offline]
+Не в сети
+[Online]
+В сети
+[Away]
+Отсутствую
+[Not available]
+Недоступен
+[Occupied]
+Занят
+[Do not disturb]
+Не беспокоить
+[Free for chat]
+Готов болтать
+[Invisible]
+Невидимый
+[List background]
+Фон списка
+;file \src\core\stdclist\src\clistopts.cpp
+[Global]
+Глобальные
+[General]
+Общее
+;file \src\core\stdclist\src\cluiopts.cpp
+;file \src\core\stdcrypt\src\encrypt.cpp
+[Standard crypto provider]
+Поставщик шифрования по умолчанию
+;file \src\core\stdemail\src\email.cpp
+[User has not registered an e-mail address]
+Пользователь не зарегистрировал свой адрес e-mail.
+[Send e-mail]
+Отправить e-mail
+[&E-mail]
+&E-mail
+;file \src\core\stdfile\src\file.cpp
+[File from %s]
+Файл от %s
+[bytes]
+байт
+[&File]
+&Файл
+[File &transfers...]
+Передачи &файлов...
+[Incoming]
+Входящие
+[Complete]
+Готово
+[Error]
+Ошибка
+[Denied]
+Отказано
+;file \src\core\stdfile\src\fileexistsdlg.cpp
+[%s file]
+%s файл
+[All files]
+Все файлы
+;file \src\core\stdfile\src\fileopts.cpp
+[Executable files]
+Исполняемые файлы
+[Events]
+События
+;file \src\core\stdfile\src\filerecvdlg.cpp
+[Select folder]
+Выбрать папку
+[My received files]
+Принятые файлы
+[Add contact permanently to list]
+Добавить в список контактов
+[View user's details]
+Информация о пользователе
+[View user's history]
+История сообщений
+[User menu]
+Меню пользователя
+[Canceled]
+Отменённые
+[This file transfer has been canceled by the other side]
+Передача файла отменена другой стороной
+;file \src\core\stdfile\src\filesenddlg.cpp
+[%d files]
+%d файла(ов)
+[%d directories]
+%d каталога(ов)
+;file \src\core\stdfile\src\filexferdlg.cpp
+[This file has not yet been scanned for viruses. Are you certain you want to open it?]
+Этот файл ещё не проверялся антивирусом. Вы всё-таки хотите открыть его?
+[File received]
+Файл получен
+[of]
+из
+[Request sent, waiting for acceptance...]
+Запрос отправлен, ожидание подтверждения...
+[Waiting for connection...]
+Ожидание соединения...
+[Unable to initiate transfer.]
+Невозможно начать передачу.
+[Contact menu]
+Меню контакта
+[Open...]
+Открыть...
+[sec]
+с
+[remaining]
+осталось
+[Decision sent]
+Решение отправлено
+[Connecting...]
+Подключение...
+[Connecting to proxy...]
+Подключение к прокси...
+[Connected]
+Подключён
+[Initializing...]
+Инициализация...
+[Moving to next file...]
+Следующий файл...
+[Sending...]
+Передача...
+[Receiving...]
+Получение...
+[File transfer denied]
+В передаче файла отказано
+[File transfer failed]
+Неудачная передача файла
+[Transfer completed.]
+Передача завершена.
+[Transfer completed, open file.]
+Передача завершена, открыть файл.
+[Transfer completed, open folder.]
+Передача завершена, открыть папку.
+[Scanning for viruses...]
+Проверка на вирусы...
+[Transfer and virus scan complete]
+Передача и проверка на вирусы завершены
+;file \src\core\stdfile\src\ftmanager.cpp
+[Outgoing]
+Исходящие
+;file \src\core\stdmsg\src\chat_manager.cpp
+[Message sessions]
+Беседы
+[Chat module]
+Модуль чата
+[Group chat log background]
+Фон журнала чата
+[Message background]
+Фон поля ввода
+[Nick list background]
+Фон списка пользователей
+[Nick list lines]
+Цвета линий в списке пользователей
+[Nick list background (selected)]
+Заливка списка пользователей (выбрано)
+[Messaging]
+Сообщения
+[Send message]
+Отправить сообщение
+;file \src\core\stdmsg\src\chat_options.cpp
+[Flash window when someone speaks]
+Мигать окном, если есть новое сообщение
+[Flash window when a word is highlighted]
+Мигать окном, если есть подсвеченные сообщения
+[Show list of users in the chat room]
+Показывать список пользователей в комнате чата
+[Show the topic of the room on your contact list (if supported)]
+Показывать тему комнаты чата в списке контактов (если поддерживается)
+[Do not play sounds when the chat room is focused]
+Не играть звук, когда комната чата на переднем плане
+[Do not pop up the window when joining a chat room]
+Не открывать окно чата при входе в комнату чата
+[Show contact statuses if protocol supports them]
+Показывать статусы, если есть поддержка в протоколе
+[Display contact status icon before user role icon]
+Показывать значок статуса перед значком роли
+[Prefix all events with a timestamp]
+Указывать время всех событий
+[Only prefix with timestamp if it has changed]
+Указывать время, только если оно изменилось
+[Timestamp has same color as the event]
+Время того же цвета, что и событие
+[Indent the second line of a message]
+Отступ второй строки сообщения
+[Limit user names in the message log to 20 characters]
+Ограничить имена в журнале 20-ю символами
+[Add ':' to auto-completed user names]
+Добавлять ":" к именам пользователей
+[Strip colors from messages in the log]
+Запретить цвета в журнале
+[Enable the 'event filter' for new rooms]
+Включить 'фильтр событий' для новых комнат чата
+[Show icon for topic changes]
+Смены темы
+[Show icon for users joining]
+Новые пользователи
+[Show icon for users disconnecting]
+Отключения участников
+[Show icon for messages]
+Сообщения
+[Show icon for actions]
+Действия
+[Show icon for highlights]
+Подсвеченные сообщения
+[Show icon for users leaving]
+Выходы участников
+[Show icon for users kicking other user]
+Пинки
+[Show icon for notices]
+Уведомления
+[Show icon for name changes]
+Смены ников
+[Show icon for information messages]
+Информационные сообщения
+[Show icon for status changes]
+Смены статусов
+[Window icon]
+Значок окна
+[Bold]
+Жирный
+[Italics]
+Курсив
+[Underlined]
+Подчёркивание
+[Smiley button]
+Смайлы
+[Room history]
+История
+[Room settings]
+Настройки
+[Event filter disabled]
+Фильтр событий выключен
+[Event filter enabled]
+Фильтр событий включён
+[Hide nick list]
+Скрыть список пользователей
+[Show nick list]
+Показать список пользователей
+[Icon overlay]
+Значок поверх
+[Message in (10x10)]
+Принятое сообщение (10х10)
+[Message out (10x10)]
+Отправленное сообщение (10х10)
+[Action (10x10)]
+Действие (10x10)
+[Add status (10x10)]
+Добавить статус (10х10)
+[Remove status (10x10)]
+Удалить статус (10х10)
+[Join (10x10)]
+Войти (10x10)
+[Leave (10x10)]
+Покинуть (10х10)
+[Quit (10x10)]
+Выход (10х10)
+[Kick (10x10)]
+Выкинуть (10х10)
+[Nick change (10x10)]
+Смена псевдонима (10х10)
+[Notice (10x10)]
+Уведомление (10x10)
+[Topic (10x10)]
+Тема (10х10)
+[Highlight (10x10)]
+Выделить (10х10)
+[Information (10x10)]
+Информация (10х10)
+[Group chats log]
+Журналы чатов
+[Appearance and functionality of chat room windows]
+Интерфейс и функциональность окон чата
+[Appearance of the message log]
+Внешний вид журнала сообщений
+[Icons to display in the message log]
+Значки журнала сообщений
+[Chat log]
+Журнал чата
+;file \src\core\stdmsg\src\cmdlist.cpp
+[The message send timed out.]
+Таймаут отправки сообщения
+;file \src\core\stdmsg\src\globals.cpp
+[Incoming message (10x10)]
+Входящее сообщение (10x10)
+[Outgoing message (10x10)]
+Исходящее сообщение (10x10)
+;file \src\core\stdmsg\src\msgdialog.cpp
+[%s is typing a message...]
+%s набирает текст...
+[Last message received on %s at %s.]
+Последнее сообщение вы получили %s в %s.
+[%s: chat room (%u user)]
+%s: комната чата (%u пользователь)
+[%s: chat room (%u users)]
+%s: комната чата (%u пользователей)
+[%s: message session]
+%s: беседа
+[%s: message session (%u users)]
+%s: беседа (%u пользователей)
+[Message session]
+Беседа
+;file \src\core\stdmsg\src\msglog.cpp
+[Me]
+Я
+[File sent]
+Отправка файла
+;file \src\core\stdmsg\src\msgoptions.cpp
+[Outgoing messages]
+Исходящие сообщения
+[Incoming messages]
+Входящие сообщения
+[Outgoing name]
+Моё имя
+[Outgoing time]
+Время отправления
+[Outgoing colon]
+Двоеточие в исходящих сообщениях
+[Incoming name]
+Имя собеседника
+[Incoming time]
+Время получения
+[Incoming colon]
+Двоеточие во входящих сообщениях
+[Message area]
+Область сообщений
+[Other events]
+Другие события
+[Message log]
+Журнал
+[** New contacts **]
+** Новые контакты **
+[** Unknown contacts **]
+** Неизвестные контакты **
+[Messaging log]
+Журнал
+[Typing notify]
+Набирает текст
+;file \src\core\stdmsg\src\msgs.cpp
+[Message from %s]
+Сообщение от %s
+[%s is typing a message]
+%s набирает текст
+[Typing notification]
+Уведомление о наборе текста
+[View user's history (Ctrl+H)]
+История сообщений (Ctrl+H)
+[&Bold]
+&Жирный
+[Make the text bold (Ctrl+B)]
+Сделать текст жирным (Ctrl+B)
+[&Italic]
+&Курсив
+[Make the text italicized (Ctrl+I)]
+Сделать текст курсивом (Ctrl+I)
+[&Underline]
+&Подчёркнутый
+[Make the text underlined (Ctrl+U)]
+Подчеркнуть текст (Ctrl+U)
+[&Color]
+&Цвет
+[Select a foreground color for the text (Ctrl+K)]
+Выбрать цвет текста (Ctrl+K)
+[&Background color]
+Цвет &фона
+[Select a background color for the text (Ctrl+L)]
+Выбрать фон текста (Ctrl+L)
+[&Room settings]
+&Настройки
+[Control this room (Ctrl+O)]
+Управление комнатой чата (Ctrl+O)
+[&Show/hide nick list]
+&Показать/Скрыть список пользователей
+[Show/hide the nick list (Ctrl+N)]
+Показать/скрыть список пользователей (Ctrl+N)
+[&Filter]
+&Фильтр
+[Enable/disable the event filter (Ctrl+F)]
+Включить/выключить фильтр событий (Ctrl+F)
+[Miranda could not load the built-in message module, msftedit.dll is missing. Press 'Yes' to continue loading Miranda.]
+Miranda не смогла загрузить встроенную систему сообщений из-за отсутствия msftedit.dll. Нажмите "Да" для продолжения загрузки программы.
+[Instant messages]
+Сообщения IM
+[Incoming (focused window)]
+Входящие (активное окно)
+[Incoming (unfocused window)]
+Входящие (неактивное окно)
+[Incoming (new session)]
+Входящие (новая сессия)
+[Message send error]
+Ошибка отправки сообщения
+[Contact started typing]
+Контакт начал набор текста
+[Contact stopped typing]
+Контакт закончил набор текста
+;file \src\core\stdmsg\src\msgtimedout.cpp
+[An unknown error has occurred.]
+Неизвестная ошибка.
+;file \src\core\stdmsg\src\srmm.cpp
+[StdMsg internal log]
+Встроенный журнал StdMsg
+;file \src\core\stdpopup\src\options.cpp
+[Bottom right]
+Внизу справа
+[Bottom left]
+Внизу слева
+[Top right]
+Вверху справа
+[Top left]
+Вверху слева
+[Icon on left]
+Значок слева
+[Icon on right]
+Значок справа
+[No time]
+Без времени
+[Time on left]
+Время слева
+[Time on right]
+Время справа
+[Time above avatar]
+Время над аватаром
+[No avatar]
+Без аватара
+[Left avatar]
+Аватар слева
+[Right avatar]
+Аватар справа
+[Full-screen app running]
+Полноэкранное приложение
+[No animate]
+Без анимации
+[Horizontal animate]
+Горизонтальная анимация
+[Vertical animate]
+Вертикальная анимация
+[You cannot set a default timeout of 0.\nValue has been reset.]
+Невозможно установить длительность, равную 0. Значение было сброшено.
+[Example]
+Пример
+[The quick brown fox jumps over the lazy dog.]
+Съешь же ещё этих мягких французских булок, да выпей йаду.
+[Example With a Long Title]
+Пример с длинным заголовком
+[Thequickbrownfoxjumpsoverthelazydog.]
+Съешьжеещёэтихмягкихфранцузскихбулокдавыпеййаду.
+[An avatar.]
+С аватаром
+[Popups]
+Всплывающие окна
+[Settings]
+Настройки
+[Classes]
+Классы
+;file \src\core\stdpopup\src\services.cpp
+[Disable popups]
+Выключить всплывающие окна
+[Enable popups]
+Включить всплывающие окна
+;file \src\core\stdpopup\src\yapp.cpp
+[Popups are enabled]
+Всплывающие окна включены
+[Popups are disabled]
+Всплывающие окна выключены
+[Toggle popups]
+Вкл/Выкл вспл. окна
+[First line]
+Первая строка
+[Second line]
+Вторая строка
+[Time]
+Время
+[Sidebar]
+Врезка
+[Title underline]
+Подчёркивание заголовка
+;file \src\core\stdpopup\src\yapp_history_dlg.cpp
+[Copy title to clipboard]
+Копировать заголовок в буфер обмена
+[Copy message to clipboard]
+Копировать сообщение в буфер обмена
+[Copy timestamp to clipboard]
+Копировать время в буфер обмена
+;file \src\core\stduihist\src\history.cpp
+[Outgoing message]
+Исходящее сообщение
+[Incoming message]
+Входящее сообщение
+[Outgoing file]
+Исходящий файл
+[Incoming file]
+Входящий файл
+[Added event]
+Событие добавления
+[History for %s]
+История для %s
+[System history]
+Системная история
+[Are you sure you want to delete this history item?]
+Удалить эту запись из истории?
+[Delete history]
+Удалить историю
+[View &history]
+&История
+;file \src\core\stduserinfo\src\contactinfo.cpp
+[Edit e-mail address]
+Редактировать адрес e-mail
+[Edit phone number]
+Редактировать телефон
+[The phone number should start with a + and consist of numbers, spaces, brackets and hyphens only.]
+Телефон должен начинаться с + и состоять только из цифр, пробелов, скобок и тире.
+[Invalid phone number]
+Неверный номер телефона
+[Primary]
+Главный
+[Custom %d]
+Разное %d
+[Fax]
+Факс
+[Mobile]
+Мобильный
+[Work phone]
+Рабочий телефон
+[Work fax]
+Рабочий факс
+[Contact]
+Контакт
+;file \src\core\stduserinfo\src\stdinfo.cpp
+[<not specified>]
+<не указано>
+[Summary]
+Резюме
+[Location]
+Место
+[Work]
+Работа
+[Background info]
+Биография
+[Notes]
+Заметки
+;file \src\core\stduserinfo\src\userinfo.cpp
+[Owner]
+Владелец
+[Folder]
+Папка
+[Page]
+Страница
+[View/change my &details...]
+Личные &данные...
+;file \src\core\stduserinfo\src\utils.h
+[Male]
+Мужской
+[Female]
+Женский
+[Single]
+В одиночестве
+[Close relationships]
+В близких отношениях
+[Engaged]
+Помолвлен(а)
+[Married]
+В браке
+[Divorced]
+В разводе
+[Separated]
+Разошлись
+[Widowed]
+Вдовец/вдова
+[Actively searching]
+В активном поиске
+[In love]
+Влюблённость
+[It's complicated]
+Всё сложно
+[In a civil union]
+В незарегистрированном браке
+;file \src\core\stduseronline\src\useronline.cpp
+[%s is online]
+%s в сети
+[Alerts]
+Уведомления
+;file \src\mir_app\src\addcontact.cpp
+[Add %s]
+Добавить %s
+[Please authorize my request and add me to your contact list.]
+Пожалуйста, разрешите добавить вас в мой список контактов.
+;file \src\mir_app\src\auth.cpp
+[<Unknown>]
+<Неизвестно>
+[ requested authorization\n%u (%s) on %s]
+ запросил(а) авторизацию\n%u (%s) в %s
+[ requested authorization\n%u on %s]
+ запросил(а) авторизацию\n%u в %s
+[ requested authorization\n%s on %s]
+ запросил(а) авторизацию\n%s в %s
+[(Unknown)]
+(Неизвестный)
+[Feature is not supported by protocol]
+Не поддерживается протоколом
+[%s added you to the contact list\n%u (%s) on %s]
+%s добавил вас в свой список контактов\n%u (%s) в %s
+[%s added you to the contact list\n%u on %s]
+%s добавил вас в свой список контактов\n%u в %s
+[%s added you to the contact list\n%s on %s]
+%s добавил вас в свой список контактов\n%s в %s
+[%s requests authorization]
+%s запрашивает авторизацию
+[%u requests authorization]
+%u запрашивает авторизацию
+[%s added you to their contact list]
+%s добавил вас в свой список контактов
+[%u added you to their contact list]
+%u добавил вас в свой список контактов
+;file \src\mir_app\src\chat_log.cpp
+[%s has joined]
+%s вошёл
+[You have joined %s]
+Вы пришли на '%s'
+[%s has left]
+%s вышел
+[%s has disconnected]
+%s отключился
+[%s is now known as %s]
+%s сменил имя на %s
+[You are now known as %s]
+Вы сменили имя на %s
+[%s kicked %s]
+%s выкинул %s
+[Notice from %s]
+Уведомление от %s
+[The topic is '%s']
+Тема '%s'
+[ (set by %s on %s)]
+ (установлена %s %s)
+[ (set by %s)]
+ (установлена %s)
+[%s enables '%s' status for %s]
+%s включает статус '%s' для %s
+[%s disables '%s' status for %s]
+%s выключает статус '%s' для %s
+[<invalid>]
+<неверно>
+;file \src\mir_app\src\chat_opts.cpp
+[Others nicknames]
+Другие псевдонимы
+[Your nickname]
+Ваш псевдоним
+[User has joined]
+Пользователь присоединился
+[User has left]
+Пользователь ушёл
+[User has disconnected]
+Пользователь отключился
+[User kicked ...]
+Пинок...
+[User is now known as ...]
+Смена псевдонима...
+[Notice from user]
+Уведомление
+[The topic is ...]
+Смена темы...
+[Information messages]
+Информационные сообщения
+[User enables status for ...]
+Установка статуса...
+[User disables status for ...]
+Снятие статуса...
+[Action message]
+Действие
+[Highlighted message]
+Подсвеченное сообщение
+[Nick list members (online)]
+Пользователи (в сети)
+[Nick list members (away)]
+Пользователи (отсутствуют)
+[Message typing area]
+Поле набора текста
+[Chat log symbols (Webdings)]
+Символы в чате (шрифт Webdings)
+;file \src\mir_app\src\chat_svc.cpp
+[&Join chat]
+Войти в чат
+[&Open/close chat window]
+&Открыть/закрыть окно чата
+[&Leave chat]
+Покинуть чат
+[&Mute chat]
+&Заглушать чат
+[Always]
+Всегда
+[Never]
+Никогда
+[Status 1 (10x10)]
+Статус 1 (10x10)
+[Status 2 (10x10)]
+Статус 2 (10x10)
+[Status 3 (10x10)]
+Статус 3 (10x10)
+[Status 4 (10x10)]
+Статус 4 (10x10)
+[Status 5 (10x10)]
+Статус 5 (10x10)
+[Status 6 (10x10)]
+Статус 6 (10x10)
+[Message is highlighted]
+Подсвеченное сообщение
+[User has performed an action]
+Пользователь совершил действие
+[User has kicked some other user]
+Пользователь выкинул другого
+[User's status was changed]
+Статус пользователя изменился
+[User has changed name]
+Пользователь сменил имя
+[User has sent a notice]
+Пользователь отправил уведомление
+[The topic has been changed]
+Тема изменилась
+;file \src\mir_app\src\chat_tools.cpp
+[%s wants your attention in %s]
+%s требует вашего внимания в %s
+[%s speaks in %s]
+%s говорит в %s
+[%s has joined %s]
+%s вошёл в %s
+[%s has left %s]
+%s вышел из %s
+[%s kicked %s from %s]
+%s выкинул %s из %s
+[Topic change in %s]
+Смена темы в %s
+[Information in %s]
+Информация в %s
+[%s enables '%s' status for %s in %s]
+%s включает статус '%s' для %s в %s
+[%s disables '%s' status for %s in %s]
+%s выключает статус '%s' для %s в %s
+[%s says]
+%s говорит
+[Chat rooms]
+Чаты
+;file \src\mir_app\src\chat_ui.cpp
+[Events and filters]
+События и фильтры
+;file \src\mir_app\src\clcitems.cpp
+;file \src\mir_app\src\clistgroups.cpp
+[New group]
+Новая группа
+[Are you sure you want to delete group '%s'? This operation cannot be undone.]
+Вы уверены, что хотите удалить группу "%s"? Операция не может быть отменена.
+[Delete group]
+Удаление группы
+[You already have a group with that name. Please enter a unique name for the group.]
+Группа с таким именем уже есть. Введите уникальное имя для группы.
+[Rename group]
+Переименовать группу
+[This group]
+Эта группа
+;file \src\mir_app\src\clistmod.cpp
+[Connecting]
+Подключение
+[Connecting (attempt %d)]
+Подключение (попытка %d)
+[&Accounts...]
+&Учётные записи...
+[&Options...]
+&Настройки...
+;file \src\mir_app\src\clistopts.cpp
+[Common]
+Общие
+;file \src\mir_app\src\clistsettings.cpp
+[(Unknown contact)]
+(Неизвестный контакт)
+;file \src\mir_app\src\clui.cpp
+[This contact is on an instant messaging system which stores its contact list on a central server. The contact will be removed from the server and from your contact list when you next connect to that network.]
+Этот контакт находится в системе обмена мгновенными сообщениями, которая хранит списки контактов на сервере. Контакт будет удалён с сервера и из локального списка при следующем подключении.
+[De&lete]
+&Удалить
+[&Rename]
+&Переименовать
+[&Add permanently to list]
+&Добавить в постоянный список
+;file \src\mir_app\src\colorchooser.cpp
+;file \src\mir_app\src\contacts.cpp
+[My custom name (not movable)]
+Заданное имя (всегда первое)
+[Nick]
+Ник
+[FirstName]
+Имя
+[E-mail]
+Почта
+[LastName]
+Фамилия
+[Username]
+Имя пользователя
+[FirstName LastName]
+Имя Фамилия
+[LastName FirstName]
+Фамилия Имя
+['(Unknown contact)' (not movable)]
+'(Неизвестный)' (всегда последнее)
+['(Unknown contact)']
+'(Неизвестный контакт)'
+[Contact names]
+Контакты
+;file \src\mir_app\src\database.cpp
+[Miranda is trying to upgrade your profile structure.\nIt cannot move profile %s to the new location %s\nBecause profile with this name already exists. Please resolve the issue manually.]
+Миранда пытается обновить структуру вашего профиля.\nНе удалось переместить профиль %s в новое расположение %s\nПрофиль с таким именем уже существует. Пожалуйста, решите этот вопрос вручную.
+[Miranda is trying to upgrade your profile structure.\nIt cannot move profile %s to the new location %s automatically\nMost likely this is due to insufficient privileges. Please move profile manually.]
+Миранда пытается обновить структуру вашего профиля.\nНе удалось автоматически переместить профиль %s в новое расположение %s\nВероятная причина - нехватка прав доступа. Пожалуйста, переместите профиль вручную.
+[Profile cannot be placed into Miranda root folder.\nPlease move Miranda profile to some other location.]
+Файл профиля не должен находится в корневой папке Miranda.
+[Database was compacted successfully]
+База успешно сжата
+[Database]
+База данных
+[Database compaction failed]
+Не удалось сжать базу
+[Compact database]
+Сжать базу
+[Miranda is unable to open '%s' because you do not have any profile plugins installed.\nYou need to install dbx_mdbx.dll]
+Miranda не может открыть '%s', так как плагины для поддержки профилей не установлены.\nНеобходимо установить плагин dbx_mdbx.dll
+[Miranda was unable to open '%s', it's in an unknown format.]
+Miranda NG не может открыть '%s', профиль в неизвестном формате.
+[Miranda was unable to open '%s'\nIt's inaccessible or used by other application or Miranda instance]
+Miranda NG не может открыть '%s'\nОн недоступен, занят другим приложением или другой копией Miranda NG
+[Miranda was unable to open '%s'\nThere is no suitable database driver installed]
+Miranda NG не может открыть '%s'\nНе установлен подходящий драйвер базы данных
+[No profile support installed!]
+Нет установленных плагинов базы!
+[Miranda can't open that profile]
+Miranda NG не может открыть этот профиль
+[Miranda can't understand that profile]
+Miranda не может распознать этот профиль
+;file \src\mir_app\src\db_events.cpp
+[Authorization request from %s%s: %s]
+Запрос авторизации от %s%s: %s
+[You were added by %s%s]
+Вас добавил %s%s
+[Contacts: ]
+Контакты:\s
+;file \src\mir_app\src\db_ini.cpp
+[Security systems to prevent malicious changes are in place and you will be warned before every change that is made.]
+Система безопасности для предотвращения нежелательных изменений активна и вы будете предупреждены перед каждым произведённым изменением.
+[Security systems to prevent malicious changes are in place and you will be warned before changes that are known to be unsafe.]
+Система безопасности для предотвращения нежелательных изменений активна и вы будете предупреждены перед опасными изменениями.
+[Security systems to prevent malicious changes have been disabled. You will receive no further warnings.]
+Система безопасности для предотвращения нежелательных изменений выключена. Вы не получите дальнейших предупреждений.
+[This change is known to be safe.]
+Это изменение известно как безопасное.
+[This change is known to be potentially hazardous.]
+Это изменение потенциально опасно.
+[This change is not known to be safe.]
+Неизвестно, будет ли изменение безопасным.
+[File names must be different]
+Имена файлов должны отличаться
+[Invalid setting type for '%s'. The first character of every value must be b, w, d, l, s, e, u, g, h or n.]
+Неверный тип настройки для '%s'. Первая буква любого значения должна быть b, w, d, l, s, e, u, g, h или n.
+;file \src\mir_app\src\db_upgrade.cpp
+[This database is in the old format that isn't supported anymore. Press Yes to convert it to the new format or No to return]
+Формат вашей базы является устаревшим. Нажмите "Да", чтобы преобразовать её в новый формат или "Нет", чтобы вернуться назад
+[To open this database you need to install the Dbx_sqlite plugin. Click Yes to download it from Miranda NG's site or No to return]
+Для открытия этой базы требуется плагин Dbx_sqlite. Нажмите "Да", чтобы загрузить его с сайта Miranda NG, либо "Нет", чтобы вернуться назад
+[To open this database you need to install the Import plugin. Click Yes to download it from Miranda NG's site or No to return]
+Для открытия этой базы требуется плагин Import. Нажмите "Да", чтобы загрузить его с сайта Miranda NG, либо "Нет", чтобы вернуться назад
+[Cannot move old profile '%s' to '%s': error %d]
+Не удалось переместить старый профиль '%s'в '%s': ошибка %d
+[Attempt to create database '%s' failed with error code %d]
+Неудачная попытка создать базу '%s', код ошибки: %d
+;file \src\mir_app\src\ei_defaulticons.cpp
+[Homepage]
+Сайт
+[Phone/SMS]
+Телефон/SMS
+[Chat activity]
+Активность в чате
+[Chat mute mode]
+Режим беззвучности чата
+;file \src\mir_app\src\ei_options.cpp
+[Extra icons]
+Экстра значки
+;file \src\mir_app\src\ei_services.cpp
+[Mute chat]
+Заглушать чат
+;file \src\mir_app\src\findadd.cpp
+[You haven't filled in the search field. Please enter a search term and try again.]
+Вы не заполнили поле для поиска. Пожалуйста, введите запрос для поиска и попробуйте ещё раз.
+[Search]
+Поиск
+[Ctrl+Search add contact]
+Ctrl+Искать добавляет контакт
+[Results]
+Результаты
+[There are no results to display.]
+Нет результатов.
+[Searching]
+Поиск
+[All networks]
+Все сети
+[Handle]
+Название
+[&Find/add contacts...]
+Добавить &контакты...
+;file \src\mir_app\src\FontOptions.cpp
+[Failed to create file]
+Ошибка создания файла
+[<none>]
+<нет>
+[Shadow at left]
+Тень слева
+[Shadow at right]
+Тень справа
+[Outline]
+Контур
+[Outline smooth]
+Гладкий контур
+[Smooth bump]
+Размытие
+[Contour thin]
+Тонкий контур
+[Contour heavy]
+Толстый контур
+[Configuration files]
+Файлы конфигураций
+[Text files]
+Текстовые файлы
+[Error writing file]
+Ошибка записи в файл
+[Customize]
+Тонкая настройка
+;file \src\mir_app\src\FontService.cpp
+[Headers]
+Заголовки
+[Generic text]
+Основной текст
+[Small text]
+Дополнительный текст
+;file \src\mir_app\src\help.cpp
+[< Copyright]
+< Авторские права
+[&Help]
+&Справка
+[&About...]
+&О программе...
+[&Support]
+&Поддержка
+[&Miranda NG homepage]
+О&фициальный сайт Miranda NG
+[&Report bug]
+Сооб&щить об ошибке
+;file \src\mir_app\src\hotkey_opts.cpp
+[Browser: Back]
+Браузер: Назад
+[Browser: Forward]
+Браузер: Вперёд
+[Browser: Refresh]
+Браузер: Обновить
+[Browser: Stop]
+Браузер: Остановить
+[Browser: Search]
+Браузер: Поиск
+[Browser: Fav]
+Браузер: Избранное
+[Browser: Home]
+Браузер: Домой
+[Mute]
+Включить/выключить звук
+[Vol-]
+Громкость-
+[Vol+]
+Громкость+
+[Media: Next Track]
+Музыка: Следующий трек
+[Media: Prev. Track]
+Музыка: Предыдущий трек
+[Media: Stop]
+Музыка: Стоп
+[Media: Play/Pause]
+Музыка: Воспроизведение/пауза
+[Mail]
+Почта
+[Media: Select]
+Музыка: Выбор
+[App 1]
+Приложение 1
+[App 2]
+Приложение 2
+[Ctrl + ]
+Ctrl +\s
+[Alt + ]
+Alt +\s
+[Shift + ]
+Shift +\s
+[Win + ]
+Win +\s
+[Remove shortcut]
+Удалить сочетание
+[Add another shortcut]
+Добавить сочетание
+[Scope:]
+Где:
+[System]
+Система
+[Actions:]
+Действия:
+[Add binding]
+Добавить сочетание
+[Modify]
+Изменить
+[System scope]
+Сочетание в системе
+[Miranda scope]
+Сочетание в Miranda
+;file \src\mir_app\src\ignore.cpp
+[** All contacts **]
+** Все контакты **
+;file \src\mir_app\src\keyboard.cpp
+[Show/Hide contact list]
+Показать/Скрыть список контактов
+[Read message]
+Прочитать сообщение
+[Open Options page]
+Открыть настройки
+[Toggle groups]
+Вкл/Выкл группы
+[Open logging options]
+Настройки журналирования сети
+[Open 'Find user' dialog]
+Открыть диалог поиска контактов
+;file \src\mir_app\src\lpopts.cpp
+[built-in]
+встроенный
+[(incompatible)]
+(несовместим)
+[Unknown]
+Неизвестно
+[Languages]
+Языки
+;file \src\mir_app\src\MDatabaseCommonCrypt.cpp
+[Change/remove password]
+Изменить/удалить пароль
+[Wrong old password entered!]
+Введён ошибочный старый пароль!
+[Password is too short!]
+Слишком короткий пароль!
+[Passwords do not match!]
+Пароли не совпадают!
+[Too many errors!]
+Слишком много ошибок!
+[Password is not correct!]
+Неверный пароль!
+[Please type in your password]
+Пожалуйста, введите свой пароль
+;file \src\mir_app\src\menu_clist.cpp
+[Custom status]
+xСтатус
+[%s (locked)]
+%s (заблокирована)
+[Status menu]
+Меню статусов
+[Main menu]
+Главное меню
+;file \src\mir_app\src\menu_frames.cpp
+[Frame menu]
+Меню фреймов
+;file \src\mir_app\src\menu_groups.cpp
+[Group menu]
+Меню групп
+[Subgroup menu]
+Меню подгрупп
+;file \src\mir_app\src\menu_options.cpp
+[New submenu]
+Новое вложенное меню
+[Do you really want to delete this menu item?]
+Удалить этот пункт меню?
+[Menus]
+Меню
+;file \src\mir_app\src\menu_tray.cpp
+[Tray menu]
+Меню в трее
+[&Hide/show]
+С&крыть/Показать
+[&About]
+О &программе
+;file \src\mir_app\src\menu_utils.cpp
+[Menu icons]
+Меню
+;file \src\mir_app\src\metacontacts.h
+[You are going to remove all the contacts associated with this metacontact.\nThis will delete the metacontact.\n\nProceed anyway?]
+Вы собираетесь удалить все субконтакты из метаконтакта.\nЭто приведёт к удалению метаконтакта.\n\nПродолжить?
+;file \src\mir_app\src\meta_addto.cpp
+[Either there is no metacontact in the database (in this case you should first convert a contact into one)\nor there is none that can host this contact.\nAnother solution could be to convert this contact into a new metacontact.\n\nConvert this contact into a new metacontact?]
+В базе данных не найдено ни одного метаконтакта (в этом случае нужно сначала преобразовать один обычный контакт в метаконтакт).\nНапример, можно преобразовать этот контакт в новый метаконтакт.\n\nПреобразовать этот контакт в метаконтакт?
+[This contact is a metacontact.\nYou can't add a metacontact to another metacontact.\n\nPlease choose another.]
+Этот контакт уже является метаконтактом.\nНевозможно добавить один метаконтакт в другой.\n\nПожалуйста, выберите другой контакт.
+[Metacontact conflict]
+Конфликт метаконтактов
+[This contact is already associated to a metacontact.\nYou cannot add a contact to multiple metacontacts.]
+Этот контакт уже добавлен в метаконтакт.\nВы не можете добавить контакт в несколько метаконтактов.
+[Multiple metacontacts]
+Множество метаконтактов
+[No suitable metacontact found]
+Не найдено подходящего метаконтакта
+[a contact]
+контакт
+[Adding %s...]
+Добавление %s...
+[Please select a metacontact]
+Выберите метаконтакт
+[No metacontact selected]
+Метаконтакт не выбран
+[Assignment to the metacontact failed.]
+Не удалось добавить к метаконтакту.
+[Assignment failure]
+Неудачное назначение
+;file \src\mir_app\src\meta_edit.cpp
+[Protocol]
+Протокол
+[Send offline]
+Отправка в оффлайн
+[Send &online]
+В &онлайн
+[Delete metacontact?]
+Удалить метаконтакт?
+;file \src\mir_app\src\meta_main.cpp
+[Toggle off]
+Выключить
+[Toggle on]
+Включить
+[Convert to metacontact]
+Сделать метаконтактом
+[Add to existing]
+Добавить
+[Edit]
+Изменить
+[Set to default]
+По умолчанию
+[MetaContacts]
+Метаконтакты
+;file \src\mir_app\src\meta_menu.cpp
+[There was a problem in assigning the contact to the metacontact]
+Обнаружена проблема добавления контакта к метаконтакту
+[This will remove the metacontact permanently.\n\nProceed anyway?]
+Удаление метаконтакта.\n\nПродолжить?
+[Are you sure?]
+Вы уверены?
+[Remove from metacontact]
+Удалить из метаконтакта
+[Toggle metacontacts off]
+Выключить метаконтакты
+[Toggle metacontacts on]
+Включить метаконтакты
+[Add to existing metacontact...]
+Добавить к метаконтакту...
+[Edit metacontact...]
+Изменить метаконтакт...
+[Set as metacontact default]
+Метаконтакт по умолчанию
+[Delete metacontact]
+Удалить метаконтакт
+[Subcontacts]
+Субконтакты
+;file \src\mir_app\src\meta_options.cpp
+[Metacontacts]
+Метаконтакты
+;file \src\mir_app\src\meta_services.cpp
+[No online contacts found.]
+Не найдено контактов в сети.
+[Select metacontact]
+Выберите метаконтакт
+;file \src\mir_app\src\meta_utils.cpp
+[Could not retrieve contact protocol]
+Не могу запросить протокол контакта
+[Assignment error]
+Ошибка назначения
+[Could not get unique ID of contact]
+Не могу получить уникальный ID контакта
+[Contact is 'not on list' - please add the contact to your contact list before assigning.]
+Контакт не в списке. Пожалуйста, добавьте контакт в список перед назначением.
+[Metacontact is full]
+Метаконтакт полон
+[Could not write contact protocol to metacontact]
+Ошибка записи протокола контакта в метаконтакт
+[Could not write unique ID of contact to metacontact]
+Ошибка записи уникального ID контакта в метаконтакт
+[Could not write nickname of contact to metacontact]
+Не могу записать ник контакта в метаконтакт
+;file \src\mir_app\src\movetogroup.cpp
+[<Root group>]
+<Корневая группа>
+[&Move to group]
+&Группа
+;file \src\mir_app\src\netlib_log.cpp
+[Standard Netlib log]
+Стандартный журнал Netlib
+[No times]
+Без времени
+[Standard hh:mm:ss times]
+Часы:минуты:секунды
+[Times in milliseconds]
+Миллисекунды
+[Times in microseconds]
+Микросекунды
+[(Miranda core logging)]
+Ядро Miranda NG
+[Select where log file will be created]
+Выбрать путь к файлу журнала
+[Select program to be run]
+Выбрать программу для запуска
+;file \src\mir_app\src\netlib_opts.cpp
+[<mixed>]
+<различные>
+[<All connections>]
+<Все подключения>
+[Network]
+Сеть
+;file \src\mir_app\src\netlib_ssl.cpp
+[Client cannot decode host message. Possible causes: host does not support SSL or requires not existing security package]
+Клиент не может расшифровать сообщение сервера. Возможные причины: сервер не поддерживает SSL, либо требует не существующий пакет безопасности
+[Host we are connecting to is not the one certificate was issued for]
+Выданный сертификат не соответствует имени сервера, к которому производится подключение
+;file \src\mir_app\src\newplugins.cpp
+[Plugin %S cannot be unloaded because the core plugin is missing]
+Невозможно выгрузить плагин %S, поскольку отсутствует плагин ядра
+['%S' is disabled, re-enable?]
+'%S' отключён, включить?
+[Re-enable Miranda plugin?]
+Включить плагин?
+[Unable to load plugin in service mode!]
+Невозможно загрузить плагин в служебном режиме!
+[Unable to start any of the installed contact list plugins, I even ignored your preferences for which contact list couldn't load any.]
+Невозможно загрузить ни один из установленных плагинов списка контактов. Не удалось загрузить даже отключённые плагины.
+[Can't find a contact list plugin! You need StdClist or any other contact list plugin.]
+Не найден плагин списка контактов! Вам нужен StdClist.dll или один из плагинов clist_*.dll.
+[Core plugin '%s' cannot be loaded or missing. Miranda will exit now]
+Плагин ядра '%s' не может быть загружен или отсутствует. Программа вынуждена завершить работу
+[Fatal error]
+Фатальная ошибка
+;file \src\mir_app\src\options.cpp
+[<all modules>]
+<все модули>
+[<core modules>]
+<настройки ядра>
+[Loading... %d%%]
+Загрузка... %d%%
+[%s options]
+Настройки %s
+[Options dialog is disabled by the system administrator. Contact him if you need to edit options]
+Для изменения настроек обратитесь к своему системному администратору.
+[Miranda NG options]
+Настройки Miranda NG
+;file \src\mir_app\src\path.cpp
+[Avatars]
+Аватары
+[Avatars root folder]
+Корневая папка аватаров
+;file \src\mir_app\src\pluginopts.cpp
+[Plugin]
+Плагин
+[Version]
+Версия
+[Miranda NG must be restarted to apply changes for these plugins:]
+Требуется перезапуск программы для следующих плагинов:
+[Do you want to restart it now?]
+Перезапустить программу сейчас?
+[Plugins]
+Плагины
+;file \src\mir_app\src\popupOption.cpp
+;file \src\mir_app\src\profilemanager.cpp
+[<In use>]
+<Используется>
+[<Unknown format>]
+<Неизвестный формат>
+[The profile '%s' already exists. Do you want to move it to the Recycle Bin?\n\nWARNING: The profile will be deleted if Recycle Bin is disabled.\nWARNING: A profile may contain confidential information and should be properly deleted.]
+Профиль '%s" уже существует. Хотите переместить его в корзину?\n\nВНИМАНИЕ: Профиль будет удалён, если корзина отключена\nВНИМАНИЕ: Профиль может содержать конфиденциальную информацию и должен быть правильно удалён.
+[The profile already exists]
+Профиль уже существует
+[Couldn't move '%s' to the Recycle Bin. Please select another profile name.]
+Не могу переместить '%s' в корзину, выберите другое имя для профиля.
+[Problem moving profile]
+Проблема с перемещением профиля
+[Unable to create the profile '%s', the error was %x]
+Не могу создать профиль '%s', ошибка %x
+[Problem creating profile]
+Проблема с созданием профиля
+[&Create]
+&Создать
+[Are you sure you want to remove profile "%s"?]
+Вы уверены, что хотите удалить профиль "%s"?
+[&Convert]
+&Конвертировать
+[Run]
+Запустить
+[Check database]
+Проверить базу
+[Size]
+Размер
+[Created]
+Создан
+[Modified]
+Изменён
+[My profiles]
+Мои профили
+[New profile]
+Создать профиль
+;file \src\mir_app\src\proto_interface.cpp
+[Request authorization]
+Запросить авторизацию
+[Grant authorization]
+Авторизовать
+[Revoke authorization]
+Отозвать авторизацию
+[Load server history]
+Загрузить историю с сервера
+;file \src\mir_app\src\proto_opts.cpp
+[WARNING! The account is going to be deleted. It means that all its settings, contacts and histories will be also erased.\n\nAre you absolutely sure?]
+ВНИМАНИЕ! Учётная запись будет удалена. Это означает, что все настройки, контакты и история также будут удалены.\n\nВы точно уверены?
+[Your account was successfully upgraded. To activate it, restart of Miranda is needed.\n\nIf you want to restart Miranda now, press Yes, if you want to upgrade another account, press No]
+Ваша учётная запись успешно обновлена. Для её активации нужно перезапустить Miranda.\n\n\Для перезапуска нажмите "Да", если хотите обновить другую учётную запись, нажмите "Нет".
+[This account uses legacy protocol plugin. Use Miranda NG options dialogs to change its preferences.]
+Эта учётная запись использует старый протокол. Смена личных данных пользователя производится через основные настройки программы.
+[Welcome to Miranda NG's account manager!\nHere you can set up your IM accounts.\n\nSelect an account from the list on the left to see the available options. Alternatively, just click on the Plus sign underneath the list to set up a new IM account.]
+Добро пожаловать в менеджер учётных записей Miranda NG!\nЗдесь вы можете настроить свои учётные записи.\n\nСлева в списке можно выбрать учётную запись, или кликнуть на значок плюса снизу для добавления новой учётной записи.
+[Account is disabled. Please activate it to access options.]
+Учётная запись отключена. Активируйте её для получения доступа к настройкам.
+[New account]
+Новая учётная запись
+[Rename]
+Переименовать
+[Remove account]
+Удалить
+[Configure...]
+Настройка...
+[Upgrade account]
+Модернизация
+[Configure]
+Настроить
+[Upgrade]
+Модернизировать
+[Account %s is being disabled]
+Отключение учётной записи %s
+[Account is online. Disable account?]
+Учётная запись в сети. Отключить?
+[Account %s is being deleted]
+Удаление учётной записи %s
+[You need to disable plugin to delete this account]
+Для удаления учётной записи нужно отключить протокол
+[Account ID]
+ID учётной записи
+[<unknown>]
+<неизвестно>
+[Protocol is not loaded.]
+Протокол не загружен.
+[Create new account]
+Новая учётная запись
+[Editing account]
+Изменение учётной записи
+[Upgrading account]
+Модернизация учётной записи
+[Account name must be filled.]
+Необходимо указать имя учётной записи.
+[Account error]
+Ошибка учётной записи
+[Account name has to be unique. Please enter unique name.]
+Имя учётной записи должно быть уникальным. Введите уникальное имя.
+;file \src\mir_app\src\proto_order.cpp
+;file \src\mir_app\src\searchresults.cpp
+[Could not start a search on '%s', there was a problem - is %s connected?]
+Не могу запустить поиск в сети %s. Пожалуйста, проверьте подключение к сети %s.
+[Could not search on any of the protocols, are you online?]
+Не могу запустить поиск ни в одной из сетей. Пожалуйста, проверьте подключение к сетям.
+[Problem with search]
+Проблема с поиском
+[1 %s user found]
+Найден 1 пользователь %s
+[%d %s users found]
+Найдено %d пользователей %s
+[%d users found (]
+Найдено %d пользователей (
+[No users found]
+Пользователи не найдены
+;file \src\mir_app\src\skin2opts.cpp
+[Icon sets]
+Наборы значков
+;file \src\mir_app\src\skinicons.cpp
+[URL]
+Ссылка
+[User online]
+Пользователь в сети
+[Group (open)]
+Группа (открыта)
+[Group (closed)]
+Группа (закрыта)
+[User details]
+О пользователе
+[History]
+История
+[Down arrow]
+Вниз
+[Find user]
+Найти
+[Search all]
+Найти всех
+[Tick]
+Отмечено
+[No tick]
+Не отмечено
+[Help]
+Справка
+[Miranda website]
+Сайт Miranda NG
+[Small dot]
+Точка
+[Filled blob]
+Заполнено
+[Empty blob]
+Не заполнено
+[Unicode plugin]
+Юникод плагин
+[ANSI plugin]
+ANSI плагин
+[Show/Hide]
+Скрыть/показать
+[Exit]
+Выход
+[Join chat]
+Войти в чат
+[Leave chat]
+Покинуть чат
+[Move to group]
+Группа
+[On]
+Вкл.
+[Off]
+Откл.
+[Password]
+Пароль
+[Frames]
+Фреймы
+[Add group]
+Добавить группу
+[Warning]
+Предупреждение
+[Blank]
+Пустой
+[Always visible]
+Всегда видимый
+[Always invisible]
+Всегда невидимый
+[Locked status]
+Заблокированный статус
+[Status icons]
+Значки статуса
+[%s icons]
+%s значки
+[Main icons]
+Главные значки
+;file \src\mir_app\src\sounds.cpp
+[Sound files]
+Звуковые файлы
+[WAV files]
+Файлы WAV
+[Unselect all]
+Снять выбор
+;file \src\mir_app\src\srmm_base.cpp
+[&Message %s]
+&Сообщение %s
+[Nickname]
+Ник
+[Unique ID]
+Уник. ID
+;file \src\mir_app\src\srmm_log.cpp
+[Log viewer]
+Просмотрщик журнала сообщений
+;file \src\mir_app\src\srmm_log_rtf.cpp
+[Copy all]
+Копировать всё
+[Look up '%s':]
+Искать '%s':
+[No word to look up]
+Нет слов для просмотра
+;file \src\mir_app\src\srmm_statusicon.cpp
+[Are you sure to remove all events from history?]
+Уверены, что хотите удалить все события из истории?
+[Empty history]
+Очистить историю
+[Empty system history]
+Очистить системную историю
+;file \src\mir_app\src\srmm_toolbar.cpp
+[<Separator>]
+<Разделитель>
+[Toolbar]
+Панель кнопок
+;file \src\mir_app\src\utils.cpp
+[Unspecified]
+Не указано
+[Afghanistan]
+Афганистан
+[Aland Islands]
+Аландские о-ва
+[Albania]
+Албания
+[Algeria]
+Алжир
+[American Samoa]
+Американское Самоа
+[Andorra]
+Андорра
+[Angola]
+Ангола
+[Anguilla]
+Ангилья
+[Antarctica]
+Антарктида
+[Antigua and Barbuda]
+Антигуа и Барбуда
+[Argentina]
+Аргентина
+[Armenia]
+Армения
+[Aruba]
+Аруба
+[Australia]
+Австралия
+[Austria]
+Австрия
+[Azerbaijan]
+Азербайджан
+[Bahamas]
+Багамы
+[Bahrain]
+Бахрейн
+[Bangladesh]
+Бангладеш
+[Barbados]
+Барбадос
+[Belarus]
+Беларусь
+[Belgium]
+Бельгия
+[Belize]
+Белиз
+[Benin]
+Бенин
+[Bermuda]
+Бермудские о-ва
+[Bhutan]
+Бутан
+[Bolivia]
+Боливия
+[Bonaire, Sint Eustatius and Saba]
+Бонэйр, Синт-Эстатиус и Саба
+[Bosnia and Herzegovina]
+Босния и Герцеговина
+[Botswana]
+Ботсвана
+[Bouvet Island]
+о. Буве
+[Brazil]
+Бразилия
+[British Indian Ocean Territory]
+Британская Территория в Индийском океане
+[Brunei]
+Бруней
+[Bulgaria]
+Болгария
+[Burkina Faso]
+Буркина-Фасо
+[Burundi]
+Бурунди
+[Cambodia]
+Камбоджа
+[Cameroon]
+Камерун
+[Canada]
+Канада
+[Cape Verde]
+Кабо-Верде
+[Cayman Islands]
+Каймановы о-ва
+[Central African Republic]
+Центральноафриканская Республика
+[Chad]
+Чад
+[Chile]
+Чили
+[China]
+Китай (КНР)
+[Christmas Island]
+о. Рождества
+[Cocos (Keeling) Islands]
+Кокосовые о-ва
+[Colombia]
+Колумбия
+[Comoros]
+Коморы
+[Congo, Republic of the]
+Конго, Республика
+[Congo, Democratic Republic of the]
+Конго, Демократическая Республика
+[Cook Islands]
+о-ва Кука
+[Costa Rica]
+Коста-Рика
+[Cote d'Ivoire]
+Кот-д’Ивуар
+[Croatia]
+Хорватия
+[Cuba]
+Куба
+[Curacao]
+Кюрасао
+[Cyprus]
+Республика Кипр
+[Czech Republic]
+Чехия
+[Denmark]
+Дания
+[Djibouti]
+Джибути
+[Dominica]
+Доминика
+[Dominican Republic]
+Доминиканская республика
+[East Timor]
+Восточный Тимор
+[Ecuador]
+Эквадор
+[Egypt]
+Египет
+[El Salvador]
+Сальвадор
+[Equatorial Guinea]
+Экваториальная Гвинея
+[Eritrea]
+Эритрея
+[Estonia]
+Эстония
+[Ethiopia]
+Эфиопия
+[Falkland Islands (Malvinas)]
+Фолклендские (Мальвинские) о-ва
+[Faroe Islands]
+Фарерские о-ва
+[Fiji]
+Фиджи
+[Finland]
+Финляндия
+[France]
+Франция
+[French Guiana]
+Гвиана
+[French Polynesia]
+Французская Полинезия
+[French Southern and Antarctic Lands]
+Французские Южные и Антарктические территории
+[Gabon]
+Габон
+[Gambia]
+Гамбия
+[Georgia]
+Грузия
+[Germany]
+Германия
+[Ghana]
+Гана
+[Gibraltar]
+Гибралтар
+[Greece]
+Греция
+[Greenland]
+Гренландия
+[Grenada]
+Гренада
+[Guadeloupe]
+Гваделупа
+[Guam]
+Гуам
+[Guatemala]
+Гватемала
+[Guernsey]
+о. Гернси
+[Guinea]
+Гвинея
+[Guinea-Bissau]
+Гвинея-Бисау
+[Guyana]
+Гайана
+[Haiti]
+Гаити
+[Heard Island and McDonald Islands]
+о. Херд и о-ва Макдональд
+[Honduras]
+Гондурас
+[Hong Kong]
+Гонконг
+[Hungary]
+Венгрия
+[Iceland]
+Исландия
+[India]
+Индия
+[Indonesia]
+Индонезия
+[Iran]
+Иран
+[Iraq]
+Ирак
+[Ireland]
+Ирландия
+[Isle of Man]
+о. Мэн
+[Israel]
+Израиль
+[Italy]
+Италия
+[Jamaica]
+Ямайка
+[Japan]
+Япония
+[Jersey]
+о. Джерси
+[Jordan]
+Иордания
+[Kazakhstan]
+Казахстан
+[Kenya]
+Кения
+[Kiribati]
+Кирибати
+[North Korea]
+Северная Корея (КНДР)
+[South Korea]
+Южная Корея
+[Kuwait]
+Кувейт
+[Kyrgyzstan]
+Киргизия
+[Laos]
+Лаос
+[Latvia]
+Латвия
+[Lebanon]
+Ливан
+[Lesotho]
+Лесото
+[Liberia]
+Либерия
+[Libya]
+Ливия
+[Liechtenstein]
+Лихтенштейн
+[Lithuania]
+Литва
+[Luxembourg]
+Люксембург
+[Macau]
+Макао
+[Macedonia]
+Македония
+[Madagascar]
+Мадагаскар
+[Malawi]
+Малави
+[Malaysia]
+Малайзия
+[Maldives]
+Мальдивы
+[Mali]
+Мали
+[Malta]
+Мальта
+[Marshall Islands]
+Маршалловы о-ва
+[Martinique]
+Мартиника
+[Mauritania]
+Мавритания
+[Mauritius]
+Маврикий
+[Mayotte]
+Майотта
+[Mexico]
+Мексика
+[Micronesia, Federated States of]
+Микронезия
+[Moldova]
+Молдавия
+[Monaco]
+Монако
+[Mongolia]
+Монголия
+[Montenegro]
+Черногория
+[Montserrat]
+Монтсеррат
+[Morocco]
+Марокко
+[Mozambique]
+Мозамбик
+[Myanmar]
+Мьянма (Бирма)
+[Namibia]
+Намибия
+[Nauru]
+Науру
+[Nepal]
+Непал
+[Netherlands]
+Нидерланды
+[New Caledonia]
+Новая Каледония
+[New Zealand]
+Новая Зеландия
+[Nicaragua]
+Никарагуа
+[Niger]
+Нигер
+[Nigeria]
+Нигерия
+[Niue]
+Ниуэ
+[Norfolk Island]
+о. Норфолк
+[Northern Mariana Islands]
+Северные Марианские о-ва
+[Norway]
+Норвегия
+[Oman]
+Оман
+[Pakistan]
+Пакистан
+[Palau]
+Палау
+[Palestinian Territories]
+Палестина
+[Panama]
+Панама
+[Papua New Guinea]
+Папуа - Новая Гвинея
+[Paraguay]
+Парагвай
+[Peru]
+Перу
+[Philippines]
+Филиппины
+[Pitcairn Islands]
+о-ва Питкэрн
+[Poland]
+Польша
+[Portugal]
+Португалия
+[Puerto Rico]
+Пуэрто-Рико
+[Qatar]
+Катар
+[Reunion]
+о. Реюньон
+[Romania]
+Румыния
+[Russia]
+Россия
+[Rwanda]
+Руанда
+[Saint Barthelemy]
+Сен-Бартелеми
+[Saint Helena, Ascension and Tristan da Cunha]
+о-ва Св. Елены, Вознесения и Тристан-да-Кунья
+[Saint Kitts and Nevis]
+Сент-Китс и Невис
+[Saint Lucia]
+Сент-Люсия
+[Saint Martin (French part)]
+Сен-Мартен
+[Saint Pierre and Miquelon]
+Сен-Пьер и Микелон
+[Saint Vincent and the Grenadines]
+Сент-Винсент и Гренадины
+[Samoa]
+Самоа
+[San Marino]
+Сан-Марино
+[Sao Tome and Principe]
+Сан-Томе и Принсипи
+[Saudi Arabia]
+Саудовская Аравия
+[Senegal]
+Сенегал
+[Serbia]
+Сербия
+[Seychelles]
+Сейшельские о-ва
+[Sierra Leone]
+Сьерра-Леоне
+[Singapore]
+Сингапур
+[Sint Maarten (Dutch part)]
+Синт-Мартен
+[Slovakia]
+Словакия
+[Slovenia]
+Словения
+[Solomon Islands]
+Соломоновы о-ва
+[Somalia]
+Сомали
+[South Africa]
+Южно-Африканская Республика (ЮАР)
+[South Georgia and the South Sandwich Islands]
+Южная Георгия и Южные Сандвичевы о-ва
+[South Sudan]
+Южный Судан
+[Spain]
+Испания
+[Sri Lanka]
+Шри-Ланка
+[Sudan]
+Судан
+[Suriname]
+Суринам
+[Svalbard and Jan Mayen]
+Шпицберген и Ян-Майен
+[Swaziland]
+Свазиленд
+[Sweden]
+Швеция
+[Switzerland]
+Швейцария
+[Syria]
+Сирия
+[Taiwan]
+Тайвань
+[Tajikistan]
+Таджикистан
+[Tanzania]
+Танзания
+[Thailand]
+Тайланд
+[Togo]
+Того
+[Tokelau]
+Токелау
+[Tonga]
+Тонга
+[Trinidad and Tobago]
+Тринидад и Тобаго
+[Tunisia]
+Тунис
+[Turkey]
+Турция
+[Turkmenistan]
+Туркмения
+[Turks and Caicos Islands]
+о-ва Теркс и Кайкос
+[Tuvalu]
+Тувалу
+[Uganda]
+Уганда
+[Ukraine]
+Украина
+[United Arab Emirates]
+Объединённые Арабские Эмираты
+[United Kingdom]
+Великобритания
+[United States]
+США
+[United States Minor Outlying Islands]
+Внешние малые о-ва США
+[Uruguay]
+Уругвай
+[Uzbekistan]
+Узбекистан
+[Vanuatu]
+Вануату
+[Vatican City]
+Ватикан
+[Venezuela]
+Венесуэла
+[Vietnam]
+Вьетнам
+[Virgin Islands (British)]
+Виргинские о-ва (Британские)
+[Virgin Islands (United States)]
+Виргинские о-ва (Американские)
+[Wallis and Futuna]
+о-ва Уоллис и Футуна
+[Western Sahara]
+Сахарская Арабская Демократическая Республика
+[Yemen]
+Йемен
+[Zambia]
+Замбия
+[Zimbabwe]
+Зимбабве
+;file \src\mir_app\src\visibility.cpp
+;file \src\mir_core\src\bitmaps.cpp
+[Windows bitmaps]
+Изображения Windows Bitmap
+[JPEG bitmaps]
+Изображения JPEG
+[GIF bitmaps]
+Изображения GIF
+[PNG bitmaps]
+Изображения PNG
+;file \src\mir_core\src\Windows\timezones.cpp
+[<unspecified>]
+<не указано>
+;file \include\m_message.h
+[Message window toolbar]
+Панель кнопок окна сообщений
+;file \include\m_popup.h
+[Do nothing]
+Ничего не делать
+[Dismiss popup]
+Закрыть

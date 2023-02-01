@@ -1,0 +1,185 @@
+﻿//***************************************************************************
+//
+// AUTHOR:  James White (feel free to remove or otherwise mangle any part)
+//
+// DESCRIPTION: This class is alarmingly similar to the CColourPicker control
+// created by Chris Maunder of www.codeproject.com. It is so as it was blatantly
+// copied from that class and is entirely dependant on his other great work
+//  in CColourPopup. I was hoping for (cough.. gag..) a more Microsoft look
+//  and   think this is pretty close. Hope you like it.
+//
+// ORIGINAL: http://www.codeproject.com/miscctrl/colour_picker.asp
+//
+//***************************************************************************
+
+void INCLUDEREPLACE(){CX_INCL("ColourPopup.h");}
+
+void        DDX_ColorButton(CDataExchange *pDX, int nIDC, unsigned long& crColour);
+
+class CColorButton :        CButton
+{
+public:
+ //DECLARE_DYNCREATE(CColorButton);
+
+ //***********************************************************************
+ // Name:  CColorButton
+ // Description: Default constructor.
+ // Parameters: None.
+ // Return:  None.
+ // Notes:  None.
+ //***********************************************************************
+ CColorButton(void);
+
+ //***********************************************************************
+ // Name:  CColorButton
+ // Description: Destructor.
+ // Parameters: None.
+ // Return:  None.
+ // Notes:  None.
+ //***********************************************************************
+ virtual ~CColorButton(void);
+
+ //***********************************************************************
+ //**                        Property Accessors                         **
+ //***********************************************************************
+                                                      unsigned long Color;
+                                                                unsigned long DefaultColor;
+                                                                   int   TrackSelection;
+                                                const char*  CustomText;
+                                                const char*  DefaultText;
+
+ //***********************************************************************
+ // Name:  GetColor
+ // Description: Returns the current color selected in the control.
+ // Parameters: void
+ // Return:  unsigned long
+ // Notes:  None.
+ //***********************************************************************
+ unsigned long GetColor(void) const;
+
+ //***********************************************************************
+ // Name:  SetColor
+ // Description: Sets the current color selected in the control.
+ // Parameters: unsigned long Color
+ // Return:  None.
+ // Notes:  None.
+ //***********************************************************************
+ void SetColor(unsigned long Color);
+
+
+ //***********************************************************************
+ // Name:  GetDefaultColor
+ // Description: Returns the color associated with the 'default' selection.
+ // Parameters: void
+ // Return:  unsigned long
+ // Notes:  None.
+ //***********************************************************************
+ unsigned long GetDefaultColor(void) const;
+
+ //***********************************************************************
+ // Name:  SetDefaultColor
+ // Description: Sets the color associated with the 'default' selection.
+ //    The default value is COLOR_APPWORKSPACE.
+ // Parameters: unsigned long Color
+ // Return:  None.
+ // Notes:  None.
+ //***********************************************************************
+ void SetDefaultColor(unsigned long Color);
+
+ //***********************************************************************
+ // Name:  SetCustomText
+ // Description: Sets the text to display in the 'Custom' selection of the
+ //    CColourPicker control, the default text is "More Colors...".
+ // Parameters: const char* tszText
+ // Return:  None.
+ // Notes:  None.
+ //***********************************************************************
+ void SetCustomText(const char* tszText);
+
+ //***********************************************************************
+ // Name:  SetDefaultText
+ // Description: Sets the text to display in the 'Default' selection of the
+ //    CColourPicker control, the default text is "Automatic". If
+ //    this value is set to "", the 'Default' selection will not
+ //    be shown.
+ // Parameters: const char* tszText
+ // Return:  None.
+ // Notes:  None.
+ //***********************************************************************
+ void SetDefaultText(const char* tszText);
+
+ //***********************************************************************
+ // Name:  SetTrackSelection
+ // Description: Turns on/off the 'Track Selection' option of the control
+ //    which shows the colors during the process of selection.
+ // Parameters: int  bTrack
+ // Return:  None.
+ // Notes:  None.
+ //***********************************************************************
+ void SetTrackSelection(int  bTrack);
+
+ //***********************************************************************
+ // Name:  GetTrackSelection
+ // Description: Returns the state of the 'Track Selection' option.
+ // Parameters: void
+ // Return:  int 
+ // Notes:  None.
+ //***********************************************************************
+ int  GetTrackSelection(void) const;
+
+ //{{           (CColorButton)
+    public:
+    virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+    protected:
+    virtual void PreSubclassWindow();
+    //}}           
+
+protected:
+ //{{       (CColorButton)
+            int  OnClicked();
+            int OnCreate(LPCREATESTRUCT lpCreateStruct);
+    //}}       
+         long OnSelEndOK(unsigned int lParam, long wParam);
+            long OnSelEndCancel(unsigned int lParam, long wParam);
+            long OnSelChange(unsigned int lParam, long wParam);
+
+ //***********************************************************************
+ // Name:  DrawArrow
+ // Description: None.
+ // Parameters: CDC* pDC
+ //    RECT* pRect
+ //    int iDirection
+ //     0 - Down
+ //     1 - Up
+ //     2 - Left
+ //     3 - Right
+ // Return:  static None.
+ // Notes:  None.
+ //***********************************************************************
+ static void DrawArrow(CDC* pDC,
+        RECT* pRect,
+        int iDirection = 0,
+        unsigned long clrArrow = RGB(0,0,0));
+
+
+
+
+ unsigned long m_Color;
+ unsigned long m_DefaultColor;
+ CString m_strDefaultText;
+ CString m_strCustomText;
+ int  m_bPopupActive;
+ int  m_bTrackSelection;
+
+private:
+
+         CButton _Inherited = "CX_TYPEDEF";
+
+};
+
+
+
+
+
+
+ 

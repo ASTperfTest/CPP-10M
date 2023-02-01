@@ -1,0 +1,172 @@
+#muuid {2e0d2ae3-e123-4607-8539-d4448d675ddb}
+;============================================================
+;  File: NimContact.dll
+;  Plugin: Non-IM Contact
+;  Version: 0.6.0.3
+;  Authors: Jonathan Gordon
+;============================================================
+[Non-IM Contact allows you to add 'contacts' that can act as shortcuts to other programs, or links to web pages.\r\nThe contacts name can be read from a text file (includes any ASCII file).\r\nThis plugin is a combination of Favorites and Text Reader plugins both made by me)]
+Не-IM контакт дозволяє додавати у вигляді "контактів" посилання на інші програми і веб-сторінки. Імена цих контактів можуть братися з текстового файлу (файлів ASCII).
+;file \protocols\Non-IM Contact\res\resource.rc
+[View/Edit Files]
+Перегляд/Редагування файлів
+[Add File]
+Додати файл
+[Add URL]
+Додати URL
+[Remove Selected File]
+Видалити вибраний
+[file(#)]
+файл(#)
+[URL]
+Посилання
+[Update URL every]
+Оновлювати URL через
+[Intervals]
+періодів
+[If the protocol timer is disabled, web pages won't be updated]
+При вимкненому таймері посилання не оновлюються
+[contact display info]
+
+[Contacts display name]
+Коротке ім'я
+[Contacts Tooltip]
+Підказка
+[other settings]
+Додаткові налаштування
+[Link]
+Посилання
+[Program parameters:]
+Аргументи програми:
+[O&pen File]
+&Відкрити файл
+[O&pen Folder]
+Від&крити папку
+[Link Settings]
+Налаштування посилань
+[Contact list settings]
+Налаштування списку
+[Group:]
+Група:
+[Status Icon]
+Значок статусу
+[Group\\Sub-Group]
+Група\\Підгрупа
+[Timer Settings]
+Налаштування таймера
+[Use Timer]
+Використовувати таймер
+[Contact is always visible]
+Контакт завжди видимий
+[Unless Non-IM Contacts protocol is OFFLINE]
+Сховати, якщо протокол не-IM контакт не в мережі
+[Timer Intervals.  ]
+
+[Away as another status]
+"Відсутній" як інший статус
+[Disable timer]
+Вимкнути таймер
+[Timer interval (in seconds)]
+Інтервал (у секундах)
+[This will take affect after Non-IM Contacts' status is changed]
+Зміни вступлять у силу після зміни статусу контактів
+[Timer Options]
+Опції таймера
+[String Maker]
+Створити рядок
+[&Test String]
+&Перевірка
+[&Exit]
+Ви&хід
+[String to test]
+Рядок для перегляду
+[Returns....]
+Повертає...
+[line()]
+
+[start()]
+
+[end()]
+
+[wholeline()]
+
+[csv()]
+
+[file()]
+
+[filename()]
+
+[Help]
+Довідка
+[Copy / Export contact]
+Копіювати/Експортувати контакт
+[&Export Non-IM Contact]
+&Експорт не-IM контакту
+[Co&py Non-IM Contact]
+Ко&піювати не-IM контакт
+[Type one replace string per line in the format "original text,new text"]
+Один рядок заміни на кожен рядок у форматі "оригінал,новий"
+[EXAMPLE: %fn1,%fn2]
+ПРИКЛАД: %fn1,%fn2
+;file \protocols\Non-IM Contact\src\contactinfo.cpp
+[Select Folder]
+Вибрати папку
+[Non-IM Contact protocol timer is Disabled]
+Вимикати протокол по таймеру
+[Timer intervals... Non-IM Contact Protocol timer is %d seconds]
+Інтервал... Інтервал протоколу Non-IM Contact %d секунд
+[New Non-IM Contact]
+Новий не-IM контакт
+;file \protocols\Non-IM Contact\src\dialog.cpp
+[String replacing variables...\r\nThe following are all the valid variables that can be used. Refer to the wiki.miranda-ng.org for a proper explanation.\r\n\r\nfile(X)\t\t<- specifies the file to read from. MUST be followed by either start() or end() or wholeline()\r\nfilename(X)\t<- copies the filename of file X.\r\nstart(...)\t\t<- specifies where to start copying from.\r\nend(...)\t\t<- specifies where to stop copying.\r\nwholeline(line(...))\t<- specifies a whole line to copy\r\n\r\nstart() and end() explained\r\n.........................\r\nMUST start with line() followed by a number or a string inside " marks, OR csv(separatorX) variable. The number specifies which character in the line to start/end copying. The string specifies a string in the line to start/end copying.\r\n\r\ncsv(seperatorX) explained...\r\nSeperator is either "tab" or "space" or any SINGLE character. X is the Xth separator to pass before copying, (or to stop before).\r\n\r\nLastly the line(...) variable...\r\nInside the brackets must be either a number (to specify the line number), or a string inside " marks (to use the line with that string), or lastline(X). The X in lastline is the Xth line above the last line, i.e., lastline(1) will use the 2nd last line of the file. If searching for a line with "some words" you may put a + or - X after the closing ), i.e., line("some words")+3 to go 3 lines after the line with "some words".\r\n\r\nSome examples...\r\nfilename(0)    <- will display the filename of the 0th file\r\nfile(0)wholeline(line(0)))    <- will display the whole first line of the 0th file\r\nfile(0)wholeline(line("hello")-1)))    <- the wholeline above the first occurrence of "hello" in the file\r\nfile(0)start(line(lastline(1))csv(tab2))end(line(lastline())csv(tab4)))    <- starts at the 2nd last line of the file, from the 2nd tab variable, until the 4th tab variable in the last line (in the 0th file)\r\nfile(0)start(line("hello")+1"zzzz")end(line(6)17))    <- starts from the first occurrence of zzzz in the line after the first occurrence of hello, until the 17th character in the 6th line (starting from line 0) of the 0th file.\r\n]
+
+[Contacts Display Info]
+
+[Link and Contact list Settings]
+Посилання та налаштування списку
+[Copy Contact]
+Копіювати контакт
+[Files]
+Файли
+[Edit Non-IM Contact "%s"]
+Редагувати "%s"
+;file \protocols\Non-IM Contact\src\files.cpp
+[Do you want to overwrite the contents of the file?\r\n\r\nPressing No will append these contacts to the end of the file.]
+Перезаписати вміст файлу?\r\n\r\nНатисніть "Ні", щоб дописати ці дані в кінець файлу.
+[File couldn't be opened]
+Неможливо відкрити файл
+[File couldn't be opened,2]
+
+[line(%-3d) = | %s]
+
+;file \protocols\Non-IM Contact\src\http.cpp
+[Non-IM Contacts]
+Не-IM контакти
+;file \protocols\Non-IM Contact\src\main.cpp
+[Plugins]
+Плагіни
+[Main Icon]
+Головний значок
+[Non-IM Contact]
+Не-IM контакт
+[&Non-IM Contact]
+&Не-IM контакт
+[&Add Non-IM Contact]
+&Додати не-IM контакт
+[&View/Edit Files]
+&Перегляд/редагування файлів
+[&Export all Non-IM Contacts]
+&Експорт усіх не-IM контактів
+[&Import Non-IM Contacts]
+&Імпорт не-IM контактів
+[&String Maker]
+&Створити рядок
+[E&dit Contact Settings]
+З&мінити налаштування контакту
+;file \protocols\Non-IM Contact\src\namereplacing.cpp
+[%s - ERROR: no line specified or line not found (in %s)]
+%s - Помилка: рядок не вказаний або не існує (в %s)
+[%s - ERROR: file couldn't be opened (in %s)]
+%s - Помилка: неможливо відкрити файл (в %s)
+[%s - ERROR: no file specified in settings (in %s)]
+%s - Помилка: файл не вказаний у налаштуваннях (в %s)

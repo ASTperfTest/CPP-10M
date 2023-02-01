@@ -1,0 +1,654 @@
+#muuid {32579908-724b-467f-adad-22b6359a749a}
+;============================================================
+;  File: VKontakte.dll
+;  Plugin: VKontakte protocol
+;  Version: 0.1.14.1
+;  Authors: Miranda NG team
+;============================================================
+[VKontakte protocol support for Miranda NG.]
+Zapewnia obsługę protokołu VKontakte w Mirandzie NG.
+;file \protocols\VKontakte\res\resource.rc
+[Show in protocol menu ]
+Pokazuje w menu protokołu
+[Create new chat]
+Utwórz nowy czat
+[Status message]
+Opis
+[Send message to my wall]
+Wyślij post na moją tablicę
+[Load news from VK]
+Załaduj aktualności z VK
+[Load history for all contacts from VK]
+Załaduj historię dla wszystkich kontaktów z VK
+[Wipe contacts missing in friend list]
+Usuń kontakty spoza listy znajomych
+[Visit profile]
+Odwiedź profil
+[[img] BBCode support for image]
+Wsparcie tagu BBCode [img] dla obrazków
+[off]
+wyłączone
+[for original size images]
+dla obrazków w oryginalnym rozmiarze
+[for preview max 130px*130px]
+do podglądu maks. 130px*130px
+[for preview max 604px*604px]
+do podglądu maks. 604px*604px
+[BBCode support on news and event notifications]
+Wsparcie dla BBCode w powiadomieniach o aktualnościach i zdarzeniach
+[basic ([b], [i], [u], [s])]
+podstawowe ([b], [i], [u], [s])
+[advanced (+[url], [size], [color], [code])]
+zaawansowane (+[url], [size], [color], [code])
+[Use this setting also for attachments on news and notifications]
+Używaj tego ustawienia także dla załączników do aktualności i powiadomień
+[BBCode support on attachments]
+Wsparcie BBCode dla załączników
+[Other]
+Inne
+[Process stickers as smileys]
+Przetwarzaj naklejki jako uśmieszki
+[Shorten links for audio attachments]
+Skracaj linki do załączników audio
+[Use non-standard popups for news and event notifications]
+Używaj niestandardowych powiadomień dla  aktualności i zdarzeń
+[Add message link to messages with attachments]
+Dodawaj wiadomość z linkiem w przypadku wiadomości z załącznikiem
+[News and event notifications]
+Powiadomienia o aktualnościach i zdarzeniach
+[WARNING: Causes excessive network traffic!!!]
+Ostrzeżenie: powoduje duże zużycie danych
+[Enable news feeds]
+Włącz kanały aktualności
+[Interval for news updates (min):]
+Co jaki czas odświeżać aktualności (min):
+[Enable event notifications]
+Włącz powiadomienia o zdarzeniach
+[Interval for notification updates (min):]
+Co jaki czas odświeżać powiadomienia (min):
+[Mark notification as viewed on receive]
+Oznacz powiadomienie jako obejrzane po otrzymaniu
+[Special contact always enabled]
+Specjalny kontakt zawsze włączony
+[Autoclear news and notification history]
+Automatycznie kasuj historię aktualności i powiadomień
+[News types]
+Typy aktualności
+[Wall posts]
+Posty na tablicy
+[Photos]
+Zdjęcia
+[Photos tags]
+Znaczniki na zdjęciach
+[Wall photos]
+Zdjęcia na tablicy
+[News sources]
+Źródła aktualności
+[Friends]
+Znajomi
+[Groups]
+Grupy
+[Include banned sources]
+Uwzględnij zabronione źródła
+[Pages]
+Strony
+[Subscriptions to users]
+Subskrypcje użytkowników
+[No reposts]
+Bez udostępnionych postów
+[Notifications types]
+Typy powiadomień
+[Comments]
+Komentarze
+[Likes]
+Polubienia
+[Invites]
+Zaprasza
+[Reposts]
+Udostępnienia
+[Mentions in comments]
+Wspomnienia w komentarzach
+[Accepted friend requests]
+Zaakceptowane prośby znajomości
+[E-mail or phone number:]
+E-mail lub numer telefonu:
+[Password:]
+Hasło:
+[Open VKontakte site]
+Otwórz stronę VKontakte
+[Advanced]
+Zaawansowane
+[Do not open chat windows on creation]
+Nie otwieraj okien czatów po ich utworzeniu
+[Sync read message status from server]
+Synchronizuj status odczytania wiadomości z serwerem
+[Always notify as unread for all incoming message]
+Zawsze powiadamiaj o nieprzeczytanych wiadomościach dla wszystkich przychodzących
+[Force invisible status upon user activity]
+Wymuś status niewidoczny po wykryciu aktywności użytkownika
+[Invisible interval timeout (min):]
+Czas wygasania niewidoczności (min):
+[Send VK-objects links as attachments]
+
+[and load sent attachments]
+
+[Notify about changes of contacts audio broadcast]
+
+[When I ban user...]
+Gdy banuję użytkownika...
+[Report abuse]
+Zgłoś naruszenie
+[Clear server history]
+Wyczyść historię serwera
+[Remove from friend list]
+Usuń z listy znajomych
+[Remove from contact list]
+Usuń z listy kontaktów
+[Broadcast music...]
+Udostępniaj muzykę...
+[as regular status for unknown music and audio status otherwise]
+Jako zwykły status dla muzyki nieznanej, w przeciwnym razie status audio
+[as audio status only]
+Tylko jako status audio
+[as regular status only]
+Tylko jako zwykły status
+[Login settings]
+Opcje logowania
+[Local settings]
+Ustawienia lokalne
+[Contact list group:]
+Grupa na liście kontaktów:
+[Language for names and titles:]
+Język dla nazw i tytułów:
+[Mark message as read:]
+Oznacz wiadomości jako odczytane:
+[Sync history on protocol online:]
+Synchronizuj historię gdy połączony:
+[Load last messages when message window open and local history is empty]
+Załaduj ostatnie wiadomości przy otwarciu okna wiadomości i pustej lokalnej historii rozmów
+[Use local time for received messages]
+Używaj czasu lokalnego dla odebranych wiadomości
+[Load only friends to local contact list]
+Wczytuj do lokalnej listy kontaktów wyłącznie znajomych
+[Server-side delivery confirmation]
+Potwierdzenie dostarczenia ze strony serwera
+[Bots challenge test]
+Test sprawdzający obecność botów
+[Instruction:]
+Instrukcja:
+[Submit]
+Wyślij
+[Cancel]
+Anuluj
+[Open in browser]
+Otwórz w przeglądarce
+[Invite user to chat]
+Zaproś użytkownika do czatu
+[Choose one of your contacts to be invited:]
+Wybierz jeden z kontaktów, który chcesz zaprosić:
+[Create group chat]
+Utwórz czat grupowy
+[Mark users you want to invite to a new chat]
+Zaznacz użytkowników, których chcesz zaprosić do nowego czatu
+[New chat's title:]
+Nazwa nowego czatu:
+[Share]
+Udostępnij
+[URL:]
+Link:
+[Only for friends]
+Tylko dla znajomych
+;file \protocols\VKontakte\src\misc.cpp
+[Notification icon]
+Ikona powiadomienia
+[Read message icon]
+Ikona odczytanej wiadomości
+[Visit profile icon]
+Ikona odwiedź profil
+[Load server history icon]
+Ikona załaduj historię z serwera
+[Add to friend list icon]
+Ikona dodaj do znajomych
+[Delete from friend list icon]
+Ikona usuń ze znajomych
+[Report abuse icon]
+Ikona zgłoś naruszenie
+[Ban user icon]
+Ikona zbanuj użytkownika
+[Broadcast icon]
+Ikona transmisji
+[Status icon]
+Ikona Statusu
+[Wall message icon]
+Ikona posta na tablicy
+[Mark messages as read icon]
+Ikona odczytania wiadomości
+[Protocols]
+Protokoły
+[VKontakte]
+VKontakte
+[Access denied! Data will not be sent or received.]
+Odmowa dostępu! Dane nie będą wysyłane, ani odbierane.
+[Error]
+Błąd
+[You have to validate your account before you can use VK in Miranda NG]
+Musisz aktywować swoje konto zanim użyjesz VK w Mirandzie NG
+[Error %d. Data will not be sent or received.]
+Błąd %d. Dane nie zostaną wysłane lub odebrane.
+[One of the parameters specified was missing or invalid]
+Brakuje jednego z określonych parametrów lub jest on nieprawidłowy
+[Access to adding post denied]
+Odmówiono dostępu do dodawania postów
+[Can't send messages for users from blacklist]
+Nie można wysłać wiadomości do blokowanych użytkowników
+[Can't send messages for users without dialogs]
+
+[Can't send messages to this user due to their privacy settings]
+Nie można wysłać wiadomości do tego użytkownika ze względu na jego ustawienia prywatności
+[Message is too long]
+Wiadomość jest za długa
+[Enter the missing digits between %s and %s of the phone number linked to your account]
+Wprowadź brakujące kropki pomiędzy %s i %s numeru telefonu połączonego z Twoim kontem
+[Attention!]
+Uwaga!
+[Enter confirmation code]
+Wprowadź kod weryfikacyjny
+[Enter new nickname]
+Wprowadź nowy nick
+[Message read: %s]
+Wiadomość odczytana: %s
+[has invited you to a group]
+zaprosił/a Cię do grupy
+[has invited you to subscribe to a page]
+zaprosił/a Cię do subskrypcji strony
+[invites you to event]
+zaprasza Cię na wydarzenie
+[commented on your post]
+skomentował/a twój post
+[commented on your photo]
+skomentował/a twoje zdjęcie
+[commented on your video]
+skomentował/a twój film
+[replied to your comment]
+odpowiedział/a na twój komentarz
+[replied to your comment to photo]
+odpowiedział/a na twój komentarz pod zdjęciem
+[replied to your comment to video]
+odpowiedział/a na twój komentarz pod filmem
+[replied to your topic]
+odpowiedział/a w twoim temacie
+[liked your post]
+polubił/a twój post
+[liked your comment]
+polubił/a twój komentarz
+[liked your photo]
+polubił/a twoje zdjęcie
+[liked your video]
+polubił/a twój film
+[liked your comment to photo]
+polubił/a twój komentarz pod zdjęciem
+[liked your comment to video]
+polubił/a twój komentarz pod filmem
+[liked your comment to topic]
+Polubił/a twój komentarz w temacie
+[shared your post]
+udostępnił/a twój post
+[shared your photo]
+udostępnił/a twoje zdjęcie
+[shared your video]
+udostępnił/a twój film
+[Photo]
+Zdjęcie
+[Attachments:]
+Załączniki:
+[Audio]
+Audio
+[Audio message]
+
+[Transcription]
+
+[Graffiti]
+
+[Video]
+Wideo
+[Link]
+Link
+[Document]
+Dokument
+[Wall post]
+Post na tablicy
+[(Unknown contact)]
+(Nieznany kontakt)
+[Wall reply]
+
+[from]
+od
+[Story]
+
+[Sticker]
+
+[Product]
+Produkt
+[Price]
+Cena
+[Gift]
+Prezent
+[Unsupported or unknown attachment type: %s]
+Niewspierany albo nieznany typ załącznika: %s
+[Text]
+Tekst
+[Message from]
+Wiadomość od
+[at]
+o
+[User restored control over own page]
+Użytkownik odzyskał kontrolę nad swoją stroną
+[User was deactivated (deleted)]
+Użytkownik został dezaktywowany (usunięty)
+[User was deactivated (banned)]
+Użytkownik został dezaktywowany (zbanowany)
+;file \protocols\VKontakte\src\vk_chats.cpp
+[Participants]
+Uczestnicy
+[Owners]
+Właściciele
+[Message link]
+Link wiadomości
+[create chat]
+stwórz czat
+[kick user]
+wyrzuć użytkownika
+[left chat]
+opuścił/a czat
+[invite user]
+zaproś użytkownika
+[returned to chat]
+powrócił do czatu
+[change chat title to]
+Zmień temat czatu na
+[pin message]
+
+[unpin message]
+
+[changed chat cover:]
+zmieniono okładkę czatu:
+[deleted chat cover]
+usunięto okładkę czatu
+[chat action not supported]
+akcja czatu niewspierana
+[Unknown]
+Nieznany
+[Enter new chat title]
+Wprowadź nową nazwę czatu
+[Adding bots to MUC is not supported]
+
+[Not supported]
+Nie obsługiwane
+[This chat is going to be destroyed forever with all its contents. This action cannot be undone. Are you sure?]
+Ten czat zostanie zniszczony wraz z zawartością. Ta operacja nie będzie mogła zostać cofnięta. Czy jesteś pewien?
+[Warning]
+Ostrzeżenie
+[You've been kicked by ]
+Zostałeś wykopany przez\s
+[Chat]
+Czat
+[Kick bots is not supported]
+
+[&Invite a user]
+&Zaproś użytkownika
+[View/change &title]
+Pokaż/zmień &nazwę
+[&Destroy room]
+&Zniszcz pokój
+[&User details]
+Dane &kontaktu
+[Change nick]
+Zmień nick
+[&Kick]
+&Wyrzuć
+[%s is typing a message...]
+%s pisze wiadomość...
+;file \protocols\VKontakte\src\vk_dialogs.cpp
+[Enter the text you see]
+Wprowadź tekst, który widzisz
+[Wall message for %s]
+Post na tablicy dla %s
+[You delete %s from the contact list.\nWhat needs to be done additionally?]
+
+[Remove %s from your friend list]
+
+[Clear server history with %s]
+
+[Deleting %s from contact list]
+
+;file \protocols\VKontakte\src\vk_feed.cpp
+[New news]
+Nowe aktualności
+[New notifications]
+Nowe powiadomienia
+[User was tagged in these photos:]
+Użytkownik został oznaczony na tych zdjęciach:
+[(photos)]
+(zdjęcia)
+[(attachments)]
+(załączniki)
+[News from %s\n%s]
+Aktualizacja od %s\n%s
+[News from %s]
+Aktualności od %s
+[\tRepost from %s\n%s]
+\tUdostępnione od %s\n%s
+[Repost from %s]
+Podane dalej przez %s
+[Video description:]
+Opis filmu:
+[Post text:]
+Treść posta:
+[Topic text:]
+Treść tematu:
+;file \protocols\VKontakte\src\vk_files.cpp
+[Protocol is offline]
+Protokół jest rozłączony
+[File does not exist]
+Plik nie istnieje
+[File type not supported]
+Niewspierany typ pliku
+[Error open file]
+Błąd otwierania pliku
+[Error read file]
+Błąd odczytu pliku
+[File upload error]
+Błąd wysyłania pliku
+[Upload server returned empty URL]
+Serwer hosta zwrócił pusty URL
+[Invalid or unknown recipient user ID]
+Nieprawidłowy lub nieznany ID nadawcy
+[Couldn't save file]
+Nie udało się zapisać pliku
+[Invalid album id]
+Niepoprawny identyfikator albumu
+[Invalid server]
+Niepoprawny serwer
+[Invalid hash]
+Niepoprawna suma kontrolna
+[Invalid audio]
+Niepoprawne audio
+[The audio file was removed by the copyright holder and cannot be reuploaded]
+Plik audio został usunięty przez właściciela praw autorskich i nie może zostać załadowany ponownie
+[Invalid filename]
+Niepoprawna nazwa pliku
+[Invalid filesize]
+Niepoprawny rozmiar pliku
+[Unknown error occurred]
+Wystąpił nieznany błąd
+;file \protocols\VKontakte\src\vk_history.cpp
+[Are you sure to reload all messages from vk.com?\nLocal contact history will be deleted and reloaded from the server.\nIt may take a long time.\nDo you want to continue?]
+Czy na pewno chcesz ponownie załadować wszystkie wiadomości z vk.com?\nLokalna historia kontaktu zostanie usunięta i ponownie załadowana z serwera.\nTo może zająć dużo czasu.\nCzy chcesz kontynuować?
+[Are you sure you want to reload all messages for all contacts from vk.com?\nLocal contact history will be deleted and reloaded from the server.\nIt may take a very long time and/or corrupt Miranda database.\nDo you want to continue?]
+
+[Error loading message history from server.]
+Błąd w trakcie pobierania historii wiadomości z serwera.
+[Loading messages for all contacts is completed.]
+Zakończono pobieranie wiadomości dla wszystkich kontaktów.
+[Loading history]
+Pobieranie historii
+[Error loading message history for %s from server.]
+
+[%x at %X]
+
+[Edited message (updated %s):\n]
+
+[Loading messages for %s is completed.]
+Zakończono pobieranie wiadomości dla %s.
+;file \protocols\VKontakte\src\vk_messages.cpp
+[\nOriginal message:\n]
+
+;file \protocols\VKontakte\src\vk_options.cpp
+[Network]
+Protokoły
+[Account]
+Konto
+[News and notifications]
+Aktualności i powiadomienia
+[View]
+Pokaż
+[Menu]
+Menu
+[Account language]
+Język konta
+[English]
+Angielski
+[Russian]
+Rosyjski
+[Belarusian]
+Białoruski
+[Ukrainian]
+Ukraiński
+[Spanish]
+Hiszpański
+[Finnish]
+Fiński
+[German]
+Niemiecki
+[Italian]
+Włoski
+[automatically]
+automatycznie
+[for last 1 day]
+z ostatniego dnia
+[for last 3 days]
+z ostatnich 3 dni
+[on read]
+po przeczytaniu
+[on receive]
+po otrzymaniu
+[on reply]
+po udzieleniu odpowiedzi
+[on typing]
+podczas pisania
+[These changes will take effect after Miranda NG restart.\nWould you like to restart it now?]
+Te zmiany zostaną wprowadzone po ponownym uruchomieniu Mirandy NG.\nCzy chcesz to zrobić teraz?
+[VKontakte protocol]
+Protokół VKontakte
+;file \protocols\VKontakte\src\vk_pollserver.cpp
+[This message has been deleted by sender in %s:\n]
+
+;file \protocols\VKontakte\src\vk_proto.cpp
+[Newsfeed & notification event]
+Zdarzenie powiadomień kanału aktualności
+[Mark messages as read]
+Oznacz wiadomości jako przeczytane
+[Send message to user's wall]
+Wyślij posta na tablicę użytkownika
+[Add as friend]
+Dodaj jako znajomego
+[Delete from friend list]
+Usuń z listy znajomych
+[Ban user]
+Zbanuj użytkownika
+[Destroy room]
+Zniszcz pokój
+[Open broadcast]
+Otwórz transmisję
+[Reload messages from vk.com...]
+Załaduj wiadomości ponownie z vk.com.,,
+[for last week]
+z ostatniego tygodnia
+[for last 30 days]
+z ostatnich 30 dni
+[for last 90 days]
+z ostatnich 90 dni
+[for all time]
+wszystko
+[Errors]
+Błędy
+[Notifications]
+Powiadomienia
+[VK user activate/deactivate action]
+
+[User %s added as friend]
+Użytkownik %s dodany jako znajomy
+[You cannot add yourself as friend]
+Nie możesz dodać siebie samego jako znajomego
+[Cannot add this user to friends as they have put you on their blacklist]
+Nie można dodać tego użytkownika do znajomych, ponieważ umieścił cię on na czarnej liście
+[Cannot add this user to friends as you put him on blacklist]
+Nie można dodać tego użytkownika do znajomych, ponieważ umieściłeś go na czarnej liście
+;file \protocols\VKontakte\src\vk_status.cpp
+[Loading status message from vk.com.\nThis may take some time.]
+Ładowanie opisu z vk.com.\nTo może zająć trochę czasu.
+[Waiting...]
+Oczekiwanie...
+[Enter new status message]
+Wprowadź nowy opis
+;file \protocols\VKontakte\src\vk_thread.cpp
+[Service message]
+
+[%s is listening to]
+%s słucha
+[Interests]
+Zainteresowania
+[Activities]
+Aktywność
+[Music]
+Muzyka
+[Movies]
+Filmy
+[TV]
+TV
+[Books]
+Książki
+[Games]
+Gry
+[Quotes]
+Notowania giełdowe
+[Please authorize me to add you to my friend list.]
+Proszę, autoryzuj mnie, bym mógł dodać Cię do znajomych.
+[Are you sure to wipe local contacts missing in your friend list?]
+Czy na pewno chcesz usunąć lokalne kontakty nie będące na Twojej liście znajomych?
+[Are you sure to delete %s from your friend list?]
+Czy na pewno chcesz usunąć %s ze znajomych?
+[User %s was deleted from your friend list]
+Użytkownik %s został usunięty ze znajomych
+[Your request to the user %s was deleted]
+Twoja prośba do użytkownika %s została usunięta
+[Friend request from the user %s declined]
+Prośba o dołączenie do znajomych użytkownika %s odrzucona
+[Friend request suggestion for the user %s deleted]
+Sugestia użytkownika %s jako znajomego usunięta
+[User or request was not deleted]
+Użytkownik lub prośba nie zostały usunięte
+[ report abuse on him/her]
+ zgłoś go/ją za nadużycie
+[ clear server history with him/her]
+ wyczyść jego/jej historię z serwera
+[ remove him/her from your friend list]
+ usuń go/ją z listy znajomych
+[ remove him/her from your contact list]
+ usuń go/ją z listy kontaktów
+[Are you sure to ban %s? %s%sContinue?]
+Czy jesteś pewien, że chcesz zbanować %s? %s%sKontynuować?
+[\nIt will also]
+\nTo także
+[Are you sure to report abuse on %s?]
+Czy na pewno chcesz zgłosić nadużycie przez %s?

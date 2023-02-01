@@ -1,0 +1,352 @@
+#muuid {cd5427fb-5320-4f65-b4bf-86b7cf7b5087}
+;============================================================
+;  File: Webview.dll
+;  Plugin: Webview
+;  Version: 0.1.3.3
+;  Authors: Vincent Joyce
+;============================================================
+[Adds web pages as contacts to your contact list and can display text and/or issue change alerts from those pages in a window.]
+Позволяет добавить веб-страницы в качестве контактов в список контактов, показывает текст и/или изменения этих страниц.
+;file \protocols\WebView\res\webview.rc
+[Webview]
+
+[Update data every]
+Обновлять каждые
+[minutes]
+минут
+[Delay update on start]
+Задержка обновления при запуске
+[seconds]
+секунд
+[Hide icon on status bar]
+Скрыть значок в панели статусов
+[Load page on window open]
+Загр. страницу при открытии окна
+[Update data on startup]
+Обновлять данные при запуске
+[Only update window on alert]
+
+[Window appearance]
+Внешний вид окна
+[Background color:]
+Цвет фона:
+[Text color:]
+Цвет текста:
+[Bold]
+Жирный
+[Italic]
+Курсив
+[Underline]
+Подчёркивание
+[Save individual window positions]
+Сохран. положение для каждого окна
+[Error messages]
+Ошибки
+[Suppress error messages]
+Откл. сообщения об ошибках
+[Display using popup or OSD plugin]
+Исп. всплывающие окна или OSD
+[Expert options]
+Расширенные настройки
+[Disable download protection]
+
+[(not recommended)]
+(не рекомендуется)
+[Display data in popup on alert]
+
+[Display data in popup]
+
+[You may need to restart Miranda NG for this change to take effect.]
+
+[Contact name:]
+Имя контакта:
+[URL:]
+URL:
+[Display]
+Показывать
+[Between start and end strings]
+Между начальной и конечной строками
+[Whole web page]
+
+[Start:]
+Начало:
+[End:]
+Конец:
+[Copy strings to alerts]
+
+[Double click action]
+
+[Opens web page]
+
+[Opens data window]
+Открыть окно с данными
+[Display clean-up]
+Очистить дисплей
+[Remove HTML]
+Удалить HTML
+[Cancel]
+Отмена
+[Apply]
+Применить
+[Find]
+Найти
+[&Find next]
+&Следующий
+[Find what:]
+Найти:
+[Search was completed.]
+Поиск завершён.
+[Events and alerts]
+События и оповещения
+[Enable alerts]
+Включить оповещения
+[Always log to file]
+
+[Add time and date of alert to contact name]
+Добавить время и дату к имени контакта
+[Use 24 hour time format instead of 12 hour]
+24-часовой формат времени вместо 12-часового
+[Add as prefix]
+Добавить как префикс
+[Add as suffix]
+Добавить как суффикс
+[Alert when:]
+Оповещать при:
+[Alert type:]
+Тип оповещений:
+[Test conditions]
+
+[Alert when string is present on web page]
+
+[String:]
+Строка:
+[Alert when specific area of web page changes]
+
+[Log to file]
+Запись в файл
+[Log file:]
+Файл журнала:
+[Append data to file]
+Добавить содержимое в файл
+[Save as raw data]
+
+[Popup timeout]
+Длительность всплывающих окон
+[Timeout]
+Длительность
+[Default]
+По умолчанию
+[Permanent]
+Постоянно
+[Preview]
+Тест
+[Colors]
+Цвета
+[Use custom colors]
+Задать цвета
+[Use Windows colors]
+Цвета Windows
+[Use same colors as data window]
+Цвета как у окна с данными
+[Background]
+Фон
+[Text]
+Текст
+[Left click action]
+Левая кнопка мыши
+[Open data display window]
+Открыть окно с данными
+[Open web page]
+Открыть веб-страницу
+[Dismiss popup]
+Закрыть
+[Right click action]
+Правая кнопка мыши
+[Log]
+Журнал
+[&Copy]
+&Копировать
+[C&ut]
+В&ырезать
+[&Delete]
+&Удалить
+[&Paste]
+&Вставить
+[Co&py all]
+Ко&пировать всё
+[&Select all]
+Выбрать всё
+[C&lear all]
+О&чистить всё
+;file \protocols\WebView\src\main.cpp
+[Alert event]
+
+[Auto update disabled]
+Автообновление выключено
+[Auto update enabled]
+Автообновление включено
+[Update all Webview sites]
+Обновить все страницы Webview
+[Mark all Webview sites as read]
+Отметить все страницы Webview как прочитанные
+[Open cache folder]
+Открыть папку кэша
+[%d minutes to update]
+
+[Open/Close window]
+Открыть/Закрыть окно
+[Update data]
+
+[Contact options]
+Параметры
+[Contact alert options]
+
+[Ping web site]
+
+[Stop data processing]
+Остановить обработку данных
+;file \protocols\WebView\src\webview.cpp
+[All Webview sites have been updated.]
+
+;file \protocols\WebView\src\webview_alerts.cpp
+[Cannot write to file]
+Невозможно записать в файл
+[Last updated on]
+Последнее обновление:
+[Start/end strings not found or strings not set.]
+
+[Alert start/end strings not found or strings not set.]
+
+[The string]
+Строка
+[has been found on the web page]
+найдена на веб-странице
+[Download successful; about to process data...]
+
+[Unknown alert type.]
+Неизвестный тип оповещения.
+[Cannot read from file]
+Невозможно прочитать из файла
+[Cannot write to file 1]
+Невозможно записать в файл 1
+[The web page has changed.]
+
+[Cannot write to file 2]
+Невозможно записать в файл 2
+[Specific part of the web page has changed.]
+
+[Cannot read from cache file]
+
+[Loaded from cache]
+Загружено из кэша
+;file \protocols\WebView\src\webview_datawnd.cpp
+[ERROR: You have two or more Webview contacts with the same URL and contact name.]
+ОШИБКА: У вас два или более контакта Webview с одним и тем же URL и именем контакта.
+[Alert options]
+
+[Stop processing]
+Остановить обработку
+[Click here to open this URL in a browser window.]
+
+[Stick to the front]
+Поверх окон
+[Disable stick to the front]
+Выключить поверх окон
+;file \protocols\WebView\src\webview_getdata.cpp
+[URL not supplied]
+
+[Download in progress, please wait...]
+Загрузка, пожалуйста подождите...
+[Updating...]
+Обновление...
+[The server replied with a failure code]
+
+[The server is down or lagging.]
+Сервер упал или лагает.
+[Invalid search parameters.]
+Неверные параметры поиска.
+[Both search strings not found or strings not set.]
+
+[at the time]
+
+[Processing data (Stage 1)]
+Обработка данных (этап 1)
+[Processing data stopped by user.]
+Обработка данных остановлена пользователем.
+[Processing data (Stage 2)]
+Обработка данных (этап 2)
+[Processing data (Stage 3)]
+Обработка данных (этап 3)
+[Processing data (Stage 4)]
+Обработка данных (этап 4)
+[Processing data (Stage 5)]
+Обработка данных (этап 5)
+[Processing data (Stage 6)]
+Обработка данных (этап 6)
+[Processing data (Stage 7)]
+Обработка данных (этап 7)
+[Processing data (Stage 8)]
+Обработка данных (этап 8)
+[Alert!]
+Оповещение!
+[Online]
+В сети
+[A site is already downloading, try again in a moment.]
+Страница уже загружается, попробуйте позже.
+[Bytes in display]
+
+[Bytes downloaded]
+
+[Alert test conditions not met; press the refresh button to view content.]
+
+;file \protocols\WebView\src\webview_opts.cpp
+[This is a preview popup.]
+Это всплывающее окно предпросмотра.
+[Network]
+Сеть
+[Popups]
+Всплывающие окна
+;file \protocols\WebView\src\webview_services.cpp
+[Invalid symbol present in contact name.]
+Недопустимый символ в имени контакта.
+[Cache folder does not exist.]
+Папка кэша не существует.
+[Missing "psite.bat" file.]
+Отсутствует файл "psite.bat".
+[Site URL]
+Адрес веб-страницы
+[Please select site in Find/Add contacts...]
+Пожалуйста, выберите страницу в Добавить контакты...
+;file \protocols\WebView\src\webview_ui.cpp
+[No whitespace removal]
+Не удалять пробелы
+[Minimal level of whitespace removal]
+Минимальный уровень удаления пробелов
+[Medium level of whitespace removal]
+Средний уровень удаления пробелов
+[Large level of whitespace removal]
+Высокий уровень удаления пробелов
+[Remove all whitespace]
+Удалять все пробелы
+[Popup plugin]
+Вспл. окна
+[Use OSD plugin]
+Использовать плагин OSD
+[A string is present]
+
+[The web page changes]
+
+[A specific part of web page changes]
+
+[You need to supply a search string.]
+необходимо указать строку для поиска.
+[You need to supply a start string.]
+необходимо указать начальную строку.
+[You need to supply an end string.]
+необходимо указать конечную строку.
+[You need to supply a file name and path.]
+необходимо указать имя файла и путь.
+[You need to supply a URL.]
+необходимо указать URL.
+[You need to supply a name for the contact.]
+необходимо указать имя контакта.

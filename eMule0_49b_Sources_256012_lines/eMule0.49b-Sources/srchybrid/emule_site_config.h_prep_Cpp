@@ -1,0 +1,87 @@
+﻿
+
+// This file provides a way for local compiler site configurations (e.g. installed platform SDK).
+
+// By default, assume that we have the latest SDKs and enable all optional features
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+// Visual Studio 2003
+//////////////////////////////////////////////////////////////////////////////
+
+
+// 'sapi.h' is not shipped with VS2003.
+// Uncomment the following line if you get compile errors due to missing 'sapi.h'
+//
+
+// 'qedit.h' is shipped with VS2003.
+//
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+// Visual Studio 2005
+//////////////////////////////////////////////////////////////////////////////
+
+
+// NOTE: eMule can not get compiled with        out of the box because the SDK
+// which is shipped with        does not contain the �upnp.h� header file - and
+// this feature is not yet optional for compiling eMule. Thus you need to install
+// an additional more recent     when compiling with VS2005.
+//
+// It is supposed that eMule can get compiled with        and the latest
+// "Windows Server SDK" - but it was not yet verified.
+//
+// It is known that eMule can get compiled with        and the "Vista     6.0/6.1".
+// To compile eMule with the "Vista     6.0/6.1", define 'HAVE_VISTA_SDK'.
+
+
+
+
+// 'sapi.h' is not shipped with VS2005.
+// 'sapi.h' is shipped with Vista     6.1
+// You need to install the Speach     to enable this feature.
+
+
+      //
+
+// 'qedit.h' file is shipped with VS2005, but it needs an additional which
+// is only shipped with the DirectX SDK.
+// You need to install the DirectX     to enable this feature.
+
+
+      //!defined(              ) || !defined(                )
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+// Visual Studio 2008
+//////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+// 'sapi.h' is shipped with        as part of the Vista SDK
+
+
+      //
+
+// 'qedit.h' file is shipped with VS2008, but it needs an additional which
+// is only shipped with the DirectX SDK.
+// You need to install the DirectX     to enable this feature.
+
+
+      //!defined(              ) || !defined(                )
+
+
+
+
+
+
+
+
+ 

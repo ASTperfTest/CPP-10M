@@ -1,0 +1,213 @@
+#muuid {46102b07-c215-4162-9c83-d377881da7cc}
+;============================================================
+;  File: Msg_Export.dll
+;  Plugin: Message export
+;  Version: 3.1.2.8
+;  Authors: Kennet Nielsen, mod by ring0
+;============================================================
+[Exports every message, URL or file you receive to a text file.]
+
+;file \plugins\Msg_Export\res\resource.rc
+[Export directory]
+Répertoire d'exportation
+[Browse]
+
+[Default file]
+Fichier
+[File viewer]
+Visionneur
+[Use internal viewer]
+Visionneur interne
+[Replace Miranda history]
+Remplace l'historique Miranda
+[Export format]
+Format d'exportation
+[Max column width]
+Largeur colonne maxi
+[Note: 0 = no limit]
+NOTE : 0=sans limite
+[Time format]
+Format heure
+[Use JSON format for export]
+
+[Use UTF-8 in new files]
+Utiliser l'UTF-8
+[Append extra new line]
+Ajouter une ligne de plus
+[Use << and >>]
+Utiliser << et >>
+[Help]
+Aide
+[Exporting old messages]
+Exportation des anciens messages
+[History file for %s (%s, format %s)]
+Fichier d'historique de %s (%s, format %s)
+[&Find...]
+&Chercher...
+[&External]
+&Externe
+[&Close]
+&Fermer
+[When filename changes]
+Si le contact change de nom
+[Prompt for action]
+Demander quoi faire
+[Rename file]
+Renommer le fichier
+[Do nothing]
+
+[When user is deleted]
+Si le contact est effacé
+[Delete file]
+Effacer le fichier
+[Debug]
+
+[User &details]
+&Détails du contact
+[Export]
+
+[Set to default filename]
+Remettre le nom de fichier par défaut
+[Select all]
+Tout sélectionner
+[Select none]
+
+[Auto filename]
+Nommage auto
+[Clear all]
+Tout effacer
+[Copy]
+Copier
+;file \plugins\Msg_Export\src\FileViewer.cpp
+[Miranda database contains %d events]
+
+[Failed to open file]
+
+[Search string was not found!]
+Ligne recherchée non trouvée!
+[Save as RTF]
+
+[Color...]
+Couleur...
+[Font...]
+Police...
+[Syntax highlight]
+Surligner un contact
+[History was saved successfully in file\r\n]
+
+;file \plugins\Msg_Export\src\main.cpp
+[Export history]
+
+[Open E&xported History]
+Ouvrir l'historique &exporté
+;file \plugins\Msg_Export\src\options.cpp
+[Reading database information (Phase 1 of 2)]
+
+[Sorting and writing database information (Phase 2 of 2)]
+Sortie et écriture des infos de la basse de données ( étape 2/2 )
+[Failed to open or create file:\n]
+Échec d'ouverture ou de création du fichier :\n
+[Max line width must be at least %d. Or use 0 for no limit.]
+
+[You need to restart Miranda to change the history function]
+Vous devez relancer Miranda pour changer la gestion de l'historique
+[Executable files]
+Fichiers exécutables
+[All files]
+Tous les fichiers
+[Select Destination Directory]
+Choix du répertoire de destination
+[File]
+Fichier
+[Nick]
+Pseudo
+[Account]
+Compte
+[User ID]
+
+[No contacts found to export]
+Pas de contacts à exporter trouvés
+[Export accounts]
+
+[Message export]
+Message Export
+[History]
+Historique
+[General]
+Général
+[Contacts]
+Contacts
+[Additional]
+
+;file \plugins\Msg_Export\src\stdafx.h
+[Miranda NG (Message Export Plugin)]
+
+;file \plugins\Msg_Export\src\utils.cpp
+[No_Group]
+
+[File name for the user "%s" has changed!\n\nfrom:\t%s\nto:\t%s\n\nDo you wish to rename file?]
+
+[Failed to rename file\n\nfrom:\t%s\nto:\t%s\n\nFailed with error: %s]
+Échec du renommage/déplacement du fichier\n\nde :\t%s\nen :\t%s\n\nErreur : %s
+[\nError: ]
+\nErreur :\s
+[\nMessage has not been saved!\n]
+
+[Do you wish to save debug information?]
+
+[All\0*.*\0Text\0*.TXT\0\0]
+
+[FirstName]
+Prénom
+[LastName]
+Nom
+[e-mail]
+Courriel
+[Age]
+
+[Gender]
+Sexe
+[City]
+Ville
+[State]
+État
+[Phone]
+Téléphone
+[Homepage]
+Page web
+[About]
+À propos
+[      History for]
+
+[User]
+Utilisateur
+[File: ]
+Fichier :\s
+[Description: ]
+Description :\s
+[Nick      :]
+Pseudo    :
+[FirstName :]
+Prénom    :
+[LastName  :]
+Nom       :
+[e-mail    :]
+Courriel  :
+[Reason    :]
+Motif     :
+[Invalid Database event received. Type %d, size %d]
+Évènement de base de données reçu invalide. Type %d, taille %d
+[The following user made an authorization request:]
+Le contact suivant vous fait une demande d'autorisation :
+[The following user added you to their contact list:]
+Le contact suivant vous a ajouté à sa liste :
+[UIN       :]
+
+[Unknown event type %d, size %d]
+
+[User has been deleted. Do you want to delete the file?]
+
+[Failed to delete the file]
+Échec de la suppression du fichier
+[No_Nick]
+

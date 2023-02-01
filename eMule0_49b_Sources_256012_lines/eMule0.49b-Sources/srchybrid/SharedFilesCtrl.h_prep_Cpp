@@ -1,0 +1,84 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("MuleListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("TitleMenu.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlItemWalk.h");}
+
+class CSharedFileList;
+class CKnownFile;
+class CDirectoryItem;
+class CToolTipCtrlX;
+
+class CSharedFilesCtrl :        CMuleListCtrl,        CListCtrlItemWalk
+{
+ friend class CSharedDirsTreeCtrl;
+ //DECLARE_DYNAMIC(CSharedFilesCtrl)
+
+public:
+ CSharedFilesCtrl();
+ virtual ~CSharedFilesCtrl();
+
+ void Init();
+ void CreateMenues();
+ void ReloadFileList();
+ void AddFile(const CKnownFile* file);
+ void RemoveFile(const CKnownFile* file);
+ void UpdateFile(const CKnownFile* file);
+ void Localize();
+ void ShowFilesCount();
+ void ShowComments(CKnownFile* file);
+ void SetAICHHashing(uint32 nVal)    { nAICHHashing = nVal; }
+ void SetDirectoryFilter(CDirectoryItem* pNewFilter, bool bRefresh = true);
+
+protected:
+ CTitleMenu  m_SharedFilesMenu;
+ CTitleMenu  m_CollectionsMenu;
+ CMenu   m_PrioMenu;
+ bool   sortstat[4];
+ CImageList  m_ImageList;
+ CDirectoryItem* m_pDirectoryFilter;
+ volatile uint32 nAICHHashing;
+ CToolTipCtrlX* m_pToolTip;
+
+ static int          SortProc(long * lParam1, long * lParam2, long * lParamSort);
+ void OpenFile(const CKnownFile* file);
+ void ShowFileDialog(CTypedPtrList                       & aFiles, unsigned int uPshInvokePage = 0);
+ void SetAllIcons();
+ int FindFile(const CKnownFile* pFile);
+ void GetItemDisplayText(const CKnownFile* file, int iSubItem, char * pszText, int cchTextMax) const;
+ bool IsFilteredItem(const CKnownFile* pKnownFile) const;
+
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+
+
+         void OnSysColorChange();
+         void OnColumnClick( NMHDR* pNMHDR, long * * pResult);
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+         void OnNMDblclk(NMHDR *pNMHDR, long *  *pResult);
+         void OnGetDispInfo(NMHDR *pNMHDR, long *  *pResult);
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         void OnLvnGetInfoTip(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

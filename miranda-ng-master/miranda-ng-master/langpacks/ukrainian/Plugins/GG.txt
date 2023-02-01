@@ -1,0 +1,456 @@
+#muuid {f3ff65f3-250e-416a-bee9-58c93f85ab33}
+;============================================================
+;  File: GG.dll
+;  Plugin: Gadu-Gadu protocol
+;  Version: 0.95.11.1
+;  Authors: Bartosz Bialek, Adam Strzelecki
+;============================================================
+[Gadu-Gadu protocol support for Miranda NG.]
+Підтримка протоколу Gadu-Gadu в Miranda NG.
+;file \protocols\Gadu-Gadu\res\resource.rc
+[Gadu-Gadu User Details]
+Інформація про користувача Gadu-Gadu
+[Gadu-Gadu Number:]
+Номер Gadu-Gadu:
+[Password:]
+Пароль:
+[E-mail:]
+Пошта:
+[Create new account]
+Створити обліковий запис
+[Remove account]
+Видалити
+[Change password]
+Змінити пароль
+[Retrieve password]
+Відновити пароль
+[Options]
+Налаштування
+[Friends only]
+Лише друзі
+[Show offline users with status message as invisible in contact list]
+Відключені зі статусним повідомленням = невидимі
+[After disconnection leave away message of status:]
+Після відключення залишити статусне повідомлення:
+[Receive image and after image is received use:]
+Після отримання зображення:
+[Show links from unknown contacts]
+Показувати посилання від невідомих контактів
+[Enable avatars]
+Увімкнути аватари
+[These changes will take effect the next time you connect to the GG network.]
+Зміни наберуть чинності при наступному вході в мережу Gadu-Gadu.
+[Conference policy]
+Політика конференцій
+[if total participant count greater than:]
+якщо загальна кількість учасників більше:
+[if unknown participant count greater than:]
+якщо кількість невідомих учасників більше:
+[in other case]
+в інших випадках
+[Advanced Configuration]
+Додаткові налаштування
+[Keep connection alive]
+Підтримувати з'єднання
+[Show connection errors]
+Показувати помилки з'єднання
+[Automatically reconnect after unintentional disconnection]
+Перепідключитися після несподіваного розриву
+[Send messages slower, but with full acknowledgment]
+Надсилати повідомлення повільніше, але з підтвердженням
+[Manually specify connection servers' hosts]
+Вказати сервери вручну
+[* new line is separator\n** hostname:port format]
+* новий рядок - роздільник\n** хост:порт
+[Use SSL secure connection]
+Безпечне з'єднання (SSL)
+[File Transfer]
+Передача файлу
+[Use direct connections]
+Використовувати пряме з'єднання
+[Port:]
+Порт:
+[Use forwarding]
+Використовувати перенаправлення
+[Host:]
+Хост:
+[Number:]
+Номер:
+[Internal IP:]
+Внутрішній IP:
+[First name:]
+Ім'я:
+[Last name:]
+Прізвище:
+[Family name:]
+Прізвище:
+[Nickname:]
+Нік:
+[Gender:]
+Стать:
+[City:]
+Місто:
+[Origin city:]
+Місце проживання:
+[Birth year:]
+Рік народження:
+[Description:]
+Опис:
+[&Save changes]
+&Зберегти зміни
+[Enter token to continue]
+Введіть маркер для продовження
+[Cancel]
+Скасувати
+[Create Gadu-Gadu account]
+Створити номер Gadu-Gadu
+[This will create new Gadu-Gadu account]
+Створення нового облікового запису Gadu-Gadu
+[New password:]
+Новий пароль:
+[Confirm password:]
+Підтвердити пароль:
+[New e-mail:]
+Новий E-mail:
+[&Create]
+&Створити
+[Remove Gadu-Gadu account]
+Видалити номер Gadu-Gadu
+[This will remove your Gadu-Gadu account]
+Видалення облікового запису Gadu-Gadu
+[Yes, I want to remove my account]
+Так, видаліть мій обліковий запис
+[Remove]
+Видалити
+[Change Gadu-Gadu password]
+Змінити пароль Gadu-Gadu
+[Changes current Gadu-Gadu user password]
+Зміна поточного пароля Gadu-Gadu
+[Change Gadu-Gadu e-mail]
+Змінити E-mail Gadu-Gadu
+[Changes current Gadu-Gadu user e-mail]
+Зміна поточного E-mail Gadu-Gadu
+[Age from:]
+Вік:
+[to:]
+до:
+[Search online users only]
+Тільки підключених користувачів
+[&Close]
+&Закрити
+[&Send]
+&Надіслати
+[Open new conference]
+Почати конференцію
+[Select conference participants]
+Виберіть учасників конференції
+[Open]
+Відкрити
+[Concurrent %s Login Sessions]
+Одночасні сесії %s
+[View information on active concurrent sessions]
+Інформація про активні одночасні сесії
+[Sign out all sessions]
+Вийти з усіх сесій
+;file \protocols\Gadu-Gadu\src\avatar.cpp
+[Cannot create avatars cache directory. ERROR: %d: %s\n%s]
+Не вдалося створити папку для кешу аватарів. Помилка: %d: %s\n%s
+[Cannot create avatar file. ERROR: %d: %s\n%s]
+Не вдалося створити файл аватару. Помилка: %d: %s\n%s
+[Cannot open avatar file. ERROR: %d: %s\n%s]
+Не вдалося відкрити файл аватару. Помилка: %d: %s\n%s
+;file \protocols\Gadu-Gadu\src\core.cpp
+[Miranda was unable to resolve the name of the Gadu-Gadu server to its numeric address.]
+Не вдалося визначити IP-адресу сервера Gadu-Gadu за його ім'ям.
+[Miranda was unable to make a connection with a server. It is likely that the server is down, in which case you should wait for a while and try again later.]
+Не вдалося підключитися до сервера. Можливо, сервер не працює, спробуйте підключитися пізніше.
+[Received invalid server response.]
+Отримано неправильну відповідь сервера.
+[The connection with the server was abortively closed during the connection attempt. You may have lost your local network connection.]
+Спроба підключення до сервера завершилася помилкою. Можливо, трапився обрив з'єднання з локальною мережею.
+[Your Gadu-Gadu number and password combination was rejected by the Gadu-Gadu server. Please check login details at Options -> Network -> Gadu-Gadu and try again.]
+Логін або пароль не прийняті сервером. Будь ласка, перевірте правильність налаштувань (Налаштування -> Мережа -> Gadu-Gadu) і спробуйте ще раз.
+[Connecting to Gadu-Gadu hub failed.]
+З'єднання з Gadu-Gadu розірвано.
+[Cannot establish secure connection.]
+Неможливо встановити з'єднання SSL.
+[Server disconnected asking you for changing your e-mail.]
+Сервер закрив з'єднання з проханням змінити E-mail.
+[Too many login attempts with invalid password.]
+Занадто багато спроб входу з неправильним паролем.
+[Gadu-Gadu servers are now down. Try again later.]
+Сервери Gadu-Gadu відключені. Спробуйте ще раз пізніше.
+[Unknown]
+Невідомо
+[External direct connections hostname %s is invalid. Disabling external host forwarding.]
+Зовнішній хост для прямих підключень %s неправильний. Перенаправлення на зовнішній хост вимкнено.
+[Server hostname %s is invalid. Using default hostname provided by the network.]
+Неправильне ім'я сервера %s. Використовується сервер мережі за замовчанням.
+[Connection cannot be established. errno=%d: %s]
+Не вдалося встановити з'єднання. errno=%d: %s
+[Age:]
+Вік:
+[List import successful.]
+Список успішно імпортовано.
+[List remove successful.]
+Список успішно видалено.
+[List export successful.]
+Список успішно експортовано.
+[Me]
+Я
+[Unknown client]
+Невідомий клієнт
+[You have logged in at another location]
+Ви підключилися з іншого місця
+[You are logged in at another location]
+Ви підключені з іншого місця
+[Incoming image]
+Вхідне зображення
+;file \protocols\Gadu-Gadu\src\filetransfer.cpp
+[Cannot create transfer file. ERROR: %d: %s (dcc)\n%s]
+
+[Cannot create transfer file. ERROR: %d: %s (dcc7)\n%s]
+
+;file \protocols\Gadu-Gadu\src\gg.cpp
+[HTTP failed memory]
+
+[HTTP failed connecting]
+HTTP помилка з'єднання
+[HTTP failed resolving]
+HTTP помилка визначення адреси
+[HTTP failed reading]
+HTTP помилка читання
+[HTTP failed writing]
+HTTP помилка запису
+[Unknown HTTP error]
+HTTP невідома помилка
+[&Unblock]
+&Розблокувати
+[&Block]
+&Заблокувати
+[Conference]
+Конференція
+[Contact list]
+Список контактів
+;file \protocols\Gadu-Gadu\src\gg_proto.cpp
+[Images]
+Зображення
+[Gadu-Gadu Number]
+Номер Gadu-Gadu
+[Female]
+Жіноча
+[Male]
+Чоловіча
+;file \protocols\Gadu-Gadu\src\groupchat.cpp
+[Open &conference...]
+&Відкрити конференцію...
+[&Clear ignored conferences]
+&Очистити ігноровані конференції
+[%s has initiated conference with %d participants (%d unknowns).\nDo you want to participate?]
+%s почав конференцію з %d учасниками (%d невідомих).\nВзяти участь?
+[%s initiated the conference.]
+%s почав конференцію.
+[This is my own conference.]
+Це моя конференція.
+[Participants]
+Учасники
+['Unknown']
+"Невідомо"
+[You have to be connected to open new conference.]
+Ви повинні бути підключені, щоб починати конференції.
+[All ignored conferences are now unignored and the conference policy will act again.]
+Список ігнорованих конференцій очищено. Використовується загальна політика конференцій.
+[There are no ignored conferences.]
+Ігнорованих конференцій немає.
+;file \protocols\Gadu-Gadu\src\icolib.cpp
+[Protocol icon]
+Значок протоколу
+[Import list from server]
+Імпорт з сервера
+[Import list from text file]
+Імпорт з файлу
+[Remove list from server]
+Видалити з сервера
+[Export list to server]
+Експорт на сервер
+[Export list to text file]
+Експорт у файл
+[Account settings]
+Налаштування
+[Block user]
+Заблоковані користувачі
+[Previous image]
+Попереднє зображення
+[Next image]
+Наступне зображення
+[Send image]
+Надіслати
+[Save image]
+Зберегти
+[Delete image]
+Видалити зображення
+[Clear ignored conferences]
+Очистити ігноровані конференції
+[Concurrent sessions]
+Поточні сесії
+;file \protocols\Gadu-Gadu\src\image.cpp
+[&Image]
+Зображення
+[Image files (*.bmp,*.gif,*.jpeg,*.jpg,*.png)]
+Файли зображень (*.bmp,*.gif,*.jpeg,*.jpg,*.png)
+[Image cannot be written to disk.]
+Зображення не може бути записано на диск.
+[Save image to disk]
+Зберегти зображення на диск
+[Delete image from the list]
+Видалити зображення зі списку
+[Image from %s]
+Зображення від %s
+[Image for %s]
+Зображення для %s
+[Select picture to send]
+Виберіть зображення для надсилання
+[Cannot create image cache directory. ERROR: %d: %s\n%s]
+Не вдалося створити папку для кешу зображень. Помилка: %d: %s\n%s
+[Cannot save received image to file. ERROR: %d: %s\n%s]
+Неможливо зберегти отримане зображення у файл. Помилка: %d: %s\n%s
+[Cannot open image file. ERROR: %d: %s\n%s]
+Не вдалося відкрити файл зображення. Помилка: %d: %s\n%s
+[Image exceeds maximum allowed size of 255 KB.]
+Розмір зображення перевищує допустимий (255 КБ).
+;file \protocols\Gadu-Gadu\src\import.cpp
+[You have to be connected before you can import/export contacts from/to server.]
+Встановіть з'єднання перед імпортом/експортом контактів з/на сервер.
+[List cannot be imported because of error:\n\t%s (Error: %d)]
+Не вдалося імпортувати список через помилку:\n\t%s (Помилка: %d)
+[List cannot be removed because of error: %s (Error: %d)]
+Не вдалося видалити список через помилку: %s (Помилка: %d)
+[Text files]
+Текстовий файл
+[All Files]
+Усі файли
+[List cannot be imported from file "%s" because of error:\n\t%s (Error: %d)]
+Не вдалося імпортувати список з файлу "%s" через помилку:\n\t%s (Помилка: %d)
+[contacts]
+контактів
+[List cannot be exported to file "%s" because of error:\n\t%s (Error: %d)]
+Не вдалося експортувати список у файл "%s" через помилку:\n\t%s (Помилка: %d)
+[List cannot be exported because of error:\n\t%s (Error: %d)]
+Не вдалося експортувати список через помилку:\n\t%s (Помилка: %d)
+[Import List From &Server]
+Імпорт списку з &сервера
+[Import List From &Text File...]
+Імпорт списку з &файлу...
+[&Remove List From Server]
+&Видалити список з сервера
+[Export List To &Server]
+Експортувати список на &сервер
+[Export List To &Text File...]
+Експортувати список у &файл...
+;file \protocols\Gadu-Gadu\src\links.cpp
+[Gadu-Gadu account chooser]
+Вибір облікового запису Gadu-Gadu
+[Gadu-Gadu Link Protocol]
+Протокол Gadu-Gadu
+;file \protocols\Gadu-Gadu\src\options.cpp
+[<Last Status>]
+<Останній статус>
+[System tray icon]
+Значок у треї
+[Popup window]
+Спливаюче вікно
+[Message with [img] BBCode]
+Повідомлення з тегом [img]
+[You need to specify your registration e-mail first.]
+Необхідно вказати свій E-mail.
+[Your password will be sent to your registration e-mail.\nDo you want to continue?]
+Ваш пароль буде надіслано на реєстраційний E-mail.\nПродовжити?
+[You should disconnect before making any permanent changes with your account.\nDo you want to disconnect now?]
+Для зміни налаштувань облікового запису необхідно відключитися.\nВідключитися зараз?
+[Allow]
+Дозволити
+[Ask]
+Запитати
+[Ignore]
+Ігнорувати
+[Network]
+Мережа
+[General]
+Загальне
+[Advanced]
+Додатково
+;file \protocols\Gadu-Gadu\src\ownerinfo.cpp
+[Password could not be reminded because of error:\n\t%s (Error: %d)]
+Неможливо нагадати пароль через помилку:\n\t%s (Помилка: %d)
+[Password was sent to your e-mail.]
+Пароль надіслано на ваш E-mail.
+;file \protocols\Gadu-Gadu\src\popups.cpp
+[Notifications]
+Сповіщення
+[Errors]
+Помилки
+;file \protocols\Gadu-Gadu\src\services.cpp
+[Cannot remove old avatar file before refresh. ERROR: %d: %s\n%s]
+Не вдалося видалити старий аватар перед оновленням. Помилка: %d: %s\n%s
+[Cannot remove old avatar file. ERROR: %d: %s\n%s]
+Не вдалося видалити старий аватар. Помилка: %d: %s\n%s
+[To remove your Gadu-Gadu avatar, you must use the gg.pl website.]
+Свій аватар треба видаляти на веб-сайті gg.pl
+;file \protocols\Gadu-Gadu\src\sessions.cpp
+[Client Name]
+Ім'я клієнта
+[IP Address]
+IP-адреса
+[Login Time]
+Час входу
+[Action]
+Дія
+[sign out]
+вийти
+[There are no active concurrent sessions for this account.]
+Немає активних одночасних сесій для цього облікового запису.
+[You have to be logged in to view concurrent sessions.]
+Ви повинні бути підключені для перегляду одночасних сесій.
+[Copy Text]
+Копіювати
+[Whois]
+Інформація
+[Concurrent &sessions]
+Одночасні сесії
+;file \protocols\Gadu-Gadu\src\token.cpp
+[Token retrieval failed because of error:\n\t%s]
+Маркер не отриманий через помилку\n\t%s
+[Could not load token image.]
+Не можу завантажити маркер.
+;file \protocols\Gadu-Gadu\src\userinfo.cpp
+[<not specified>]
+<не вказано>
+[Your details has been uploaded to the public directory.]
+
+[You have to be logged in before you can change your details.]
+
+;file \protocols\Gadu-Gadu\src\userutils.cpp
+[Cannot register new account because of error:\n\t%s]
+Неможливо зареєструвати користувача через помилку:\n\t%s
+[Registration rejected]
+У реєстрації відмовлено
+[You have registered new account.\nPlease fill up your personal details in "Main menu -> View/change my details..."]
+Ви зареєстрували новий обліковий запис.\nБудь ласка, заповніть свої персональні дані в "Головне меню -> Особисті дані..."
+[Your account cannot be removed because of error:\n\t%s]
+Неможливо видалити користувача через помилку:\n\t%s
+[Bad number or password]
+Неправильний номер або пароль
+[Your account has been removed.]
+Користувач видалений.
+[Your password cannot be changed because of error:\n\t%s]
+Неможливо змінити пароль через помилку:\n\t%s
+[Invalid data entered]
+Неправильні дані
+[Your password has been changed.]
+Ваш пароль змінено.
+[Your e-mail cannot be changed because of error:\n\t%s]
+Неможливо змінити E-mail через помилку:\n\t%s
+[Bad old e-mail or password]
+Неправильний старий E-mail або пароль
+[Your e-mail has been changed.]
+Ваш E-mail змінено.

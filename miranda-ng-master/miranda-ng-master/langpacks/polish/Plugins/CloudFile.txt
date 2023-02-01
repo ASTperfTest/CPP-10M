@@ -1,0 +1,74 @@
+#muuid {e876fe63-0701-4cda-bed5-7c73a379c1d1}
+;============================================================
+;  File: CloudFile.dll
+;  Plugin: CloudFile
+;  Version: 0.11.0.6
+;  Authors: Miranda NG team
+;============================================================
+[Allows you to transfer files via cloud services.]
+Pozwala na przesyłanie plików z wykorzystanie usług udostępniania plików w chmurze.
+;file \protocols\CloudFile\res\resource.rc
+[Default service]
+Domyślna usługa
+[General]
+Ogólne
+[Autosend download link to contact]
+Automatycznie wysyłaj kontaktowi link do pobrania
+[Paste download link into message input area]
+Wklejaj link do pobrania w pole wpisywania wiadomości
+[Copy download link to clipboard]
+Kopiuj link do pobrania do schowka
+[Download link]
+Link do pobrania
+[Do nothing]
+Nic nie rób
+[Try to rename]
+Próbuj zmienić nazwę
+[Try to replace]
+Próbuj podmienić
+[On conflict when upload]
+Gdy wysyłany plik już istnieje
+[Authorization]
+Autoryzacja
+[Cancel]
+Anuluj
+[Enter authorization code:]
+Wprowadź kod autoryzacyjny:
+[To allow Miranda NG access to %s:]
+Aby umożliwić Miranda NG dostęp do %s:
+[Go to this link]
+Otwórz ten link
+[Request access]
+Przyznaj dostęp
+[Revoke access]
+Odwołaj dostęp
+;file \protocols\CloudFile\src\icons.cpp
+[Upload file(s)]
+Wyślij plik(i)
+[Dropbox]
+Dropbox
+[Google Drive]
+Dysk Google
+[OneDrive]
+OneDrive
+[Yandex.Disk]
+Yandex.Disk
+;file \protocols\CloudFile\src\menus.cpp
+[Upload to...]
+Wyślij do...
+[Upload]
+Wyślij
+;file \protocols\CloudFile\src\options.cpp
+[None]
+Brak
+[Services]
+Usługi
+;file \protocols\CloudFile\src\srmm.cpp
+[Upload files to...]
+Wyślij pliki do...
+;file \protocols\CloudFile\src\Services\dropbox_service.cpp
+[Server does not respond]
+serwer nie odpowiada
+;file \protocols\CloudFile\src\Services\google_service.cpp
+;file \protocols\CloudFile\src\Services\microsoft_service.cpp
+;file \protocols\CloudFile\src\Services\yandex_service.cpp

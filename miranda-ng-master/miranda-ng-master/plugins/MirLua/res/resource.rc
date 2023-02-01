@@ -1,0 +1,192 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "..\src\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian (Russia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "..\\src\\resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian (Russia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SCRIPT              ICON                    "script.ico"
+
+IDI_OPEN                ICON                    "open.ico"
+
+IDI_RELOAD              ICON                    "reload.ico"
+
+IDI_FAILED              ICON                    "failed.ico"
+
+IDI_LOADED              ICON                    "loaded.ico"
+
+IDI_COMPILE             ICON                    "compile.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONSMAIN DIALOGEX 0, 0, 310, 234
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SCRIPTS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,14,66,282,137
+    PUSHBUTTON      "Reload all",IDC_RELOAD,220,207,76,14
+    GROUPBOX        "Scripts",IDC_STATIC,7,54,296,173
+    CONTROL         "Popup on script error",IDC_POPUPONERROR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,17,282,10
+    GROUPBOX        "General",IDC_STATIC,7,7,296,44
+    CONTROL         "Popup on obsolete methods",IDC_POPUPONOBSOLETE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,28,282,10
+END
+
+IDD_OPTIONSEVALUATE DIALOGEX 0, 0, 310, 234
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_SCRIPTTEXT,7,7,296,148,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    CONTROL         "Auto evaluation",IDC_AUTOEVAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,160,167,10
+    PUSHBUTTON      "Evaluate",IDC_EVALUATE,253,157,50,14
+    EDITTEXT        IDC_SCRIPTRESULT,7,173,296,54,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_SCRIPTOPTIONSPAGE DIALOGEX 0, 0, 310, 250
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_OPTIONSMAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        VERTGUIDE, 14
+        VERTGUIDE, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+        HORZGUIDE, 54
+        HORZGUIDE, 66
+        HORZGUIDE, 203
+        HORZGUIDE, 221
+    END
+
+    IDD_OPTIONSEVALUATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+        HORZGUIDE, 155
+        HORZGUIDE, 173
+    END
+
+    IDD_SCRIPTOPTIONSPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_OPTIONSMAIN AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_OPTIONSEVALUATE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_SCRIPTOPTIONSPAGE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

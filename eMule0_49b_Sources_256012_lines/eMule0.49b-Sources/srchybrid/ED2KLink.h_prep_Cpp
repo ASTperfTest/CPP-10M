@@ -1,0 +1,167 @@
+﻿//this file is part of eMule
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("shahashset.h");}
+class CSafeMemFile;
+
+ class SUnresolvedHostname
+{
+ SUnresolvedHostname()
+ {
+  nPort = 0;
+ }
+ CStringA strHostname;
+ uint16 nPort;
+ CString strURL;
+};
+
+
+class CED2KLink
+{
+public:
+ static CED2KLink* CreateLinkFromUrl(const char * url);
+ virtual ~CED2KLink();
+
+  enum LinkType { kServerList, kServer , kFile , kNodesList, kInvalid } ;
+
+ virtual LinkType GetKind() const = 0;
+ virtual void GetLink(CString& lnk) const = 0;
+ virtual class CED2KServerListLink* GetServerListLink() = 0;
+ virtual class CED2KServerLink* GetServerLink() = 0;
+ virtual class CED2KFileLink* GetFileLink() = 0;
+ virtual class CED2KNodesListLink* GetNodesListLink() = 0;
+};
+
+
+class CED2KServerLink :        CED2KLink
+{
+public:
+ CED2KServerLink(const char * ip,const char * port);
+ virtual ~CED2KServerLink();
+
+ virtual LinkType GetKind() const;
+ virtual void GetLink(CString& lnk) const;
+ virtual CED2KServerListLink* GetServerListLink();
+ virtual CED2KServerLink* GetServerLink();
+ virtual CED2KFileLink* GetFileLink();
+ virtual CED2KNodesListLink* GetNodesListLink()  { return NULL; }
+
+ const CString& GetAddress() const { return m_strAddress; }
+ uint16 GetPort() const { return m_port;}
+ void GetDefaultName(CString& defName) const { defName = m_defaultName; }
+
+private:
+ CED2KServerLink();
+ CED2KServerLink(const CED2KServerLink&);
+ CED2KServerLink& operator__Assign(const CED2KServerLink&);
+
+ CString m_strAddress;
+ uint16 m_port;
+ CString m_defaultName;
+};
+
+
+class CED2KFileLink :        CED2KLink
+{
+public:
+ CED2KFileLink(const char * pszName, const char * pszSize, const char * pszHash, const CStringArray& param, const char * pszSources);
+ virtual ~CED2KFileLink();
+
+ virtual LinkType GetKind() const;
+ virtual void GetLink(CString& lnk) const;
+ virtual CED2KServerListLink* GetServerListLink();
+ virtual CED2KServerLink* GetServerLink();
+ virtual CED2KFileLink* GetFileLink();
+ virtual CED2KNodesListLink* GetNodesListLink()   { return NULL; }
+
+ const char * GetName() const   { return m_name; }
+ const uchar* GetHashKey() const   { return m_hash;}
+ const CAICHHash& GetAICHHash() const { return m_AICHHash;}
+ EMFileSize GetSize() const    { return (uint64)_tstoi64(m_size); }
+ bool HasValidSources() const   { return (SourcesList != NULL); }
+ bool HasHostnameSources() const   { return (!m_HostnameSourcesList.IsEmpty()); }
+ bool HasValidAICHHash() const   { return m_bAICHHashValid; }
+
+ CSafeMemFile* SourcesList;
+ CSafeMemFile* m_hashset;
+ CTypedPtrList                                 m_HostnameSourcesList;
+
+private:
+ CED2KFileLink();
+ CED2KFileLink(const CED2KFileLink&);
+ CED2KFileLink& operator__Assign(const CED2KFileLink&);
+
+ CString m_name;
+ CString m_size;
+ uchar m_hash[16];
+ bool m_bAICHHashValid;
+ CAICHHash m_AICHHash;
+};
+
+
+class CED2KServerListLink :        CED2KLink
+{
+public:
+ CED2KServerListLink(const char * pszAddress);
+ virtual ~CED2KServerListLink();
+
+ virtual LinkType GetKind() const;
+ virtual void GetLink(CString& lnk) const;
+ virtual CED2KServerListLink* GetServerListLink();
+ virtual CED2KServerLink* GetServerLink();
+ virtual CED2KFileLink* GetFileLink();
+ virtual CED2KNodesListLink* GetNodesListLink()  { return NULL; }
+
+ const char * GetAddress() const { return m_address; }
+
+private:
+ CED2KServerListLink();
+ CED2KServerListLink(const CED2KFileLink&);
+ CED2KServerListLink& operator__Assign(const CED2KFileLink&);
+
+ CString m_address;
+};
+
+
+class CED2KNodesListLink :        CED2KLink
+{
+public:
+ CED2KNodesListLink(const char * pszAddress);
+ virtual ~CED2KNodesListLink();
+
+ virtual LinkType GetKind() const;
+ virtual void GetLink(CString& lnk) const;
+ virtual CED2KServerListLink* GetServerListLink();
+ virtual CED2KServerLink* GetServerLink();
+ virtual CED2KFileLink* GetFileLink();
+ virtual CED2KNodesListLink* GetNodesListLink();
+
+ const char * GetAddress() const { return m_address; }
+
+private:
+ CED2KNodesListLink();
+ CED2KNodesListLink(const CED2KFileLink&);
+ CED2KNodesListLink& operator__Assign(const CED2KFileLink&);
+
+ CString m_address;
+};
+
+
+
+
+
+
+ 

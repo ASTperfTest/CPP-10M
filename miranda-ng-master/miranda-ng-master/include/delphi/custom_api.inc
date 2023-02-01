@@ -1,0 +1,11 @@
+{$include m_actman.inc}
+{$include m_fingerprint.inc}
+{$include m_folders.inc}
+{$include m_ieview.inc}
+{$include m_msg_buttonsbar.inc}
+{$include m_proto_listeningto.inc}
+{$include m_radio.inc}
+{$include m_smileyadd.inc}
+{$include m_tipper.inc}
+{$include m_toptoolbar.inc}
+{$include m_variables.inc}

@@ -1,0 +1,85 @@
+#muuid {c5ef53a8-80d4-4ce9-b341-ec90d3ec9156}
+;============================================================
+;  File: ChangeKeyboardLayout.dll
+;  Plugin: Change keyboard layout
+;  Version: 0.0.1.6
+;  Authors: Yasnovidyashii
+;============================================================
+[Plugin for changing keyboard layout of text (multilayout).]
+Керування зміною розкладки по гарячих клавішах.
+;file \plugins\ChangeKeyboardLayout\res\ChangeKeyboardLayout.rc
+[Hotkeys]
+Гарячі клавіші
+[Changing layout:]
+Зміна розкладки:
+["Current word" mode]
+Режим "поточного слова"
+[Changing layout (alternative):]
+Зміна розкладки (альтернативна):
+[Inverting lettercase:]
+Інвертувати регістр:
+[Options]
+Налаштування
+[Two-way changing layout (experimental)]
+Двостороння зміна розкладки
+[Log operations]
+Дії над журналом
+[Copy result to clipboard]
+Копіювати результат в буфер обміну
+[Show result in Popup]
+Показати результат у вікні
+[Strings for keyboard layouts]
+Рядки для розкладок клавіатури
+[Default]
+За замовчанням
+[Invert current state]
+Інвертувати поточний стан
+[Switch off]
+Вимкнути
+[Leave as it is]
+Залишити як є
+[Set Caps Lock state when inverting lettercase:]
+Стан Caps Lock при інвертуванні регістру:
+[Change active keyboard layout in system]
+Змінювати активну розкладку клавіатури
+[Colors]
+Кольори
+[Use default colors]
+За замовчанням
+[Use Windows colors]
+Кольори Windows
+[Use custom colors]
+Вказати кольори
+[Back]
+Фон
+[Text]
+Текст
+[Timeout]
+Затримка
+[Permanent]
+Постійно
+[Custom]
+Вказати
+[On left click]
+Лівий клік
+[Copy to clipboard]
+Копіювати в буфер обміну
+[Dismiss]
+Прибрати
+[On right click]
+Правий клік
+[Preview]
+Тест
+;file \plugins\ChangeKeyboardLayout\src\hook_events.cpp
+[Changing Layout]
+Зміна розкладки
+[Changing Case]
+Інвертувати регістр
+[Message sessions]
+Бесіди
+[Popups]
+Спливаючі вікна
+;file \plugins\ChangeKeyboardLayout\src\main.cpp
+;file \plugins\ChangeKeyboardLayout\src\stdafx.h
+[ChangeKeyboardLayout]
+Зміна розкладки

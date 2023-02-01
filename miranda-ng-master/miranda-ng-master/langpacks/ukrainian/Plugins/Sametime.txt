@@ -1,0 +1,480 @@
+#muuid {f1b0ba1b-0c91-4313-85eb-225069d44d01}
+;============================================================
+;  File: Sametime.dll
+;  Plugin: Sametime protocol
+;  Version: 0.7.0.5
+;  Authors: Scott Ellis, Szymon Tokarz
+;============================================================
+[Implementation of instant messaging for the Lotus Sametime protocol.]
+Підтримка протоколу Lotus Sametime у Miranda NG.
+;file \protocols\Sametime\res\resource.rc
+[Connection]
+Підключення
+[ID:]
+
+[Password:]
+Пароль
+[Server name:]
+Сервер:
+[Port:]
+Порт:
+[Client ID and version]
+ID та версія клієнта
+[Error display]
+Показ помилок
+[Use message boxes]
+Діалогові вікна
+[Use popups]
+Спливаючі вікна
+[Use system tray balloons]
+Підказки в треї
+[Contacts]
+Контакти
+[Get contacts from server]
+Завантажити з сервера
+[Upload contacts]
+Закачати контакти
+[Import from file...]
+Імпортувати з файлу...
+[Auto-add new contacts]
+Авт. додавати нові контакти
+[Treat 'idle' as 'away']
+Очікування як "Відсутній"
+[Encryption]
+Шифрування
+[40 or 128 bit]
+40 або 128 біт
+[None]
+Не шифрувати
+[Meanwhile lib ver: 1.0.2]
+Версія бібліотеки Meanwhile: 1.0.2
+[Disconnected]
+Відключений
+[Send announcement]
+Надіслати оголошення
+[Cancel]
+Скасувати
+[Message text:]
+Текст повідомлення:
+[Select all]
+Вибрати все
+[Invert\nselection]
+Обернути\nвиділення
+;file \protocols\Sametime\src\conference.cpp
+[I'm outa here.]
+Мене немає.
+[Invitation rejected - already present.]
+Запрошення відхилено - користувач уже присутній.
+[Your invitation has been rejected.]
+Запрошення відхилено
+[Please join this meeting.]
+Будь ласка, приєднуйтеся до цієї конференції.
+[Normal]
+Звичайний
+[%s's conference]
+Чат-кімната користувача %s
+[Leave conference]
+Вийти з чату
+[Start conference]
+Створити чат-кімнату
+;file \protocols\Sametime\src\files.cpp
+;file \protocols\Sametime\src\messaging.cpp
+[No common encryption method. Try to enable encryption in protocol options.]
+Шифрування недоступне. Спробуйте ввімкнути шифрування в налаштуваннях протоколу.
+[SERVICE NOT IMPLEMENTED. %s]
+Служба не реалізована. %s
+;file \protocols\Sametime\src\options.cpp
+[Client protocol version: %03d.%03d]
+Версія протоколу клієнта: %03d.%03d
+[Server protocol version: %03d.%03d]
+Версія протоколу сервера: %03d.%03d
+[Network]
+Мережа
+;file \protocols\Sametime\src\sametime.cpp
+[Protocol icon]
+Значок протоколу
+[Announce]
+Оголошення
+[Notification]
+Сповіщення
+[Error]
+Помилка
+;file \protocols\Sametime\src\sametime_session.cpp
+[Sametime administrator message]
+Повідомлення адміністратора Sametime
+[Session announcement - from '%s']
+Оголошення від %s
+[Unknown user status: %d]
+Невідомий статус користувача: %d
+[No server connection!]
+Відсутнє з'єднання з сервером!
+[Send announcement...]
+Надіслати оголошення...
+;file \protocols\Sametime\src\session_announce_win.cpp
+[Recipients]
+Отримувачі
+;file \protocols\Sametime\src\userlist.cpp
+[Failed to upload contacts - storage service unavailable.]
+Не вдалося закачати контакти - служба зберігання недоступна.
+[Name]
+Ім'я
+[Description]
+Опис
+[Group?]
+Група?
+[True]
+Правда
+[False]
+Брехня
+;file \protocols\Sametime\src\utils.cpp
+[Notifications]
+Сповіщення
+[Errors]
+Помилки
+[%s\n\nSametime error %S\n%s]
+%s\n\nПомилка Sametime %S\n%s
+;file \protocols\Sametime\src\meanwhile\src\error.c
+[Success]
+Успішно
+[General failure]
+
+[Request delayed]
+Запит відкладений
+[Request is invalid]
+Неправильний запит
+[Not logged in]
+
+[Not authorized]
+Не авторизований
+[Operation aborted]
+Операцію скасовано
+[No element]
+Немає елемента
+[User is not online]
+Користувач не в мережі
+[Invalid data]
+Неправильні дані
+[Not implemented]
+Не реалізовано
+[Unknown error]
+Невідома помилка
+[Not enough resources]
+Недостатньо ресурсів
+[Requested channel is not supported]
+Канал не підтримується
+[Requested channel already exists]
+Канал уже існує
+[Requested service is not supported]
+Служба не підтримується
+[Requested protocol is not supported]
+Протокол не підтримується
+[Version is not supported]
+Ця версія не підтримується
+[User is invalid or not trusted]
+
+[Already initialized]
+
+[Not an owner]
+Не власник
+[Invalid token]
+Неправильний токен
+[Token expired]
+
+[Token mismatch]
+Токен не збігається
+[Port in use]
+Порт використовується
+[Network error]
+Помилка мережі
+[Master channel error]
+Помилка головного каналу
+[Already subscribed]
+
+[Not subscribed]
+
+[Encryption method not supported]
+Метод шифрування не підтримується
+[Encryption not initialized]
+Шифрування не ініціалізоване
+[Encryption too low]
+
+[Invalid encrypted data]
+Неправильні дані шифрування
+[No common encryption method]
+Немає сумісного методу шифрування
+[Channel destroyed]
+
+[Channel redirected]
+
+[Incorrect entry]
+
+[Version mismatch]
+Версія несумісна
+[Not enough buffers memory]
+
+[Not in use]
+Не використовується
+[Not enough sockets]
+
+[Hardware error]
+Помилка обладнання
+[Host error]
+Помилка хоста
+[Host unreachable]
+Хост недоступний
+[Internet protocol error]
+
+[Message is too large]
+Повідомлення занадто довге
+[Proxy error]
+Помилка проксі
+[Server full]
+Сервер переповнений
+[Server not responding]
+Сервер не відповідає
+[Connection error]
+Помилка з'єднання
+[User removed]
+Користувач видалений
+[Sametime protocol error]
+Помилка протоколу Sametime
+[User restricted]
+
+[Incorrect Username/Password]
+Неправильне ім'я користувача або пароль
+[Encryption mismatch]
+Шифрування не збігається
+[User unregistered]
+
+[Login verification down or unavailable]
+
+[User too idle]
+Користувач неактивний
+[The guest name is currently being used]
+
+[User exists]
+Користувач існує
+[User relogin]
+
+[Bad name]
+Неправильне ім'я
+[Registration error]
+Помилка реєстрації
+[Privilege error]
+Помилка доступу
+[Need email]
+Потрібен E-mail
+[DNS error]
+Помилка DNS
+[DNS fatal error]
+Невиправна помилка DNS
+[DNS not found]
+DNS не знайдено
+[Connection broken]
+З'єднання розірвано
+[Connection aborted]
+З'єднання скасовано
+[Connection refused]
+З'єднання відхилено
+[Connection reset]
+З'єднання скинуто
+[Connection timed out]
+
+[Connection closed]
+З'єднання закрито
+[Login to two different servers concurrently (1)]
+Підключення до двох серверів одночасно (1)
+[Login to two different servers concurrently (2)]
+Підключення до двох серверів одночасно (2)
+[Already logged on, disconnected]
+
+[Already logged on]
+
+[Server misconfiguration]
+Проблема налаштувань сервера
+[Server needs upgrade]
+Сервер потребує оновлення
+[Applet Logout]
+
+[User is in Do Not Disturb mode]
+Статус користувача "Не турбувати"
+[Already logged in elsewhere]
+Уже підключений з іншого місця
+[Cannot register a reserved type]
+
+[Requested type is already registered]
+Тип уже зареєстрований
+[Requested type is not registered]
+Тип не зареєстрований
+[Resolve not completed]
+Визначення не завершено
+[Resolve name not unique]
+Ім'я не унікальне
+[Resolve name not resolvable]
+
+[Operation succeeded]
+Операція успішна
+[Operation failed]
+Операція невдала
+[Request accepted but will be served later]
+Запит прийнятий, але буде оброблений пізніше
+[Request is invalid due to invalid state or parameters]
+
+[Not logged in to community]
+
+[Unauthorized to perform an action or access a resource]
+
+[Operation has been aborted]
+Операцію скасовано
+[The element is non-existent]
+Немає такого елемента
+[The user is non-existent]
+Немає такого користувача
+[The data are invalid or corrupted]
+Неправильні або пошкоджені дані
+[The requested feature is not implemented]
+Функція не реалізована
+[Not enough resources to perform the operation]
+Недостатньо ресурсів для виконання операції
+[The requested channel is not supported]
+Канал не підтримується
+[The requested channel already exists]
+Канал уже існує
+[The requested service is not supported]
+Служба не підтримується
+[The requested protocol is not supported (1)]
+Протокол не підтримується (1)
+[The requested protocol is not supported (2)]
+Протокол не підтримується (2)
+[The version is not supported]
+Ця версія не підтримується
+[Not an owner of the requested resource]
+Не власник запитуваного ресурсу
+[Token has expired]
+
+[Token IP mismatch]
+IP токену не збігається
+[WK port is in use]
+
+[Low-level network error occurred]
+Мережева помилка низького рівня
+[No master channel exists]
+Головний канал не існує
+[Already subscribed to object(s) or event(s)]
+
+[Not subscribed to object(s) or event(s)]
+
+[Encryption is not supported or failed unexpectedly]
+Шифрування не підтримується або сталася його помилка
+[Encryption mechanism has not been initialized yet]
+Механізм шифрування не ініціалізований
+[The requested encryption level is unacceptably low]
+Запитуваний рівень шифрування недопустимо низький
+[The encryption data passed are invalid or corrupted]
+Дані шифрування неправильні або пошкоджені
+[There is no common encryption method]
+Немає сумісного методу шифрування
+[The channel is destroyed after a recommendation is made connect elsewhere]
+
+[The channel has been redirected to another destination]
+
+[Incorrect entry for server in cluster document]
+
+[Versions don't match]
+Версії не збігаються
+[Not enough resources for connection (buffers)]
+
+[Not enough resources for connection (socket id)]
+
+[Hardware error occurred]
+Помилка обладнання
+[Network down]
+
+[Host down]
+
+[TCP/IP protocol error]
+Помилка протоколу TCP/IP
+[The message is too large]
+Повідомлення занадто довге
+[Server is full]
+Сервер переповнений
+[Server is not responding]
+Сервер не відповідає
+[Cannot connect]
+Неможливо підключитися
+[User has been removed from the server]
+Користувач видалений з сервера
+[Virtual Places protocol error]
+Помилка протоколу Virtual Places
+[Cannot connect because user has been restricted]
+
+[Incorrect login]
+
+[User is unregistered]
+
+[Verification service down]
+
+[User has been idle for too long]
+Користувач був неактивним занадто довго
+[The user is already signed on]
+
+[The user has signed on again]
+
+[The name cannot be used]
+Це ім'я не можна використати
+[The registration mode is not supported]
+Реєстрація не підтримується
+[User does not have appropriate privilege level]
+У користувача немає необхідних прав доступу
+[Email address must be used]
+Потрібна адеса E-mail
+[Error in DNS]
+Помилка DNS
+[Fatal error in DNS]
+Невиправна помилка DNS
+[Server name not found]
+Ім'я сервера не знайдене
+[The connection has been broken]
+З'єднання розірвано
+[An established connection was aborted by the software in the host machine]
+
+[The connection has been refused]
+З'єднання відхилено
+[The connection has been reset]
+З'єднання скинуто
+[The connection has timed out]
+
+[The connection has been closed]
+З'єднання закрито
+[Disconnected due to login in two Sametime servers concurrently (1)]
+З'єднання закрито, бо ви підключені до двох серверів Sametime одночасно (1)
+[Disconnected due to login in two Sametime servers concurrently (2)]
+З'єднання закрито, бо ви підключені до двох серверів Sametime одночасно (2)
+[Disconnected due to login from another computer.]
+З'єднання закрито, бо ви підключені з іншого комп'ютера.
+[Unable to log in because you are already logged on from another computer]
+Неможливо підключитися, тому що ви вже підключені з іншого комп'ютера.
+[Unable to log in because the server is either unreachable, or not configured properly.]
+Неможливо підключитися: сервер недоступний або налаштований неправильно.
+[Unable to log in to home Sametime server through the requested server, since your home server needs to be upgraded.]
+Неможливо підключитися до домашнього сервера Sametime через вказаний сервер: ваш домашній сервер необхідно оновити.
+[The applet was logged out with this reason. Perform relogin and you will return to the former state.]
+
+[The user is not online]
+Користувач не в мережі
+[The user is in do not disturb mode]
+Статус користувача "Не турбувати"
+[Cannot log in because already logged in with a different user name (Java only)]
+Неможливо підключитися, тому що ви вже підключені з іншим іменем користувача (тільки Java)
+[The requested type is already registered]
+Тип уже зареєстрований
+[The requested type is not registered]
+Тип не зареєстрований
+[The resolve process was not completed, but a partial response is available]
+Процес визначення не завершено, доступна часткова відповідь
+[The name was found, but is not unique (request was for unique only)]
+Знайдене ім'я не унікальне (запит був лише на унікальне)
+[The name is not resolvable due to its format, for example an Internet email address]
+
+[Unknown error code]
+Невідомий код помилки

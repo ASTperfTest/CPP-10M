@@ -1,0 +1,63 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("ListViewWalkerPropertySheet.h");}
+void INCLUDEREPLACE(){CX_INCL("FileDetailDialogInfo.h");}
+void INCLUDEREPLACE(){CX_INCL("FileDetailDialogName.h");}
+void INCLUDEREPLACE(){CX_INCL("CommentDialogLst.h");}
+void INCLUDEREPLACE(){CX_INCL("FileInfoDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("MetaDataDlg.h");}
+void INCLUDEREPLACE(){CX_INCL("ED2kLinkDlg.h");}
+void INCLUDEREPLACE(){CX_INCL("ArchivePreviewDlg.h");}
+
+class CSearchFile;
+
+class CFileDetailDialog :        CListViewWalkerPropertySheet
+{
+ //DECLARE_DYNAMIC(CFileDetailDialog)
+
+public:
+ CFileDetailDialog(const CSimpleArray            * paFiles, unsigned int uInvokePage = 0, CListCtrlItemWalk* pListCtrl = NULL);
+ virtual ~CFileDetailDialog();
+
+protected:
+ CFileDetailDialogInfo m_wndInfo;
+ CFileDetailDialogName m_wndName;
+ CCommentDialogLst  m_wndComments;
+ CFileInfoDialog   m_wndMediaInfo;
+ CMetaDataDlg   m_wndMetaData;
+ CED2kLinkDlg   m_wndFileLink;
+ CArchivePreviewDlg  m_wndArchiveInfo;
+
+ unsigned int m_uPshInvokePage;
+ static const char* m_pPshStartPage;
+
+ void UpdateTitle();
+
+ virtual int  OnInitDialog();
+
+
+         void OnDestroy();
+         long *  OnDataChanged(int * , long *);
+};
+
+
+
+
+
+
+ 

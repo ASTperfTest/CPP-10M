@@ -1,0 +1,55 @@
+﻿
+
+class CWebServer;
+
+void StartSockets(CWebServer *pThis);
+void StopSockets();
+
+class CWebSocket
+{
+public:
+ void SetParent(CWebServer *);
+ CWebServer* m_pParent;
+
+ class CChunk
+ {
+ public:
+  char* m_pData;
+  char* m_pToSend;
+  unsigned long m_dwSize;
+  CChunk* m_pNext;
+
+  ~CChunk() { delete[] m_pData; }
+ };
+
+ CChunk* m_pHead; // tails of what has to be sent
+ CChunk* m_pTail;
+
+ char* m_pBuf;
+ unsigned long m_dwRecv;
+ unsigned long m_dwBufSize;
+ unsigned long m_dwHttpHeaderLen;
+ unsigned long m_dwHttpContentLen;
+
+ bool m_bCanRecv;
+ bool m_bCanSend;
+ bool m_bValid;
+ SOCKET m_hSocket;
+
+ void OnReceived(void* pData, unsigned long dwDataSize, in_addr inad); // must be implemented
+ void SendData(const void* pData, unsigned long dwDataSize);
+ void SendData(const char* szText) { SendData(szText, lstrlenA(szText)); }
+ void SendContent(const char* szStdResponse, const void* pContent, unsigned long dwContentSize);
+ void SendContent(const char* szStdResponse, const CString& rstr);
+ void SendReply(const char* szReply);
+ void Disconnect();
+
+ void OnRequestReceived(char* pHeader, unsigned long dwHeaderLen, char* pData, unsigned long dwDataLen , in_addr inad);
+};
+
+
+
+
+
+
+ 

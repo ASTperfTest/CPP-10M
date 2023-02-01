@@ -1,0 +1,13 @@
+#muuid {bd542bb4-5ae4-4d0e-a435-ba8dbe39607f}
+;============================================================
+;  File: SmileyAdd.dll
+;  Plugin: SmileyAdd
+;  Version: 0.3.2.2
+;  Authors: Peacow, nightwish, bid, borkra
+;============================================================
+[Background color]
+Background colour
+[Customize]
+Customise
+[Smiley pack %s for category "%s" not found.\nSelect correct smiley pack in the Options -> Customize -> Smileys.]
+Smiley pack %s for category "%s" not found.\nSelect correct smiley pack in the Options -> Customise -> Smileys.

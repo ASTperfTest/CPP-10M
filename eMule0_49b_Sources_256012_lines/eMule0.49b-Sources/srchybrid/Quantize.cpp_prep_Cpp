@@ -1,0 +1,224 @@
+﻿void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("Quantize.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+CQuantizer::CQuantizer (unsigned int nMaxColors, unsigned int nColorBits)
+{
+ m_nColorBits = nColorBits < 8 ? nColorBits : 8;
+
+ m_pTree = NULL;
+ m_nLeafCount = 0;
+ for (int i=0; i<=(int) m_nColorBits; i++)
+  m_pReducibleNodes[i] = NULL;
+ m_nMaxColors = nMaxColors;
+}
+/////////////////////////////////////////////////////////////////////////////
+CQuantizer::~CQuantizer ()
+{
+ if (m_pTree != NULL)
+  DeleteTree (&m_pTree);
+}
+/////////////////////////////////////////////////////////////////////////////
+int  CQuantizer::ProcessImage (void * hImage)
+{
+ unsigned char r, g, b;
+ int i, j;
+
+ BITMAPINFOHEADER ds;
+ memcpy(&ds,hImage, sizeof(ds));
+ int effwdt = ((((ds.biBitCount * ds.biWidth ) + 31) / 32) * 4);
+
+ int nPad = effwdt - (((ds.biWidth * ds.biBitCount) + 7) / 8);
+
+ unsigned char* pbBits = (unsigned char*)hImage + *(unsigned long *)hImage;
+
+ switch (ds.biBitCount) {
+
+ case 1: // 1-bit    
+ case 4: // 4-bit    
+ case 8: // 8-bit    
+  for (i=0; i<ds.biHeight; i++) {
+   for (j=0; j<ds.biWidth; j++) {
+    unsigned char idx=GetPixelIndex(j,i,ds.biBitCount,effwdt,pbBits);
+    unsigned char* pal = (unsigned char*)(hImage) + sizeof(BITMAPINFOHEADER);
+    long ldx = idx*sizeof(RGBQUAD);
+    b = pal[ldx++];
+    g = pal[ldx++];
+    r = pal[ldx];
+    AddColor (&m_pTree, r, g, b, m_nColorBits, 0, &m_nLeafCount,
+     m_pReducibleNodes);
+    while (m_nLeafCount > m_nMaxColors)
+     ReduceTree (m_nColorBits, &m_nLeafCount,
+      m_pReducibleNodes);
+   }
+  }
+
+  break;
+ case 24: // 24-bit    
+  for (i=0; i<ds.biHeight; i++) {
+   for (j=0; j<ds.biWidth; j++) {
+    b = *pbBits++;
+    g = *pbBits++;
+    r = *pbBits++;
+    AddColor (&m_pTree, r, g, b, m_nColorBits, 0, &m_nLeafCount,
+     m_pReducibleNodes);
+    while (m_nLeafCount > m_nMaxColors)
+     ReduceTree (m_nColorBits, &m_nLeafCount, m_pReducibleNodes);
+   }
+   pbBits += nPad;
+  }
+  break;
+
+ default: // Unrecognized color format
+  return FALSE;
+ }
+ return TRUE;
+}
+/////////////////////////////////////////////////////////////////////////////
+void CQuantizer::AddColor (NODE** ppNode, unsigned char r, unsigned char g, unsigned char b,
+ unsigned int nColorBits, unsigned int nLevel, unsigned int* pLeafCount, NODE** pReducibleNodes)
+{
+ static unsigned char mask[8] = { 0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01 };
+
+ // If the node doesn't exist, create it.
+ if (*ppNode == NULL)
+  *ppNode = (NODE*)CreateNode (nLevel, nColorBits, pLeafCount, pReducibleNodes);
+
+ // Update color information if it's a leaf node.
+ if ((*ppNode)->bIsLeaf) {
+  (*ppNode)->nPixelCount++;
+  (*ppNode)->nRedSum += r;
+  (*ppNode)->nGreenSum += g;
+  (*ppNode)->nBlueSum += b;
+ } else { // Recurse a level deeper if the node is not a leaf.
+  int shift = 7 - nLevel;
+  int nIndex =(((r & mask[nLevel]) >> shift) << 2) |
+     (((g & mask[nLevel]) >> shift) << 1) |
+     (( b & mask[nLevel]) >> shift);
+  AddColor (&((*ppNode)->pChild[nIndex]), r, g, b, nColorBits,
+     nLevel + 1, pLeafCount, pReducibleNodes);
+ }
+}
+/////////////////////////////////////////////////////////////////////////////
+void* CQuantizer::CreateNode (unsigned int nLevel, unsigned int nColorBits, unsigned int* pLeafCount,
+ NODE** pReducibleNodes)
+{
+ NODE* pNode = (NODE*)calloc(1,sizeof(NODE));
+
+ if (pNode== NULL) return NULL;
+
+ pNode->bIsLeaf = (nLevel == nColorBits) ? TRUE : FALSE;
+ if (pNode->bIsLeaf) (*pLeafCount)++;
+ else {
+  pNode->pNext = pReducibleNodes[nLevel];
+  pReducibleNodes[nLevel] = pNode;
+ }
+ return pNode;
+}
+/////////////////////////////////////////////////////////////////////////////
+void CQuantizer::ReduceTree (unsigned int nColorBits, unsigned int* pLeafCount,
+ NODE** pReducibleNodes)
+{
+ // Find the deepest level containing at least one reducible node.
+ int i;
+ for (i=nColorBits - 1; (i>0) && (pReducibleNodes[i] == NULL); i--);
+
+ // Reduce the node most recently added to the list at level i.
+ NODE* pNode = pReducibleNodes[i];
+ pReducibleNodes[i] = pNode->pNext;
+
+ unsigned int nRedSum = 0;
+ unsigned int nGreenSum = 0;
+ unsigned int nBlueSum = 0;
+ unsigned int nChildren = 0;
+
+ for (i=0; i<8; i++) {
+  if (pNode->pChild[i] != NULL) {
+   nRedSum += pNode->pChild[i]->nRedSum;
+   nGreenSum += pNode->pChild[i]->nGreenSum;
+   nBlueSum += pNode->pChild[i]->nBlueSum;
+   pNode->nPixelCount += pNode->pChild[i]->nPixelCount;
+   free(pNode->pChild[i]);
+   pNode->pChild[i] = NULL;
+   nChildren++;
+  }
+ }
+
+ pNode->bIsLeaf = TRUE;
+ pNode->nRedSum = nRedSum;
+ pNode->nGreenSum = nGreenSum;
+ pNode->nBlueSum = nBlueSum;
+ *pLeafCount -= (nChildren - 1);
+}
+/////////////////////////////////////////////////////////////////////////////
+void CQuantizer::DeleteTree (NODE** ppNode)
+{
+ for (int i=0; i<8; i++) {
+  if ((*ppNode)->pChild[i] != NULL) DeleteTree (&((*ppNode)->pChild[i]));
+ }
+ free(*ppNode);
+ *ppNode = NULL;
+}
+/////////////////////////////////////////////////////////////////////////////
+void CQuantizer::GetPaletteColors (NODE* pTree, RGBQUAD* prgb, unsigned int* pIndex)
+{
+ if (pTree){
+  if (pTree->bIsLeaf) {
+   prgb[*pIndex].rgbRed = (unsigned char)((pTree->nRedSum)/(pTree->nPixelCount));
+   prgb[*pIndex].rgbGreen = (unsigned char)((pTree->nGreenSum)/(pTree->nPixelCount));
+   prgb[*pIndex].rgbBlue = (unsigned char)((pTree->nBlueSum)/(pTree->nPixelCount));
+   prgb[*pIndex].rgbReserved = 0;
+   (*pIndex)++;
+  } else {
+   for (int i=0; i<8; i++) {
+    if (pTree->pChild[i] != NULL)
+     GetPaletteColors (pTree->pChild[i], prgb, pIndex);
+   }
+  }
+ }
+}
+/////////////////////////////////////////////////////////////////////////////
+unsigned int CQuantizer::GetColorCount ()
+{
+ return m_nLeafCount;
+}
+/////////////////////////////////////////////////////////////////////////////
+void CQuantizer::SetColorTable (RGBQUAD* prgb)
+{
+ unsigned int nIndex = 0;
+ GetPaletteColors (m_pTree, prgb, &nIndex);
+}
+/////////////////////////////////////////////////////////////////////////////
+unsigned char CQuantizer::GetPixelIndex(long x, long y, int nbit, long effwdt, unsigned char *pimage)
+{
+ if (nbit==8){
+  return pimage[y*effwdt + x];
+ } else {
+  unsigned char pos;
+  unsigned char iDst= pimage[y*effwdt + (x*nbit >> 3)];
+  if (nbit==4){
+   pos = (unsigned char)(4*(1-x%2));
+   iDst &= (0x0F<<pos);
+   return iDst >> pos;
+  } else if (nbit==1){
+   pos = (unsigned char)(7-x%8);
+   iDst &= (0x01<<pos);
+   return iDst >> pos;
+  }
+ }
+ return 0;
+}
+
+
+
+
+
+
+ 

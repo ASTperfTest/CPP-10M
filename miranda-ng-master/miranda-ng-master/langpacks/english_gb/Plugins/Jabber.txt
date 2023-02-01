@@ -1,0 +1,35 @@
+#muuid {144e80a2-d198-428b-acbe-9d55dacc7fde}
+;============================================================
+;  File: Jabber.dll
+;  Plugin: Jabber protocol
+;  Version: 0.95.11.1
+;  Authors: George Hazan, Maxim Mluhov, Victor Pavlychko, Artem Shpynov, Michael Stepura
+;============================================================
+[Favorites]
+Favourites
+[Authorization request]
+Authorisation request
+[If you wish to confirm this request, please click authorize. Otherwise, press deny to reject it.]
+If you wish to confirm this request, please click authorise. Otherwise, press deny to reject it.
+[Authorize]
+Authorise
+[Supports stream initiation (e.g., for filetransfers)]
+Supports stream initiation (e.g. for filetransfers)
+[Add to favorites]
+Add to favourites
+[Browse all favorites]
+Browse all favourites
+[Remove all favorites]
+Remove all favourites
+[Automatically add contact when accept authorization]
+Automatically add contact when accept authorisation
+[Automatically accept authorization requests]
+Automatically accept authorisation requests
+[Unauthorized]
+Unauthorised
+[Only JPG, GIF, and BMP image files smaller than 40 KB are supported.]
+Only JPG, GIF and BMP image files smaller than 40 KB are supported.
+[socializing]
+socialising
+[Traveling]
+Travelling

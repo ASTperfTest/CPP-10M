@@ -1,0 +1,131 @@
+#muuid {67848b07-83d2-49e9-8844-7e3de268e304}
+;============================================================
+;  File: HTTPServer.dll
+;  Plugin: HTTPServer
+;  Version: 0.1.2.4
+;  Authors: Kennet Nielsen, modified by Vampik, Houdini
+;============================================================
+[HTTP Web Server plugin for Miranda.]
+HTTP веб-сервер для Miranda NG.
+;file \plugins\HTTPServer\res\resource.rc
+[IPAddress1]
+IP-адреса 1
+[IPAddress2]
+IP-адреса 2
+[Max downloads]
+Макс. завантажень
+[Address]
+Адреса
+[Mask]
+Маска
+[Share name]
+Ім'я "шари"
+[Allowed IP]
+Дозволені IP
+[HTTP Server statistics view]
+Перегляд статистики HTTP-сервера
+[Display hidden shares]
+Показувати приховані "шари"
+[New share]
+Нова "шара"
+[Set to default]
+За замовчанням
+[External server name]
+Зовнішнє ім'я сервера
+[This is the link pasted to the message window]
+Це посилання, вставлене у вікно повідомлень
+[Write log file]
+Записувати журнал
+[Open log]
+Відкрити
+[Show popups]
+Показувати спливаючі вікна
+[Page keyword]
+Ключ. слова
+[URL address]
+Адреса URL
+[%ExternalIP% variable]
+Змінна %ExternalIP%
+[Test]
+Тест
+[Transfer limit (Kb/s)]
+Обмеження швидкості (Кб/с)
+[No control when Away or Not available]
+Вимк., якщо Відсутній/Недоступний
+[Connection control]
+Контроль з'єднань
+[Index creation]
+Створення індексу
+[Disable]
+Вимкнути
+[Create HTML (compatibility)]
+Створити HTML (сумісно)
+[Create XML]
+Створити XML
+[Notifications]
+Сповіщення
+[Total connection limit]
+Максимально з'єднань
+[Connections per user limit]
+Обмеження на користувача
+[Default download limit]
+Обмеження завантажень
+[&Edit share]
+&Редаг. шару
+[&Remove share]
+&Видалити шару
+[&Open in Browser]
+Відкрити в браузері
+[&Copy link]
+&Копіювати посилання
+;file \plugins\HTTPServer\src\GuiElements.cpp
+[Share Current Directory]
+Розшарити поточну папку
+[All files]
+Усі файли
+[Specify a file to share]
+Файл для доступу
+[Failed to share new file]
+Помилка шари нового файлу
+[Max Downloads]
+Макс. завантажень
+[Allowed Mask]
+Дозволена маска
+[Real path]
+Реальний шлях
+[User]
+Користувач
+[Agent]
+Агент
+[Completed]
+Завершено
+[Speed]
+Швидкість
+[Current IP Address: ]
+Поточна IP-адреса:\s
+[Current Address: ]
+Поточна адреса:\s
+[IP Address: ]
+IP-адреса:\s
+[You are browsing from]
+
+[Your external IP was detected as %d.%d.%d.%d\r\nby: %s]
+Ваш зовнішній IP ідентифіковано як %d.%d.%d.%d\r\nза: %s
+[HTTP Server]
+HTTP-сервер
+[Network]
+Мережа
+[HTTP Share new file]
+HTTP Новий розшарений файл
+[Show HTTP server statistics]
+Статистика НТТР-сервера
+;file \plugins\HTTPServer\src\HttpUser.cpp
+[Share removed]
+Шару видалено
+;file \plugins\HTTPServer\src\main.cpp
+[Failed to bind to port %s\r\nThis is most likely because another program or service is using this port]
+
+[Disable HTTP server]
+Вимкнути HTTP-сервер
+[Enable HTTP server]
+Увімкнути HTTP-сервер

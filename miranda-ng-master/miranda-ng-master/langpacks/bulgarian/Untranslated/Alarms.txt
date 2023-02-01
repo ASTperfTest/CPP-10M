@@ -1,0 +1,5 @@
+[Hide/show with clist]
+[Auto size vertically]
+[Speak]
+[Selected days]
+[&Suspend]

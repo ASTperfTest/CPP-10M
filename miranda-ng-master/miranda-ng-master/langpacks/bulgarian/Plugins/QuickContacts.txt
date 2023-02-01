@@ -1,0 +1,59 @@
+#muuid {f93ba59c-4f48-4f2e-8a91-77a2801527a3}
+;============================================================
+;  File: QuickContacts.dll
+;  Plugin: Quick contacts
+;  Version: 1.0.0.0
+;  Authors: Ricardo Pescuma Domenecci, Heiko Schillinger
+;============================================================
+[Open contact-specific windows by hotkey.]
+Отваря прозорец до точно пределен контакт чрез клавишна комбинация.
+;file \plugins\QuickContacts\res\resource.rc
+[Last Sent]
+Последно изпратени
+[Enable last-sent-to]
+Включване разпознаването на
+[recognize all messages sent]
+всички изпратени съобщения
+[recognize messages sent with hotkey only]
+изпратените съобщения чрез клавишна комбинация
+[Contacts]
+Контакти
+[Show offline contacts on these protocols:]
+Показвай контактите "Извън линия" за следните протоколи:
+[But hide them if protocol is offline]
+Не и при състоянието на протокола "Извън линия"
+[Append group name to contact name]
+Добавяне на групата към името на контакта
+[But show it as a column...]
+Като колона...
+[...on left side of name]
+...отляво на името
+[Hide subcontacts]
+Скриване на подконтактите
+[But keep subcontacts of protocols in above list if meta is hidden]
+Да остават, при скрити метаконтакти
+[Enter username:]
+Въведете име на потребител:
+[Show all contacts (Ctrl+A)]
+Показване на всички контакти (Ctrl+A)
+;file \plugins\QuickContacts\src\dialog.cpp
+[Show all contacts]
+Показва всички контакти
+[Send message]
+Изпраща съобщение
+[Send file]
+Изпраща файл
+[Open user info]
+Отваря подробности за потребител
+[Open history]
+Отваря историята
+[Open contact menu]
+Отваря менюто на контакта
+;file \plugins\QuickContacts\src\options.cpp
+[Quick Contacts]
+Quick Contacts
+;file \plugins\QuickContacts\src\quickcontacts.cpp
+[Open dialog]
+Отваря прозорец
+[Quick Contacts...]
+Quick Contacts...

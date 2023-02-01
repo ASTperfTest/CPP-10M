@@ -1,0 +1,172 @@
+#muuid {2e0d2ae3-e123-4607-8539-d4448d675ddb}
+;============================================================
+;  File: NimContact.dll
+;  Plugin: Non-IM Contact
+;  Version: 0.6.0.3
+;  Authors: Jonathan Gordon
+;============================================================
+[Non-IM Contact allows you to add 'contacts' that can act as shortcuts to other programs, or links to web pages.\r\nThe contacts name can be read from a text file (includes any ASCII file).\r\nThis plugin is a combination of Favorites and Text Reader plugins both made by me)]
+Позволяет добавлять ссылки на другие программы и веб-страницы в качестве «контактов». Имена этих «контактов» могут браться из текстового файла (любого файла ASCII).\r\nЭтот плагин является комбинацией плагинов Favorites и Text Reader, также написанных мной.
+;file \protocols\Non-IM Contact\res\resource.rc
+[View/Edit Files]
+Просмотр/Изменение файлов
+[Add File]
++ файл
+[Add URL]
++ URL
+[Remove Selected File]
+Удалить выбранный
+[file(#)]
+файл(#)
+[URL]
+Ссылка
+[Update URL every]
+Обновлять URL через
+[Intervals]
+периодов
+[If the protocol timer is disabled, web pages won't be updated]
+При выключенном таймере ссылки не обновляются
+[contact display info]
+
+[Contacts display name]
+Отображаемое имя
+[Contacts Tooltip]
+Подсказка
+[other settings]
+Дополнительные настройки
+[Link]
+Ссылка
+[Program parameters:]
+Аргументы программы:
+[O&pen File]
+От&крыть файл
+[O&pen Folder]
+Отк&рыть папку
+[Link Settings]
+Настройка ссылок
+[Contact list settings]
+Настройки списка
+[Group:]
+Группа:
+[Status Icon]
+Значок статуса
+[Group\\Sub-Group]
+Группа\\Подгруппа
+[Timer Settings]
+Настройки таймера
+[Use Timer]
+Использовать таймер
+[Contact is always visible]
+Контакт всегда видим
+[Unless Non-IM Contacts protocol is OFFLINE]
+скрыть, если не-IM протокол не в сети
+[Timer Intervals.  ]
+
+[Away as another status]
+Отсутствую, как другой статус
+[Disable timer]
+Отключить таймер
+[Timer interval (in seconds)]
+Интервал (в секундах)
+[This will take affect after Non-IM Contacts' status is changed]
+Изменения вступят в силу после смены статуса контактов
+[Timer Options]
+Настройки таймера
+[String Maker]
+Создать строку
+[&Test String]
+&Проверка
+[&Exit]
+Вы&ход
+[String to test]
+Строка для просмотра
+[Returns....]
+Возврат...
+[line()]
+
+[start()]
+
+[end()]
+
+[wholeline()]
+
+[csv()]
+
+[file()]
+
+[filename()]
+
+[Help]
+Справка
+[Copy / Export contact]
+Копировать/Экспортировать контакт
+[&Export Non-IM Contact]
+&Экспорт не-IM контакта
+[Co&py Non-IM Contact]
+Ко&пировать не-IM контакт
+[Type one replace string per line in the format "original text,new text"]
+Одна строка замены на каждую строчку в формате "исходный текст,новый текст"
+[EXAMPLE: %fn1,%fn2]
+ПРИМЕР: %fn1,%fn2
+;file \protocols\Non-IM Contact\src\contactinfo.cpp
+[Select Folder]
+Выбрать папку
+[Non-IM Contact protocol timer is Disabled]
+Выключать протокол по таймеру
+[Timer intervals... Non-IM Contact Protocol timer is %d seconds]
+Интервал... Интервал протокола Non-IM Contact %d секунд
+[New Non-IM Contact]
+Новый не-IM контакт
+;file \protocols\Non-IM Contact\src\dialog.cpp
+[String replacing variables...\r\nThe following are all the valid variables that can be used. Refer to the wiki.miranda-ng.org for a proper explanation.\r\n\r\nfile(X)\t\t<- specifies the file to read from. MUST be followed by either start() or end() or wholeline()\r\nfilename(X)\t<- copies the filename of file X.\r\nstart(...)\t\t<- specifies where to start copying from.\r\nend(...)\t\t<- specifies where to stop copying.\r\nwholeline(line(...))\t<- specifies a whole line to copy\r\n\r\nstart() and end() explained\r\n.........................\r\nMUST start with line() followed by a number or a string inside " marks, OR csv(separatorX) variable. The number specifies which character in the line to start/end copying. The string specifies a string in the line to start/end copying.\r\n\r\ncsv(seperatorX) explained...\r\nSeperator is either "tab" or "space" or any SINGLE character. X is the Xth separator to pass before copying, (or to stop before).\r\n\r\nLastly the line(...) variable...\r\nInside the brackets must be either a number (to specify the line number), or a string inside " marks (to use the line with that string), or lastline(X). The X in lastline is the Xth line above the last line, i.e., lastline(1) will use the 2nd last line of the file. If searching for a line with "some words" you may put a + or - X after the closing ), i.e., line("some words")+3 to go 3 lines after the line with "some words".\r\n\r\nSome examples...\r\nfilename(0)    <- will display the filename of the 0th file\r\nfile(0)wholeline(line(0)))    <- will display the whole first line of the 0th file\r\nfile(0)wholeline(line("hello")-1)))    <- the wholeline above the first occurrence of "hello" in the file\r\nfile(0)start(line(lastline(1))csv(tab2))end(line(lastline())csv(tab4)))    <- starts at the 2nd last line of the file, from the 2nd tab variable, until the 4th tab variable in the last line (in the 0th file)\r\nfile(0)start(line("hello")+1"zzzz")end(line(6)17))    <- starts from the first occurrence of zzzz in the line after the first occurrence of hello, until the 17th character in the 6th line (starting from line 0) of the 0th file.\r\n]
+Переменные замещения строк...\r\nДалее перечислены все доступные для использования переменные. Полное описание см. в wiki.miranda-ng.org.\r\n\r\nfile(X)\t\t<- обозначает файл для чтения. После неё ДОЛЖНО быть start(), end() или wholeline()\r\nfilename(X)\t<- копирует имя файла Х.\r\nstart(...)\t\t<- обозначает место начала копирования.\r\nend(...)\t\t<- обозначает место завершения копирования.\r\nwholeline(line(...))\t<- обозначает целую строку для копирования\r\n\r\nПояснение о start() и end()\r\n.........................\r\nНачинается ВСЕГДА с line(), за которой указывается число или строка в кавычках "", ЛИБО переменная csv(разделительX). Число указывает на символ в строке, начиная или заканчивая которым производится копирование. Строка указывает на строку, начиная или заканчивая которой производится копирование.\r\n\r\ncsv(seperatorX) explained...\r\nSeperator is either "tab" or "space" or any SINGLE character. Х - это Х-й разделитель для передачи перед копированием (или по завершении его).\r\n\r\nПеременная line(...)...\r\nВнутри скобок ДОЛЖНО быть либо число (номер строки), либо строка в кавычках " (для использования строки, содержащей её), либо lastline(X). Числом Х здесь обозначается Х-ая строка перед последней строкой, т.е. lastline(1) вернёт предпоследнюю строку в файле. При поиске строки с "некоторыми словами" можно указать + или - Х после закрывающей скобки, например, line("некоторые слова")+3 спустится на 3 строки ниже строки с "некоторыми словами".\r\n\r\nНесколько примеров...\r\nfilename(0)    <- вернёт имя 0-го файла\r\nfile(0)wholeline(line(0)))    <- вернёт всю первую строку 0-го файла\r\nfile(0)wholeline(line("привет")-1)))    <- вся строка над первым найденным в файле словом "привет"\r\nfile(0)start(line(lastline(1))csv(tab2))end(line(lastline())csv(tab4)))    <- начинает копирование с предпоследней строки файла, со 2-й переменной табуляции и продолжает до 4-й переменной табуляции в последней строке (0-го файла)\r\nfile(0)start(line("привет")+1"сссс")end(line(6)17))    <- начинает копирование с первого нахождения "сссс" в строке, следующей после первого найденного слова "привет", и продолжает до 17-го символа в 6-й строке (начиная со строки 0) в 0-м файле.\r\n
+[Contacts Display Info]
+Отображаемые сведения
+[Link and Contact list Settings]
+Ссылки и настройки списка контактов
+[Copy Contact]
+Копировать контакт
+[Files]
+Файлы
+[Edit Non-IM Contact "%s"]
+Редактировать "%s"
+;file \protocols\Non-IM Contact\src\files.cpp
+[Do you want to overwrite the contents of the file?\r\n\r\nPressing No will append these contacts to the end of the file.]
+Вы уверены, что хотите перезаписать содержимое файла?\r\n\r\nНажмите "Нет", чтобы дописать эти контакты в конец файла.
+[File couldn't be opened]
+Не удалось открыть файл
+[File couldn't be opened,2]
+Не удалось открыть файл,2
+[line(%-3d) = | %s]
+
+;file \protocols\Non-IM Contact\src\http.cpp
+[Non-IM Contacts]
+Не-IM контакты
+;file \protocols\Non-IM Contact\src\main.cpp
+[Plugins]
+Плагины
+[Main Icon]
+Главный значок
+[Non-IM Contact]
+Не-IM контакт
+[&Non-IM Contact]
+&Не-IM контакт
+[&Add Non-IM Contact]
+&Добавить не-IM контакт
+[&View/Edit Files]
+&Просмотр/изменение файлов
+[&Export all Non-IM Contacts]
+&Экспорт всех не-IM контактов
+[&Import Non-IM Contacts]
+&Импорт не-IM контактов
+[&String Maker]
+&Создать строку
+[E&dit Contact Settings]
+Изм&енить настройки контакта
+;file \protocols\Non-IM Contact\src\namereplacing.cpp
+[%s - ERROR: no line specified or line not found (in %s)]
+%s - Ошибка: строка не указана или не существует (в %s)
+[%s - ERROR: file couldn't be opened (in %s)]
+%s - Ошибка: невозможно открыть файл (в %s)
+[%s - ERROR: no file specified in settings (in %s)]
+%s - Ошибка: файл не указан в настройках (в %s)

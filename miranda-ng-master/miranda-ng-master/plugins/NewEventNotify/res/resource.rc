@@ -1,0 +1,211 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "..\src\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPT_MAIN DIALOGEX 0, 0, 302, 232
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_OPT_TREE,"SysTreeView32",TVS_DISABLEDRAGDROP | WS_BORDER | WS_HSCROLL | WS_TABSTOP,6,5,293,206
+    CONTROL         "Limit message preview to",IDC_LIMITPREVIEW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,215,138,12
+    EDITTEXT        IDC_MESSAGEPREVIEWLIMIT,153,215,37,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_MESSAGEPREVIEWLIMITSPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,192,215,9,13
+    LTEXT           "characters",IDC_STATIC,210,216,82,10
+END
+
+IDD_OPT_EVENT_TYPES DIALOGEX 0, 0, 302, 232
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "Message",IDC_STATIC,89,17,39,8
+    LTEXT           "File",IDC_STATIC,139,17,39,8
+    LTEXT           "Errors",IDC_STATIC,184,17,39,8
+    LTEXT           "Others",IDC_STATIC,232,17,39,8
+    LTEXT           "Text",IDC_STATIC,10,35,70,8
+    CONTROL         "",IDC_COLTEXT_MESSAGE,"ColourPicker",WS_TABSTOP,87,34,39,10
+    CONTROL         "",IDC_COLTEXT_FILE,"ColourPicker",WS_TABSTOP,136,34,39,10
+    CONTROL         "",IDC_COLTEXT_ERR,"ColourPicker",WS_TABSTOP,184,34,39,10
+    CONTROL         "",IDC_COLTEXT_OTHERS,"ColourPicker",WS_TABSTOP,231,34,39,10
+    LTEXT           "Background",IDC_STATIC,10,51,70,8
+    CONTROL         "",IDC_COLBACK_MESSAGE,"ColourPicker",WS_TABSTOP,87,50,39,10
+    CONTROL         "",IDC_COLBACK_FILE,"ColourPicker",WS_TABSTOP,136,50,39,10
+    CONTROL         "",IDC_COLBACK_ERR,"ColourPicker",WS_TABSTOP,184,50,39,10
+    CONTROL         "",IDC_COLBACK_OTHERS,"ColourPicker",WS_TABSTOP,231,50,39,10
+    LTEXT           "Use default colors",IDC_STATIC,10,67,70,8
+    CONTROL         "",IDC_CHKDEFAULTCOL_MESSAGE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,65,11,10
+    CONTROL         "",IDC_CHKDEFAULTCOL_FILE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,65,11,10
+    CONTROL         "",IDC_CHKDEFAULTCOL_ERR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,199,65,11,10
+    CONTROL         "",IDC_CHKDEFAULTCOL_OTHERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,244,65,11,10
+    LTEXT           "Use Windows colors",IDC_STATIC,10,82,70,8
+    CONTROL         "",IDC_CHKWINCOL_MESSAGE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,80,11,10
+    CONTROL         "",IDC_CHKWINCOL_FILE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,80,11,10
+    CONTROL         "",IDC_CHKWINCOL_ERR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,199,80,11,10
+    CONTROL         "",IDC_CHKWINCOL_OTHERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,244,80,11,10
+    LTEXT           "Timeout, secs",IDC_STATIC,10,98,70,8
+    EDITTEXT        IDC_DELAY_MESSAGE,87,96,39,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN_MESSAGE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,118,96,11,12
+    EDITTEXT        IDC_DELAY_FILE,136,96,39,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN_FILE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,165,96,11,12
+    EDITTEXT        IDC_DELAY_ERR,184,96,39,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN_ERR,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,212,96,11,12
+    EDITTEXT        IDC_DELAY_OTHERS,231,96,39,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN_OTHERS,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,259,96,11,12
+    PUSHBUTTON      "Preview",IDC_PREVIEW,218,136,60,13
+    LTEXT           "(timeout -1 means forever, 0 - default)",IDC_STATIC,75,117,227,8
+END
+
+IDD_OPT_MESSAGE DIALOGEX 0, 0, 302, 148
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Don't show popup when message dialog is already open",IDC_CHKWINDOWCHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,8,284,10
+    CONTROL         "Hide popup when sending new message",IDC_CHKHIDESEND,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,20,284,10
+    CONTROL         "Open reply dialog instead of reading the message",IDC_CHKREPLYWINDOW,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,32,284,11
+    CONTROL         "Merge popups from one user",IDC_CHKMERGEPOPUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,63,284,10
+    CONTROL         "Show date",IDC_CHKSHOWDATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,74,227,10
+    CONTROL         "Show time",IDC_CHKSHOWTIME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,85,214,10
+    CONTROL         "Show headers",IDC_CHKSHOWHEADERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,96,220,10
+    LTEXT           "Number of messages being shown",IDC_LBNUMBERMSG,15,109,143,8
+    EDITTEXT        IDC_NUMBERMSG,166,107,48,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN_MSGNUMBER,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,214,106,10,14
+    CONTROL         "Last message display first",IDC_RDNEW,"Button",BS_AUTORADIOBUTTON,14,120,253,9
+    CONTROL         "Last message display last",IDC_RDOLD,"Button",BS_AUTORADIOBUTTON,14,131,285,9
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "..\\src\\resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_OPT_MAIN, DIALOG
+    BEGIN
+    END
+
+    IDD_OPT_EVENT_TYPES, DIALOG
+    BEGIN
+    END
+
+    IDD_OPT_MESSAGE, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_OPT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_OPT_MAIN AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_OPT_MESSAGE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_OPT_EVENT_TYPES AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United Kingdom) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (United Kingdom) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

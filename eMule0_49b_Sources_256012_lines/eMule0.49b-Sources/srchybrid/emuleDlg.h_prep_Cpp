@@ -1,0 +1,318 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("TrayDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("MeterIcon.h");}
+void INCLUDEREPLACE(){CX_INCL("TitleMenu.h");}
+
+namespace Kademlia {
+ class CSearch;
+ class CContact;
+ class CEntry;
+ class CUInt128;
+};
+
+class CChatWnd;
+class CIrcWnd;
+class CKademliaWnd;
+class CKnownFileList;
+class CMainFrameDropTarget;
+class CMuleStatusBarCtrl;
+class CMuleToolbarCtrl;
+class CPreferencesDlg;
+class CSearchDlg;
+class CServerWnd;
+class CSharedFilesWnd;
+class CStatisticsDlg;
+class CTaskbarNotifier;
+class CTransferWnd;
+       Status;
+class CSplashScreen;
+class CMuleSystrayDlg;
+class CMiniMule;
+
+// emuleapp <-> emuleapp
+
+
+
+
+
+
+
+class CemuleDlg :        CTrayDialog
+{
+ friend class CMuleToolbarCtrl;
+ friend class CMiniMule;
+
+public:
+ CemuleDlg(CWnd* pParent = NULL);
+ ~CemuleDlg();
+
+ enum { IDD = IDD_EMULE_DIALOG };
+
+ bool IsRunning();
+ void ShowConnectionState();
+ void ShowNotifier(const char* pszText, int iMsgType, const char* pszLink = NULL, bool bForceSoundOFF = false);
+ void SendNotificationMail(int iMsgType, const char* pszText);
+ void ShowUserCount();
+ void ShowMessageState(unsigned int iconnr);
+ void SetActiveDialog(CWnd* dlg);
+ void ShowTransferRate(bool forceAll=false);
+    void ShowPing();
+ void Localize();
+
+ // Logging
+ void AddLogText(unsigned int uFlags, const char* pszText);
+ void AddServerMessageLine(unsigned int uFlags, const char* pszText);
+ void ResetLog();
+ void ResetDebugLog();
+ void ResetServerInfo();
+ CString GetLastLogEntry();
+ CString GetLastDebugLogEntry();
+ CString GetAllLogEntries();
+ CString GetAllDebugLogEntries();
+ CString GetServerInfoText();
+
+ CString GetConnectionStateString();
+ unsigned int GetConnectionStateIconIndex() const;
+ CString GetTransferRateString();
+ CString GetUpDatarateString(unsigned int uUpDatarate = -1);
+ CString GetDownDatarateString(unsigned int uDownDatarate = -1);
+
+ void StopTimer();
+ void DoVersioncheck(bool manual);
+ void ApplyHyperTextFont(LPLOGFONT pFont);
+ void ApplyLogFont(LPLOGFONT pFont);
+ void ProcessED2KLink(const char* pszData);
+ void SetStatusBarPartsSize();
+ int ShowPreferences(unsigned int uStartPageID = (unsigned int)-1);
+ bool IsPreferencesDlgOpen() const;
+ bool IsTrayIconToFlash() { return m_iMsgIcon!=0; }
+ void SetToolTipsDelay(unsigned int uDelay);
+ void StartUPnP(bool bReset = true, uint16 nForceTCPPort = 0, uint16 nForceUDPPort = 0);
+ void*  GetCtlColor(CDC* pDC, CWnd* pWnd, unsigned int nCtlColor);
+
+ virtual void TrayMinimizeToTrayChange();
+ virtual void RestoreWindow();
+ virtual void HtmlHelp(unsigned long dwData, unsigned int nCmd = 0x000F);
+
+ CTransferWnd* transferwnd;
+ CServerWnd*  serverwnd;
+ CPreferencesDlg* preferenceswnd;
+ CSharedFilesWnd* sharedfileswnd;
+ CSearchDlg*  searchwnd;
+ CChatWnd*  chatwnd;
+ CMuleStatusBarCtrl* statusbar;
+ CStatisticsDlg*  statisticswnd;
+ CIrcWnd*  ircwnd;
+ CTaskbarNotifier* m_wndTaskbarNotifier;
+ CReBarCtrl  m_ctlMainTopReBar;
+ CMuleToolbarCtrl* toolbar;
+ CKademliaWnd* kademliawnd;
+ CWnd*   activewnd;
+ uint8   status;
+
+protected:
+ void*   m_hIcon;
+ bool   ready;
+ bool   m_bStartMinimizedChecked;
+ bool   m_bStartMinimized;
+ WINDOWPLACEMENT m_wpFirstRestore;
+ void*   connicons[9];
+ void*   transicons[4];
+ void*   imicons[3];
+ void*   m_icoSysTrayCurrent;
+ void*   usericon;
+ CMeterIcon  m_TrayIcon;
+ void*   m_icoSysTrayConnected;  // do not use those icons for anything else than the traybar!!!
+ void*   m_icoSysTrayDisconnected; // do not use those icons for anything else than the traybar!!!
+ void*   m_icoSysTrayLowID; // do not use those icons for anything else than the traybar!!!
+ int    m_iMsgIcon;
+ unsigned int   m_uLastSysTrayIconCookie;
+ uint32   m_uUpDatarate;
+ uint32   m_uDownDatarate;
+ CImageList  imagelist;
+ CTitleMenu  trayPopup;
+ CMuleSystrayDlg* m_pSystrayDlg;
+ CMainFrameDropTarget* m_pDropTarget;
+ CMenu   m_SysMenuOptions;
+ CMenu   m_menuUploadCtrl;
+ CMenu   m_menuDownloadCtrl;
+ char   m_acVCDNSBuffer[MAXGETHOSTSTRUCT];
+ bool   m_iMsgBlinkState;
+ bool   m_bConnectRequestDelayedForUPnP;
+ bool   m_bKadSuspendDisconnect;
+ bool   m_bEd2kSuspendDisconnect;
+
+ // Splash screen
+ CSplashScreen *m_pSplashWnd;
+ unsigned long m_dwSplashTime;
+ void ShowSplash();
+ void DestroySplash();
+
+ // Mini Mule
+ CMiniMule* m_pMiniMule;
+ void DestroyMiniMule();
+
+ CMap                               m_mapTbarCmdToIcon;
+ void CreateToolbarCmdIconMap();
+ const char* GetIconFromCmdId(unsigned int uId);
+
+ // Startup Timer
+ unsigned int m_hTimer;
+ static void          StartupTimer(void* hwnd, unsigned int uiMsg, unsigned int idEvent, unsigned long dwTime);
+
+ // UPnP TimeOutTimer
+ unsigned int m_hUPnPTimeOutTimer;
+ static void          UPnPTimeOutTimer(void* hwnd, unsigned int uiMsg, unsigned int idEvent, unsigned long dwTime);
+
+ void StartConnection();
+ void CloseConnection();
+ void MinimizeWindow();
+ void PostStartupMinimized();
+ void UpdateTrayIcon(int iPercent);
+ void ShowConnectionStateIcon();
+ void ShowTransferStateIcon();
+ void ShowUserStateIcon();
+ void AddSpeedSelectorMenus(CMenu* addToMenu);
+ int  GetRecMaxUpload();
+ void LoadNotifier(CString configuration);
+ bool notifierenabled;
+ void ShowToolPopup(bool toolsonly = false);
+ void SetAllIcons();
+ bool CanClose();
+ int MapWindowToToolbarButton(CWnd* pWnd) const;
+ CWnd* MapToolbarButtonToWindow(int iButtonID) const;
+ int GetNextWindowToolbarButton(int iButtonID, int iDirection = 1) const;
+ bool IsWindowToolbarButton(int iButtonID) const;
+
+ virtual void DoDataExchange(CDataExchange* pDX);
+ virtual int  OnInitDialog();
+ virtual void OnCancel();
+ virtual void OnOK();
+ virtual void OnTrayRButtonUp(CPoint pt);
+ virtual void OnTrayLButtonUp(CPoint pt);
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ virtual int  PreTranslateMessage(MSG* pMsg);
+
+
+         void OnClose();
+         void OnDestroy();
+         void OnSize(unsigned int nType,int cx,int cy);
+         void OnSysCommand(unsigned int nID, long * lParam);
+         void OnPaint();
+         HCURSOR OnQueryDragIcon();
+         void OnBnClickedButton2();
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnBnClickedHotmenu();
+         long *  OnMenuChar(unsigned int nChar, unsigned int nFlags, CMenu* pMenu);
+         void OnSysColorChange();
+         void*  OnCtlColor(CDC* pDC, CWnd* pWnd, unsigned int nCtlColor);
+         void OnSettingChange(unsigned int uFlags, const char* lpszSection);
+         int  OnQueryEndSession();
+         void OnEndSession(int  bEnding);
+         long *  OnUserChanged(int *  wParam, long * lParam);
+         long *  OnKickIdle(unsigned int nWhy, long lIdleCount);
+         void OnShowWindow( int  bShow, unsigned int nStatus );
+         int  OnChevronPushed(unsigned int id, NMHDR *pnm, long *  *pResult);
+         long *  OnPowerBroadcast(int *  wParam, long * lParam);
+
+ // quick-speed changer -- based on xrmb
+         void QuickSpeedUpload(unsigned int nID);
+         void QuickSpeedDownload(unsigned int nID);
+         void QuickSpeedOther(unsigned int nID);
+ // end of quick-speed changer
+
+         long *  OnTaskbarNotifierClicked(int *  wParam,long * lParam);
+         long *  OnWMData(int *  wParam,long * lParam);
+         long *  OnFileHashed(int *  wParam,long * lParam);
+         long *  OnHashFailed(int *  wParam,long * lParam);
+         long *  OnFileAllocExc(int *  wParam,long * lParam);
+         long *  OnFileCompleted(int *  wParam,long * lParam);
+         long *  OnFileOpProgress(int *  wParam,long * lParam);
+
+ //Framegrabbing
+         long *  OnFrameGrabFinished(int *  wParam,long * lParam);
+
+         long *  OnAreYouEmule(int * , long *);
+
+ //Webinterface
+         long *  OnWebGUIInteraction(int *  wParam, long * lParam);
+         long *  OnWebServerClearCompleted(int *  wParam, long * lParam);
+         long *  OnWebServerFileRename(int *  wParam, long * lParam);
+         long *  OnWebAddDownloads(int *  wParam, long * lParam);
+         long *  OnWebSetCatPrio(int *  wParam, long * lParam);
+         long *  OnAddRemoveFriend(int *  wParam, long * lParam);
+
+ // VersionCheck    
+         long *  OnVersionCheckResponse(int *  wParam, long * lParam);
+
+ // Peercache    
+         long *  OnPeerCacheResponse(int *  wParam, long * lParam);
+
+ // Mini Mule
+         long *  OnCloseMiniMule(int *  wParam, long * lParam);
+
+ // Terminal Services
+         long *  OnConsoleThreadEvent(int *  wParam, long * lParam);
+
+ // UPnP
+         long *  OnUPnPResult(int *  wParam, long * lParam);
+};
+
+
+enum EEMuleAppMsgs
+{
+ //thread messages
+ TM_FINISHEDHASHING = WM_APP + 10,
+ TM_HASHFAILED,
+ TM_FRAMEGRABFINISHED,
+ TM_FILEALLOCEXC,
+ TM_FILECOMPLETED,
+ TM_FILEOPPROGRESS,
+ TM_CONSOLETHREADEVENT
+};
+
+enum EWebinterfaceOrders
+{
+ WEBGUIIA_UPDATEMYINFO = 1,
+ WEBGUIIA_WINFUNC,
+ WEBGUIIA_UPD_CATTABS,
+ WEBGUIIA_UPD_SFUPDATE,
+ WEBGUIIA_UPDATESERVER,
+ WEBGUIIA_STOPCONNECTING,
+ WEBGUIIA_CONNECTTOSERVER,
+ WEBGUIIA_DISCONNECT,
+ WEBGUIIA_SERVER_REMOVE,
+ WEBGUIIA_SHARED_FILES_RELOAD,
+ WEBGUIIA_ADD_TO_STATIC,
+ WEBGUIIA_REMOVE_FROM_STATIC,
+ WEBGUIIA_UPDATESERVERMETFROMURL,
+ WEBGUIIA_SHOWSTATISTICS,
+ WEBGUIIA_DELETEALLSEARCHES,
+ WEBGUIIA_KAD_BOOTSTRAP,
+ WEBGUIIA_KAD_START,
+ WEBGUIIA_KAD_STOP,
+ WEBGUIIA_KAD_RCFW
+};
+
+
+
+
+
+
+ 

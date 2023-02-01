@@ -1,0 +1,127 @@
+﻿
+
+// ColourPopup.h : header file
+//
+// Written by Chris Maunder (chrismaunder@codeguru.com)
+// Extended by Alexander Bischofberger (bischofb@informatik.tu-muenchen.de)
+// Copyright (c) 1998.
+//
+// This code may be used in compiled form in any way you desire. This
+// file may be redistributed unmodified by any means           it is
+// not sold for profit without the authors written consent, and
+// providing that this notice and the authors name is included. If
+// the source code in  this file is used in any commercial application
+// then a simple email would be nice.
+//
+// This file is provided "as is" with no expressed or implied warranty.
+// The author accepts no liability if it causes any damage whatsoever.
+// It's free - so you get what you pay for.
+
+
+// forward declaration
+class CColourPicker;
+
+// To hold the colours and their names
+  class ColourTableEntry
+{
+ unsigned long crColour;
+ char   *szName;
+}
+;
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CColourPopup window
+
+class CColourPopup :        CWnd
+{
+// Construction
+public:
+ CColourPopup();
+ CColourPopup(CPoint p, unsigned long crColour, CWnd* pParentWnd,
+           const char* szDefaultText = NULL, const char* szCustomText = NULL,
+           unsigned long* colourArray = NULL,int NumberOfColours = 0);
+ void Initialise();
+
+// Attributes
+public:
+
+// Operations
+public:
+ int  Create(CPoint p, unsigned long crColour, CWnd* pParentWnd, const char* szDefaultText = NULL,
+             const char* szCustomText = NULL);
+
+// Overrides
+ // ClassWizard generated virtual function overrides
+ //{{           (CColourPopup)
+ public:
+ virtual int  PreTranslateMessage(MSG* pMsg);
+ //}}           
+
+// Implementation
+public:
+ virtual ~CColourPopup();
+
+protected:
+  unsigned long* colourArrayPassed;
+ int  GetCellRect(int nIndex, const LPRECT& rect);
+ void FindCellFromColour(unsigned long crColour);
+ void SetWindowSize();
+ void CreateToolTips();
+ void ChangeSelection(int nIndex);
+ void EndSelection(int nMessage);
+ void DrawCell(CDC* pDC, int nIndex);
+
+ unsigned long GetColour(int nIndex)
+ {
+  if(colourArrayPassed==NULL)
+   return m_crColours[nIndex].crColour;
+  else
+   return colourArrayPassed[nIndex];
+ }
+ const char* GetColourName(int nIndex) { return m_crColours[nIndex].szName; }
+ int  GetIndex(int row, int col) const;
+ int  GetRow(int nIndex) const;
+ int  GetColumn(int nIndex) const;
+
+//           attributes
+protected:
+ static ColourTableEntry m_crColours[];
+ int      m_nNumColours;
+ int      m_nNumColumns, m_nNumRows;
+ int      m_nBoxSize, m_nMargin;
+ int      m_nCurrentSel;
+ int      m_nChosenColourSel;
+ CString     m_strDefaultText;
+ CString     m_strCustomText;
+ CRect     m_CustomTextRect, m_DefaultTextRect, m_WindowRect;
+ CFont     m_Font;
+ CPalette    m_Palette;
+ unsigned long    m_crInitialColour, m_crColour;
+ CToolTipCtrl   m_ToolTip;
+ CWnd*     m_pParent;
+ int      m_bChildWindowVisible;
+
+ // Generated message map functions
+protected:
+ //{{       (CColourPopup)
+         void OnNcDestroy();
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         void OnPaint();
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         int  OnQueryNewPalette();
+         void OnPaletteChanged(CWnd* pFocusWnd);
+         void OnKillFocus(CWnd* pNewWnd);
+         void OnActivateApp(int  bActive, unsigned long hTask);
+ //}}       
+
+};
+
+
+
+
+
+
+
+ 

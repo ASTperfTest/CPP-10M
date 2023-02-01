@@ -1,0 +1,240 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE. See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("RichEditStream.h");}
+
+/////////////////////////////////////////////////////////////////////////////
+// CStringStream
+
+class CStringStream
+{
+public:
+ CStringStream(){}
+
+ CStringStream& operator__bLeftShift(const char* psz);
+ CStringStream& operator__bLeftShift(char* psz);
+ CStringStream& operator__bLeftShift(unsigned int uVal);
+ CStringStream& operator__bLeftShift(int iVal);
+ CStringStream& operator__bLeftShift(double fVal);
+
+ bool IsEmpty() const {
+  return str.IsEmpty();
+ }
+ void AppendFormat(const char* pszFmt, ...) {
+  va_list argp;
+  va_start(argp, pszFmt);
+  str.AppendFormatV(pszFmt, argp);
+  va_end(argp);
+ }
+ const CString& GetText() const {
+  return str;
+ }
+
+protected:
+ CString str;
+};
+
+// DirectShow MediaDet
+
+void INCLUDEREPLACE(){CX_INCL("strmif.h");}
+//#include <uuids.h>
+
+
+
+         const                         MEDIATYPE_Video = {  0x73646976,  0x0000,  0x0010, {  0x80,  0x00,   0x00,   0xaa,   0x00,   0x38,   0x9b,   0x71 } };
+         const                         MEDIATYPE_Audio = {  0x73647561,  0x0000,  0x0010, {  0x80,  0x00,   0x00,   0xaa,   0x00,   0x38,   0x9b,   0x71 } };
+         const                         FORMAT_VideoInfo = { 0x05589f80,  0xc356,  0x11ce, {  0xbf,  0x01,   0x00,   0xaa,   0x00,   0x55,   0x59,   0x5a } };
+         const                         FORMAT_WaveFormatEx = { 0x05589f81,  0xc356,  0x11ce, {  0xbf,  0x01,   0x00,   0xaa,   0x00,   0x55,   0x59,   0x5a } };
+//#define MMNODRV  // mmsystem: Installable driver support
+
+//#define MMNOWAVE  // mmsystem: Waveform support
+
+
+
+
+
+
+//#define MMNOMMIO  // mmsystem: Multimedia file I/O support
+
+// NOTE: If you get a compile error due to missing 'qedit.h', look at "emule_site_config.h" for further information.
+void INCLUDEREPLACE(){CX_INCL("qedit.h");}
+
+
+
+
+          class tagVIDEOINFOHEADER {
+ RECT   rcSource;     // The bit we really want to use
+ RECT   rcTarget;     // Where the video should go
+ unsigned long   dwBitRate;     // Approximate bit data rate
+ unsigned long   dwBitErrorRate;    // Bit error rate for this stream
+ REFERENCE_TIME AvgTimePerFrame;   // Average time per
+ BITMAPINFOHEADER bmiHeader;
+};       tagVIDEOINFOHEADER VIDEOINFOHEADER = "CX_TYPEDEF";
+
+// Those defines are for 'mmreg.h' which is included by 'vfw.h'
+
+//#define NONEWWAVE    // No neW waveform types are defined except WAVEFORMATEX
+
+
+
+
+// Those defines are for 'vfw.h'
+//#define NOCOMPMAN
+//#define NODRAWDIB
+
+//#define NOAVIFMT
+//#define NOMMREG
+//#define          
+
+
+
+void INCLUDEREPLACE(){CX_INCL("vfw.h");}
+
+
+/////////////////////////////////////////////////////////////////////////////
+// SMediaInfo
+
+ class SMediaInfo
+{
+ SMediaInfo()
+ {
+  (void)strFileFormat;
+  (void)strMimeType;
+  ulFileSize = (uint64)0;
+  fFileLengthSec = 0.0;
+  bFileLengthEstimated = false;
+  (void)strTitle;
+  (void)strAuthor;
+
+  iVideoStreams = 0;
+  (void)strVideoFormat;
+  memset(&video, 0, sizeof video);
+  fVideoLengthSec = 0.0;
+  bVideoLengthEstimated = false;
+  fVideoFrameRate = 0.0;
+  fVideoAspectRatio = 0.0;
+
+  iAudioStreams = 0;
+  (void)strAudioFormat;
+  memset(&audio, 0, sizeof audio);
+  fAudioLengthSec = 0.0;
+  bAudioLengthEstimated = false;
+
+  bOutputFileName = true;
+ }
+
+ SMediaInfo& operator__Assign(const SMediaInfo& strm)
+ {
+  strFileFormat = strm.strFileFormat;
+  strMimeType = strm.strMimeType;
+  ulFileSize = strm.ulFileSize;
+  fFileLengthSec = strm.fFileLengthSec;
+  bFileLengthEstimated = strm.bFileLengthEstimated;
+  strTitle = strm.strTitle;
+  strAuthor = strm.strAuthor;
+
+  iVideoStreams = strm.iVideoStreams;
+  strVideoFormat = strm.strVideoFormat;
+  video = strm.video;
+  fVideoLengthSec = strm.fVideoLengthSec;
+  bVideoLengthEstimated = strm.bVideoLengthEstimated;
+  fVideoFrameRate = strm.fVideoFrameRate;
+  fVideoAspectRatio = strm.fVideoAspectRatio;
+
+  iAudioStreams = strm.iAudioStreams;
+  strAudioFormat = strm.strAudioFormat;
+  audio = strm.audio;
+  fAudioLengthSec = strm.fAudioLengthSec;
+  bAudioLengthEstimated = strm.bAudioLengthEstimated;
+  strAudioLanguage = strm.strAudioLanguage;
+  return *this;
+ }
+
+ void OutputFileName()
+ {
+  if (bOutputFileName)
+  {
+   bOutputFileName = false;
+   if (!strInfo.IsEmpty())
+    strInfo << _T("\n");
+   strInfo.SetSelectionCharFormat(strInfo.m_cfBold);
+   strInfo << GetResString(IDS_FILE) << _T(": ") << strFileName << _T("\n");
+  }
+ }
+
+ void InitFileLength()
+ {
+  if (fFileLengthSec == 0)
+  {
+   if (fVideoLengthSec > 0.0)
+   {
+    fFileLengthSec = fVideoLengthSec;
+    bFileLengthEstimated = bVideoLengthEstimated;
+   }
+   else if (fAudioLengthSec > 0.0)
+   {
+    fFileLengthSec = fAudioLengthSec;
+    bFileLengthEstimated = bAudioLengthEstimated;
+   }
+  }
+ }
+
+ CString   strFileName;
+ CString   strFileFormat;
+ CString   strMimeType;
+ EMFileSize  ulFileSize;
+ double   fFileLengthSec;
+ bool   bFileLengthEstimated;
+ CString   strTitle;
+ CString   strAuthor;
+
+ int    iVideoStreams;
+ CString   strVideoFormat;
+ VIDEOINFOHEADER video;
+ double   fVideoLengthSec;
+ bool   bVideoLengthEstimated;
+ double   fVideoFrameRate;
+ double   fVideoAspectRatio;
+
+ int    iAudioStreams;
+ CString   strAudioFormat;
+ WAVEFORMAT  audio;
+ double   fAudioLengthSec;
+ bool   bAudioLengthEstimated;
+ CString   strAudioLanguage;
+
+ bool   bOutputFileName;
+ CRichEditStream strInfo;
+};
+
+
+bool GetMimeType(const char* pszFilePath, CString& rstrMimeType);
+bool GetDRM(const char* pszFilePath);
+int  GetRIFFHeaders(const char* pszFileName, SMediaInfo* mi, bool& rbIsAVI, bool bFullInfo = false);
+int  GetRMHeaders(const char* pszFileName, SMediaInfo* mi, bool& rbIsRM, bool bFullInfo = false);
+CString GetWaveFormatTagName(unsigned int uWavFmtTag, CString& rstrComment);
+CString GetWaveFormatTagName(unsigned int wFormatTag);
+int  IsEqualFOURCC(FOURCC fccA, FOURCC fccB);
+CString GetVideoFormatName(unsigned long biCompression);
+CString GetKnownAspectRatioDisplayString(float fAspectRatio);
+
+
+
+
+
+
+ 

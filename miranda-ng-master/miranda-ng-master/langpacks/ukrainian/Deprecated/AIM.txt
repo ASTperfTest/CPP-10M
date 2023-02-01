@@ -1,0 +1,309 @@
+#muuid {3750a5a3-bf0d-490e-b65d-41ac4d29aeb3}
+;============================================================
+;  File: AIM.dll
+;  Plugin: AIM protocol
+;  Version: 0.11.0.1
+;  Authors: Boris Krasnovskiy, Aaron Myles Landwehr
+;============================================================
+[AOL Instant Messenger (AIM) protocol support for Miranda NG.]
+Підтримка протоколу AOL Instant Messenger (AIM) у Miranda NG.
+[AIM user details]
+Обліковий запис AIM
+[Screen name:]
+Ім'я AIM:
+[Display name:]
+Видиме ім'я:
+[Password:]
+Пароль:
+[AIM options]
+Опції AIM
+[Message delivery confirmation]
+Підтвердження прийому
+[Do not autoreply when away]
+Вимикати автовідп. коли Відсутній
+[Convert incoming messages to BBCode]
+Переводити вхідні повід. у BBCode
+[Convert outgoing messages to HTML]
+Переводити вихідні повід. в HTML
+[Disable avatars]
+Вимкнути аватари
+[Disable account type icons]
+Вимкнути значки типів обл. записів
+[Disable extended status icons]
+Вимкнути розширені значки статусу
+[Notify about new mail]
+Сповіщати про нову пошту
+[Manage server groups]
+Керувати групами на сервері
+[Advanced options]
+Додатково
+[Instant idle on login]
+Режим очікування при вході
+[Force proxy file transfers]
+Передачі файлів через проксі
+[Masquerade as a Sidekick/Hiptop user]
+Представлятися як Sidekick/Hiptop
+[Connection]
+З'єднання
+[Login server:]
+Сервер:
+[Port:]
+Порт:
+[Reset]
+Скинути
+[Disable SSL]
+Вимкнути SSL
+[Force single client]
+Тільки одна сесія
+[* Some changes will take effect the next time you connect to the AIM network]
+* Деякі зміни наберуть чинності при наступному вході в мережу AIM
+[Save profile]
+Зберегти профіль
+[Create a new AIM account]
+Створити новий обліковий запис AIM
+[AIM instant idler]
+AIM Встановити Instant Idle
+[Number of hours:]
+Кількість годин:
+[Number of minutes:]
+Кількість хвилин:
+[Set idle]
+Встановити
+[Unset idle]
+Зняти
+[Users who can contact me:]
+Хто може зв'язатися зі мною:
+[Allow all users]
+Усі користувачі
+[Allow only users on contact list]
+Усі з мого списку контактів
+[Allow only users below]
+Тільки зі списку нижче
+[Block all users]
+Заблокувати всіх
+[Block only users below]
+Заблок. всіх зі списку нижче
+[Add]
+Додати
+[Remove]
+Видалити
+[Idle]
+Очікування
+[Allow contacts to be notified of:]
+Сповіщати користувачів про:
+[Join chat room]
+Зайти в чат
+[Chat room]
+Чат
+[&Join]
+&Увійти
+[&Cancel]
+&Скасувати
+[Change password]
+Змінити пароль
+[Original]
+Старий
+[New]
+Новий
+[Repeat]
+Повторити
+[*Passwords don't match.]
+* Паролі не збігаються.
+[Screen name]
+Ім'я AIM
+[E-mail]
+Пошта
+[Confirm account]
+Підтвердити
+[*Applied upon reconnect]
+* Потрібен перезапуск
+[Save changes]
+Зберегти зміни
+[Invite buddy to chat room]
+Запросити до чату
+[&Invite]
+&Запросити
+[Invitation reason]
+Причина
+[Chat room invitation request]
+Запрошення до чату
+[&Deny]
+&Відхилити
+[Message]
+Повідомлення
+[Room]
+Кімната чату
+[Me]
+Я
+[Others]
+Інші
+[&Invite user...]
+&Запросити...
+[&Leave chat session]
+&Вийти з чату
+[User &details]
+Про &користувача
+[User &history]
+&Історія
+[Mismatched screen name or password.]
+Неправильне ім'я AIM або пароль.
+[You are connecting too frequently. Try waiting 10 minutes to reconnect.]
+Ви підключаєтесь занадто часто. Зачекайте 10 хвилин і спробуйте знову.
+[Unknown error occurred when attempting to connect.]
+Невідома помилка при з'єднанні.
+[Not supported by server.]
+Не підтримується сервером
+[Not supported by the client.]
+Не підтримується клієнтом
+[Refused by client.]
+Відхилено клієнтом.
+[Incorrect SNAC format.]
+Неправильний формат SNAC.
+[User temporarily unavailable.]
+Користувач тимчасово недоступний.
+[No match.]
+Немає збігів.
+[Check your screen name.]
+Перевірте своє ім'я AIM.
+[Check your password.]
+Перевірте свій пароль.
+[Check your email address.]
+Перевірте свою адресу електронної пошти.
+[Service temporarily unavailable.]
+Сервіс тимчасово недоступний.
+[Invalid screen name.]
+Неправильне ім'я AIM.
+[Invalid password.]
+Неправильний пароль.
+[Invalid email.]
+Неправильна адреса E-mail.
+[Invalid old password.]
+Неправильний старий пароль.
+[Invalid screen name Length.]
+Неправильна довжина імені AIM.
+[Invalid password length.]
+Неправильна довжина пароля.
+[Invalid email length.]
+Неправильна довжина адреси E-mail.
+[Invalid old password length.]
+Неправильна довжина старого пароля.
+[Need old password.]
+Потрібен старий пароль.
+[Unsupported type.]
+Цей тип не підтримується
+[An error has occurred.]
+Невідома помилка.
+[Internal error.]
+Внутрішня помилка.
+[DNS fail.]
+Помилка DNS.
+[Failed to open file: %s : %s]
+Не вдалося відкрити файл: %s : %s
+[AIM link protocol]
+Протокол AIM
+[%s protocol]
+Протокол %s
+[%s server connection]
+З'єднання з сервером %s
+[%s client-to-client connections]
+З'єднання між користувачами %s
+[[Auto-response]:]
+(Автовідповідь):
+[No information has been provided by the server.]
+Сервер не надав жодної інформації.
+[Unknown error when adding buddy to list. Error code %#x]
+Невідома помилка при додаванні до списку. Код %#x
+[Unknown error when attempting to modify a group. Error code %#x]
+Невідома помилка при спробі модифікувати групу. Код %#x
+[Error uploading avatar. (Too small)]
+Не вдалося завантажити аватар. (Замалий)
+[Error uploading avatar. (Too big)]
+Не вдалося завантажити аватар. (Завеликий)
+[Error uploading avatar. (Wrong type)]
+Не вдалося завантажити аватар. (Недопустимий тип)
+[Error uploading avatar. (Is banned)]
+Не вдалося завантажити аватар. (Забанений)
+[Error uploading avatar. (Unknown error)]
+Не вдалося завантажити аватар. (Невідома помилка)
+[A confirmation message has been sent to the new email address. Please follow its instructions.]
+Лист з підтвердженням відправлено на нову адресу електронної пошти. Дотримуйтесь інструкцій у ньому.
+[A confirmation message has been sent to your email address. Please follow its instructions.]
+Лист з підтвердженням відправлено на вашу адресу електронної пошти. Дотримуйтесь інструкцій у ньому.
+[Block]
+Заблокувати
+[Profile]
+Профіль
+[AOL mail]
+Пошта AOL
+[AIM icon]
+Значок AIM
+[AOL bot]
+Бот AOL
+[Admin]
+Адмін
+[Confirmed]
+Перевірений
+[Not confirmed]
+Неперевірений
+[Blocked list]
+Список заблокованих
+[Foreground color]
+Колір переднього плану
+[Background color]
+Колір фону
+[Bold]
+Жирний
+[Not bold]
+Не жирний
+[Italic]
+Курсив
+[Not italic]
+Не курсив
+[Underline]
+Підкреслений
+[Not underline]
+Не підкреслений
+[Subscript]
+Субскрипт
+[Not subscript]
+Не субскрипт
+[Superscript]
+Суперскрипт
+[Not superscript]
+Не суперскрипт
+[Normal script]
+Стандартний скрипт
+[Not normal script]
+Нестандартний скрипт
+[Profile editor]
+Редактор профілю
+[AIM account type]
+Тип облікового запису AIM
+[AIM extended status]
+Розширений статус AIM
+[&Block]
+&Заблокувати
+[&Unblock]
+&Розблокувати
+[Manage account]
+Керування обліковим записом
+[Instant idle]
+Встановити Instant Idle
+[Read &HTML away message]
+Читати HTML статусне повідомлення
+[Read profile]
+Переглянути профіль
+[Add to server list]
+Додати в список на сервері
+[Network]
+Мережа
+[Basic]
+Основні
+[Privacy]
+Приватність
+[Please, enter a user name in the options dialog.]
+Будь ласка, введіть ім'я користувача в налаштуваннях.
+[Please, enter a password in the options dialog.]
+Будь ласка, введіть пароль у налаштуваннях.
+[Failed to open file: %s %s]
+Не вдалося відкрити файл: %s %s

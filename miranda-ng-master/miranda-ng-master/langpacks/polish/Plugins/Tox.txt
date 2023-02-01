@@ -1,0 +1,197 @@
+#muuid {00272a3e-f5fa-4090-8b67-3e62ac1ee0b4}
+;============================================================
+;  File: Tox.dll
+;  Plugin: Tox protocol
+;  Version: 0.11.3.2
+;  Authors: Miranda NG team
+;============================================================
+[Tox protocol support for Miranda NG.]
+Wsparcie protokołu Tox dla Mirandy NG.
+;file \protocols\Tox\res\resource.rc
+[Tox ID:]
+Tox ID:
+[Create]
+Stwórz
+[Import]
+Importuj
+[Copy ID]
+Kopiuj ID
+[Export]
+Eksportuj
+[Name:]
+Nazwa:
+[Password:]
+Hasło:
+[Default group:]
+Domyślna grupa:
+[Create Tox profile]
+Stwórz profil Tox
+[Import Tox profile]
+Importuj profil Tox
+[Copy Tox ID]
+Kopiuj ID Tox
+[Export Tox profile]
+Eksportuj profil Tox
+[Connection settings]
+Ustawienia połączenia
+[Enable UDP (otherwise force Tox to use TCP)]
+Włącz UDP (w przeciwnym razie wymuszaj używanie TCP przez tox)
+[Enable IPv6]
+Włącz IPV6
+[Max connect retries:]
+Maksimum prób ustanowienia połączenia:
+[Max reconnect retries:]
+Maksimum prób ponownego połączenia:
+[Enable UDP hole-punching]
+
+[Enable local network peer discovery]
+
+[Remove password]
+Usuń hasło
+[Change password]
+Zmień hasło
+[Set password]
+Ustaw hasło
+[If this field contains Tox address (76 hex characters), you will be prompted to add it in your friend list. Otherwise, Miranda will search this query via toxme.io.]
+Jeżeli to pole zawiera adres Tox (76 znaków hex), zostaniesz poproszony o dodanie go do swojej listy kontaktów, w przeciwnym razie Miranda dokona wyszukiwania tego zapytania za pomocą toxme.io.
+[DNS name:]
+Nazwa DNS:
+[Enter password]
+Wprowadź hasło
+[Cancel]
+Anuluj
+[Tox profile is encrypted. Enter the password to continue.]
+Profil tox jest zaszyfrowany. Wprowadź hasło, by kontynuować.
+[Add]
+Dodaj
+[Update]
+Aktualizacja
+[IPv4 address/ Host]
+Adres/host IPv4
+[IPv6 address (optional)]
+Adres IPv6 (opcjonalnie)
+[Port]
+Port
+[Public key]
+Klucz publiczny
+[Old password:]
+Stare hasło:
+[New password:]
+Nowe hasło:
+[Confirm password:]
+Potwierdź hasło:
+;file \protocols\Tox\src\main.cpp
+[Profiles folder]
+Folder profili
+[Tox link protocol]
+Powiązanie protokołu Tox
+;file \protocols\Tox\src\tox_icons.cpp
+[Protocol icon]
+Ikona protokołu
+[Action icon]
+Ikona działania
+[Correction icon]
+
+[Protocols]
+Protokoły
+;file \protocols\Tox\src\tox_menus.cpp
+[Password]
+Hasło:
+[Create password]
+Utwórz hasło
+;file \protocols\Tox\src\tox_messages.cpp
+[Action]
+Działanie
+[You cannot send when you are offline.]
+Nie możesz wysyłać będąc rozłączonym.
+;file \protocols\Tox\src\tox_options.cpp
+[Tox profile]
+Profil Tox
+[All files]
+Wszystkie pliki
+[Select Tox profile]
+Wybierz profil Tox
+[Save Tox profile]
+Zapisz profil Tox
+[Add node]
+Dodaj gniazdo
+[Change node]
+Zmień gniazdo
+[Enter IPv4]
+Wprowadź IPV4
+[Error]
+Błąd
+[Enter port]
+Wprowadź port
+[Enter public key]
+Wprowadź klucz publiczny
+[Common nodes]
+Powszechne gniazda
+[User nodes]
+Gniazda użytkownika
+[Are you sure?]
+Czy jesteś pewien?
+[Node deleting]
+Usuwanie Gniazda
+[Network]
+Protokoły
+[Account]
+Konto
+[Nodes]
+Gniazda
+;file \protocols\Tox\src\tox_profile.cpp
+[Unable to open Tox profile]
+Nie można otworzyć profilu Tox
+[Unable to read Tox profile]
+Nie można odczytać profilu Tox
+[Unable to decrypt Tox profile]
+Nie można odszyfrować profilu Tox
+[New password is empty]
+Nowe hasło jest puste
+[New password is not equal to confirmation]
+Nowe hasło nie jest równe powtórzonemu
+[Old password is not valid]
+Stare hasło nie jest prawidłowe
+[Removing the password will lead to decryption of the profile.\r\nAre you sure to remove password?]
+Usunięcie hasła spowoduje rozszyfrowanie profilu.\r\nCzy na pewno chcesz usunąć hasło?
+;file \protocols\Tox\src\tox_proto.cpp
+[You cannot add yourself to your contact list]
+Nie możesz dodać siebie samego do swojej listy kontaktów
+[Contact already in your contact list]
+Kontakt jest już na liście kontaktów
+[Unable to initialize Tox core]
+Nie można uruchomić rdzenia Tox
+;file \protocols\Tox\src\tox_search.cpp
+[Query]
+Zapytanie
+;file \protocols\Tox\src\tox_utils.cpp
+[One of the arguments is missing]
+Brakuje jednego z argumentów
+[Unable to allocate enough memory]
+Nie można zaalokować wystarczająco pamięci
+[Unable to bind to a port]
+Nie można połączyć się z portem
+[The proxy type is not valid]
+Typ proxy jest nieprawidłowy
+[The proxy host is not valid]
+Host proxy jest nieprawidłowy
+[The proxy port is not valid]
+Port proxy jest nieprawidłowy
+[The proxy address could not be resolved]
+Nie można rozwiązać adresu proxy
+[The profile is encrypted]
+Profil jest szyfrowany
+[The data format is not valid]
+Format danych jest nieprawidłowy
+[Unknown error]
+Nieznany błąd
+[The friend ID did not designate a valid friend]
+
+[This client is currently not connected to the friend]
+Ten klient nie jest aktualnie połączony z przyjacielem
+[An allocation error occurred while increasing the send queue size]
+Wystąpił błąd przyporządkowania podczas zwiększania rozmiaru kolejki wysyłania
+[Message length exceeded TOX_MAX_MESSAGE_LENGTH]
+Długość wiadomości przekroczyła TOX_MAX_MESSAGE_LENGTH
+[Attempted to send a zero-length message]
+Próbowano wysłać pustą wiadomość

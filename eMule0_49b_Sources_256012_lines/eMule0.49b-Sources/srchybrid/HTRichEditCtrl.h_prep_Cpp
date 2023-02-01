@@ -1,0 +1,104 @@
+﻿
+
+void INCLUDEREPLACE(){CX_INCL("TitleMenu.h");}
+
+class CHTRichEditCtrl :        CRichEditCtrl
+{
+ //DECLARE_DYNAMIC(CHTRichEditCtrl)
+
+public:
+ CHTRichEditCtrl();
+ virtual ~CHTRichEditCtrl();
+
+ void Init(const char* pszTitle, const char* pszSkinKey = NULL);
+ void SetProfileSkinKey(const char* pszSkinKey);
+ void SetTitle(const char* pszTitle);
+ void Localize();
+ void ApplySkin();
+ void EnableSmileys(bool bEnable = true);
+
+ void AddEntry(const char* pszMsg);
+ void Add(const char* pszMsg, int iLen = -1);
+ void AddTyped(const char* pszMsg, int iLen, unsigned int uFlags);
+ void AddLine(const char* pszMsg, int iLen = -1, bool bLink = false, unsigned long cr = CLR_DEFAULT, unsigned long bk = CLR_DEFAULT, unsigned long mask = 0);
+ bool AddCaptcha(void *  hbmp);
+ void Reset();
+ CString GetLastLogEntry();
+ CString GetAllLogEntries();
+ bool SaveLog(const char* pszDefName = NULL);
+
+ void AppendText(const CString& sText);
+ void AppendHyperLink(const CString& sText, const CString& sTitle, const CString& sCommand, const CString& sDirectory);
+ void AppendKeyWord(const CString& sText, unsigned long cr);
+ void AppendColoredText(const char* pszText, unsigned long cr, unsigned long bk = CLR_DEFAULT, unsigned long mask = 0);
+ unsigned long GetForegroundColor() const { return m_crForeground; }
+ unsigned long GetBackgroundColor() const { return m_crBackground; }
+ void SetDfltForegroundColor(unsigned long crColor) { m_crDfltForeground = crColor; }
+ void SetDfltBackgroundColor(unsigned long crColor) { m_crDfltBackground = crColor; }
+
+ CString GetText() const;
+ bool IsAutoScroll() const { return m_bAutoScroll; }
+ void SetAutoScroll(bool bAutoScroll) { m_bAutoScroll = bAutoScroll; }
+ void ScrollToLastLine(bool bForceLastLineAtBottom = false);
+ void ScrollToFirstLine();
+
+ void SetFont(CFont* pFont, int  bRedraw = TRUE);
+ CFont* GetFont() const;
+
+protected:
+ bool m_bRichEdit;
+ int m_iLimitText;
+ bool m_bAutoScroll;
+ CStringArray m_astrBuff;
+ bool m_bNoPaint;
+ bool m_bEnErrSpace;
+ CString m_strTitle;
+ CString m_strSkinKey;
+ bool m_bRestoreFormat;
+ CHARFORMAT m_cfDefault;
+ bool m_bForceArrowCursor;
+ HCURSOR m_hArrowCursor;
+ bool m_bEnableSmileys;
+ unsigned long m_crForeground;
+ unsigned long m_crBackground;
+ bool m_bDfltForeground;
+ bool m_bDfltBackground;
+ unsigned long m_crDfltForeground;
+ unsigned long m_crDfltBackground;
+ static int sm_iSmileyClients;
+ static CComPtr           sm_pIStorageSmileys;
+ static CMapStringToPtr sm_aSmileyBitmaps;
+ CComPtr           m_pIStorageCaptchas;
+
+ void SelectAllItems();
+ void CopySelectedItems();
+ int GetMaxSize();
+ void SafeAddLine(int nPos, const char* pszLine, int iLen, long& nStartChar, long& nEndChar, bool bLink, unsigned long cr, unsigned long bk, unsigned long mask);
+ void FlushBuffer();
+ void AddString(int nPos, const char* pszString, bool bLink, unsigned long cr, unsigned long bk, unsigned long mask);
+ bool InsertSmiley(const char* pszSmileyID);
+ void *  GetSmileyBitmap(const char* pszSmileyID);
+ void AddSmileys(const char* pszLine);
+ void PurgeSmileyCaches();
+
+ virtual long *  WindowProc(unsigned int message, int *  wParam, long * lParam);
+
+
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+ virtual int  OnCommand(int *  wParam, long * lParam);
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         void OnEnErrspace();
+         void OnEnMaxtext();
+         int  OnEnLink(NMHDR *pNMHDR, long *  *pResult);
+         void OnSysColorChange();
+         int  OnSetCursor(CWnd* pWnd, unsigned int nHitTest, unsigned int message);
+         void OnSize(unsigned int nType, int cx, int cy);
+};
+
+
+
+
+
+
+ 

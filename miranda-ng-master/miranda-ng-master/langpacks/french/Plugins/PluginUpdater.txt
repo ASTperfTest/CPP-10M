@@ -1,0 +1,202 @@
+#muuid {968def4a-bc60-4266-ac08-754ce721db5f}
+;============================================================
+;  File: PluginUpdater.dll
+;  Plugin: Plugin updater
+;  Version: 0.2.1.4
+;  Authors: Mataes, George Hazan
+;============================================================
+[Installs and updates plugins and other Miranda NG components.]
+
+;file \plugins\PluginUpdater\res\Resource.rc
+[Updates found!]
+Mises à jour trouvées!
+[PluginUpdater has detected updated versions of some Miranda components. Click on Details button to view more information.]
+L'outil de mise à jour a détecté de nouvelles versions des composants de Miranda. Cliquer sur Détails pour avoir plus d'informations.
+[Update]
+Mise à jour
+[Details >>]
+Détails
+[Cancel]
+Annuler
+[Select &all]
+&Tout sélectionner
+[Select &none]
+&Rien sélectionner
+[Update options]
+
+[On startup]
+Au démarrage
+[(but only once a day)]
+(mais seulement une fois par jour)
+[Every]
+Tous les
+[Silent mode]
+
+[Restart Miranda automatically]
+
+[Backup database before update (requires Db_autobackups plugin)]
+
+[Number of backups to keep:]
+Nombre de sauvegarde à conserver :
+[Files source]
+Source du fichier
+[Stable version]
+Version stable
+[Stable version with debug symbols]
+Version stable avec les symboles de debug
+[Development version (less stable)]
+Version de développement (moins stable)
+[Development version with debug symbols]
+Version de développement avec les symboles de debug
+[Custom version]
+Version personnalisée
+[Change platform to 32-bit]
+
+[Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.]
+
+[Notifications]
+Notifications
+[Restart]
+
+[Errors]
+Erreurs
+[Info messages]
+
+[Back]
+Fond
+[Text]
+Texte
+[Colors]
+Couleurs
+[Use cus&tom colors]
+Utiliser des couleurs &personnalisées
+[Use &Windows colors]
+Utiliser les couleurs &Windows
+[Use defa&ult colors]
+Couleurs par défa&ut
+[Preview]
+Aperçu
+[Click action]
+Action du clic
+[On left click]
+Clic gauche
+[On right click]
+Clic droit
+[Timeout]
+Délai du popup
+[0 = Default]
+0 = Défaut
+[-1 = Infinite]
+-1 = Infini
+[Sec]
+Sec
+[For "Restart" popup setting is always infinity]
+
+[Popups]
+Popups
+[Component list]
+Liste des composants
+[Here is the complete list of missing Miranda NG components. Check components that you want to download.\n\nClick on info icon to view component info page.]
+Ici se trouve la liste complète des composants manquants de Miranda NG. Cocher les composants que vous souhaitez télécharger.\n\nCliquer sur l'icône info pour voir la page d'information du composant.
+[Download]
+Téléchargement
+;file \plugins\PluginUpdater\src\DlgListNew.cpp
+[Component Name]
+Nom du composant
+[State]
+État
+[Plugins]
+Plugins
+[Icons]
+Icônes
+[Languages]
+Langages
+[Other]
+Autre
+[Downloading...]
+Télécharge...
+[Succeeded.]
+Accompli.
+[Failed!]
+
+[Skipped.]
+
+[Plugin Updater]
+
+[Download complete]
+Téléchargement terminé
+[Download complete. Do you want to go to plugins option page?]
+Téléchargement terminé. Voulez-vous ouvrir la page d'option des plugins?
+[List is empty.]
+Liste vide.
+[List loading already started!]
+
+;file \plugins\PluginUpdater\src\DlgUpdate.cpp
+[Will be deleted!]
+Sera effacé!
+[Unpack operation failed with error code=%d, update terminated]
+
+[Update complete. Press Yes to restart Miranda now or No to postpone a restart until the exit.]
+Mise à jour accomplie. Appuyer sur Oui pour redémarrer Miranda maintenant.
+[Miranda NG Core]
+
+[Deprecated!]
+
+[Update found!]
+
+[<< Details]
+<<Détails
+[Update failed! One of the components wasn't downloaded correctly. Try it again later.]
+
+[%d component(s) was updated]
+
+[You need to restart your Miranda to apply installed updates.]
+
+[Checking for new updates...]
+Vérification de mises à jour...
+[No updates found.]
+Aucune mises à jour trouvée.
+[Update checking already started!]
+Vérification des mises à jour en cours!
+;file \plugins\PluginUpdater\src\Events.cpp
+[Plugin updater URI scheme]
+
+;file \plugins\PluginUpdater\src\Notifications.cpp
+[Would you like to restart it now?]
+
+;file \plugins\PluginUpdater\src\Options.cpp
+[Backup database before update]
+
+[Stable version (incompatible with current development version)]
+
+[hours]
+heures
+[days]
+jours
+[Change platform to 64-bit]
+
+[Close popup]
+
+[Do nothing]
+
+[Test]
+Test
+[Services]
+Services
+;file \plugins\PluginUpdater\src\PluginUpdater.cpp
+[Check for updates]
+Vérifier la présence de mises à jour
+[Plugin info]
+Informations sur le plugin
+[Available components list]
+Montrer la liste complète des plugins
+[Update failed]
+
+[Update completed]
+
+;file \plugins\PluginUpdater\src\Utils.cpp
+[Updates are temporarily disabled, try again later.]
+
+[An error occurred while checking for new updates.]
+Une erreur est survenue lors de la vérification des mises à jour.
+;file \plugins\PluginUpdater\src\Compat\compat.h

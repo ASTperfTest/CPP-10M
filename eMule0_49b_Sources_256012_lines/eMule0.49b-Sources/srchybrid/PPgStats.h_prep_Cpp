@@ -1,0 +1,57 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("ColorButton.h");}
+
+class CPPgStats :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgStats)
+
+public:
+ CPPgStats();
+ virtual ~CPPgStats();
+
+ // Dialog Data
+ enum { IDD = IDD_PPG_STATS };
+
+ void Localize(void);
+
+protected:
+ int m_iStatsColors;
+ unsigned long* m_pdwStatsColors;
+ CComboBox m_colors;
+ CComboBox m_cratio;
+ CColorButton m_ctlColor;
+ CSliderCtrl m_ctlGraphsUpdate;
+ CSliderCtrl m_ctlGraphsAvgTime;
+ CSliderCtrl m_ctlStatsUpdate;
+ int m_iGraphsUpdate;
+ int m_iGraphsAvgTime;
+ int m_iStatsUpdate;
+ int  m_bModified;
+ bool m_bFillGraphs;
+
+ void ShowInterval();
+ void SetModified(int  bChanged = TRUE);
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnHScroll(unsigned int nSBCode, unsigned int nPos, CScrollBar* pScrollBar);
+         void OnCbnSelChangeColorSelector();
+         long OnColorPopupSelChange(unsigned int lParam, long wParam);
+         void OnEnChangeCGraphScale() { SetModified(); }
+         void OnCbnSelChangeCRatio() { SetModified(); }
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         void OnDestroy();
+         void OnBnClickedFillGraphs();
+};
+
+
+
+
+
+
+ 

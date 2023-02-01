@@ -1,0 +1,55 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("MuleListCtrl.h");}
+
+class CServerList;
+class CServer;
+class CToolTipCtrlX;
+
+class CServerListCtrl :        CMuleListCtrl
+{
+ //DECLARE_DYNAMIC(CServerListCtrl)
+public:
+ CServerListCtrl();
+ virtual ~CServerListCtrl();
+
+ bool Init();
+ bool AddServer(const CServer* pServer, bool bAddToList = true, bool bRandom = false);
+ void RemoveServer(const CServer* pServer);
+ bool AddServerMetToList(const CString& strFile);
+ void RefreshServer(const CServer* pServer);
+ void RemoveAllDeadServers();
+ void RemoveAllFilteredServers();
+ void Hide()  { ShowWindow(SW_HIDE); }
+ void Visable() { ShowWindow(SW_SHOW); }
+ void Localize();
+ void ShowServerCount();
+ bool StaticServerFileAppend(CServer* pServer);
+ bool StaticServerFileRemove(CServer* pServer);
+
+protected:
+ CToolTipCtrlX* m_tooltip;
+
+ CString CreateSelectedServersURLs();
+ void DeleteSelectedServers();
+
+ void SetSelectedServersPriority(unsigned int uPriority);
+ void SetAllIcons();
+ static int          SortProc(long * lParam1, long * lParam2, long * lParamSort);
+
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnSysColorChange();
+         void OnColumnClick(NMHDR *pNMHDR, long *  *pResult);
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+         void OnNMDblClk(NMHDR *pNMHDR, long *  *pResult);
+         void OnLvnGetInfoTip(NMHDR *pNMHDR, long *  *pResult);
+         void OnNMCustomDraw(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

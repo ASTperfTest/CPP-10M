@@ -1,0 +1,6 @@
+[Allows inline skin item editing for Clist nicer.]
+[Copy from]
+[Raised]
+[Sunken]
+[Bumped]
+[Etched]

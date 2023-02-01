@@ -1,0 +1,82 @@
+#muuid {f62c1d7a-ffa4-4065-a251-4c9dd9101cc8}
+;============================================================
+;  File: CrashDumper.dll
+;  Plugin: Crash dumper
+;  Version: 0.2.0.1
+;  Authors: borkra
+;============================================================
+[Crash Dumper and Version Information for Miranda NG.]
+Створення звітів про помилки в разі аварійного завершення роботи програми, а також звітів про версії.
+;file \plugins\CrashDumper\res\crshdmp.rc
+[View Version Information]
+Інформація про версії
+[Close]
+Закрити
+[Copy To Clipboard]
+Копіювати в буфер
+[To File]
+У файл
+[Crash reports]
+Звіти про помилки
+[Generate crash reports]
+Створювати звіти про помилки
+[Create reports in subfolders naming as current date]
+Зберігати звіти в папки, названі по даті
+[Use classic dates]
+Класичний формат часу і дати
+[* You need to restart Miranda NG to apply changes]
+* Зміни вступлять у силу після перезапуску програми
+[Display popups about successful actions]
+
+[View]
+Вигляд
+[&Copy]
+&Копіювати
+[Co&py All]
+Ко&піювати все
+[Select &All]
+Вибрати &все
+;file \plugins\CrashDumper\src\crshdmp.cpp
+[Version Info stored into file %s]
+Версії збережені у файлі %s
+[Version Info file %s is inaccessible]
+Файл %s недоступний
+[Version Information To Clipboard]
+Версії в буфер обміну
+[Version Information To File]
+Версії в файл
+[Show Version Information]
+Показати версії
+[Version Information]
+Версії
+[Copy to clipboard]
+Копіювати в буфер обміну
+[Store to file]
+Зберегти в файл
+[Show]
+Показати
+[Show with DLLs]
+З бібліотеками
+[Open crash report directory]
+Папка збереження звітів
+[Copy Version Info to clipboard]
+Копіювати версії в буфер обміну
+[Show Version Info]
+Показати версії
+;file \plugins\CrashDumper\src\crshdmp_icons.cpp
+[Upload]
+Завантажити
+[Copy link to clipboard]
+Копіювати посилання в буфер обміну
+[Crash Dumper]
+Звіти про помилки і версії
+;file \plugins\CrashDumper\src\exhndlr.cpp
+[Crash Report write location is not available]
+Шлях для запису звіту про помилку недоступний
+[Miranda crashed. Crash report stored in the folder:\n %s\n\n Would you like store it in the clipboard as well?]
+Miranda NG була завершена аварійно. Звіт збережено в\n %s\n\nЗберегти його в буфер обміну?
+;file \plugins\CrashDumper\src\ui.cpp
+[View Version Information (with DLLs)]
+Інформація про версії (з бібліотеками)
+[Services]
+Служби

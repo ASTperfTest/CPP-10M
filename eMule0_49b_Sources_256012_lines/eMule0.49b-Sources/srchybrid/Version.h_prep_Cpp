@@ -1,0 +1,46 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *) Specify the version of emule only here with the following defines.
+// *) When changing any of those version nr. defines you also have to rebuild the language DLLs.
+//
+// General format:
+//        .       .        .
+//
+// Fields:
+//          major number (e.g. 0)
+//          minor number (e.g. 30)
+//          update number (e.g. 0='a'  1='b'  2='c'  3='d'  4='e'  5='f' ...)
+//          build number; currently not used
+//
+// Currently used:
+//         .       .         is used for the displayed and the version check number
+//        .           is used for the version
+//
+
+
+
+
+
+// NOTE: This version string is also used by the language DLLs!
+
+
+       /* !              */
+
+
+
+
+
+
+ 

@@ -1,0 +1,128 @@
+#muuid {3503D584-6234-4BEF-A553-6C1B9CD471F2}
+;============================================================
+;  File: NewEventNotify.dll
+;  Plugin: NewEventNotify
+;  Version: 0.2.2.6
+;  Authors: icebreaker, Prezes, vj, vlko, Joe @ Whale
+;============================================================
+[Notifies you when you receive a message, URL, file or any other event by displaying a popup.]
+Benachrichtigt Sie per Popup, wenn Sie eine Nachricht, URL, Datei oder sontiges Ereignis empfangen
+;file \plugins\NewEventNotify\res\resource.rc
+[Limit message preview to]
+Begrenze Nachrichtenvorschau auf
+[characters]
+Zeichen
+[Message]
+Nachricht
+[File]
+Datei
+[Errors]
+Fehler
+[Others]
+Sonstiges
+[Text]
+Text
+[Background]
+Hintergrund
+[Use default colors]
+Standardfarben verwenden
+[Timeout, secs]
+Anzeigedauer, Sek.
+[Preview]
+Vorschau
+[(timeout -1 means forever, 0 - default)]
+(Anzeigedauer -1 meint endlos, 0 - Standard)
+[Don't show popup when message dialog is already open]
+Kein Popup zeigen, wenn Nachrichtenfenster offen ist
+[Hide popup when sending new message]
+Popup beim Versenden von Nachrichten ausblenden
+[Open reply dialog instead of reading the message]
+Nachrichtenf. öffnen, nicht nur als gelesen markieren
+[Merge popups from one user]
+Popups eines Kontaktes zusammenfügen
+[Show date]
+Datum anzeigen
+[Show time]
+Zeit anzeigen
+[Show headers]
+Titel anzeigen
+[Number of messages being shown]
+Nachrichten zusammenfassen ab Nachricht Nummer
+[Last message display first]
+Letzte Nachricht zuerst zeigen
+[Last message display last]
+Letzte Nachricht zuletzt zeigen
+;file \plugins\NewEventNotify\src\main.cpp
+[New event notifications]
+Ereignismeldungen
+;file \plugins\NewEventNotify\src\options.cpp
+[General options]
+Allgemeine Einstellungen
+[Show preview of event in popup]
+Vorschau des Ereignisses im Popup
+[Enable event notifications for instant messages]
+Benachrichtigungen für Sofortnachrichten aktivieren
+[Enable event notifications for group chats]
+Benachrichtigungen für Gruppenchats aktivieren
+[Notify me of...]
+Diese Ereignisse zeigen...
+[Error]
+Fehler
+[Left click actions]
+Aktionen bei Linksklick
+[Dismiss popup]
+Popup schließen
+[Open event]
+Ereignis öffnen
+[Dismiss event]
+Ereignis löschen
+[Right click actions]
+Aktionen bei Rechtsklick
+[Timeout actions]
+Aktionen bei Anzeigedauer abgelaufen
+[Misc options]
+Sonstige Einstellungen
+[No popups for RSS contacts]
+Keine Popups für RSS-Feeds
+[No popups for read messages]
+Keine Popups für gelesene Nachrichten
+[Event Notify]
+Ereignismeldungen
+[Popups]
+Popups
+[Main options]
+Einstellungen
+[Message events]
+Nachrichten-Ereignisse
+[Event types]
+
+;file \plugins\NewEventNotify\src\popup.cpp
+[Received %d contacts.]
+%d Kontakte empfangen.
+[ added you to the contact list]
+ hat Sie zu Ihrer Kontaktliste hinzugefügt
+[ requested authorization]
+ fragte Autorisierung an
+[This is a sample message event :-)]
+Dieses ist ein Beispiel-Popup für Nachrichten
+[This is a sample file event :-D]
+Dieses ist ein Beispiel-Popup für einen Dateitransfer
+[This is a sample error event :-D]
+Dieses ist ein Beispiel-Popup für einen Fehler
+[This is a sample other event ;-D]
+Dieses ist ein Beispiel-Popup für ein anderes Ereignis
+[Plugin Test]
+Plugin Test
+[[b]Number of new message(s): %d[/b]\n]
+\[b]Anzahl neuer Nachrichten: %d[/b]\n
+;file \plugins\NewEventNotify\src\stdafx.h
+[Contacts]
+Kontakte
+[You were added!]
+Sie wurden hinzugefügt!
+[Requests your authorization]
+Erbittet Ihre Autorisation
+[Unknown Event]
+Unbekanntes Ereignis
+[Notify of new events]
+Ereignis-Benachrichtigung

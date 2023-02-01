@@ -1,0 +1,175 @@
+#muuid {1bfc449d-8f6f-4080-8f35-f940b3de1284}
+;============================================================
+;  File: VoiceService.dll
+;  Plugin: Voice Service
+;  Version: 0.1.3.1
+;  Authors: Ricardo Pescuma Domenecci
+;============================================================
+[Provide services for protocols that support voice calls.]
+Stellt die Anruf-Unterstützung für Protokolle bereit
+;file \plugins\VoiceService\res\resource.rc
+[Enable popups]
+Popups aktivieren
+[Colors]
+Farben
+[Background color]
+Hintergrundfarbe
+[Text color]
+Textfarbe
+[Use Windows colors]
+Windowsfarben verwenden
+[Use default colors]
+Standardfarben verwenden
+[Timeout]
+Timeout
+[Default]
+Standard
+[Custom]
+Benutzerdef.
+[Permanent]
+Dauerhaft
+[Actions]
+Aktionen
+[On right click:]
+Bei Rechtsklick:
+[On left click:]
+Bei Linksklick:
+[Preview]
+Vorschau
+[Show incoming call dialog immediately ]
+
+[Catch focus on this dialog]
+
+[New Voice Call]
+Neuer Anruf
+[%s wants to start a voice call with you. What you want to do?\n\nIf you answer the call, the current call will be put on hold.]
+
+[Answer]
+Antwort
+[Drop]
+Auflegen
+[From now on, repeat this action for this contact]
+Ab sofort diese Aktion für diesen Kontakt wiederholen
+[Frame]
+Rahmen
+[Auto-size frame]
+Frame automatisch anpassen
+[Automatic Actions]
+Automatische Aktionen
+[Auto accept this contact calls]
+Anrufe vom diesen Kontakt immer annehmen
+[Auto drop this contacts calls]
+Anrufe von diesen Kontakt immer ablehnen
+[Audio]
+Audio
+[Input:]
+Eingehend:
+[Output:]
+Ausgehend:
+[Echo cancelation]
+Echo Reduzierung
+[Microphone boost]
+Mikrofon Boost
+[Unknown call]
+
+[Call will disclose IP address to the peer and his server]
+
+[Established]
+
+[M]
+m
+[V]
+V
+[Frame Popup]
+
+[Answer call]
+Anruf annehmen
+[Drop call]
+Auflegen
+[Hold call]
+Anruf halten
+;file \plugins\VoiceService\src\hooks.cpp
+[Main]
+Allgemein
+[Dialpad]
+
+[Secure]
+Sicher
+[Talking]
+Reden
+[Ringing]
+Ringring
+[Calling]
+Ruft an
+[On Hold]
+Angehalten
+[Ended]
+Beendet
+[Busy]
+
+[Ready]
+Bereit
+[Make Voice Call]
+
+[Answer Voice Call]
+Anruf annehmen
+[Hold Voice Call]
+Anruf anhalten
+[Drop Voice Call]
+Auflegen
+[Started talking]
+Gespräch gestartet
+[Calling a contact]
+Ruft ein Kontakt an
+[Put a call on Hold]
+Hat ein Anruf angehalten
+[End of call]
+
+[Busy signal]
+
+[Call %s with %s]
+
+[Call with %s]
+
+[Call]
+Anrufen
+[%s with %s]
+
+[with %s]
+
+[Voice Calls]
+Anrufe
+[Dialpad press]
+
+;file \plugins\VoiceService\src\options.cpp
+[Do nothing]
+Nichts tun
+[Close popup]
+Popup schließen
+[Test Contact]
+Test-Kontakt
+[Test description]
+Test-Beschreibung
+[Popups]
+Popups
+[Auto actions]
+Voreinstellungen
+;file \plugins\VoiceService\src\VoiceCall.cpp
+[Voice call started]
+Anruf gestartet
+[Voice call ringing]
+Anruf empfangen
+[Voice call]
+Sprachnachricht
+[Voice call on hold]
+Anruf ist angehalten worden
+[Voice call ended]
+Anruf beendet
+[Voice call busy]
+
+[Voice call ready]
+
+[Unknown number]
+
+[Call is over %s]
+

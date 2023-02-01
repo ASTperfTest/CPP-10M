@@ -1,0 +1,45 @@
+Pojmy:
+
+(system) tray - oznamovacн oblast
+Autoreply - automatickб odpovмп
+Avatar - avatar (avatara, avatarщ, avataшi)
+Code page - kуdovб strбnka
+Contact list - seznam kontaktщ
+Credits - podмkovбnн
+Drop down - љipka
+Fatal error - katastrofбlnн selhбnн
+Frames, windows - rбmeиky
+Fullscreen mode - celoobrazovkovэ reћim (celoobraz. reћim)
+Hotkey - klбvesovб zkratka
+Icon library, icon pack - knihovna ikon
+Idle - neиinnost
+Idle contacts - neaktivnн kontakty
+Item - poloћka
+Langpack - jazykovэ balниek
+Log - zбznam
+Main menu - hlavnн nabнdka
+Message log - zбznam komunikace
+Message window - komunikaиnн okno
+Nick - pшezdнvka
+PopUp - oznбmenн
+Session nebo message session, conversation - rozhovor
+Smiley library - knihovna smajlнkщ
+Status - stav
+Status bar - stavovб liљta
+Status message - zprбva stavu
+Subcontact - podkontakt
+Tab - panel
+Task bar - hlavnн panel
+Timestamp - иasovэ ъdaj
+Titlebar - zбhlavн okna
+Toolbar - tlaинtkovб liљta
+Tooltip - tip
+Userinfoex, extended user info - detaily uћivatele
+View mode - pohled
+Xstatus - rozљншenэ stav
+Xstatus message - zprбva rozљншenйho stavu
+
+Frбze:
+Go to ... -> ... to change settings - Nastavenн zmмnнte v sekci ... -> ...
+Use Popup colors - Pouћнt vэchozн barvy
+Reset to default - Obnovit vэchozн

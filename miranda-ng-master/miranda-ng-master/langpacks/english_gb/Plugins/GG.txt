@@ -1,0 +1,9 @@
+#muuid {f3ff65f3-250e-416a-bee9-58c93f85ab33}
+;============================================================
+;  File: GG.dll
+;  Plugin: Gadu-Gadu protocol
+;  Version: 0.95.11.1
+;  Authors: Bartosz Bialek, Adam Strzelecki
+;============================================================
+[Send messages slower, but with full acknowledgment]
+Send messages slower, but with full acknowledgement

@@ -1,0 +1,5 @@
+[FTP File]
+[FTP (Standard)]
+[FTP+SSL (Explicit)]
+[FTP+SSL (Implicit)]
+[SFTP (Secure FTP over SSH)]

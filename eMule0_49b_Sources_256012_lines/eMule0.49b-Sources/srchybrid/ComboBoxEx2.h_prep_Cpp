@@ -1,0 +1,27 @@
+﻿
+
+class CComboBoxEx2 :        CComboBoxEx
+{
+ //DECLARE_DYNAMIC(CComboBoxEx2)
+public:
+ CComboBoxEx2();
+ virtual ~CComboBoxEx2();
+
+ int AddItem(const char* pszText, int iImage);
+ int  SelectString(const char* pszText);
+ int  SelectItemDataStringA(const char* pszText);
+
+ virtual int  PreTranslateMessage(MSG* pMsg);
+
+protected:
+
+};
+
+void UpdateHorzExtent(CComboBox &rctlComboBox, int iIconWidth);
+
+
+
+
+
+
+ 

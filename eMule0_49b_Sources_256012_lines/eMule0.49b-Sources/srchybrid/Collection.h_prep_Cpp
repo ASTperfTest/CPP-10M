@@ -1,0 +1,73 @@
+﻿//this file is part of eMule
+//Copyright (C)2002 Merkur ( merkur-@users.sourceforge.net / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("MapKey.h");}
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("crypto51/rsa.h");}
+void INCLUDEREPLACE(){CX_INCL("crypto51/base64.h");}
+void INCLUDEREPLACE(){CX_INCL("crypto51/osrng.h");}
+void INCLUDEREPLACE(){CX_INCL("crypto51/files.h");}
+void INCLUDEREPLACE(){CX_INCL("crypto51/sha.h");}
+
+
+
+
+
+
+
+class CAbstractFile;
+class CCollectionFile;
+
+        CMap<CSKey,const CSKey&,CCollectionFile*,CCollectionFile*> CCollectionFilesMap = "CX_TYPEDEF";
+
+class CCollection
+{
+ friend class CCollectionCreateDialog;
+ friend class CCollectionViewDialog;
+public:
+ CCollection(void);
+ CCollection(const CCollection* pCollection);
+ ~CCollection(void);
+ bool InitCollectionFromFile(const CString& sFilePath, CString sFileName);
+ CCollectionFile* AddFileToCollection(CAbstractFile* pAbstractFile, bool bCreateClone);
+ void RemoveFileFromCollection(CAbstractFile* pAbstractFile);
+ void WriteToFileAddShared(CryptoPP::RSASSA_PKCS1v15_SHA_Signer* pSignkey = NULL);
+ void SetCollectionAuthorKey(const byte* abyCollectionAuthorKey, uint32 nSize);
+ CString GetCollectionAuthorKeyString();
+ static bool HasCollectionExtention(const CString& sFileName);
+ CString GetAuthorKeyHashString();
+
+ CString m_sCollectionName;
+ CString m_sCollectionAuthorName;
+
+ bool m_bTextFormat;
+
+private:
+ CCollectionFilesMap m_CollectionFilesMap;
+ byte* m_pabyCollectionAuthorKey;
+ uint32 m_nKeySize;
+};
+
+
+
+
+
+
+ 

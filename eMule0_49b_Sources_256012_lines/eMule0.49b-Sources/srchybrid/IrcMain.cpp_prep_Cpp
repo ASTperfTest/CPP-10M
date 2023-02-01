@@ -1,0 +1,1656 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+//A lot of documentation for the     protocol within this code came
+//directly from http://www.irchelp.org/irchelp/rfc/rfc2812.txt
+//Much of it may never be used, but it's here just in case..
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+
+//#define MMNOSOUND  // mmsystem: Sound support
+
+
+
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("Mmsystem.h");}
+void INCLUDEREPLACE(){CX_INCL("IrcMain.h");}
+void INCLUDEREPLACE(){CX_INCL("emule.h");}
+void INCLUDEREPLACE(){CX_INCL("otherfunctions.h");}
+void INCLUDEREPLACE(){CX_INCL("ED2KLink.h");}
+void INCLUDEREPLACE(){CX_INCL("DownloadQueue.h");}
+void INCLUDEREPLACE(){CX_INCL("server.h");}
+void INCLUDEREPLACE(){CX_INCL("IrcSocket.h");}
+void INCLUDEREPLACE(){CX_INCL("MenuCmds.h");}
+void INCLUDEREPLACE(){CX_INCL("sockets.h");}
+void INCLUDEREPLACE(){CX_INCL("FriendList.h");}
+void INCLUDEREPLACE(){CX_INCL("emuleDlg.h");}
+void INCLUDEREPLACE(){CX_INCL("ServerWnd.h");}
+void INCLUDEREPLACE(){CX_INCL("IrcWnd.h");}
+void INCLUDEREPLACE(){CX_INCL("StringConversion.h");}
+void INCLUDEREPLACE(){CX_INCL("Log.h");}
+void INCLUDEREPLACE(){CX_INCL("Exceptions.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+
+
+CIrcMain::CIrcMain(void)
+{
+ m_pIRCSocket = NULL;
+ m_pwndIRC = 0;
+ srand( (unsigned)time( NULL ) );
+ SetVerify();
+ m_dwLastRequest = 0;
+}
+
+CIrcMain::~CIrcMain(void)
+{
+}
+
+void CIrcMain::PreParseMessage(const char *pszBufferA)
+{
+ try
+ {
+  m_sPreParseBufferA += pszBufferA;
+  int iIndex = m_sPreParseBufferA.Find('\n');
+  while (iIndex != -1)
+  {
+   int iRawMessageLen = iIndex;
+   const char* pszRawMessageA = m_sPreParseBufferA;
+   if (iRawMessageLen > 0 && pszRawMessageA[iRawMessageLen - 1] == '\r')
+    iRawMessageLen -= 1;
+   else
+    ASSERT(0);
+   TRACE(_T("%s\n"), CString(pszRawMessageA, iRawMessageLen));
+   ParseMessage(CString(pszRawMessageA, iRawMessageLen));
+
+   m_sPreParseBufferA = m_sPreParseBufferA.Mid(iIndex + 1);
+   iIndex = m_sPreParseBufferA.Find('\n');
+  }
+ }
+
+
+}
+
+void CIrcMain::ProcessLink( CString sED2KLink )
+{
+ try
+ {
+  CString sLink = OptUtf8ToStr(URLDecode(sED2KLink));
+  CED2KLink* pLink = CED2KLink::CreateLinkFromUrl(sLink);
+  _ASSERT( pLink !=0 );
+  switch (pLink->GetKind())
+  {
+   case CED2KLink::kFile:
+    {
+     CED2KFileLink* pFileLink = pLink->GetFileLink();
+     _ASSERT(pFileLink !=0);
+     theApp.downloadqueue->AddFileLinkToDownload(pFileLink);
+     break;
+    }
+   case CED2KLink::kServerList:
+    {
+     CED2KServerListLink* pListLink = pLink->GetServerListLink();
+     _ASSERT( pListLink !=0 );
+     CString sAddress = pListLink->GetAddress();
+     if(sAddress.GetLength() != 0)
+      theApp.emuledlg->serverwnd->UpdateServerMetFromURL(sAddress);
+     break;
+    }
+   case CED2KLink::kServer:
+    {
+     CString sDefName;
+     CED2KServerLink* pSrvLink = pLink->GetServerLink();
+     _ASSERT( pSrvLink !=0 );
+     CServer* pSrv = new       CServer(pSrvLink->GetPort(), pSrvLink->GetAddress());
+     _ASSERT( pSrv !=0 );
+     pSrvLink->GetDefaultName(sDefName);
+     pSrv->SetListName(sDefName);
+
+     if (thePrefs.GetManualAddedServersHighPriority())
+      pSrv->SetPreference(SRV_PR_HIGH);
+
+     if (!theApp.emuledlg->serverwnd->serverlistctrl.AddServer(pSrv,true))
+      delete pSrv;
+     else
+      AddLogLine(true,GetResString(IDS_SERVERADDED), pSrv->GetListName());
+     break;
+    }
+   default:
+    break;
+  }
+  delete pLink;
+ }
+ catch(...)
+ {
+  LogWarning(LOG_STATUSBAR, GetResString(IDS_LINKNOTADDED));
+  ASSERT(0);
+ }
+}
+
+void CIrcMain::ParseMessage(CString sRawMessage)
+{
+ try
+ {
+  if (sRawMessage.GetLength() < 6)
+  {
+   //TODO : We probably should disconnect here as   don't know of anything that should
+   //come from the server this small..
+   return;
+  }
+  if (_tcsncmp(sRawMessage, _T("PING :"), 6) == 0)
+  {
+   //If the server pinged us, we must pong back or get disconnected..
+   //Anything after the ":" must be sent back or it will fail..
+   sRawMessage.Replace(_T("PING :"), _T("PONG "));
+   m_pIRCSocket->SendString(sRawMessage);
+   m_pwndIRC->AddStatus(_T("PING?/PONG"), false);
+   return;
+  }
+  if (_tcsncmp(sRawMessage, _T("ERROR"), 5) == 0)
+  {
+   m_pwndIRC->AddStatus(sRawMessage);
+   return;
+  }
+  int iIndex = 0;
+  CString sCommand;
+  CString sServername;
+  CString sNickname;
+  CString sUser;
+  CString sHost;
+  if (sRawMessage[0] != _T(':'))
+  {
+   sCommand = sRawMessage.Tokenize(_T(" "), iIndex);
+  }
+  else
+  {
+   sServername = sRawMessage.Tokenize(_T(" "), iIndex);
+   sServername.Remove(_T(':'));
+   int iPos;
+   if ((iPos = sServername.Find(_T('!'))) != -1)
+   {
+    sNickname = sServername.Left(iPos);
+    sServername = sServername.Mid(iPos + 1);
+    iPos = sServername.Find(_T('@'));
+    if (iPos != -1)
+    {
+     sUser = sServername.Left(iPos);
+     sHost = sServername.Mid(iPos + 1);
+    }
+    sServername.Empty();
+   }
+   sCommand = sRawMessage.Tokenize(_T(" "), iIndex);
+  }
+
+  if (sCommand.IsEmpty())
+   throw CString(_T("SMIRC Error: Received a message had no command."));
+
+  if (sRawMessage.IsEmpty())
+   throw CString(_T("SMIRC Errow: Received a message with no target or message."));
+
+  if (sCommand == _T("PRIVMSG"))
+  {
+   CString sTarget = sRawMessage.Tokenize(_T(" "), iIndex);
+
+   // Channel and Private message were merged into this one if statement, this check allows that to happen.
+   if (sTarget.GetLength() >= 1 && sTarget[0] != _T('#'))
+    sTarget = sNickname;
+
+   //If this is a special message.. Find out what kind..
+   if (sRawMessage.Mid(iIndex, 2) == _T(":\001"))
+   {
+    //Check if this is a        message..
+    if( sRawMessage.Mid(iIndex, 8) == _T(":\001ACTION") )
+    {
+     iIndex += 8;
+     CString sMessage = sRawMessage.Mid(iIndex);
+     sMessage.Remove(_T('\001'));
+     //Channel Action..
+     m_pwndIRC->AddInfoMessageF(sTarget, _T("* %s %s"), sNickname, sMessage);
+     return;
+    }
+    //Check if this is a       message.
+    if( sRawMessage.Mid(iIndex, 7) == _T(":\001SOUND") )
+    {
+     if(!thePrefs.GetIRCPlaySoundEvents())
+      return;
+     iIndex += 7;
+     CString sSound = sRawMessage.Tokenize(_T(" "), iIndex);
+     sSound.Remove(_T('\001'));
+     //Check if the there was a message to the sound.
+     CString sMessage = sRawMessage.Mid(iIndex);
+     sMessage.Remove(_T('\001'));
+     if(sMessage.IsEmpty())
+      sMessage = _T("[SOUND]");
+     //Check for proper form.
+     sSound.Remove(_T('\\'));
+     sSound.Remove(_T('/'));
+     sSound = sSound.MakeLower();
+     if( (sSound.Right(4) != _T(".wav")) && (sSound.Right(4) != _T(".mp3")) )
+      return;
+     sSound.Format(_T("%sSounds\\IRC\\%s"), thePrefs.GetMuleDirectory(EMULE_EXECUTEABLEDIR), sSound);
+     PlaySound(sSound, NULL, SND_FILENAME | SND_NOSTOP | SND_NOWAIT | SND_ASYNC);
+     m_pwndIRC->AddInfoMessageF(sTarget, _T("* %s %s"), sNickname, sMessage);
+     return;
+    }
+    //Check if this was a         message.
+    if( sRawMessage.Mid(iIndex, 9) == _T(":\001VERSION") )
+    {
+     if (::GetTickCount() - m_dwLastRequest < 1000){ // excess flood protection
+      m_dwLastRequest = ::GetTickCount();
+      return;
+     }
+     m_dwLastRequest = ::GetTickCount();
+
+     //Get client version.
+     iIndex += 9;
+     m_sVersion = _T("eMule") + theApp.m_strCurVersionLong + _T("(SMIRCv00.69)");
+     CString sBuild;
+     sBuild.Format( _T("NOTICE %s :\001VERSION %s\001"), sNickname, m_sVersion );
+     m_pIRCSocket->SendString( sBuild );
+     return;
+    }
+    if( sRawMessage.Mid(iIndex, 6) == _T(":\001PING") )
+    {
+     if (::GetTickCount() - m_dwLastRequest < 1000){ // excess flood protection
+      m_dwLastRequest = ::GetTickCount();
+      return;
+     }
+     m_dwLastRequest = ::GetTickCount();
+     iIndex += 6;
+     CString sVerify = sRawMessage.Tokenize(_T(" "), iIndex);
+     sVerify.Remove(_T('\001'));
+     CString sBuild;
+     sBuild.Format( _T("NOTICE %s :\001PING %s\001"), sNickname, sVerify );
+     m_pIRCSocket->SendString( sBuild );
+     return;
+    }
+    if( sRawMessage.Mid(iIndex, 11) == _T(":\001RQSFRIEND") )
+    {
+     if (::GetTickCount() - m_dwLastRequest < 1000){ // excess flood protection
+      m_dwLastRequest = ::GetTickCount();
+      return;
+     }
+     m_dwLastRequest = ::GetTickCount();
+
+     //eMule user requested to add you as friend.
+     if( !thePrefs.GetIRCAllowEmuleAddFriend() )
+      return;
+     iIndex += 11;
+     //Adds a little protection
+     CString sVerify = sRawMessage.Tokenize(_T("|"), iIndex);
+     CString sIP;
+     CString sPort;
+     if(theApp.serverconnect->IsConnected())
+     {
+      //Tell them what server we are on for possible lowID support later.
+      sIP.Format( _T("%i"), theApp.serverconnect->GetCurrentServer()->GetIP());
+      sPort.Format( _T("%i"), theApp.serverconnect->GetCurrentServer()->GetPort());
+     }
+     else
+     {
+      //Not on a server.
+      sIP = _T("0.0.0.0");
+      sPort = _T("0");
+     }
+     //Create our response.
+     CString sBuild;
+     sBuild.Format(_T("PRIVMSG %s :\001REPFRIEND eMule%s%s|%s|%u:%u|%s:%s|%s|\001"), sTarget, theApp.m_strCurVersionLong, _T("(SMIRCv00.69)"), sVerify, theApp.IsFirewalled() ? 0 : theApp.GetID(), thePrefs.GetPort(), sIP, sPort, md4str(thePrefs.GetUserHash()));
+     m_pIRCSocket->SendString(sBuild);
+     sBuild.Format(_T("%s %s"), sTarget, GetResString(IDS_IRC_ADDASFRIEND));
+     if (!thePrefs.GetIRCIgnoreEmuleAddFriendMsgs())
+      m_pwndIRC->NoticeMessage(_T("*EmuleProto*"), _T(""), sBuild);
+     return;
+    }
+    if( sRawMessage.Mid(iIndex, 11) == _T(":\001REPFRIEND") )
+    {
+     iIndex += 11;
+     CString sVersion = sRawMessage.Tokenize(_T("|"), iIndex);
+     CString sVerify = sRawMessage.Tokenize(_T("|"), iIndex);
+     //Make sure we requested this!
+     if( m_uVerify != (unsigned int)_tstoi(sVerify))
+      return;
+     //Pick a new       random verify.
+     SetVerify();
+     uint32 uNewClientID = _tstoi(sRawMessage.Tokenize(_T(":"), iIndex));
+     uint16 uNewClientPort = (uint16)_tstoi(sRawMessage.Tokenize(_T("|"), iIndex));
+     sRawMessage.Tokenize(_T(":"), iIndex);
+     sRawMessage.Tokenize(_T("|"), iIndex);
+     CString sHash = sRawMessage.Tokenize(_T("|"), iIndex);
+     if (theApp.friendlist->IsAlreadyFriend(sHash))
+      return;
+     uchar ucharUserID[16];
+     if (!strmd4(sHash,ucharUserID))
+      throw CString( _T("SMIRC Error: Received Invalid friend reply") );
+     theApp.friendlist->AddFriend( ucharUserID, 0, uNewClientID, uNewClientPort, 0, sTarget, 1);
+     return;
+    }
+    if( sRawMessage.Mid(iIndex, 10) == _T(":\001SENDLINK") )
+    {
+     //Received a      link from someone.
+     iIndex += 10;
+     if ( !thePrefs.GetIRCAcceptLinks() )
+     {
+      if( !thePrefs.GetIRCIgnoreEmuleSendLinkMsgs() )
+      {
+       m_pwndIRC->NoticeMessage(_T("*EmuleProto*"), _T(""), sTarget + _T(" attempted to send you a file. If you wanted to accept the files from this person, enable Receive files in the     Preferences."));
+      }
+      return;
+     }
+     CString sHash = sRawMessage.Tokenize(_T("|"), iIndex);
+     if (thePrefs.GetIRCAcceptLinksFriendsOnly() && !theApp.friendlist->IsAlreadyFriend(sHash)){
+      if( !thePrefs.GetIRCIgnoreEmuleSendLinkMsgs() )
+      {
+       m_pwndIRC->NoticeMessage(_T("*EmuleProto*"), _T(""), sTarget + _T(" attempted to send you a file. If you wanted to accept the files from this person, add him as a friend or change your     Preferences."));
+      }
+      return;
+     }
+     CString sLink = sRawMessage.Mid(iIndex);
+     sLink.Remove(_T('\001'));
+     if( !sLink.IsEmpty() )
+     {
+      CString sBuild;
+      sBuild.Format( GetResString(IDS_IRC_RECIEVEDLINK), sTarget, sLink );
+      if (!thePrefs.GetIRCIgnoreEmuleSendLinkMsgs())
+       m_pwndIRC->NoticeMessage(_T("*EmuleProto*"), _T(""), sBuild);
+      ProcessLink( sLink );
+     }
+     return;
+    }
+   }
+   else
+   {
+    //This is a normal channel message..
+    if (iIndex < sRawMessage.GetLength() && sRawMessage[iIndex] == _T(':'))
+     iIndex++;
+    m_pwndIRC->AddMessage(sTarget, sNickname, sRawMessage.Mid(iIndex));
+    return;
+   }
+  }
+  if( sCommand == _T("JOIN") )
+  {
+   //Channel join
+   CString sChannel = sRawMessage.Tokenize(_T(":"), iIndex);
+   //If this was you, just add a message to create a new       channel..
+   //The list of Nicks received from the server will include you, so don't
+   //add yourself here.
+   if( sNickname == m_sNick )
+   {
+    m_pwndIRC->AddInfoMessageF(sChannel, GetResString(IDS_IRC_HASJOINED), sNickname, sChannel);
+    return;
+   }
+
+   if( !thePrefs.GetIRCIgnoreJoinMessages() || sNickname == m_sNick )
+    m_pwndIRC->AddInfoMessageF(sChannel, GetResString(IDS_IRC_HASJOINED), sNickname, sChannel);
+   //Add new       nick to your channel.
+   m_pwndIRC->m_wndNicks.NewNick( sChannel, sNickname);
+   return;
+
+  }
+  if( sCommand == _T("PART") )
+  {
+   //Part message
+   CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+   if(sRawMessage.Mid(iIndex, 1) == _T(":"))
+    iIndex++;
+   if ( sNickname == m_sNick )
+   {
+    //This was you, so remove channel.
+    m_pwndIRC->m_wndChanSel.RemoveChannel( sChannel );
+    return;
+   }
+   if( !thePrefs.GetIRCIgnorePartMessages() )
+    m_pwndIRC->AddInfoMessageF(sChannel, GetResString(IDS_IRC_HASPARTED), sNickname, sChannel, sRawMessage.Mid(iIndex));
+   //Remove nick from your channel.
+   m_pwndIRC->m_wndNicks.RemoveNick( sChannel, sNickname );
+   return;
+  }
+
+  if( sCommand == _T("TOPIC") )
+  {
+   CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+   if(sRawMessage.Mid(iIndex, 1) == _T(":"))
+    iIndex++;
+   CString sMessage = sRawMessage.Mid(iIndex);
+   m_pwndIRC->AddInfoMessageF(sChannel, _T("* %s changes topic to '%s'"), sNickname, sMessage);
+   m_pwndIRC->SetTitle( sChannel, sMessage );
+   return;
+  }
+
+  if( sCommand == _T("QUIT") )
+  {
+   if(sRawMessage.Mid(iIndex,1) == _T(":"))
+    iIndex++;
+   CString sMessage = sRawMessage.Mid(iIndex);
+   //This user left the network.. Remove from all Channels..
+   m_pwndIRC->m_wndNicks.DeleteNickInAll( sNickname, sMessage );
+   return;
+  }
+
+  if( sCommand == _T("NICK") )
+  {
+   // Someone changed a nick..
+   if (sRawMessage.Mid(iIndex,1) == _T(":"))
+    iIndex++;
+   bool bOwnNick = false;
+   CString sNewNick = sRawMessage.Tokenize(_T(" "), iIndex);
+   if (sNickname == m_sNick)
+   {
+    // It was you.. Update!
+    m_sNick = sNewNick;
+    thePrefs.SetIRCNick(m_sNick);
+    bOwnNick = true;
+   }
+   // Update new       nick in all channels..
+   if (!m_pwndIRC->m_wndNicks.ChangeAllNick(sNickname, sNewNick) && bOwnNick)
+    m_pwndIRC->AddStatusF(GetResString(IDS_IRC_NOWKNOWNAS), sNickname, sNewNick);
+   return;
+  }
+
+  if( sCommand == _T("KICK") )
+  {
+   //Someone was kicked from a channel..
+   CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+   CString sNick = sRawMessage.Tokenize(_T(" "), iIndex);
+   if(sRawMessage.Mid(iIndex,1) == _T(":"))
+    iIndex++;
+
+   if( sNick == m_sNick )
+   {
+    //It was you!
+    m_pwndIRC->m_wndChanSel.RemoveChannel( sChannel );
+    m_pwndIRC->AddStatusF(GetResString(IDS_IRC_WASKICKEDBY), sNick, sNickname, sRawMessage.Mid(iIndex));
+    return;
+   }
+   if( !thePrefs.GetIRCIgnoreMiscMessages() )
+    m_pwndIRC->AddInfoMessageF(sChannel, GetResString(IDS_IRC_WASKICKEDBY), sNick, sNickname, sRawMessage.Mid(iIndex));
+   //Remove nick from your channel.
+   m_pwndIRC->m_wndNicks.RemoveNick( sChannel, sNick );
+   return;
+  }
+  if( sCommand == _T("MODE") )
+  {
+   //A mode was set..
+   CString sTarget = sRawMessage.Tokenize(_T(" "), iIndex);
+   if( sTarget.Left(1) == _T("#") )
+   {
+    CString sCommands = sRawMessage.Tokenize(_T(" "), iIndex);
+
+    if( sCommand.IsEmpty() )
+     throw CString( _T("SMIRC Error: Received Invalid Mode change.") );
+
+    CString sParams = sRawMessage.Mid(iIndex);
+    m_pwndIRC->ParseChangeMode( sTarget, sNickname, sCommands, sParams );
+    return;
+   }
+   else
+   {
+    //The server just set a server user mode that relates to no channels!
+    //Atm, we do not handle these modes.
+    return;
+   }
+  }
+  if (sCommand == _T("NOTICE"))
+  {
+   CString sTarget = sRawMessage.Tokenize(_T(" "), iIndex);
+   if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+    iIndex++;
+   if (!sNickname.IsEmpty())
+    m_pwndIRC->NoticeMessage(sNickname, sTarget, sRawMessage.Mid(iIndex));
+   else if (!sServername.IsEmpty())
+    m_pwndIRC->NoticeMessage(sServername, sTarget, sRawMessage.Mid(iIndex));
+   return;
+  }
+
+  //TODO: Double and trible check this.. I don't know of any 3 letter commands
+  //So I'm currently assuming it's a numberical command..
+  if( sCommand.GetLength() == 3 )
+  {
+   CString sUser = sRawMessage.Tokenize(_T(" "), iIndex);
+   unsigned int uCommand = _tstoi(sCommand);
+   switch(uCommand)
+   {
+     //- The server sends Replies 001 to 004 to a user upon
+     //successful registration.
+     //001    RPL_WELCOME
+     //"Welcome to the Internet Relay Network
+     //      !      @      "
+     //002    RPL_YOURHOST
+     //"Your host is             , running version      "
+     //003    RPL_CREATED
+     //"This server was created       "
+     //004    RPL_MYINFO
+     //"
+     //                         "
+    case 1:
+     m_pwndIRC->SetLoggedIn(true);
+     if (thePrefs.GetIRCGetChannelsOnConnect())
+     {
+      CString strCommand(_T("LIST"));
+      if (thePrefs.GetIRCUseChannelFilter() && !thePrefs.GetIRCChannelFilter().IsEmpty()) {
+       strCommand += _T(' ');
+       strCommand += thePrefs.GetIRCChannelFilter();
+      }
+      m_pIRCSocket->SendString(strCommand);
+     }
+     ParsePerform();
+     /* fall through */
+    case 2:
+    case 3:
+    case 4:
+     if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+      iIndex++;
+     m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex));
+     return;
+
+     //- Sent by the server to a user to suggest an alternative
+     //server.  This is often used when the connection is
+     //refused because the server is already full.
+     //005    RPL_BOUNCE
+     //"Try server              , port              "
+
+     //005 is actually confusing.. Different sites say different things?
+     //It appears this is also              which tells you what modes are
+     //availabile to this server..
+    case 5:
+     {
+      //This get our viable user modes
+      m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex));
+      CString sSettings = sRawMessage.Tokenize(_T(" "), iIndex);
+      while (!sSettings.IsEmpty())
+      {
+       if (_tcsncmp(sSettings, _T("PREFIX"), 6) == 0)
+       {
+        sSettings = sSettings.Mid(sSettings.Find(_T('='))+1);
+        CString sModes = sSettings.Mid(1, sSettings.Find(_T(')'))-1);
+        sSettings = sSettings.Mid(sSettings.Find(_T(')'))+1);
+
+        //Set our channel modes actions
+        m_pwndIRC->m_wndNicks.m_sUserModeSettings = sModes;
+        //Set our channel modes symbols
+        m_pwndIRC->m_wndNicks.m_sUserModeSymbols = sSettings;
+       }
+       if (_tcsncmp(sSettings, _T("CHANMODE "), 9) == 0)
+       {
+        sSettings = sSettings.Mid(sSettings.Find(_T('='))+1);
+
+        //Mode that adds or removes a nick or address to a list. Always has a parameter.
+        //Modes of type   return the list when there is no parameter present.
+        CString sModes = sSettings.Left(sSettings.Find(_T(',')));
+        sSettings = sSettings.Mid(sSettings.Find(_T(','))+1);
+        m_pwndIRC->m_wndChanSel.m_sChannelModeSettingsTypeA = sModes;
+
+        //Mode that changes a setting and always has a parameter.
+        sModes = sSettings.Left(sSettings.Find(_T(',')));
+        sSettings = sSettings.Mid(sSettings.Find(_T(','))+1);
+        m_pwndIRC->m_wndChanSel.m_sChannelModeSettingsTypeB = sModes;
+
+        //Mode that changes a setting and only has a parameter when set.
+        sModes = sSettings.Left(sSettings.Find(_T(',')));
+        sSettings = sSettings.Mid(sSettings.Find(_T(','))+1);
+        m_pwndIRC->m_wndChanSel.m_sChannelModeSettingsTypeC = sModes;
+
+        //Mode that changes a setting and never has a parameter.
+        m_pwndIRC->m_wndChanSel.m_sChannelModeSettingsTypeD = sSettings;
+       }
+       sSettings = sRawMessage.Tokenize(_T(" "),iIndex);
+      }
+      return;
+     }
+
+     //- Returned when a      message is processed that results
+     //in an attempt to change to a currently existing
+     //nickname.
+     //433    ERR_NICKNAMEINUSE
+     //"       :Nickname is already in use"
+    case 433:
+     if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+      iIndex++;
+     m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex), true, uCommand);
+     // clear nick and enter the IRC-nick message box on next connect
+     thePrefs.SetIRCNick(_T(""));
+     return;
+
+     //- Reply format used by          to list replies to
+     //the query list.  The reply string is composed as
+     //follows:
+     //
+     //reply = nickname [ "*" ] "=" ( "+" / "-" ) hostname
+     //
+     //The '*' indicates whether the client has registered
+     //as an Operator.  The '-' or '+' characters represent
+     //whether the client has set an      message or not
+     //respectively.
+     //302    RPL_USERHOST
+     //":*1        *( " "         )"
+    case 302:
+
+     //- Reply format used by      to list replies to the
+     //query list.
+
+     //303    RPL_ISON
+     //":*1       *( " "        )"
+    case 303:
+
+     //- These replies are used with the      command (if
+     //allowed).  RPL_AWAY is sent to any client sending a
+     //PRIVMSG to a client which is away.  RPL_AWAY is only
+     //sent by the server to which the client is connected.
+     //Replies            and             are sent when the
+     //client removes and sets an      message.
+     //301    RPL_AWAY
+     //"       :              "
+     //305    RPL_UNAWAY
+     //":You are no longer marked as being away"
+     //306    RPL_NOWAWAY
+     //":You have been marked as being away"
+    case 301:
+    case 305:
+    case 306:
+
+     //- Replies 311 - 313, 317 - 319 are all replies
+     //generated in response to a       message.  Given that
+     //there are enough parameters present, the answering
+     //server      either formulate a reply out of the above
+     //numerics (if the query nick is found) or return an
+     //error reply.  The '*' in               is there as
+     //the literal character and not as a wild card.  For
+     //each reply set, only                   may appear
+     //more than once (for long lists of channel names).
+     //The '@' and '+' characters next to the channel name
+     //indicate whether a client is a channel operator or
+     //has been granted permission to speak on a moderated
+     //channel.  The                reply is used to mark
+     //the end of processing a       message.
+     //311    RPL_WHOISUSER
+     //"                     * :           "
+     //312    RPL_WHOISSERVER
+     //"                :             "
+     //313    RPL_WHOISOPERATOR
+     //"       :is an     operator"
+     //317    RPL_WHOISIDLE
+     //"                 :seconds idle"
+     //318    RPL_ENDOFWHOIS
+     //"       :End of       list"
+     //319    RPL_WHOISCHANNELS
+     //"       :*( ( "@" / "+" )           " " )"
+    case 311:
+    case 312:
+    case 313:
+    case 317:
+    case 318:
+    case 319:
+
+     //- When replying to a        message, a server      use
+     //the replies RPL_WHOWASUSER, RPL_WHOISSERVER or
+     //ERR_WASNOSUCHNICK for each nickname in the presented
+     //list.  At the end of all reply batches, there MUST
+     //be RPL_ENDOFWHOWAS (even if there was only one reply
+     //and it was an error).
+     //314    RPL_WHOWASUSER
+     //"                     * :           "
+     //369    RPL_ENDOFWHOWAS
+     //"       :End of WHOWA "
+    case 314:
+    case 369:
+     if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+      iIndex++;
+     m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex));
+     return;
+
+     //- Replies RPL_LIST, RPL_LISTEND mark the actual replies
+     //with data and end of the server's response to a LIST
+     //command.  If there are no channels available to return,
+     //only the end reply      be sent.
+     //321    RPL_LISTSTART
+     //Obsolete. Not used.
+     //322    RPL_LIST
+     //"          <# visible> :       "
+     //323    RPL_LISTEND
+     //":End of LIST"
+    case 321:
+     //Although it says this is obsolete, so     every server has sent it, so   use it.. :/
+     m_pwndIRC->AddStatus(_T("Start of /LIST"));
+     m_pwndIRC->m_wndChanList.ResetServerChannelList();
+     return;
+
+    case 322: {
+     CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+     if (sChannel.GetLength() >= 1 && sChannel[0] != _T('#'))
+      return;
+     CString sChanNum = sRawMessage.Tokenize(_T(" "), iIndex);
+     iIndex++;
+     if (m_pwndIRC->m_wndChanList.AddChannelToList(sChannel, sChanNum, sRawMessage.Mid(iIndex)))
+      m_pwndIRC->m_wndChanSel.SetActivity(m_pwndIRC->m_wndChanSel.m_pChanList, true);
+     return;
+    }
+    case 323:
+
+     //- When sending a       message to determine the
+     //channel topic, one of two replies is sent.  If
+     //the topic is set, RPL_TOPIC is sent back else
+     //RPL_NOTOPIC.
+     //325    RPL_UNIQOPIS
+     //"                    "
+     //324    RPL_CHANNELMODEIS
+     //"                              "
+     //331    RPL_NOTOPIC
+     //"          :No topic is set"
+     //332    RPL_TOPIC
+     //"          :       "
+    case 325:
+     if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+      iIndex++;
+     m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex));
+     return;
+
+    case 324: {
+     //A mode was set..
+     CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+     CString sCommands = sRawMessage.Tokenize(_T(" "), iIndex);
+     m_pwndIRC->ParseChangeMode( sChannel, sNickname, sCommands, sRawMessage.Mid(iIndex) );
+     return;
+    }
+    case 331:
+     if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+      iIndex++;
+     m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex));
+     return;
+
+    case 332: {
+     //Set Channel Topic
+     CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+     if (sChannel.GetLength() >= 1 && sChannel[0] != _T('#'))
+      return;
+     if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+      iIndex++;
+     m_pwndIRC->SetTitle(sChannel, sRawMessage.Mid(iIndex));
+     m_pwndIRC->AddInfoMessageF(sChannel, _T("* Channel Title: %s"), sRawMessage.Mid(iIndex));
+     return;
+    }
+
+     //- Returned by the server to indicate that the
+     //attempted        message was successful and is
+     //being passed onto the end client.
+     //341    RPL_INVITING
+     //"                "
+    case 341:
+
+     //- Returned by a server answering a        message to
+     //indicate that it is summoning that user.
+     //342    RPL_SUMMONING
+     //"       :Summoning user to IRC"
+    case 342:
+
+     //- When listing the 'invitations masks' for a given channel,
+     //a server is required to send the list back using the
+     //RPL_INVITELIST and                     messages.  A
+     //separate                is sent for each active mask.
+     //After the masks have been a
+     //RPL_ENDOFINVITELIST      be sent.
+     //346    RPL_INVITELIST
+     //"                      "
+     //347    RPL_ENDOFINVITELIST
+     //"          :End of channel invite list
+    case 346:
+    case 347:
+
+     //- When listing the 'exception masks' for a given channel,
+     //a server is required to send the list back using the
+     //RPL_EXCEPTLIST and                     messages.  A
+     //separate                is sent for each active mask.
+     //After the masks have been
+     //a                          be sent.
+     //348    RPL_EXCEPTLIST
+     //"                         "
+     //349    RPL_ENDOFEXCEPTLIST
+     //"          :End of channel exception list"
+    case 348:
+    case 349:
+
+     //- Reply by the server showing its version details.
+     //The           is the version of the software being
+     //used (including any patchlevel revisions) and the
+     //             is used to indicate if the server is
+     //running in "debug mode".
+     //The "comments" field may contain any comments about
+     //the version or further version details.
+     //351    RPL_VERSION
+     //"         .                      :          "
+    case 351:
+
+     //- The              and              pair are used
+     //to answer a     message.  The              is only
+     //sent if there is an appropriate match to the WHO
+     //query.  If there is a list of parameters supplied
+     //with a     message, a              MUST be sent
+     //after processing each list item with        being
+     //the item.
+     //352    RPL_WHOREPLY
+     //"
+     //( "H" / "G" > ["*"] [ ( "@" / "+" ) ]
+     //:                      "
+     //315    RPL_ENDOFWHO
+     //"       :End of     list"
+    case 352:
+    case 315:
+     {
+      if(sRawMessage.Mid(iIndex, 1) == _T(":"))
+       iIndex++;
+      m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex));
+      return;
+     }
+
+     //- To reply to a       message, a reply pair consisting
+     //of              and                is sent by the
+     //server back to the client.  If there is no channel
+     //found as in the query, then only                is
+     //returned.  The exception to this is when a NAMES
+     //message is sent with no parameters and all visible
+     //channels and contents are sent back in a series of
+     //RPL_NAMEREPLY messages with a                to mark
+     //the end.
+     //353    RPL_NAMREPLY
+     //"( "=" / "*" / "@" )
+     //:[ "@" / "+" ]        *( " " [ "@" / "+" ]        )
+     //- "@" is used for secret channels, "*" for private
+     //channels, and "=" for others (public channels).
+     //366    RPL_ENDOFNAMES
+     //"          :End of       list"
+    case 353: {
+     m_pwndIRC->m_wndNicks.ShowWindow(SW_HIDE);
+     CString sChannelType = sRawMessage.Tokenize(_T(" "), iIndex);
+     CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+     if (sChannel.GetLength() >= 1 && sChannel[0] != _T('#'))
+      return;
+     iIndex++;
+     CString sNewNick = sRawMessage.Tokenize(_T(" "), iIndex);
+     while (!sNewNick.IsEmpty())
+     {
+      m_pwndIRC->m_wndNicks.NewNick(sChannel, sNewNick);
+      sNewNick = sRawMessage.Tokenize(_T(" "), iIndex);
+     }
+     return;
+    }
+    case 366: {
+     CString sChannel = sRawMessage.Tokenize(_T(" "), iIndex);
+     SendString(_T("MODE ") + sChannel);
+     m_pwndIRC->m_wndNicks.ShowWindow(SW_SHOW);
+     iIndex++;
+     m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex));
+     return;
+    }
+
+     //- In replying to the       message, a server      send
+     //replies back using the           numeric and mark the
+     //end of the list using an                reply.
+     //364    RPL_LINKS
+     //"                :                        "
+     //365    RPL_ENDOFLINKS
+     //"       :End of       list"
+    case 364:
+    case 365:
+
+     //- When listing the active 'bans' for a given channel,
+     //a server is required to send the list back using the
+     //RPL_BANLIST and                  messages.  A separate
+     //RPL_BANLIST is sent for each active banmask.  After the
+     //banmasks have been a
+     //RPL_ENDOFBANLIST      be sent.
+     //367    RPL_BANLIST
+     //"                   "
+     //368    RPL_ENDOFBANLIST
+     //"          :End of channel ban list"
+    case 367:
+    case 368:
+
+     //- A server responding to an      message is required to
+     //send all its 'info' in a series of          messages
+     //with a               reply to indicate the end of the
+     //replies.
+     //371    RPL_INFO
+     //":        "
+     //374    RPL_ENDOFINFO
+     //":End of      list"
+    case 371:
+    case 374:
+
+     //- When responding to the      message and the      file
+     //is found, the file is displayed line by line, with
+     //each line no longer than 80 characters, using
+     //RPL_MOTD format replies.  These      be surrounded
+     //by a and an
+     //RPL_ENDOFMOTD (after).
+     //375    RPL_MOTDSTART
+     //":-          Message of the day - "
+     //372    RPL_MOTD
+     //":-       "
+     //376    RPL_ENDOFMOTD
+     //":End of      command"
+    case 375:
+    case 372:
+    case 376:
+
+     //- RPL_YOUREOPER is sent back to a client which has
+     //just successfully issued an      message and gained
+     //operator status.
+     //381    RPL_YOUREOPER
+     //":You are now an     operator"
+    case 381:
+
+     //- If the        option is used and an operator sends
+     //a        message, an               is sent back to
+     //the operator.
+     //382    RPL_REHASHING
+     //"              :Rehashing"
+    case 382:
+
+     //- Sent by the server to a service upon successful
+     //registration.
+     //383    RPL_YOURESERVICE
+     //"You are service              "
+    case 383:
+     //- When replying to the      message, a server      send
+     //the reply using the          format above.  The string
+     //showing the time need only contain the correct day and
+     //time there.  There is no further requirement for the
+     //time string.
+     //391    RPL_TIME
+     //"         :<string showing server's local time>"
+    case 391:
+
+     //- If the       message is handled by a server, the
+     //replies RPL_USERSTART, RPL_USERS, RPL_ENDOFUSERS and
+     //RPL_NOUSERS are used.  RPL_USERSSTART      be sent
+     //first, following by either a sequence of RPL_USERS
+     //or a single RPL_NOUSER.  Following this is
+     //RPL_ENDOFUSERS.
+     //392    RPL_USERSSTART
+     //":UserID   Terminal  Host"
+     //393    RPL_USERS
+     //":                               "
+     //       394    RPL_ENDOFUSERS
+     //              ":End of users"
+     //395    RPL_NOUSERS
+     //":Nobody logged in"
+    case 392:
+    case 393:
+    case 395:
+
+     //- The RPL_TRACE* are all returned by the server in
+     //response to the       message.  How many are
+     //returned is dependent on the       message and
+     //whether it was sent by an operator or not.  There
+     //is no predefined order for which occurs first.
+     //Replies RPL_TRACEUNKNOWN, RPL_TRACECONNECTING and
+     //RPL_TRACEHANDSHAKE are all used for connections
+     //which have not been fully established and are either
+     //unknown, still attempting to connect or in the
+     //process of completing the 'server handshake'.
+     //RPL_TRACELINK is sent by any server which handles
+     //a       message and has to pass it on to another
+     //server.  The list of RPL_TRACELINKs sent in
+     //response to a       command traversing the IRC
+     //network should reflect the actual connectivity of
+     //the servers themselves along that path.
+     //RPL_TRACENEWTYPE is to be used for any connection
+     //which does not fit in the other categories but is
+     //being displayed anyway.
+     //RPL_TRACEEND is sent to indicate the end of the list.
+     //200    RPL_TRACELINK
+     //"Link <version & debug level>
+     //              V
+     //
+     //                "
+     //201    RPL_TRACECONNECTING
+     //"Try.                 "
+     //202    RPL_TRACEHANDSHAKE
+     //"H.S.                 "
+     //203    RPL_TRACEUNKNOWN
+     //"????         [                               ]"
+     //204    RPL_TRACEOPERATOR
+     //"Oper               "
+     //205    RPL_TRACEUSER
+     //"User               "
+     //206    RPL_TRACESERVER
+     //"Serv                     C
+     //<nick!user|*!*>@<host|server> V                  "
+     //207    RPL_TRACESERVICE
+     //"Service                                    "
+     //208    RPL_TRACENEWTYPE
+     //"          0              "
+     //209    RPL_TRACECLASS
+     //"Class                "
+     //210    RPL_TRACERECONNECT
+     //Unused.
+     //261    RPL_TRACELOG
+     //"File                        "
+     //262    RPL_TRACEEND
+     //"              <version & debug level> :End of TRACE"
+    case 200:
+    case 201:
+    case 202:
+    case 203:
+    case 204:
+    case 205:
+    case 206:
+    case 207:
+    case 208:
+    case 209:
+    case 210:
+    case 261:
+    case 262:
+
+     //- reports statistics on a connection.
+     //identifies the particular connection,         is
+     //the amount of data that is queued and waiting to be
+     //sent                 the number of messages sent,
+     //and               the amount of data sent, in
+     //Kbytes.                     and
+     //are the equivalent of                 and <sent
+     //Kbytes> for received data, respectively.  <time
+     //open> indicates how long ago the connection was
+     //opened, in seconds.
+     //211    RPL_STATSLINKINFO
+     //"
+     //
+     //                             "
+    case 211:
+
+     //- reports statistics on commands usage.
+     //212    RPL_STATSCOMMANDS
+     //"                                             "
+    case 212:
+
+     //- reports the server uptime.
+     //219    RPL_ENDOFSTATS
+     //"               :End of       report"
+     //242    RPL_STATSUPTIME
+     //":Server Up %d days %d:%02d:%02d"
+    case 219:
+    case 242:
+
+     //- reports the allowed hosts from where user may become IRC
+     //operators.
+     //243    RPL_STATSOLINE
+     //"O            *       "
+    case 243:
+
+     //- To answer a query about a client's own mode,
+     //RPL_UMODEIS is sent back.
+     //221    RPL_UMODEIS
+     //"                  "
+    case 221:
+
+     //- When listing services in reply to a          message,
+     //a server is required to send the list back using the
+     //RPL_SERVLIST and                 messages.  A separate
+     //RPL_SERVLIST is sent for each service.  After the
+     //services have been a
+     //RPL_SERVLISTEND      be sent.
+     //234    RPL_SERVLIST
+     //"                                               "
+     //235    RPL_SERVLISTEND
+     //"              :End of service listing"
+    case 234:
+    case 235:
+
+     //- In processing an        message, the server
+     //sends a set of replies from RPL_LUSERCLIENT,
+     //RPL_LUSEROP, RPL_USERUNKNOWN,
+     //RPL_LUSERCHANNELS and RPL_LUSERME.  When
+     //replying, a server      send back
+     //RPL_LUSERCLIENT and RPL_LUSERME.  The other
+     //replies are only sent back if a non-zero count
+     //is found for them.
+     //251    RPL_LUSERCLIENT
+     //":There are           users and
+     //services on           servers"
+     //252    RPL_LUSEROP
+     //"          :operator(s) online"
+     //253    RPL_LUSERUNKNOWN
+     //"          :unknown connection(s)"
+     //254    RPL_LUSERCHANNELS
+     //"          :channels formed"
+     //255    RPL_LUSERME
+     //":I have           clients and
+     //servers"
+    case 251:
+    case 252:
+    case 253:
+    case 254:
+    case 255:
+
+     //- When replying to an       message, a server
+     //is expected to use replies RPL_ADMINME
+     //through to                and provide a text
+     //message with each.  For               a
+     //description of what city, state and country
+     //the server is in is expected, followed by
+     //details of the institution (RPL_ADMINLOC2)
+     //and finally the administrative contact for the
+     //server (an email address here is REQUIRED)
+     //in RPL_ADMINEMAIL.
+     //256    RPL_ADMINME
+     //"         :Administrative info"
+     //257    RPL_ADMINLOC1
+     //":            "
+     //258    RPL_ADMINLOC2
+     //":            "
+     //259    RPL_ADMINEMAIL
+     //":            "
+    case 256:
+    case 257:
+    case 258:
+    case 259:
+
+     //- When a server drops a command without processing it,
+     //it      use the reply              to inform the
+     //originating client.
+     //263    RPL_TRYAGAIN
+     //"          :Please wait a while and try again."
+    case 263:
+
+     //- Used to indicate the nickname parameter supplied to a
+     //command is currently unused.
+     //401    ERR_NOSUCHNICK
+     //"           :No such nick/channel"
+    case 401:
+
+     //- Used to indicate the server name given currently
+     //does not exist.
+     //402    ERR_NOSUCHSERVER
+     //"              :No such server"
+    case 402:
+
+     //- Used to indicate the given channel name is invalid.
+     //403    ERR_NOSUCHCHANNEL
+     //"               :No such channel"
+    case 403:
+
+     //- Sent to a user who is not on a channel
+     //which is mode +n not a on
+     //a channel which has mode +m set or where the user is
+     //banned and is trying to send a         message to
+     //that channel.
+     //404    ERR_CANNOTSENDTOCHAN
+     //"               :Cannot send to channel"
+    case 404:
+
+     //- Sent to a user when they have joined the maximum
+     //number of allowed channels and they try to join
+     //another channel.
+     //405    ERR_TOOMANYCHANNELS
+     //"               :You have joined too many channels"
+    case 405:
+
+     //- Returned by        to indicate there is no history
+     //information for that nickname.
+     //406    ERR_WASNOSUCHNICK
+     //"           :There was no such nickname"
+    case 406:
+
+     //- Returned to a client which is attempting to send a
+     //PRIVMSG/NOTICE using the user@host destination format
+     //and for a user@host which has several occurrences.
+     //- Returned to a client which trying to send a
+     //PRIVMSG/NOTICE to too many recipients.
+     //- Returned to a client which is attempting to      a safe
+     //channel using the shortname when there are more than one
+     //such channel.
+     //407    ERR_TOOMANYTARGETS
+     //"         :             recipients.                "
+    case 407:
+
+     //- Returned to a client which is attempting to send a SQUERY
+     //to a service which does not exist.
+     //408    ERR_NOSUCHSERVICE
+     //"               :No such service"
+    case 408:
+
+     //- PING or      message missing the originator parameter.
+     //409    ERR_NOORIGIN
+     //":No origin specified"
+    case 409:
+
+     //- 412 - 415 are returned by         to indicate that
+     //the message wasn't delivered for some reason.
+     //ERR_NOTOPLEVEL and                  are errors that
+     //are returned when an invalid use of
+     //"PRIVMSG $        " or "PRIVMSG #      " is attempted.
+     //411    ERR_NORECIPIENT
+     //":No recipient given (         )"
+     //412    ERR_NOTEXTTOSEND
+     //":No text to send"
+     //413    ERR_NOTOPLEVEL
+     //"       :No toplevel domain specified"
+     //414    ERR_WILDTOPLEVEL
+     //"       :Wildcard in toplevel domain"
+     //415    ERR_BADMASK
+     //"       :Bad Server/host mask"
+    case 411:
+    case 412:
+    case 413:
+    case 414:
+    case 415:
+
+     //- Returned to a registered client to indicate that the
+     //command sent is unknown by the server.
+     //421    ERR_UNKNOWNCOMMAND
+     //"          :Unknown command"
+    case 421:
+
+     //- Server's      file could not be opened by the server.
+     //422    ERR_NOMOTD
+     //":MOTD File is missing"
+    case 422:
+
+     //- Returned by a server in response to an       message
+     //when there is an error in finding the appropriate
+     //information.
+     //423    ERR_NOADMININFO
+     //"         :No administrative info available"
+    case 423:
+
+     //- Generic error message used to report a failed file
+     //operation during the processing of a message.
+     //424    ERR_FILEERROR
+     //":File error doing           on       "
+    case 424:
+
+     //- Returned when a nickname parameter expected for a
+     //command and isn't found.
+     //431    ERR_NONICKNAMEGIVEN
+     //":No nickname given"
+    case 431:
+
+     //- Returned after receiving a      message which contains
+     //characters which do not fall in the defined set.  See
+     //section 2.3.1 for details on valid nicknames.
+     //432    ERR_ERRONEUSNICKNAME
+     //"       :Erroneous nickname"
+    case 432:
+
+     //- Returned by a server to a client when it detects a
+     //nickname collision (registered of a      that
+     //already exists by another server).
+     //436    ERR_NICKCOLLISION
+     //"       :Nickname collision      from       @      "
+    case 436:
+
+     //- Returned by a server to a user trying to join a channel
+     //currently blocked by the channel delay mechanism.
+     //- Returned by a server to a user trying to change nickname
+     //when the desired nickname is blocked by the nick delay
+     //mechanism.
+     //437    ERR_UNAVAILRESOURCE
+     //"<nick/channel> :Nick/channel is temporarily unavailable"
+    case 437:
+
+     //- Returned by the server to indicate that the sTarget
+     //user of the command is not on the given channel.
+     //441    ERR_USERNOTINCHANNEL
+     //"                 :They aren't on that channel"
+    case 441:
+
+     //- Returned by the server whenever a client tries to
+     //perform a channel affecting command for which the
+     //client isn't a member.
+     //442    ERR_NOTONCHANNEL
+     //"          :You're not on that channel"
+    case 442:
+
+     //- Returned when a client tries to invite a user to a
+     //channel they are already on.
+     //443    ERR_USERONCHANNEL
+     //"                 :is already on channel"
+    case 443:
+
+     //- Returned by the summon after a        command for a
+     //user was unable to be performed since they were not
+     //logged in.
+     //444    ERR_NOLOGIN
+     //"       :User not logged in"
+    case 444:
+
+     //- Returned as a response to the        command.  MUST be
+     //returned by any server which doesn't implement it.
+     //445    ERR_SUMMONDISABLED
+     //":SUMMON has been disabled"
+    case 445:
+
+     //- Returned as a response to the       command.  MUST be
+     //returned by any server which does not implement it.
+     //446    ERR_USERSDISABLED
+     //":USERS has been disabled"
+    case 446:
+
+     //- Returned by the server to indicate that the client
+     //MUST be registered before the server will allow it
+     //to be parsed in detail.
+     //451    ERR_NOTREGISTERED
+     //":You have not registered"
+    case 451:
+
+     //- Returned by the server by numerous commands to
+     //indicate to the client that it didn't supply enough
+     //parameters.
+     //461    ERR_NEEDMOREPARAMS
+     //"          :Not enough parameters"
+    case 461:
+
+     //- Returned by the server to any link which tries to
+     //change part of the registered details (such as
+     //password or user details from second      message).
+     //462    ERR_ALREADYREGISTRED
+     //":Unauthorized command (already registered)"
+    case 462:
+
+     //- Returned to a client which attempts to          with
+     //a server which does not been setup to allow
+     //connections from the host the attempted connection
+     //is tried.
+     //463    ERR_NOPERMFORHOST
+     //":Your host isn't among the privileged"
+    case 463:
+
+     //- Returned to indicate a failed attempt at registering
+     //a connection for which a password was required and
+     //was either not given or incorrect.
+     //464    ERR_PASSWDMISMATCH
+     //":Password incorrect"
+    case 464:
+
+     //- Returned after an attempt to connect and
+     //yourself with a server which has been setup to
+     //explicitly deny connections to you.
+     //465    ERR_YOUREBANNEDCREEP
+     //":You are banned from this server"
+    case 465:
+
+     //- Sent by a server to a user to inform that access to the
+     //server will soon be denied.
+     //466                       
+    case 466:
+
+     //- Any command requiring operator privileges to operate
+     //MUST return this error to indicate the attempt was
+     //unsuccessful.
+     //467    ERR_KEYSET
+     //"          :Channel key already set"
+     //471    ERR_CHANNELISFUL "          :Cannot join channel (+l)"
+     //472    ERR_UNKNOWNMODE
+     //"       :is unknown mode char to me for          "
+     //473    ERR_INVITEONLYCHAN
+     //"          :Cannot join channel (+i)"
+     //474    ERR_BANNEDFROMCHAN
+     //"          :Cannot join channel (+b)"
+     //475    ERR_BADCHANNELKEY
+     //"          :Cannot join channel (+k)"
+     //476    ERR_BADCHANMASK
+     //"          :Bad Channel Mask"
+     //477    ERR_NOCHANMODES
+     //"          :Channel doesn't support modes"
+     //478    ERR_BANLISTFULL
+     //"                 :Channel list is full"
+     //481    ERR_NOPRIVILEGES
+     //":Permission Denied- You're not an     operator"
+    case 467:
+    case 471:
+    case 472:
+    case 473:
+    case 474:
+    case 475:
+    case 476:
+    case 477:
+    case 478:
+    case 481:
+
+     //- Any command requiring 'chanop'
+ MUST return this error if the client
+     //making the attempt is not a chanop on the specified
+     //channel.
+     //482    ERR_CHANOPRIVSNEEDED
+     //"          :You're not channel operator"
+    case 482:
+
+     //- Any attempts to use the      command on a server
+     //are to be refused and this error returned directly
+     //to the client.
+     //483    ERR_CANTKILLSERVER
+     //":You can't kill a server!"
+    case 483:
+
+     //- Sent by the server to a user upon connection to indicate
+     //the restricted nature of the connection (user mode "+r").
+     //484    ERR_RESTRICTED
+     //":Your connection is restricted!"
+    case 484:
+
+     //- Any      requiring "channel creator" privileges MUST
+     //return this error if the client making the attempt is not
+     //a chanop on the specified channel.
+     //485    ERR_UNIQOPPRIVSNEEDED
+     //":You're not the original channel operator"
+    case 485:
+
+     //- If a client sends an      message and the server has
+     //not been configured to allow connections from the
+     //client's host as an operator, this error      be
+     //returned.
+     //491    ERR_NOOPERHOST
+     //":No O-lines for your host"
+    case 491:
+
+     //- Returned by the server to indicate that a MODE
+     //message was sent with a nickname parameter and that
+     //the a mode flag sent was not recognized.
+     //501    ERR_UMODEUNKNOWNFLAG
+     //":Unknown      flag"
+    case 501:
+
+     //- Error sent to any user trying to view or change the
+     //user mode for a user other than themselves.
+     //502    ERR_USERSDONTMATCH
+     //":Cannot change mode for other users"
+    case 502:
+     if (sRawMessage.Mid(iIndex, 1) == _T(":"))
+      iIndex++;
+     m_pwndIRC->AddStatus(sRawMessage.Mid(iIndex), true, uCommand);
+     return;
+   }
+  }
+ }
+
+ catch(CString e)
+ {
+  m_pwndIRC->AddStatus(e);
+ }
+
+}
+
+void CIrcMain::SendLogin()
+{
+ try
+ {
+  m_pIRCSocket->SendString(m_sUser);
+  m_pIRCSocket->SendString(_T("NICK ") + m_sNick);
+ }
+
+
+}
+
+void CIrcMain::ParsePerform()
+{
+ //We need to do the perform first and seperate from the help option.
+ //This allows you to do all your passwords and stuff before joining the
+ //help channel and to keep both options from interfering with each other.
+ try
+ {
+  if (thePrefs.GetIRCUsePerform())
+  {
+   CString sUserPerform = thePrefs.GetIRCPerformString();
+   sUserPerform.Trim();
+   if (!sUserPerform.IsEmpty())
+   {
+    int iPos = 0;
+    CString sCommand = sUserPerform.Tokenize(_T("|"), iPos);
+    sCommand.Trim();
+    while (!sCommand.IsEmpty())
+    {
+     if (sCommand[0] == _T('/'))
+      sCommand = sCommand.Mid(1);
+     if (sCommand.Left(3) == _T("msg"))
+      sCommand = _T("PRIVMSG") + sCommand.Mid(3);
+     if (sCommand.Left(16).CompareNoCase(_T("PRIVMSG nickserv")) == 0)
+      sCommand = _T("ns") + sCommand.Mid(16);
+     if (sCommand.Left(16).CompareNoCase(_T("PRIVMSG chanserv")) == 0)
+      sCommand = _T("cs") + sCommand.Mid(16);
+     m_pIRCSocket->SendString(sCommand);
+     sCommand = sUserPerform.Tokenize(_T("|"), iPos);
+     sCommand.Trim();
+    }
+   }
+  }
+ }
+
+
+
+ try
+ {
+  if (thePrefs.GetIRCJoinHelpChannel())
+  {
+   // NOTE: putting this     command string into the language resource file is not a good idea. most
+   // translators do not know that this resource string does     have to be translated.
+
+   // Well, I meant to make this option a static perform string within the language so the default help could
+   // be change to what ever channel by just changing the language.. I will just have to check these strings
+   // before release.
+   // This also allows the help string to do more then join one channel. It could add other features later.
+   CString sJoinHelpChannel = GetResString(IDS_IRC_HELPCHANNELPERFORM);
+   sJoinHelpChannel.Trim();
+   if (!sJoinHelpChannel.IsEmpty())
+   {
+    int iPos = 0;
+    CString sCommand = sJoinHelpChannel.Tokenize(_T("|"), iPos);
+    sCommand.Trim();
+    while (!sCommand.IsEmpty())
+    {
+     if (sCommand[0] == _T('/'))
+      sCommand = sCommand.Mid(1);
+     if (sCommand.Left(3) == _T("msg"))
+      sCommand = _T("PRIVMSG") + sCommand.Mid(3);
+     if (sCommand.Left(16).CompareNoCase(_T("PRIVMSG nickserv")) == 0)
+      sCommand = _T("ns") + sCommand.Mid(16);
+     if (sCommand.Left(16).CompareNoCase(_T("PRIVMSG chanserv")) == 0)
+      sCommand = _T("cs") + sCommand.Mid(16);
+     m_pIRCSocket->SendString(sCommand);
+     sCommand = sJoinHelpChannel.Tokenize(_T("|"), iPos);
+     sCommand.Trim();
+    }
+   }
+  }
+ }
+
+
+}
+
+void CIrcMain::Connect()
+{
+ try
+ {
+  CString sHash = md4str(thePrefs.GetUserHash());
+  CString sIdent;
+  sIdent.Format(_T("%u%s"), thePrefs.GetLanguageID(), sHash);
+  if (m_pIRCSocket)
+   Disconnect();
+  m_pIRCSocket = new       CIrcSocket(this);
+  m_sNick = thePrefs.GetIRCNick();
+  if (m_sNick.CompareNoCase(_T("emule")) == 0)
+   m_sNick.Format(_T("eMuleIRC%u-%s"), thePrefs.GetLanguageID(), sHash);
+  m_sNick = m_sNick.Left(25);
+  m_sVersion = _T("eMule") + theApp.m_strCurVersionLong + _T("(SMIRCv00.69)");
+  m_sUser = _T("USER ") + sIdent + _T(" 8 * :") + m_sVersion;
+  m_pIRCSocket->Create();
+  m_pwndIRC->AddStatus(GetResString(IDS_CONNECTING));
+  m_pIRCSocket->Connect();
+ }
+
+
+}
+
+void CIrcMain::Disconnect(bool bIsShuttingDown)
+{
+ try
+ {
+  m_pIRCSocket->Close();
+  delete m_pIRCSocket;
+  m_pIRCSocket = NULL;
+  m_sPreParseBufferA.Empty();
+  if (!bIsShuttingDown)
+   m_pwndIRC->SetConnectStatus(false);
+ }
+
+
+}
+
+void CIrcMain::SetConnectStatus(bool bConnected)
+{
+ try
+ {
+  m_pwndIRC->SetConnectStatus(bConnected);
+ }
+
+
+}
+
+int CIrcMain::SendString( CString sSend )
+{
+ return m_pIRCSocket->SendString(sSend);
+}
+
+void CIrcMain::SetIRCWnd(CIrcWnd* pwndIRC)
+{
+ m_pwndIRC = pwndIRC;
+}
+
+uint32 CIrcMain::SetVerify()
+{
+ m_uVerify = GetRandomUInt32();
+ return m_uVerify;
+}
+
+CString CIrcMain::GetNick()
+{
+ return m_sNick;
+}
+
+
+
+
+
+
+ 

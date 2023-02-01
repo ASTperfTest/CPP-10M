@@ -1,0 +1,99 @@
+#muuid {68f5a030-ba32-48ec-9507-5c2fbdea5217}
+;============================================================
+;  File: Steam.dll
+;  Plugin: Steam protocol
+;  Version: 0.96.1.1
+;  Authors: Miranda NG team, Robert Pösel
+;============================================================
+[Steam protocol support for Miranda NG.]
+Поддержка протокола Steam в Miranda NG.
+;file \protocols\Steam\res\Resource.rc
+[Username:]
+Пользователь:
+[Password:]
+Пароль:
+[Default group:]
+Группа:
+[Account]
+Учётная запись
+[Contacts]
+Контакты
+[Use bigger avatars]
+Большие аватары
+[Message sessions]
+Беседы
+[Show chat state events (i.e., user closed chat session)]
+Отображать изменения состояния чата (напр., пользователь закрыл окно)
+[Connection]
+Подключение
+[Error limit before logout:]
+Максимум ошибок перед выходом:
+[Captcha]
+Проверочный код
+[Cancel]
+Отмена
+[As an added account security measure, you'll need to grant access by entering the special code we've just sent to your email address.]
+На этой учётной записи включён Steam Guard, поэтому необходимо ввести специальный код, который был выслан на ваш адрес электронной почты.
+[Go to email domain]
+Перейти в почтовый ящик
+[Block]
+Заблокировать
+[Enter password]
+Введите пароль
+[Save password]
+Сохранить пароль
+[Enter the password to continue.]
+Введите пароль, чтобы продолжить.
+[Security code]
+Проверочный код
+[As an added account security measure, you'll need to grant access by entering the SMS code we've just sent to your mobile phone.]
+Учётная запись защищена двухэтапной авторизацией. Необходимо дать к ней доступ, введя код, высланный на ваш мобильный телефон.
+;file \protocols\Steam\src\main.cpp
+[Steam game]
+Игра Steam
+;file \protocols\Steam\src\steam_contacts.cpp
+[Looking to play]
+Хотите играть
+[ (Non-Steam)]
+ (Не Steam)
+[ on server %S]
+ на сервере %S
+[Playing]
+Играю
+[%s is back in your contact list]
+%s возвращён в ваш список контактов
+[%s has been removed from your contact list]
+%s удалён из вашего списка контактов
+[%s has added you to contact list]
+%s добавил(а) вас в список контактов
+;file \protocols\Steam\src\steam_login.cpp
+[Cannot obtain connection token.]
+Не удалось получить токен соединения.
+;file \protocols\Steam\src\steam_menus.cpp
+[Steam menu chooser]
+Выбор меню Steam
+[Unblock]
+Разблокировать
+[Join to game]
+Присоединиться к игре
+;file \protocols\Steam\src\steam_messages.cpp
+[Unknown error]
+Неизвестная ошибка
+;file \protocols\Steam\src\steam_options.cpp
+[Name]
+Имя
+[Network]
+Сеть
+;file \protocols\Steam\src\steam_proto.cpp
+[Protocols]
+Протоколы
+[Protocol icon]
+Значок протокола
+[Gaming icon]
+Игровой значок
+[You cannot send messages when you are offline.]
+Вы не можете отправлять сообщения без подключения к сети.
+;file \protocols\Steam\src\steam_utils.cpp
+[closed chat session]
+закрыл(а) окно беседы
+;file \protocols\Steam\src\steam_xstatus.cpp

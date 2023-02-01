@@ -1,0 +1,76 @@
+#muuid {4fac353d-0a36-44a4-9064-6759c53ae782}
+;============================================================
+;  File: BossKey.dll
+;  Plugin: BossKey+
+;  Version: 0.5.0.4
+;  Authors: Goblineye Entertainment, Billy_Bons
+;============================================================
+[Anti-Boss plugin. Makes your Miranda NG hidden or password-protected.]
+Позволяет по нажатию "горячей клавиши" прятать Miranda NG от посторонних глаз.
+;file \plugins\BossKeyPlus\res\BossKey.rc
+[Go to Options -> Customize -> Hotkeys to change the hotkey]
+Перейти в раздел "Тонкая настройка -> Горячие клавиши"
+[When I press the hotkey:]
+Когда я нажму горячую кнопку:
+[Change status to]
+Изменить статус на
+[Change only if current status is Online]
+Изменять только при статусе "В сети"
+[Use default status message]
+Статусное сообщение по умолчанию
+[Disable Sounds]
+Отключить звуки
+[Show the Tray Icon]
+Показывать значок в трее
+[When I return:]
+При возвращении:
+[Request password:]
+Спросить пароль:
+[Change status back]
+Вернуть предыдущий статус
+[Hotkey]
+Горячая клавиша
+[Miranda NG is locked.\nEnter password to unlock it.]
+Miranda NG заблокирована.\nВведите свой пароль для разблокировки.
+[Password:]
+Пароль:
+[Cancel]
+Отмена
+[Workstation is locked]
+Компьютер заблокирован
+[Screen Saver is running]
+Запущена заставка
+[Windows is inactive]
+Windows не активен
+[Hide Miranda when:]
+Спрятать программу когда:
+[Miranda is inactive]
+Программа неактивна
+[min]
+мин.
+[Miranda is started]
+Программа запускается
+[Others]
+Другое
+[Restore hiding on startup after failure]
+Восстанавливать скрытие при запуске после "падения"
+;file \plugins\BossKeyPlus\src\BossKey.cpp
+[Password is not correct!\nPlease, enter correct password.]
+Неправильный пароль!\nВведите правильный пароль.
+[Hide Miranda NG]
+Спрятать Miranda NG
+[Hide]
+Скрыть
+[Hide/Show Miranda]
+Скрыть/Показать Miranda NG
+[BossKey]
+АнтиБосс
+[get the BossKey name]
+Получить клавишу блокировки из АнтиБосс+
+;file \plugins\BossKeyPlus\src\Options.cpp
+[Events]
+События
+[Main]
+Главный
+[Advanced]
+Дополнительно

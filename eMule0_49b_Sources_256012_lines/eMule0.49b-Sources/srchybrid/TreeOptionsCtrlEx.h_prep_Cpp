@@ -1,0 +1,104 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("TreeOptionsCtrl.h");}
+
+  class TREEOPTSCTRLNOTIFY
+{
+ NMHDR nmhdr;
+ HTREEITEM hItem;
+} ;
+
+
+// pre defined treeview image list indices
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CTreeOptionsCtrlEx
+
+class CTreeOptionsCtrlEx :
+        CTreeOptionsCtrl
+{
+public:
+ CTreeOptionsCtrlEx(unsigned int uImageListColorFlags = ILC_COLOR);
+ virtual ~CTreeOptionsCtrlEx(void);
+
+ void SetEditLabel(HTREEITEM hItem, const CString& rstrLabel);
+ void UpdateCheckBoxGroup(HTREEITEM hItem);
+ void SetImageListColorFlags(unsigned int uImageListColorFlags);
+
+ virtual void OnCreateImageList();
+ virtual void HandleChildControlLosingFocus();
+ int  NotifyParent(unsigned int uCode, HTREEITEM hItem);
+
+protected:
+ unsigned int m_uImageListColorFlags;
+
+ virtual void HandleCheckBox(HTREEITEM hItem, int  bCheck);
+ virtual int  SetRadioButton(HTREEITEM hParent, int nIndex);
+ virtual int  SetRadioButton(HTREEITEM hItem);
+
+
+         void OnDestroy();
+};
+
+//Dialog Data exchange support
+
+void DDX_TreeCheck(CDataExchange* pDX, int nIDC, HTREEITEM hItem, bool& bCheck);
+void DDX_Text(CDataExchange* pDX, int nIDC, HTREEITEM hItem, CString& sText);
+void DDX_Text(CDataExchange* pDX, int nIDC, HTREEITEM hItem, int& value);
+void DDX_Text(CDataExchange* pDX, int nIDC, HTREEITEM hItem, unsigned int& value);
+void DDX_Text(CDataExchange* pDX, int nIDC, HTREEITEM hItem, long& value);
+void DDX_Text(CDataExchange* pDX, int nIDC, HTREEITEM hItem, unsigned long& value);
+void DDX_Text(CDataExchange* pDX, int nIDC, HTREEITEM hItem, float& value);
+void DDX_Text(CDataExchange* pDX, int nIDC, HTREEITEM hItem, double& value);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CNumTreeOptionsEdit
+
+class CNumTreeOptionsEdit :        CTreeOptionsEdit
+{
+ //DECLARE_DYNCREATE(CNumTreeOptionsEdit)
+
+public:
+ CNumTreeOptionsEdit(){}
+ virtual ~CNumTreeOptionsEdit(){}
+
+ virtual unsigned long GetWindowStyle() { return CTreeOptionsEdit::GetWindowStyle() | ES_NUMBER; }
+
+protected:
+ bool m_bSelf;
+
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnEnChange();
+
+
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CTreeOptionsEditEx
+
+class CTreeOptionsEditEx :        CTreeOptionsEdit
+{
+ //DECLARE_DYNCREATE(CTreeOptionsEditEx)
+
+public:
+ CTreeOptionsEditEx(){}
+ virtual ~CTreeOptionsEditEx(){}
+
+protected:
+ bool m_bSelf;
+
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnEnChange();
+
+
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,15 @@
+#muuid {968def4a-bc60-4266-ac08-754ce721db5f}
+;============================================================
+;  File: PluginUpdater.dll
+;  Plugin: Plugin updater
+;  Version: 0.2.1.4
+;  Authors: Mataes, George Hazan
+;============================================================
+[Colors]
+Colours
+[Use cus&tom colors]
+Use cus&tom colours
+[Use &Windows colors]
+Use &Windows colours
+[Use defa&ult colors]
+Use defa&ult colours

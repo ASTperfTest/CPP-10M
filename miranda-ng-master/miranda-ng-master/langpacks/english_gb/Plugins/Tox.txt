@@ -1,0 +1,9 @@
+#muuid {00272a3e-f5fa-4090-8b67-3e62ac1ee0b4}
+;============================================================
+;  File: Tox.dll
+;  Plugin: Tox protocol
+;  Version: 0.11.3.2
+;  Authors: Miranda NG team
+;============================================================
+[Unable to initialize Tox core]
+Unable to initialise Tox core

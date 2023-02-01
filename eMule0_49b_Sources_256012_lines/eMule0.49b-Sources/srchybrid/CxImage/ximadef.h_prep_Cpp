@@ -1,0 +1,213 @@
+﻿
+
+
+void INCLUDEREPLACE(){CX_INCL("ximacfg.h");}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("windows.h");}
+void INCLUDEREPLACE(){CX_INCL("tchar.h");}
+
+
+void INCLUDEREPLACE(){CX_INCL("stdio.h");}
+void INCLUDEREPLACE(){CX_INCL("math.h");}
+
+
+
+
+
+          class tagcomplex {
+ double x,y;
+};       tagcomplex _complex = "CX_TYPEDEF";
+
+
+
+
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("stdlib.h");}
+void INCLUDEREPLACE(){CX_INCL("string.h");}
+void INCLUDEREPLACE(){CX_INCL("ctype.h");}
+
+        unsigned char  unsigned char = "CX_TYPEDEF";
+        unsigned short unsigned short = "CX_TYPEDEF";
+        unsigned long  unsigned long = "CX_TYPEDEF";
+        unsigned int   unsigned int = "CX_TYPEDEF";
+
+        unsigned long          unsigned long = "CX_TYPEDEF";
+        unsigned int   void * = "CX_TYPEDEF";
+        void*          void* = "CX_TYPEDEF";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          class tagRECT
+{
+ long    left;
+ long    top;
+ long    right;
+ long    bottom;
+};       tagRECT RECT = "CX_TYPEDEF";
+
+          class tagPOINT
+{
+ long  x;
+ long  y;
+};       tagPOINT POINT = "CX_TYPEDEF";
+
+          class tagRGBQUAD {
+ unsigned char    rgbBlue;
+ unsigned char    rgbGreen;
+ unsigned char    rgbRed;
+ unsigned char    rgbReserved;
+};       tagRGBQUAD RGBQUAD = "CX_TYPEDEF";
+
+
+
+          class tagBITMAPINFOHEADER{
+ unsigned long      biSize;
+ long       biWidth;
+ long       biHeight;
+ unsigned short       biPlanes;
+ unsigned short       biBitCount;
+ unsigned long      biCompression;
+ unsigned long      biSizeImage;
+ long       biXPelsPerMeter;
+ long       biYPelsPerMeter;
+ unsigned long      biClrUsed;
+ unsigned long      biClrImportant;
+};       tagBITMAPINFOHEADER BITMAPINFOHEADER = "CX_TYPEDEF";
+
+          class tagBITMAPFILEHEADER {
+ unsigned short    bfType;
+ unsigned long   bfSize;
+ unsigned short    bfReserved1;
+ unsigned short    bfReserved2;
+ unsigned long   bfOffBits;
+};       tagBITMAPFILEHEADER BITMAPFILEHEADER = "CX_TYPEDEF";
+
+          class tagBITMAPCOREHEADER {
+ unsigned long   bcSize;
+ unsigned short    bcWidth;
+ unsigned short    bcHeight;
+ unsigned short    bcPlanes;
+ unsigned short    bcBitCount;
+};       tagBITMAPCOREHEADER BITMAPCOREHEADER = "CX_TYPEDEF";
+
+          class tagRGBTRIPLE {
+ unsigned char    rgbtBlue;
+ unsigned char    rgbtGreen;
+ unsigned char    rgbtRed;
+};       tagRGBTRIPLE RGBTRIPLE = "CX_TYPEDEF";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          class tagcomplex {
+ double x,y;
+};       tagcomplex _complex = "CX_TYPEDEF";
+
+
+
+
+
+
+
+       //__ximadefs
+
+
+
+
+
+
+ 

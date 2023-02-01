@@ -1,0 +1,349 @@
+#muuid {a8a417ef-07aa-4f37-869f-7bfd74886534}
+;============================================================
+;  File: DbEditorPP.dll
+;  Plugin: Database editor++
+;  Version: 4.1.0.3
+;  Authors: Bio, Jonathan Gordon
+;============================================================
+[Advanced Database Editor.]
+
+;file \plugins\DbEditorPP\res\resource.rc
+[Search and replace]
+Rechercher et remplacer
+[Search for]
+Recherche de
+[Exact match]
+Mot entier
+[&Search]
+&Recherche
+[Module name]
+Module
+[Setting name]
+Réglage
+[Setting value]
+
+[Case sensitive]
+Respecter casse
+[&Cancel]
+&Annuler
+[Replace with]
+Remplacer par
+[Entirely]
+Entièrement
+[&Replace]
+&Remplacer
+[Restore last opened position]
+Sauver la position de la fenêtre
+[Automatically expand "Settings" when Database Editor++ starts]
+Étendre automatiquement les réglages quand Database Editor++ démarre
+[Warn when deleting modules]
+Avertir avant la suppression d'un ou plusieurs modules
+[Use popups when watched settings change values]
+Afficher un popup quand les réglages sous surveillance sont modifiés
+[Popup timeout (0 for infinite)]
+Délai du Popup (0 pour infini) :
+[Background color]
+Couleur de fond
+[Text color]
+Couleur du texte
+[Add a module to contact]
+Ajouter un module au contact
+[Add a module named]
+Ajouter module nommé
+[Add to all contacts (including Settings)]
+
+[Cancel]
+Annuler
+[Edit setting]
+Modifier réglage
+[Name]
+Nom
+[Value]
+Valeur
+[Base]
+
+[Hexadecimal]
+
+[Decimal]
+
+[Save value as:]
+Enregistrer valeur sous :
+[Byte]
+
+[Word]
+
+[Dword]
+
+[String]
+
+[Watched database settings]
+Variables de la base surveillées
+[Copy module to contact]
+Copier le module du contact
+[Contact to copy module and settings to]
+Contact vers lequel copier module et réglages
+[Copy to all contacts (including Settings)]
+
+[Import]
+
+[Paste the settings to import here:]
+Coller les réglages à importer ici :
+[Database Editor++]
+Database Editor++
+[&Main]
+&Menu
+[&Refresh modules]
+Actualiser les modules
+[Refresh &settings]
+Actualiser les réglages
+[E&xit]
+&Quitter
+[&Actions]
+
+[&Search and replace]
+&Rechercher et remplacer...
+[Delete &resident settings]
+
+[&Delete module]
+&Supprimer un module
+[&Watches]
+&Surveillance
+[&View all]
+Tout &voir
+[&Delete all]
+Tout &effacer
+[&Export]
+
+[Entire &database]
+Toute la base de données
+[All &settings]
+Tous les &réglages
+[All &contacts]
+Tous les &contacts
+[&Import]
+
+[From a &file]
+Depuis un &fichier
+[From pasted &text]
+Depuis le &texte copié
+[&Options]
+&Paramètres
+[&Sort by protocol]
+&Trier par protocole
+[Show &all]
+Tout afficher
+[Show only &loaded]
+Afficher uniquement ceux chargés
+[Show only &unloaded]
+Afficher uniquement ceux non chargés
+[Edit &Bytes in Hex]
+Éditer &Bytes en Hexadécimal
+[Edit &Words in Hex]
+Éditer &Words en Hexadécimal
+[Edit &Dwords in Hex]
+Éditer &Dwords en Hexadécimal
+[&Inline edit]
+
+[&Restore position]
+&Restaurer la position
+[&Open options]
+
+[&Edit]
+&Modifier
+[&Copy]
+&Copier
+[&Delete]
+&Effacer
+[Convert to]
+Convertir vers
+[&Byte]
+
+[&Word]
+
+[&Dword]
+
+[&String]
+&Chaîne
+[&Unicode]
+
+[New]
+Nouveau
+[BL&OB]
+
+[&Watch]
+&Surveiller
+[&Refresh]
+&Actualiser
+[&Rename]
+&Renommer
+[Copy to contact]
+Copier vers le contact
+[Export module]
+Exporter le module
+[&Add module]
+&Ajouter un module
+[Export contact]
+Exporter le contact
+[Import settings]
+Importer des réglages
+[From a file]
+Fichier texte
+[From pasted text]
+Coller le texte
+[Export settings]
+Exporter réglages
+[Export contacts]
+Exporter les contacts
+[Import contacts]
+Importer des contacts
+[Export module from all contacts]
+Exporter les modules de tous les contacts
+[Watch window]
+Fenêtre de surveillance
+[Reload watch list]
+Actualiser la liste
+;file \plugins\DbEditorPP\src\copymodule.cpp
+[Copy module "%s"]
+
+;file \plugins\DbEditorPP\src\deletemodule.cpp
+[Are you sure you want to delete module "%S"?]
+Voulez-vous vraiment supprimer le module "%S" ?
+[Delete module from database]
+Supprime le module de la base de données
+[Delete module from database... Loading]
+Supprime le module de la base de données... Mise à jour
+[Delete from all contacts (including Settings)]
+
+;file \plugins\DbEditorPP\src\exportimport.cpp
+[INI Files]
+
+[All Files]
+Tous les fichiers
+[Export to file]
+Exporter vers un fichier
+[Couldn't open file for writing]
+N'a pu ouvrir le fichier à écrire
+[Import to "%s"]
+
+[Import from files]
+Importer
+;file \plugins\DbEditorPP\src\findwindow.cpp
+[Result]
+
+[Contact]
+Contact
+[Module]
+
+[Setting]
+
+[Searching...]
+
+[Finished. Items found: %d / replaced: %d / deleted: %d]
+Terminé. %d éléments ont été trouvé, %d éléments ont été remplacé, %d éléments ont été effacé.
+[Replaced]
+Remplacé
+[Deleted]
+Effacé
+[Found]
+Trouvé
+[Enter a string to search the database for]
+Tapez les mots que vous recherchez dans la base de données
+[Stop]
+
+;file \plugins\DbEditorPP\src\icons.cpp
+[Main icon]
+
+[Closed module]
+Fermer les modules
+[Open module]
+Ouvrir les modules
+[Settings]
+Paramètres
+[Contacts group]
+Groupe
+[Unknown contact]
+
+[Known contact]
+Contact connu
+[Open user tree]
+
+[Empty setting]
+
+[BLOB setting]
+
+[Byte setting]
+
+[Word setting]
+
+[Dword setting]
+
+[String setting]
+
+[Unicode setting]
+
+[Handle]
+Pseudo
+;file \plugins\DbEditorPP\src\main.cpp
+[Open Database Editor]
+
+[Database]
+
+[Open user tree in DBE++]
+Ouvrir dans DataBase Editor
+;file \plugins\DbEditorPP\src\main_window.cpp
+[Are you sure you want to delete contact "%s"?]
+Voulez-vous vraiment supprimer le contact "%s" ?
+[Type]
+
+[Size]
+Taille
+[Delete resident settings from database?]
+
+[%d items deleted.]
+
+;file \plugins\DbEditorPP\src\modsettingenum.cpp
+[Error loading module list]
+Erreur de chargement liste de modules
+[Error loading setting list]
+Erreur au chargement de la liste des réglages
+;file \plugins\DbEditorPP\src\moduletree.cpp
+[Loading contacts...]
+Chargement des contacts...
+[Loading modules...]
+Chargement des modules...
+[Contacts]
+Contacts
+;file \plugins\DbEditorPP\src\options.cpp
+[Popups]
+Popups
+;file \plugins\DbEditorPP\src\renamemodule.cpp
+[Add module to "%s"]
+
+;file \plugins\DbEditorPP\src\settinglist.cpp
+[Unable to store value in this data type!]
+
+[Are you sure you want to delete %d contact(s)?]
+
+[Are you sure you want to delete %d setting(s)?]
+
+[*** encrypted ***]
+
+[*** buggy resident ***]
+
+;file \plugins\DbEditorPP\src\settingsdlg.cpp
+[Unknown DBVariant type!]
+
+[Edit setting (%s)]
+
+[New setting (%s)]
+
+;file \plugins\DbEditorPP\src\utils.cpp
+[<UNKNOWN>]
+<INCONNU>
+[[UNLOADED]]
+
+;file \plugins\DbEditorPP\src\watchedvars.cpp
+[*** resident ***]
+
+[Database Setting Changed: \nModule: "%s", Setting: "%s"\nNew Value (%s): "%s"]
+Réglage de base de données modifié : \nModule "%s", Réglage : "%s"\nNouvelle valeur (%s) : "%s"

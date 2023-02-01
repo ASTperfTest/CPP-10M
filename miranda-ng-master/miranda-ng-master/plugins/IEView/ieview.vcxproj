@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B988F96C-F87A-484C-AB15-D0674B22F291}</ProjectGuid>
+    <ProjectName>IEView</ProjectName>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\build\vc.common\plugin.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="src\external_funcs.cpp" />
+    <ClCompile Include="src\HistoryHTMLBuilder.cpp" />
+    <ClCompile Include="src\HTMLBuilder.cpp" />
+    <ClCompile Include="src\IEView.cpp" />
+    <ClCompile Include="src\ieview_logger.cpp" />
+    <ClCompile Include="src\ieview_main.cpp" />
+    <ClCompile Include="src\ieview_services.cpp" />
+    <ClCompile Include="src\Options.cpp" />
+    <ClCompile Include="src\ScriverHTMLBuilder.cpp" />
+    <ClCompile Include="src\stdafx.cxx">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\TabSRMMHTMLBuilder.cpp" />
+    <ClCompile Include="src\Template.cpp" />
+    <ClCompile Include="src\TemplateHTMLBuilder.cpp" />
+    <ClCompile Include="src\TextToken.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
+    <ClInclude Include="src\external_funcs.h" />
+    <ClInclude Include="src\HistoryHTMLBuilder.h" />
+    <ClInclude Include="src\HTMLBuilder.h" />
+    <ClInclude Include="src\IEView.h" />
+    <ClInclude Include="src\ieview_services.h" />
+    <ClInclude Include="src\Options.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\ScriverHTMLBuilder.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\TabSRMMHTMLBuilder.h" />
+    <ClInclude Include="src\Template.h" />
+    <ClInclude Include="src\TemplateHTMLBuilder.h" />
+    <ClInclude Include="src\TextToken.h" />
+    <ClInclude Include="src\Utils.h" />
+    <ClInclude Include="src\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\ieview.rc" />
+    <ResourceCompile Include="res\Version.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,86 @@
+#muuid {b1902a52-9114-4d7e-ac2e-b3a52e01d574}
+;============================================================
+;  File: MenuEx.dll
+;  Plugin: Menu item ext
+;  Version: 1.3.2.0
+;  Authors: Heiko Schillinger, Baloo, Billy_Bons, Robert Pösel
+;============================================================
+[Adds some useful options to a contacts menu.]
+Dodaje przydatne opcje do menu kontaktu.
+;file \plugins\MenuItemEx\res\resource.rc
+[Shown menu items]
+Pokaż wpisy w menu
+[Visibility]
+Widoczność
+[Show alpha icons]
+Przezroczyste ikony
+[Hide from list]
+Ukryj na liście
+[Ignore]
+Ignorowanie
+[Copy to Account (Ctrl+click for move to Account)]
+Kopiuj do Konta (Ctrl+click alby przejść do Konta)
+[Browse Received Files]
+Przeglądaj otrzymane pliki
+[Copy IP]
+Kopiuj IP
+[Copy MirVer]
+Kopiuj wersję klienta
+[Copy Status Message]
+Kopiuj opis
+[Add item name]
+Dodaj nazwę elementu
+[Copy ID]
+Kopiuj ID
+[Add protocol name]
+Dodaj nazwę protokołu
+[Show ID in menu item]
+Pokaż ID w menu
+[Trim too long ID]
+Skracaj długie ID
+[* Use Ctrl+click to see popup with the copied text]
+* Użyj Ctrl+klick aby zobaczyć dodatkowe opcje
+[Hide contact on 'Ignore all']
+Ukryj gdy "Zablokowany"
+;file \plugins\MenuItemEx\src\main.cpp
+[Always visible]
+Zawsze widoczny
+[Never visible]
+Zawsze niewidoczny
+[Copy to Account]
+Kopiuj do konta
+[Show in list]
+Pokaż na liście
+[Copy xStatus Message]
+Kopiuj xStatus
+[Status message]
+Opis
+[xStatus title]
+xStatus
+[xStatus message]
+Opis xStatus
+[Listening to]
+Teraz odtwarzane
+[Activity title]
+Aktywność
+[Activity text]
+Opis aktywności
+[All]
+Wszystko
+[Messages]
+Wiadomości
+[Files]
+Pliki
+[User Online]
+Połączony użytkownik
+[Authorization]
+Autoryzacja
+[Typing Notify]
+Pisanie
+[Open ignore settings]
+Otwórz opcje ignorowania
+[MenuItemEx]
+Rozszerzone menu
+;file \plugins\MenuItemEx\src\options.cpp
+[Customize]
+Personalizacja

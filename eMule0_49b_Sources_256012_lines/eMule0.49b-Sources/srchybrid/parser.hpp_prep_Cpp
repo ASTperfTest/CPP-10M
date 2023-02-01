@@ -1,0 +1,117 @@
+﻿/* A Bison parser, made by     Bison 2.1.  */
+
+/* Skeleton parser for Yacc-like parsing with Bison,
+   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the     General Public License as published by
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but         ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the     General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.  */
+
+/* As a special exception, when this file is copied by Bison into a
+   Bison output file, you may use that output file without restriction.
+   This special exception was added by the Free Software Foundation
+   in version 1.24 of Bison.  */
+
+/* Tokens.  */
+
+
+   /* Put the tokens into the symbol table, so that     and other debuggers
+      know about them.  */
+   enum yytokentype {
+     TOK_STRING = 258,
+     TOK_NUMBER = 259,
+     TOK_SIZE = 260,
+     TOK_TYPE = 261,
+     TOK_EXT = 262,
+     TOK_SOURCES = 263,
+     TOK_COMPLETE = 264,
+     TOK_BITRATE = 265,
+     TOK_LENGTH = 266,
+     TOK_CODEC = 267,
+     TOK_RATING = 268,
+     TOK_TITLE = 269,
+     TOK_ALBUM = 270,
+     TOK_ARTIST = 271,
+     TOK_TYPEVAL = 272,
+     TOK_AND = 273,
+     TOK_OR = 274,
+     TOK_NOT = 275,
+     TOK_OPR_EQ = 276,
+     TOK_OPR_LT = 277,
+     TOK_OPR_LE = 278,
+     TOK_OPR_GT = 279,
+     TOK_OPR_GE = 280,
+     TOK_OPR_NE = 281,
+     TOK_ED2K_LINK = 282,
+     TOK_EOF = 283
+   };
+
+/* Tokens.  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         class YYSTYPE {
+ uint64   num;
+ int    iopr;
+ CStringA*  pstr;
+ CSearchExpr* pexpr;
+ CSearchAttr* pattr;
+};      YYSTYPE YYSTYPE = "CX_TYPEDEF";
+/* Line 1447 of yacc.c.  */
+
+
+
+
+
+
+extern         yylval;
+
+
+
+
+
+
+
+
+
+ 

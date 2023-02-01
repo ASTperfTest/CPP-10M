@@ -1,0 +1,127 @@
+#muuid {a9e9c114-84b9-434b-a3d5-89921d39ddff}
+;============================================================
+;  File: BuddyPounce.dll
+;  Plugin: Buddy pounce
+;  Version: 0.3.3.0
+;  Authors: Jonathan Gordon
+;============================================================
+[Allows you to send a message to contacts if they change status.]
+Umožňuje odeslat zprávu kontaktům při změně jejich stavu.
+;file \plugins\BuddyPounce\res\resource.rc
+[Confirm Pounce send]
+Potvrzení odeslání
+[Send]
+Poslat
+[Cancel]
+Zrušit
+[Pounce being sent to]
+Příjemce zprávy offline:
+[Buddy Pounce]
+Komunikace offline
+[The Message:]
+Zpráva:
+[Delete Pounce]
+Smazat zprávu
+[Load default Settings]
+Výchozí nastavení
+[Setting Value]
+Hodnota
+[Settings]
+Nastavení
+[Contact To Send Pounce To]
+Příjemce zprávy offline
+[<< Simple]
+<< Prosté
+[Advanced >>]
+Extra >>
+[The Message]
+Zpráva
+[Dialog]
+Dialog
+[Status]
+Stavy
+[Use Advanced Dialog]
+Zobrazit více možností
+[The Message (characters: )]
+Zpráva (počet znaků: )
+[Default Settings]
+Výchozí nastavení
+[Show Delivery Messages]
+Informovat o doručení
+[These settings are also used when sending a "Simple" pounce]
+Tyto nastavení jsou použity také při odeslání jediné zprávy
+;file \plugins\BuddyPounce\src\dialog.cpp
+[The Message    (%d Characters)]
+Zpráva (počet znaků: %d)
+[Message successfully sent to %s]
+Zpráva úspěšně odeslána (komu: %s)
+[Message failed to send to %s]
+Chyba při odesílání zprávy (komu: %s)
+[Retry]
+Znovu
+;file \plugins\BuddyPounce\src\main.cpp
+[Message sessions]
+Komunikace
+[Pounce being sent to %s in %d seconds]
+Zpráva (adresát: %s, bude odesláno za %d sek.)
+[&Buddy Pounce]
+Zpráva o&ffline
+;file \plugins\BuddyPounce\src\options.cpp
+[Send If My Status Is...]
+Odesílání ve stavu...
+[Send If They Change Status to...]
+Odesílání po změně stavu...
+[Reuse Pounce]
+Použití napsané zprávy
+[Give Up delay]
+Zrušení odesílání po určité době
+[Confirmation Window]
+Potvrzení akce
+[Reuse this message? (0 to use it once)]
+Použít tuto zprávu znovu? (0 pro použití pouze jednou)
+[Times]
+Čas ve světě
+[Give up after... (0 to not give up)]
+Vzdát po... (0 pro nevzdávat)
+[Days]
+Dnů
+[Show confirmation window? (0 to not Show)]
+Zobrazit potvrzovací okno? (0 pro nezobrazovat)
+[Seconds to wait before sending]
+Počet sekund pro čekání před odesláním
+[Send If My Status Is]
+Odeslat ve stavu
+[Any]
+Jakýkoli
+[Online]
+Online
+[Away]
+Na chvíli pryč
+[Not available]
+Nejsem tady
+[Occupied]
+Nemám čas
+[Do not disturb]
+Nerušit!
+[Free for chat]
+Mám volno
+[Invisible]
+Neviditelný
+[Send If Their Status changes]
+Odeslat po změně stavu
+[From Offline]
+Z 'Offline'
+[To Online]
+Do 'Online'
+[To Away]
+Do 'Na chvíli pryč'
+[To Not available]
+Do 'Nejsem tady'
+[To Occupied]
+Do 'Nemám čas'
+[To Do not disturb]
+Do 'Nerušit'
+[To Free for chat]
+Do 'Mám volno'
+[To Invisible]
+Do 'Neviditelný'

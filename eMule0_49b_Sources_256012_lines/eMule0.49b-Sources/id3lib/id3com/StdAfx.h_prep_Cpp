@@ -1,0 +1,77 @@
+﻿/////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2000 John Adcock.  All rights reserved.
+/////////////////////////////////////////////////////////////////////////////
+//
+// This file is subject to the terms of the     General Public License as
+// published by the Free Software Foundation.  A copy of this license is
+// included with this software distribution in the file COPYING.  If you
+// do not have a copy, you may obtain a copy by writing to the Free
+// Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+//
+// This software is distributed in the hope that it will be useful,
+// but         ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details
+//
+/////////////////////////////////////////////////////////////////////////////
+// stdafx.h : include file for standard system include files,
+//      or project specific include files that are used frequently,
+//      but are changed infrequently
+/////////////////////////////////////////////////////////////////////////////
+// Change Log
+//
+// Date          Developer             Changes
+//
+// 05 Jan 2000   John Adcock           Original Release
+// 26 Apr 2000   John Adcock           Got working with id3lib 3.7.3
+//
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+       // _MSC_VER > 1000
+
+
+
+
+
+
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("atlbase.h");}
+//You may derive a class from CComModule and use it if you want to override
+//something, but do not change the name of _Module
+extern CComModule _Module;
+void INCLUDEREPLACE(){CX_INCL("atlcom.h");}
+void INCLUDEREPLACE(){CX_INCL("atlctl.h");}
+void INCLUDEREPLACE(){CX_INCL("comdef.h");}
+
+void INCLUDEREPLACE(){CX_INCL("string");}
+void INCLUDEREPLACE(){CX_INCL("vector");}
+void INCLUDEREPLACE(){CX_INCL("list");}
+void INCLUDEREPLACE(){CX_INCL("map");}
+
+
+
+
+
+
+
+//{{                   }}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+
+       // !defined(                                                            )
+
+
+
+
+
+
+ 

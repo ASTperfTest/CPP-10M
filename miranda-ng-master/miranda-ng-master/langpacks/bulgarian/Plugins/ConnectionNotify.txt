@@ -1,0 +1,83 @@
+#muuid {4bb5b4aa-c364-4f23-9746-d5b708a286a5}
+;============================================================
+;  File: ConnectionNotify.dll
+;  Plugin: Connection Notify
+;  Version: 0.1.0.6
+;  Authors: MaKaR
+;============================================================
+[Notify with popup if some connection established]
+Уведомяване с Popup при установяване на връзка
+;file \protocols\ConnectionNotify\res\ConnectionNotify.rc
+[Set popup colors]
+Избор на цветове
+[Popup options]
+Popup настройки
+[Background]
+Фон
+[Text]
+Текст
+[Close after:]
+Показвай:
+[sec (0 default, -1 disabled)]
+сек (0=стандарт, -1=постоянно)
+[Settings]
+Настройки
+[try resolve addresses]
+
+[Show notification if no filter defined]
+
+[Attempt interval (ms)]
+
+[Delete]
+Изтриване
+['Online' means:]
+"На линия" означава:
+[Filters]
+Филтри
+[Move down]
+Местене надолу
+[Move up]
+Местене нагоре
+[Add]
+Добавяне
+[Rule editor]
+Редактор на правила
+[Application name]
+Приложение
+[Local IP:Port]
+Локален IP:Порт
+[Action:]
+Действие:
+[Cancel]
+Отказ
+[* and ? wildcard characters also available (for port enter number or *)]
+
+[Remote IP:Port]
+Отдалечен IP:Порт
+;file \protocols\ConnectionNotify\src\ConnectionNotify.cpp
+[New Connection Notification]
+Известие за нова връзка
+;file \protocols\ConnectionNotify\src\filter.cpp
+[Always show popup]
+Винаги показвай Popup
+[Never show popup]
+Никога не пказвай Popup
+[First close options window]
+Първо затворете прозореца с настройки
+;file \protocols\ConnectionNotify\src\options.cpp
+[Show]
+Показване
+[Hide]
+Скриване
+[Status]
+Състояние
+[Application]
+Приложение
+[Internal socket]
+
+[External socket]
+
+[Action]
+Действие
+[Plugins]
+Приставки

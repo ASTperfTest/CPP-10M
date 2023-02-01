@@ -1,0 +1,127 @@
+#muuid {a9e9c114-84b9-434b-a3d5-89921d39ddff}
+;============================================================
+;  File: BuddyPounce.dll
+;  Plugin: Buddy pounce
+;  Version: 0.3.3.0
+;  Authors: Jonathan Gordon
+;============================================================
+[Allows you to send a message to contacts if they change status.]
+Позволяет вам отправлять сообщения контактам, если они меняют статус.
+;file \plugins\BuddyPounce\res\resource.rc
+[Confirm Pounce send]
+Подтверждение отправки отложенных
+[Send]
+Отправить
+[Cancel]
+Отмена
+[Pounce being sent to]
+Сообщение будет отправлено
+[Buddy Pounce]
+Отложенное сообщение
+[The Message:]
+Сообщение:
+[Delete Pounce]
+Удалить отложенное
+[Load default Settings]
+Загрузить по умолчанию
+[Setting Value]
+Значение
+[Settings]
+Настройки
+[Contact To Send Pounce To]
+Контакт для отправки отложенных
+[<< Simple]
+<< Простой
+[Advanced >>]
+Расширенный >>
+[The Message]
+Сообщение
+[Dialog]
+Диалог
+[Status]
+Статус
+[Use Advanced Dialog]
+Использовать расширенный диалог
+[The Message (characters: )]
+Сообщение (символов: )
+[Default Settings]
+Стандартные настройки
+[Show Delivery Messages]
+Показывать уведомления о доставке
+[These settings are also used when sending a "Simple" pounce]
+Эти настройки также используются для "простых" отложенных сообщений
+;file \plugins\BuddyPounce\src\dialog.cpp
+[The Message    (%d Characters)]
+Сообщение      (%d символов)
+[Message successfully sent to %s]
+Сообщение успешно послано %s
+[Message failed to send to %s]
+Ошибка отправки сообщения для %s
+[Retry]
+Ещё раз
+;file \plugins\BuddyPounce\src\main.cpp
+[Message sessions]
+Беседы
+[Pounce being sent to %s in %d seconds]
+Сообщение будет отправлено %s через %d секунд
+[&Buddy Pounce]
+&Отложенное сообщение
+;file \plugins\BuddyPounce\src\options.cpp
+[Send If My Status Is...]
+Отправлять, если мой статус...
+[Send If They Change Status to...]
+Отправлять, если они изменяют статус на...
+[Reuse Pounce]
+Повторить отложенное
+[Give Up delay]
+Задержка отмены
+[Confirmation Window]
+Окно подтверждения
+[Reuse this message? (0 to use it once)]
+Повторить сообщение? (0 - не повторять)
+[Times]
+раз
+[Give up after... (0 to not give up)]
+Отказаться после... (0 - не отказываться)
+[Days]
+дней
+[Show confirmation window? (0 to not Show)]
+Показать окно подтверждения? (0 - не показывать)
+[Seconds to wait before sending]
+секунд подождать перед отправкой
+[Send If My Status Is]
+Отправлять, если мой статус
+[Any]
+Любой
+[Online]
+В сети
+[Away]
+Отсутствую
+[Not available]
+Недоступен
+[Occupied]
+Занят
+[Do not disturb]
+Не беспокоить
+[Free for chat]
+Готов болтать
+[Invisible]
+Невидимый
+[Send If Their Status changes]
+Отправлять, если они изменяют статус
+[From Offline]
+Из "Не в сети"
+[To Online]
+-> В сети
+[To Away]
+-> Отсутствую
+[To Not available]
+-> Недоступен
+[To Occupied]
+-> Занят
+[To Do not disturb]
+-> Не беспокоить
+[To Free for chat]
+-> Готов болтать
+[To Invisible]
+-> Невидимый

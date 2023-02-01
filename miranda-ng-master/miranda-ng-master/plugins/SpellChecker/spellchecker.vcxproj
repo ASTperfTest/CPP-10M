@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectReference Include="..\..\libs\hunspell\hunspell.vcxproj">
+      <Project>{b80c2c8d-b987-48b6-afe2-8da2d17f2f6a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>SpellChecker</ProjectName>
+    <ProjectGuid>{5DB86086-10E9-42E7-AC90-503D2678C2A2}</ProjectGuid>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\build\vc.common\plugin.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ardialog.cpp" />
+    <ClCompile Include="src\autoreplace.cpp" />
+    <ClCompile Include="src\dictionary.cpp" />
+    <ClCompile Include="src\options.cpp" />
+    <ClCompile Include="src\RichEdit.cpp" />
+    <ClCompile Include="src\spellchecker.cpp" />
+    <ClCompile Include="src\stdafx.cxx">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\utils.cpp" />
+    <ClInclude Include="src\ardialog.h" />
+    <ClInclude Include="src\autoreplace.h" />
+    <ClInclude Include="src\dictionary.h" />
+    <ClInclude Include="src\options.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\RichEdit.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\version.h" />
+    <None Include="res\no_spellcheck.ico" />
+    <None Include="res\spellcheck.ico" />
+    <None Include="res\unknown.ico" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>comctl32.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\libs\hunspell\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\utils\mir_options.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\resource.rc" />
+    <ResourceCompile Include="res\Version.rc" />
+  </ItemGroup>
+</Project>

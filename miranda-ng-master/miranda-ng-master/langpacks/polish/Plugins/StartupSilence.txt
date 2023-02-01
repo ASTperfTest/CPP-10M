@@ -1,0 +1,74 @@
+#muuid {7b856b6a-d48f-4f54-b8d6-c8d86d02ffc2}
+;============================================================
+;  File: StartupSilence.dll
+;  Plugin: StartupSilence
+;  Version: 0.2.0.1
+;  Authors: Vladimir Lyubimov
+;============================================================
+[Suppresses popups and mutes sounds for 10-300 sec at Miranda NG startup, then sets them back to predefined state (Automatically per computer settings).]
+Wyłącza powiadomienia i dźwięki na 10-300 sekund od startu Mirandy i włącza ponownie zawsze (według ustawień komputera).
+;file \plugins\StartupSilence\res\StartupSilence.rc
+[Silence at Startup]
+Cichy start
+[Settings for the next Computer Name:]
+Ustawienia dla następnej nazwy komputera:
+[Enable silence at startup]
+Włącz cichy start
+[for]
+przez
+[10-300 seconds (Default 20)]
+10-300 sekund (domyślnie 20)
+[Show Popup notification]
+Pokaż powiadomienia
+[Popup time 1-30 seconds (Default 5)]
+Wyświetlaj 1-30 sekund (domyślnie 5)
+[TopToolBar button (Miranda restart required)]
+Przycisk TopToolbar (wymagane ponowne uruchomienie)
+[Reset to default]
+Przywróć domyślne
+[After startup set:]
+Po starcie ustaw:
+[Filtered popups only (leave uncheck for no popups)]
+Tylko filtrowane powiadomienia (pozostaw odznaczone, by nie wyświetlać żadnych powiadomień)
+[Enable sounds]
+Włącz dźwięki
+[Allow to set sounds and filtered popups only after startup (uncheck for all popups and sounds)]
+Pozwól na ustawienie dźwięków i filtrowanych powiadomień dopiero po starcie (odznacz dla wszystkich dźwięków i powiadomień)
+[Allow mRadio or Weather popups, etc.]
+Zezwól na powiadomienia mRadio, pogody, itd.
+;file \plugins\StartupSilence\src\main.cpp
+[Events]
+Zdarzenia
+;file \plugins\StartupSilence\src\stdafx.h
+[Silence at startup]
+Cichy start
+[Toggle Silence OFF]
+Wyłącz cichy start
+[Toggle Silence ON]
+Włącz cichy start
+[Toggle Silence OFF TTB]
+Wyłącz cichy start TTB
+[Toggle Silence ON TTB]
+Włącz cichy start TTB
+[Sounds and popups are enabled]
+Dźwięki i powiadomienia są włączone
+[Filtered mode ON]
+Tryb filtrowania włączony
+[Sounds and popups are disabled temporarily]
+Dźwięki i powiadomienia są tymczasowo wyłączone
+[Sounds and popups are disabled temporarily.\nmRadio or Weather popups, etc. are allowed.]
+Dźwięki i powiadomienia są tymczasowo wyłączone.\nPowiadomienia mRadio, pogody itp. są dozwolone.
+[Silent Startup mode changed to ON]
+Tryb cichego startu zmieniony na włączony
+[Silent Startup mode changed to OFF]
+Tryb cichego startu zmieniony na wyłączony
+[Silence At Startup is ON]
+Cichy start jest włączony
+[Silence At Startup is OFF]
+Cichy start jest wyłączony
+[Toggle Silence At Startup]
+Przełącz cichy start
+[You have to install TopToolBar plugin to use this option.]
+Musisz zainstalować TopToolbar, aby używać tej opcji.
+[You have to install popup plugin to use this option.]
+Aby użyć tej opcji, zainstaluj wtyczkę do obsługi powiadomień.

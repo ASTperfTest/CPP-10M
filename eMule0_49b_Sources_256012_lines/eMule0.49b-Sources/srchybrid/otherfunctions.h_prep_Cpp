@@ -1,0 +1,411 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+class CAbstractFile;
+class CKnownFile;
+       Requested_Block_Struct;
+class CUpDownClient;
+class CAICHHash;
+class CPartFile;
+class CSafeMemFile;
+
+enum EFileType {
+  FILETYPE_UNKNOWN,
+  FILETYPE_EXECUTABLE,
+  ARCHIVE_ZIP,
+  ARCHIVE_RAR,
+  ARCHIVE_ACE,
+  IMAGE_ISO,
+  AUDIO_MPEG,
+  VIDEO_AVI,
+  VIDEO_MPG,
+  WM,
+  PIC_JPG,
+  PIC_PNG,
+  PIC_GIF,
+  DOCUMENT_PDF
+};
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Low level str
+//
+__inline char* nstrdup(const char* todup){
+   size_t len = strlen(todup) + 1;
+   return (char*)memcpy(new char[len], todup, len);
+}
+
+char  *stristr(const char  *str1, const char  *str2);
+CString GetNextString(const CString& rstr, const char* pszTokens, int& riStart);
+CString GetNextString(const CString& rstr, char  chToken, int& riStart);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// String conversion
+//
+CString CastItoXBytes(uint16 count, bool isK = false, bool isPerSec = false, uint32 decimal = 2);
+CString CastItoXBytes(uint32 count, bool isK = false, bool isPerSec = false, uint32 decimal = 2);
+CString CastItoXBytes(uint64 count, bool isK = false, bool isPerSec = false, uint32 decimal = 2);
+CString CastItoXBytes(float count, bool isK = false, bool isPerSec = false, uint32 decimal = 2);
+CString CastItoXBytes(double count, bool isK = false, bool isPerSec = false, uint32 decimal = 2);
+
+CString CastItoXBytes(EMFileSize count, bool isK = false, bool isPerSec = false, uint32 decimal = 2);
+
+CString CastItoIShort(uint16 count, bool isK = false, uint32 decimal = 2);
+CString CastItoIShort(uint32 count, bool isK = false, uint32 decimal = 2);
+CString CastItoIShort(uint64 count, bool isK = false, uint32 decimal = 2);
+CString CastItoIShort(float count, bool isK = false, uint32 decimal = 2);
+CString CastItoIShort(double count, bool isK = false, uint32 decimal = 2);
+CString CastSecondsToHM(time_t seconds);
+CString CastSecondsToLngHM(time_t seconds);
+CString GetFormatedUInt(unsigned long ulVal);
+CString GetFormatedUInt64(unsigned long ullVal);
+void SecToTimeLength(unsigned long ulSec, CStringA& rstrTimeLength);
+void SecToTimeLength(unsigned long ulSec, CStringW& rstrTimeLength);
+bool RegularExpressionMatch(CString regexpr, CString teststring);
+
+///////////////////////////////////////////////////////////////////////////////
+// URL conversion
+//
+CString URLDecode(const CString& sIn, bool bKeepNewLine = false);
+CString URLEncode(const CString& sIn);
+CString EncodeURLQueryParam(const CString& rstrQuery);
+CString MakeStringEscaped(CString in);
+CString RemoveAmbersand(const CString& rstr);
+CString StripInvalidFilenameChars(const CString& strText, bool bKeepSpaces = true);
+CString CreateED2kLink(const CAbstractFile* f, bool bEscapeLink = true);
+CString CreateHTMLED2kLink(const CAbstractFile* f);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Hex conversion
+//
+CString EncodeBase32(const unsigned char* buffer, unsigned int bufLen);
+CString EncodeBase16(const unsigned char* buffer, unsigned int bufLen);
+unsigned int DecodeLengthBase16(unsigned int base16Length);
+bool DecodeBase16(const char  *base16Buffer, unsigned int base16BufLen, byte *buffer, unsigned int bufflen);
+uint32 DecodeBase32(const char* pszInput, uchar* paucOutput, uint32 nBufferLen);
+uint32 DecodeBase32(const char* pszInput, CAICHHash& Hash);
+
+///////////////////////////////////////////////////////////////////////////////
+// File/Path string helpers
+//
+void MakeFoldername(CString &path);
+CString RemoveFileExtension(const CString& rstrFilePath);
+int CompareDirectories(const CString& rstrDir1, const CString& rstrDir2);
+CString StringLimit(CString in, unsigned int length);
+CString CleanupFilename(CString filename, bool bExtension = true);
+CString ValidFilename(CString filename);
+bool ExpandEnvironmentStrings(CString& rstrStrings);
+int CompareLocaleString(const char* psz1, const char* psz2);
+int CompareLocaleStringNoCase(const char* psz1, const char* psz2);
+int         CompareCStringPtrLocaleString(const void* p1, const void* p2);
+int         CompareCStringPtrLocaleStringNoCase(const void* p1, const void* p2);
+void Sort(CStringArray& astr, int (        *pfnCompare)(const void*, const void*) = CompareCStringPtrLocaleStringNoCase);
+int         CompareCStringPtrPtrLocaleString(const void* p1, const void* p2);
+int         CompareCStringPtrPtrLocaleStringNoCase(const void* p1, const void* p2);
+void  Sort(CSimpleArray                & apstr, int (        *pfnCompare)(const void*, const void*) = CompareCStringPtrPtrLocaleStringNoCase);
+void  StripTrailingCollon(CString& rstr);
+bool  IsUnicodeFile(const char* pszFilePath);
+unsigned long  GetFreeTempSpace(int tempdirindex);
+int   GetPathDriveNumber(CString path);
+EFileType GetFileTypeEx(CKnownFile* kfile, bool checkextention=true, bool checkfileheader=true, bool nocached=false);
+CString  GetFiletypeName(EFileType ftype);
+int   IsExtentionTypeof(EFileType type, CString ext);
+uint32  LevenshteinDistance(const CString& str1, const CString& str2);
+bool  _tmakepathlimit(char  *path, const char  *drive, const char  *dir, const char  *fname, const char  *ext);
+
+///////////////////////////////////////////////////////////////////////////////
+// GUI helpers
+//
+void InstallSkin(const char* pszSkinPackage);
+void ShellOpenFile(CString name);
+void ShellOpenFile(CString name, const char* pszVerb);
+bool SelectDir(void* hWnd, char * pszPath, const char* pszTitle = NULL, const char* pszDlgTitle = NULL);
+int  DialogBrowseFile(CString& rstrPath, const char* pszFilters, const char* pszDefaultFileName = NULL, unsigned long dwFlags = 0,bool openfilestyle=true);
+void GetPopupMenuPos(CListCtrl& lv, CPoint& point);
+void GetPopupMenuPos(CTreeCtrl& tv, CPoint& point);
+void InitWindowStyles(CWnd* pWnd);
+CString GetRateString(unsigned int rate);
+void* GetComboBoxEditCtrl(CComboBox& cb);
+void* ReplaceRichEditCtrl(CWnd* pwndRE, CWnd* pwndParent, CFont* pFont);
+int  FontPointSizeToLogUnits(int nPointSize);
+bool CreatePointFont(CFont &rFont, int nPointSize, const char* lpszFaceName);
+bool CreatePointFontIndirect(CFont &rFont, const LOGFONT *lpLogFont);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Resource strings
+//
+
+
+
+
+CString _GetResString(const char*      StringID);
+
+
+
+
+
+
+void InitThreadLocale();
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Error strings, Debugging, Logging
+//
+int GetSystemErrorString(unsigned long dwError, CString &rstrError);
+int GetModuleErrorString(unsigned long dwError, CString &rstrError, const char* pszModule);
+int GetErrorMessage(unsigned long dwError, CString &rstrErrorMsg, unsigned long dwFlags = 0);
+CString GetErrorMessage(unsigned long dwError, unsigned long dwFlags = 0);
+const char* GetShellExecuteErrMsg(unsigned long dwShellExecError);
+CString DbgGetHexDump(const uint8* data, unsigned int size);
+void DbgSetThreadName(const char* szThreadName, ...);
+void Debug(const char* pszFmtMsg, ...);
+void DebugHexDump(const uint8* data, unsigned int lenData);
+void DebugHexDump(CFile& file);
+CString DbgGetFileInfo(const uchar* hash);
+CString DbgGetFileStatus(unsigned int nPartCount, CSafeMemFile* data);
+const char* DbgGetHashTypeString(const uchar* hash);
+CString DbgGetClientID(uint32 nClientID);
+int GetHashType(const uchar* hash);
+CString DbgGetDonkeyClientTCPOpcode(unsigned int opcode);
+CString DbgGetMuleClientTCPOpcode(unsigned int opcode);
+CString DbgGetClientTCPOpcode(unsigned int protocol, unsigned int opcode);
+CString DbgGetClientTCPPacket(unsigned int protocol, unsigned int opcode, unsigned int size);
+CString DbgGetBlockInfo(const Requested_Block_Struct* block);
+CString DbgGetBlockInfo(uint64 StartOffset, uint64 EndOffset);
+CString DbgGetBlockFileInfo(const Requested_Block_Struct* block, const CPartFile* partfile);
+CString DbgGetFileMetaTagName(unsigned int uMetaTagID);
+CString DbgGetFileMetaTagName(const char* pszMetaTagID);
+CString DbgGetSearchOperatorName(unsigned int uOperator);
+void DebugRecv(const char* pszMsg, const CUpDownClient* client, const uchar* packet = NULL, uint32 nIP = 0);
+void DebugRecv(const char* pszOpcode, uint32 ip, uint16 port);
+void DebugSend(const char* pszMsg, const CUpDownClient* client, const uchar* packet = NULL);
+void DebugSend(const char* pszOpcode, uint32 ip, uint16 port);
+void DebugSendF(const char* pszOpcode, uint32 ip, uint16 port, const char* pszMsg, ...);
+void DebugHttpHeaders(const CStringAArray& astrHeaders);
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Win32 specifics
+//
+bool HaveEd2kRegAccess();
+bool DoRegFixElevated();
+bool Ask4RegFix(bool checkOnly, bool dontAsk = false, bool bAutoTakeCollections = false); // Barry - Allow forced update without prompt
+void BackupReg(void); // Barry - Store previous values
+void RevertReg(void); // Barry - Restore previous values
+bool DoCollectionRegFix(bool checkOnly);
+void AddAutoStart();
+void RemAutoStart();
+unsigned long GetModuleVersion(const char* pszFilePath);
+unsigned long GetModuleVersion(void *  hModule);
+
+int GetMaxWindowsTCPConnections();
+
+
+
+
+
+
+
+
+
+unsigned short  DetectWinVersion();
+int   IsRunningXPSP2();
+int   IsRunningXPSP2OrHigher();
+uint64  GetFreeDiskSpaceX(const char* pDirectory);
+unsigned long GetDiskFileSize(const char* pszFilePath);
+int   GetAppImageListColorFlag();
+int   GetDesktopColorDepth();
+bool  IsFileOnFATVolume(const char* pszFilePath);
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// MD4 helpers
+//
+
+__inline unsigned char toHex(const unsigned char &x){
+ return x > 9 ? x + 55: x + 48;
+}
+
+// md4cmp -- replacement for memcmp(hash1,hash2,16)
+// Like 'memcmp' this function returns 0, if hash1==hash2, and !0, if hash1!=hash2.
+// NOTE: Do *NOT* use that function for determining if hash1                hash2.
+__inline int md4cmp(const void* hash1, const void* hash2) {
+ return !(((uint32*)hash1)[0] == ((uint32*)hash2)[0] &&
+       ((uint32*)hash1)[1] == ((uint32*)hash2)[1] &&
+       ((uint32*)hash1)[2] == ((uint32*)hash2)[2] &&
+       ((uint32*)hash1)[3] == ((uint32*)hash2)[3]);
+}
+
+__inline bool isnulmd4(const void* hash) {
+ return  (((uint32*)hash)[0] == 0 &&
+       ((uint32*)hash)[1] == 0 &&
+       ((uint32*)hash)[2] == 0 &&
+       ((uint32*)hash)[3] == 0);
+}
+
+// md4clr -- replacement for
+__inline void md4clr(const void* hash) {
+ ((uint32*)hash)[0] = ((uint32*)hash)[1] = ((uint32*)hash)[2] = ((uint32*)hash)[3] = 0;
+}
+
+// md4cpy -- replacement for
+__inline void md4cpy(void* dst, const void* src) {
+ ((uint32*)dst)[0] = ((uint32*)src)[0];
+ ((uint32*)dst)[1] = ((uint32*)src)[1];
+ ((uint32*)dst)[2] = ((uint32*)src)[2];
+ ((uint32*)dst)[3] = ((uint32*)src)[3];
+}
+
+
+CString md4str(const uchar* hash);
+CStringA md4strA(const uchar* hash);
+void md4str(const uchar* hash, char * pszHash);
+void md4strA(const uchar* hash, char* pszHash);
+bool strmd4(const char* pszHash, uchar* hash);
+bool strmd4(const CString& rstr, uchar* hash);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Compare helpers
+//
+__inline int CompareUnsigned(uint32 uSize1, uint32 uSize2)
+{
+ if (uSize1 < uSize2)
+  return -1;
+ if (uSize1 > uSize2)
+  return 1;
+ return 0;
+}
+
+__inline int CompareUnsigned64(uint64 uSize1, uint64 uSize2)
+{
+ if (uSize1 < uSize2)
+  return -1;
+ if (uSize1 > uSize2)
+  return 1;
+ return 0;
+}
+
+__inline int CompareFloat(float uSize1, float uSize2)
+{
+ if (uSize1 < uSize2)
+  return -1;
+ if (uSize1 > uSize2)
+  return 1;
+ return 0;
+}
+
+__inline int CompareOptLocaleStringNoCase(const char* psz1, const char* psz2)
+{
+ if (psz1 && psz2)
+  return CompareLocaleStringNoCase(psz1, psz2);
+ if (psz1)
+  return -1;
+ if (psz2)
+  return 1;
+ return 0;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// ED2K File Type
+//
+enum EED2KFileType
+{
+ ED2KFT_ANY    = 0,
+ ED2KFT_AUDIO   = 1, // ED2K protocol
+ ED2KFT_VIDEO   = 2, // ED2K protocol
+ ED2KFT_IMAGE   = 3, // ED2K protocol
+ ED2KFT_PROGRAM   = 4, // ED2K protocol
+ ED2KFT_DOCUMENT   = 5, // ED2K protocol
+ ED2KFT_ARCHIVE   = 6, // ED2K protocol
+ ED2KFT_CDIMAGE   = 7, // ED2K protocol
+ ED2KFT_EMULECOLLECTION = 8
+};
+
+CString GetFileTypeByName(const char* pszFileName);
+CString GetFileTypeDisplayStrFromED2KFileType(const char* pszED2KFileType);
+const char* GetED2KFileTypeSearchTerm(EED2KFileType iFileID);
+EED2KFileType GetED2KFileTypeSearchID(EED2KFileType iFileID);
+EED2KFileType GetED2KFileTypeID(const char* pszFileName);
+bool gotostring(CFile &file, uchar *find, long     plen);
+
+///////////////////////////////////////////////////////////////////////////////
+// IP/UserID
+//
+void TriggerPortTest(uint16 tcp, uint16 udp);
+bool IsGoodIP(uint32 nIP, bool forceCheck = false);
+bool IsGoodIPPort(uint32 nIP, uint16 nPort);
+bool IsLANIP(uint32 nIP);
+uint8 GetMyConnectOptions(bool bEncryption = true, bool bCallback = true);
+//No longer need seperate lowID checks as we now know the servers just give *.*.*.0 users a lowID
+__inline bool IsLowID(uint32 id){
+ return (id < 16777216);
+}
+CString ipstr(uint32 nIP);
+CString ipstr(uint32 nIP, uint16 nPort);
+CString ipstr(const char* pszAddress, uint16 nPort);
+CStringA ipstrA(uint32 nIP);
+void ipstrA(char* pszAddress, int iMaxAddress, uint32 nIP);
+__inline CString ipstr(in_addr nIP){
+ return ipstr(*(uint32*)&nIP);
+}
+__inline CStringA ipstrA(in_addr nIP){
+ return ipstrA(*(uint32*)&nIP);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Date/Time
+//
+time_t safe_mktime(       tm* ptm);
+bool AdjustNTFSDaylightFileTime(uint32& ruFileDate, const char* pszFilePath);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Random Numbers
+//
+uint16 GetRandomUInt16();
+uint32 GetRandomUInt32();
+
+///////////////////////////////////////////////////////////////////////////////
+// RC4 Encryption
+//
+ class RC4_Key_Struct{
+ uint8 abyState[256];
+ uint8 byX;
+ uint8 byY;
+};
+
+RC4_Key_Struct* RC4CreateKey(const uchar* pachKeyData, uint32 nLen, RC4_Key_Struct* key = NULL, bool bSkipDiscard = false);
+void RC4Crypt(const uchar* pachIn, uchar* pachOut, uint32 nLen, RC4_Key_Struct* key);
+
+
+
+
+
+
+ 

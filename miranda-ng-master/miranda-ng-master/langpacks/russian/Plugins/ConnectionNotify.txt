@@ -1,0 +1,83 @@
+#muuid {4bb5b4aa-c364-4f23-9746-d5b708a286a5}
+;============================================================
+;  File: ConnectionNotify.dll
+;  Plugin: Connection Notify
+;  Version: 0.1.0.6
+;  Authors: MaKaR
+;============================================================
+[Notify with popup if some connection established]
+Всплывающие окна при установке сетевых соединений.
+;file \protocols\ConnectionNotify\res\ConnectionNotify.rc
+[Set popup colors]
+Цвет всплывающих окон
+[Popup options]
+Всплывающие окна
+[Background]
+Фон
+[Text]
+Текст
+[Close after:]
+Закрывать после:
+[sec (0 default, -1 disabled)]
+секунд (0 - по умолчанию, -1 - постоянно)
+[Settings]
+Настройки
+[try resolve addresses]
+преобразовывать IP-адреса в имена
+[Show notification if no filter defined]
+Показывать уведомление, если не фильтры не определены
+[Attempt interval (ms)]
+Интервал попыток (мс)
+[Delete]
+Удалить
+['Online' means:]
+"В сети" значит:
+[Filters]
+Фильтры
+[Move down]
+Вниз
+[Move up]
+Вверх
+[Add]
+Добавить
+[Rule editor]
+Редактор правил
+[Application name]
+Имя приложения
+[Local IP:Port]
+Локальный IP:Порт
+[Action:]
+Действие:
+[Cancel]
+Отмена
+[* and ? wildcard characters also available (for port enter number or *)]
+Разрешены маски * и ? (для порта только числовое значение или *)
+[Remote IP:Port]
+Удалённый IP:Порт
+;file \protocols\ConnectionNotify\src\ConnectionNotify.cpp
+[New Connection Notification]
+уведомление о новом подключении
+;file \protocols\ConnectionNotify\src\filter.cpp
+[Always show popup]
+Всегда показывать вспл. окна
+[Never show popup]
+Никогда не показывать вспл. окна
+[First close options window]
+Сначала надо закрыть окно настроек
+;file \protocols\ConnectionNotify\src\options.cpp
+[Show]
+Показать
+[Hide]
+Скрыть
+[Status]
+Статус
+[Application]
+Приложение
+[Internal socket]
+Внутренний сокет
+[External socket]
+Внешний сокет
+[Action]
+Действие
+[Plugins]
+Плагины

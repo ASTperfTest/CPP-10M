@@ -1,0 +1,48 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("HypertextCtrl.h");}
+
+class CPPgWebServer :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgWebServer)
+
+public:
+ CPPgWebServer();
+ virtual ~CPPgWebServer();
+
+ enum { IDD = IDD_PPG_WEBSRV };
+
+ void Localize(void);
+
+protected:
+ int  m_bModified;
+ bool bCreated;
+ CHyperTextCtrl m_wndMobileLink;
+
+ void LoadSettings(void);
+
+ virtual void DoDataExchange(CDataExchange* pDX);
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ void SetModified(int  bChanged = TRUE){
+  m_bModified = bChanged;
+  CPropertyPage::SetModified(bChanged);
+ }
+
+
+         void OnEnChangeWSEnabled();
+         void OnEnChangeMMEnabled();
+         void OnReloadTemplates();
+         void OnBnClickedTmplbrowse();
+         void OnHelp();
+         void SetTmplButtonState();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         void OnDataChange()    {SetModified(); SetTmplButtonState(); }
+};
+
+
+
+
+
+
+ 

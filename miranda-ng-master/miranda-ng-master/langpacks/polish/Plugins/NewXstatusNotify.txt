@@ -1,0 +1,414 @@
+#muuid {ebf19652-e434-4d79-9897-91a0ff226f51}
+;============================================================
+;  File: NewXstatusNotify.dll
+;  Plugin: xStatus notify
+;  Version: 1.4.0.12
+;  Authors: Luca Santarelli, Vasilich, yaho
+;============================================================
+[Notifies you when a contact changes his/her (X)status or status message.]
+Powiadamia, kiedy kontakt zmieni swój (x)status lub opis.
+;file \plugins\NewXstatusNotify\res\resource.rc
+[Notify when contact changes to one of these statuses]
+Powiadamiaj kiedy kontakt zmieni status na:
+[Online]
+Dostępny
+[Offline]
+Rozłączony
+[Invisible]
+Niewidoczny
+[Free for chat]
+Porozmawiajmy
+[Away]
+Zaraz wracam
+[Not available]
+Wrócę później
+[Occupied]
+Zajęty
+[Do not disturb]
+Nie przeszkadzać
+[Always when changing from offline]
+Z rozłączonego
+[Notify when contact changes]
+Powiadom kiedy kontakt zmienia
+[Extra status]
+xStatus
+[Status message]
+Opis
+[Plugin activation]
+Aktywacja wtyczki
+[Automatically turn off Popups and Sounds on status change]
+Automatyczne wyłącz powiadomienia i dźwięki po zmianie statusu
+[Configure]
+Konfiguruj
+[Notify me for people not on my contact list]
+Powiadamiaj o kontaktach spoza listy kontaktów
+[Use individual sounds]
+Użyj indywidualnych dźwięków
+[Blink icon in the system tray]
+Migaj ikoną w zasobniku systemowym
+[Also when extra status or status message changes]
+Także gdy zmienia się opis lub xstatus
+[Use status icon]
+Użyj ikon statusu
+[Log to file]
+Zapisuj w pliku
+[Open]
+Otwórz
+[Change]
+Zmień
+[Preview]
+Podgląd
+[Delete]
+Usuń
+[Enable sounds]
+Włącz dźwięki
+[Enable popups]
+Włącz powiadomienia
+[Status Notify]
+Zmiany statusu
+[Individual sounds are disabled.\n\nTo enable them, go to Options -> Status -> Status Notify, enable\n"Use individual sounds" checkbox, and then reopen this dialog.]
+Indywidualne dźwięki są wyłączone.\n\nAby je włączyć przejdź do Opcje -> Status -> Powiadomienia statusu, zaznacz\n"Użyj indywidualnych dźwięków", i otwórz ponownie to okno.
+[Sounds]
+Dźwięki
+[Popups]
+Powiadomienia
+[Extra status notify]
+Powiadomienie xStatus
+[Extra status logging]
+Dziennik xStatus
+[Disable all]
+Wszystkie wyłączone
+[Enable all]
+Wszystkie włączone
+[Status message notify]
+Powiadomienia o zmianie opisu
+[Status message logging]
+Zapisywanie opisów
+[Popups when status changes to:]
+Pokaż, gdy status zmienia się na:
+[Background]
+Tło
+[Text]
+Tekst
+[Colors]
+Kolory
+[Use custom colors]
+Użyj niestandardowych kolorów
+[Use Windows colors]
+Użyj kolorów Windows
+[Use default colors]
+Użyj domyślnych kolorów
+[Popup text]
+Tekst powiadomienia
+[Show contact group name]
+Pokaż nazwę grupy kontaktu
+[Show status description]
+Pokaż opis statusu
+[Use alternative descriptions]
+Użyj alternatywnych określeń
+[Show previous status too]
+Pokaż poprzedni status
+[Read status message]
+Czytaj opis kontaktu
+[Timeout]
+Wyświetlaj
+[Sec]
+s
+[Connection timeout]
+Limit czasu połączenia
+[0 = Default]
+0 - domyślnie
+[-1 = Infinite]
+-1 - nie chowaj
+[Click action]
+Akcje przycisku
+[On left click]
+LPM
+[On right click]
+PPM
+[Notification]
+Powiadomienie
+[Show Popups when I connect]
+Pokaż powiadomienia podczas łączenia
+[Disable for extra status 'Music']
+Wyłącz dla xStatusu "Muzyka"
+[Truncate message length to:]
+Przytnij wiadomość do:
+[characters]
+znaków
+[Templates]
+Szablony
+[Notify when contact changes extra status]
+Powiadom, gdy kontakt zmieni xstatus
+[Template:]
+Szablon:
+[Notify when contact removes extra status]
+Powiadom, gdy kontakt usunie xstatus
+[Notify when contact changes extra status message]
+Powiadom, gdy kontakt zmieni opis xstatusu
+[Notify when contact removes extra status message]
+Powiadom, gdy kontakt usunie opis xstatusu
+[Variables]
+Zmienne
+[Reset]
+Domyślne
+[Disable notifications]
+Wyłącz powiadomienia
+[Disable globally]
+Globalnie wyłączony
+[Disable when my status is:]
+Wyłącz kiedy mój status to:
+[Disable only if I change global status]
+Wyłączyć jedynie w przypadku zmiany statusu globalnego
+[Cancel]
+Anuluj
+[Log extra status changes]
+Zapisuj zmiany xstatusu
+[Log extra status changes to file]
+Zapisuj zmiany xstatusu do pliku
+[Log extra status changes to history]
+Zapisuj zmiany xstatusu w historii
+[Only when message window is open]
+Tylko gdy okno rozmowy jest otwarte
+[Remove events from history when closing message window]
+Usuń zdarzenia z historii po zamknięciu okna rozmowy
+[Log when contact changes extra status]
+Zapisuj, gdy kontakt zmieni xstatus
+[Log when contact removes extra status]
+Zapisuj, gdy kontakt usunie xstatus
+[Log when contact changes extra status message]
+Zapisuj, gdy kontakt zmienia opis xstatusu
+[Log when contact removes extra status message]
+Zapisuj, gdy kontakt usuwa opis xstatusu
+[Log extra status when opening message window]
+Zapisuj xstatus podczas otwierania okna rozmowy
+[General]
+Ogólne
+[Accounts]
+Konta
+[Enable/Disable accounts which you don't wish to be notified for:]
+Włącz/wyłącz konta dla których nie chcesz powiadomień:
+[Notify when contact changes status message]
+Powiadom, gdy kontakt zmienia opis
+[Notify when contact removes status message]
+Powiadom, gdy kontakt usuwa opis
+[Log status changes]
+Pokazuj zmiany statusu
+[Log status changes to file]
+Zapisuj zmiany statusu do pliku
+[Log status changes to history]
+Zapisuj zmiany statusu w historii
+[Log previous status too]
+Zapisz także poprzedni status
+[Log status message changes]
+Zapisuj zmiany opisu
+[Log status message changes to file]
+Zapisuj zmiany opisu do pliku
+[Log status message changes to history]
+Zapisuj zmiany opisu w historii
+[Log when contact changes status message]
+Zapisuj, gdy kontakt zmieni opis
+[Log when contact removes status message]
+Zapisuj, gdy kontakt usunie opis
+[Log status message when opening message window]
+Zapisz opis podczas otwierania okna rozmowy
+;file \plugins\NewXstatusNotify\src\indsnd.cpp
+[Sound files]
+Pliki dźwiękowe
+[All files]
+Wszystkie pliki
+[Wave files]
+Pliki WAV
+[** All contacts **]
+** Wszystkie kontakty **
+[Status]
+Status
+[Sound file]
+Plik dźwiękowy
+;file \plugins\NewXstatusNotify\src\indsnd.h
+[(default sound)]
+(domyślny dźwięk)
+;file \plugins\NewXstatusNotify\src\main.cpp
+[<no status message>]
+<brak opisu>
+[Contact]
+Kontakt
+[<unknown>]
+<nieznany>
+[%s is now %s]
+%s jest teraz %s
+[%s, %s. %s changed status to %s (was %s)\r\n]
+%s, %s. %s zmienił(-a) status na %s (był %s)\r\n
+[connecting]
+Łączenie...
+[aborting]
+Zatrzymano
+[playing]
+Odtwarzanie...
+[%s changed status message to %s]
+%s zmienił opis na %s
+[(M) is back online!]
+jest znowu Dostępny!
+[(F) is back online!]
+jest znowu dostępna!
+[(U) is back online!]
+jest znowu dostępny(-a)!
+[User: Online]
+Status: Dostępny
+[(M) went offline! :(]
+rozłączył się! :(
+[(F) went offline! :(]
+rozłączyła się! :(
+[(U) went offline! :(]
+rozłączył(-a) się! :(
+[User: Offline]
+Status: Rozłączony
+[(M) hides in shadows...]
+jest niewidoczny...
+[(F) hides in shadows...]
+jest niewidoczna...
+[(U) hides in shadows...]
+jest niewidoczny(-a)...
+[User: Invisible]
+Status: Niewidoczny
+[(M) feels talkative!]
+chce porozmawiać!
+[(F) feels talkative!]
+chce porozmawiać!
+[(U) feels talkative!]
+chce porozmawiać!
+[User: Free for chat]
+Status: Chętny do rozmowy
+[(M) went away]
+zaraz wróci
+[(F) went away]
+zaraz wróci
+[(U) went away]
+zaraz wróci
+[User: Away]
+Status: Zaraz wracam
+[(M) isn't there anymore!]
+wróci później!
+[(F) isn't there anymore!]
+wróci później!
+[(U) isn't there anymore!]
+wróci później!
+[User: Not available]
+Status: Wrócę później
+[(M) has something else to do]
+jest teraz zajęty
+[(F) has something else to do]
+jest teraz zajęta
+[(U) has something else to do]
+jest teraz zajęty(-a)
+[User: Occupied]
+Status: Zajęty
+[(M) doesn't want to be disturbed!]
+nie chce żeby mu przeszkadzać!
+[(F) doesn't want to be disturbed!]
+nie chce żeby jej przeszkadzać!
+[(U) doesn't want to be disturbed!]
+nie chce żeby jej/mu przeszkadzać!
+[User: Do not disturb]
+Status: Nie przeszkadzać
+[User: from offline (has priority!)]
+Status: Z rozłączonego (ma priorytet!)
+[Status message removed]
+usunięto opis
+[Status message changed]
+zmieniono opis
+[Extra status removed]
+xStatus: Usunięcie
+[Extra status message changed]
+xStatus: Zmiana opisu
+[Extra status changed]
+xStatus: Zmiana statusu
+[Extra status message removed]
+usunięto xStatus
+[Status notifications]
+Powiadomienie o statusie
+[New Status Notify]
+Status
+[Status change]
+Zmiana statusu
+;file \plugins\NewXstatusNotify\src\options.cpp
+[All Files]
+Wszystkie pliki
+[Log]
+Dziennik
+[This is status message]
+To jest opis statusu
+[This is extra status]
+To jest xstatus
+[Show available variables]
+Pokaż dostępne zmienne
+[Reset all templates to default]
+Przywróć domyślne szablony
+[Do you want to reset all templates to default?]
+Czy na pewno chcesz przywrócić domyślne szablony?
+[Reset templates]
+Przywracanie szablonów
+[Account]
+Konto
+[Status logging]
+Zapisywanie statusu
+[Filtering]
+Filtrowanie
+;file \plugins\NewXstatusNotify\src\popup.h
+[(was %s)]
+(był %s)
+[Open message window]
+Otwórz okno rozmowy
+[Close popup]
+Zamknij powiadomienie
+[Open contact details window]
+Otwórz dane kontaktu
+[Open contact menu]
+Otwórz menu kontaktu
+[Open contact history]
+Otwórz historię kontaktu
+[Do nothing]
+Nic nie rób
+;file \plugins\NewXstatusNotify\src\utils.cpp
+[Can't open the log file!]
+Nie można otworzyć pliku dziennika!
+[NewXstatusNotify]
+Zmiany statusu
+;file \plugins\NewXstatusNotify\src\xstatus.cpp
+[Mood]
+Nastrój
+[Activity]
+Aktywność
+[xStatus]
+xStatus
+[<no title>]
+<brak tytułu>
+[%s changed %s]
+%s zmienił %s
+;file \plugins\NewXstatusNotify\src\xstatus.h
+[changed %n to: %t]
+%n: %t
+[removed %n]
+Usunięto: %n
+[changed %n message to: %m]
+%n: %m
+[removed %n message]
+Usunięto opis %n
+[changed status message to: %n]
+zmieniono opis na: %n
+[removed status message]
+usunięto opis
+[changed %n @ %t: %m]
+%t: %m (%n)
+[changed %n message @ %m]
+%m (%n)
+[has %n @ %t: %m]
+%t: %m (%n)
+[changed status message @ %n]
+zmieniono opis @ %n
+[is %s and has status message @ %n]
+jest %s z opisem @ %n
+[These variables are available:\r\n\r\n%n\textra status name (xStatus, Mood, Activity)\r\n%t\textra status title\r\n%m\textra status message\r\n%c\tcustom nickname\r\n\\n\tline break\r\n\\t\ttab stop]
+Dostępne są następujące zmienne:\r\n\r\n%n\textra status name (xStatus, Nastrój, Czynność)\r\n%t\tytuł xstatusu\r\n%m\topis xstatusu\r\n%c\twłasny nick\r\n\\n\tnowa linia\r\n\\t\ttab stop
+[These variables are available:\r\n\r\n%n\tnew status message\r\n%o\told status message\r\n%c\tcustom nickname\r\n%s\tcurrent status\r\n\\n\tline break\r\n\\t\ttab stop]
+Dostępne są następujące zmienne:\r\n\r\n%n\tnowy opis\r\n%o\tstary opis\r\n%c\twłasny nick\r\n%s\tobecny status\r\n\\n\tnowa linia\r\n\\t\ttab stop

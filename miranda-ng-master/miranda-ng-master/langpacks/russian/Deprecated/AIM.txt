@@ -1,0 +1,335 @@
+#muuid {3750a5a3-bf0d-490e-b65d-41ac4d29aeb3}
+;============================================================
+;  File: AIM.dll
+;  Plugin: AIM protocol
+;  Version: 0.11.0.1
+;  Authors: Boris Krasnovskiy, Aaron Myles Landwehr
+;============================================================
+[AOL Instant Messenger (AIM) protocol support for Miranda NG.]
+Поддержка протокола AOL Instant Messenger (AIM) в Miranda NG.
+[AIM user details]
+Информация о пользователе AIM
+[Screen name:]
+Имя AIM:
+[Display name:]
+Отображаемое имя:
+[Password:]
+Пароль:
+[AIM options]
+Настройки AIM
+[Message delivery confirmation]
+Подтверждение приёма
+[Do not autoreply when away]
+Не отвечать авт. когда Отсутствую
+[Convert incoming messages to BBCode]
+Переводить вх. сообщения в BBCode
+[Convert outgoing messages to HTML]
+Переводить исх. сообщения в HTML
+[Disable avatars]
+Отключить аватары
+[Disable account type icons]
+Откл. значки типов учётных записей
+[Disable extended status icons]
+Откл. расширенные значки статуса
+[Notify about new mail]
+Уведомлять о новой почте
+[Manage server groups]
+Управлять группами на сервере
+[Advanced options]
+Дополнительно
+[Instant idle on login]
+Режим ожидания при входе
+[Force proxy file transfers]
+Передачи файлов через прокси
+[Masquerade as a Sidekick/Hiptop user]
+Представляться как Sidekick/Hiptop
+[Connection]
+Подключение
+[Login server:]
+Сервер:
+[Port:]
+Порт:
+[Reset]
+Сброс
+[Disable SSL]
+Выкл. SSL
+[Force single client]
+Только одна сессия
+[Use "clientlogin" (recommended)]
+Использовать "clientlogin" (рекомендуется)
+[* Some changes will take effect the next time you connect to the AIM network]
+* Некоторые изменения вступят в силу при следующем подключении к сети AIM
+[Save profile]
+Сохранить профиль
+[Create a new AIM account]
+Создать новую учётную запись AIM
+[AIM instant idler]
+Установить Instant Idle
+[Number of hours:]
+Число часов:
+[Number of minutes:]
+Число минут:
+[Set idle]
+Установить
+[Unset idle]
+Снять
+[Users who can contact me:]
+Те кто может связаться со мной:
+[Allow all users]
+Все пользователи
+[Allow only users on contact list]
+Все из моего списка контактов
+[Allow only users below]
+Только из списка ниже
+[Block all users]
+Заблокировать всех
+[Block only users below]
+Заблок. всех из списка ниже
+[Add]
+Добавить
+[Remove]
+Удалить
+[Idle]
+Ожидание
+[Allow contacts to be notified of:]
+Уведомить контакты об:
+[Join chat room]
+Зайти в чат
+[Chat room]
+Чат
+[&Join]
+&Зайти
+[&Cancel]
+О&тмена
+[Change password]
+Сменить пароль
+[Original]
+Старый
+[New]
+Новый
+[Repeat]
+Повторить
+[*Passwords don't match.]
+*Пароли не совпадают.
+[Screen name]
+Имя AIM
+[E-mail]
+Почта
+[Confirm account]
+Подтвердить
+[*Applied upon reconnect]
+*Требуется перезапуск
+[Save changes]
+Сохранить изменения
+[Invite buddy to chat room]
+Приглашение в комнату чата
+[&Invite]
+&Пригласить
+[Invitation reason]
+Причина приглашения
+[Chat room invitation request]
+Запрос приглашения в чат
+[&Deny]
+&Запретить
+[Message]
+Сообщение
+[Room]
+Комната чата
+[Me]
+Я
+[Others]
+Другое
+[&Invite user...]
+&Пригласить пользователя...
+[&Leave chat session]
+&Покинуть чат
+[User &details]
+&Информация
+[User &history]
+История &пользователя
+[Invalid screen name or password.]
+Недействительное имя AIM или пароль.
+[Mismatched screen name or password.]
+Неправильное имя AIM или пароль.
+[You are connecting too frequently. Try waiting 10 minutes to reconnect.]
+Вы подключаетесь слишком часто. Подождите 10 минут и попробуйте снова.
+[Unknown error occurred when attempting to connect.]
+Неизвестная ошибка при соединении.
+[Invalid SNAC header.]
+Недействительный заголовок SNAC.
+[You sent obsolete SNAC.]
+Вы послали устаревший SNAC.
+[Not supported by server.]
+Не поддерживается сервером.
+[Not supported by the client.]
+Не поддерживается клиентом.
+[Refused by client.]
+Отклонено клиентом.
+[Incorrect SNAC format.]
+Неправильный формат SNAC.
+[User temporarily unavailable.]
+Пользователь временно недоступен.
+[No match.]
+Нет совпадений.
+[Check your screen name.]
+Проверьте свой псевдоним.
+[Check your password.]
+Проверьте свой пароль.
+[Check your email address.]
+Проверьте свой адрес электронной почты.
+[Service temporarily unavailable.]
+Сервис временно недоступен.
+[Field change temporarily unavailable.]
+Изменение поля временно недоступно.
+[Invalid screen name.]
+Некорректное отображаемое имя.
+[Invalid password.]
+Неправильный пароль.
+[Invalid email.]
+Некорректный адрес электронной почты.
+[Invalid old password.]
+Неправильный старый пароль.
+[Invalid screen name Length.]
+Некорректная длина отображаемого имени.
+[Invalid password length.]
+Некорректная длина пароля.
+[Invalid email length.]
+Некорректная длина адреса электронной почты.
+[Invalid old password length.]
+Некорректная длина старого пароля.
+[Need old password.]
+Требуется старый пароль.
+[Unsupported type.]
+Неподдерживаемый тип.
+[An error has occurred.]
+Неизвестная ошибка.
+[Invalid account.]
+Неверная учётная запись.
+[Deleted account.]
+Учётная запись удалена.
+[Expired account.]
+Учётная запись истекла.
+[Internal error.]
+Внутренняя ошибка.
+[DNS fail.]
+Ошибка DNS.
+[Failed to open file: %s : %s]
+Не удалось открыть файл: %s : %s
+[AIM link protocol]
+Протокол AIM
+[%s protocol]
+Протокол %s
+[%s server connection]
+%s подключение к серверу
+[%s client-to-client connections]
+%s подключения между пользователями
+[[Auto-response]:]
+(Автоответ):
+[No information has been provided by the server.]
+Сервер не предоставил никакой информации.
+[Error? Attempting to add ICQ contact to an AIM list.]
+Ошибка? Попытка добавить контакт ICQ в список AIM.
+[Cannot add this buddy because it requires authorization.]
+Невозможно добавить, требуется авторизация.
+[Unknown error when adding buddy to list. Error code %#x]
+Неизвестная ошибка при добавлении в список. Код %#x
+[Unknown error when attempting to modify a group. Error code %#x]
+Неизвестная ошибка при попытке модифицировать группу. Код %#x
+[Error uploading avatar. (Too small)]
+Не удалось загрузить аватар. (Слишком маленький)
+[Error uploading avatar. (Too big)]
+Не удалось загрузить аватар. (Слишком большой)
+[Error uploading avatar. (Wrong type)]
+Не удалось загрузить аватар. (Недопустимый тип)
+[Error uploading avatar. (Is banned)]
+Не удалось загрузить аватар. (Забанен)
+[Error uploading avatar. (Unknown error)]
+Не удалось загрузить аватар. (Неизвестная ошибка)
+[A confirmation message has been sent to the new email address. Please follow its instructions.]
+Письмо с подтверждением было отправлено на новый адрес электронной почты. Следуйте инструкциям в нём.
+[A confirmation message has been sent to your email address. Please follow its instructions.]
+Письмо с подтверждением было отправлено на ваш адрес электронной почты. Следуйте инструкциям в нём.
+[Unable to confirm at this time. Please try again later.]
+Невозможно подтвердить сейчас. Попробуйте позже.
+[Your account has already been confirmed.]
+Ваша учётная запись уже подтверждена.
+[Can't start the confirmation procedure.]
+Не удалось начать процедуру подтверждения.
+[Block]
+Заблокировать
+[Profile]
+Профиль
+[AOL mail]
+Почта AOL
+[AIM icon]
+Значок AIM
+[AOL bot]
+Бот AOL
+[Admin]
+Админ
+[Confirmed]
+Проверенный
+[Not confirmed]
+Непроверенный
+[Blocked list]
+Список заблокированных
+[Foreground color]
+Цвет переднего плана
+[Background color]
+Цвет фона
+[Bold]
+Жирный
+[Not bold]
+Не жирный
+[Italic]
+Курсив
+[Not italic]
+Не курсив
+[Underline]
+Подчёркивание
+[Not underline]
+Не подчёркнутый
+[Subscript]
+Подскрипт
+[Not subscript]
+Не подскрипт
+[Superscript]
+Суперскрипт
+[Not superscript]
+Не суперскрипт
+[Normal script]
+Стандартный скрипт
+[Not normal script]
+Нестандартный скрипт
+[Profile editor]
+Редактор профиля
+[AIM account type]
+Тип учётной записи AIM
+[AIM extended status]
+Расширенный статус AIM
+[&Block]
+&Блокировать
+[&Unblock]
+&Разблокировать
+[Manage account]
+Управление учётной записью
+[Instant idle]
+Установить Instant Idle
+[Read &HTML away message]
+Читать &HTML статусное сообщение
+[Read profile]
+Просмотреть профиль
+[Add to server list]
+Добавить в список на сервере
+[Network]
+Сеть
+[Basic]
+Основные
+[Privacy]
+Приватность
+[Please, enter a user name in the options dialog.]
+Пожалуйста, введите имя пользователя в настройках.
+[Please, enter a password in the options dialog.]
+Пожалуйста, введите пароль в настройках
+[Failed to open file: %s %s]
+Не удалось открыть файл: %s %s

@@ -1,0 +1,197 @@
+#muuid {00272a3e-f5fa-4090-8b67-3e62ac1ee0b4}
+;============================================================
+;  File: Tox.dll
+;  Plugin: Tox protocol
+;  Version: 0.11.3.2
+;  Authors: Miranda NG team
+;============================================================
+[Tox protocol support for Miranda NG.]
+Tox protokol pro Mirandu NG.
+;file \protocols\Tox\res\resource.rc
+[Tox ID:]
+Tox ID:
+[Create]
+Vytvořit
+[Import]
+Importovat
+[Copy ID]
+Zkopírovat ID
+[Export]
+Exportovat
+[Name:]
+Název:
+[Password:]
+Heslo:
+[Default group:]
+Výchozí skupina:
+[Create Tox profile]
+Vytvořit Tox profil
+[Import Tox profile]
+Importovat Tox profil
+[Copy Tox ID]
+Zkopírovat Tox ID
+[Export Tox profile]
+Exportovat Tox profil
+[Connection settings]
+Možnosti připojení
+[Enable UDP (otherwise force Tox to use TCP)]
+Povolit UDP (jinak vynutí použití TCP)
+[Enable IPv6]
+Povolit IPv6
+[Max connect retries:]
+
+[Max reconnect retries:]
+
+[Enable UDP hole-punching]
+
+[Enable local network peer discovery]
+
+[Remove password]
+
+[Change password]
+Změnit heslo
+[Set password]
+Nastavit heslo
+[If this field contains Tox address (76 hex characters), you will be prompted to add it in your friend list. Otherwise, Miranda will search this query via toxme.io.]
+Pokud toto pole obsahuje adresu Tox (76 hex znaků), bude zobrazen dialog pro přidání kontaktu do vašeho seznamu. V opačném případě bude Miranda hledat kontakt pomocí toxme.io.
+[DNS name:]
+DNS název:
+[Enter password]
+Zadejte heslo
+[Cancel]
+Zrušit
+[Tox profile is encrypted. Enter the password to continue.]
+Tox profil je zašifrován. Zadejte heslo pro pokračování.
+[Add]
+Přidat
+[Update]
+Aktualizovat
+[IPv4 address/ Host]
+IPv4 adresa / hostitel
+[IPv6 address (optional)]
+IPv6 adresa (volitelné)
+[Port]
+Port
+[Public key]
+Veřejný klíč
+[Old password:]
+
+[New password:]
+Nové heslo:
+[Confirm password:]
+Nové heslo znovu:
+;file \protocols\Tox\src\main.cpp
+[Profiles folder]
+Složka s profily
+[Tox link protocol]
+Odkaz protokolu Tox
+;file \protocols\Tox\src\tox_icons.cpp
+[Protocol icon]
+Ikona protokolu
+[Action icon]
+Ikona akce
+[Correction icon]
+
+[Protocols]
+Protokoly
+;file \protocols\Tox\src\tox_menus.cpp
+[Password]
+Heslo
+[Create password]
+
+;file \protocols\Tox\src\tox_messages.cpp
+[Action]
+Akce
+[You cannot send when you are offline.]
+Nemůžete odesílat zprávy ve stavu offline.
+;file \protocols\Tox\src\tox_options.cpp
+[Tox profile]
+Tox profil
+[All files]
+Všechny soubory
+[Select Tox profile]
+Vyberte Tox profil
+[Save Tox profile]
+Uložit Tox profil
+[Add node]
+Přidat uzel
+[Change node]
+Změnit uzel
+[Enter IPv4]
+Zadejte IPv4
+[Error]
+Chyba
+[Enter port]
+Zadejte port
+[Enter public key]
+Zadejte veřejný klíč
+[Common nodes]
+Obecné uzly
+[User nodes]
+Uživatelské uzly
+[Are you sure?]
+Opravdu chcete pokračovat?
+[Node deleting]
+Mazání uzlu
+[Network]
+Sítě
+[Account]
+Účet
+[Nodes]
+Uzly
+;file \protocols\Tox\src\tox_profile.cpp
+[Unable to open Tox profile]
+Nelze otevřít profil Tox
+[Unable to read Tox profile]
+Nelze číst profil Tox
+[Unable to decrypt Tox profile]
+Nelze dešifrovat profil Tox
+[New password is empty]
+
+[New password is not equal to confirmation]
+
+[Old password is not valid]
+
+[Removing the password will lead to decryption of the profile.\r\nAre you sure to remove password?]
+
+;file \protocols\Tox\src\tox_proto.cpp
+[You cannot add yourself to your contact list]
+Nemůžete přidat sami sebe do vašeho seznamu kontaktů
+[Contact already in your contact list]
+Kontakt je již ve vašem seznamu
+[Unable to initialize Tox core]
+Nelze inicializovat jádro Tox
+;file \protocols\Tox\src\tox_search.cpp
+[Query]
+Dotaz
+;file \protocols\Tox\src\tox_utils.cpp
+[One of the arguments is missing]
+Chybí jeden z argumentů
+[Unable to allocate enough memory]
+Nelze alokovat dostatek paměti
+[Unable to bind to a port]
+Nelze nabindovat port
+[The proxy type is not valid]
+Typ proxy není platný
+[The proxy host is not valid]
+Hostitel proxy není platný
+[The proxy port is not valid]
+Port proxy není platný
+[The proxy address could not be resolved]
+Adresa proxy nemohla být získána
+[The profile is encrypted]
+Profil je zašifrovaný
+[The data format is not valid]
+Formát dat není platný
+[Unknown error]
+Neznámá chyba
+[The friend ID did not designate a valid friend]
+ID kontaktu nereprezentuje platný kontakt
+[This client is currently not connected to the friend]
+Tento klient aktuálně není připojen ke kontaktu
+[An allocation error occurred while increasing the send queue size]
+Nastal problém s alokací během zvyšování velikosti odesílací fronty
+[Message length exceeded TOX_MAX_MESSAGE_LENGTH]
+Délka zprávy překročila TOX_MAX_MESSAGE_LENGTH
+[Attempted to send a zero-length message]
+Pokus o odeslání prázdné zprávy

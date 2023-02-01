@@ -1,0 +1,45 @@
+﻿
+
+class CPerfLog
+{
+public:
+ CPerfLog();
+
+ void Startup();
+ void Shutdown();
+ void LogSamples();
+
+protected:
+ // those values have to be specified in 'preferences.ini' -> hardcode them
+ enum ELogMode {
+  None  = 0,
+  OneSample = 1,
+  AllSamples = 2
+ } m_eMode;
+ // those values have to be specified in 'preferences.ini' -> hardcode them
+ enum ELogFileFormat {
+  CSV   = 0,
+  MRTG  = 1
+ } m_eFileFormat;
+ unsigned long m_dwInterval;
+ bool m_bInitialized;
+ CString m_strFilePath;
+ CString m_strMRTGDataFilePath;
+ CString m_strMRTGOverheadFilePath;
+ unsigned long m_dwLastSampled;
+ uint64 m_nLastSessionSentBytes;
+ uint64 m_nLastSessionRecvBytes;
+ uint64 m_nLastDnOH;
+ uint64 m_nLastUpOH;
+
+ void WriteSamples(unsigned int nCurDn, unsigned int nCurUp, unsigned int nCurDnOH, unsigned int uCurUpOH);
+};
+
+extern CPerfLog thePerfLog;
+
+
+
+
+
+
+ 

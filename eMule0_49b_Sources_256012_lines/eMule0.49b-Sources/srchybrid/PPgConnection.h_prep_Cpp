@@ -1,0 +1,51 @@
+﻿
+
+class CPPgConnection :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgConnection)
+
+public:
+ CPPgConnection();
+ virtual ~CPPgConnection();
+
+// Dialog Data
+ enum { IDD = IDD_PPG_CONNECTION };
+
+ void Localize(void);
+ void LoadSettings(void);
+
+protected:
+ bool guardian;
+ CSliderCtrl m_ctlMaxDown;
+ CSliderCtrl m_ctlMaxUp;
+
+ void ShowLimitValues();
+ void SetRateSliderTicks(CSliderCtrl& rRate);
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnHScroll(unsigned int nSBCode, unsigned int nPos, CScrollBar* pScrollBar);
+         void OnSettingsChange()     { SetModified(); }
+         void OnEnChangeUDPDisable();
+         void OnLimiterChange();
+         void OnBnClickedWizard();
+         void OnBnClickedNetworkKademlia();
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         void OnBnClickedOpenports();
+         void OnStartPortTest();
+         void OnEnChangeTCP();
+         void OnEnChangeUDP();
+         void OnEnChangePorts(uint8 istcpport);
+};
+
+
+
+
+
+
+ 

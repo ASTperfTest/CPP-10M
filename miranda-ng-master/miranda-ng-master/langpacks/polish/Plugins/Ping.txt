@@ -1,0 +1,171 @@
+#muuid {760ea901-c0c2-446c-8029-94c3bc47c45e}
+;============================================================
+;  File: Ping.dll
+;  Plugin: Ping
+;  Version: 0.9.1.2
+;  Authors: Scott Ellis
+;============================================================
+[Ping labelled IP addresses or domain names.]
+Pinguje zaznaczone adresy IP lub nazwy domen.
+;file \plugins\Ping\res\ping.rc
+[Delay between pings (secs):]
+Opóźnienie pomiędzy pingami (s):
+[Timeout]
+Wyświetlaj
+[Ping timeout (secs):]
+Opóźnienie pingu (s):
+[Logging]
+Zapisywanie
+[Log to File]
+Zapisz do pliku
+[Log Filename:]
+Nazwa dziennika:
+[Network]
+Protokoły
+[Popups]
+Powiadomienia
+[Reply]
+Odpowiedź
+[Block Repetitions]
+Blokuj powtórzenia
+[View Log]
+Pokaż raport
+[Browse...]
+Przeglądaj...
+[Interface]
+Interfejs
+[Do not change icon when testing]
+Nie zmieniaj ikony podczas testu
+[Use Options -> Customize -> Fonts and colors to change text size and color.]
+Użyj Opcje -> Personalizacja -> Czcionki i kolory, by zmienić rozmiar oraz kolor tekstu.
+[Indent:]
+Wcięcie:
+[Row height:]
+Wysokość:
+[Repeats for success/failure:]
+Odpowiedzi na sukces/porażkę:
+[Attach to contact list]
+Załącz do listy kontaktów
+[Use CSV format]
+Użyj formatu CSV
+[Add]
+Dodaj
+[Remove]
+Usuń
+[Edit]
+Edytuj
+[Up]
+Do góry
+[Down]
+W dół
+[Edit Host]
+Edytuj Host
+[Contact]
+Kontakt
+[Address:]
+Adres:
+[Label:]
+Etykieta:
+[TCP Connect]
+Połączenie TCP
+[Port:]
+Port:
+[Protocols]
+Protokoły
+[Control Protocol:]
+Kontroluj protokół:
+[On success, if my status is:]
+W przypadku powodzenia, jeśli mój status to:
+[Set my status to:]
+Ustaw mój status na:
+[Execute the following command on double-click:]
+Wykonaj polecenie po podwójnym kliknięciu:
+[(Optional) Command Parameters:]
+(Opcjonalnie) Parametry komend:
+[Cancel]
+Anuluj
+[Menu]
+Menu
+[Graph]
+Wykres
+[Enable]
+Włącz
+[Disable all pings]
+Wyłącz wszystkie pingi
+[Enable all pings]
+Włącz wszystkie pingi
+[Options...]
+Opcje...
+[Hosts...]
+Hosty...
+;file \plugins\Ping\src\menu.cpp
+[Ping]
+Ping
+;file \plugins\Ping\src\options.cpp
+[<none>]
+<brak>
+[<all>]
+<wszystkie>
+[Text Files (*.txt)]
+Pliki tekstowe (*.txt)
+[All Files]
+Wszystkie pliki
+[Open log file]
+Otwórz plik raportu
+[Settings]
+Ustawienia
+[Hosts]
+Hosty
+;file \plugins\Ping\src\ping.cpp
+[Responding]
+Odpowiadaj
+[Not Responding]
+Nie odpowiadaj
+[Testing]
+Testowanie
+[Disabled]
+Wyłączone
+;file \plugins\Ping\src\pinggraph.cpp
+[Show grid lines]
+Pokaż linie siatki
+[Show stats]
+Pokaż statystyki
+[%d ms]
+%d ms
+[AVG %.1lf ms]
+AVG %.1lf ms
+[MAX %hd ms]
+MAX %hd ms
+[MIN %hd ms]
+MIN %hd ms
+[Ping Graph]
+Wykres pingu
+;file \plugins\Ping\src\pingthread.cpp
+[%s - setting status of protocol '%S' (%d)]
+%s - ustawianie statusu protokołu "%S" (%d)
+[Ping Reply]
+Odpowiedź Ping
+[%s - reply, %d]
+%s - odpowiedź, %d
+[Ping Timeout]
+Czas oczekiwania Ping
+[%s - timeout]
+%s - czas oczekiwania
+[Disable]
+Wyłącz
+[enabled]
+włączone
+[double clicked]
+dwuklik
+[Show/Hide &Ping Window]
+Pokaż/ukryj okno &Pingu
+[List]
+Lista
+;file \plugins\Ping\src\rawping.cpp
+[Host %s requests that you reduce the amount of traffic you are sending.]
+Host %s prosi o zredukowanie produkowanego przez ciebie ruchu.
+;file \plugins\Ping\src\utils.cpp
+[Unknown Address]
+Nieznany adres
+[Unknown]
+Nieznany

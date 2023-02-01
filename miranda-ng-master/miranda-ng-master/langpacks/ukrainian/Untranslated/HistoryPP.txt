@@ -1,0 +1,3 @@
+[SMTP Simple]
+[Unused]
+[Can not apply default toolbar configuration.]

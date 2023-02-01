@@ -1,0 +1,116 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizableDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("IrcNickListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("IrcChannelListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("IrcChannelTabCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("SplitterControl.h");}
+void INCLUDEREPLACE(){CX_INCL("ToolBarCtrlX.h");}
+
+class CIrcMain;
+class CSmileySelector;
+
+class CIrcWnd :        CResizableDialog
+{
+ //DECLARE_DYNAMIC(CIrcWnd)
+public:
+ CIrcWnd(CWnd* pParent = NULL);
+ virtual ~CIrcWnd();
+
+ enum { IDD = IDD_IRC };
+
+ void Localize();
+ bool GetLoggedIn();
+ void SetLoggedIn(bool bFlag);
+ void SetSendFileString(const CString& sInFile);
+ CString GetSendFileString();
+ bool IsConnected();
+ void UpdateFonts(CFont* pFont);
+ void ParseChangeMode(const CString& sChannel, const CString& sChanger, CString sCommands, const CString& sParams);
+ void AddStatus(CString sLine, bool bShowActivity = true, unsigned int uStatusCode = 0);
+ void AddStatusF(CString sReceived, ...);
+ void AddInfoMessage(Channel *pChannel, CString sLine);
+ void AddInfoMessage(const CString& sChannelName, CString sReceived, bool bShowChannel = false);
+ void AddInfoMessageF(const CString& sChannelName, CString sReceived, ...);
+ void AddMessage(const CString& sChannelName, CString sTargetname, CString sLine);
+ void AddMessageF(const CString& sChannelName, CString sTargetname, CString sLine, ...);
+ void AddColorLine(const CString& line, CHTRichEditCtrl& wnd, unsigned long crForeground = CLR_DEFAULT);
+ void SetConnectStatus(bool bConnected);
+ void NoticeMessage(const CString& sSource, const CString& sTarget, const CString& sMessage);
+ CString StripMessageOfFontCodes(CString sTemp);
+ CString StripMessageOfColorCodes(CString sTemp);
+ void SetTitle(const CString& sChannel, const CString& sTitle);
+ void SendString(const CString& sSend);
+ void EnableSmileys(bool bEnable)          {m_wndChanSel.EnableSmileys(bEnable);}
+         void OnBnClickedCloseChannel(int iItem = -1);
+
+ CEdit m_wndInput;
+ CIrcMain* m_pIrcMain;
+ CIrcChannelTabCtrl m_wndChanSel;
+ CIrcNickListCtrl m_wndNicks;
+ CIrcChannelListCtrl m_wndChanList;
+ CToolBarCtrlX m_wndFormat;
+
+protected:
+ friend class CIrcChannelTabCtrl;
+
+ CString m_sSendString;
+ bool m_bLoggedIn;
+ bool m_bConnected;
+ CSplitterControl m_wndSplitterHorz;
+ CSmileySelector *m_pwndSmileySel;
+
+ void OnChatTextChange();
+ void AutoComplete();
+ void DoResize(int iDelta);
+ void UpdateChannelChildWindowsSize();
+ void SetAllIcons();
+
+ virtual int  OnInitDialog();
+ virtual void OnSize(unsigned int iType, int iCx, int iCy);
+ virtual int OnCreate(LPCREATESTRUCT lpCreateStruct);
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnCommand(int *  wParam,long * lParam );
+ virtual int  PreTranslateMessage(MSG* pMsg);
+ virtual long *  DefWindowProc(unsigned int uMessage, int *  wParam, long * lParam);
+
+
+         void OnSysColorChange();
+         void OnBnClickedIrcConnect();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         void OnBnClickedIrcSend();
+         long *  OnCloseTab(int *  wParam, long * lParam);
+         long *  OnQueryTab(int *  wParam, long * lParam);
+         void OnBnClickedColour();
+         void OnBnClickedUnderline();
+         void OnBnClickedBold();
+         void OnBnClickedReset();
+         void OnBnClickedSmiley();
+         long OnSelEndOK(unsigned int lParam, long wParam);
+         long OnSelEndCancel(unsigned int lParam, long wParam);
+         void OnEnRequestResizeTitle(NMHDR *pNMHDR, long *  *pResult);
+         void*  OnCtlColor(CDC* pDC, CWnd* pWnd, unsigned int nCtlColor);
+};
+
+
+
+
+
+
+ 

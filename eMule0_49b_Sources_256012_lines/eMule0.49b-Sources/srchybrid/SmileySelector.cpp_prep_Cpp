@@ -1,0 +1,282 @@
+﻿
+//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("emule.h");}
+void INCLUDEREPLACE(){CX_INCL("SmileySelector.h");}
+void INCLUDEREPLACE(){CX_INCL("VisualStylesXP.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+  class SSmiley {
+ const char* pszResource;
+ const char* pszSmileys;
+} ;
+
+SSmiley g_aSmileys[] =
+{
+
+ { _T( "SMILEY_SMILE" ), _T(   ":- ) }"),
+ { _T( "SMILEY_HAPPY" ), _T(   ":- ) })"),
+ { _T( "SMILEY_LAUGH" ), _T(   ":-D" ) },
+ { _T( "SMILEY_WINK" ), _T(   ";- ) }"),
+ { _T( "SMILEY_TONGUE" ), _T(   ":-P" ) },
+ { _T( "SMILEY_INTEREST" ), _T(  "=- ) }"),
+ { _T( "SMILEY_SAD" ), _T(   ":-(") ) }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

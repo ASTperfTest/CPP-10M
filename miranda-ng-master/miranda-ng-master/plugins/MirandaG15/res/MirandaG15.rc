@@ -1,0 +1,305 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include <windows.h>
+#include "..\src\resource.h"
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BACK                BITMAP                  "back.bmp"
+IDB_CHAT                BITMAP                  "chat.bmp"
+IDB_CLIST               BITMAP                  "clist.bmp"
+IDB_DOWN                BITMAP                  "down.bmp"
+IDB_EDIT                BITMAP                  "edit.bmp"
+IDB_HISTORY             BITMAP                  "hist.bmp"
+IDB_MINUS               BITMAP                  "minus.bmp"
+IDB_OPEN                BITMAP                  "open.bmp"
+IDB_PLUS                BITMAP                  "plus.bmp"
+IDB_PREV                BITMAP                  "prev.bmp"
+IDB_REPLY               BITMAP                  "reply.bmp"
+IDB_SEND                BITMAP                  "send.bmp"
+IDB_UP                  BITMAP                  "up.bmp"
+IDB_NEXT                BITMAP                  "next.bmp"
+IDB_STATUS_OFFLINE      BITMAP                  "status/off.bmp"
+IDB_STATUS_ONLINE       BITMAP                  "status/on.bmp"
+IDB_STATUS_AWAY         BITMAP                  "status/away.bmp"
+IDB_STATUS_NA           BITMAP                  "status/na.bmp"
+IDB_STATUS_OCCUPIED     BITMAP                  "status/occ.bmp"
+IDB_STATUS_DND          BITMAP                  "status/dnd.bmp"
+IDB_STATUS_INVISIBLE    BITMAP                  "status/invis.bmp"
+IDB_STATUS_FFC          BITMAP                  "status/ffc.bmp"
+IDB_EVENT_INFO          BITMAP                  "events/info.bmp"
+IDB_EVENT_CON           BITMAP                  "events/conn.bmp"
+IDB_EVENT_USER          BITMAP                  "events/user.bmp"
+IDB_EVENT_MSG           BITMAP                  "events/msg.bmp"
+IDB_EVENT_INFO_LARGE    BITMAP                  "events/info_large.bmp"
+IDB_EVENT_CON_LARGE     BITMAP                  "events/conn_large.bmp"
+IDB_EVENT_USER_LARGE    BITMAP                  "events/user_large.bmp"
+IDB_EVENT_MSG_LARGE     BITMAP                  "events/msg_large.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_NOTICK              ICON                    "notick.ico"
+IDI_TICK                ICON                    "tick.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FONTS DIALOGEX 0, 0, 302, 244
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "General settings",IDC_STATIC11,0,0,300,111
+    CONTROL         "Show softkey labels",IDC_SHOW_LABELS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,22,289,13
+    GROUPBOX        "Fonts",IDC_STATIC12,0,112,300,85
+    LTEXT           "Event log:",IDC_STATIC13,10,121,72,9
+    CTEXT           "Sample",IDC_SAMPLE1,10,131,72,13,SS_CENTERIMAGE | WS_BORDER
+    PUSHBUTTON      "...",IDC_CHOOSEFONT1,88,131,18,13
+    LTEXT           "Message log:",IDC_STATIC15,10,147,72,9
+    CTEXT           "Sample",IDC_SAMPLE2,10,156,72,13,SS_CENTERIMAGE | WS_BORDER
+    PUSHBUTTON      "...",IDC_CHOOSEFONT2,88,156,18,13
+    LTEXT           "Contact list:",IDC_STATIC17,10,171,72,9
+    CTEXT           "Sample",IDC_SAMPLE3,10,180,72,13,SS_CENTERIMAGE | WS_BORDER
+    PUSHBUTTON      "...",IDC_CHOOSEFONT3,88,180,18,13
+    LTEXT           "Titles:",IDC_STATIC14,130,121,72,9
+    CTEXT           "Sample",IDC_SAMPLE4,130,131,72,13,SS_CENTERIMAGE | WS_BORDER
+    PUSHBUTTON      "...",IDC_CHOOSEFONT4,208,131,18,13
+    LTEXT           "Notifications:",IDC_STATIC16,130,147,72,9
+    CTEXT           "Sample",IDC_SAMPLE5,130,156,72,13,SS_CENTERIMAGE | WS_BORDER
+    PUSHBUTTON      "...",IDC_CHOOSEFONT5,208,156,18,13
+    CONTROL         "Turn off backlights",IDC_CONTROL_BACKLIGHTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,60,281,9
+    LTEXT           "If the applet is active:",IDC_STC2,6,79,289,9,NOT WS_GROUP
+    CONTROL         "Use the VolumeWheel to scroll up and down (might affect system performance)",IDC_HOOK_VOLUMEWHEEL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,88,281,9
+    CONTROL         "Show seconds in timestamps",IDC_TIMESTAMP_SECONDS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,33,289,9
+    CONTROL         "Use transition effects when changing screens",IDC_TRANSITIONS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,97,281,9
+    PUSHBUTTON      "Credits",IDC_CREDITS,110,230,90,11
+    GROUPBOX        "About",IDC_GRP3,0,199,300,44
+    COMBOBOX        IDC_DEVICE,80,9,128,11,CBS_DROPDOWNLIST | WS_TABSTOP
+    RTEXT           "Device:",IDC_DEVICE_STATIC,8,11,63,9,NOT WS_GROUP
+    LTEXT           "If the screensaver is active:",IDC_STC14,6,51,289,9,NOT WS_GROUP
+    CONTROL         "Lock the screen",IDC_SCREENSAVER_LOCK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,70,281,9
+    CONTROL         "Skip driver missing notification",IDC_SKIP_DRIVER_ERROR,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,42,289,9
+END
+
+IDD_NOTIFICATIONS DIALOGEX 0, 0, 304, 240
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "General settings",IDC_STATIC18,0,0,160,80
+    GROUPBOX        "Notification screen title",IDC_STATIC19,0,81,160,43
+    CONTROL         "Hide it",IDC_NOTIFY_TITLEHIDE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,88,114,13
+    CONTROL         "Show the plugin name",IDC_NOTIFY_TITLENAME,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,99,114,11
+    CONTROL         "Show a short event summary",IDC_NOTIFY_TITLEINFO,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,110,114,11
+    LTEXT           "Size of the log",IDC_STATIC20,6,22,84,9
+    LTEXT           "Notification duration",IDC_STATIC22,6,33,86,11
+    EDITTEXT        IDC_NOTIFY_LOGSIZE,102,20,22,11,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_NOTIFY_DURATION,102,33,22,11,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "events",IDC_STATIC21,126,22,24,13
+    LTEXT           "seconds",IDC_STATIC23,126,35,30,11
+    GROUPBOX        "Notification types",IDC_STATIC24,0,125,300,113
+    CONTROL         "Incoming messages",IDC_NOTIFY_MESSAGES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,94,138,94,13
+    CONTROL         "Contact signs off",IDC_NOTIFY_SIGNOFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,166,100,13
+    CONTROL         "Contact changes status",IDC_NOTIFY_STATUS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,177,100,13
+    CONTROL         "Contact list events",IDC_NOTIFY_CONTACTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,188,100,13
+    CONTROL         "Incoming file transfers",IDC_NOTIFY_FILE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,144,100,13
+    CONTROL         "Protocol disconnected",IDC_NOTIFY_PROTO_SIGNOFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,199,102,13
+    CONTROL         "Protocol connected",IDC_NOTIFY_PROTO_SIGNON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,210,102,13
+    CONTROL         "Protocol status changes",IDC_NOTIFY_PROTO_STATUS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,221,102,11
+    LTEXT           "Show only events from the following protocols:",IDC_STATIC25,6,134,86,28
+    CONTROL         "Contact signs on",IDC_NOTIFY_SIGNON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,194,155,98,13
+    CONTROL         "",IDC_PROTOCOLS,"SysTreeView32",TVS_HASBUTTONS | WS_BORDER | WS_TABSTOP,6,162,84,70
+    CONTROL         "Incoming messages",IDC_NOTIFY_SKIP_MESSAGES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,174,38,122,9
+    LTEXT           "When a chat session is active, skip the following notifications for that contact:",IDC_STC3,168,9,128,28,NOT WS_GROUP
+    CONTROL         "Contact changes status",IDC_NOTIFY_SKIP_STATUS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,174,48,122,9
+    GROUPBOX        "Chat session specific",IDC_GRP1,164,0,136,124
+    CONTROL         "Contact signs on",IDC_NOTIFY_SKIP_SIGNON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,174,59,102,9
+    CONTROL         "Contact signs off",IDC_NOTIFY_SKIP_SIGNOFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,174,70,102,9
+    CONTROL         "Show timestamps",IDC_NOTIFY_TIMESTAMPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,9,102,9
+    CONTROL         "Messages",IDC_NOTIFY_IRC_MESSAGES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,162,74,9
+    CONTROL         "User events",IDC_NOTIFY_IRC_USERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,184,76,9
+    CONTROL         "Emotes",IDC_NOTIFY_IRC_EMOTES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,195,76,9
+    CONTROL         "Status changes",IDC_NOTIFY_IRC_STATUS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,206,76,9
+    LTEXT           "Group chat events:",IDC_STC4,110,151,64,9,NOT WS_GROUP
+    CONTROL         "Notices",IDC_NOTIFY_IRC_NOTICES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,173,74,9
+    CONTROL         "Channel events",IDC_NOTIFY_IRC_CHANNEL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,217,76,9
+    CONTROL         "Cut off nicknames after",IDC_NOTIFY_NICKCUTOFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,46,90,9
+    EDITTEXT        IDC_NOTIFY_NICKCUTOFF_OFFSET,102,46,22,11,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "chars",IDC_STC11,126,48,30,9
+    CONTROL         "Show protocol labels",IDC_NOTIFY_SHOWPROTO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,68,92,9
+    CONTROL         "Don't skip when replying",IDC_NOTIFY_NO_SKIP_REPLY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,174,99,122,11
+    LTEXT           "Exceptions:",IDC_STC12,170,88,88,9,NOT WS_GROUP
+    LTEXT           "chars",IDC_STC13,126,59,30,9
+    CONTROL         "Cut off channel names after",IDC_NOTIFY_CHANNELCUTOFF,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,57,90,9
+    EDITTEXT        IDC_NOTIFY_CHANNELCUTOFF_OFFSET,102,57,22,11,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_BORDER,WS_EX_CLIENTEDGE
+END
+
+IDD_CLIST DIALOGEX 0, 0, 304, 179
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "General settings",IDC_STATIC9,0,0,174,135
+    CONTROL         "Show the contacts protocols",IDC_CLIST_SHOWPROTO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,11,160,13
+    CONTROL         "Hide offline users",IDC_CLIST_HIDEOFFLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,22,160,13
+    CONTROL         "Use ignore settings",IDC_CLIST_USEIGNORE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,33,160,13
+    CONTROL         "Use groups/subgroups",IDC_CLIST_USEGROUPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,44,160,13
+    GROUPBOX        "Grouped mode",IDC_STATIC10,0,136,300,39
+    CONTROL         "Draw tree lines",IDC_CLIST_DRAWLINES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,145,286,13
+    CONTROL         "Show counters behind group names",IDC_CLIST_COUNTERS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,158,286,13
+    CONTROL         "Reset selection",IDC_CLIST_POSITION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,90,152,11
+    LTEXT           "When opening the contact list screen:",IDC_STC1,6,81,160,9,NOT WS_GROUP
+    CONTROL         "Don't change group states",IDC_CLIST_GA_NONE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,14,101,152,9
+    CONTROL         "Collapse all groups",IDC_CLIST_GA_COLLAPSE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,14,112,152,9
+    LTEXT           "Show only contacts from the following protocols:",IDC_STC5,192,9,94,24
+    CONTROL         "",IDC_CLIST_PROTOFILTER,"SysTreeView32",TVS_HASBUTTONS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,192,35,94,91
+    GROUPBOX        "Protocol filter",IDC_GRP2,176,0,122,135
+    CONTROL         "Expand all groups",IDC_CLIST_GA_EXPAND,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,14,123,152,9
+    CONTROL         "Use two columns",IDC_CLIST_COLUMNS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,55,160,13
+    CONTROL         "Fade out selection rectangle",IDC_CLIST_SELECTION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,66,160,13
+END
+
+IDD_CHAT DIALOGEX 0, 0, 302, 193
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Typing notifications",IDC_STATIC1,160,105,140,33
+    CONTROL         "Show typing notifications",IDC_SESSION_SHOWTYPING,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,114,126,11
+    CONTROL         "Send typing notifications",IDC_SESSION_SENDTYPING,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,125,126,11
+    GROUPBOX        "Maximizing",IDC_STATIC2,0,105,156,33
+    LTEXT           "When maximized:",IDC_STATIC3,4,116,66,9
+    CONTROL         "Hide title",IDC_MAXIMIZED_TITLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,62,114,70,13
+    CONTROL         "Hide labels",IDC_MAXIMIZED_LABELS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,62,125,68,11
+    GROUPBOX        "General settings",IDC_STATIC4,0,1,300,67
+    CONTROL         "Show only new messages",IDC_SESSION_LOADDB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,9,144,13
+    CONTROL         "Mark incoming messages as read",IDC_SESSION_MARKREAD,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,20,148,13
+    CONTROL         "Maximized scrolling",IDC_SESSION_SCROLL_MAXIMIZED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,42,148,11
+    RTEXT           "Size of the log:",IDC_STATIC6,6,55,84,9
+    EDITTEXT        IDC_SESSION_LOGSIZE,96,53,30,12,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "events",IDC_STATIC5,132,55,24,9
+    LTEXT           "On incoming messages:",IDC_STATIC8,156,11,132,11
+    CONTROL         "Do nothing",IDC_SESSION_SCROLLNONE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,168,20,126,13
+    CONTROL         "Scroll to the first line",IDC_SESSION_SCROLLFIRST,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,168,31,126,13
+    CONTROL         "Scroll to the last line",IDC_SESSION_SCROLLLAST,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,168,42,126,13
+    GROUPBOX        "Replying",IDC_STATIC7,0,142,300,48
+    CONTROL         "Show line break indicators",IDC_SESSION_SYMBOLS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,151,288,13
+    CONTROL         "Send messages with Enter, insert line breaks with Ctrl+Enter",IDC_SESSION_SENDRETURN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,162,288,13
+    CONTROL         "Maximized replying",IDC_SESSION_REPLY_MAXIMIZED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,173,288,13
+    CONTROL         "Show timestamps",IDC_SESSION_TIMESTAMPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,31,148,11
+    CONTROL         "Close chat after",IDC_SESSION_CLOSE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,84,98,8
+    EDITTEXT        IDC_SESSION_CLOSETIMER,112,83,30,12,NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "seconds",IDC_STC16,146,84,30,8,NOT WS_GROUP
+    GROUPBOX        "When in background",IDC_GRP4,0,72,300,30
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_FONTS, DIALOG
+    BEGIN
+        VERTGUIDE, 6
+        VERTGUIDE, 14
+        VERTGUIDE, 80
+        VERTGUIDE, 88
+        VERTGUIDE, 106
+        VERTGUIDE, 130
+        VERTGUIDE, 202
+        VERTGUIDE, 208
+        VERTGUIDE, 226
+        VERTGUIDE, 295
+    END
+
+    IDD_CLIST, DIALOG
+    BEGIN
+        VERTGUIDE, 6
+        VERTGUIDE, 14
+        VERTGUIDE, 166
+        VERTGUIDE, 292
+    END
+
+    IDD_CHAT, DIALOG
+    BEGIN
+        VERTGUIDE, 6
+        VERTGUIDE, 168
+        VERTGUIDE, 294
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

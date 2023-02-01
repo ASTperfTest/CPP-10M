@@ -1,0 +1,18 @@
+#muuid {da223468-5f8e-4513-88b0-e52ce8a8b33b}
+;============================================================
+;  File: Dbx_sqlite.dll
+;  Plugin: Miranda NG SQLite database driver
+;  Version: 0.96.2.2
+;  Authors: Miranda-NG project
+;============================================================
+[Provides Miranda database support: global settings, contacts, history, settings per contact.]
+Unterstützung für Miranda-Datenbank: Globale Einstellungen, Kontakte, Verlauf, Einstellungen pro Kontakt
+;file \plugins\Dbx_sqlite\src\dbcheck.cpp
+[Orphaned event with wrong contact ID %d, deleting]
+Verwaistes Ereignis mit falscher Kontakt-ID %d, löschen
+[Orphaned sorting event with wrong event ID %d:%08X, deleting]
+Verwaistes Sortierungsereignis mit falscher Ereignis-ID %d:%08X, löschen
+[Orphaned event with wrong event ID %d:%08X, deleting]
+Verwaistes Ereignis mit falscher Ereignis-ID %d:%08X, löschen
+[Orphaned setting [%S:%S] with wrong contact ID %d, deleting]
+Verwaiste Einstellung [%S:%S] mit falscher Kontakt-ID %d, löschen

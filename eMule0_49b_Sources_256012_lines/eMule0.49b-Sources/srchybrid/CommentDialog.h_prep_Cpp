@@ -1,0 +1,58 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizablePage.h");}
+void INCLUDEREPLACE(){CX_INCL("ComboBoxEx2.h");}
+void INCLUDEREPLACE(){CX_INCL("CommentListCtrl.h");}
+
+class CKnownFile;
+namespace Kademlia {
+ class CEntry;
+};
+
+class CCommentDialog :        CResizablePage
+{
+ //DECLARE_DYNAMIC(CCommentDialog)
+
+public:
+ CCommentDialog(); // standard constructor
+ virtual ~CCommentDialog();
+
+ void SetFiles(const CSimpleArray          * paFiles) { m_paFiles = paFiles; m_bDataChanged = true; }
+
+ // Dialog Data
+ enum { IDD = IDD_COMMENT };
+
+ void Localize();
+
+protected:
+ const CSimpleArray          * m_paFiles;
+ bool m_bDataChanged;
+ CComboBoxEx2 m_ratebox;
+ CImageList m_imlRating;
+ CCommentListCtrl m_lstComments;
+ bool m_bMergedComment;
+ bool m_bSelf;
+ uint32 m_timer;
+
+ virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnSetActive();
+ virtual int  OnApply();
+ void RefreshData(bool deleteOld = true);
+
+
+         void OnBnClickedSearchKad();
+         void OnBnClickedReset();
+         long *  OnDataChanged(int * , long *);
+         void OnEnChangeCmtText();
+         void OnCbnSelendokRatelist();
+         void OnCbnSelchangeRatelist();
+         void OnDestroy();
+         void OnTimer(unsigned int nIDEvent);
+};
+
+
+
+
+
+
+ 

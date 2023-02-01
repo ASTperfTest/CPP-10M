@@ -1,0 +1,415 @@
+#muuid {3750a5a3-bf0d-490e-b65d-41ac4d29aeb3}
+;============================================================
+;  File: AIM.dll
+;  Plugin: AIM protocol
+;  Version: 0.11.0.1
+;  Authors: Boris Krasnovskiy, Aaron Myles Landwehr
+;============================================================
+[AOL Instant Messenger (AIM) protocol support for Miranda NG.]
+Плагін пратаколу AOL Instant Messenger (AIM).
+[AIM user details]
+Пра кантакт AIM
+[Screen name:]
+Імя AIM:
+[Display name:]
+Паказваць:
+[Password:]
+Пароль:
+[AIM options]
+Налады AIM
+[Message delivery confirmation]
+Пацверджанне прыёму
+[Do not autoreply when away]
+Выключыць аўтаадказ калі Адсутнічаю
+[Convert incoming messages to BBCode]
+Перакладаць ув. паведамлення ў BBCode
+[Convert outgoing messages to HTML]
+Перакладаць вын. паведамлення ў HTML
+[Disable avatars]
+Адключыць аватары
+[Disable account type icons]
+Адкл. абразкі тыпаў контаў
+[Disable extended status icons]
+Адкл. пашыраныя абразкі статусу
+[Notify about new mail]
+Абвяшчаць пра новую пошту
+[Manage server groups]
+Кіраваць гуртамі на серверы
+[Advanced options]
+Дадаткова
+[Instant idle on login]
+Рэжым чакання пры ўваходзе
+[Force proxy file transfers]
+Перадачы файлаў праз проксі
+[Masquerade as a Sidekick/Hiptop user]
+Уяўляцца як Sidekick/Hiptop
+[Connection]
+Далучэнне
+[Login server:]
+Сервер:
+[Port:]
+Порт:
+[Reset]
+Скід
+[Disable SSL]
+Выкл. SSL
+[Force single client]
+Толькі адна сесія
+[Use "clientlogin" (recommended)]
+
+[* Some changes will take effect the next time you connect to the AIM network]
+* Некаторыя змены будуць ужытыя пры наступным уваходзе ў AIM
+[Save profile]
+Захаваць профіль
+[Create a new AIM account]
+Стварыць новы конт AIM
+[AIM instant idler]
+AIM Усталяваць Instant Idle
+[Number of hours:]
+Лік гадзін:
+[Number of minutes:]
+Лік хвілін:
+[Set idle]
+Усталяваць
+[Unset idle]
+Зняць
+[Users who can contact me:]
+Тыя хто можа звязацца са мной:
+[Allow all users]
+Усе кантакты
+[Allow only users on contact list]
+Усё з майго спісу кантактаў
+[Allow only users below]
+Толькі са спісу ніжэй
+[Block all users]
+Заблакаваць усіх
+[Block only users below]
+Заблок. усіх са спісу ніжэй
+[Add]
+Дадаць
+[Remove]
+Выдаліць
+[Idle]
+Чаканне
+[Allow contacts to be notified of:]
+Абвясціць кантакты пра:
+[Join chat room]
+Зайсці ў чат
+[Chat room]
+Чат
+[&Join]
+Зайсці
+[&Cancel]
+С&касаваць
+[This allows access to user defined chat rooms. To access predefined chat rooms use web links]
+Гэта дазваляе атрымаць доступ да чатаў. Каб атрымаць доступ, выкарыстоўвайце спасылкі
+[Change password]
+Змяніць пароль
+[Original]
+Стары
+[New]
+Стварыць
+[Repeat]
+Паўтарыць
+[*Passwords don't match.]
+* Паролі не супадаюць.
+[Screen name]
+Мянушка
+[E-mail]
+Пошта
+[Confirm account]
+Пацвердзіць
+[*Applied upon reconnect]
+*Патрабуецца перазапуск
+[Save changes]
+Захаваць змены
+[Invite buddy to chat room]
+Запрашэнне ў чат
+[&Invite]
+Запрасіць
+[Invitation reason]
+Мэта запрашэння
+[Chat room invitation request]
+Запрашэнне ў чат
+[&Deny]
+&Забараніць
+[Message]
+Паведамленне
+[Room]
+Чат
+[Me]
+Я
+[Others]
+Іншае
+[&Invite user...]
+&Запрасіць кантакт...
+[&Leave chat session]
+&Пакінуць сеанс
+[User &details]
+&Дадзеныя кантакту
+[User &history]
+&Гісторыя кантакта
+[Invalid screen name or password.]
+Няслушнае імя ці пароль
+[Mismatched screen name or password.]
+Няслушнае імя AIM ці пароль.
+[You are connecting too frequently. Try waiting 10 minutes to reconnect.]
+Вы далучаецеся занадта часта. Паспрабуйце паўтарыць праз 10 хвілін.
+[Unknown error occurred when attempting to connect.]
+Пры спробе падлучэння адбылася невядомая памылка.
+[Invalid SNAC header.]
+Няслушны SNAC загаловак.
+[Server rate limit exceeded.]
+Перавышана абмежаванне хуткасці.
+[Client rate limit exceeded]
+Кліент перасягнуў паказьнік мяжы
+[Recipient is not logged in.]
+Атрымальнік не мінуў ідэнтыфікацыю
+[Requested service is unavailable.]
+Няслушны SNAC загаловак.
+[Requested service is not defined.]
+Запыт на паслугу не вызначаны.
+[You sent obsolete SNAC.]
+Ты паслаў састарэлых SNAC.
+[Not supported by server.]
+Не падтрымліваецца серверам.
+[Not supported by the client.]
+Не падтрымліваецца кліентам.
+[Refused by client.]
+Адмовіўся ад кліента.
+[Reply too big.]
+Адказ занадта вялікі.
+[Response lost.]
+Адказ страчаны.
+[Request denied.]
+Адмовіўся ад кліента.
+[Incorrect SNAC format.]
+Няслушны фармат SNAC.
+[Insufficient rights.]
+Недастаткова правоў.
+[Recipient blocked.]
+Атрымальнік блакаваны.
+[Sender too evil.]
+Кепскі адпраўшчык.
+[Receiver too evil.]
+Кепскі атрымальнік.
+[User temporarily unavailable.]
+Адмовіўся ад кліента.
+[No match.]
+Не знойдзена.
+[List overflow.]
+Спіс перапоўнены.
+[Request ambiguous.]
+Запыт неадназначны.
+[Server queue full.]
+Чарга сервера запоўнена.
+[Not while on AOL.]
+Не ў той час як на AOL.
+[Check your screen name.]
+Праверце ваш ідэнтыфікатар.
+[Check your password.]
+Праверце пароль.
+[Check your email address.]
+Праверце ​​адрас электроннай пошты.
+[Service temporarily unavailable.]
+Сэрвіс тэтмінова недасяжны
+[Field change temporarily unavailable.]
+Змена палёў часова недасяжна.
+[Invalid screen name.]
+Няслушнае імя.
+[Invalid password.]
+Няслушны пароль.
+[Invalid email.]
+Няслушная скрыня.
+[Invalid registration preference.]
+Няслушны прыярытэт рэгістрацыі
+[Invalid old password.]
+Няслушны стары пароль.
+[Invalid screen name Length.]
+Наслушная даўжыня ідэнтыфікатара
+[Invalid password length.]
+Наслушная даўжыня паролю.
+[Invalid email length.]
+Няслушная даўжыня Email.
+[Invalid old password length.]
+Няслушны стары пароль.
+[Need old password.]
+Патрэбны стары пароль.
+[Read only field.]
+Поле толькі для чытання.
+[Write only field.]
+Поле толькі для запісу.
+[Unsupported type.]
+Непадтрымваемы тып.
+[An error has occurred.]
+Адбылася памылка.
+[Invalid account.]
+Няслушны конт.
+[Deleted account.]
+Выдалены конт.
+[Expired account.]
+Мінулы конт.
+[No database access.]
+Няма доступу да БД.
+[Invalid database fields.]
+Няслушны файл ДБ.
+[Bad database status.]
+Дрэнны статус БД.
+[Migration cancel.]
+Адмяніць міграцыю.
+[Internal error.]
+Унутраная памылка.
+[There is already a pending request for this screen name.]
+Ужо існуе запыт на гэты ідэнтыфікатар.
+[Not DT status.]
+Гэта не статус DT.
+[Outstanding confirmation.]
+У чаканні падцвярджэння.
+[No email address.]
+Няма E-mail адраса.
+[Over limit.]
+Дасягнуты парог.
+[Email host fail.]
+Памылка Email.
+[DNS fail.]
+Памылка DNS.
+[Failed to open file: %s : %s]
+Не атрымалася адкрыць файл: %s : %s
+[AIM link protocol]
+Пратакол AIM
+[%s protocol]
+%s Пратакол
+[Open mail account?]
+Адчыніць скрыню конта?
+[%s server connection]
+Далучэнне да сервера %s
+[%s client-to-client connections]
+Злучэнні паміж кліентамі %s
+[[Auto-response]:]
+(Аўтаадказ):
+[Contact tried to open an audio/video conference (not currently supported)]
+Кантакт спрабаваў адкрыць аўдыё / відэа канферэнцыі (зараз не падтрымліваецца)
+[No information has been provided by the server.]
+Сервер не падаў ніякай інфармацыі.
+[Item you want to delete not found in list.]
+Запіс, які вы хочаце выдаліць не знойдзены ў спісе.
+[Failed to add buddy to list: Item already exist.]
+Не атрымалася дадаць кантакт ў спіс: Ужо існуе.
+[Error adding buddy (invalid ID or already in list?)]
+Памылка дадання (несапраўдны ID ці ўжо ў спісе?)
+[Cannot add buddy. Limit for this type of item exceeded.]
+Немагчыма дадаць кантакт. У вас ужо максімальна магчымая колькасць.
+[Error? Attempting to add ICQ contact to an AIM list.]
+Памылка? Спроба дадаць кантакт ICQ у AIM.
+[Cannot add this buddy because it requires authorization.]
+Немагчыма дадаць гэтага суразмоўцу, ён патрабуе аўтарызацыі.
+[Unknown error when adding buddy to list. Error code %#x]
+Невядомая памылка пры даданні ў спіс сяброў. Код памылкі %#x
+[Item you want to modify not found in list.]
+Элемент, які неабходна змяніць не знойдзены ў спісе.
+[Unknown error when attempting to modify a group. Error code %#x]
+Невядомая памылка пры спробе змены гурта. Код памылкі %#x
+[You've got mail! Checked at]
+Вам ліст! праверана на
+[Error uploading avatar. (Too small)]
+Памылка загрузкі аватара. (Занадта маленькі)
+[Error uploading avatar. (Too big)]
+Памылка загрузкі аватара. (Занадта вялікі)
+[Error uploading avatar. (Wrong type)]
+Памылка загрузкі аватара. (Няслушны тып)
+[Error uploading avatar. (Is banned)]
+Памылка загрузкі аватара. (Заблакаваны)
+[Error uploading avatar. (Unknown error)]
+Памылка загрузкі аватара. (Невядомая памылка)
+[A confirmation message has been sent to the new email address. Please follow its instructions.]
+На новы адрас электроннай пошты было адпраўлена паведамленне. Калі ласка, прытрымлівайцеся яго ўказанням.
+[A confirmation message has been sent to your email address. Please follow its instructions.]
+Паведамленне было адпраўлена на ваш электронны адрас. Калі ласка, прытрымлівайцеся яго ўказанням.
+[Unable to confirm at this time. Please try again later.]
+Праверка недасяжна зараз. Калі ласка, паўтарыце спробу пазней.
+[Your account has already been confirmed.]
+Ваш конт ужо пацверджаны.
+[Can't start the confirmation procedure.]
+Не ўдаецца запусціць працэдуру пацвярджэння.
+[Block]
+Заблакаваць
+[Profile]
+Профіль
+[AOL mail]
+Пошта AOL
+[AIM icon]
+Абразок AIM
+[Hiptop]
+
+[AOL bot]
+Бот AOL
+[Admin]
+Адмін
+[Confirmed]
+Правераны
+[Not confirmed]
+Неправераны
+[Blocked list]
+Спіс заблакаваных
+[Foreground color]
+Колер пярэдняга плану
+[Background color]
+Колер фону
+[Bold]
+Тоўсты
+[Not bold]
+Не тоўсты
+[Italic]
+Курсіў
+[Not italic]
+Не курсіў
+[Underline]
+Падкрэсленне
+[Not underline]
+Не падкрэслены
+[Subscript]
+Субскрыпт
+[Not subscript]
+Не субскрыпт
+[Superscript]
+Суперскрыпт
+[Not superscript]
+Не супер скрыпт
+[Normal script]
+Стандартны скрыпт
+[Not normal script]
+Не стандартны скрыпт
+[Profile editor]
+Рэдактар профіля
+[AIM account type]
+Тып конта AIM
+[AIM extended status]
+Пашыраны статус AIM
+[&Block]
+Блакаваць
+[&Unblock]
+Разблакаваць
+[Manage account]
+Кіраванне контамі
+[Instant idle]
+Усталяваць Instant Idle
+[Read &HTML away message]
+Чытаць HTML статуснае паведамленне
+[Read profile]
+Прагледзець профіль
+[Add to server list]
+Дадаць у спіс на серверы
+[Network]
+Сеціва
+[Basic]
+Галоўнае
+[Privacy]
+Прыватнасць
+[Join me in this buddy chat!]
+Далучайцеся да мяне ў гэтым чаце!
+[Please, enter a user name in the options dialog.]
+Калі ласка, увядзіце імя ў наладах.
+[Please, enter a password in the options dialog.]
+Калі ласка, увядзіце пароль у наладах.
+[Failed to open file: %s %s]
+Памылка адкрыцця файла: %s %s

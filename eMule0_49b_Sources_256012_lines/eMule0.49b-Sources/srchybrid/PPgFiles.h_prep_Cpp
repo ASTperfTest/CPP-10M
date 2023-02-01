@@ -1,0 +1,42 @@
+﻿
+
+class CPPgFiles :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgFiles)
+
+public:
+ CPPgFiles();
+ virtual ~CPPgFiles();
+
+// Dialog Data
+ enum { IDD = IDD_PPG_FILES };
+
+ void Localize(void);
+
+protected:
+ CListBox m_uncfolders;
+
+ void LoadSettings(void);
+ void OnSettingsChangeCat(uint8 index);
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnSetCleanupFilter();
+         void BrowseVideoplayer();
+         void OnSettingsChange();
+         void OnSettingsChangeCat1() {OnSettingsChangeCat(1);}
+         void OnSettingsChangeCat2() {OnSettingsChangeCat(2);}
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

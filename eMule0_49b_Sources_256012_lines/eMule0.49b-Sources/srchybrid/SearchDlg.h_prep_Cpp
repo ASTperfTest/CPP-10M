@@ -1,0 +1,88 @@
+﻿
+
+       SSearchParams;
+class CSearchResultsWnd;
+class CSearchParamsWnd;
+class CSearchFile;
+class CClosableTabCtrl;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CSearchDlg frame
+
+class CSearchDlg :        CFrameWnd
+{
+ //DECLARE_DYNCREATE(CSearchDlg)
+
+public:
+ CSearchDlg();           //           constructor used by dynamic creation
+ virtual ~CSearchDlg();
+ CSearchResultsWnd* m_pwndResults;
+
+ int  Create(CWnd* pParent);
+
+ void Localize();
+ void CreateMenus();
+
+ void RemoveResult(const CSearchFile* toremove);
+
+ bool DoNewEd2kSearch(SSearchParams* pParams);
+ bool DoNewKadSearch(SSearchParams* pParams);
+ void CancelEd2kSearch();
+ void CancelKadSearch(unsigned int uSearchID);
+ void SetNextSearchID(uint32 uNextID);
+
+ bool CanSearchRelatedFiles() const;
+ void SearchRelatedFiles(CPtrList& listFiles);
+
+ void DownloadSelected();
+ void DownloadSelected(bool paused);
+
+ bool CanDeleteSearch(uint32 nSearchID) const;
+ bool CanDeleteAllSearches() const;
+ void DeleteSearch(uint32 nSearchID);
+ void DeleteAllSearches();
+
+ void LocalEd2kSearchEnd(unsigned int count, bool bMoreResultsAvailable);
+ void AddGlobalEd2kSearchResults(unsigned int count);
+
+ bool CreateNewTab(SSearchParams* pParams, bool bActiveIcon = true);
+ SSearchParams* GetSearchParamsBySearchID(uint32 nSearchID);
+ void ShowSearchSelector(bool visible);
+ CClosableTabCtrl& GetSearchSelector();
+
+ int GetSelectedCat();
+ void UpdateCatTabs();
+ void SaveAllSettings();
+ int  SaveSearchStrings();
+ void ResetHistory();
+
+ void SetToolTipsDelay(unsigned int uDelay);
+ void DeleteAllSearchListCtrlItems();
+
+ int  IsSearchParamsWndVisible() const;
+ void OpenParametersWnd();
+ void DockParametersWnd();
+
+ void UpdateSearch(CSearchFile* pSearchFile);
+
+protected:
+ CSearchParamsWnd* m_pwndParams;
+
+ virtual int  PreTranslateMessage(MSG* pMsg);
+
+
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnShowWindow(int  bShow, unsigned int nStatus);
+         void OnSetFocus(CWnd* pOldWnd);
+         void OnClose();
+         void OnSysCommand(unsigned int nID, long * lParam);
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,465 @@
+﻿/////////////////////////////////////////////////////////////////////////////
+// Copyright (C) 2001-2002 by David Yuheng Zhao
+//
+// Distribute and change freely, except: don't remove my name from the source
+//
+// No warrantee of any kind, express or implied, is included with this
+// software; use at your own risk, responsibility for to
+// anyone resulting from the use of this software rests entirely with the
+// user.
+//
+// Partly based on the _ThemeHelper        in MFC7.0 source code (winctrl3.cpp),
+// and the difference is that this implementation wraps the full set of
+// visual style APIs from the platform     August 2001
+//
+// If you have any questions, I can be reached as follows:
+// yuheng_zhao@yahoo.com
+//
+//
+// How to use:
+// Instead of calling the     directly,
+//    OpenThemeData(...);
+// use the global variable
+//    g_xpStyle.OpenThemeData(...);
+//
+/////////////////////////////////////////////////////////////////////////////
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("VisualStylesXP.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+CVisualStylesXP g_xpStyle;
+
+void *  CVisualStylesXP::m_hThemeDll = NULL;
+
+CVisualStylesXP::CVisualStylesXP(void)
+{
+ m_hThemeDll = LoadLibrary(_T("UxTheme.dll"));
+}
+
+CVisualStylesXP::~CVisualStylesXP(void)
+{
+ if (m_hThemeDll != NULL)
+  VERIFY( FreeLibrary(m_hThemeDll) );
+ m_hThemeDll = NULL;
+}
+
+void* CVisualStylesXP::GetProc(const char* szProc, void* pfnFail)
+{
+ void* pRes = pfnFail;
+ if (m_hThemeDll != NULL){
+  void* pRet = GetProcAddress(m_hThemeDll, szProc);
+  if (pRet != NULL)
+   pRes = pRet;
+ }
+ return pRes;
+}
+
+HTHEME CVisualStylesXP::OpenThemeData(void* hwnd, const long* pszClassList)
+{
+ static PFNOPENTHEMEDATA pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNOPENTHEMEDATA)GetProc("OpenThemeData", (void*)OpenThemeDataFail);
+ return (*pfn)(hwnd, pszClassList);
+}
+
+unsigned long CVisualStylesXP::CloseThemeData(HTHEME hTheme)
+{
+ static PFNCLOSETHEMEDATA pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNCLOSETHEMEDATA)GetProc("CloseThemeData", (void*)CloseThemeDataFail);
+ return (*pfn)(hTheme);
+}
+
+unsigned long CVisualStylesXP::DrawThemeBackground(HTHEME hTheme, void* hdc,
+            int iPartId, int iStateId, const RECT *pRect, const RECT *pClipRect)
+{
+ static PFNDRAWTHEMEBACKGROUND pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNDRAWTHEMEBACKGROUND)GetProc("DrawThemeBackground", (void*)DrawThemeBackgroundFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pRect, pClipRect);
+}
+
+unsigned long CVisualStylesXP::DrawThemeText(HTHEME hTheme, void* hdc, int iPartId,
+            int iStateId, const long* pszText, int iCharCount, unsigned long dwTextFlags,
+            unsigned long dwTextFlags2, const RECT *pRect)
+{
+ static PFNDRAWTHEMETEXT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNDRAWTHEMETEXT)GetProc("DrawThemeText", (void*)DrawThemeTextFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pszText, iCharCount, dwTextFlags, dwTextFlags2, pRect);
+}
+unsigned long CVisualStylesXP::GetThemeBackgroundContentRect(HTHEME hTheme, void* hdc,
+                int iPartId, int iStateId, const RECT *pBoundingRect,
+                RECT *pContentRect)
+{
+ static PFNGETTHEMEBACKGROUNDCONTENTRECT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEBACKGROUNDCONTENTRECT)GetProc("GetThemeBackgroundContentRect", (void*)GetThemeBackgroundContentRectFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pBoundingRect, pContentRect);
+}
+
+unsigned long CVisualStylesXP::GetThemeBackgroundExtent(HTHEME hTheme, void* hdc,
+              int iPartId, int iStateId, const RECT *pContentRect,
+              RECT *pExtentRect)
+{
+ static PFNGETTHEMEBACKGROUNDEXTENT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEBACKGROUNDEXTENT)GetProc("GetThemeBackgroundExtent", (void*)GetThemeBackgroundExtentFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pContentRect, pExtentRect);
+}
+
+unsigned long CVisualStylesXP::GetThemePartSize(HTHEME hTheme, void* hdc,
+            int iPartId, int iStateId, RECT * pRect, enum           eSize, SIZE *psz)
+{
+ static PFNGETTHEMEPARTSIZE pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEPARTSIZE)GetProc("GetThemePartSize", (void*)GetThemePartSizeFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pRect, eSize, psz);
+}
+
+unsigned long CVisualStylesXP::GetThemeTextExtent(HTHEME hTheme, void* hdc,
+           int iPartId, int iStateId, const long* pszText, int iCharCount,
+           unsigned long dwTextFlags, const RECT *pBoundingRect, RECT *pExtentRect)
+{
+ static PFNGETTHEMETEXTEXTENT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMETEXTEXTENT)GetProc("GetThemeTextExtent", (void*)GetThemeTextExtentFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pszText, iCharCount, dwTextFlags, pBoundingRect, pExtentRect);
+}
+
+unsigned long CVisualStylesXP::GetThemeTextMetrics(HTHEME hTheme, void* hdc, int iPartId, int iStateId, TEXTMETRIC* ptm)
+{
+ static PFNGETTHEMETEXTMETRICS pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMETEXTMETRICS)GetProc("GetThemeTextMetrics", (void*)GetThemeTextMetricsFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, ptm);
+}
+
+unsigned long CVisualStylesXP::GetThemeBackgroundRegion(HTHEME hTheme, void* hdc,
+              int iPartId, int iStateId, const RECT *pRect, void* *pRegion)
+{
+ static PFNGETTHEMEBACKGROUNDREGION pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEBACKGROUNDREGION)GetProc("GetThemeBackgroundRegion", (void*)GetThemeBackgroundRegionFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pRect, pRegion);
+}
+
+unsigned long CVisualStylesXP::HitTestThemeBackground(HTHEME hTheme, void* hdc, int iPartId,
+            int iStateId, unsigned long dwOptions, const RECT *pRect, void* hrgn,
+            POINT ptTest, unsigned short *pwHitTestCode)
+{
+ static PFNHITTESTTHEMEBACKGROUND pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNHITTESTTHEMEBACKGROUND)GetProc("HitTestThemeBackground", (void*)HitTestThemeBackgroundFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, dwOptions, pRect, hrgn, ptTest, pwHitTestCode);
+}
+
+unsigned long CVisualStylesXP::DrawThemeEdge(HTHEME hTheme, void* hdc, int iPartId, int iStateId,
+            const RECT *pDestRect, unsigned int uEdge, unsigned int uFlags, RECT *pContentRect)
+{
+ static PFNDRAWTHEMEEDGE pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNDRAWTHEMEEDGE)GetProc("DrawThemeEdge", (void*)DrawThemeEdgeFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pDestRect, uEdge, uFlags, pContentRect);
+}
+
+unsigned long CVisualStylesXP::DrawThemeIcon(HTHEME hTheme, void* hdc, int iPartId,
+            int iStateId, const RECT *pRect, HIMAGELIST himl, int iImageIndex)
+{
+ static PFNDRAWTHEMEICON pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNDRAWTHEMEICON)GetProc("DrawThemeIcon", (void*)DrawThemeIconFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, pRect, himl, iImageIndex);
+}
+
+int  CVisualStylesXP::IsThemePartDefined(HTHEME hTheme, int iPartId, int iStateId)
+{
+ static PFNISTHEMEPARTDEFINED pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNISTHEMEPARTDEFINED)GetProc("IsThemePartDefined", (void*)IsThemePartDefinedFail);
+ return (*pfn)(hTheme, iPartId, iStateId);
+}
+
+int  CVisualStylesXP::IsThemeBackgroundPartiallyTransparent(HTHEME hTheme, int iPartId, int iStateId)
+{
+ static PFNISTHEMEBACKGROUNDPARTIALLYTRANSPARENT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNISTHEMEBACKGROUNDPARTIALLYTRANSPARENT)GetProc("IsThemeBackgroundPartiallyTransparent", (void*)IsThemeBackgroundPartiallyTransparentFail);
+ return (*pfn)(hTheme, iPartId, iStateId);
+}
+
+unsigned long CVisualStylesXP::GetThemeColor(HTHEME hTheme, int iPartId, int iStateId, int iPropId, unsigned long *pColor)
+{
+ static PFNGETTHEMECOLOR pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMECOLOR)GetProc("GetThemeColor", (void*)GetThemeColorFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pColor);
+}
+
+unsigned long CVisualStylesXP::GetThemeMetric(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, int *piVal)
+{
+ static PFNGETTHEMEMETRIC pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEMETRIC)GetProc("GetThemeMetric", (void*)GetThemeMetricFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, iPropId, piVal);
+}
+
+unsigned long CVisualStylesXP::GetThemeString(HTHEME hTheme, int iPartId, int iStateId, int iPropId,
+          long*  pszBuff, int cchMaxBuffChars)
+{
+ static PFNGETTHEMESTRING pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESTRING)GetProc("GetThemeString", (void*)GetThemeStringFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pszBuff, cchMaxBuffChars);
+}
+
+unsigned long CVisualStylesXP::GetThemeBool(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int  *pfVal)
+{
+ static PFNGETTHEMEBOOL pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEBOOL)GetProc("GetThemeBool", (void*)GetThemeBoolFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pfVal);
+}
+
+unsigned long CVisualStylesXP::GetThemeInt(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int *piVal)
+{
+ static PFNGETTHEMEINT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEINT)GetProc("GetThemeInt", (void*)GetThemeIntFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, piVal);
+}
+
+unsigned long CVisualStylesXP::GetThemeEnumValue(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int *piVal)
+{
+ static PFNGETTHEMEENUMVALUE pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEENUMVALUE)GetProc("GetThemeEnumValue", (void*)GetThemeEnumValueFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, piVal);
+}
+
+unsigned long CVisualStylesXP::GetThemePosition(HTHEME hTheme, int iPartId, int iStateId, int iPropId, POINT *pPoint)
+{
+ static PFNGETTHEMEPOSITION pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEPOSITION)GetProc("GetThemePosition", (void*)GetThemePositionFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pPoint);
+}
+
+unsigned long CVisualStylesXP::GetThemeFont(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, LOGFONT *pFont)
+{
+ static PFNGETTHEMEFONT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEFONT)GetProc("GetThemeFont", (void*)GetThemeFontFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, iPropId, pFont);
+}
+
+unsigned long CVisualStylesXP::GetThemeRect(HTHEME hTheme, int iPartId, int iStateId, int iPropId, RECT *pRect)
+{
+ static PFNGETTHEMERECT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMERECT)GetProc("GetThemeRect", (void*)GetThemeRectFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pRect);
+}
+
+unsigned long CVisualStylesXP::GetThemeMargins(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, RECT *prc,
+           MARGINS *pMargins)
+{
+ static PFNGETTHEMEMARGINS pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEMARGINS)GetProc("GetThemeMargins", (void*)GetThemeMarginsFail);
+ return (*pfn)(hTheme, hdc, iPartId, iStateId, iPropId, prc, pMargins);
+}
+
+unsigned long CVisualStylesXP::GetThemeIntList(HTHEME hTheme, int iPartId, int iStateId, int iPropId, INTLIST *pIntList)
+{
+ static PFNGETTHEMEINTLIST pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEINTLIST)GetProc("GetThemeIntList", (void*)GetThemeIntListFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pIntList);
+}
+
+unsigned long CVisualStylesXP::GetThemePropertyOrigin(HTHEME hTheme, int iPartId, int iStateId, int iPropId,
+            enum PROPERTYORIGIN *pOrigin)
+{
+ static PFNGETTHEMEPROPERTYORIGIN pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEPROPERTYORIGIN)GetProc("GetThemePropertyOrigin", (void*)GetThemePropertyOriginFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pOrigin);
+}
+
+unsigned long CVisualStylesXP::SetWindowTheme(void* hwnd, const long* pszSubAppName, const long* pszSubIdList)
+{
+ static PFNSETWINDOWTHEME pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNSETWINDOWTHEME)GetProc("SetWindowTheme", (void*)SetWindowThemeFail);
+ return (*pfn)(hwnd, pszSubAppName, pszSubIdList);
+}
+
+unsigned long CVisualStylesXP::GetThemeFilename(HTHEME hTheme, int iPartId, int iStateId, int iPropId,
+            long*  pszThemeFileName, int cchMaxBuffChars)
+{
+ static PFNGETTHEMEFILENAME pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEFILENAME)GetProc("GetThemeFilename", (void*)GetThemeFilenameFail);
+ return (*pfn)(hTheme, iPartId, iStateId, iPropId, pszThemeFileName, cchMaxBuffChars);
+}
+
+unsigned long CVisualStylesXP::GetThemeSysColor(HTHEME hTheme, int iColorId)
+{
+ static PFNGETTHEMESYSCOLOR pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESYSCOLOR)GetProc("GetThemeSysColor", (void*)GetThemeSysColorFail);
+ return (*pfn)(hTheme, iColorId);
+}
+
+void*  CVisualStylesXP::GetThemeSysColorBrush(HTHEME hTheme, int iColorId)
+{
+ static PFNGETTHEMESYSCOLORBRUSH pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESYSCOLORBRUSH)GetProc("GetThemeSysColorBrush", (void*)GetThemeSysColorBrushFail);
+ return (*pfn)(hTheme, iColorId);
+}
+
+int  CVisualStylesXP::GetThemeSysBool(HTHEME hTheme, int iBoolId)
+{
+ static PFNGETTHEMESYSBOOL pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESYSBOOL)GetProc("GetThemeSysBool", (void*)GetThemeSysBoolFail);
+ return (*pfn)(hTheme, iBoolId);
+}
+
+int CVisualStylesXP::GetThemeSysSize(HTHEME hTheme, int iSizeId)
+{
+ static PFNGETTHEMESYSSIZE pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESYSSIZE)GetProc("GetThemeSysSize", (void*)GetThemeSysSizeFail);
+ return (*pfn)(hTheme, iSizeId);
+}
+
+unsigned long CVisualStylesXP::GetThemeSysFont(HTHEME hTheme, int iFontId, LOGFONT *plf)
+{
+ static PFNGETTHEMESYSFONT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESYSFONT)GetProc("GetThemeSysFont", (void*)GetThemeSysFontFail);
+ return (*pfn)(hTheme, iFontId, plf);
+}
+
+unsigned long CVisualStylesXP::GetThemeSysString(HTHEME hTheme, int iStringId, long*  pszStringBuff, int cchMaxStringChars)
+{
+ static PFNGETTHEMESYSSTRING pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESYSSTRING)GetProc("GetThemeSysString", (void*)GetThemeSysStringFail);
+ return (*pfn)(hTheme, iStringId, pszStringBuff, cchMaxStringChars);
+}
+
+unsigned long CVisualStylesXP::GetThemeSysInt(HTHEME hTheme, int iIntId, int *piValue)
+{
+ static PFNGETTHEMESYSINT pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMESYSINT)GetProc("GetThemeSysInt", (void*)GetThemeSysIntFail);
+ return (*pfn)(hTheme, iIntId, piValue);
+}
+
+int  CVisualStylesXP::IsThemeActive()
+{
+ static PFNISTHEMEACTIVE pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNISTHEMEACTIVE)GetProc("IsThemeActive", (void*)IsThemeActiveFail);
+ return (*pfn)();
+}
+
+int  CVisualStylesXP::IsAppThemed()
+{
+ static PFNISAPPTHEMED pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNISAPPTHEMED)GetProc("IsAppThemed", (void*)IsAppThemedFail);
+ return (*pfn)();
+}
+
+HTHEME CVisualStylesXP::GetWindowTheme(void* hwnd)
+{
+ static PFNGETWINDOWTHEME pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETWINDOWTHEME)GetProc("GetWindowTheme", (void*)GetWindowThemeFail);
+ return (*pfn)(hwnd);
+}
+
+unsigned long CVisualStylesXP::EnableThemeDialogTexture(void* hwnd, unsigned long dwFlags)
+{
+ static PFNENABLETHEMEDIALOGTEXTURE pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNENABLETHEMEDIALOGTEXTURE)GetProc("EnableThemeDialogTexture", (void*)EnableThemeDialogTextureFail);
+ return (*pfn)(hwnd, dwFlags);
+}
+
+int  CVisualStylesXP::IsThemeDialogTextureEnabled(void* hwnd)
+{
+ static PFNISTHEMEDIALOGTEXTUREENABLED pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNISTHEMEDIALOGTEXTUREENABLED)GetProc("IsThemeDialogTextureEnabled", (void*)IsThemeDialogTextureEnabledFail);
+ return (*pfn)(hwnd);
+}
+
+unsigned long CVisualStylesXP::GetThemeAppProperties()
+{
+ static PFNGETTHEMEAPPPROPERTIES pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEAPPPROPERTIES)GetProc("GetThemeAppProperties", (void*)GetThemeAppPropertiesFail);
+ return (*pfn)();
+}
+
+void CVisualStylesXP::SetThemeAppProperties(unsigned long dwFlags)
+{
+ static PFNSETTHEMEAPPPROPERTIES pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNSETTHEMEAPPPROPERTIES)GetProc("SetThemeAppProperties", (void*)SetThemeAppPropertiesFail);
+ (*pfn)(dwFlags);
+}
+
+unsigned long CVisualStylesXP::GetCurrentThemeName(long*  pszThemeFileName, int cchMaxNameChars,
+            long*  pszColorBuff, int cchMaxColorChars,
+            long*  pszSizeBuff, int cchMaxSizeChars)
+{
+ static PFNGETCURRENTTHEMENAME pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETCURRENTTHEMENAME)GetProc("GetCurrentThemeName", (void*)GetCurrentThemeNameFail);
+ return (*pfn)(pszThemeFileName, cchMaxNameChars, pszColorBuff, cchMaxColorChars, pszSizeBuff, cchMaxSizeChars);
+}
+
+unsigned long CVisualStylesXP::GetThemeDocumentationProperty(const long* pszThemeName, const long* pszPropertyName,
+                long*  pszValueBuff, int cchMaxValChars)
+{
+ static PFNGETTHEMEDOCUMENTATIONPROPERTY pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNGETTHEMEDOCUMENTATIONPROPERTY)GetProc("GetThemeDocumentationProperty", (void*)GetThemeDocumentationPropertyFail);
+ return (*pfn)(pszThemeName, pszPropertyName, pszValueBuff, cchMaxValChars);
+}
+
+unsigned long CVisualStylesXP::DrawThemeParentBackground(void* hwnd, void* hdc, RECT* prc)
+{
+ static PFNDRAWTHEMEPARENTBACKGROUND pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNDRAWTHEMEPARENTBACKGROUND)GetProc("DrawThemeParentBackground", (void*)DrawThemeParentBackgroundFail);
+ return (*pfn)(hwnd, hdc, prc);
+}
+
+unsigned long CVisualStylesXP::EnableTheming(int  fEnable)
+{
+ static PFNENABLETHEMING pfn = NULL;
+ if (pfn == NULL)
+  pfn = (PFNENABLETHEMING)GetProc("EnableTheming", (void*)EnableThemingFail);
+ return (*pfn)(fEnable);
+}
+
+
+
+
+
+
+ 

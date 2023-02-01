@@ -1,0 +1,42 @@
+﻿
+
+
+
+
+class CTitleMenu;
+
+class CWebServices
+{
+public:
+ CWebServices();
+
+ CString GetDefaultServicesFile() const;
+ int ReadAllServices();
+ void RemoveAllServices();
+
+ int GetFileMenuEntries(CTitleMenu* pMenu) { return GetAllMenuEntries(pMenu, 0x0002          ); }
+ int GetGeneralMenuEntries(CTitleMenu* pMenu) { return GetAllMenuEntries(pMenu, 0x0001         ); }
+ int GetAllMenuEntries(CTitleMenu* pMenu, unsigned long dwFlags = 0x0001          | 0x0002          );
+ bool RunURL(const CAbstractFile* file, unsigned int uMenuID);
+ void Edit();
+
+protected:
+  class SEd2kLinkService
+ {
+  unsigned int uMenuID;
+  CString strMenuLabel;
+  CString strUrl;
+  int  bFileMacros;
+ };
+ CArray                   m_aServices;
+ time_t m_tDefServicesFileLastModified;
+};
+
+extern CWebServices theWebServices;
+
+
+
+
+
+
+ 

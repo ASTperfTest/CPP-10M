@@ -1,0 +1,47 @@
+﻿
+
+/////////////////////////////////////////////////////////////////////////////
+// CRichEditStream window
+
+class CRichEditStream :        CRichEditCtrl
+{
+public:
+ CRichEditStream();
+ virtual ~CRichEditStream();
+
+ CRichEditStream& operator__bLeftShift(const char* psz);
+ CRichEditStream& operator__bLeftShift(char* psz);
+ CRichEditStream& operator__bLeftShift(unsigned int uVal);
+ CRichEditStream& operator__bLeftShift(int iVal);
+ CRichEditStream& operator__bLeftShift(double fVal);
+
+ bool IsEmpty() const {
+  return GetWindowTextLength() == 0;
+ }
+ void AppendFormat(const char* pszFmt, ...) {
+  va_list argp;
+  va_start(argp, pszFmt);
+  CString str;
+  str.AppendFormatV(pszFmt, argp);
+  va_end(argp);
+  *this << str;
+ }
+
+ void InitColors();
+ CHARFORMAT m_cfDef;
+ CHARFORMAT m_cfBold;
+ CHARFORMAT m_cfRed;
+
+ void GetRTFText(CStringA& rstrText);
+
+protected:
+ static unsigned long          StreamOutCallback(unsigned long dwCookie, LPBYTE pbBuff, long cb, long *pcb);
+
+};
+
+
+
+
+
+
+ 

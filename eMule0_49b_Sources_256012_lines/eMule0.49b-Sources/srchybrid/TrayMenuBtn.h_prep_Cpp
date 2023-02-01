@@ -1,0 +1,35 @@
+﻿
+
+/////////////////////////////////////////////////////////////////////////////
+// CTrayMenuBtn window
+
+class CTrayMenuBtn :        CWnd
+{
+public:
+ CTrayMenuBtn();
+ virtual ~CTrayMenuBtn();
+
+ bool m_bBold;
+ bool m_bMouseOver;
+ bool m_bNoHover;
+ bool m_bUseIcon;
+ bool m_bParentCapture;
+ unsigned int m_nBtnID;
+ CSize m_sIcon;
+ void* m_hIcon;
+ CString m_strText;
+ CFont m_cfFont;
+
+protected:
+
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         void OnPaint();
+};
+
+
+
+
+
+
+ 

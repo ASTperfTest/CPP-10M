@@ -1,0 +1,300 @@
+#muuid {842a6668-f9da-4968-bfd7-d2bd9df848ee}
+;============================================================
+;  File: NotesReminders.dll
+;  Plugin: Sticky Notes & Reminders
+;  Version: 0.2.2.2
+;  Authors: Joe Kucera, Lubomir Kolev Ivanov, Georg Fischer
+;============================================================
+[Sticky Notes & Reminders Implementation for Miranda NG.]
+Notatki i przypomnienia.
+;file \plugins\NotesAndReminders\res\resource.rc
+[Default Note Size]
+Domyślny rozmiar notatki
+[Width (Pixels)]
+Szerokość (px)
+[Height (Pixels)]
+Wysokość (px)
+[Notes Appearance]
+Wygląd notatek
+[Show Scrollbars]
+Pokaż pasek przewijania
+[Show Buttons]
+Pokaż przycisk
+[Title Date]
+Data
+[Title Time]
+Czas
+[Startup options]
+Opcje uruchamiania
+[Hide notes at startup]
+Ukryj notatki przy starcie
+[Reminder options]
+Opcje przypomnień
+[Add Reminder closes dialog]
+Zamknij po dodaniu przypomnienia
+[Use MCI to play alert sounds]
+Użyj MCI do odtwarzania dźwięków
+[Note transparency]
+Przezroczystość notatki
+[Send Reminders through E-mail/SMS:]
+Wysyłaj przypomnienia przez E-mail/SMS:
+[Open links with this program instead:]
+Otwórz link programem:
+[Reset to defaults]
+Przywróć domyślne
+[(Using MCI allows different sounds to be played simultaneously, may not be needed or desired when a custom sound plugin is installed.)]
+(Używanie MCI pozwala na odtwarzanie jednocześnie wielu dźwięków, może być zastąpiona przez inną wtyczkę.)
+[Add Reminder]
+Dodaj przypomnienie
+[Date]
+Data
+[Time]
+Czas
+[Repeat each day]
+Powtarzaj codziennie
+[Reminder Note:]
+Treść notatki:
+[None]
+Brak
+[Daily]
+Dziennie
+[Weekly]
+Tygodniowo
+[Monthly]
+Miesięcznie
+[Repeat Alert Sound]
+Powtarzaj dźwięk powiadomienia
+[Use Sound]
+Użyj dźwięków
+[&Add Reminder]
+&Dodaj przypomnienie
+[&Close]
+&Zamknij
+[&View Reminders]
+&Zobacz przypomnienia
+[Reminder]
+Przypomnienie
+[After:]
+Po:
+[On Time && Date:]
+O czasie i dacie:
+[&Remind Again]
+&Przypomnij ponownie
+[&Create Note]
+&Utwórz notatkę
+[&Dismiss]
+&Odrzuć
+[Reminders]
+Przypomnienia
+[Add New]
+Dodaj nowy
+[Edi&t Reminder]
+Edy&tuj przypomnienie
+[New &Reminder]
+Nowe &przypomnienie
+[&Delete Reminder]
+&Usuń przypomnienie
+[D&elete All Reminders]
+U&suń wszystkie przypomnienia
+[&Hide Note]
+&Ukryj notatkę
+[&Always On Top]
+&Zawsze na wierzchu
+[&New Note]
+&Nowa notatka
+[&Delete Note]
+&Usuń notatkę
+[Appearance]
+Personalizacja
+[Background Color]
+Kolor tła
+[Custom...]
+Niestandardowy...
+[Reset]
+Domyślne
+[Text Color]
+Kolor tekstu
+[Font]
+Czcionka
+[Paste Title]
+Wklej tytuł
+[Reset Title]
+Resetuj tytuł
+[Undo]
+Przywróć
+[&Copy]
+&Kopiuj
+[&Paste]
+&Wklej
+[C&ut]
+W&ytnij
+[C&lear]
+&Wyczyść
+[&View Notes]
+&Pokaż notatki
+[&Bring All To Front]
+&Pokaż wszystkie na wierzchu
+[Edi&t Note]
+Edy&tuj notatkę
+[&Visible]
+&Widoczny
+[Always &On Top]
+Zawsze &na wierzchu
+[Delete &All Notes]
+Usuń &wszystkie notatki
+[&Show / Hide Notes]
+&Pokaż/ukryj notatkę
+;file \plugins\NotesAndReminders\src\hotkeys.cpp
+[New Note]
+Nowa notatka
+[Toggle Notes Visibility]
+Przełącz widoczność notatek
+[Bring All Notes to Front]
+Pokaż wszystkie notatki na wierzchu
+[New Reminder]
+Nowe przypomnienie
+[View Reminders]
+Zobacz przypomnienia
+;file \plugins\NotesAndReminders\src\main.cpp
+[Delete All Notes]
+Usuń wszystkie notatki
+[Show/Hide Notes]
+Pokaż/ukryj notatki
+[On Top Caption Icon]
+Ikona nagłówkowa na wierzchu
+[Delete All Reminders]
+Usuń wszystkie przypomnienia
+[Not on Top Caption Icon]
+Ikona nagłówkowa nie na wierzchu
+[Hide Note Icon]
+Ukryj ikonę notatki
+[Remove Note Icon]
+Usuń ikonę notatki
+[Reminder Icon]
+Ikona przypomnienia
+[Bring All to Front]
+Pokaż wszystkie na wierzchu
+[Play Sound Icon]
+Ikona odtwarzania dźwięku
+[View Notes]
+Pokaż notatki
+[Sticky Notes]
+Notatki
+[Add New Note]
+Dodaj nową notatkę
+[Add New Reminder]
+Dodaj nowe przypomnienie
+[Notes && Reminders]
+Notatki i przypomnienia
+[Alerts]
+Alarmy
+[Reminder triggered]
+Przypomnienie uruchomione
+[Reminder triggered (Alternative 1)]
+Przypomnienie uruchomione (Alternatywa 1)
+[Reminder triggered (Alternative 2)]
+Przypomnienie uruchomione (Alternatywa 2)
+;file \plugins\NotesAndReminders\src\notes.cpp
+[Black]
+Czarny
+[Maroon]
+Kasztanowy
+[Green]
+Zielony
+[Olive]
+Oliwkowy
+[Navy]
+Granatowy
+[Purple]
+Purpura
+[Teal]
+Morski
+[Gray]
+Szary
+[Silver]
+Srebrny
+[Red]
+Czerwony
+[Orange]
+Pomarańczowy
+[Lime]
+Limonkowy
+[Yellow]
+Żółty
+[Blue]
+Niebieski
+[Fuchsia]
+Fuksja
+[Aqua]
+Aqua
+[White]
+Biały
+[Are you sure you want to delete this note?]
+Czy na pewno chcesz usunąć tę notatkę?
+[Visible]
+Widoczny
+[Top]
+Na wierzchu
+[Notes]
+Notatki
+[Note text]
+Tekst notatki
+[Date/Title]
+Data/Tytuł
+[Are you sure you want to delete all notes?]
+Czy na pewno chcesz usunąć wszystkie notatki?
+;file \plugins\NotesAndReminders\src\options.cpp
+[Sticky Note Caption]
+Opis notatki
+[Sticky Note Background Color]
+Kolor tła notatki
+[Sticky Note Body]
+Treść notatki
+[Executable Files\0*.exe\0All Files\0*.*\0\0]
+Pliki wykonywalne\0*.exe\0Wszystkie pliki \0*.*\0\0
+[Select Executable]
+Wybierz plik wykonywalny
+[Plugins]
+Wtyczki
+;file \plugins\NotesAndReminders\src\reminders.cpp
+[The specified time is invalid.]
+Podany czas jest niepoprawny.
+[Minutes]
+Minut
+[Hours]
+Godzin
+[The specified time is invalid due to begin of daylight saving (summer time).]
+Podany czas jest niepoprawny z powodu rozpoczęcia czasu letniego.
+[Hour]
+Godzina
+[Day]
+Dzień
+[Days]
+Dni
+[Week]
+Tydzień
+[&Update Reminder]
+&Aktualizuj przypomnienia
+[Every]
+Co
+[Seconds]
+Sekund
+[Never]
+Nigdy
+[Default]
+Domyślny
+[Alternative 1]
+Alternatywny 1
+[Alternative 2]
+Alternatywny 2
+[Date of activation]
+Data aktywacji
+[Reminder text]
+Tekst przypomnienia
+[Are you sure you want to delete all reminders?]
+Czy na pewno chcesz usunąć wszystkie przypomnienia?
+[Are you sure you want to delete this reminder?]
+Czy na pewno chcesz usunąć to przypomnienie?
+;file \plugins\NotesAndReminders\src\stdafx.h
+[Notes & Reminders]
+Notatki i przypomnienia

@@ -1,0 +1,29 @@
+;#muuid for MimCmd not found, please specify manually!
+;============================================================
+;  File: MimCmd.exe
+;  Plugin: MimCmd
+;  Version: 0.1.0.1
+;  Authors: Cristian Libotean
+;============================================================
+[This will tell Miranda to run the specified command.]
+Передача Miranda вказаної команди на виконання.
+;file \plugins\MimCmd\src\commands.cpp
+[No help for '%s'.]
+Немає допомоги для '%s'.
+[Available commands: ]
+Доступні команди:\s
+[Miranda has been closed or an error has occurred while waiting for the result, could not process request.]
+Miranda була закрита або сталася помилка при очікуванні результату, неможливо обробити запит.
+;file \plugins\MimCmd\src\MimCmd.cpp
+[%s usage:\n]
+%s використання:\n
+[%s <command> [<param> [<param> [...]]].\n]
+%s <команда> [<аргумент> [<аргумент> [...]]].\n
+[This will tell Miranda to run the specified command. The commands can have zero, one or more parameters. Use '%s help' to get a list of possible commands.\n]
+Передача Miranda вказаної команди на виконання. Команди можуть мати жодного, один або більше аргументів. Використовуйте '%s help' для отримання списку доступних команд.\n
+[No command can have more than %d parameters.\n]
+Команди не можуть мати більше %d аргументів.\n
+[%s version %s]
+%s версія %s
+[Unknown command '%s'.\n]
+Невідома команда '%s'.\n

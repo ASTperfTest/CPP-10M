@@ -1,0 +1,42 @@
+﻿
+
+class CConnectionWizardDlg :        CDialog
+{
+ //DECLARE_DYNAMIC(CConnectionWizardDlg)
+public:
+ CConnectionWizardDlg(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CConnectionWizardDlg();
+
+ enum { IDD = IDD_WIZARD };
+
+ void Localize();
+
+protected:
+ void* m_icnWnd;
+ CListCtrl m_provider;
+ int m_iOS;
+ int m_iTotalDownload;
+
+ void SetCustomItemsActivation();
+
+ virtual int  OnInitDialog();
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+
+
+         void OnBnClickedApply();
+         void OnBnClickedCancel();
+         void OnBnClickedWizRadioOsNtxp();
+         void OnBnClickedWizRadioUs98me();
+         void OnBnClickedWizLowdownloadRadio();
+         void OnBnClickedWizMediumdownloadRadio();
+         void OnBnClickedWizHighdownloadRadio();
+         void OnBnClickedWizResetButton();
+         void OnNMClickProviders(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

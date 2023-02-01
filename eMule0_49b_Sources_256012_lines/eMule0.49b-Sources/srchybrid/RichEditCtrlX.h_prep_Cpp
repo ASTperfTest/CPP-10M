@@ -1,0 +1,52 @@
+﻿
+
+/////////////////////////////////////////////////////////////////////////////
+// CRichEditCtrlX window
+
+class CRichEditCtrlX :        CRichEditCtrl
+{
+public:
+ CRichEditCtrlX();
+ virtual ~CRichEditCtrlX();
+
+ void SetDisableSelectOnFocus(bool bDisable = true);
+ void SetSyntaxColoring(const const char** ppszKeywords = NULL, const char* pszSeperators = NULL);
+
+ CRichEditCtrlX& operator__bLeftShift(const char* psz);
+ CRichEditCtrlX& operator__bLeftShift(char* psz);
+ CRichEditCtrlX& operator__bLeftShift(unsigned int uVal);
+ CRichEditCtrlX& operator__bLeftShift(int iVal);
+ CRichEditCtrlX& operator__bLeftShift(double fVal);
+
+ void SetRTFText(const CStringA& rstrText);
+
+protected:
+ bool m_bDisableSelectOnFocus;
+ bool m_bSelfUpdate;
+ bool m_bForceArrowCursor;
+ HCURSOR m_hArrowCursor;
+ CStringArray m_astrKeywords;
+ CString m_strSeperators;
+ CHARFORMAT m_cfDef;
+ CHARFORMAT m_cfKeyword;
+
+ void UpdateSyntaxColoring();
+ static unsigned long          StreamInCallback(unsigned long dwCookie, LPBYTE pbBuff, long cb, long *pcb);
+
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         unsigned int OnGetDlgCode();
+         int  OnEnLink(NMHDR *pNMHDR, long *  *pResult);
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         void OnEnChange();
+         int  OnSetCursor(CWnd* pWnd, unsigned int nHitTest, unsigned int message);
+};
+
+
+
+
+
+
+ 

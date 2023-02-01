@@ -1,0 +1,99 @@
+#muuid {68f5a030-ba32-48ec-9507-5c2fbdea5217}
+;============================================================
+;  File: Steam.dll
+;  Plugin: Steam protocol
+;  Version: 0.96.1.1
+;  Authors: Miranda NG team, Robert Pösel
+;============================================================
+[Steam protocol support for Miranda NG.]
+
+;file \protocols\Steam\res\Resource.rc
+[Username:]
+Карыстач:
+[Password:]
+Пароль:
+[Default group:]
+Гурт:
+[Account]
+Конт
+[Contacts]
+Кантакты
+[Use bigger avatars]
+Вялікія аватары
+[Message sessions]
+Гутаркі
+[Show chat state events (i.e., user closed chat session)]
+
+[Connection]
+Далучэнне
+[Error limit before logout:]
+
+[Captcha]
+
+[Cancel]
+Скасаваць
+[As an added account security measure, you'll need to grant access by entering the special code we've just sent to your email address.]
+
+[Go to email domain]
+
+[Block]
+Заблакаваць
+[Enter password]
+Увядзіце пароль
+[Save password]
+Захаваць пароль
+[Enter the password to continue.]
+
+[Security code]
+
+[As an added account security measure, you'll need to grant access by entering the SMS code we've just sent to your mobile phone.]
+
+;file \protocols\Steam\src\main.cpp
+[Steam game]
+
+;file \protocols\Steam\src\steam_contacts.cpp
+[Looking to play]
+
+[ (Non-Steam)]
+
+[ on server %S]
+
+[Playing]
+Грае
+[%s is back in your contact list]
+
+[%s has been removed from your contact list]
+
+[%s has added you to contact list]
+
+;file \protocols\Steam\src\steam_login.cpp
+[Cannot obtain connection token.]
+
+;file \protocols\Steam\src\steam_menus.cpp
+[Steam menu chooser]
+
+[Unblock]
+
+[Join to game]
+
+;file \protocols\Steam\src\steam_messages.cpp
+[Unknown error]
+Невядомая памылка
+;file \protocols\Steam\src\steam_options.cpp
+[Name]
+Імя
+[Network]
+Сеціва
+;file \protocols\Steam\src\steam_proto.cpp
+[Protocols]
+Пратаколы
+[Protocol icon]
+Абразок пратаколу
+[Gaming icon]
+
+[You cannot send messages when you are offline.]
+Вы не можаце адпраўляць паведамленні без далучэння.
+;file \protocols\Steam\src\steam_utils.cpp
+[closed chat session]
+зачыніў вакно чата
+;file \protocols\Steam\src\steam_xstatus.cpp

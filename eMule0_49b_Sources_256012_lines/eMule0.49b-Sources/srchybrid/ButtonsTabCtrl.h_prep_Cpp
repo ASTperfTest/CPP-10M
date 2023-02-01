@@ -1,0 +1,27 @@
+﻿
+
+class CButtonsTabCtrl :        CTabCtrl
+{
+ //DECLARE_DYNAMIC(CButtonsTabCtrl)
+
+public:
+ CButtonsTabCtrl();
+ virtual ~CButtonsTabCtrl();
+
+protected:
+ void InternalInit();
+
+ virtual void PreSubclassWindow();
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+
+
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         long *  _OnThemeChanged();
+};
+
+
+
+
+
+
+ 

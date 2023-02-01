@@ -1,0 +1,54 @@
+﻿
+
+class CPPgScheduler :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgScheduler)
+
+public:
+ CPPgScheduler();
+ virtual ~CPPgScheduler();
+
+ // Dialog Data
+ enum { IDD = IDD_PPG_SCHEDULER };
+
+ void Localize(void);
+
+// Dialog Data
+protected:
+ CComboBox m_timesel;
+ CDateTimeCtrl m_time;
+ CDateTimeCtrl m_timeTo;
+ CListCtrl m_list;
+ CListCtrl m_actions;
+
+ CString GetActionLabel(int index);
+ CString GetDayLabel(int index);
+ void LoadSchedule(int index);
+ void RecheckSchedules();
+ void FillScheduleList();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnNMDblclkList(NMHDR *pNMHDR, long *  *pResult);
+         void OnBnClickedAdd();
+         void OnBnClickedApply();
+         void OnBnClickedRemove();
+         void OnSettingsChange() {SetModified();}
+         void OnEnableChange();
+         void OnDisableTime2();
+         void OnNMDblclkActionlist(NMHDR *pNMHDR, long *  *pResult);
+         void OnNMRclickActionlist(NMHDR *pNMHDR, long *  *pResult);
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

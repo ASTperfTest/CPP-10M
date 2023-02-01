@@ -1,0 +1,253 @@
+﻿
+
+void INCLUDEREPLACE(){CX_INCL("uxtheme.h");}
+void INCLUDEREPLACE(){CX_INCL("tmschema.h");}
+
+
+class CVisualStylesXP
+{
+public:
+ CVisualStylesXP(void);
+ ~CVisualStylesXP(void);
+
+ HTHEME OpenThemeData(void* hwnd, const long* pszClassList);
+ unsigned long CloseThemeData(HTHEME hTheme);
+ unsigned long DrawThemeBackground(HTHEME hTheme, void* hdc,
+  int iPartId, int iStateId, const RECT *pRect, const RECT *pClipRect);
+ unsigned long DrawThemeText(HTHEME hTheme, void* hdc, int iPartId,
+  int iStateId, const long* pszText, int iCharCount, unsigned long dwTextFlags,
+  unsigned long dwTextFlags2, const RECT *pRect);
+ unsigned long GetThemeBackgroundContentRect(HTHEME hTheme, void* hdc,
+  int iPartId, int iStateId, const RECT *pBoundingRect,
+  RECT *pContentRect);
+ unsigned long GetThemeBackgroundExtent(HTHEME hTheme, void* hdc,
+  int iPartId, int iStateId, const RECT *pContentRect,
+  RECT *pExtentRect);
+ unsigned long GetThemePartSize(HTHEME hTheme, void* hdc,
+  int iPartId, int iStateId, RECT * pRect, enum           eSize, SIZE *psz);
+ unsigned long GetThemeTextExtent(HTHEME hTheme, void* hdc,
+  int iPartId, int iStateId, const long* pszText, int iCharCount,
+  unsigned long dwTextFlags, const RECT *pBoundingRect,
+  RECT *pExtentRect);
+ unsigned long GetThemeTextMetrics(HTHEME hTheme, void* hdc,
+  int iPartId, int iStateId, TEXTMETRIC* ptm);
+ unsigned long GetThemeBackgroundRegion(HTHEME hTheme, void* hdc,
+  int iPartId, int iStateId, const RECT *pRect, void* *pRegion);
+ unsigned long HitTestThemeBackground(HTHEME hTheme, void* hdc, int iPartId,
+  int iStateId, unsigned long dwOptions, const RECT *pRect, void* hrgn,
+  POINT ptTest, unsigned short *pwHitTestCode);
+ unsigned long DrawThemeEdge(HTHEME hTheme, void* hdc, int iPartId, int iStateId,
+  const RECT *pDestRect, unsigned int uEdge, unsigned int uFlags, RECT *pContentRect);
+ unsigned long DrawThemeIcon(HTHEME hTheme, void* hdc, int iPartId,
+  int iStateId, const RECT *pRect, HIMAGELIST himl, int iImageIndex);
+ int  IsThemePartDefined(HTHEME hTheme, int iPartId,
+  int iStateId);
+ int  IsThemeBackgroundPartiallyTransparent(HTHEME hTheme,
+  int iPartId, int iStateId);
+ unsigned long GetThemeColor(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, unsigned long *pColor);
+ unsigned long GetThemeMetric(HTHEME hTheme, void* hdc, int iPartId,
+  int iStateId, int iPropId, int *piVal);
+ unsigned long GetThemeString(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, long*  pszBuff, int cchMaxBuffChars);
+ unsigned long GetThemeBool(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, int  *pfVal);
+ unsigned long GetThemeInt(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, int *piVal);
+ unsigned long GetThemeEnumValue(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, int *piVal);
+ unsigned long GetThemePosition(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, POINT *pPoint);
+ unsigned long GetThemeFont(HTHEME hTheme, void* hdc, int iPartId,
+  int iStateId, int iPropId, LOGFONT *pFont);
+ unsigned long GetThemeRect(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, RECT *pRect);
+ unsigned long GetThemeMargins(HTHEME hTheme, void* hdc, int iPartId,
+  int iStateId, int iPropId, RECT *prc, MARGINS *pMargins);
+ unsigned long GetThemeIntList(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, INTLIST *pIntList);
+ unsigned long GetThemePropertyOrigin(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, enum PROPERTYORIGIN *pOrigin);
+ unsigned long SetWindowTheme(void* hwnd, const long* pszSubAppName,
+  const long* pszSubIdList);
+ unsigned long GetThemeFilename(HTHEME hTheme, int iPartId,
+  int iStateId, int iPropId, long*  pszThemeFileName, int cchMaxBuffChars);
+ unsigned long GetThemeSysColor(HTHEME hTheme, int iColorId);
+ void*  GetThemeSysColorBrush(HTHEME hTheme, int iColorId);
+ int  GetThemeSysBool(HTHEME hTheme, int iBoolId);
+ int GetThemeSysSize(HTHEME hTheme, int iSizeId);
+ unsigned long GetThemeSysFont(HTHEME hTheme, int iFontId, LOGFONT *plf);
+ unsigned long GetThemeSysString(HTHEME hTheme, int iStringId,
+  long*  pszStringBuff, int cchMaxStringChars);
+ unsigned long GetThemeSysInt(HTHEME hTheme, int iIntId, int *piValue);
+ int  IsThemeActive();
+ int  IsAppThemed();
+ HTHEME GetWindowTheme(void* hwnd);
+ unsigned long EnableThemeDialogTexture(void* hwnd, unsigned long dwFlags);
+ int  IsThemeDialogTextureEnabled(void* hwnd);
+ unsigned long GetThemeAppProperties();
+ void SetThemeAppProperties(unsigned long dwFlags);
+ unsigned long GetCurrentThemeName(
+  long*  pszThemeFileName, int cchMaxNameChars,
+  long*  pszColorBuff, int cchMaxColorChars,
+  long*  pszSizeBuff, int cchMaxSizeChars);
+ unsigned long GetThemeDocumentationProperty(const long* pszThemeName,
+  const long* pszPropertyName, long*  pszValueBuff, int cchMaxValChars);
+ unsigned long DrawThemeParentBackground(void* hwnd, void* hdc, RECT* prc);
+ unsigned long EnableTheming(int  fEnable);
+
+private:
+ static void *  m_hThemeDll;
+ static void* GetProc(const char* szProc, void* pfnFail);
+
+         HTHEME (          *PFNOPENTHEMEDATA)(void* hwnd, const long* pszClassList) = "CX_TYPEDEF";
+ static HTHEME OpenThemeDataFail(void*, const long*) {return NULL;}
+
+         unsigned long(          *PFNCLOSETHEMEDATA)(HTHEME hTheme) = "CX_TYPEDEF";
+ static unsigned long CloseThemeDataFail(HTHEME) {return E_FAIL;}
+
+         unsigned long(          *PFNDRAWTHEMEBACKGROUND)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pRect, const RECT *pClipRect) = "CX_TYPEDEF";
+ static unsigned long DrawThemeBackgroundFail(HTHEME, void*, int, int, const RECT *, const RECT *) {return E_FAIL;}
+
+         unsigned long (          *PFNDRAWTHEMETEXT)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const long* pszText, int iCharCount, unsigned long dwTextFlags, unsigned long dwTextFlags2, const RECT *pRect) = "CX_TYPEDEF";
+ static unsigned long DrawThemeTextFail(HTHEME, void*, int, int, const long*, int, unsigned long, unsigned long, const RECT*) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEBACKGROUNDCONTENTRECT)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pBoundingRect, RECT *pContentRect) = "CX_TYPEDEF";
+ static unsigned long GetThemeBackgroundContentRectFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pBoundingRect, RECT *pContentRect) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEBACKGROUNDEXTENT)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pContentRect, RECT *pExtentRect) = "CX_TYPEDEF";
+ static unsigned long GetThemeBackgroundExtentFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pContentRect, RECT *pExtentRect) {return E_FAIL;}
+
+         unsigned long(          *PFNGETTHEMEPARTSIZE)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, RECT * pRect, enum           eSize, SIZE *psz) = "CX_TYPEDEF";
+ static unsigned long GetThemePartSizeFail(HTHEME, void*, int, int, RECT *, enum THEMESIZE, SIZE *) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMETEXTEXTENT)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const long* pszText, int iCharCount, unsigned long dwTextFlags, const RECT *pBoundingRect, RECT *pExtentRect) = "CX_TYPEDEF";
+ static unsigned long GetThemeTextExtentFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const long* pszText, int iCharCount, unsigned long dwTextFlags, const RECT *pBoundingRect, RECT *pExtentRect) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMETEXTMETRICS)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, TEXTMETRIC* ptm) = "CX_TYPEDEF";
+ static unsigned long GetThemeTextMetricsFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, TEXTMETRIC* ptm) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEBACKGROUNDREGION)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pRect, void* *pRegion) = "CX_TYPEDEF";
+ static unsigned long GetThemeBackgroundRegionFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pRect, void* *pRegion) {return E_FAIL;}
+
+         unsigned long (          *PFNHITTESTTHEMEBACKGROUND)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, unsigned long dwOptions, const RECT *pRect, void* hrgn, POINT ptTest, unsigned short *pwHitTestCode) = "CX_TYPEDEF";
+ static unsigned long HitTestThemeBackgroundFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, unsigned long dwOptions, const RECT *pRect, void* hrgn, POINT ptTest, unsigned short *pwHitTestCode) {return E_FAIL;}
+
+         unsigned long (          *PFNDRAWTHEMEEDGE)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pDestRect, unsigned int uEdge, unsigned int uFlags, RECT *pContentRect) = "CX_TYPEDEF";
+ static unsigned long DrawThemeEdgeFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pDestRect, unsigned int uEdge, unsigned int uFlags, RECT *pContentRect) {return E_FAIL;}
+
+         unsigned long (          *PFNDRAWTHEMEICON)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pRect, HIMAGELIST himl, int iImageIndex) = "CX_TYPEDEF";
+ static unsigned long DrawThemeIconFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, const RECT *pRect, HIMAGELIST himl, int iImageIndex) {return E_FAIL;}
+
+         int  (          *PFNISTHEMEPARTDEFINED)(HTHEME hTheme, int iPartId, int iStateId) = "CX_TYPEDEF";
+ static int  IsThemePartDefinedFail(HTHEME hTheme, int iPartId, int iStateId) {return FALSE;}
+
+         int  (          *PFNISTHEMEBACKGROUNDPARTIALLYTRANSPARENT)(HTHEME hTheme, int iPartId, int iStateId) = "CX_TYPEDEF";
+ static int  IsThemeBackgroundPartiallyTransparentFail(HTHEME hTheme, int iPartId, int iStateId) {return FALSE;}
+
+         unsigned long (          *PFNGETTHEMECOLOR)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, unsigned long *pColor) = "CX_TYPEDEF";
+ static unsigned long GetThemeColorFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, unsigned long *pColor) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEMETRIC)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, int *piVal) = "CX_TYPEDEF";
+ static unsigned long GetThemeMetricFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, int *piVal) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMESTRING)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, long*  pszBuff, int cchMaxBuffChars) = "CX_TYPEDEF";
+ static unsigned long GetThemeStringFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, long*  pszBuff, int cchMaxBuffChars) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEBOOL)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int  *pfVal) = "CX_TYPEDEF";
+ static unsigned long GetThemeBoolFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int  *pfVal) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEINT)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int *piVal) = "CX_TYPEDEF";
+ static unsigned long GetThemeIntFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int *piVal) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEENUMVALUE)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int *piVal) = "CX_TYPEDEF";
+ static unsigned long GetThemeEnumValueFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, int *piVal) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEPOSITION)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, POINT *pPoint) = "CX_TYPEDEF";
+ static unsigned long GetThemePositionFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, POINT *pPoint) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEFONT)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, LOGFONT *pFont) = "CX_TYPEDEF";
+ static unsigned long GetThemeFontFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, LOGFONT *pFont) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMERECT)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, RECT *pRect) = "CX_TYPEDEF";
+ static unsigned long GetThemeRectFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, RECT *pRect) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEMARGINS)(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, RECT *prc, MARGINS *pMargins) = "CX_TYPEDEF";
+ static unsigned long GetThemeMarginsFail(HTHEME hTheme, void* hdc, int iPartId, int iStateId, int iPropId, RECT *prc, MARGINS *pMargins) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEINTLIST)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, INTLIST *pIntList) = "CX_TYPEDEF";
+ static unsigned long GetThemeIntListFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, INTLIST *pIntList) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEPROPERTYORIGIN)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, enum PROPERTYORIGIN *pOrigin) = "CX_TYPEDEF";
+ static unsigned long GetThemePropertyOriginFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, enum PROPERTYORIGIN *pOrigin) {return E_FAIL;}
+
+         unsigned long (          *PFNSETWINDOWTHEME)(void* hwnd, const long* pszSubAppName, const long* pszSubIdList) = "CX_TYPEDEF";
+ static unsigned long SetWindowThemeFail(void* hwnd, const long* pszSubAppName, const long* pszSubIdList) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEFILENAME)(HTHEME hTheme, int iPartId, int iStateId, int iPropId, long*  pszThemeFileName, int cchMaxBuffChars) = "CX_TYPEDEF";
+ static unsigned long GetThemeFilenameFail(HTHEME hTheme, int iPartId, int iStateId, int iPropId, long*  pszThemeFileName, int cchMaxBuffChars) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMESYSCOLOR)(HTHEME hTheme, int iColorId) = "CX_TYPEDEF";
+ static unsigned long GetThemeSysColorFail(HTHEME hTheme, int iColorId) {return RGB(255,255,255);}
+
+         void*  (          *PFNGETTHEMESYSCOLORBRUSH)(HTHEME hTheme, int iColorId) = "CX_TYPEDEF";
+ static void*  GetThemeSysColorBrushFail(HTHEME hTheme, int iColorId) {return NULL;}
+
+         int  (          *PFNGETTHEMESYSBOOL)(HTHEME hTheme, int iBoolId) = "CX_TYPEDEF";
+ static int  GetThemeSysBoolFail(HTHEME hTheme, int iBoolId) {return FALSE;}
+
+         int (          *PFNGETTHEMESYSSIZE)(HTHEME hTheme, int iSizeId) = "CX_TYPEDEF";
+ static int GetThemeSysSizeFail(HTHEME hTheme, int iSizeId) {return 0;}
+
+         unsigned long (          *PFNGETTHEMESYSFONT)(HTHEME hTheme, int iFontId, LOGFONT *plf) = "CX_TYPEDEF";
+ static unsigned long GetThemeSysFontFail(HTHEME hTheme, int iFontId, LOGFONT *plf) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMESYSSTRING)(HTHEME hTheme, int iStringId, long*  pszStringBuff, int cchMaxStringChars) = "CX_TYPEDEF";
+ static unsigned long GetThemeSysStringFail(HTHEME hTheme, int iStringId, long*  pszStringBuff, int cchMaxStringChars) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMESYSINT)(HTHEME hTheme, int iIntId, int *piValue) = "CX_TYPEDEF";
+ static unsigned long GetThemeSysIntFail(HTHEME hTheme, int iIntId, int *piValue) {return E_FAIL;}
+
+         int  (          *PFNISTHEMEACTIVE)() = "CX_TYPEDEF";
+ static int  IsThemeActiveFail() {return FALSE;}
+
+         int (          *PFNISAPPTHEMED)() = "CX_TYPEDEF";
+ static int  IsAppThemedFail() {return FALSE;}
+
+         HTHEME (          *PFNGETWINDOWTHEME)(void* hwnd) = "CX_TYPEDEF";
+ static HTHEME GetWindowThemeFail(void* hwnd) {return NULL;}
+
+         unsigned long (          *PFNENABLETHEMEDIALOGTEXTURE)(void* hwnd, unsigned long dwFlags) = "CX_TYPEDEF";
+ static unsigned long EnableThemeDialogTextureFail(void* hwnd, unsigned long dwFlags) {return E_FAIL;}
+
+         int  (          *PFNISTHEMEDIALOGTEXTUREENABLED)(void* hwnd) = "CX_TYPEDEF";
+ static int  IsThemeDialogTextureEnabledFail(void* hwnd) {return FALSE;}
+
+         unsigned long (          *PFNGETTHEMEAPPPROPERTIES)() = "CX_TYPEDEF";
+ static unsigned long GetThemeAppPropertiesFail() {return 0;}
+
+         void (          *PFNSETTHEMEAPPPROPERTIES)(unsigned long dwFlags) = "CX_TYPEDEF";
+ static void SetThemeAppPropertiesFail(unsigned long dwFlags) {return;}
+
+         unsigned long (          *PFNGETCURRENTTHEMENAME)(long*  pszThemeFileName, int cchMaxNameChars, long*  pszColorBuff, int cchMaxColorChars, long*  pszSizeBuff, int cchMaxSizeChars) = "CX_TYPEDEF";
+ static unsigned long GetCurrentThemeNameFail(long*  pszThemeFileName, int cchMaxNameChars, long*  pszColorBuff, int cchMaxColorChars, long*  pszSizeBuff, int cchMaxSizeChars) {return E_FAIL;}
+
+         unsigned long (          *PFNGETTHEMEDOCUMENTATIONPROPERTY)(const long* pszThemeName, const long* pszPropertyName, long*  pszValueBuff, int cchMaxValChars) = "CX_TYPEDEF";
+ static unsigned long GetThemeDocumentationPropertyFail(const long* pszThemeName, const long* pszPropertyName, long*  pszValueBuff, int cchMaxValChars) {return E_FAIL;}
+
+         unsigned long (          *PFNDRAWTHEMEPARENTBACKGROUND)(void* hwnd, void* hdc, RECT* prc) = "CX_TYPEDEF";
+ static unsigned long DrawThemeParentBackgroundFail(void* hwnd, void* hdc, RECT* prc) {return E_FAIL;}
+
+         unsigned long (          *PFNENABLETHEMING)(int  fEnable) = "CX_TYPEDEF";
+ static unsigned long EnableThemingFail(int  fEnable) {return E_FAIL;}
+};
+
+
+extern CVisualStylesXP g_xpStyle;
+
+
+
+
+
+
+ 

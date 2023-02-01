@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="td\tdactor\td\actor\MultiPromise.cpp" />
+    <ClCompile Include="td\tdactor\td\actor\ConcurrentScheduler.cpp" />
+    <ClCompile Include="td\tdactor\td\actor\MultiTimeout.cpp" />
+    <ClCompile Include="td\tdactor\td\actor\impl\Scheduler.cpp">
+      <Filter>Impl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="td\tdactor\td\actor\MultiPromise.h" />
+    <ClInclude Include="td\tdactor\td\actor\PromiseFuture.h" />
+    <ClInclude Include="td\tdactor\td\actor\SchedulerLocalStorage.h" />
+    <ClInclude Include="td\tdactor\td\actor\SignalSlot.h" />
+    <ClInclude Include="td\tdactor\td\actor\SleepActor.h" />
+    <ClInclude Include="td\tdactor\td\actor\Timeout.h" />
+    <ClInclude Include="td\tdactor\td\actor\actor.h" />
+    <ClInclude Include="td\tdactor\td\actor\ConcurrentScheduler.h" />
+    <ClInclude Include="td\tdactor\td\actor\MultiTimeout.h" />
+    <ClInclude Include="td\tdactor\td\actor\impl\Actor.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\Actor-decl.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\ActorId.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\ActorId-decl.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\ActorInfo.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\ActorInfo-decl.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\EventFull.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\EventFull-decl.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\Scheduler-decl.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\Scheduler.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="td\tdactor\td\actor\impl\Event.h">
+      <Filter>Impl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Impl">
+      <UniqueIdentifier>{781720b8-b4b7-4498-9e33-b123d317aea3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

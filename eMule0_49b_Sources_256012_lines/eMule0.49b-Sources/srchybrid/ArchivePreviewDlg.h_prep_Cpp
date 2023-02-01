@@ -1,0 +1,79 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE. See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizablePage.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlX.h");}
+void INCLUDEREPLACE(){CX_INCL("ArchiveRecovery.h");}
+
+class CKnownFile;
+
+static void FreeMemory(void *arg);
+
+///////////////////////////////////////////////////////////////////////////////
+// CArchivePreviewDlg
+
+class CArchivePreviewDlg :        CResizablePage
+{
+ //DECLARE_DYNAMIC(CArchivePreviewDlg)
+
+public:
+ CArchivePreviewDlg();
+ virtual ~CArchivePreviewDlg();
+
+ void SetFiles(const CSimpleArray          * paFiles) { m_paFiles = paFiles; m_bDataChanged = true; }
+
+// Dialog Data
+ enum { IDD = IDD_ARCHPREV };
+
+protected:
+ CListCtrlX m_ContentList;
+ const CSimpleArray          * m_paFiles;
+ bool m_bDataChanged;
+ archiveScannerThreadParams_s* m_activeTParams;
+
+ void Localize();
+ void UpdateArchiveDisplay(bool doscan);
+ int ShowZipResults(int ret, archiveScannerThreadParams_s* tp);
+ int ShowRarResults(int ret, archiveScannerThreadParams_s* tp);
+ int ShowAceResults(int ret, archiveScannerThreadParams_s* tp);
+ long *  ShowScanResults(int * , long * lParam);
+
+ static unsigned int RunArchiveScanner(void*  pParam);
+
+ virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnSetActive();
+
+ CProgressCtrl* m_progressbar;
+
+
+         void OnBnClickedRead();
+         void OnBnClickedCreateRestored();
+         void OnBnExplain();
+         long *  OnDataChanged(int * , long *);
+         void OnDestroy();
+         void OnLvnDeleteAllItemsArchiveEntries(NMHDR *pNMHDR, long *  *pResult);
+         void OnNMCustomDrawArchiveEntries(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

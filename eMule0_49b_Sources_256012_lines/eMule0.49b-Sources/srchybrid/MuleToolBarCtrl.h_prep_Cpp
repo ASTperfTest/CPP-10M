@@ -1,0 +1,90 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+enum EToolbarLabelType {
+ NoLabels = 0,
+ LabelsBelow = 1,
+ LabelsRight = 2
+};
+
+class CMuleToolbarCtrl :        CToolBarCtrl
+{
+ //DECLARE_DYNAMIC(CMuleToolbarCtrl)
+
+public:
+ CMuleToolbarCtrl();
+ virtual ~CMuleToolbarCtrl();
+
+ void Init();
+ void Localize();
+ void Refresh();
+ void SaveCurHeight();
+ void UpdateBackground();
+ void PressMuleButton(int nID);
+ int  GetMaxSize(LPSIZE pSize) const;
+
+ static int GetDefaultLabelType() { return (int)LabelsBelow; }
+
+protected:
+ CSize  m_sizBtnBmp;
+ int   m_iPreviousHeight;
+ int   m_iLastPressedButton;
+ int   m_buttoncount;
+ TBBUTTON TBButtons[12];
+ char   TBStrings[12][200];
+ CStringArray m_astrToolbarPaths;
+ EToolbarLabelType m_eLabelType;
+ CStringArray m_astrSkinPaths;
+ CBitmap  m_bmpBack;
+
+ void ChangeToolbarBitmap(const CString& rstrPath, bool bRefresh);
+ void ChangeTextLabelStyle(EToolbarLabelType eLabelType, bool bRefresh, bool bForceUpdateButtons = false);
+ void UpdateIdealSize();
+ void SetAllButtonsStrings();
+ void SetAllButtonsWidth();
+ void ForceRecalcLayout();
+
+
+ void Dump();
+
+
+ void AutoSize();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnSize(unsigned int nType, int cx, int cy);
+         void OnSysColorChange();
+         void OnSettingChange(unsigned int uFlags, const char* lpszSection);
+         void OnNMRclick(NMHDR *pNMHDR, long *  *pResult);
+         void OnTbnQueryDelete(NMHDR *pNMHDR, long *  *pResult);
+         void OnTbnQueryInsert(NMHDR *pNMHDR, long *  *pResult);
+         void OnTbnGetButtonInfo(NMHDR *pNMHDR, long *  *pResult);
+         void OnTbnToolbarChange(NMHDR *pNMHDR, long *  *pResult);
+         void OnTbnReset(NMHDR *pNMHDR, long *  *pResult);
+         void OnTbnInitCustomize(NMHDR *pNMHDR, long *  *pResult);
+         void OnTbnEndAdjust(NMHDR* pNMHDR, long * * pResult);
+};
+
+
+
+
+
+
+ 

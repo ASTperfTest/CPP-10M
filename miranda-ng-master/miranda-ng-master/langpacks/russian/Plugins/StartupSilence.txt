@@ -1,0 +1,74 @@
+#muuid {7b856b6a-d48f-4f54-b8d6-c8d86d02ffc2}
+;============================================================
+;  File: StartupSilence.dll
+;  Plugin: StartupSilence
+;  Version: 0.2.0.1
+;  Authors: Vladimir Lyubimov
+;============================================================
+[Suppresses popups and mutes sounds for 10-300 sec at Miranda NG startup, then sets them back to predefined state (Automatically per computer settings).]
+Отключает все звуки и всплывающие окна при старте Миранды на 10-300 секунд, затем возвращает их к заданному состоянию (автоматически запоминает настройки для каждого компьютера).
+;file \plugins\StartupSilence\res\StartupSilence.rc
+[Silence at Startup]
+Тихий запуск
+[Settings for the next Computer Name:]
+Настройки для компьютера:
+[Enable silence at startup]
+Включить тихий запуск
+[for]
+на
+[10-300 seconds (Default 20)]
+10-300 секунд (По умолчанию 20)
+[Show Popup notification]
+Уведомлять во всплывающих окнах
+[Popup time 1-30 seconds (Default 5)]
+Время показа 1-30 секунд (По умолчанию 5)
+[TopToolBar button (Miranda restart required)]
+Кнопка в TopToolBar (требуется перезапуск Миранды)
+[Reset to default]
+Сброс на умолчания
+[After startup set:]
+Установить после запуска:
+[Filtered popups only (leave uncheck for no popups)]
+Только отфильтрованные всплывающие окна (не ставьте галку, чтобы не было всплывающих окон)
+[Enable sounds]
+Включить звуки
+[Allow to set sounds and filtered popups only after startup (uncheck for all popups and sounds)]
+Разрешены звуки и отфильтрованные всплывающие окна после запуска (снимите галку для всех всплывающих окон и звуков)
+[Allow mRadio or Weather popups, etc.]
+Разрешены всплывающие окна от mRadio или Weather и т.д.
+;file \plugins\StartupSilence\src\main.cpp
+[Events]
+События
+;file \plugins\StartupSilence\src\stdafx.h
+[Silence at startup]
+Тихий запуск
+[Toggle Silence OFF]
+Выключить тихий запуск
+[Toggle Silence ON]
+Включить тихий запуск
+[Toggle Silence OFF TTB]
+Выключен тихий запуск TTB
+[Toggle Silence ON TTB]
+Включён тихий запуск TTB
+[Sounds and popups are enabled]
+Звуки и всплывающие окна включены
+[Filtered mode ON]
+Режим фильтрации включён
+[Sounds and popups are disabled temporarily]
+Звуки и всплывающие окна временно выключены
+[Sounds and popups are disabled temporarily.\nmRadio or Weather popups, etc. are allowed.]
+Звуки и всплывающие окна временно выключены.\nРазрешены всплывающие окна от mRadio или Weather и т.д.
+[Silent Startup mode changed to ON]
+Тихий запуск включён
+[Silent Startup mode changed to OFF]
+Тихий запуск выключен
+[Silence At Startup is ON]
+Тихий запуск включён
+[Silence At Startup is OFF]
+Тихий запуск выключен
+[Toggle Silence At Startup]
+Тихий запуск Вкл/Выкл
+[You have to install TopToolBar plugin to use this option.]
+Для использования этой функции нужен установленный плагин TopToolBar.
+[You have to install popup plugin to use this option.]
+Для использования этой функции нужен установленный плагин всплывающих окон.

@@ -1,0 +1,4 @@
+[Display hidden shares]
+[New share]
+[Failed to share new file]
+[You are browsing from]

@@ -1,0 +1,82 @@
+#muuid {f62c1d7a-ffa4-4065-a251-4c9dd9101cc8}
+;============================================================
+;  File: CrashDumper.dll
+;  Plugin: Crash dumper
+;  Version: 0.2.0.1
+;  Authors: borkra
+;============================================================
+[Crash Dumper and Version Information for Miranda NG.]
+
+;file \plugins\CrashDumper\res\crshdmp.rc
+[View Version Information]
+Преглед на информация за версията
+[Close]
+Затваряне
+[Copy To Clipboard]
+Копиране в клипборда
+[To File]
+Във файл
+[Crash reports]
+Доклади за сривове
+[Generate crash reports]
+Генериране на доклад при срив
+[Create reports in subfolders naming as current date]
+Докладите в подпапки, с текуща дата за име
+[Use classic dates]
+Класическа дата
+[* You need to restart Miranda NG to apply changes]
+* За прилагане на промените трябва да рестартирате Miranda
+[Display popups about successful actions]
+
+[View]
+Преглед
+[&Copy]
+Копиране
+[Co&py All]
+Копиране на всичко
+[Select &All]
+Маркиране на всичко
+;file \plugins\CrashDumper\src\crshdmp.cpp
+[Version Info stored into file %s]
+Информация за версията е записана във файла %s
+[Version Info file %s is inaccessible]
+Файлът %s с информация за версиите не е достъпен
+[Version Information To Clipboard]
+Копиране на информация за версията в клипборда
+[Version Information To File]
+Копиране на информация за версията във файл
+[Show Version Information]
+Показване на информация за версията
+[Version Information]
+Информация за версията
+[Copy to clipboard]
+Запис в клипборда
+[Store to file]
+Запис като файл
+[Show]
+Показване
+[Show with DLLs]
+Показване и на DLLи
+[Open crash report directory]
+Отваряне на директорията за доклади
+[Copy Version Info to clipboard]
+Копира информация за версията в клипборда
+[Show Version Info]
+Показва информация за версията
+;file \plugins\CrashDumper\src\crshdmp_icons.cpp
+[Upload]
+Качване
+[Copy link to clipboard]
+Копиране на връзката в клипборда
+[Crash Dumper]
+Crash Dumper
+;file \plugins\CrashDumper\src\exhndlr.cpp
+[Crash Report write location is not available]
+Мястото за записване на докладите за срив е недостъпно
+[Miranda crashed. Crash report stored in the folder:\n %s\n\n Would you like store it in the clipboard as well?]
+Miranda се срина. Можете да намерите доклад за срива в:\n %s\n\n Желаете ли копие от доклада да бъде съхранено в клипборда?
+;file \plugins\CrashDumper\src\ui.cpp
+[View Version Information (with DLLs)]
+Показване на информация за версията (с DLL файлове)
+[Services]
+Услуги

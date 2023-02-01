@@ -1,0 +1,91 @@
+#muuid {b908773a-86f7-4a91-8674-6a20ba0e67d1}
+;============================================================
+;  File: Dropbox.dll
+;  Plugin: Dropbox
+;  Version: 0.12.2.4
+;  Authors: Miranda NG team
+;============================================================
+[Allows you to transfer files via Dropbox.]
+Umožňuje odesílání souborů přes Dropbox.
+;file \plugins\Dropbox\res\resource.rc
+[Authorization]
+Autorizace
+[To allow Miranda NG access in your Dropbox account:]
+Pro umožnění přístupu Mirandy NG k vašemu Dropbox účtu:
+[Go to this link]
+Navštívit stránku
+[Allow access to app folder]
+Povolte přístup ke složce pro aplikaci
+[Enter authorization code]
+Zadejte autorizační kód
+[Initiate authorization]
+Proveďte autorizaci
+[Authorize]
+Autorizovat
+[Download link]
+Odkazy ke stažení
+[Generate temporary link]
+Vygenerovat dočasný odkaz
+[Check status of authorization]
+Zkontrolujte stav autorizace
+[Autosend download link to contact]
+Automaticky odeslat odkaz kontaktu
+[Paste download link into message input area]
+Vložit odkaz do pole pro zadání textu
+[Copy download link to clipboard]
+Zkopírovat odkaz do schránky
+[Here you can choose the protocols in which Dropbox will be used instead of regular file transfers (sending), used by this protocol.]
+Zde můžete zvolit účty, pro které chcete místo jejich běžného způsobu odesílání souborů využít Dropbox.
+;file \plugins\Dropbox\src\dropbox.cpp
+[in process...]
+probíhá...
+[server does not respond]
+Server neodpovídá
+[you have been authorized]
+autorizace proběhla úspěšně
+;file \plugins\Dropbox\src\dropbox_commands.cpp
+[Dropbox supports the following commands:]
+Dropbox podporuje následující příkazy:
+[shows all files in folder "path" ("path" is relative from root and can be omitted for root folder)]
+zobrazí všechny soubory ve složce "cesta" ("cesta" je relativní vůči kořenové složce a může být vynechána)
+[returns download link for file or folder with specified path ("path" is relative from root folder)]
+vrátí odkaz ke stažení pro soubor nebo složku dle zadané cesty "path" ("path" je relativní vůči kořenové složce)
+[searches for file or folder matched by query ("query" is split on spaces into multiple tokens)]
+vyhledá soubor nebo složku dle zadaného dotazu ("dotaz" je rozdělen mezerami na více částí)
+[deletes file or folder with specified path ("path" is relative from root folder)]
+smaže soubor nebo složku dle zadané cesty "path" ("path" je relativní vůči kořenové složce)
+["%s" command has invalid parameter.\nUse "/help" for more info.]
+Příkaz "%s" má neplatný parametr.\nZadejte "/help" pro více informací.
+[is empty]
+je prázdný
+[is not found]
+nebyl nalezen
+[is deleted]
+je smazaný
+;file \plugins\Dropbox\src\dropbox_events.cpp
+[Upload files to Dropbox]
+Nahrát soubory do Dropboxu
+;file \plugins\Dropbox\src\dropbox_icons.cpp
+[Protocol icon]
+Ikona protokolu
+[Upload file(s)]
+Nahrát soubor(y)
+;file \plugins\Dropbox\src\dropbox_menus.cpp
+;file \plugins\Dropbox\src\dropbox_options.cpp
+[you are already authorized]
+úspěšně autorizováno
+[you are not authorized yet]
+není autorizováno
+[Account name]
+Název účtu
+[Protocol]
+Protokol
+[Network]
+Sítě
+[General]
+Obecné
+[Interception]
+Podchycení
+;file \plugins\Dropbox\src\dropbox_services.cpp
+["%s" is not valid.\nUse "/help" for more info.]
+"%s" není platný.\nZadejte "/help" pro více informací.

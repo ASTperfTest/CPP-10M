@@ -1,0 +1,91 @@
+#muuid {b68a8906-748b-435d-930e-21cc6e8f3b3f}
+;============================================================
+;  File: ClientChangeNotify.dll
+;  Plugin: Client change notify
+;  Version: 0.1.1.4
+;  Authors: Deathdemon
+;============================================================
+[Shows a notification when someone in your contact list changes his client.]
+Сповіщає, якщо хтось із вашого списку контактів змінив свій клієнт.
+;file \plugins\ClientChangeNotify\res\Resources.rc
+[ClientChangeNotify error]
+Помилка ClientChangeNotify
+[Fingerprint plugin not found.]
+Плагін Fingerprint не знайдено.
+[ClientChangeNotify requires it to work properly.]
+Він необхідний для роботи ClientChangeNotify.
+[Don't remind me anymore]
+Більше не нагадувати
+[Enable notification]
+Увімкнути сповіщення
+[Show previous client name]
+Показувати попереднє ім'я клієнта
+[Notify also when just client version changes]
+Сповіщати, коли зміниться версія клієнта
+[Show client version]
+Показати версію клієнта
+[Don't notify for contacts with disabled status notification]
+Не сповіщати для контактів з вимкненим повідомленням статусу
+[Click action]
+Дії по кліку
+[On left click]
+Лівий клік
+[On right click]
+Правий клік
+[Timeout]
+Затримка
+[Sec]
+с
+[0 = Default]
+0=Замовчання
+[-1 = Infinite]
+-1=Нескінченно
+[Colors]
+Кольори
+[Background]
+Фон
+[Use default]
+За замовчанням
+[Text]
+Текст
+[Preview]
+Тест
+[Ignore these clients (separated by semicolons):]
+Ігнорувати ці клієнти (через крапку з комою):
+[(you have to install pcre16.mir to use regular expressions here)]
+(встановіть pcre16.mir щоб використовувати тут регулярні вирази)
+;file \plugins\ClientChangeNotify\src\ClientChangeNotify.cpp
+[changed client to %s (was %s)]
+змінив клієнт на %s (був %s)
+[changed client to %s]
+змінив клієнт на %s
+[%s (was %s)]
+%s (був %s)
+[Client change notifications]
+Сповіщення про зміну клієнта
+[ClientChangeNotify: Client changed]
+Сповіщення про зміну клієнта: Клієнт змінився
+;file \plugins\ClientChangeNotify\src\Misc.h
+[Error #%d]
+Помилка #%d
+[Can't open log file ]
+Неможливо відкрити файл журналу\s
+;file \plugins\ClientChangeNotify\src\OptDlg.cpp
+[(you can use regular expressions here)]
+(Можна також використовувати регулярні вирази)
+[Open message window]
+Відкрити вікно бесіди
+[Close popup]
+Закрити вікно
+[Open contact details window]
+Відкрити вікно деталей контакту
+[Open contact menu]
+Відкрити меню контакту
+[Open contact history]
+Відкрити історію контакту
+[Do nothing]
+Нічого не робити
+[Popups]
+Спливаючі вікна
+[ClientChangeNotify]
+Сповіщення про зміну клієнта

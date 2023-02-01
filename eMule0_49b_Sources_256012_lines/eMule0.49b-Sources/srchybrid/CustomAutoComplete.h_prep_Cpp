@@ -1,0 +1,73 @@
+﻿//--------------------------------------------------------------------------------------------
+//  Author:         Klaus H. Probst [kprobst@vbbox.com]
+//
+//--------------------------------------------------------------------------------------------
+
+void INCLUDEREPLACE(){CX_INCL("initguid.h");}
+void INCLUDEREPLACE(){CX_INCL("shldisp.h");}
+void INCLUDEREPLACE(){CX_INCL("shlguid.h");}
+
+class CCustomAutoComplete :
+        IEnumString
+{
+private:
+ CStringArray m_asList;
+ CComPtr                m_pac;
+
+ unsigned long m_nCurrentElement;
+ unsigned long m_nRefCount;
+ int  m_fBound;
+ int m_iMaxItemCount;
+
+ // Constructors/destructors
+public:
+ CCustomAutoComplete();
+ CCustomAutoComplete(const CStringArray& p_sItemList);
+ ~CCustomAutoComplete();
+
+ // Implementation
+public:
+ int  Bind(void* p_hWndEdit, unsigned long p_dwOptions = 0, const char* p_lpszFormatString = NULL);
+ void Unbind();
+ int  IsBound() const { return m_fBound; }
+
+ int  SetList(const CStringArray& p_sItemList);
+ const CStringArray& GetList() const;
+ int GetItemCount();
+
+ int  AddItem(const CString& p_sItem, int iPos);
+ int  RemoveItem(const CString& p_sItem);
+ int  RemoveSelectedItem();
+ CString GetItem(int pos);
+
+ int  Clear();
+ int  Disable();
+ int  Enable(void);
+
+ int  LoadList(const char* pszFileName);
+ int  SaveList(const char* pszFileName);
+
+public:
+ STDMETHOD_(unsigned long,AddRef)();
+ STDMETHOD_(unsigned long,Release)();
+ STDMETHOD(QueryInterface)(IID *  riid, void** ppvObject);
+
+public:
+ STDMETHOD(Next)(unsigned long celt, long  * * rgelt, unsigned long* pceltFetched);
+ STDMETHOD(Skip)(unsigned long celt);
+ STDMETHOD(Reset)(void);
+ STDMETHOD(Clone)(IEnumString** ppenum);
+
+ // Internal implementation
+private:
+ void InternalInit();
+ unsigned long EnDisable(int  p_fEnable);
+ int FindItem(const CString& rstr);
+};
+
+
+
+
+
+
+ 

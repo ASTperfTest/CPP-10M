@@ -1,0 +1,85 @@
+;============================================================
+;  File: miranda32/64.exe
+;  Module: Miranda Core
+;  Version: 0.96.2
+;============================================================
+[Minimize to tray]
+Minimise to tray
+[Gray out entire list when:]
+Grey out entire list when:
+[Background color]
+Background colour
+[Selection color]
+Selection colour
+[Use Windows colors]
+Use Windows colours
+[Minimize the file transfer window]
+Minimise the file transfer window
+[Minimize the message window on send]
+Minimise the message window on send
+[Text color:]
+Text colour:
+[Background color:]
+Background colour:
+[Send authorization request]
+Send authorisation request
+[Authorization request]
+Authorisation request
+[Run program when Miranda NG starts (e.g., tail -f, dbgview, etc.):]
+Run program when Miranda NG starts (e.g. tail -f, dbgview, etc.):
+[e.g., Workplace]
+e.g. Workplace
+[Fonts and colors]
+Fonts and colours
+[Color/background]
+Colour/background
+[Text color]
+Text colour
+[Base color:]
+Base colour:
+[Secondary color:]
+Secondary colour:
+[&Authorize]
+&Authorise
+[Add to contact list if authorized]
+Add to contact list if authorised
+[Use default colors]
+Use default colours
+[Use custom colors]
+Use custom colours
+[Canceled]
+Cancelled
+[This file transfer has been canceled by the other side]
+This file transfer has been cancelled by the other side
+[Initializing...]
+Initialising...
+[Timestamp has same color as the event]
+Timestamp has same colour as the event
+[Strip colors from messages in the log]
+Strip colours from messages in the log
+[Make the text italicized (Ctrl+I)]
+Make the text italicised (Ctrl+I)
+[&Color]
+&Colour
+[Select a foreground color for the text (Ctrl+K)]
+Select a foreground colour for the text (Ctrl+K)
+[&Background color]
+&Background colour
+[Select a background color for the text (Ctrl+L)]
+Select a background colour for the text (Ctrl+L)
+[Please authorize my request and add me to your contact list.]
+Please authorise my request and add me to your contact list.
+[%s requests authorization]
+%s requests authorisation
+[%u requests authorization]
+%u requests authorisation
+[Authorization request from %s%s: %s]
+Authorisation request from %s%s: %s
+[Customize]
+Customise
+[Request authorization]
+Request authorisation
+[Grant authorization]
+Grant authorisation
+[Revoke authorization]
+Revoke authorisation

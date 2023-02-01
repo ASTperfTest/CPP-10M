@@ -1,0 +1,9 @@
+#muuid {2d77a746-00a6-4343-bfc5-f808cdd772ea}
+;============================================================
+;  File: Import.dll
+;  Plugin: Import contacts and messages
+;  Version: 0.95.11.1
+;  Authors: Miranda team
+;============================================================
+[Imports only contacts and history, and a few settings. Ideal for synchronizing.]
+Imports only contacts and history, and a few settings. Ideal for synchronising.

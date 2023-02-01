@@ -1,0 +1,664 @@
+#muuid {8f79b4ee-eb48-4a03-873e-27be6b7e9a25}
+;============================================================
+;  File: Clist_nicer.dll
+;  Plugin: Clist nicer
+;  Version: 0.9.3.2
+;  Authors: Pixel, egoDust, cyreve, Nightwish
+;============================================================
+[Displays contacts, event notifications, protocol status.]
+Zobrazuje kontakty, upozornění na události, stavy protokolů a podporuje rámečky.
+;file \plugins\Clist_nicer\res\resource.rc
+[Clist nicer exception]
+Výjimka v Clist Nicer
+[Copy to clipboard]
+Zkopírovat do schránky
+[Continue]
+Pokračovat
+[Exit Miranda]
+Ukončit Mirandu
+[Although the exception was caught and you may continue working with Miranda, you should restart the program as soon as possible. The exception may have damaged internal data structures and can have a serious impact on stability.]
+Ačkoliv byla výjimka zachycena a vy můžete pokračovat v práci s Mirandou, měli byste ji restartovat jakmile to bude možné. Výjimka může poškodit vnitřní datové struktury a a může mít zásadní vliv na stabilitu.
+[Delete contact]
+Smazání kontaktu
+[No]
+Ne
+[Yes]
+Ano
+[Hide from list only, in order to keep their history and ignore/visibility settings]
+Pouze skrýt; zůstane tak zachována historie a ostatní nastavení.
+[Use Options -> Contacts -> Ignore to unhide contacts.]
+(Skrytí kontaktů zrušíte v Možnosti -> Kontakty -> Filtrování.)
+[Are you sure you want to delete %s?]
+Opravdu chcete smazat kontakt %s?
+[This will erase all history and settings for this contact!]
+Tímto odstraníte celou historii a nastavení kontaktu!
+[Contact list]
+Seznam kontaktů
+[Apply last active view mode]
+Použít poslední aktivní režim zobrazení
+[Show menu and status buttons]
+Zobrazit tlačítka menu a stavu
+[Draw sunken edge]
+Použít zanořený rámeček
+[Event area]
+Místo pro události
+[Set base visibility on the frames menu]
+Pozn.: Viditelnost tohoto objektu nastavíte v nabídce rámečku.
+[Auto mode]
+Zobrazovat automaticky
+[System tray icon when using multiple protocols]
+Ikona v oznamovací oblasti při použití více protokolů
+[Show]
+Zobrazit
+[icon when statuses differ]
+(v případě, že se stavy liší)
+[Cycle icons every]
+Měnit ikony co
+[seconds, when statuses differ]
+sek. (v případě, že se stavy liší)
+[Show multiple icons]
+Zobrazit více ikon
+[Only when statuses differ]
+Pouze v případě, že se stavy liší
+[Do not show system tray icon tooltips on mouse over]
+Nezobrazovat tipy po najetí myší nad ikonu
+[Groups]
+Skupiny
+[Draw a line alongside group names]
+Zobrazit vedle názvu skupin čáru
+[Show number of contacts in a group]
+Zobrazit počet kontaktů ve skupině
+[Hide numbers when all offline]
+Skrýt, jsou-li všichni offline
+[Sort groups alphabetically]
+Seřadit skupiny podle abecedy
+[Quick search in open groups only]
+Rychle hledat jen v otevř. skupinách
+[No expand/collapse icon]
+Vypnout ikonu pro rozbalení
+[Center group names horizontally]
+Vodorovně vystředit název skupin
+[Alignment]
+Zarovnání
+[Margins (left/right)]
+Odstup zleva/zprava
+[Row gap]
+Odstup řádků:
+[Minimum row height:]
+Min. výška řádku:
+[Group row height]
+Výška skupiny:
+[Indent groups by:]
+Rozestup skupin:
+[Inner row vertical padding]
+Vyplnění řádku zevnitř
+[Margins and spacing]
+Okraje a rozestup
+[Contact list sorting]
+Řazení seznamu kontaktů
+[First by]
+Seřadit podle
+[Then by]
+Dále podle
+[Finally by]
+A nakonec dle
+[Move events to the top of list or group]
+Posunovat události v seznamu nahoru
+[Do not separate offline contacts]
+Neoddělovat kontakty ve stavu offline
+[Right align contacts]
+Zarovnat kontakt vpravo
+[Avatars]
+Avatary
+[Show avatars]
+Zobrazit avatary
+[Height]
+Výška
+[Draw a border around avatars]
+Orámovat avatary
+[Rounded avatars]
+Zaoblit okraje avatarů
+[Radius]
+Rádius
+[Always align icons and text for missing avatars]
+Pokud chybí avatar, zarovnat ikonu a text pod sebe
+[Avatar alignment]
+Zarovnání avatarů
+[Don't request avatars for offline contacts]
+Nestahovat avatar kontaktů offline
+[Second text line]
+Druhý řádek textu
+[Display status message when available]
+Zobrazit stavovou zprávu (pokud je)
+[Show second text line:]
+Zobrazit druhý řádek textu:
+[Show contacts local time]
+Zobrazit místní čas kontaktu
+[Only when timezone differs]
+Pouze pokud se liší časová zóna
+[Icons]
+Ikony
+[Show status icons]
+Zobrazit stavové ikony
+[Centered when possible]
+Pokud možno vystředit
+[When possible, draw status icons in avatar space]
+Pokud možno vykreslit stavové ikony v rámci avataru
+[Use metacontact protocol icons instead of subcontacts]
+Použít ikonu pro metakontakt místo konkrétního protokolu
+[Use overlay icons on avatars]
+Použít překryvné ikony (na avatary)
+[Dim idle contacts]
+Zešednout neaktivní kontakty
+[Replace status icons with xStatus]
+Nahradit stavové ikony rozšířeným stavem
+[Window]
+Okno
+[Always on top]
+Vždy navrchu
+[Show menu bar]
+Zobrazit menu
+[Easy move]
+Vylepšené přesouvání
+[Rounded border]
+Zaoblený rámeček
+[Border]
+Okraj
+[Title bar text:]
+Text v záhlaví:
+[Pin to desktop]
+Připíchnout na plochu
+[Show drop shadow (restart required)]
+Zobrazit stín (vyžaduje restart)
+[Hide contact list after it has been idle for]
+Skrýt seznam kontaktů, byl-li neaktivní po dobu
+[seconds]
+sek.
+[Automatically resize window to height of list]
+Podle položek automaticky změnit výšku okna
+[maximum]
+max. však
+[% of screen]
+% obrazovky
+[Size upwards]
+Zvětšovat okno směrem nahoru
+[If window is partially covered, bring to front instead of hiding]
+Je-li okno částečně zakryto, zobrazit na popředí namísto skrytí
+[Always hide on taskbar]
+Nezobrazovat na hlavním panelu
+[Client margins]
+Odst. od okraje
+[Clip border by]
+Oříznout okraj o
+[Gap between frames]
+Mezera mezi rámečky
+[Translucency options]
+Průhlednost
+[Transparent contact list]
+Povolit průhlednost seznamu kontaktů
+[Inactive opacity:]
+Neaktivní okno:
+[Active opacity:]
+Aktivní okno:
+[Fade contact list in/out]
+Plynule přejít mezi zobrazením a skrytím
+[Fully transparent (like TweakUI)]
+Úplně průhledné (jako TweakUI)
+[Items]
+Položky
+[Show divider between online and offline contacts]
+Zobrazit oddělovač mezi kontakty online a offline
+[Hot track items as mouse passes over]
+Zvýraznit položky, nad kterými se objeví šipka myši
+[Disable drag and drop of items]
+Zakázat uchopení a přetáhnutí položek
+[Disable rename of items by clicking twice]
+Zakázat přejmenování položek dvojím kliknutím
+[Show selection even when list is not focused]
+Zobrazit výběr i tehdy, není-li seznam aktivní
+[Make selection highlight translucent]
+Zobrazit vybrané položky průhledně
+[Use full row for selection and hottracking]
+Při výběru a hledání označit celý řádek
+[Double click on avatar opens user info]
+Otevřít inf. o kontaktu dvojklikem na avatar
+[Visual]
+Zobrazení
+[Scroll list smoothly]
+Rolovat seznam kontaktů plynule
+[Time:]
+Čas:
+[milliseconds]
+ms
+[Hide vertical scroll bar]
+Skrýt svislý posuvník
+[Gray out entire list when:]
+Zešednout seznam v případě:
+[Contact list background]
+Pozadí seznamu kontaktů
+[Use Windows colors]
+Použít barvy Windows
+[Use background image]
+Použít na pozadí obrázek
+[Stretch to width]
+Uzpůsobit na šířku
+[Stretch to height]
+Uzpůsobit na výšku
+[Tile horizontally]
+Vodorovně vedle sebe
+[Tile vertically]
+Svisle vedle sebe
+[Scroll with text]
+Rolovat s textem
+[Stretch proportionally]
+Uzpůsobit poměrně
+[Use these settings to skin the entire background]
+Použít toto nastavení pozadí pro celý seznam kontaktů
+[If you enable this, the background settings will affect the entire contact list frame.]
+Touto možností ovlivníte nastavení pozadí celého rámečku pro seznam kontaktů.
+[Status bar]
+Stavová lišta
+[Show status bar]
+Zobrazit stavovou lištu
+[Show icons]
+Zobrazit ikony
+[Show protocol names]
+Zobrazit názvy protokolů
+[Show status text]
+Zobrazit stav
+[Right click opens status menu]
+Pravým tlačítkem seznam stavů
+[Right click opens Miranda NG menu]
+Pravým tlačítkem nabídku Mirandy
+[Make sections equal width]
+Shodná šířka všech položek
+[Show bevels on panels]
+Zobrazit efekt zkosení panelů
+[Show resize grip indicator]
+Zobrazit tlač. změny velik.
+[Draw background skin]
+Použít skin pozadí
+[Show ICQ extended status icons]
+Zobrazit ikony rozšířeného stavu ICQ
+[Mark protocols locked from global status changes]
+Označit protokoly se zamknutým stavem
+[Available view modes]
+Přehled režimů zobrazení
+[Include protocols]
+Včetně protokolů
+[New]
+Nový
+[Include groups]
+Včetně skupin
+[Include status modes]
+Včetně stavu
+[Cancel]
+Zrušit
+[Apply]
+Použít
+[Sticky contacts]
+Trvalé kontakty
+[Clear all]
+Odstranit vše
+[Using the contact list on the left side, you can select contacts which will be "sticky" for this view mode. These contacts will ignore the standard filter rules and only use the status mode filter below.]
+Za použití seznamu kontaktů po levé straně můžete vybrat ty kontakty, které budou 'přilepené'. Na tyto kontakty nebude platit žádné ze standardních filtrovacích pravidel, kromě filtrování dle stavu níže.
+[Protocol]
+Protokol
+[Group]
+Skupina
+[Status mode]
+Stav
+[Automatically clear this view mode after]
+Automaticky vymazat vybraný režim zobrazení po
+[View mode options]
+Možnosti režimu zobrazení
+[Editing view mode]
+Úprava pohledu
+[Last message]
+Poslední zpráva
+[Per contact skins:]
+Skin na kontakt:
+[< Reload]
+Aktualizovat
+[Contact list skin]
+Skin seznamu kontaktů
+[Load this skin on startup]
+Načíst vybraný skin při spuštění
+[Apply skin now]
+Použít skin
+[Unload skin]
+Zrušit skin
+[Make selection shape equal to selected item]
+Určit tvar výběru obrysem označené položky
+[Blend selection with background]
+Smíchat vybranou položku s pozadím
+[Automatically fill background with wallpaper (tiled wallpaper only)]
+Autom. vyplnit pozadí obrázkem z plochy (v režimu vedle sebe)
+[Apply group indent values to background drawing]
+Zohlednit odsazení skupiny při vykreslování pozadí
+[Use per protocol/contact skinning]
+Definovat skin pro každý protokol zvlášť
+[Protocol skins override status text colors]
+Určit barvu stav. textu skinem
+[Set all buttons to skinned mode]
+Použít skin pro všechna tlačítka
+[Use fast gradient drawing]
+Rychlé vykreslení gradientu
+[Corner radius]
+Zakulacení rohu
+[Skin options]
+Možnosti skinu
+[Group top padding]
+Vyplnění skup. shora
+[Frame title bar height]
+Výška záhlaví rámečku
+[Ignore selection for groups]
+Ignorovat výběr skupiny
+[Download more skins]
+Stáhnout další skiny
+[Load from skin file]
+Importovat skin
+[Export to skin file]
+Exportovat skin
+;file \plugins\Clist_nicer\src\CLCButton.cpp
+[Show menu]
+Zobrazit nabídku
+[Show/Hide offline contacts]
+Zobrazit/skrýt offline uživatele
+[Use/Disable groups]
+Zobrazit/skrýt skupiny
+[Find and add contacts]
+Vyhledat a přidat kontakty
+[Accounts]
+Účty
+[Open preferences]
+Otevřít nastavení
+[Enable/Disable sounds]
+Povolit/zakázat zvuky
+[Minimize contact list]
+Minimalizovat seznam
+[Status menu]
+Nabídka stavů
+[Select view mode]
+Vybrat režim zobrazení
+[Setup view modes]
+Nastavení režimů zobrazení
+[Clear view mode]
+Zrušit režim zobrazení
+;file \plugins\Clist_nicer\src\clcopts.cpp
+[Nothing]
+Nic
+[Name]
+Jméno
+[Status]
+Stavy
+[Message frequency]
+Četnost zpráv
+[Never]
+Nikdy
+[Always]
+Vždy
+[For RTL only]
+Pouze pro RTL
+[RTL TEXT only]
+Pouze pro RTL TEXT
+[Always left]
+Vždy vlevo
+[Always right]
+Vždy vpravo
+[Automatic (RTL)]
+Automaticky (RTL)
+[When space allows it]
+Pokud to místo dovolí
+[When needed]
+Pokud je potřeba
+[With nickname - left]
+S přezdívkou - vlevo
+[Far left]
+Úplně vlevo
+[Far right]
+Úplně vpravo
+[With nickname - right]
+S přezdívkou - vpravo
+[Row items]
+Řádky
+[Contacts]
+Kontakty
+[Groups and layout]
+Skupiny a vzhled
+[Advanced]
+Extra
+;file \plugins\Clist_nicer\src\clcpaint.cpp
+[No events...]
+<žádné události>
+;file \plugins\Clist_nicer\src\clistopts.cpp
+[Global]
+Globální
+[Not focused]
+Neaktivní
+[Offline]
+Offline
+[Online]
+Online
+[Away]
+Na chvíli pryč
+[Not available]
+Nejsem tady
+[Occupied]
+Nemám čas
+[Do not disturb]
+Nerušit!
+[Free for chat]
+Mám volno
+[Invisible]
+Neviditelný
+[Title bar]
+Záhlaví okna
+[Tool Window]
+S tenkým záhlavím
+[Thin border]
+Tenký okraj
+[No border]
+Bez okraje
+[General]
+Obecné
+[List layout]
+Vzhled seznamu
+[Background]
+Pozadí
+;file \plugins\Clist_nicer\src\clui.cpp
+[Toggle show online/offline]
+Přepnout online/offline
+[Toggle groups]
+Přepnout skupiny
+[Find contacts]
+Vyhledat kontakty
+[Toggle sounds]
+Přepnout zvuky
+[Show TabSRMM session list]
+Zobrazit seznam relací TabSRMM
+[Show TabSRMM menu]
+Zobrazit nabídku TabSRMM
+[Sounds are off]
+Zvuky jsou vypnuté
+[Reset view mode]
+Výchozí režim zobrazení
+[Configure view modes]
+Konfigurace režimu zobrazení
+[Setup accounts]
+Konfigurace účtů
+[My contacts]
+Seznam kontaktů
+[Default]
+Výchozí
+[Overlay icons]
+Překryvné ikony
+[%s connecting]
+Připojování %s
+[Connecting icons]
+Ikony připojování
+[Menu]
+Menu
+[Open main menu]
+Otevřít hlavní nabídku
+[Set status modes]
+Nastavit stavové módy
+[The requested action requires a valid contact selection. Please select a contact from the contact list and repeat.]
+Požadovanou operaci lze provést až po výběru osoby ze seznamu kontaktů.
+[Parameter mismatch]
+Parametry nesouhlasí
+[The service %S specified by the %S button definition was not found. You may need to install additional plugins.]
+Služba %s, specifikovaná tlačítkem %s, nebyla nalezena. Může být potřeba nainstalovat chybějící doplněk.
+[Service failure]
+Chyba služby
+[You need the FloatingContacts plugin, cause the embedded floating contacts were removed.]
+Potřebujete doplněk pro Plovoucí kontakty, neboť jejich vestavěná podpora byla zrušena.
+[Warning]
+Upozornění
+[Standard contacts]
+Standardní kontakty
+[Online contacts to whom you have a different visibility]
+Kontakty online, vůči kterým máte nastavenou výjimku v (ne)viditelnosti
+[Offline contacts]
+Kontakty offline
+[Contacts which are 'not on list']
+Kontakty, které "nejsou v seznamu"
+[Group member counts]
+Počet členů ve skupině
+[Dividers]
+Oddělovače
+[Offline contacts to whom you have a different visibility]
+Kontakty offline, vůči kterým máte nastavenou výjimku v (ne)viditelnosti
+[Frame titles]
+Záhlaví rámečku
+[Contact list local time]
+Místní čas kontaktu
+[Selected text]
+Vybraný text
+[Hottrack text]
+Zvýrazněný text
+[Quicksearch text]
+Hledaný text
+[Embedded frames border]
+Okraj vsazených rámečků
+;file \plugins\Clist_nicer\src\cluiframes.cpp
+[&FrameTitle]
+&Záhlaví rámečku
+[&Visible]
+&Viditelný
+[&Show title bar]
+Zo&brazit záhlaví
+[&Locked]
+Zamkn&utý
+[&Collapsed]
+&Sbalený
+[&Floating mode]
+&Plovoucí
+[&Border]
+O&kraj
+[&Skinned frame]
+&Skin na rámeček
+[&Align]
+Z&arovnat
+[&Top]
+Na&hoře
+[&Client]
+&Klient
+[&Bottom]
+Do&le
+[&Position]
+U&místění
+[&Up]
+Nahor&u
+[&Down]
+&Dolů
+[Lock frame]
+Zamknout rámeček
+[Visible]
+Viditelné
+[Show title bar]
+Zobrazit záhlaví
+[Skinned frame]
+Skin na rámeček
+[Floating]
+Plovoucí
+[Frames]
+Rámečky
+[Show all frames]
+Zobrazit všechny rámečky
+[Show all title bars]
+Zobrazit záhlaví rámečků
+[Hide all title bars]
+Skrýt záhlaví rámečků
+;file \plugins\Clist_nicer\src\Docking.cpp
+[The contact list cannot be docked when using the default title bar and border. Use a toolwindow or borderless style instead.]
+Seznam kontaktů nemůže být ukotven při použití výchozího stylu záhlaví a okraje. Použijte tenký styl záhlaví nebo okno bez okraje.
+[Contact list docking]
+Ukotvení seznamu kontaktů
+;file \plugins\Clist_nicer\src\extBackg.cpp
+[Load and apply]
+Použití
+[Skins]
+Skiny
+;file \plugins\Clist_nicer\src\groupmenu.cpp
+[Show metacontact protocol icons]
+Zobrazit ikony protokolu subkontaktu
+[Show additional buttons]
+Zobrazit doplňková tlačítka
+[Draw sunken frame]
+Použít zanořený rámeček
+[&Hide/show]
+Skrýt/Zo&brazit
+[&Find/add contacts...]
+&Vyhledat kontakty...
+[&Main menu]
+&Hlavní nabídka
+[&Status]
+&Stav
+[Appearance]
+Vzhled
+[&Options...]
+M&ožnosti...
+;file \plugins\Clist_nicer\src\viewmodes.cpp
+[Ungrouped contacts]
+Nesdružené kontakty
+[And]
+AND
+[Or]
+OR
+[Older than]
+starší než
+[Newer than]
+novější než
+[Minutes]
+minut
+[Hours]
+hodin
+[Days]
+dnů
+[Current view mode: %S]
+Režim zobrazení: %s
+[Filtering]
+Filtrování
+[*** All contacts ***]
+*** všechny kontakty ***
+[Really delete this view mode? This cannot be undone]
+Opravdu chcete odstranit režim zobrazení? Tuto akci nelze vzít zpět.
+[Delete a view mode]
+Odstranit režim zobrazení
+[No view mode]
+<žádný>
+[A view mode with this name does already exist]
+Režim zobrazení s tímto názvem již existuje
+[Duplicate name]
+Duplicitní jméno
+[Setup view modes...]
+Nastavit režimy zobrazení...
+[Clear current view mode]
+Obnovit výchozí režim
+[Select a view mode]
+Výběr režim zobrazení
+[Clear view mode and return to default display]
+Vrátí zpět výchozí režim zobrazení
+[View modes]
+Režimy zobrazení

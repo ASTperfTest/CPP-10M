@@ -1,0 +1,426 @@
+;============================================================
+;  File: weatherxml.ini
+;  Plugin: Weather
+;============================================================
+[AM Rain]
+
+[Am Clouds / Pm Sun]
+Облаци сутрин / Слънце следобед
+[Am Light Rain]
+Слаб дъжд сутрин
+[Am Rain / Snow Showers]
+Дъжд сутрин / Снежни превалявания
+[Am Rain / Snow]
+
+[Am Rain]
+
+[Am Showers / Wind]
+Превалявания от дъжд сутрин / Вятър
+[Am Showers]
+Превалявания от дъжд сутрин
+[Am Snow Showers / Wind]
+Снежни превалявания сутрин / Вятър
+[Am Snow Showers]
+Снежни превалявания сутрин
+[Am Snow]
+
+[Am T-Storms]
+
+[Clear / Wind]
+
+[Clouds Early / Clearing Late]
+Денем облачно / Нощем ясно
+[Cloudy / Wind]
+Облачно / Вятър
+[Cloudy / Windy]
+
+[Cloudy And Windy]
+Облачно и ветровито
+[Cloudy]
+Облачно
+[Drifting Snow]
+Снегонавяване
+[ENE]
+ИСИ
+[ESE]
+ИЮИ
+[E]
+И
+[Fair / Windy]
+
+[Fair And Windy]
+
+[Fair]
+Ясно с малко облаци
+[Feel]
+Усеща се като
+[Few Showers / Wind]
+Няколко превалявания / Вятър
+[Few Showers]
+Няколко превалявания
+[Few Snow Showers]
+Няколко снежни превалявания
+[First Quarter]
+Първа четвърт
+[Fog / Windy]
+
+[Fog And Windy]
+Мъгливо и ветровито
+[Fog Late]
+
+[Fog]
+Мъгла
+[Forecast Day 0]
+Ден 10: _Прогноза
+[Forecast Day 1]
+Днес: _Прогноза
+[Forecast Day 2]
+Ден 2: _Прогноза
+[Forecast Day 3]
+Ден 3: _Прогноза
+[Forecast Day 4]
+Ден 4: _Прогноза
+[Forecast Day 5]
+Ден 5: _Прогноза
+[Forecast Day 6]
+Ден 6: _Прогноза
+[Forecast Day 7]
+Ден 7: _Прогноза
+[Forecast Day 8]
+Ден 8: _Прогноза
+[Forecast Day 9]
+Ден 9: _Прогноза
+[Forecast Update VAR]
+
+[Forecast Update]
+
+[Freezing Drizzle / Windy]
+
+[Freezing Rain / Windy]
+
+[Full Moon]
+Пълнолуние
+[Haze]
+Мараня
+[Heat Index]
+
+[Heavy Rain / Wind]
+
+[Heavy Rain]
+
+[Heavy Snow And Windy]
+Обилен снеговалеж и вятър
+[Heavy Snow Shower]
+Обилни снежни превалявания
+[Heavy Snow]
+Обилен снеговалеж
+[Heavy T-Storm]
+
+[Heavy T-Storms]
+
+[Ice Crystals]
+
+[Isolated T-Storms / Wind]
+
+[Isolated T-Storms]
+Отделни гръмотевична буря
+[Jun]
+
+[Last Quarter]
+Последна четвърт
+[Latitude]
+Геогр. ширина
+[Light Drizzle And Fog]
+Слаб ръмеж и мъгла
+[Light Drizzle And Windy]
+Слаб ръмеж и вятър
+[Light Drizzle]
+Слаб ръмеж
+[Light Freezing Rain / Fog]
+
+[Light Freezing Rain / Windy]
+
+[Light Rain / Fog]
+
+[Light Rain / Freezing Rain]
+
+[Light Rain / Wind Early]
+
+[Light Rain / Wind]
+Слаб дъжд / Вятър
+[Light Rain / Windy]
+
+[Light Rain And Windy]
+Слаб дъжд и вятър
+[Light Rain Early]
+Слаб дъжд денем
+[Light Rain Late]
+Слаб дъжд нощем
+[Light Rain Shower And Windy]
+Слаб краткотраен дъжд и вятър
+[Light Rain Shower]
+Слаб краткотраен дъжд
+[Light Rain With Thunder]
+Слаб дъжд и гръмотевици
+[Light Rain]
+Слаб дъжд
+[Light Showers Rain]
+Слаб и краткотраен дъжд
+[Light Snow / Fog]
+
+[Light Snow And Windy]
+Лек снеговалеж и вятър
+[Light Snow Early]
+Слаб снеговалеж денем
+[Light Snow Late]
+Слаб снеговалеж нощем
+[Light Snow Shower And Windy]
+Слабо снежно преваляване и вятър
+[Light Snow Shower]
+Слабо снежно преваляване
+[Light Snow]
+Слаб снеговалеж
+[Light Thunderstorm Rain]
+Лек дъжд с гръмотевична буря
+[Local Time]
+Местно време
+[Longitude]
+Геогр. дължина
+[Mist]
+Лека мъгла
+[Moderate]
+Умерено
+[Moon]
+Лунна фаза
+[Mostly Clear]
+Предимно ясно
+[Mostly Cloudy / Wind]
+Значителна облачност / Вятър
+[Mostly Cloudy And Windy]
+Значителна облачност и вятър
+[Mostly Cloudy]
+Значителна облачност
+[Mostly Sunny / Wind]
+
+[Mostly Sunny]
+Предимно слънчево
+[N/A%]
+
+[N/a]
+НД
+[NE]
+СИ
+[NNE]
+ССИ
+[NNW]
+ССЗ
+[NW]
+СЗ
+[N]
+С
+[New Moon]
+Новолуние
+[Night]
+Вечер
+[Observatory]
+Обсерватория
+[Overcast]
+Плътна облачност
+[Partly Cloudy / Wind]
+
+[Partly Cloudy / Windy]
+
+[Partly Cloudy And Windy]
+Незначителна облачност и вятър
+[Partly Cloudy]
+Незначителна облачност
+[Partly Sunny]
+Частично слънчево
+[Pm Light Rain]
+Слаб дъжд следобед
+[Pm Rain / Snow]
+
+[Pm Rain / Wind]
+
+[Pm Rain]
+
+[Pm Showers / Wind]
+
+[Pm Showers]
+Превалявания следобед
+[Pm Snow Showers]
+Снежни превалявания следобед
+[Pm Snow]
+
+[Pm T-Storms]
+Гръмотевична буря следобед
+[Pressure Tendency]
+Налягането (тенденция)
+[Rain / Freezing Rain / Wind]
+
+[Rain / Freezing Rain]
+
+[Rain / Snow / Wind]
+Дъжд / Сняг / Вятър
+[Rain / Snow Early]
+
+[Rain / Snow Late]
+
+[Rain / Snow Showers Early]
+Дъжд / Снежни превалявания сутрин
+[Rain / Snow Showers Late]
+Дъжд / Снежни превалявания нощем
+[Rain / Snow Showers]
+Дъжд / Снежни превалявания
+[Rain / Snow]
+Дъжд/Сняг
+[Rain / Thunder]
+Дъжд / Гръмотевици
+[Rain / Wind Early]
+
+[Rain / Wind]
+
+[Rain And Snow]
+Дъжд и сняг
+[Rain Early]
+
+[Rain Late]
+
+[Rain Shower]
+
+[Rain To Snow]
+Дъжд към сняг
+[Rain]
+Дъжд
+[SE]
+ЮИ
+[SSE]
+ЮЮИ
+[SSW]
+ЮЮЗ
+[SW]
+ЮЗ
+[S]
+Ю
+[Sand]
+
+[Scattered Showers]
+Разпръснати превалявания
+[Scattered Snow Showers]
+Разпръснати снежни превалявания
+[Scattered T-Storms / Wind]
+
+[Scattered T-Storms]
+Разпръснати гръмотевична буря
+[Shallow Fog]
+Слаба мъгла
+[Showers / Wind Late]
+
+[Showers / Wind]
+
+[Showers Early]
+Превалявания денем
+[Showers In The Vicinity]
+
+[Showers Late]
+Превалявания нощем
+[Showers Rain]
+Краткотраен дъжд
+[Showers]
+Краткотрайни превалявания
+[Sleet And Windy]
+
+[Sleet]
+
+[Smoke]
+
+[Snow / Wind Early]
+
+[Snow / Wind]
+Сняг / Вятър
+[Snow / Windy]
+
+[Snow And Sleet]
+
+[Snow Early]
+Снеговалеж денем
+[Snow Shower / Wind]
+Снежни превалявания / Вятър
+[Snow Shower And Windy]
+Снежни превалявания и вятър
+[Snow Shower]
+Снежни превалявания
+[Snow Showers / Wind Early]
+Снежни превалявания / Вятър денем
+[Snow Showers Early]
+Снежни превалявания денем
+[Snow Showers Late]
+Снежни превалявания нощем
+[Snow To Rain]
+Сняг към дъжд
+[Snow To Wintry Mix]
+
+[Snow]
+Снеговалеж
+[Sunny / Wind]
+
+[Sunny / Windy]
+
+[Sunny]
+Слънчево
+[T-Showers Early]
+
+[T-Showers]
+
+[T-Storm]
+Гръмотевична буря
+[T-Storms Early]
+
+[T-Storms Late]
+
+[T-Storms]
+Гръмотевична буря
+[Thunder In The Vicinity]
+
+[Thunderstorm Rain]
+Дъжд с гръмотевична буря
+[Thunderstorm]
+Гръмотевична буря
+[UV Index]
+
+[UVI]
+
+[UV]
+
+[Update VAR]
+
+[WNW]
+ЗНЗ
+[WSW]
+ЗЮЗ
+[W]
+З
+[Waning Crescent]
+Намаляващ полумесец
+[Waning Gibbous]
+Намаляваща полупълна
+[Waxing Crescent]
+Нарастващ полумесец
+[Waxing Gibbous]
+Нарастваща полупълна
+[Wind Direction DEG]
+Вятър (посока в градуси)
+[Wind Direction]
+Вятър (посока)
+[Wind Speed]
+Вятър (скорост)
+[WindDir]
+
+[Wintry Mix / Wind]
+
+[falling]
+понижаване
+[rising]
+покачване
+[steady]
+без промяна

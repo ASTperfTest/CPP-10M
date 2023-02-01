@@ -1,0 +1,77 @@
+#muuid {80dca515-973a-4a7e-8b85-5d8ec88fc5a7}
+;============================================================
+;  File: WhoUsesMyFiles.dll
+;  Plugin: Who Use My Files
+;  Version: 0.1.0.4
+;  Authors: Nikolay Redko
+;============================================================
+[Scans for network users of your shared files and notify you with popups.]
+Skanuje w poszukiwaniu użytkowników twoich udostępnionych plików i folderów w sieci, i powiadamia cię za pomocą dymka.
+;file \plugins\WhoUsesMyFiles\res\resource.rc
+[WUMF: Current connections]
+WUMF: Aktualne połączenia
+[Popup delay settings]
+Ustawienia opóźnienia powiadomień
+[Timeout (seconds)]
+Opóźnienie (sekundy)
+[Background color]
+Kolor tła
+[Text color]
+Kolor tekstu
+[Previe&w]
+Podglą&d
+[Show infinitely]
+Pokazuj w nieskończoność
+[Default]
+Domyślny
+[Custom]
+Niestandardowe
+[Popup color settings]
+Ustawienia koloru powiadomienia
+[Use Windows colors]
+Użyj kolorów Windows
+[Use default colors]
+Użyj domyślnych kolorów
+[Use custom colors]
+Użyj niestandardowych kolorów
+[File access filter && logging settings]
+Filtr dostępu do plików i ustawienia logowania
+[Log into text file]
+Zapisuj do .txt
+[Log folders access]
+Zapisuj dostęp do folderów
+[Alerts on folders access]
+Powiadomienia o dostępie do folderów
+[Show current connections]
+Pokaż aktualne połączenia
+;file \plugins\WhoUsesMyFiles\src\options.cpp
+[Common Dialog Error 0x%lx]
+Powszechny błąd dialogu 0x%lx
+[Error]
+Błąd
+[Who uses my files]
+Who uses my files
+[Services]
+Usługi
+;file \plugins\WhoUsesMyFiles\src\wumf.cpp
+[User]
+Użytkownik
+[File]
+Plik
+[Access]
+Dostęp
+[Plugin WhoUsesMyFiles requires admin privileges in order to work.]
+Wtyczka WhoUsesMyFiles wymaga uprawnień administratora do poprawnego działania.
+[Error opening file]
+Błąd otwierania pliku
+[Error memory allocation]
+Błąd alokacji pamięci
+;file \plugins\WhoUsesMyFiles\src\wumfplug.cpp
+[Error creating menu]
+Błąd tworzenia menu
+[Show connections list]
+Pokaż listę połączeń
+[WUMF popups]
+Powiadomienia WUMF
+[WUMF: Show connections]
+WUMF: Pokaż połączenia

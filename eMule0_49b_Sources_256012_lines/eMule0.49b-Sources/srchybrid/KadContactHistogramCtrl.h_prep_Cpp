@@ -1,0 +1,37 @@
+﻿
+
+
+
+
+class CKadContactHistogramCtrl :        CWnd
+{
+public:
+ CKadContactHistogramCtrl();
+ virtual ~CKadContactHistogramCtrl();
+
+ void Localize();
+
+ bool ContactAdd(const Kademlia::CContact* contact);
+ void ContactRem(const Kademlia::CContact* contact);
+
+protected:
+ unsigned int m_aHist[(1 << 12                          )];
+ CPen m_penAxis;
+ CPen m_penAux;
+ CPen m_penHist;
+ int m_iMaxLabelHeight;
+ int m_iMaxNumLabelWidth;
+ bool m_bInitializedFontMetrics;
+ CString m_strXaxis;
+ CString m_strYaxis;
+
+         void OnPaint();
+
+};
+
+
+
+
+
+
+ 

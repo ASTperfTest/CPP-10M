@@ -1,0 +1,74 @@
+#muuid {e876fe63-0701-4cda-bed5-7c73a379c1d1}
+;============================================================
+;  File: CloudFile.dll
+;  Plugin: CloudFile
+;  Version: 0.11.0.6
+;  Authors: Miranda NG team
+;============================================================
+[Allows you to transfer files via cloud services.]
+
+;file \protocols\CloudFile\res\resource.rc
+[Default service]
+
+[General]
+Загальне
+[Autosend download link to contact]
+Автоматично надсилати посилання
+[Paste download link into message input area]
+Вставляти посилання в поле вводу
+[Copy download link to clipboard]
+Копіювати посилання в буфер обміну
+[Download link]
+Посилання
+[Do nothing]
+Нічого не робити
+[Try to rename]
+
+[Try to replace]
+
+[On conflict when upload]
+
+[Authorization]
+Авторизація
+[Cancel]
+Скасувати
+[Enter authorization code:]
+
+[To allow Miranda NG access to %s:]
+
+[Go to this link]
+Перейдіть на сайт
+[Request access]
+
+[Revoke access]
+
+;file \protocols\CloudFile\src\icons.cpp
+[Upload file(s)]
+Відправити файл(и)
+[Dropbox]
+
+[Google Drive]
+
+[OneDrive]
+
+[Yandex.Disk]
+
+;file \protocols\CloudFile\src\menus.cpp
+[Upload to...]
+
+[Upload]
+Відправити
+;file \protocols\CloudFile\src\options.cpp
+[None]
+Нічого
+[Services]
+Служби
+;file \protocols\CloudFile\src\srmm.cpp
+[Upload files to...]
+
+;file \protocols\CloudFile\src\Services\dropbox_service.cpp
+[Server does not respond]
+Сервер не відповідає
+;file \protocols\CloudFile\src\Services\google_service.cpp
+;file \protocols\CloudFile\src\Services\microsoft_service.cpp
+;file \protocols\CloudFile\src\Services\yandex_service.cpp

@@ -1,0 +1,258 @@
+﻿// stdafx.h : include file for standard system include files,
+// or project specific include files that are used frequently, but
+// are changed infrequently
+//
+
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("emule_site_config.h");}
+
+// MSDN: Using the Windows Headers
+// ===========================================================
+//Windows Vista   _WIN32_WINNT>=       WINVER>=0x0600
+//Windows Server 2003 _WIN32_WINNT>=          WINVER>=0x0502
+//Windows      _WIN32_WINNT>=       WINVER>=0x0501
+//Windows 2000   _WIN32_WINNT>=          WINVER>=0x0500
+//Windows    4.0  _WIN32_WINNT>=       WINVER>=0x0400
+//Windows Me   _WIN32_WINDOWS=       WINVER>=0x0500
+//Windows 98   _WIN32_WINDOWS>=       WINVER>=0x0410
+//Windows 95   _WIN32_WINDOWS>=       WINVER>=0x0400
+//
+//IE 7.0    _WIN32_IE>=0x0700
+//IE 6.0       _WIN32_IE>=0x0603
+//IE 6.0       _WIN32_IE>=0x0601
+//IE 6.0    _WIN32_IE>=0x0600
+//IE 5.5    _WIN32_IE>=0x0550
+//IE 5.01    _WIN32_IE>=0x0501
+//IE 5.0, 5.0a, 5.0b _WIN32_IE>=0x0500
+//IE 4.01    _WIN32_IE>=0x0401
+//IE 4.0    _WIN32_IE>=0x0400
+//IE 3.0, 3.01, 3.02 _WIN32_IE>=0x0300
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Disable some warnings which get fired with /W4 for Windows/MFC/ATL headers
+
+
+// Disable some warnings which are only generated when using "/Wall"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// _CRT_SECURE_NO_DEPRECATE - Disable all warnings for not using "_s" functions.
+//
+
+
+
+
+// _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES - Overloads all standard string with "_s" functions
+// if, and only if, the size of the output buffer is known at compile time (so, if it is a static array). If there is
+// a buffer overflow during runtime, it will throw an exception.
+//
+
+
+
+
+// _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT - This is a cool     feature but does not make sense for our code.
+// With our existing code we could get exceptions which are though not justifiable because we explicitly
+// terminate all our string buffers. This define could be enabled for debug builds though.
+//
+//#ifndef _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT
+//#define                                               1
+//
+
+
+
+
+
+      //!defined(1                                      ) || (1                                      ==0)
+
+
+
+
+
+      //_MSC_VER>=    
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("afxwin.h");}
+void INCLUDEREPLACE(){CX_INCL("afxext.h");}
+void INCLUDEREPLACE(){CX_INCL("afxdisp.h");}
+void INCLUDEREPLACE(){CX_INCL("afxdtctl.h");}
+
+void INCLUDEREPLACE(){CX_INCL("afxcmn.h");}
+       // _AFX_NO_AFXCMN_SUPPORT
+void INCLUDEREPLACE(){CX_INCL("afxole.h");}
+
+void INCLUDEREPLACE(){CX_INCL("winsock2.h");}
+
+void INCLUDEREPLACE(){CX_INCL("afxsock.h");}
+void INCLUDEREPLACE(){CX_INCL("afxdhtml.h");}
+
+void INCLUDEREPLACE(){CX_INCL("afxmt.h");}
+void INCLUDEREPLACE(){CX_INCL("afxdlgs.h");}
+void INCLUDEREPLACE(){CX_INCL("INVALID_INCLUDE_FILE_NAME_..srcmfcafximpl.h");}
+void INCLUDEREPLACE(){CX_INCL("atlcoll.h");}
+void INCLUDEREPLACE(){CX_INCL("afxcoll.h");}
+void INCLUDEREPLACE(){CX_INCL("afxtempl.h");}
+void INCLUDEREPLACE(){CX_INCL("math.h");}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Enable warnings which were disabled for Windows/MFC/ATL headers
+
+
+
+
+
+
+
+
+// when using warning level 4
+
+
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("types.h");}
+
+
+
+
+
+
+
+
+
+
+
+
+        CArray           CStringAArray = "CX_TYPEDEF";
+        CStringArray CStringWArray = "CX_TYPEDEF";
+
+
+
+           int         __ascii_stricmp(const char * dst, const char * src);
+
+inline int  afxIsWin95()
+{
+
+ return FALSE;
+
+
+
+}
+
+
+
+
+
+
+ 

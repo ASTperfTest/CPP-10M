@@ -1,0 +1,268 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("EnBitmap.h");}
+void INCLUDEREPLACE(){CX_INCL("atlimage.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+const int HIMETRIC_INCH = 2540;
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CEnBitmap::CEnBitmap()
+{
+
+}
+
+CEnBitmap::~CEnBitmap()
+{
+
+}
+
+int  CEnBitmap::LoadImage(unsigned int uIDRes, const char* pszResourceType, void *  hInst, unsigned long crBack)
+{
+ return LoadImage(MAKEINTRESOURCE(uIDRes), pszResourceType, hInst, crBack);
+}
+
+int  CEnBitmap::LoadImage(const char* lpszResourceName, const char* szResourceType, void *  hInst, unsigned long crBack)
+{
+ ASSERT(m_hObject == NULL);      // only attach once, detach on destroy
+
+ if (m_hObject != NULL)
+  return FALSE;
+
+ unsigned char* pBuff = NULL;
+ int  nSize = 0;
+ int  bResult = FALSE;
+
+ // first call is to get buffer size
+ if (GetResource(lpszResourceName, szResourceType, hInst, 0, nSize))
+ {
+  if (nSize > 0)
+  {
+   pBuff = new       unsigned char[nSize];
+
+   // this loads it
+   if (GetResource(lpszResourceName, szResourceType, hInst, pBuff, nSize))
+   {
+    IPicture* pPicture = LoadFromBuffer(pBuff, nSize);
+
+    if (pPicture)
+    {
+     bResult = Attach(pPicture, crBack);
+     pPicture->Release();
+    }
+   }
+
+   delete [] pBuff;
+  }
+ }
+
+ return bResult;
+}
+
+int  CEnBitmap::LoadImage(const char* szImagePath, unsigned long crBack)
+{
+ ASSERT(m_hObject == NULL);      // only attach once, detach on destroy
+
+ if (m_hObject != NULL)
+  return FALSE;
+
+ // If GDI+ is available, use that     because it supports more file formats and images with alpha channels.
+ // That     is installed with WinXP is available as redistributable from Microsoft for Win98+. As this DLL
+ // may not be available on some    but we have to link statically to it, we have to take some special care.
+ //
+ extern bool g_bGdiPlusInstalled;
+ if (g_bGdiPlusInstalled)
+ {
+  CImage img;
+  if (SUCCEEDED(img.Load(szImagePath)))
+  {
+   CBitmap::Attach(img.Detach());
+   return TRUE;
+  }
+ }
+
+ int  bResult = FALSE;
+ CFile   cFile;
+ CFileException e;
+
+ if (cFile.Open(szImagePath, CFile::modeRead | CFile::typeBinary | CFile::shareDenyWrite, &e))
+ {
+  int nSize = (int)cFile.GetLength();
+  unsigned char* pBuff = new       unsigned char[nSize];
+  if (cFile.Read(pBuff, nSize) > 0)
+  {
+   IPicture* pPicture = LoadFromBuffer(pBuff, nSize);
+
+   if (pPicture)
+   {
+    bResult = Attach(pPicture, crBack);
+    pPicture->Release();
+   }
+  }
+  delete [] pBuff;
+ }
+
+ return bResult;
+}
+
+IPicture* CEnBitmap::LoadFromBuffer(unsigned char* pBuff, int nSize)
+{
+ IPicture* pPicture = NULL;
+
+ void *  hGlobal = GlobalAlloc(GMEM_MOVEABLE, nSize);
+ if (hGlobal != NULL)
+ {
+  void* pData = GlobalLock(hGlobal);
+  if (pData != NULL)
+  {
+   memcpy(pData, pBuff, nSize);
+   GlobalUnlock(hGlobal);
+
+   IStream* pStream = NULL;
+   if (CreateStreamOnHGlobal(hGlobal, TRUE/*fDeleteOnRelease*/, &pStream) == S_OK)
+   {
+    // Not sure what the 'KeepOriginalFormat' property is really used for. But if 'OleLoadPicture'
+    // is invoked with 'fRunmode=FALSE' the function always creates a temporary file which even
+    // does not get deleted when all     pointers were released. It eventually gets deleted only
+    // when process terminated. Using 'fRunmode=TRUE' does prevent this behaviour and does not
+    // seem to have any other side effects.
+    VERIFY( OleLoadPicture(pStream, nSize, TRUE/*FALSE*/, IID_IPicture, (void* *)&pPicture) == S_OK );
+    pStream->Release();
+   }
+   else
+    GlobalFree(hGlobal);
+  }
+  else
+   GlobalFree(hGlobal);
+ }
+
+ return pPicture; // caller releases
+}
+
+int  CEnBitmap::GetResource(const char* lpName, const char* lpType, void *  hInst, void* pResource, int& nBufSize)
+{
+ void*  hResInfo;
+ void *  hRes;
+ char*  lpRes = NULL;
+ bool  bResult = FALSE;
+
+ // Find the resource
+ hResInfo = FindResource(hInst, lpName, lpType);
+
+ if (hResInfo == NULL)
+  return false;
+
+ // Load the resource
+ hRes = LoadResource(hInst, hResInfo);
+
+ if (hRes == NULL)
+  return false;
+
+ // Lock the resource
+ lpRes = (char*)LockResource(hRes);
+
+ if (lpRes != NULL)
+ {
+  if (pResource == NULL)
+  {
+   nBufSize = SizeofResource(hInst, hResInfo);
+   bResult = true;
+  }
+  else
+  {
+   if (nBufSize >= (int)SizeofResource(hInst, hResInfo))
+   {
+    memcpy(pResource, lpRes, nBufSize);
+    bResult = true;
+   }
+  }
+
+  UnlockResource(hRes);
+ }
+
+ // Free the resource
+ FreeResource(hRes);
+
+ return bResult;
+}
+
+int  CEnBitmap::Attach(IPicture* pPicture, unsigned long crBack)
+{
+ ASSERT(m_hObject == NULL);      // only attach once, detach on destroy
+
+ if (m_hObject != NULL)
+  return FALSE;
+
+ ASSERT(pPicture);
+
+ if (!pPicture)
+  return FALSE;
+
+ int  bResult = FALSE;
+
+ CDC dcMem;
+ CDC* pDC = CWnd::GetDesktopWindow()->GetDC();
+
+ if (dcMem.CreateCompatibleDC(pDC))
+ {
+  long hmWidth;
+  long hmHeight;
+
+  pPicture->get_Width(&hmWidth);
+  pPicture->get_Height(&hmHeight);
+
+  int nWidth = MulDiv(hmWidth, pDC->GetDeviceCaps(LOGPIXELSX), HIMETRIC_INCH);
+  int nHeight = MulDiv(hmHeight, pDC->GetDeviceCaps(LOGPIXELSY), HIMETRIC_INCH);
+
+  CBitmap bmMem;
+
+  if (bmMem.CreateCompatibleBitmap(pDC, nWidth, nHeight))
+  {
+   CBitmap* pOldBM = dcMem.SelectObject(&bmMem);
+
+   if (crBack != -1)
+    dcMem.FillSolidRect(0, 0, nWidth, nHeight, crBack);
+
+   unsigned long hr = pPicture->Render(dcMem, 0, 0, nWidth, nHeight, 0, hmHeight, hmWidth, -hmHeight, NULL);
+   dcMem.SelectObject(pOldBM);
+
+   if (hr == S_OK)
+    bResult = CBitmap::Attach(bmMem.Detach());
+  }
+ }
+
+ CWnd::GetDesktopWindow()->ReleaseDC(pDC);
+
+ return bResult;
+}
+
+
+
+
+
+
+ 

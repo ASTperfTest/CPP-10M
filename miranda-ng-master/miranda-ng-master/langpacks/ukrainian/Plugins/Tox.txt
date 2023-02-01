@@ -1,0 +1,197 @@
+#muuid {00272a3e-f5fa-4090-8b67-3e62ac1ee0b4}
+;============================================================
+;  File: Tox.dll
+;  Plugin: Tox protocol
+;  Version: 0.11.3.2
+;  Authors: Miranda NG team
+;============================================================
+[Tox protocol support for Miranda NG.]
+Підтримка протоколу Tox у Miranda NG.
+;file \protocols\Tox\res\resource.rc
+[Tox ID:]
+
+[Create]
+Створити
+[Import]
+Імпорт
+[Copy ID]
+Копіювати ID
+[Export]
+Експорт
+[Name:]
+Ім'я:
+[Password:]
+Пароль:
+[Default group:]
+Група:
+[Create Tox profile]
+Створити профіль Tox
+[Import Tox profile]
+Імпортувати профіль Tox
+[Copy Tox ID]
+Копіювати Tox ID
+[Export Tox profile]
+Експорт профілю Tox
+[Connection settings]
+Налаштування підключення
+[Enable UDP (otherwise force Tox to use TCP)]
+Увімкнути UDP (інакше примусово використовувати TCP)
+[Enable IPv6]
+Увімкнути IPv6
+[Max connect retries:]
+
+[Max reconnect retries:]
+
+[Enable UDP hole-punching]
+
+[Enable local network peer discovery]
+
+[Remove password]
+
+[Change password]
+Змінити пароль
+[Set password]
+Встановити пароль
+[If this field contains Tox address (76 hex characters), you will be prompted to add it in your friend list. Otherwise, Miranda will search this query via toxme.io.]
+Якщо ввести в полі пошуку адресу Tox (76 hex-символів), буде видано запит на додавання до списку друзів. Інакше відбудеться пошук за допомогою toxme.io.
+[DNS name:]
+Ім'я DNS:
+[Enter password]
+Введіть пароль
+[Cancel]
+Скасувати
+[Tox profile is encrypted. Enter the password to continue.]
+Профіль Tox зашифровано. Щоб продовжити, введіть пароль.
+[Add]
+Додати
+[Update]
+Оновити
+[IPv4 address/ Host]
+IPv4 адреса/ Хост
+[IPv6 address (optional)]
+IPv6 адреса (необов'язково)
+[Port]
+Порт
+[Public key]
+Відкритий ключ
+[Old password:]
+Старий пароль:
+[New password:]
+Новий пароль:
+[Confirm password:]
+Підтвердити пароль:
+;file \protocols\Tox\src\main.cpp
+[Profiles folder]
+Папка профілів
+[Tox link protocol]
+Протокол Tox
+;file \protocols\Tox\src\tox_icons.cpp
+[Protocol icon]
+Значок протоколу
+[Action icon]
+Дія
+[Correction icon]
+
+[Protocols]
+Протоколи
+;file \protocols\Tox\src\tox_menus.cpp
+[Password]
+Пароль
+[Create password]
+
+;file \protocols\Tox\src\tox_messages.cpp
+[Action]
+Дія
+[You cannot send when you are offline.]
+Для надсилання повідомлень необхідно підключитися до мережі.
+;file \protocols\Tox\src\tox_options.cpp
+[Tox profile]
+Профіль Tox
+[All files]
+Усі файли
+[Select Tox profile]
+Виберіть профіль Tox
+[Save Tox profile]
+Зберегти профіль Tox
+[Add node]
+Додати нод
+[Change node]
+Зміна ноду
+[Enter IPv4]
+Введіть IPv4
+[Error]
+Помилка
+[Enter port]
+Вкажіть порт
+[Enter public key]
+Введіть відкритий ключ
+[Common nodes]
+Загальні ноди
+[User nodes]
+Ноди користувача
+[Are you sure?]
+Ви впевнені?
+[Node deleting]
+Видалення ноду
+[Network]
+Мережа
+[Account]
+Обліковий запис
+[Nodes]
+Ноди
+;file \protocols\Tox\src\tox_profile.cpp
+[Unable to open Tox profile]
+Неможливо відкрити профіль
+[Unable to read Tox profile]
+Неможливо прочитати профіль
+[Unable to decrypt Tox profile]
+Неможливо розшифрувати профіль
+[New password is empty]
+
+[New password is not equal to confirmation]
+
+[Old password is not valid]
+
+[Removing the password will lead to decryption of the profile.\r\nAre you sure to remove password?]
+
+;file \protocols\Tox\src\tox_proto.cpp
+[You cannot add yourself to your contact list]
+Ви не можете додати себе до списку контактів
+[Contact already in your contact list]
+Контакт уже в списку
+[Unable to initialize Tox core]
+Неможливо ініціалізувати ядро Tox
+;file \protocols\Tox\src\tox_search.cpp
+[Query]
+Запит
+;file \protocols\Tox\src\tox_utils.cpp
+[One of the arguments is missing]
+Відсутній один з аргументів
+[Unable to allocate enough memory]
+Неможливо виділити достатньо пам'яті
+[Unable to bind to a port]
+Неможливо виконати прив'язку до порту
+[The proxy type is not valid]
+Неправильний тип проксі
+[The proxy host is not valid]
+Неправильна адреса проксі
+[The proxy port is not valid]
+Неправильний порт проксі
+[The proxy address could not be resolved]
+Неможливо визначити адресу проксі
+[The profile is encrypted]
+Профіль зашифровано
+[The data format is not valid]
+Неправильний формат даних
+[Unknown error]
+Невідома помилка
+[The friend ID did not designate a valid friend]
+
+[This client is currently not connected to the friend]
+
+[An allocation error occurred while increasing the send queue size]
+
+[Message length exceeded TOX_MAX_MESSAGE_LENGTH]
+Довжина повідомлення перевищує TOX_MAX_MESSAGE_LENGTH
+[Attempted to send a zero-length message]
+Спроба надіслати порожнє повідомлення

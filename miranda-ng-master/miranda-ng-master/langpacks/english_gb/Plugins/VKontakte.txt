@@ -1,0 +1,9 @@
+#muuid {32579908-724b-467f-adad-22b6359a749a}
+;============================================================
+;  File: VKontakte.dll
+;  Plugin: VKontakte protocol
+;  Version: 0.1.14.1
+;  Authors: Miranda NG team
+;============================================================
+[Please authorize me to add you to my friend list.]
+Please authorise me to add you to my friend list.

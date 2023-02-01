@@ -1,0 +1,6 @@
+[Available modules]
+[Advanced auto away]
+[when terminal session is disconnected]
+[After away]
+[Enter idle mode]
+[Status manager]

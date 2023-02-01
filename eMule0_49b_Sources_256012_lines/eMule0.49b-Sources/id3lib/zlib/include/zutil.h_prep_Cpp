@@ -1,0 +1,227 @@
+﻿/* zutil.h -- internal interface and configuration of the compression library
+ * Copyright (C) 1995-2002 Jean-loup Gailly.
+ * For conditions of distribution and use, see copyright notice in zlib.h
+ */
+
+/* WARNING: this file should *not* be used by applications. It is
+   part of the implementation of the compression library and is
+   subject to change. Applications should only use zlib.h.
+ */
+
+/* @(#) $Id: zutil.h,v 1.5 2002/06/28 12:00:51 t1mpy Exp $ */
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("zlib.h");}
+
+
+
+
+
+
+
+    extern int errno;
+
+
+
+
+
+
+
+/* compile with -Dlocal if your debugger can't find static symbols */
+
+        unsigned char  uch = "CX_TYPEDEF";
+        uch     uchf = "CX_TYPEDEF";
+        unsigned short ush = "CX_TYPEDEF";
+        ush     ushf = "CX_TYPEDEF";
+        unsigned long  ulg = "CX_TYPEDEF";
+
+extern const char *z_errmsg[10]; /* indexed by 2-zlib_error */
+/* (size given to avoid silly warnings with Visual C++) */
+
+
+
+
+
+/* To be used only when the state is known to be valid */
+
+        /* common constants */
+
+
+
+
+/* default windowBits for decompression. MAX_WBITS is for compression only */
+
+
+
+
+
+
+/* default memLevel */
+
+
+
+
+/* The three kinds of block type */
+
+
+
+/* The minimum and maximum match lengths */
+
+
+
+        /* target dependencies */
+
+
+
+
+
+       /* Allow compilation with      keywords only enabled */
+       void _Cdecl farfree( void *block );
+       void *_Cdecl farmalloc( unsigned long nbytes );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Common defaults */
+
+
+
+
+
+
+
+
+
+         /* functions */
+
+
+   extern char *strerror OF((int));
+
+
+
+
+
+
+
+
+
+ /* Use our own functions for small and medium model with MSC <= 5.0.
+  * You may have to use the same strategy for Borland C (untested).
+  * The        check is for Symantec.
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Diagnostic functions */
+
+
+   extern int z_verbose;
+   extern void z_error    OF((char *m));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ OF((uLong check, const Bytef *buf,
+           uInt len));
+voidpf zcalloc OF((voidpf opaque, unsigned items, unsigned size));
+void   zcfree  OF((voidpf opaque, voidpf ptr));
+
+
+
+
+
+
+       /*           */
+
+
+
+
+
+
+ 

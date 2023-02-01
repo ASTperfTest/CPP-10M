@@ -1,0 +1,82 @@
+/*
+Copyright (C) 2012-23 Miranda NG team (https://miranda-ng.org)
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation version 2
+of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#include "stdafx.h"
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+class COptionsDlg : public CProtoDlgBase<CTelegramProto>
+{
+	CCtrlCheck chkHideChats, chkUsePopups;
+	CCtrlEdit edtGroup, edtPhone, edtDeviceName;
+	ptrW m_wszOldGroup;
+
+public:
+	COptionsDlg(CTelegramProto *ppro, int iDlgID, bool bFullDlg) :
+		CProtoDlgBase<CTelegramProto>(ppro, iDlgID),
+		chkUsePopups(this, IDC_POPUPS),
+		chkHideChats(this, IDC_HIDECHATS),
+		edtPhone(this, IDC_PHONE),
+		edtGroup(this, IDC_DEFGROUP),
+		edtDeviceName(this, IDC_DEVICE_NAME),
+		m_wszOldGroup(mir_wstrdup(ppro->m_wszDefaultGroup))
+	{
+		CreateLink(edtPhone, ppro->m_szOwnPhone);
+		CreateLink(edtGroup, ppro->m_wszDefaultGroup);
+		CreateLink(edtDeviceName, ppro->m_wszDeviceName);
+		CreateLink(chkHideChats, ppro->m_bHideGroupchats);
+
+		if (bFullDlg)
+			CreateLink(chkUsePopups, ppro->m_bUsePopups);
+	}
+
+	bool OnApply() override
+	{
+		if (!mir_wstrlen(m_proto->m_szOwnPhone)) {
+			SetFocus(edtPhone.GetHwnd());
+			return false;
+		}
+
+		if (mir_wstrcmp(m_proto->m_wszDefaultGroup, m_wszOldGroup))
+			Clist_GroupCreate(0, m_proto->m_wszDefaultGroup);
+		return true;
+	}
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+INT_PTR CTelegramProto::SvcCreateAccMgrUI(WPARAM, LPARAM hwndParent)
+{
+	auto *pDlg = new COptionsDlg(this, IDD_ACCMGRUI, false);
+	pDlg->SetParent((HWND)hwndParent);
+	pDlg->Create();
+	return (INT_PTR)pDlg->GetHwnd();
+}
+
+int CTelegramProto::OnOptionsInit(WPARAM wParam, LPARAM)
+{
+	OPTIONSDIALOGPAGE odp = {};
+	odp.szTitle.w = m_tszUserName;
+	odp.flags = ODPF_UNICODE;
+	odp.szGroup.w = LPGENW("Network");
+
+	odp.position = 1;
+	odp.szTab.w = LPGENW("Account");
+	odp.pDialog = new COptionsDlg(this, IDD_OPTIONS, true);
+	g_plugin.addOptions(wParam, &odp);
+	return 0;
+}

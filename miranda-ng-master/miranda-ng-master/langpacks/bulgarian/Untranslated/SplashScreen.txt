@@ -1,0 +1,6 @@
+[Shows a splash at Miranda startup.]
+[Splash Options]
+[Show splash]
+[Download more splash screens]
+[Graphic files]
+[Splash Screen]

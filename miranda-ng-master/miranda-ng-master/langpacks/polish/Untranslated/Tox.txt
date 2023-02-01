@@ -1,0 +1,4 @@
+[Enable UDP hole-punching]
+[Enable local network peer discovery]
+[Correction icon]
+[The friend ID did not designate a valid friend]

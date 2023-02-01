@@ -1,0 +1,109 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("ClosableTabCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("Friend.h");}
+
+class CChatWnd;
+class CHTRichEditCtrl;
+class CUpDownClient;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CChatItem
+
+class CChatItem
+{
+public:
+ CChatItem();
+ ~CChatItem();
+
+ CUpDownClient*  client;
+ CHTRichEditCtrl* log;
+ CString    strMessagePending;
+ bool    notify;
+ CStringArray  history;
+ int     history_pos;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CChatSelector
+
+class CChatSelector :        CClosableTabCtrl, CFriendConnectionListener
+{
+ //DECLARE_DYNAMIC(CChatSelector)
+
+public:
+ CChatSelector();
+ virtual ~CChatSelector();
+
+ void  Init(CChatWnd *pParent);
+ CChatItem* StartSession(CUpDownClient* client, bool show = true);
+ void  EndSession(CUpDownClient* client = 0);
+ int   GetTabByClient(CUpDownClient* client);
+ CChatItem* GetItemByClient(CUpDownClient* client);
+ CChatItem* GetItemByIndex(int index);
+ void  ProcessMessage(CUpDownClient* sender, const CString& message);
+ void  ShowCaptchaRequest(CUpDownClient* sender, void *  bmpCaptcha);
+ void  ShowCaptchaResult(CUpDownClient* sender, CString strResult);
+ bool  SendMessage(const CString& rstrMessage);
+ void  DeleteAllItems();
+ void  ShowChat();
+ void  ConnectingResult(CUpDownClient* sender,bool success);
+ void  Send();
+ void  UpdateFonts(CFont* pFont);
+ CChatItem* GetCurrentChatItem();
+ int   RemoveItem(int nItem) { return DeleteItem(nItem); }
+ void  EnableSmileys(bool bEnable);
+ void  ReportConnectionProgress(CUpDownClient* pClient, CString strProgressDesc, bool bNoTimeStamp);
+ void  ClientObjectChanged(CUpDownClient* pOldClient, CUpDownClient* pNewClient);
+
+protected:
+ CChatWnd *m_pParent;
+ unsigned int m_Timer;
+ bool  m_blinkstate;
+ bool  m_lastemptyicon;
+ CImageList m_imlChat;
+ int   m_iContextIndex;
+
+ void AddTimeStamp(CChatItem*);
+ void SetAllIcons();
+ void GetChatSize(CRect& rcChat);
+
+ virtual int InsertItem(int nItem, TCITEM* pTabCtrlItem);
+ virtual int  DeleteItem(int nItem);
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnSize(unsigned int nType, int cx, int cy);
+         void OnDestroy();
+         void OnTimer(unsigned int nIDEvent);
+         void OnTcnSelChangeChatSel(NMHDR *pNMHDR, long *  *pResult);
+         void OnBnClickedCsend();
+         void OnBnClickedCclose();
+         void OnBnClickedSmiley();
+         void OnSysColorChange();
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+};
+
+
+
+
+
+
+ 

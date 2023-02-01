@@ -1,0 +1,299 @@
+#muuid {3750a5a3-bf0d-490e-b65d-41ac4d29aeb3}
+;============================================================
+;  File: AIM.dll
+;  Plugin: AIM protocol
+;  Version: 0.11.0.1
+;  Authors: Boris Krasnovskiy, Aaron Myles Landwehr
+;============================================================
+[AOL Instant Messenger (AIM) protocol support for Miranda NG.]
+Осигурява комуникация чрез протокола AOL Instant Messenger (AIM) в Miranda NG.
+[AIM user details]
+AIM подробности за потребителя
+[Password:]
+Парола:
+[AIM options]
+AIM настройки
+[Message delivery confirmation]
+Потвърждение за доставката на съобщения
+[Do not autoreply when away]
+Без автоматичен отговор при състояние "Отсъстващ"
+[Convert incoming messages to BBCode]
+Входящите съобщения в BBCode
+[Convert outgoing messages to HTML]
+Изходящите съобщения в HTML
+[Disable avatars]
+Изключване на аватарите
+[Disable account type icons]
+Без икони за типа акаунт
+[Disable extended status icons]
+Без икони за разширено състояние
+[Notify about new mail]
+Уведомяване за нови писма
+[Manage server groups]
+Управление на сървърните групи
+[Advanced options]
+Разширени настройки
+[Instant idle on login]
+Бездействащ веднага след вписване
+[Force proxy file transfers]
+Задължително прехвърляне на файлове през прокси сървър
+[Connection]
+Връзка
+[Login server:]
+Сървър:
+[Port:]
+Порт:
+[Reset]
+Анулиране
+[Disable SSL]
+Изключване на SSL
+[* Some changes will take effect the next time you connect to the AIM network]
+Някои промени ще бъдат осъществени при следващо свързване към мрежата AIM
+[Save profile]
+Запис на профила
+[Create a new AIM account]
+Създаване на AIM акаунт
+[Number of hours:]
+Часове:
+[Number of minutes:]
+Минути:
+[Set idle]
+Задаване на бездействие
+[Unset idle]
+Отмяна на бездействие
+[Users who can contact me:]
+Потребители, които могат да се свържат с мен:
+[Allow all users]
+Всеки потребител
+[Allow only users on contact list]
+Само потребители от списъка с контакти
+[Allow only users below]
+Само следните потребители:
+[Block all users]
+Блокиране на всички потребители
+[Block only users below]
+Блокирай само следните потребители
+[Add]
+Добавяне
+[Remove]
+Премахване
+[Idle]
+Бездействие
+[Allow contacts to be notified of:]
+Известяване на контактите за:
+[Join chat room]
+Влизане в чат стая
+[Chat room]
+Чат стая
+[&Join]
+Влизане
+[&Cancel]
+Отказ
+[Change password]
+Промяна на паролата
+[Original]
+Стара
+[New]
+Нова
+[Repeat]
+Повтаряне
+[*Passwords don't match.]
+*Паролите не съвпадат.
+[E-mail]
+Имейл
+[Confirm account]
+Потвърдете акаунта
+[*Applied upon reconnect]
+*Приложимо при следващо свързване
+[Save changes]
+Запис на промените
+[Invite buddy to chat room]
+Поканете приятел в чат стаята
+[&Invite]
+Покана
+[Invitation reason]
+Причина за поканата
+[Chat room invitation request]
+Покана за присъединяване към чат стая
+[&Deny]
+Отхвърляне
+[Message]
+Съобщение
+[Room]
+Стая
+[Me]
+Аз
+[Others]
+Други
+[&Invite user...]
+Покани потребител...
+[&Leave chat session]
+Напускане от разговора
+[User &details]
+Подробности за потребителя
+[User &history]
+История на потребителя
+[You are connecting too frequently. Try waiting 10 minutes to reconnect.]
+Свързвате се твърде често. Изчакайте 10 минути и опитайте да се свържете отново.
+[Unknown error occurred when attempting to connect.]
+Възникна неизвестна грешка при опита за свързване.
+[Not supported by server.]
+Не се поддържа от сървъра.
+[Not supported by the client.]
+Не се поддържа от клиента.
+[Refused by client.]
+Отказ от клиента.
+[Reply too big.]
+Отговора е твърде голям.
+[Request denied.]
+Молбата е отхвърлена.
+[Insufficient rights.]
+Недостатъчни права.
+[User temporarily unavailable.]
+Временно потребителя не е наличен.
+[No match.]
+Няма съвпадение.
+[List overflow.]
+Списъка е препълнен.
+[Check your password.]
+Проверете паролата си.
+[Check your email address.]
+Проверете адреса на имейла.
+[Service temporarily unavailable.]
+Услугата е временно недостъпна.
+[Invalid password.]
+Невалидна парола.
+[Invalid email.]
+Невалиден имейл.
+[Invalid old password.]
+Невалидна стара парола.
+[Invalid password length.]
+Невалидна дължина на паролата.
+[Invalid email length.]
+Невалидна дължина на имейла.
+[Invalid old password length.]
+Невалидна дължина на старата парола.
+[Need old password.]
+Необходима е старата парола.
+[Read only field.]
+Поле само за четене.
+[Write only field.]
+поле само за писане.
+[Unsupported type.]
+Неподдържан тип.
+[An error has occurred.]
+Възникна грешка.
+[Invalid account.]
+Невалиден акаунт.
+[Expired account.]
+Изтекъл акаунт.
+[No database access.]
+Няма достъп до базата от данни.
+[Invalid database fields.]
+Невалидни полета в базата от данни.
+[Internal error.]
+Вътрешна грешка.
+[No email address.]
+Няма имейл.
+[Over limit.]
+Над ограничението.
+[Failed to open file: %s : %s]
+Неуспешен опит за отваряне на файл: %s : %s
+[AIM link protocol]
+Протокол за AIM връзки
+[%s protocol]
+%s протокол
+[Open mail account?]
+Отваряне на пощенския акаунт?
+[%s server connection]
+%s връзка със сървъра
+[%s client-to-client connections]
+%s връзки client-to-client
+[[Auto-response]:]
+(Автоотговор):
+[No information has been provided by the server.]
+Няма предоставена информация от сървъра.
+[Item you want to delete not found in list.]
+Елементът, който желаете да изтриете не е в списъка.
+[Item you want to modify not found in list.]
+Елементът, който се опитвате да промените не е в списъка.
+[You've got mail! Checked at]
+Имате поща! Проверете я на
+[A confirmation message has been sent to the new email address. Please follow its instructions.]
+Изпратен е имейл за потвърждаване до новия адрес. Моля, следвайте инструкциите в него.
+[A confirmation message has been sent to your email address. Please follow its instructions.]
+Изпратен е имейл за потвърждаване. Моля, следвайте инструкциите в него.
+[Your account has already been confirmed.]
+Вашият акаунт е вече потвърден.
+[Can't start the confirmation procedure.]
+Процедурата по потвърждаване не може да бъде стартирана.
+[Block]
+Блокиране
+[Profile]
+Профил
+[AOL mail]
+AOL поща
+[AIM icon]
+AIM икона
+[AOL bot]
+Бот AOL
+[Admin]
+Администратор
+[Confirmed]
+Потвърдено
+[Not confirmed]
+Непотвърдено
+[Blocked list]
+Списък "Блокирани"
+[Background color]
+Цвят на фона
+[Bold]
+Удебеляване
+[Not bold]
+Неудебелен
+[Italic]
+Наклонен
+[Not italic]
+Ненаклонен
+[Underline]
+Подчертан
+[Not underline]
+Неподчертан
+[Subscript]
+Долен индекс
+[Not subscript]
+Без долен индекс
+[Superscript]
+Горен индекс
+[Not superscript]
+Без горен индекс
+[Normal script]
+Нормален текст
+[Profile editor]
+Редактор на профили
+[AIM account type]
+Тип на AIM акаунт
+[AIM extended status]
+Разширено състояние AIM
+[&Block]
+Блокиране
+[&Unblock]
+Деблокиране
+[Manage account]
+Управление на акаунта
+[Read &HTML away message]
+Преглед на HTML текста за отсъствие
+[Read profile]
+Преглед на профила
+[Add to server list]
+Добавяне в списъка на сървъра
+[Network]
+Мрежа
+[Basic]
+Основни
+[Privacy]
+Поверителност
+[Please, enter a user name in the options dialog.]
+Моля, въведете потребителско име в прозореца на настройките.
+[Please, enter a password in the options dialog.]
+Моля, въведете парола в прозореца на настройките.

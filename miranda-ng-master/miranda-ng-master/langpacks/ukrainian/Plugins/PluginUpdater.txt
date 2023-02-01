@@ -1,0 +1,202 @@
+#muuid {968def4a-bc60-4266-ac08-754ce721db5f}
+;============================================================
+;  File: PluginUpdater.dll
+;  Plugin: Plugin updater
+;  Version: 0.2.1.4
+;  Authors: Mataes, George Hazan
+;============================================================
+[Installs and updates plugins and other Miranda NG components.]
+Встановлення й оновлення плагінів та інших компонентів Miranda NG.
+;file \plugins\PluginUpdater\res\Resource.rc
+[Updates found!]
+Знайдені оновлення!
+[PluginUpdater has detected updated versions of some Miranda components. Click on Details button to view more information.]
+Знайдено нові версії компонентів Miranda NG. Натисніть на кнопку "Деталі" для докладної інформації.
+[Update]
+Оновити
+[Details >>]
+Деталі >>
+[Cancel]
+Скасувати
+[Select &all]
+Вибрати все
+[Select &none]
+Зняти вибір
+[Update options]
+Налаштування оновлень
+[On startup]
+При запуску
+[(but only once a day)]
+(але тільки 1 раз на день)
+[Every]
+Кожні
+[Silent mode]
+Тихе оновлення
+[Restart Miranda automatically]
+
+[Backup database before update (requires Db_autobackups plugin)]
+Резервувати базу перед оновленням (потрібен плагін Db_autobackups)
+[Number of backups to keep:]
+Кількість резервних копій для зберігання:
+[Files source]
+Джерело оновлень
+[Stable version]
+Стабільна версія
+[Stable version with debug symbols]
+Стабільна версія з символами налагодження
+[Development version (less stable)]
+Версія в розробці (менш стабільна)
+[Development version with debug symbols]
+Версія в розробці з символами налагодження
+[Custom version]
+Задана користувачем версія
+[Change platform to 32-bit]
+
+[Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.]
+Оновлено деякі компоненти.\nОновлення будуть застосовані після перезапуску програми.
+[Notifications]
+Сповіщення
+[Restart]
+Перезапуск
+[Errors]
+Помилки
+[Info messages]
+Інформація
+[Back]
+Фон
+[Text]
+Текст
+[Colors]
+Кольори
+[Use cus&tom colors]
+Налаштувати кольори
+[Use &Windows colors]
+Кольори Windows
+[Use defa&ult colors]
+Кольори за &замовчанням
+[Preview]
+Тест
+[Click action]
+Дії по клацанню
+[On left click]
+Лівий клік
+[On right click]
+Правий клік
+[Timeout]
+Таймаут
+[0 = Default]
+0 = за замовчанням
+[-1 = Infinite]
+-1 = нескінченно
+[Sec]
+с
+[For "Restart" popup setting is always infinity]
+Спливаюче вікно "Перезапуск" завжди встановлене на нескінченність
+[Popups]
+Спливаючі вікна
+[Component list]
+Список компонентів
+[Here is the complete list of missing Miranda NG components. Check components that you want to download.\n\nClick on info icon to view component info page.]
+Нижче перелічено всі відсутні компоненти Miranda NG. Виберіть компоненти, які ви хочете завантажити.\n\nНатисніть на значок інформації, щоб перейти на сторінку компонента на сайті.
+[Download]
+Завантажити
+;file \plugins\PluginUpdater\src\DlgListNew.cpp
+[Component Name]
+Ім'я компонента
+[State]
+Стан
+[Plugins]
+Плагіни
+[Icons]
+Значки
+[Languages]
+Локалізації
+[Other]
+Інше
+[Downloading...]
+Завантаження...
+[Succeeded.]
+Завершено.
+[Failed!]
+Помилка!
+[Skipped.]
+Пропущено.
+[Plugin Updater]
+Оновлення плагінів
+[Download complete]
+Завантаження завершено
+[Download complete. Do you want to go to plugins option page?]
+Завантаження завершено. Перейти до налаштувань плагінів?
+[List is empty.]
+Список порожній.
+[List loading already started!]
+Завантаження вже почалося!
+;file \plugins\PluginUpdater\src\DlgUpdate.cpp
+[Will be deleted!]
+Видалено!
+[Unpack operation failed with error code=%d, update terminated]
+
+[Update complete. Press Yes to restart Miranda now or No to postpone a restart until the exit.]
+Оновлення завершено. Натисніть "Так" для негайного перезапуску програми\nабо "Ні", щоб відкласти застосування оновлень до виходу.
+[Miranda NG Core]
+Ядро Miranda NG
+[Deprecated!]
+Застарів!
+[Update found!]
+Є оновлення!
+[<< Details]
+<< Деталі
+[Update failed! One of the components wasn't downloaded correctly. Try it again later.]
+Помилка оновлення! Архів одного з компонентів пошкоджений. Спробуйте ще раз пізніше.
+[%d component(s) was updated]
+%d компонентів оновлено.
+[You need to restart your Miranda to apply installed updates.]
+Оновлення будуть застосовані після перезапуску програми.
+[Checking for new updates...]
+Перевірка оновлень...
+[No updates found.]
+Оновлень немає.
+[Update checking already started!]
+Оновлення вже запущено!
+;file \plugins\PluginUpdater\src\Events.cpp
+[Plugin updater URI scheme]
+
+;file \plugins\PluginUpdater\src\Notifications.cpp
+[Would you like to restart it now?]
+Перезапустити зараз?
+;file \plugins\PluginUpdater\src\Options.cpp
+[Backup database before update]
+Резервувати базу перед оновленням
+[Stable version (incompatible with current development version)]
+Стабільна версія (несумісна з версією в розробці)
+[hours]
+годин
+[days]
+днів
+[Change platform to 64-bit]
+
+[Close popup]
+Закрити вікно
+[Do nothing]
+Нічого не робити
+[Test]
+Тест
+[Services]
+Служби
+;file \plugins\PluginUpdater\src\PluginUpdater.cpp
+[Check for updates]
+Перевірити оновлення
+[Plugin info]
+Інформація
+[Available components list]
+Встановити компоненти
+[Update failed]
+Помилка оновлення
+[Update completed]
+Оновлення завершено
+;file \plugins\PluginUpdater\src\Utils.cpp
+[Updates are temporarily disabled, try again later.]
+
+[An error occurred while checking for new updates.]
+Під час перевірки оновлень сталася помилка.
+;file \plugins\PluginUpdater\src\Compat\compat.h

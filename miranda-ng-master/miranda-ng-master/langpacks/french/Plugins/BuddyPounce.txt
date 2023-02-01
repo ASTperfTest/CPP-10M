@@ -1,0 +1,127 @@
+#muuid {a9e9c114-84b9-434b-a3d5-89921d39ddff}
+;============================================================
+;  File: BuddyPounce.dll
+;  Plugin: Buddy pounce
+;  Version: 0.3.3.0
+;  Authors: Jonathan Gordon
+;============================================================
+[Allows you to send a message to contacts if they change status.]
+
+;file \plugins\BuddyPounce\res\resource.rc
+[Confirm Pounce send]
+Confirmer l'envoi
+[Send]
+
+[Cancel]
+Annuler
+[Pounce being sent to]
+Pounce a envoyé à
+[Buddy Pounce]
+
+[The Message:]
+Le message :
+[Delete Pounce]
+Effacer Pounce
+[Load default Settings]
+Paramètres par défaut
+[Setting Value]
+
+[Settings]
+Paramètres
+[Contact To Send Pounce To]
+Envoyer Pounce au contact :
+[<< Simple]
+
+[Advanced >>]
+Avancé >>
+[The Message]
+Le Message
+[Dialog]
+Dialogue
+[Status]
+État
+[Use Advanced Dialog]
+Fonctions avancées
+[The Message (characters: )]
+Message (caractères : )
+[Default Settings]
+
+[Show Delivery Messages]
+Afficher les msg. envoyés
+[These settings are also used when sending a "Simple" pounce]
+
+;file \plugins\BuddyPounce\src\dialog.cpp
+[The Message    (%d Characters)]
+Message :    (%d caractères)
+[Message successfully sent to %s]
+Envoi réussi du message à %s
+[Message failed to send to %s]
+Erreur d'envoi du message à %s
+[Retry]
+
+;file \plugins\BuddyPounce\src\main.cpp
+[Message sessions]
+Sessions de message
+[Pounce being sent to %s in %d seconds]
+Message envoyé à %s dans %d secondes
+[&Buddy Pounce]
+
+;file \plugins\BuddyPounce\src\options.cpp
+[Send If My Status Is...]
+Envoi si mon état est...
+[Send If They Change Status to...]
+Envoi si leur état change vers...
+[Reuse Pounce]
+Réutiliser un message
+[Give Up delay]
+Délai pour réitérer
+[Confirmation Window]
+Fenêtre de confirmation
+[Reuse this message? (0 to use it once)]
+Réutiliser ce message ?  (0 = une seule fois)
+[Times]
+Heures
+[Give up after... (0 to not give up)]
+Réitérer après (0=désactivé) :
+[Days]
+Jours
+[Show confirmation window? (0 to not Show)]
+Voir la confirmation ? (0 pour ne pas voir)
+[Seconds to wait before sending]
+Secondes avant d'envoyer
+[Send If My Status Is]
+Envoi si mon état est
+[Any]
+Hors ligne
+[Online]
+En ligne
+[Away]
+Absent
+[Not available]
+Indisponible
+[Occupied]
+Occupé
+[Do not disturb]
+Ne pas déranger
+[Free for chat]
+OK pour un chat
+[Invisible]
+Invisible
+[Send If Their Status changes]
+Envoi si leur état change vers
+[From Offline]
+Hors ligne
+[To Online]
+En ligne
+[To Away]
+Absent
+[To Not available]
+Indisponible
+[To Occupied]
+Occupé
+[To Do not disturb]
+Ne pas déranger
+[To Free for chat]
+OK pour un chat
+[To Invisible]
+Invisible

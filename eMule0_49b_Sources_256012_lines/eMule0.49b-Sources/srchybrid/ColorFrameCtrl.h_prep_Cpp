@@ -1,0 +1,35 @@
+﻿
+
+/////////////////////////////////////////////////////////////////////////////
+// CColorFrameCtrl window
+
+class CColorFrameCtrl :        CWnd
+{
+public:
+ CColorFrameCtrl();
+ virtual ~CColorFrameCtrl();
+
+ virtual int  Create(unsigned long dwStyle, const RECT& rect, CWnd* pParentWnd, unsigned int nID = 0);
+
+ void SetFrameColor(unsigned long color);
+ void SetBackgroundColor(unsigned long color);
+
+ unsigned long m_crBackColor;        // background color
+ unsigned long m_crFrameColor;       // frame color
+
+protected:
+ CRect  m_rectClient;
+ CBrush m_brushBack;
+ CBrush m_brushFrame;
+
+
+         void OnPaint();
+         void OnSize(unsigned int nType, int cx, int cy);
+};
+
+
+
+
+
+
+ 

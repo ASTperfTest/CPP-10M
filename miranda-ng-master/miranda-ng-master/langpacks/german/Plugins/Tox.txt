@@ -1,0 +1,197 @@
+#muuid {00272a3e-f5fa-4090-8b67-3e62ac1ee0b4}
+;============================================================
+;  File: Tox.dll
+;  Plugin: Tox protocol
+;  Version: 0.11.3.2
+;  Authors: Miranda NG team
+;============================================================
+[Tox protocol support for Miranda NG.]
+Tox-Protokollunterstützung für Miranda NG.
+;file \protocols\Tox\res\resource.rc
+[Tox ID:]
+Tox-ID:
+[Create]
+Erstellen
+[Import]
+Importieren
+[Copy ID]
+ID kopieren
+[Export]
+Exportieren
+[Name:]
+Name:
+[Password:]
+Passwort:
+[Default group:]
+Standardgruppe:
+[Create Tox profile]
+Tox-Profil erstellen
+[Import Tox profile]
+Tox-Profil importieren
+[Copy Tox ID]
+Tox-ID kopieren
+[Export Tox profile]
+Tox-Profil exportieren
+[Connection settings]
+Verbindungseinstellungen
+[Enable UDP (otherwise force Tox to use TCP)]
+UDP aktivieren (sonst ist Tox gezwungen TCP zu verwenden)
+[Enable IPv6]
+IPv6 aktivieren
+[Max connect retries:]
+Max. Verbindungsversuche:
+[Max reconnect retries:]
+Max. Wiederverbindungsversuche:
+[Enable UDP hole-punching]
+UDP Hole-Punching aktivieren
+[Enable local network peer discovery]
+Lokale Netzwerk-Peer-Erkennung aktivieren
+[Remove password]
+Passwort entfernen
+[Change password]
+Passwort ändern
+[Set password]
+Passwort setzen
+[If this field contains Tox address (76 hex characters), you will be prompted to add it in your friend list. Otherwise, Miranda will search this query via toxme.io.]
+Wenn dieses Feld eine Tox-Adresse enthält (76 Hex-Zeichen), dann werden Sie gefragt ob Sie diese zu Ihrer Freundesliste hinzufügen wollen. Anderenfalls sucht Miranda über toxme.io.
+[DNS name:]
+DNS-Name:
+[Enter password]
+Passwort eingeben
+[Cancel]
+Abbrechen
+[Tox profile is encrypted. Enter the password to continue.]
+Tox-Profil ist verschlüsselt. Geben Sie das Passwort ein um fortzusetzen.
+[Add]
+Hinzufügen
+[Update]
+Aktualisieren
+[IPv4 address/ Host]
+IPv4-Adresse/-Host
+[IPv6 address (optional)]
+IPv6-Adresse (optional)
+[Port]
+Port
+[Public key]
+Öffentlicher Schlüssel
+[Old password:]
+Altes Passwort:
+[New password:]
+Neues Passwort:
+[Confirm password:]
+Passwort bestätigen:
+;file \protocols\Tox\src\main.cpp
+[Profiles folder]
+Profilverzeichnis
+[Tox link protocol]
+Tox-Link-Protokoll
+;file \protocols\Tox\src\tox_icons.cpp
+[Protocol icon]
+Protokollicon
+[Action icon]
+Aktionsicon
+[Correction icon]
+Verbindungsicon
+[Protocols]
+Protokolle
+;file \protocols\Tox\src\tox_menus.cpp
+[Password]
+Passwort
+[Create password]
+Passwort erstellen
+;file \protocols\Tox\src\tox_messages.cpp
+[Action]
+Aktion
+[You cannot send when you are offline.]
+Sie können keine Nachricht versenden, so lange Sie offline sind.
+;file \protocols\Tox\src\tox_options.cpp
+[Tox profile]
+Tox-Profil
+[All files]
+Alle Dateien
+[Select Tox profile]
+Tox-Profil auswählen
+[Save Tox profile]
+Tox-Profil speichern
+[Add node]
+Knoten hinzufügen
+[Change node]
+Knoten ändern
+[Enter IPv4]
+IPv4 eingeben
+[Error]
+Fehler
+[Enter port]
+Port eingeben
+[Enter public key]
+Öffentlichen Schlüssel eingeben
+[Common nodes]
+Gemeinsame Knoten
+[User nodes]
+Benutzerknoten
+[Are you sure?]
+Sind Sie sich sicher?
+[Node deleting]
+Knoten löschen
+[Network]
+Netzwerk
+[Account]
+Konto
+[Nodes]
+Knoten
+;file \protocols\Tox\src\tox_profile.cpp
+[Unable to open Tox profile]
+Konnte Tox-Profil nicht öffnen.
+[Unable to read Tox profile]
+Konnte Tox-Profil nicht lesen.
+[Unable to decrypt Tox profile]
+Konnte Tox-Profil nicht entschlüsseln.
+[New password is empty]
+Neues Passwort ist leer.
+[New password is not equal to confirmation]
+Neues Passwort stimmt nicht mit der Bestätigung überein.
+[Old password is not valid]
+Altes Passwort ist ungültig.
+[Removing the password will lead to decryption of the profile.\r\nAre you sure to remove password?]
+Wenn Sie das Passwort entfernen wird das Profil entschlüsselt.\r\nSind Sie sich sicher dass Sie das Passwort entfernen möchten?
+;file \protocols\Tox\src\tox_proto.cpp
+[You cannot add yourself to your contact list]
+Sie können sich nicht selbst zu Ihrer Kontaktliste hinzufügen.
+[Contact already in your contact list]
+Der Kontakt ist bereits in Ihrer Kontaktliste.
+[Unable to initialize Tox core]
+Konnte Tox-Core nicht initialisieren.
+;file \protocols\Tox\src\tox_search.cpp
+[Query]
+Query
+;file \protocols\Tox\src\tox_utils.cpp
+[One of the arguments is missing]
+Eines der Argumente fehlt.
+[Unable to allocate enough memory]
+Konnte nicht ausreichend Arbeitsspeicher belegen.
+[Unable to bind to a port]
+Konnte nicht an einen Port binden.
+[The proxy type is not valid]
+Der Proxytyp ist ungültig.
+[The proxy host is not valid]
+Der Proxyhost ist ungültig.
+[The proxy port is not valid]
+Der Proxyport ist ungültig.
+[The proxy address could not be resolved]
+Die Proxyadresse konnte nicht aufgelöst werden.
+[The profile is encrypted]
+Das Profil ist verschlüsselt.
+[The data format is not valid]
+Das Datenformat ist ungültig.
+[Unknown error]
+Unbekannter Fehler
+[The friend ID did not designate a valid friend]
+Die Freundes-ID zeigt keinen gültigen Kontakt an.
+[This client is currently not connected to the friend]
+Dieser Client ist momentan nicht mit dem Freund verbunden.
+[An allocation error occurred while increasing the send queue size]
+Ein Speicherzuweisungsfehler beim Erhöhen der Sendelistengröße.
+[Message length exceeded TOX_MAX_MESSAGE_LENGTH]
+Nachrichtenlänge überschreitet TOX_MAX_MESSAGE_LENGTH.
+[Attempted to send a zero-length message]
+Versuche, eine Nachricht der Länge 0 zu senden.

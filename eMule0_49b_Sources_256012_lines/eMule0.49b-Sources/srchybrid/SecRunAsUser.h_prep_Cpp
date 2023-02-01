@@ -1,0 +1,254 @@
+﻿//this file is part of eMule
+//Copyright (C)2004-2005 Merkur ( devs@emule-project.net / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+void INCLUDEREPLACE(){CX_INCL("Iads.h");}
+void INCLUDEREPLACE(){CX_INCL("activeds.h");}
+void INCLUDEREPLACE(){CX_INCL("comdef.h");}
+void INCLUDEREPLACE(){CX_INCL("initguid.h");}
+
+
+
+
+enum eResult{
+ RES_OK_NEED_RESTART = 0,
+ RES_OK,
+ RES_FAILED
+};
+
+        int  (      * TCreateProcessWithLogonW)(
+  const long* lpUsername,                 // user's name
+  const long* lpDomain,                   // user's domain
+  const long* lpPassword,                 // user's password
+  unsigned long dwLogonFlags,                 // logon option
+  const long* lpApplicationName,          // executable module name
+  long*  lpCommandLine,               // command-line string
+  unsigned long dwCreationFlags,              // creation flags
+  void*  lpEnvironment,               // neW environment block
+  const long* lpCurrentDirectory,         // current directory name
+  LPSTARTUPINFOW lpStartupInfo,       // startup information
+  LPPROCESS_INFORMATION lpProcessInfo // process information
+);
+
+        unsigned long (      * TGetNamedSecurityInfo)(
+  char * pObjectName,                        // object name
+  SE_OBJECT_TYPE ObjectType,                 // object type
+  SECURITY_INFORMATION SecurityInfo,         // information type
+  PSID *ppsidOwner,                          // owner    
+  PSID *ppsidGroup,                          // primary group    
+  ACL* *ppDacl,                              // DACL
+  ACL* *ppSacl,                              // SACL
+  PSECURITY_DESCRIPTOR *ppSecurityDescriptor // SD
+);
+
+        unsigned long (      * TSetNamedSecurityInfo) (
+  char * pObjectName,                // object name
+  SE_OBJECT_TYPE ObjectType,         // object type
+  SECURITY_INFORMATION SecurityInfo, // type
+  PSID psidOwner,                    // neW owner    
+  PSID psidGroup,                    // neW primary group    
+  ACL* pDacl,                        // neW     
+  ACL* pSacl                         // neW SACL
+);
+
+        int  (      * TAddAccessAllowedAceEx) (
+  ACL* pAcl,            // access control list
+  unsigned long dwAceRevision,  // ACL revision level
+  unsigned long AceFlags,       // ACE inheritance flags
+  unsigned long AccessMask,     // access mask for the neW    
+  PSID pSid             // trustee     for neW ACE
+);
+
+        int  (      * TLookupAccountName) (
+  const char* lpSystemName,   // system name
+  const char* lpAccountName,  // account name
+  PSID Sid,               // security identifier
+  unsigned long * cbSid,          // size of security identifier
+  char * DomainName,      // domain name
+  unsigned long * cbDomainName,   // size of domain name
+  PSID_NAME_USE peUse     // SID-type indicator
+);
+
+        int  (      * TGetAclInformation) (
+  ACL* pAcl,                                   // access-control list
+  void*  pAclInformation,                      // ACL information
+  unsigned long nAclInformationLength,                 // size of     information
+  ACL_INFORMATION_CLASS dwAclInformationClass  // info class
+);
+
+        int  (      * TInitializeAcl)(
+  ACL* pAcl,            // ACL
+  unsigned long nAclLength,     // size of    
+  unsigned long dwAclRevision   // revision level of ACL
+);
+
+        int  (      * TGetAce)(
+  ACL* pAcl,         // access-control list
+  unsigned long dwAceIndex,  // index of     to retrieve
+  void*  *pAce       // ACE
+);
+
+        int  (      * TAddAce)(
+  ACL* pAcl,                 // access-control list
+  unsigned long dwAceRevision,       // ACL revision level
+  unsigned long dwStartingAceIndex,  // index of     position in    
+  void*  pAceList,           // one or more ACEs
+  unsigned long nAceListLength       // size of buffer for ACEs
+);
+
+        int  (      * TEqualSid)(
+  PSID pSid1,
+  PSID pSid2
+);
+
+        unsigned long (      * TGetLengthSid)(
+  PSID pSid   // SID to query
+);
+
+        unsigned long (      * TADsGetObject) (
+  long*  lpszPathName,
+  IID *  riid,
+  void** ppObject
+);
+
+        unsigned long (      * TADsBuildEnumerator) (
+  IADsContainer* pADsContainer,
+  IEnumVARIANT** ppEnumVariant
+);
+
+        unsigned long (      * TADsEnumerateNext) (
+  IEnumVARIANT* pEnumVariant,
+  unsigned long cElements,
+  VARIANT* pvar,
+  unsigned long* pcElementsFetched
+);
+
+        int  (      * TOpenProcessToken)(
+  void * ProcessHandle,
+  unsigned long DesiredAccess,
+  PHANDLE TokenHandle
+);
+
+        int  (      * TGetTokenInformation)(
+  void * TokenHandle,
+  TOKEN_INFORMATION_CLASS TokenInformationClass,
+  void*  TokenInformation,
+  unsigned long TokenInformationLength,
+  PDWORD ReturnLength
+);
+
+        int  (      * TCreateRestrictedToken)(
+  void * ExistingTokenHandle,              // handle to existing token
+  unsigned long Flags,                             // privilege options
+  unsigned long DisableSidCount,                   // number of deny-only SIDs
+  PSID_AND_ATTRIBUTES SidsToDisable,       // deny-only SIDs
+  unsigned long DeletePrivilegeCount,              // number of privileges
+  PLUID_AND_ATTRIBUTES PrivilegesToDelete, // privileges
+  unsigned long RestrictedSidCount,                // number of restricting SIDs
+  PSID_AND_ATTRIBUTES SidsToRestrict,      // list of restricting SIDs
+  PHANDLE NewTokenHandle                   // handle to neW token
+);
+
+        int  (      * TCreateProcessAsUser)(
+  void * hToken,                             // handle to user token
+  const char* lpApplicationName,                 // name of executable module
+  char * lpCommandLine,                      // command-line string
+  LPSECURITY_ATTRIBUTES lpProcessAttributes, // SD
+  LPSECURITY_ATTRIBUTES lpThreadAttributes,  // SD
+  int  bInheritHandles,                      // inheritance option
+  unsigned long dwCreationFlags,                     // creation flags
+  void*  lpEnvironment,                      // neW environment block
+  const char* lpCurrentDirectory,                // current directory name
+  LPSTARTUPINFO lpStartupInfo,               // startup information
+  LPPROCESS_INFORMATION lpProcessInformation // process information
+);
+
+
+
+        _com_ptr_t<_com_IIID<IADsContainer,&IID_IADsContainer> >  IADsContainerPtr = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IADs,&IID_IADs> >  IADsPtr = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IADsUser,&IID_IADsUser> >  IADsUserPtr = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IADsAccessControlEntry,&IID_IADsAccessControlEntry> >  IIADsAccessControlEntryPtr = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IADsSecurityDescriptor,&IID_IADsSecurityDescriptor> >  IADsSecurityDescriptorPtr = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IADsWinNTSystemInfo,&IID_IADsWinNTSystemInfo> >  IADsWinNTSystemInfoPtr = "CX_TYPEDEF";
+
+
+
+
+
+
+class CSecRunAsUser
+{
+public:
+ CSecRunAsUser();
+ ~CSecRunAsUser();
+
+ eResult RestartSecure();
+ bool IsRunningEmuleAccount()  {return m_bRunningAsEmule;}
+ bool IsRunningRestricted()  {return m_bRunningRestricted;}
+ bool IsRunningSecure()   {return m_bRunningRestricted || m_bRunningAsEmule;}
+ CStringW GetCurrentUserW();
+
+protected:
+ eResult PrepareUser();
+ eResult RestartAsUser();
+ eResult RestartAsRestricted();
+
+ bool SetDirectoryPermissions();
+ bool CreateEmuleUser(IADsContainerPtr pUsers);
+ CStringW CreateRandomPW();
+ bool SetObjectPermission(CString strDirFile, unsigned long lGrantedAccess);
+ bool LoadAPI();
+ void FreeAPI();
+
+private:
+ CStringW ADSPath;
+ CStringW m_strPassword;
+ CStringW m_strDomain;
+ CStringW m_strCurrentUser;
+ bool m_bRunningAsEmule;
+ bool m_bRunningRestricted;
+ void *  m_hADVAPI32_DLL;
+ void *  m_hACTIVEDS_DLL;
+
+ TCreateProcessWithLogonW CreateProcessWithLogonW;
+ TGetNamedSecurityInfo GetNamedSecurityInfo;
+ TSetNamedSecurityInfo SetNamedSecurityInfo;
+ TAddAccessAllowedAceEx AddAccessAllowedAceEx;
+ TLookupAccountName LookupAccountName;
+ TGetAclInformation GetAclInformation;
+ TInitializeAcl InitializeAcl;
+ TGetAce GetAce;
+ TAddAce AddAce;
+ TEqualSid EqualSid;
+ TGetLengthSid GetLengthSid;
+ TOpenProcessToken OpenProcessToken;
+ TGetTokenInformation GetTokenInformation;
+ TCreateRestrictedToken CreateRestrictedToken;
+ TCreateProcessAsUser CreateProcessAsUser;
+
+ TADsGetObject ADsGetObject;
+ TADsBuildEnumerator ADsBuildEnumerator;
+ TADsEnumerateNext ADsEnumerateNext;
+};
+
+
+
+
+
+
+ 

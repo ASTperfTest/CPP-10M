@@ -1,0 +1,414 @@
+#muuid {ebf19652-e434-4d79-9897-91a0ff226f51}
+;============================================================
+;  File: NewXstatusNotify.dll
+;  Plugin: xStatus notify
+;  Version: 1.4.0.12
+;  Authors: Luca Santarelli, Vasilich, yaho
+;============================================================
+[Notifies you when a contact changes his/her (X)status or status message.]
+
+;file \plugins\NewXstatusNotify\res\resource.rc
+[Notify when contact changes to one of these statuses]
+Notifier quand un contact change pour un de ces états
+[Online]
+En ligne
+[Offline]
+Hors ligne
+[Invisible]
+Invisible
+[Free for chat]
+OK pour un chat
+[Away]
+Absent
+[Not available]
+Indisponible
+[Occupied]
+Occupé
+[Do not disturb]
+Ne pas déranger
+[Always when changing from offline]
+Notifier dés qu'un contact se connecte
+[Notify when contact changes]
+
+[Extra status]
+
+[Status message]
+
+[Plugin activation]
+Activation du plugin
+[Automatically turn off Popups and Sounds on status change]
+
+[Configure]
+Configurer
+[Notify me for people not on my contact list]
+
+[Use individual sounds]
+
+[Blink icon in the system tray]
+Faire clignoter l'icône du systray
+[Also when extra status or status message changes]
+
+[Use status icon]
+Utiliser l'icône d'état
+[Log to file]
+
+[Open]
+Ouvrir
+[Change]
+
+[Preview]
+Aperçu
+[Delete]
+Effacer
+[Enable sounds]
+
+[Enable popups]
+
+[Status Notify]
+Notification d'état
+[Individual sounds are disabled.\n\nTo enable them, go to Options -> Status -> Status Notify, enable\n"Use individual sounds" checkbox, and then reopen this dialog.]
+
+[Sounds]
+Sons
+[Popups]
+Popups
+[Extra status notify]
+
+[Extra status logging]
+
+[Disable all]
+
+[Enable all]
+
+[Status message notify]
+
+[Status message logging]
+
+[Popups when status changes to:]
+
+[Background]
+Arrière-plan
+[Text]
+Texte
+[Colors]
+Couleurs
+[Use custom colors]
+Couleurs personnalisées
+[Use Windows colors]
+Utiliser les couleurs Windows
+[Use default colors]
+Couleurs par défaut
+[Popup text]
+Texte des popups
+[Show contact group name]
+
+[Show status description]
+
+[Use alternative descriptions]
+
+[Show previous status too]
+
+[Read status message]
+Lire le message d'état
+[Timeout]
+Délai du popup
+[Sec]
+secondes
+[Connection timeout]
+
+[0 = Default]
+0 = Défaut
+[-1 = Infinite]
+-1 = Infini
+[Click action]
+Action du clic
+[On left click]
+Clic gauche
+[On right click]
+Clic droit
+[Notification]
+
+[Show Popups when I connect]
+
+[Disable for extra status 'Music']
+
+[Truncate message length to:]
+
+[characters]
+caractères
+[Templates]
+Modèles
+[Notify when contact changes extra status]
+
+[Template:]
+Modèle :
+[Notify when contact removes extra status]
+
+[Notify when contact changes extra status message]
+
+[Notify when contact removes extra status message]
+
+[Variables]
+
+[Reset]
+RAZ
+[Disable notifications]
+
+[Disable globally]
+
+[Disable when my status is:]
+
+[Disable only if I change global status]
+
+[Cancel]
+Annuler
+[Log extra status changes]
+
+[Log extra status changes to file]
+
+[Log extra status changes to history]
+
+[Only when message window is open]
+
+[Remove events from history when closing message window]
+
+[Log when contact changes extra status]
+
+[Log when contact removes extra status]
+
+[Log when contact changes extra status message]
+
+[Log when contact removes extra status message]
+
+[Log extra status when opening message window]
+
+[General]
+Général
+[Accounts]
+Comptes
+[Enable/Disable accounts which you don't wish to be notified for:]
+
+[Notify when contact changes status message]
+
+[Notify when contact removes status message]
+
+[Log status changes]
+
+[Log status changes to file]
+
+[Log status changes to history]
+
+[Log previous status too]
+
+[Log status message changes]
+
+[Log status message changes to file]
+
+[Log status message changes to history]
+
+[Log when contact changes status message]
+
+[Log when contact removes status message]
+
+[Log status message when opening message window]
+
+;file \plugins\NewXstatusNotify\src\indsnd.cpp
+[Sound files]
+Fichiers son
+[All files]
+Tous les fichiers
+[Wave files]
+
+[** All contacts **]
+** Tous les contacts **
+[Status]
+État
+[Sound file]
+
+;file \plugins\NewXstatusNotify\src\indsnd.h
+[(default sound)]
+(son par défaut)
+;file \plugins\NewXstatusNotify\src\main.cpp
+[<no status message>]
+<aucun message d'état>
+[Contact]
+Contact
+[<unknown>]
+<inconnu>
+[%s is now %s]
+
+[%s, %s. %s changed status to %s (was %s)\r\n]
+%s, %s. %s change en %s (était %s)\r\n
+[connecting]
+Connexion...
+[aborting]
+
+[playing]
+en lecture
+[%s changed status message to %s]
+
+[(M) is back online!]
+est connecté
+[(F) is back online!]
+est connectée
+[(U) is back online!]
+est connecté(e)
+[User: Online]
+Contact : En ligne
+[(M) went offline! :(]
+s'est déconnecté
+[(F) went offline! :(]
+s'est déconnectée
+[(U) went offline! :(]
+s'est déconnecté(e)
+[User: Offline]
+Contact : Hors ligne
+[(M) hides in shadows...]
+
+[(F) hides in shadows...]
+
+[(U) hides in shadows...]
+
+[User: Invisible]
+Contact : Invisible
+[(M) feels talkative!]
+est d'humeur bavarde !
+[(F) feels talkative!]
+est d'humeur bavarde !
+[(U) feels talkative!]
+est d'humeur bavarde !
+[User: Free for chat]
+Contact : OK pour un chat
+[(M) went away]
+est parti
+[(F) went away]
+est partie
+[(U) went away]
+est parti(e)
+[User: Away]
+Contact : Absent
+[(M) isn't there anymore!]
+n'est plus là.
+[(F) isn't there anymore!]
+n'est plus là.
+[(U) isn't there anymore!]
+n'est plus là.
+[User: Not available]
+Contact : Indisponible
+[(M) has something else to do]
+a autre chose à faire
+[(F) has something else to do]
+a autre chose à faire
+[(U) has something else to do]
+a autre chose à faire
+[User: Occupied]
+Contact : Occupé
+[(M) doesn't want to be disturbed!]
+ne veut plus être dérangé!
+[(F) doesn't want to be disturbed!]
+ne veut plus être dérangée!
+[(U) doesn't want to be disturbed!]
+ne veut plus être dérangé!
+[User: Do not disturb]
+Contact : Ne pas déranger
+[User: from offline (has priority!)]
+
+[Status message removed]
+
+[Status message changed]
+
+[Extra status removed]
+
+[Extra status message changed]
+
+[Extra status changed]
+
+[Extra status message removed]
+
+[Status notifications]
+
+[New Status Notify]
+
+[Status change]
+Changement d'état
+;file \plugins\NewXstatusNotify\src\options.cpp
+[All Files]
+Tous les fichiers
+[Log]
+Journal
+[This is status message]
+
+[This is extra status]
+
+[Show available variables]
+
+[Reset all templates to default]
+
+[Do you want to reset all templates to default?]
+
+[Reset templates]
+
+[Account]
+Compte
+[Status logging]
+
+[Filtering]
+Filtres
+;file \plugins\NewXstatusNotify\src\popup.h
+[(was %s)]
+
+[Open message window]
+
+[Close popup]
+
+[Open contact details window]
+
+[Open contact menu]
+
+[Open contact history]
+
+[Do nothing]
+
+;file \plugins\NewXstatusNotify\src\utils.cpp
+[Can't open the log file!]
+
+[NewXstatusNotify]
+
+;file \plugins\NewXstatusNotify\src\xstatus.cpp
+[Mood]
+
+[Activity]
+
+[xStatus]
+
+[<no title>]
+
+[%s changed %s]
+
+;file \plugins\NewXstatusNotify\src\xstatus.h
+[changed %n to: %t]
+
+[removed %n]
+
+[changed %n message to: %m]
+
+[removed %n message]
+
+[changed status message to: %n]
+
+[removed status message]
+
+[changed %n @ %t: %m]
+
+[changed %n message @ %m]
+
+[has %n @ %t: %m]
+
+[changed status message @ %n]
+
+[is %s and has status message @ %n]
+
+[These variables are available:\r\n\r\n%n\textra status name (xStatus, Mood, Activity)\r\n%t\textra status title\r\n%m\textra status message\r\n%c\tcustom nickname\r\n\\n\tline break\r\n\\t\ttab stop]
+
+[These variables are available:\r\n\r\n%n\tnew status message\r\n%o\told status message\r\n%c\tcustom nickname\r\n%s\tcurrent status\r\n\\n\tline break\r\n\\t\ttab stop]
+

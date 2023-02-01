@@ -1,0 +1,92 @@
+﻿// TitleMenu.h: interface for the CTitleMenu class.
+// Based on the code of Per on codeguru.earthweb.com
+// Author: Arthur Westerman
+// Bug reports by : Brian Pearson
+//////////////////////////////////////////////////////////////////////
+
+
+
+          class tagMENUINFO
+{
+    unsigned long   cbSize;
+    unsigned long   fMask;
+    unsigned long   dwStyle;
+    unsigned int    cyMax;
+    void*   hbrBack;
+    unsigned long   dwContextHelpID;
+    unsigned long dwMenuData;
+};       tagMENUINFO   MENUINFO, FAR *LPMENUINFO = "CX_TYPEDEF";
+        MENUINFO const FAR *LPCMENUINFO = "CX_TYPEDEF";
+
+
+        int  (      * TSetMenuInfo)(
+  void* hmenu,       // handle to menu
+  LPCMENUINFO lpcmi  // menu information
+);
+        int  (      * TGetMenuInfo)(
+  void* hmenu,            // handle to menu
+  LPCMENUINFO lpcmi       // menu information
+);
+
+class CTitleMenu :        CMenu
+{
+public:
+ CTitleMenu();
+ virtual ~CTitleMenu();
+
+ int  CreateMenu();
+ int  DestroyMenu();
+ void DeleteIcons();
+
+ void EnableIcons();
+ void AddMenuTitle(const char* lpszTitle, bool bIsIconMenu = false);
+ int  AppendMenu(unsigned int nFlags, unsigned int nIDNewItem = 0, const char* lpszNewItem = NULL, const char* lpszIconName = NULL);
+ int  InsertMenu(unsigned int nPosition, unsigned int nFlags, unsigned int nIDNewItem = 0, const char* lpszNewItem = NULL, const char* lpszIconName = NULL);
+
+ long GetColor() { return m_clLeft; }
+ void SetColor(long cl) { m_clLeft = cl; }
+
+ long GetGradientColor() { return m_clRight; }
+ void SetGradientColor(long cl) { m_clRight = cl; }
+
+ long GetTextColor() { return m_clText; }
+ void SetTextColor(long cl) { m_clText = cl; }
+
+ long GetEdge() { return m_uEdgeFlags; }
+ void SetEdge(bool shown, unsigned int remove = 0, unsigned int add = 0) { m_bDrawEdge = shown; (m_uEdgeFlags ^= remove) |= add; }
+
+ virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMIS);
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDIS);
+
+protected:
+ CString m_strTitle;
+ long m_clRight;
+ long m_clLeft;
+ long m_clText;
+ bool m_bDrawEdge;
+ bool m_bIconMenu;
+ unsigned int m_uEdgeFlags;
+ CImageList m_ImageList;
+ CMap                     m_mapMenuIdToIconIdx;
+ CMapStringToPtr m_mapIconNameToIconIdx;
+ CMapStringToPtr m_mapIconNameToBitmap;
+
+         unsigned int (      * LPFNGRADIENTFILL)(void*, const PTRIVERTEX, unsigned long, const void*, unsigned long, unsigned long) = "CX_TYPEDEF";
+ LPFNGRADIENTFILL m_pfnGradientFill;
+ void *    m_hLibMsimg32;
+
+ static bool m_bInitializedAPI;
+ static bool LoadAPI();
+ static void FreeAPI();
+ static TSetMenuInfo SetMenuInfo;
+ static TGetMenuInfo GetMenuInfo;
+ void DrawMonoIcon(int nIconPos, CPoint nDrawPos, CDC *dc);
+ void SetMenuBitmap(unsigned int nFlags, unsigned int nIDNewItem, const char* lpszNewItem, const char* lpszIconName);
+};
+
+
+
+
+
+
+ 

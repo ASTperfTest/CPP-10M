@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="td\tdnet\td\net\GetHostByNameActor.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpChunkedByteFlow.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpConnectionBase.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpContentLengthByteFlow.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpFile.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpInboundConnection.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpOutboundConnection.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpQuery.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpReader.cpp" />
+    <ClCompile Include="td\tdnet\td\net\Socks5.cpp" />
+    <ClCompile Include="td\tdnet\td\net\TcpListener.cpp" />
+    <ClCompile Include="td\tdnet\td\net\Wget.cpp" />
+    <ClCompile Include="td\tdnet\td\net\HttpProxy.cpp" />
+    <ClCompile Include="td\tdnet\td\net\SslCtx.cpp" />
+    <ClCompile Include="td\tdnet\td\net\SslStream.cpp" />
+    <ClCompile Include="td\tdnet\td\net\TransparentProxy.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="td\tdnet\td\net\GetHostByNameActor.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpChunkedByteFlow.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpConnectionBase.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpContentLengthByteFlow.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpFile.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpHeaderCreator.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpInboundConnection.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpOutboundConnection.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpQuery.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpReader.h" />
+    <ClInclude Include="td\tdnet\td\net\NetStats.h" />
+    <ClInclude Include="td\tdnet\td\net\Socks5.h" />
+    <ClInclude Include="td\tdnet\td\net\TcpListener.h" />
+    <ClInclude Include="td\tdnet\td\net\Wget.h" />
+    <ClInclude Include="td\tdnet\td\net\HttpProxy.h" />
+    <ClInclude Include="td\tdnet\td\net\SslCtx.h" />
+    <ClInclude Include="td\tdnet\td\net\SslStream.h" />
+    <ClInclude Include="td\tdnet\td\net\TransparentProxy.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,131 @@
+#muuid {4f1ff7fa-4d75-44b9-93b0-2ced2e4f9e3e}
+;============================================================
+;  File: WhatsApp.dll
+;  Plugin: WhatsApp protocol
+;  Version: 0.1.3.3
+;  Authors: Uli Hecht
+;============================================================
+[WhatsApp protocol support for Miranda NG.]
+Поддержка протокола WhatsApp в Miranda NG.
+[Phone number]
+Номер телефона
+[Nickname]
+Ник
+[Default group:]
+Группа:
+[Use SSL connection (port 443)]
+Подключение по SSL (порт 443)
+[Use remote message timestamps]
+Время по серверу вместо локального времени
+[Automatically open group chats]
+Автоматически открывать комнаты чата
+[Registration]
+Код регистрации
+[Enter code]
+Ввести
+[Request SMS code]
+Запрос по SMS
+[Request Voice code]
+Запрос звонка
+[Register code]
+Подтвердить
+[Including country code, without '+' or '00']
+Включая код страны, без '+' или '00'
+[Invite users]
+Приглашение пользователей
+[Choose a user]
+Выберите пользователя
+[Other user:]
+Другой пользователь:
+[&Invite]
+&Пригласить
+[Cancel]
+Отмена
+[Members]
+Участники
+[Owners]
+Владельцы
+[&Invite a user]
+&Пригласить пользователя
+[&Room options]
+Настройки &комнаты чата
+[View/change &topic]
+Просмотр/смена &темы
+[&Quit chat session]
+&Покинуть чат
+[Set &avatar]
+Настройки &аватара
+[Copy room &JID]
+Копировать &JID комнаты чата
+[Copy room topic]
+Копировать тему
+[Set new subject for %s]
+Установить новую тему для %s
+[&Add to roster]
+&Добавить в ростер
+[&Kick]
+&Выкинуть
+[Copy &nickname]
+Копировать &ник
+[Copy real &JID]
+Копировать &JID
+[Unknown user]
+Неизвестный пользователь
+[Please enter a country code.]
+Введите код страны.
+[Please enter a phone number without country code.]
+Введите номер телефона без кода страны.
+[Please enter a nickname.]
+Введите ник.
+[Please enter a password.]
+Введите пароль.
+[is now known as '%s']
+теперь известен как '%s'
+[Last online on %x at %X]
+Последнее появление было %x в %X
+[Denied: Last online on %x at %X]
+Запрещено: последнее появление было %x в %X
+[Last seen on %x at %X]
+Последнее появление было %x в %X
+[An SMS with registration code will be sent to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+Код регистрации придёт на ваш телефон в SMS.\nУчтите, что одновременное использование этого плагина и настоящего WhatsApp невозможно!\nПродолжить?
+[A call with registration code will be made to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+Код регистрации будет сообщён во время звонка на ваш телефон.\nУчтите, что одновременное использование этого плагина и настоящего WhatsApp невозможно!\nПродолжить?
+[Your password has been set automatically. You can proceed with login now.]
+Ваш пароль был установлен автоматически. Теперь вы можете подключиться.
+[Please correctly specify your registration code received by SMS/Voice.]
+Пожалуйста, верно укажите свой код регистрации, полученный через SMS/звонок.
+[Changes will be applied after protocol restart]
+Изменения будут применены после перезапуска протокола
+[Network]
+Сеть
+[Account]
+Учётная запись
+[server]
+Сервер
+[Message received: %s by %s]
+Сообщение принято в: %s пользователем %s
+[%s server connection]
+%s подключение к серверу
+[Unable to initialize Netlib for %s.]
+Невозможно создать подключение Netlib для %s.
+[Network connection error.]
+Ошибка соединения.
+[Registration failed. Invalid server response.]
+Не удалось зарегистрироваться. Неверный ответ сервера.
+[Registration failed due to stale code. Please request a new code]
+Не удалось зарегистрироваться, поскольку код устарел. Пожалуйста, запросите новый код
+[Registration failed. Reason: %s]
+Не удалось зарегистрироваться. Причина: %s
+[Please try again in %i seconds]
+Пожалуйста, попробуйте ещё раз через %i секунд
+[Registration code has been sent to your phone.]
+Код регистрации был выслан на ваш телефон.
+[Registration failed.]
+Не удалось зарегистрироваться.
+[WhatsApp icon]
+Значок WhatsApp
+[Create chat group]
+Создать чат-группу
+[Create group]
+Создать группу

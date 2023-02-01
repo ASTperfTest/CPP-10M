@@ -1,0 +1,248 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE. See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("emule.h");}
+void INCLUDEREPLACE(){CX_INCL("PPgDebug.h");}
+void INCLUDEREPLACE(){CX_INCL("Preferences.h");}
+void INCLUDEREPLACE(){CX_INCL("OtherFunctions.h");}
+void INCLUDEREPLACE(){CX_INCL("UserMsgs.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CPPgDebug dialog
+
+//IMPLEMENT_DYNAMIC(CPPgDebug, CPropertyPage)
+
+/* BEGIN_MESSAGE_MAP(CPPgDebug, CPropertyPage)
+ ON_WM_DESTROY()
+
+
+END_MESSAGE_MAP() */ //)
+
+CPPgDebug::CPPgDebug()
+ : CPropertyPage(CPPgDebug::IDD)
+ , m_ctrlTreeOptions(theApp.m_iDfltImageListColorFlags)
+{
+ ClearAllMembers();
+}
+
+CPPgDebug::~CPPgDebug()
+{
+}
+
+void CPPgDebug::ClearAllMembers()
+{
+ m_bInitializedTreeOpts = false;
+ m_htiServer = NULL;
+ m_htiClient = NULL;
+ memset(m_cb, 0, sizeof m_cb);
+ memset(m_lv, 0, sizeof m_lv);
+ memset(m_checks, 0, sizeof m_checks);
+ memset(m_levels, 0, sizeof m_levels);
+ memset(m_htiInteger, 0, sizeof m_htiInteger);
+ memset(m_iValInteger, 0, sizeof m_iValInteger);
+}
+
+void CPPgDebug::DoDataExchange(CDataExchange* pDX)
+{
+ CPropertyPage::DoDataExchange(pDX);
+ DDX_Control(pDX, IDC_DEBUG_OPTS, m_ctrlTreeOptions);
+ if (!m_bInitializedTreeOpts)
+ {
+  int iImgServer = 8; // default icon
+  int iImgClient = 8; // default icon
+  CImageList* piml = m_ctrlTreeOptions.GetImageList(TVSIL_NORMAL);
+  if (piml){
+   void* hIcon = theApp.LoadIcon(_T("Server"));
+   if (hIcon){
+    iImgServer = piml->Add(hIcon);
+    VERIFY( ::DestroyIcon(hIcon) );
+   }
+
+   hIcon = theApp.LoadIcon(_T("StatsClients"));
+   if (hIcon){
+    iImgClient = piml->Add(hIcon);
+    VERIFY( ::DestroyIcon(hIcon) );
+   }
+  }
+
+
+
+
+
+
+
+
+
+
+  m_htiServer = m_ctrlTreeOptions.InsertCheckBox(_T("Server"), TVI_ROOT, FALSE);
+  m_cb[0] = m_ctrlTreeOptions.InsertCheckBox( _T("TCP"),  m_htiServer); m_lv[0] = m_ctrlTreeOptions.InsertItem(_T("Level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT, m_cb[0]); m_ctrlTreeOptions.AddEditBox(m_lv[0], RUNTIME_CLASS(CNumTreeOptionsEdit));
+  m_cb[1] = m_ctrlTreeOptions.InsertCheckBox( _T("UDP"),  m_htiServer); m_lv[1] = m_ctrlTreeOptions.InsertItem(_T("Level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT, m_cb[1]); m_ctrlTreeOptions.AddEditBox(m_lv[1], RUNTIME_CLASS(CNumTreeOptionsEdit));
+  m_cb[2] = m_ctrlTreeOptions.InsertCheckBox( _T("Sources"),  m_htiServer); m_lv[2] = m_ctrlTreeOptions.InsertItem(_T("Level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT, m_cb[2]); m_ctrlTreeOptions.AddEditBox(m_lv[2], RUNTIME_CLASS(CNumTreeOptionsEdit));
+  m_cb[3] = m_ctrlTreeOptions.InsertCheckBox( _T("Searches"),  m_htiServer); m_lv[3] = m_ctrlTreeOptions.InsertItem(_T("Level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT, m_cb[3]); m_ctrlTreeOptions.AddEditBox(m_lv[3], RUNTIME_CLASS(CNumTreeOptionsEdit));
+
+  m_htiClient = m_ctrlTreeOptions.InsertCheckBox(_T("Client"), TVI_ROOT, FALSE);
+  m_cb[4] = m_ctrlTreeOptions.InsertCheckBox( _T("TCP"),  m_htiClient); m_lv[4] = m_ctrlTreeOptions.InsertItem(_T("Level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT, m_cb[4]); m_ctrlTreeOptions.AddEditBox(m_lv[4], RUNTIME_CLASS(CNumTreeOptionsEdit));
+  m_cb[5] = m_ctrlTreeOptions.InsertCheckBox( _T("UDP (eD2K)"),  m_htiClient); m_lv[5] = m_ctrlTreeOptions.InsertItem(_T("Level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT, m_cb[5]); m_ctrlTreeOptions.AddEditBox(m_lv[5], RUNTIME_CLASS(CNumTreeOptionsEdit));
+  m_cb[6] = m_ctrlTreeOptions.InsertCheckBox( _T("UDP (Kad)"),  m_htiClient); m_lv[6] = m_ctrlTreeOptions.InsertItem(_T("Level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT, m_cb[6]); m_ctrlTreeOptions.AddEditBox(m_lv[6], RUNTIME_CLASS(CNumTreeOptionsEdit));
+
+  m_htiInteger[0] = m_ctrlTreeOptions.InsertItem( _T("Memory corruption check level"), TREEOPTSCTRLIMG_EDIT, TREEOPTSCTRLIMG_EDIT,  TVI_ROOT); m_ctrlTreeOptions.AddEditBox(m_htiInteger[0], RUNTIME_CLASS(CNumTreeOptionsEdit));
+
+
+
+
+  m_ctrlTreeOptions.Expand(m_htiServer, TVE_EXPAND);
+  m_ctrlTreeOptions.Expand(m_htiClient, TVE_EXPAND);
+  m_ctrlTreeOptions.SendMessage(WM_VSCROLL, SB_TOP);
+  m_bInitializedTreeOpts = true;
+ }
+
+ for (int i = 0; i < ARRSIZE(m_cb); i++)
+  DDX_TreeCheck(pDX, IDC_DEBUG_OPTS, m_cb[i], m_checks[i]);
+ m_ctrlTreeOptions.UpdateCheckBoxGroup(m_htiServer);
+ m_ctrlTreeOptions.UpdateCheckBoxGroup(m_htiClient);
+
+ for (int i = 0; i < ARRSIZE(m_lv); i++)
+  DDX_TreeEdit(pDX, IDC_DEBUG_OPTS, m_lv[i], m_levels[i]);
+
+ for (int i = 0; i < ARRSIZE(m_htiInteger); i++)
+  DDX_TreeEdit(pDX, IDC_DEBUG_OPTS, m_htiInteger[i], m_iValInteger[i]);
+}
+
+int  CPPgDebug::OnInitDialog()
+{
+
+
+
+
+
+
+
+ m_checks[0] = (( thePrefs.m_iDebugServerTCPLevel) > 0); m_levels[0] = (( thePrefs.m_iDebugServerTCPLevel) > 0) ? ( thePrefs.m_iDebugServerTCPLevel) : -( thePrefs.m_iDebugServerTCPLevel);
+ m_checks[1] = (( thePrefs.m_iDebugServerUDPLevel) > 0); m_levels[1] = (( thePrefs.m_iDebugServerUDPLevel) > 0) ? ( thePrefs.m_iDebugServerUDPLevel) : -( thePrefs.m_iDebugServerUDPLevel);
+ m_checks[2] = (( thePrefs.m_iDebugServerSourcesLevel) > 0); m_levels[2] = (( thePrefs.m_iDebugServerSourcesLevel) > 0) ? ( thePrefs.m_iDebugServerSourcesLevel) : -( thePrefs.m_iDebugServerSourcesLevel);
+ m_checks[3] = (( thePrefs.m_iDebugServerSearchesLevel) > 0); m_levels[3] = (( thePrefs.m_iDebugServerSearchesLevel) > 0) ? ( thePrefs.m_iDebugServerSearchesLevel) : -( thePrefs.m_iDebugServerSearchesLevel);
+ m_checks[4] = (( thePrefs.m_iDebugClientTCPLevel) > 0); m_levels[4] = (( thePrefs.m_iDebugClientTCPLevel) > 0) ? ( thePrefs.m_iDebugClientTCPLevel) : -( thePrefs.m_iDebugClientTCPLevel);
+ m_checks[5] = (( thePrefs.m_iDebugClientUDPLevel) > 0); m_levels[5] = (( thePrefs.m_iDebugClientUDPLevel) > 0) ? ( thePrefs.m_iDebugClientUDPLevel) : -( thePrefs.m_iDebugClientUDPLevel);
+ m_checks[6] = (( thePrefs.m_iDebugClientKadUDPLevel) > 0); m_levels[6] = (( thePrefs.m_iDebugClientKadUDPLevel) > 0) ? ( thePrefs.m_iDebugClientKadUDPLevel) : -( thePrefs.m_iDebugClientKadUDPLevel);
+
+ m_iValInteger[0] =  thePrefs.m_iDbgHeap;
+
+
+
+
+ m_ctrlTreeOptions.SetImageListColorFlags(theApp.m_iDfltImageListColorFlags);
+ CPropertyPage::OnInitDialog();
+ InitWindowStyles(this);
+
+ return TRUE;  // return      unless you set the focus to a control
+      // EXCEPTION: OCX Property Pages should return FALSE
+}
+
+int  CPPgDebug::OnKillActive()
+{
+ // if prop page is closed by pressing       we have to explicitly commit any possibly pending
+ // data from an open edit control
+ m_ctrlTreeOptions.HandleChildControlLosingFocus();
+ return CPropertyPage::OnKillActive();
+}
+
+int  CPPgDebug::OnApply()
+{
+ // if prop page is closed by pressing       we have to explicitly commit any possibly pending
+ // data from an open edit control
+ m_ctrlTreeOptions.HandleChildControlLosingFocus();
+
+ if (!UpdateData())
+  return FALSE;
+
+
+
+
+
+
+
+
+
+
+ if (m_checks[0])  thePrefs.m_iDebugServerTCPLevel = (m_levels[0] > 0) ? m_levels[0] : 1; else  thePrefs.m_iDebugServerTCPLevel = -m_levels[0];
+ if (m_checks[1])  thePrefs.m_iDebugServerUDPLevel = (m_levels[1] > 0) ? m_levels[1] : 1; else  thePrefs.m_iDebugServerUDPLevel = -m_levels[1];
+ if (m_checks[2])  thePrefs.m_iDebugServerSourcesLevel = (m_levels[2] > 0) ? m_levels[2] : 1; else  thePrefs.m_iDebugServerSourcesLevel = -m_levels[2];
+ if (m_checks[3])  thePrefs.m_iDebugServerSearchesLevel = (m_levels[3] > 0) ? m_levels[3] : 1; else  thePrefs.m_iDebugServerSearchesLevel = -m_levels[3];
+ if (m_checks[4])  thePrefs.m_iDebugClientTCPLevel = (m_levels[4] > 0) ? m_levels[4] : 1; else  thePrefs.m_iDebugClientTCPLevel = -m_levels[4];
+ if (m_checks[5])  thePrefs.m_iDebugClientUDPLevel = (m_levels[5] > 0) ? m_levels[5] : 1; else  thePrefs.m_iDebugClientUDPLevel = -m_levels[5];
+ if (m_checks[6])  thePrefs.m_iDebugClientKadUDPLevel = (m_levels[6] > 0) ? m_levels[6] : 1; else  thePrefs.m_iDebugClientKadUDPLevel = -m_levels[6];
+
+  thePrefs.m_iDbgHeap = m_iValInteger[0];
+
+
+
+
+ SetModified(FALSE);
+ return CPropertyPage::OnApply();
+}
+
+void CPPgDebug::OnDestroy()
+{
+ m_ctrlTreeOptions.DeleteAllItems();
+ m_ctrlTreeOptions.DestroyWindow();
+ ClearAllMembers();
+ CPropertyPage::OnDestroy();
+}
+
+long *  CPPgDebug::OnTreeOptsCtrlNotify(int *  wParam, long * /*lParam*/)
+{
+ if (wParam == IDC_DEBUG_OPTS){
+  //TREEOPTSCTRLNOTIFY* pton = (TREEOPTSCTRLNOTIFY*)lParam;
+  SetModified();
+ }
+ return 0;
+}
+
+void CPPgDebug::OnHelp()
+{
+ //theApp.ShowHelp(0);
+}
+
+int  CPPgDebug::OnCommand(int *  wParam, long * lParam)
+{
+ if (wParam == ID_HELP)
+ {
+  OnHelp();
+  return TRUE;
+ }
+ return __super::OnCommand(wParam, lParam);
+}
+
+int  CPPgDebug::OnHelpInfo(HELPINFO* /*pHelpInfo*/)
+{
+ OnHelp();
+ return TRUE;
+}
+
+
+
+
+
+
+ 

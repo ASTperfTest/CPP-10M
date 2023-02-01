@@ -1,0 +1,151 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "..\src\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Polish (Poland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PLK)
+LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
+#pragma code_page(1250)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_OFF            ICON                    "option_off.ico"
+IDI_ICON_FF             ICON                    "option_showinff.ico"
+IDI_ICON_PN             ICON                    "popup_notify.ico"
+IDI_ICON_PE             ICON                    "popup_error.ico"
+#endif    // Polish (Poland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUD)
+LANGUAGE LANG_NEUTRAL, SUBLANG_DEFAULT
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPT1 DIALOGEX 0, 0, 310, 230
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Send to contact action",IDC1_STATIC_G1,8,10,294,120
+    LTEXT           "on left mouse button click",IDC1_LABEL2,20,24,266,10
+    COMBOBOX        IDC1_COMBO1,20,36,256,16,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "on right mouse button click",IDC1_LABEL3,20,56,266,10
+    COMBOBOX        IDC1_COMBO2,20,69,256,12,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "on middle mouse button click\n(note: use middle mouse button to send multiple messages from Firefox)",IDC1_LABEL4,20,88,266,32
+    COMBOBOX        IDC1_COMBO3,20,108,256,15,CBS_DROPDOWNLIST | WS_TABSTOP
+    GROUPBOX        "Firefox menu",IDC1_STATIC_G3,8,135,294,33
+    CONTROL         "Add account to contact name",IDC1_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,145,266,20
+    GROUPBOX        "Firefox profiles",IDC1_STATIC_G2,8,172,294,53
+    CONTROL         "Show Miranda menu only in these Firefox profiles (comma delimited)",IDC1_CHECK1,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,20,181,266,20
+    EDITTEXT        IDC1_EDIT1,20,203,256,14,ES_AUTOHSCROLL
+	
+END
+
+IDD_OPT2 DIALOGEX 0, 0, 310, 230
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Show these contacts in 'Send ... to' option in Firefox",IDC2_STATIC_G1,8,10,294,215
+    CONTROL         "",IDC2_CONTACTS_LIST,"CListControl",WS_TABSTOP | 0x1d2,20,24,266,190,WS_EX_CLIENTEDGE
+END
+
+IDD_OPT3 DIALOGEX 0, 0, 310, 230
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Show these accounts in 'Set status message' option in Firefox",IDC3_STATIC_G1,8,10,294,215
+    CONTROL         "",IDC3_PROTOCOLS_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SORTASCENDING | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_TABSTOP,20,24,266,190
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_OPT1, DIALOG
+    BEGIN
+        VERTGUIDE, 19
+        VERTGUIDE, 26
+        VERTGUIDE, 282
+    END
+
+    IDD_OPT2, DIALOG
+    BEGIN
+    END
+
+    IDD_OPT3, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral (Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

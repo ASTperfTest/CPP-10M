@@ -1,0 +1,53 @@
+﻿//this file is part of eMule
+//Copyright (C)2002 Merkur ( merkur-@users.sourceforge.net / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+void INCLUDEREPLACE(){CX_INCL("MuleListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlItemWalk.h");}
+
+class CAbstractFile;
+
+class CCollectionListCtrl :        CMuleListCtrl,        CListCtrlItemWalk
+{
+ //DECLARE_DYNAMIC(CCollectionListCtrl)
+
+public:
+ CCollectionListCtrl();
+ virtual ~CCollectionListCtrl();
+
+ void Init(CString strNameAdd);
+ void Localize();
+
+ void AddFileToList(CAbstractFile* pAbstractFile);
+ void RemoveFileFromList(CAbstractFile* pAbstractFile);
+
+protected:
+ static int          SortProc(long * lParam1, long * lParam2, long * lParamSort);
+
+ void SetAllIcons();
+
+
+         void OnColumnClick( NMHDR* pNMHDR, long * * pResult);
+         void OnNMRclick(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

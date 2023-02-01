@@ -1,0 +1,131 @@
+#muuid {67848b07-83d2-49e9-8844-7e3de268e304}
+;============================================================
+;  File: HTTPServer.dll
+;  Plugin: HTTPServer
+;  Version: 0.1.2.4
+;  Authors: Kennet Nielsen, modified by Vampik, Houdini
+;============================================================
+[HTTP Web Server plugin for Miranda.]
+HTTP Web Server plugin für Miranda.
+;file \plugins\HTTPServer\res\resource.rc
+[IPAddress1]
+IPAddress1
+[IPAddress2]
+IPAddress2
+[Max downloads]
+Max. Downloads
+[Address]
+Adresse
+[Mask]
+Maske
+[Share name]
+Freigabename
+[Allowed IP]
+Erlaubte IP
+[HTTP Server statistics view]
+Statistik für HTTP-Server
+[Display hidden shares]
+Versteckte Freigaben anzeigen
+[New share]
+Neue Freigabe
+[Set to default]
+Standard setzen
+[External server name]
+Externer Servername
+[This is the link pasted to the message window]
+Füge folgenden Link im Nachrichtenfenster ein
+[Write log file]
+Logdatei schreib.
+[Open log]
+Log zeigen
+[Show popups]
+Popups anzeigen
+[Page keyword]
+Schlüsselwort
+[URL address]
+URL-Adresse
+[%ExternalIP% variable]
+%ExternalIP%-Variable
+[Test]
+Testen
+[Transfer limit (Kb/s)]
+Verbindungsrate (kB/Sek)
+[No control when Away or Not available]
+Keine Kontrollen wenn Abwesend/A.H.
+[Connection control]
+Verbindungskontrolle
+[Index creation]
+Indexerstellung
+[Disable]
+Deaktivieren
+[Create HTML (compatibility)]
+HTML erstellen (Kompatibilität)
+[Create XML]
+XML erstellen
+[Notifications]
+Benachrichtigungen
+[Total connection limit]
+max. Verbindungen gesamt
+[Connections per user limit]
+max. Verbindungen/Kontakt
+[Default download limit]
+Standard-DL-Begrenzung
+[&Edit share]
+Freigabe b&earbeiten
+[&Remove share]
+Freigabe entfe&rnen
+[&Open in Browser]
+In Br&owser öffnen
+[&Copy link]
+Link kopieren
+;file \plugins\HTTPServer\src\GuiElements.cpp
+[Share Current Directory]
+Aktuelles Verzeichnis freigeben
+[All files]
+Alle Dateien
+[Specify a file to share]
+Datei für Freigabe auswählen
+[Failed to share new file]
+Freigeben einer neuen Datei fehlgeschlagen.
+[Max Downloads]
+Max. Downloads
+[Allowed Mask]
+Erlaubte Maske
+[Real path]
+Lokaler Pfad
+[User]
+Benutzer
+[Agent]
+Agent
+[Completed]
+Abgeschlossen
+[Speed]
+Geschwindigkeit
+[Current IP Address: ]
+Aktuelle IP-Adresse:\s
+[Current Address: ]
+Aktuelle Adresse:\s
+[IP Address: ]
+IP-Adresse:\s
+[You are browsing from]
+Sie browsen von
+[Your external IP was detected as %d.%d.%d.%d\r\nby: %s]
+Ihre externe IP wurde als %d.%d.%d.%d erkannt\r\nvon: %s
+[HTTP Server]
+HTTP-Server
+[Network]
+Netzwerk
+[HTTP Share new file]
+HTTP Datei freigeben
+[Show HTTP server statistics]
+HTTP-Server-Statistik anzeigen
+;file \plugins\HTTPServer\src\HttpUser.cpp
+[Share removed]
+Freigabe entfernt
+;file \plugins\HTTPServer\src\main.cpp
+[Failed to bind to port %s\r\nThis is most likely because another program or service is using this port]
+Zuweisung von Port %s fehlgeschlagen!\r\nVermutlich verwendet ein anderes Programm oder ein anderer Dienst diesen Port.
+[Disable HTTP server]
+HTTP-Server deaktivieren
+[Enable HTTP server]
+HTTP-Server aktivieren

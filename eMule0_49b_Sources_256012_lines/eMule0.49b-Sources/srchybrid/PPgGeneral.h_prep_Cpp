@@ -1,0 +1,44 @@
+﻿
+
+class CPPgGeneral :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgGeneral)
+
+public:
+ CPPgGeneral();
+ virtual ~CPPgGeneral();
+
+// Dialog Data
+ enum { IDD = IDD_PPG_GENERAL };
+
+ void Localize(void);
+
+protected:
+ CComboBox m_language;
+ void LoadSettings(void);
+ void UpdateEd2kLinkFixCtrl();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnSetActive();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnHScroll(unsigned int nSBCode, unsigned int nPos, CScrollBar* pScrollBar);
+         void OnSettingsChange()     { SetModified(); }
+         void OnBnClickedEd2kfix();
+         void OnBnClickedEditWebservices();
+         void OnLangChange();
+         void OnBnClickedCheck4Update();
+         void OnCbnCloseupLangs();
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

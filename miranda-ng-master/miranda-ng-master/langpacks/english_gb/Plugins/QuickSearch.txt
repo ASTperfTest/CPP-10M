@@ -1,0 +1,9 @@
+#muuid {49bd9f2a-3111-4eb9-87e3-71e69cd97f7c}
+;============================================================
+;  File: QuickSearch.dll
+;  Plugin: Quick Search
+;  Version: 1.5.0.4
+;  Authors: Bethoven, Awkward
+;============================================================
+[Colorize]
+Colourise

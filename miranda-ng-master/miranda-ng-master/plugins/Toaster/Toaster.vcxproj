@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Toaster</ProjectName>
+    <ProjectGuid>{1FDBD8F0-3929-41BC-92D1-020779460769}</ProjectGuid>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\build\vc.common\plugin.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\options.cpp" />
+    <ClCompile Include="src\services.cpp" />
+    <ClCompile Include="src\stdafx.cxx">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\toast_notification.cpp" />
+    <ClCompile Include="src\utils.cpp" />
+    <ClInclude Include="src\options.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\string_reference_wrapper.h" />
+    <ClInclude Include="src\structs.h" />
+    <ClInclude Include="src\toast_notification.h" />
+    <ClInclude Include="src\utils.h" />
+    <ClInclude Include="src\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\resource.rc" />
+    <ResourceCompile Include="res\version.rc" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK80Path)\Include\um;$(WindowsSDK80Path)\Include\shared;$(WindowsSDK80Path)\Include\winrt;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK80Path)\lib\winv6.3\um\x86;</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK80Path)\Include\um;$(WindowsSDK80Path)\Include\shared;$(WindowsSDK80Path)\Include\winrt;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK80Path)\lib\winv6.3\um\x64;</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>delayimp.lib;runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>API-MS-WIN-CORE-WINRT-STRING-L1-1-0.DLL;API-MS-WIN-CORE-WINRT-L1-1-0.DLL;%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions Condition="'$(VisualStudioVersion)' == '12.0'">/PDBALTPATH:%_PDB%</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

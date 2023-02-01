@@ -1,0 +1,426 @@
+;============================================================
+;  File: weatherxml.ini
+;  Plugin: Weather
+;============================================================
+[AM Rain]
+Дощ у першій половині дня
+[Am Clouds / Pm Sun]
+Хмарно в першій половині дня / сонячно в другій половині дня
+[Am Light Rain]
+Слабкий дощ у першій половині дня
+[Am Rain / Snow Showers]
+Дощ у першій половині дня / снігопад
+[Am Rain / Snow]
+Дощ у першій половині дня / сніг
+[Am Rain]
+Дощ у першій половині дня
+[Am Showers / Wind]
+Дощ у другій половині дня / вітер
+[Am Showers]
+Дощ у першій половині дня
+[Am Snow Showers / Wind]
+Снігопад у першій половині дня / вітер
+[Am Snow Showers]
+Снігопад у першій половині дня
+[Am Snow]
+Сніг у першій половині дня
+[Am T-Storms]
+Грози в першій половині дня
+[Clear / Wind]
+Ясно / вітер
+[Clouds Early / Clearing Late]
+Зранку хмарно / ясно в другій половині дня
+[Cloudy / Wind]
+Хмарно / вітер
+[Cloudy / Windy]
+Хмарно / вітряно
+[Cloudy And Windy]
+Хмарно і вітер
+[Cloudy]
+Хмарно
+[Drifting Snow]
+Поземка
+[ENE]
+С-Пн-С
+[ESE]
+С-Пд-С
+[E]
+С
+[Fair / Windy]
+Ясно / вітряно
+[Fair And Windy]
+Ясно і вітряно
+[Fair]
+Ясно
+[Feel]
+Відчуття
+[Few Showers / Wind]
+Слабкий дощ / вітер
+[Few Showers]
+Слабкий дощ
+[Few Snow Showers]
+Слабкий сніг
+[First Quarter]
+Перша чверть
+[Fog / Windy]
+Туман / вітер
+[Fog And Windy]
+Туман і вітер
+[Fog Late]
+Туман у другій половині дня
+[Fog]
+Туман
+[Forecast Day 0]
+Прогноз: День 0
+[Forecast Day 1]
+Прогноз: День 1
+[Forecast Day 2]
+Прогноз: День 2
+[Forecast Day 3]
+Прогноз: День 3
+[Forecast Day 4]
+Прогноз: День 4
+[Forecast Day 5]
+Прогноз: День 5
+[Forecast Day 6]
+Прогноз: День 6
+[Forecast Day 7]
+Прогноз: День 7
+[Forecast Day 8]
+Прогноз: День 8
+[Forecast Day 9]
+Прогноз: День 9
+[Forecast Update VAR]
+Оновлення прогнозу VAR
+[Forecast Update]
+Оновлення прогнозу
+[Freezing Drizzle / Windy]
+Мряка / вітряно
+[Freezing Rain / Windy]
+Крижаний дощ / вітряно
+[Full Moon]
+Повний Місяць
+[Haze]
+Імла
+[Heat Index]
+Індекс спеки
+[Heavy Rain / Wind]
+Проливний дощ / вітер
+[Heavy Rain]
+Проливний дощ
+[Heavy Snow And Windy]
+Сильний сніг і вітряно
+[Heavy Snow Shower]
+Сильний снігопад
+[Heavy Snow]
+Сильний снігопад
+[Heavy T-Storm]
+Сильна гроза
+[Heavy T-Storms]
+Сильні грози
+[Ice Crystals]
+Іній
+[Isolated T-Storms / Wind]
+Місцями грози / вітер
+[Isolated T-Storms]
+Місцями грози
+[Jun]
+Червень
+[Last Quarter]
+Остання чверть
+[Latitude]
+Широта
+[Light Drizzle And Fog]
+Слабка мряка і туман
+[Light Drizzle And Windy]
+Слабка мряка і вітер
+[Light Drizzle]
+Слабка мряка
+[Light Freezing Rain / Fog]
+Слабкий крижаний дощ / туман
+[Light Freezing Rain / Windy]
+Слабкий крижаний дощ / вітер
+[Light Rain / Fog]
+Слабкий дощ / туман
+[Light Rain / Freezing Rain]
+Слабкий дощ / крижаний дощ
+[Light Rain / Wind Early]
+Слабкий дощ / вітер у першій половині дня
+[Light Rain / Wind]
+Слабкий дощ / вітер
+[Light Rain / Windy]
+Слабкий дощ / вітряно
+[Light Rain And Windy]
+Слабкий дощ і вітер
+[Light Rain Early]
+Слабкий дощ у першій половині дня
+[Light Rain Late]
+Слабкий дощ у другій половині дня
+[Light Rain Shower And Windy]
+Слабкий дощ і вітер
+[Light Rain Shower]
+Слабкий дощ
+[Light Rain With Thunder]
+Слабкий дощ з громом
+[Light Rain]
+Слабкий дощ
+[Light Showers Rain]
+Слабкі дощі
+[Light Snow / Fog]
+Слабкий сніг / туман
+[Light Snow And Windy]
+Слабкий сніг і вітряно
+[Light Snow Early]
+Слабкий сніг у першій половині дня
+[Light Snow Late]
+Слабкий сніг у другій половині дня
+[Light Snow Shower And Windy]
+Слабкий сніг і вітер
+[Light Snow Shower]
+Дощ зі снігом
+[Light Snow]
+Слабкий сніг
+[Light Thunderstorm Rain]
+Невелика гроза з дощем
+[Local Time]
+Місцевий час
+[Longitude]
+Довгота
+[Mist]
+Туман
+[Moderate]
+Помірний
+[Moon]
+Місяць
+[Mostly Clear]
+Переважно ясно
+[Mostly Cloudy / Wind]
+Переважно хмарно / вітер
+[Mostly Cloudy And Windy]
+Переважно хмарно і вітряно
+[Mostly Cloudy]
+Переважно хмарно
+[Mostly Sunny / Wind]
+Переважно сонячно / вітер
+[Mostly Sunny]
+Переважно сонячно
+[N/A%]
+Н/Д%
+[N/a]
+Н/д
+[NE]
+Пн-С
+[NNE]
+Пн-Пн-С
+[NNW]
+Пн-Пн-З
+[NW]
+Пн-З
+[N]
+Пн
+[New Moon]
+Новий Місяць
+[Night]
+Ніч
+[Observatory]
+Джерело даних
+[Overcast]
+Суцільна хмарність
+[Partly Cloudy / Wind]
+Місцями хмарно / вітер
+[Partly Cloudy / Windy]
+Місцями хмарно / вітряно
+[Partly Cloudy And Windy]
+Місцями хмарно і вітряно
+[Partly Cloudy]
+Місцями хмарно
+[Partly Sunny]
+Місцями сонячно
+[Pm Light Rain]
+Слабкий дощ у другій половині дня
+[Pm Rain / Snow]
+Дощ у другій половині дня / сніг
+[Pm Rain / Wind]
+Дощ у другій половині дня / вітер
+[Pm Rain]
+Дощ у другій половині дня
+[Pm Showers / Wind]
+Зливи у другій половині дня / вітер
+[Pm Showers]
+Дощ у другій половині дня
+[Pm Snow Showers]
+Снігопад у другій половині дня
+[Pm Snow]
+Сніг у другій половині дня / вітер
+[Pm T-Storms]
+Грози в другій половині дня
+[Pressure Tendency]
+Тиск: тенденція
+[Rain / Freezing Rain / Wind]
+Дощ / крижаний дощ / вітер
+[Rain / Freezing Rain]
+Дощ / крижаний дощ
+[Rain / Snow / Wind]
+Дощ / сніг / вітер
+[Rain / Snow Early]
+Дощ / сніг у першій половині дня
+[Rain / Snow Late]
+Дощ / сніг у другій половині дня
+[Rain / Snow Showers Early]
+Дощ / сніг зранку
+[Rain / Snow Showers Late]
+Дощ / сніг у другій половині дня
+[Rain / Snow Showers]
+Дощ / снігопад
+[Rain / Snow]
+Дощ / сніг
+[Rain / Thunder]
+Дощ / грім
+[Rain / Wind Early]
+Дощ / вітер у першій половині дня
+[Rain / Wind]
+Дощ / вітер
+[Rain And Snow]
+Дощ зі снігом
+[Rain Early]
+Дощ у першій половині дня
+[Rain Late]
+Дощ у другій половині дня
+[Rain Shower]
+Дощ
+[Rain To Snow]
+Дощ зі снігом
+[Rain]
+Дощ
+[SE]
+Пд-С
+[SSE]
+Пд-Пд-С
+[SSW]
+Пд-Пд-З
+[SW]
+Пд-З
+[S]
+Пд
+[Sand]
+Пісок
+[Scattered Showers]
+Місцями дощі
+[Scattered Snow Showers]
+Місцями снігопад
+[Scattered T-Storms / Wind]
+Місцями грози / вітер
+[Scattered T-Storms]
+Місцями грози
+[Shallow Fog]
+Низький туман
+[Showers / Wind Late]
+Зливи / вітер у другій половині дня
+[Showers / Wind]
+Дощі / вітер
+[Showers Early]
+Зранку дощі
+[Showers In The Vicinity]
+Зливи поблизу
+[Showers Late]
+Дощ у другій половині дня
+[Showers Rain]
+Зливові дощі
+[Showers]
+Злива
+[Sleet And Windy]
+Дощ зі снігом і вітер
+[Sleet]
+Дощ зі снігом
+[Smoke]
+Туман
+[Snow / Wind Early]
+Сніг / вітер у першій половині дня
+[Snow / Wind]
+Сніг / вітер
+[Snow / Windy]
+Сніг / вітер
+[Snow And Sleet]
+Дощ зі снігом
+[Snow Early]
+Сніг у першій половині дня
+[Snow Shower / Wind]
+Снігопад / вітер
+[Snow Shower And Windy]
+Сніг і вітер
+[Snow Shower]
+Снігопад
+[Snow Showers / Wind Early]
+Снігопад / вітер зранку
+[Snow Showers Early]
+Снігопад зранку
+[Snow Showers Late]
+Снігопад у другій половині дня
+[Snow To Rain]
+Сніг з дощем
+[Snow To Wintry Mix]
+Сніг з переходом у дощ
+[Snow]
+Сніг
+[Sunny / Wind]
+Сонячно / вітер
+[Sunny / Windy]
+Сонячно / вітряно
+[Sunny]
+Сонячно
+[T-Showers Early]
+Зливи з громом у першій половині дня
+[T-Showers]
+Зливи з громом
+[T-Storm]
+Гроза
+[T-Storms Early]
+Грози в першій половині дня
+[T-Storms Late]
+Грози в другій половині дня
+[T-Storms]
+Грози
+[Thunder In The Vicinity]
+Грім поблизу
+[Thunderstorm Rain]
+Дощ з грозою
+[Thunderstorm]
+Гроза
+[UV Index]
+Індекс УФ
+[UVI]
+Значення УФ
+[UV]
+Опис УФ
+[Update VAR]
+Оновлення VAR
+[WNW]
+З-Пн-З
+[WSW]
+З-Пд-З
+[W]
+З
+[Waning Crescent]
+Убуваючий серп
+[Waning Gibbous]
+Убуваючий Місяць
+[Waxing Crescent]
+Зростаючий серп
+[Waxing Gibbous]
+Зростаючий Місяць
+[Wind Direction DEG]
+Вітер: напрям (град)
+[Wind Direction]
+Вітер: напрям
+[Wind Speed]
+Вітер: швидкість
+[WindDir]
+Вітер: напрямок (бік)
+[Wintry Mix / Wind]
+Сніг з дощем / вітер
+[falling]
+Падає
+[rising]
+Зростає
+[steady]
+Не змін.

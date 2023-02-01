@@ -1,0 +1,1199 @@
+#muuid {9c23a24b-e6aa-43c6-b0b8-d6c36d2f7b57}
+;============================================================
+;  File: UInfoEx.dll
+;  Plugin: User info ext
+;  Version: 0.9.0.3
+;  Authors: DeathAxe, Yasnovidyashii, Merlin, K. Romanov, Kreol
+;============================================================
+[Extended UserInfo module for Miranda NG. Provides interface to edit all contact information.]
+Розширене відображення інформації про користувача. Дозволяє редагувати і додавати (локально) будь-яку інформацію про контакт.
+;file \plugins\UserInfoEx\res\resource.rc
+[Edit contact information]
+Редагувати дані контакту
+[This list gives you some overview about all your contact's anniversaries.]
+Список включає всі свята ваших контактів.
+[Origin]
+Походження
+[&Update]
+&Оновити
+[Updating]
+Оновлення
+[Cancel]
+Скасувати
+[Apply]
+Застосувати
+[Nick:]
+Нік:
+[Display name:]
+Видиме ім'я:
+[Title:]
+Заголовок:
+[First name:]
+Ім'я:
+[Second name:]
+По батькові:
+[Last name:]
+Прізвище:
+[Prefix:]
+Префікс:
+[Female]
+Жіноча
+[Male]
+Чоловіча
+[Marital status:]
+Сімейний стан:
+[Partner:]
+Партнер:
+[Language skills]
+Володіння мовами
+[Street:]
+Вулиця:
+[Postal code:]
+Індекс:
+[City:]
+Місто:
+[County/State:]
+Область:
+[Country:]
+Країна:
+[Contact added to contact list:]
+Доданий до списку контактів:
+[Just from the beginning.]
+З самого початку
+[Your contact's local time is:]
+Місцевий час:
+[Timezone:]
+Часовий пояс:
+[Company:]
+Компанія:
+[Department:]
+Відділ:
+[Office:]
+Офіс:
+[Position:]
+Посада:
+[Occupation:]
+Заняття:
+[Superior:]
+Начальник:
+[Assistant:]
+Асистент:
+[Add phone number]
+Додати номер телефону
+[Enter your phone number\nand don't worry about formatting.]
+Введіть номер телефону\nв будь-якому форматі
+[Enter a category for this number:]
+Введіть категорію для номера:
+[Enter country, area code and phone number:]
+Вкажіть країну, код міста і номер телефону:
+[Or enter a full international number:]
+Або вкажіть повний міжнародний номер:
+[Phone can receive SMS text messages]
+Телефон може отримувати SMS
+[Add e-mail]
+Додати E-mail
+[Enter your full e-mail address.\n(e.g., john.doe@provider.com)]
+Введіть адресу E-mail\n(наприклад, john.doe@provider.com)
+[Enter a representative name for the e-mail address here:]
+Введіть ім'я для електронної адреси:
+[Enter the e-mail address here:]
+Введіть адресу E-mail:
+[Show menu items]
+Показати пункти меню
+[Remind me]
+Нагадати за
+[days before]
+днів
+[Check every]
+Перев. кожні
+[hours]
+годин
+[Icon flashing on event]
+Блимання значка при події
+[Enabled]
+Увімкнено
+[Perform check on each startup]
+Перевіряти при запуску
+[Time of last check:]
+Ост. перевірка:
+[Play sound]
+Програвати звук
+[Use ignore list]
+Використовувати список ігнорування
+[Birthday popup colors]
+Дні народження
+[Background color]
+Колір фону
+[Text color]
+Колір тексту
+[Use Windows colors]
+Кольори Windows
+[Use default colors]
+За замовчанням
+[Timeout]
+Затримка
+[Default]
+За замовчанням
+[Custom]
+Вказати:
+[Permanent]
+Постійно
+[Show reminder messages as popups (if reminder is enabled)]
+Нагадування в спливаючих вікнах (якщо можна)
+[Anniversary popup colors]
+Свята
+[Replace progress dialogs with popups]
+Замінити діалоги прогресу спливаючими вікнами
+[Replace message boxes with popups]
+Замінити діалоги спливаючими вікнами
+[Preview]
+Тест
+[Homepage:]
+Сайт:
+[Add affiliation]
+Належність
+[Add past]
+Минуле
+[Add interest]
+Інтереси
+[Delete]
+Видалити
+[Anniversary editor]
+Редактор свят
+[Add/Edit your anniversary here.]
+Додавайте/редагуйте свята тут.
+[Enter a name for the anniversary here please:]
+Введіть назву свята:
+[Anniversary list]
+Список свят
+[Upcoming anniversaries\nThis list gives you some overview about all your contact's anniversaries.]
+Майбутні свята\nСписок містить усі свята ваших контактів
+[Statistics:]
+Статистика:
+[with birthday:]
+з днем народж.:
+[female:]
+жінок:
+[male:]
+чоловіків:
+[number of contacts:]
+кількість контактів:
+[average age:]
+середній вік:
+[View]
+Вигляд
+[Show &during the next]
+Дати в &найближчі
+[day(s)]
+днів
+[Reminder]
+Нагадування
+[Popup this dialog on a contact's anniversary]
+Показувати цей діалог, коли свято
+[Icons]
+Значки
+[Check file version of default IconPack to prevent wrong icon display]
+Перевіряти версію файлу значків для правильного відображення
+[Display icons on each dialog button]
+Показувати значки на кожній кнопці
+[Metacontacts]
+Метаконтакти
+[Scan subcontacts for missing information]
+Пошук відсутньої інформації в субконтактах
+[Enable extended 'send/receive e-mail' service (*)]
+Увімкнути розширений сервіс електронної пошти*
+[(*) Requires Miranda to be restarted.]
+* Потрібен перезапуск Miranda NG.
+[Reset factory defaults]
+Скинути налаштування
+[Protocol's information]
+Дані протоколу
+[Custom information]
+Локальні дані
+[Overwritten information]
+Перезаписана інформація
+[Changed information]
+Змінені дані
+[Enable colors to give information about information's status.]
+Увімкнути кольори для показу статусу інформації
+[Make protocol based contact information read only]
+Заборонити зміну інформації, що базується на протоколі
+[Enable groups in details dialog's treeview]
+Вкладені пункти меню
+[Sort all tree items alphabetically]
+Впорядкувати всі пункти за абеткою
+[Info of a metacontact's subcontact]
+Інформація про субконтакт метаконтакту
+[Colors]
+Кольори
+[Common]
+Загальні
+[Change my ICQ details with UserInfoEx (disabled if ICQ doesn't support it)]
+Змінювати особисті дані через UserInfoEx (недоступно, якщо ICQ не підтримує)
+[Treeview]
+Дерево
+[Adapt propertysheet pages to Aero mode]
+Адаптувати налаштування до стилю Aero
+[Import]
+Імпорт
+[Importing...\nPlease wait!]
+Імпортується...\nБудь ласка, зачекайте
+[Setting/Event (20/100)]
+Налаштування/Подія (20/100)
+[John Doe (1/10)]
+Джон Доу (1/10)
+[Dialog]
+Діалог
+[All]
+Усі
+[None]
+Немає
+[Show menu item]
+Пункти меню
+[Main menu]
+Головне меню
+[Cascade:]
+Каскадний:
+[Off]
+Вимк.
+[Export/import items]
+Експорт/Імпорт
+[Contact menu]
+Меню контакту
+[Group menu]
+Меню груп
+[Subgroup menu]
+Меню підгруп
+[Account menu]
+Меню облік. записів
+[Misc]
+Інше
+[Country flags]
+Прапори країн
+[Use &unknown flag if country cannot be determined]
+Показувати невідомий прапор, якщо країну не визначено
+[Show country flag as &status icon on message window]
+Показувати прапор як значок статусу у вікні повідомлень
+[Birthday]
+День народження
+[Age:]
+Вік:
+[Zodiac:]
+Зодіак:
+[not found]
+не знайдено
+[Use global reminder settings]
+Глобальні налаштування нагадувань
+[Don't remind me of this anniversary]
+Не нагадувати мені про це свято
+[Refresh contact details]
+Оновити дані контактів
+[Preparing...]
+Підготовка...
+[Hide]
+Сховати
+[What do you want to export?]
+Що ви хочете експортувати?
+[Contact information]
+Інформація про контакт
+[Contact history]
+Історія контакту
+[Select modules]
+Виберіть модулі
+[Check the modules on the list which you want to export for the contact. To add the file as a new list entry later you need to export at least the protocol module.]
+Позначте в списку модулі, які ви хочете експортувати для контактів. Для додавання контакту з файлу у вигляді нового запису необхідно експортувати хоча б модуль протоколу.
+[Check all]
+Вибрати все
+[Uncheck all]
+Зняти вибір
+[&Export]
+&Експорт
+;file \plugins\UserInfoEx\src\classMAnnivDate.cpp
+[Aries]
+Овен
+[Taurus]
+Телець
+[Gemini]
+Близнюки
+[Cancer]
+Рак
+[Leo]
+Лев
+[Virgo]
+Діва
+[Libra]
+Терези
+[Scorpio]
+Скорпіон
+[Sagittarius]
+Стрілець
+[Capricorn]
+Козеріг
+[Aquarius]
+Водолій
+[Pisces]
+Риби
+[%s provides a new birthday via protocol.\nIt is %s. The old one was %s.\n\nDo you want to use this as the new birthday for this contact?]
+%s вказує новий день народження за протоколом.\nНова дата %s. Стара %s.\n\nБажаєте використовувати нову дату народження для цього контакту?
+[Update custom birthday]
+Оновлення налаштованих днів народжень
+[Keeps your custom birthday up to date.]
+Резервує налаштовані дні народження.
+;file \plugins\UserInfoEx\src\classPsTree.cpp
+[Due to a parameter error, one of the treeitems can't be added!]
+Неможливо додати один з елементів дерева через помилку в параметрі.
+[A fatal error occurred on adding a property sheet page!\nDialog creation aborted!]
+Невиправна помилка при додаванні сторінки властивостей.\nСтворення діалогу скасовано.
+[Rename Item]
+Перейменувати
+[Hide Item]
+Сховати
+[Show Items:]
+Показати:
+[Reset to defaults]
+Стандартні
+;file \plugins\UserInfoEx\src\classPsTreeItem.cpp
+[Creating unique name for a page failed with %d and error code %d]
+Помилка %d при створенні імені для сторінки, код %d
+[Creating the label for a page failed with %d and error code %d]
+Помилка %d при створенні назви для сторінки, код %d
+;file \plugins\UserInfoEx\src\ctrl_annivedit.cpp
+[Add a new anniversary]
+Додати нове свято
+[Delete an existing anniversary]
+Видалити свято
+[Unspecified]
+Не вказано
+;file \plugins\UserInfoEx\src\ctrl_contact.cpp
+[Edit e-mail]
+Змінити E-mail
+[Edit phone number]
+Змінити номер телефону
+[The phone number should start with a + and consist of\nnumbers, spaces, brackets and hyphens only.]
+Телефон повинен починатися з "+" і містити лише\nцифри, пробіли, дужки і тире.
+[Choose the item to display]
+Вибрати запис
+[Edit the currently displayed item]
+Змінити запис
+[Add a new custom item]
+Додати новий запис
+[Delete the selected item]
+Видалити цей запис
+[CRITICAL: Unable to edit current entry!\nThis should not happen!]
+Фатальна помилка: неможливо редагувати цей запис!\nЦього не повинно було статися!
+[Do you really want to delete the current selected item?\n\t%s\n\t%s]
+Видалити вибраний запис?\n\t%s\n\t%s
+[Other]
+Інше
+;file \plugins\UserInfoEx\src\dlg_anniversarylist.cpp
+[ETA]
+Залишилось днів
+[Contact]
+Контакт
+[Proto]
+Протокол
+[Age/Nr.]
+Вік
+[Anniversary]
+Свято
+[Date]
+Дата
+[All contacts]
+Усі контакти
+[Birthdays only]
+Тільки дні народження
+[Anniversaries only]
+Тільки свята
+[Disabled reminder]
+Вимкнути нагадування
+[Popup anniversary list]
+Показати список свят
+;file \plugins\UserInfoEx\src\dlg_msgbox.cpp
+[Retry]
+Ще раз
+[Yes]
+Так
+[No]
+Ні
+[Abort]
+Скасувати
+[Ignore]
+Ігнорувати
+[Error]
+Помилка
+;file \plugins\UserInfoEx\src\dlg_propsheet.cpp
+[Upload details]
+Завантажити деталі
+[Protocol '%s' is offline]
+Протокол '%s' не в мережі
+[You are not currently connected to the ICQ network.\nYou must be online in order to update your information on the server.\n\nYour changes will be saved to database only.]
+Ви не підключені до мережі ICQ.\nЩоб оновлювати дані на сервері, потрібно підключитися до мережі ICQ.\n\nЗміни будуть збережені тільки в локальній базі даних.
+[Creating the image list failed!]
+Помилка при створенні imagelist.
+[Could not find contact's protocol. Maybe it is not active!]
+Неможливо знайти протокол контакту. Імовірно, він відключений.
+[No pages have been added. Canceling dialog creation!]
+Сторінки не додані. Створення діалогу скасовано.
+[Details dialog failed to be created. Returning error is %d.]
+Помилка створення діалогу деталей. Помилка %d.
+[Export to file]
+Експорт
+[Import from file]
+Імпорт з файлу
+[Owner]
+Власник
+[edit contact information]
+редагувати дані контакту
+[View personal user details and more]
+Перегляд особистих даних користувача
+[Upload ICQ details]
+Завантжити деталі ICQ
+[Upload failed]
+Завантаження не вдалося
+[Your details were not uploaded successfully.\nThey were written to database only.]
+Ваші дані не завантажено.\nВони збережені в локальній базі даних.
+[updating]
+оновлення
+;file \plugins\UserInfoEx\src\init.cpp
+[User &details]
+&Інформація
+[Check anniversaries]
+Перевірити свята
+;file \plugins\UserInfoEx\src\mir_icolib.cpp
+[Main]
+Головний
+[IM naming]
+Ім'я в IM
+[Timezone]
+Часовой пояс
+[Marital status]
+Сімейний стан
+[Address]
+Адреса
+[Export: modules]
+Експорт: модулі
+[Export: folder]
+Експорт: папка
+[Details info bar]
+Деталі
+[Phone info bar]
+Телефон
+[E-mail info bar]
+Пошта
+[Export VCard]
+Експорт vCard
+[Import VCard]
+Імпорт vCard
+[Anniversary info bar]
+Ювілей
+[Update]
+Оновити
+[Export]
+Експорт
+[Goto]
+Зайти на сайт
+[Phone]
+Телефон
+[Fax]
+Факс
+[Cellular]
+Мобільний
+[Custom phone]
+Вибраний телефон
+[E-mail]
+Пошта
+[Down arrow]
+Стрілка вниз
+[Add]
+Додати
+[Edit]
+Змінити
+[Search]
+Пошук
+[Export/import]
+Експорт/Імпорт
+[Backup birthday]
+Резервувати Д.Н.
+[Birthday today]
+День народження сьогодні
+[Birthday tomorrow]
+День народження завтра
+[Birthday in 2 days]
+День народження через 2 дні
+[Birthday in 3 days]
+День народження через 3 дні
+[Birthday in 4 days]
+День народження через 4 дні
+[Birthday in 5 days]
+День народження через 5 днів
+[Birthday in 6 days]
+День народження через 6 днів
+[Birthday in 7 days]
+День народження через 7 днів
+[Birthday in 8 days]
+День народження через 8 днів
+[Birthday in 9 days]
+День народження через 9 днів
+[Birthday later]
+День народження пізніше
+[Anniversary today]
+Свято сьогодні
+[Anniversary tomorrow]
+Свято завтра
+[Anniversary in 2 days]
+Свято через 2 дні
+[Anniversary in 3 days]
+Свято через 3 дні
+[Anniversary in 4 days]
+Свято через 4 дні
+[Anniversary in 5 days]
+Свято через 5 днів
+[Anniversary in 6 days]
+Свято через 6 днів
+[Anniversary in 7 days]
+Свято через 7 днів
+[Anniversary in 8 days]
+Свято через 8 днів
+[Anniversary in 9 days]
+Свято через 9 днів
+[Anniversary later]
+Свято пізніше
+[Warning: Your current IconPack's version differs from the one UserInfoEx is designed for.\nSome icons may not be displayed correctly]
+Увага: версія вашого набору значків відрізняється від версії UserInfoEx.\nДеякі значки можуть виводитися неправильно.
+[Warning: No IconPack found in one of the following directories: 'customize\\icons', 'icons' or 'plugins'!]
+Увага: набір значків не знайдено в жодній з папок: Customize\Icons, Icons чи Plugins.
+;file \plugins\UserInfoEx\src\mir_icolib.h
+[Extended user info]
+Особисті дані
+[Dialogs]
+Діалоги
+[Buttons]
+Кнопки
+;file \plugins\UserInfoEx\src\mir_menuitems.cpp
+[Export/import contact]
+Експорт/Імпорт контакту
+[&Export user details]
+&Експорт даних користувача
+[&Import]
+&Імпорт
+[&Import user details]
+&Імпорт даних користувача
+[View/change my &details...]
+Особисті &дані...
+[Export all contacts]
+Експортувати всі контакти
+[Import all contacts]
+Імпортувати всі контакти
+[Export/import group]
+Експорт/Імпорт групи
+[&Export group]
+&Експортувати групу
+[&Import group]
+&Імпортувати групу
+[&Export xml]
+&Експорт XML
+[&Import xml]
+&Імпорт XML
+;file \plugins\UserInfoEx\src\psp_about.cpp
+[My notes:]
+Мої нотатки:
+[About:]
+Інформація:
+[About]
+Інформація
+[Notes]
+Нотатки
+;file \plugins\UserInfoEx\src\psp_anniversary.cpp
+[Please enter a valid description first!]
+Будь ласка, введіть спочатку правильний опис.
+[No valid date selected for editing!]
+Немає вибраної дати для редагування.
+[Do you really want to delete the %s?]
+Ви дійсно хочете видалити %s?
+[General]
+Загальне
+[Anniversaries]
+Свята
+;file \plugins\UserInfoEx\src\psp_company.cpp
+[Work]
+Робота
+;file \plugins\UserInfoEx\src\psp_contact.cpp
+[Open in browser]
+Відкрити в браузері
+[home]
+дім
+[Primary e-mail]
+Основний E-mail
+[Secondary e-mail]
+Другий E-mail
+[Tertiary e-mail]
+Третій E-mail
+[Address and contact]
+Контакти
+[company]
+Компанія
+[Contact (private)]
+Контакт (особистий)
+[Contact (work)]
+Контакт (робочий)
+;file \plugins\UserInfoEx\src\psp_general.cpp
+;file \plugins\UserInfoEx\src\psp_options.cpp
+[Question]
+Запитання
+[This will delete all settings, you've made!\nAll TreeView settings, window positions and any other settings!\n\nAre you sure to proceed?]
+Ця функція видалить усі налаштування, які ви зробили!\nУсі налаштування дерева, позицій вікна тощо.\n\nВи дійсно хочете продовжити?
+[Ready]
+Готово
+[Everything is done!]
+Усе готово!
+[All settings are reset to default values now!]
+Усі налаштування скинуті!
+[Reminder disabled]
+Нагадування відключені
+[Everything]
+Усі нагадування
+[This is the reminder message]
+Повідомлення нагадування
+[Contacts]
+Контакти
+[Advanced]
+Додатково
+[Details dialog]
+Діалоги
+[Popups]
+Спливаючі вікна
+;file \plugins\UserInfoEx\src\psp_origin.cpp
+;file \plugins\UserInfoEx\src\psp_profile.cpp
+[Past]
+Минуле
+[Affiliation]
+Належність
+[Interest]
+Інтереси
+[<empty>]
+<немає>
+[Sorry, but there is a problem with adding a new item of type "%s"]
+Помилка додавання нового елементу з типом "%s"
+[Edit category]
+Змінити категорію
+[Edit value]
+Змінити значення
+[Delete an entry]
+Видалити запис
+[Do you really want to delete this entry?]
+Ви дійсно хочете видалити це?
+[Profile]
+Профіль
+;file \plugins\UserInfoEx\src\svc_constants.cpp
+[Afrikaans]
+Африкаанс
+[Albanian]
+Албанська
+[Arabic]
+Арабська
+[Armenian]
+Вірменська
+[Azerbaijani]
+Азербайджанська
+[Belorussian]
+Білоруська
+[Bhojpuri]
+Бходжпурі
+[Bosnian]
+Боснійська
+[Bulgarian]
+Болгарська
+[Burmese]
+Бірманська
+[Cantonese]
+Кантонська
+[Catalan]
+Каталонська
+[Chamorro]
+Чаморро
+[Chinese]
+Китайська
+[Croatian]
+Хорватська
+[Czech]
+Чеська
+[Danish]
+Данська
+[Dutch]
+Голландська
+[English]
+Англійська
+[Esperanto]
+Есперанто
+[Estonian]
+Естонська
+[Farsi]
+Фарсі
+[Finnish]
+Фінська
+[French]
+Французька
+[Gaelic]
+Гельська
+[German]
+Німецька
+[Greek]
+Грецька
+[Gujarati]
+Гуджаратська
+[Hebrew]
+Іврит
+[Hindi]
+Гінді
+[Hungarian]
+Угорська
+[Icelandic]
+Ісландська
+[Indonesian]
+Індонезійська
+[Italian]
+Італійська
+[Japanese]
+Японська
+[Khmer]
+Кхмерська
+[Korean]
+Корейська
+[Kurdish]
+Курдська
+[Lao]
+Лаоська
+[Latvian]
+Латвійська
+[Lithuanian]
+Литовська
+[Macedonian]
+Македонська
+[Malay]
+Малайська
+[Mandarin]
+Мандарин
+[Mongolian]
+Монгольська
+[Norwegian]
+Норвезька
+[Persian]
+Перська
+[Polish]
+Польська
+[Portuguese]
+Португальська
+[Punjabi]
+Панджабі
+[Romanian]
+Румунська
+[Russian]
+Російська
+[Serbo-Croatian]
+Сербохорватська
+[Sindhi]
+Сінді
+[Slovak]
+Словацька
+[Slovenian]
+Словенська
+[Somali]
+Сомалійська
+[Spanish]
+Іспанська
+[Swahili]
+Суахілі
+[Swedish]
+Шведська
+[Tagalog]
+Тагальська
+[Taiwanese]
+Тайванська
+[Tamil]
+Тамільська
+[Tatar]
+Татарська
+[Thai]
+Тайська
+[Turkish]
+Турецька
+[Ukrainian]
+Українська
+[Urdu]
+Урду
+[Vietnamese]
+В'єтнамська
+[Welsh]
+Уельська
+[Yiddish]
+Ідиш
+[Yoruba]
+Йоруба
+[Academic]
+Викладач
+[Administrative]
+Адміністрування
+[Art/Entertainment]
+Мистецтво
+[College Student]
+Студент коледжу
+[Computers]
+Комп'ютери
+[Community & Social]
+Суспільство і соціум
+[Education]
+Освіта
+[Engineering]
+Інженер
+[Financial Services]
+Фінанси
+[Government]
+Уряд
+[High School Student]
+Учень середньої школи
+[Home]
+Дім
+[ICQ - Providing Help]
+ICQ - підтримка
+[Law]
+Юриспруденція
+[Managerial]
+Управління
+[Manufacturing]
+Виробництво
+[Medical/Health]
+Медицина і охорона здоров'я
+[Military]
+Військова служба
+[Non-Government Organization]
+Неурядова організація
+[Professional]
+Профспілка
+[Retail]
+Роздрібний торговець
+[Retired]
+У відставці
+[Science & Research]
+Наука та дослідження
+[Sports]
+Спорт
+[Technical]
+Технічний
+[University Student]
+Студент університету
+[Web Building]
+Web-дизайн
+[Other Services]
+Інше
+[Art]
+Мистецтво
+[Cars]
+Машини
+[Celebrity Fans]
+Знаменитості
+[Collections]
+Колекціонування
+[Culture & Literature]
+Культура і література
+[Fitness]
+Фітнес
+[Games]
+Ігри
+[Hobbies]
+Хобі
+[Internet]
+Інтернет
+[Lifestyle]
+Стиль життя
+[Movies/TV]
+Кіно та ТБ
+[Music]
+Музика
+[Outdoor Activities]
+Відпочинок на природі
+[Parenting]
+Виховання
+[Pets/Animals]
+Тварини
+[Religion]
+Релігія
+[Science/Technology]
+Наука і технологія
+[Skills]
+Навички
+[Web Design]
+Web-дизайн
+[Nature and Environment]
+Природа і довкілля
+[News & Media]
+Новини та ЗМІ
+[Business & Economy]
+Бізнес та економіка
+[Mystics]
+Містика
+[Travel]
+Подорожі
+[Astronomy]
+Астрономія
+[Space]
+Космос
+[Clothing]
+Одяг
+[Parties]
+Вечірки
+[Women]
+Жінки
+[Social science]
+Соціологія
+[60's]
+60-і
+[70's]
+70-і
+[80's]
+80-і
+[50's]
+50-і
+[Finance and corporate]
+Фінанси
+[Entertainment]
+Розваги
+[Consumer electronics]
+Побутові електроприлади
+[Retail stores]
+Покупки
+[Health and beauty]
+Здоров'я і краса
+[Media]
+Медіа
+[Household products]
+Домашні продукти
+[Mail order catalog]
+Замовлення товарів поштою
+[Business services]
+Бізнес-послуги
+[Audio and visual]
+Звук і візуалізація
+[Sporting and athletic]
+Спорт і атлетика
+[Publishing]
+Видавництво
+[Home automation]
+Побутова автоматизація
+[Alumni Org.]
+Організація випускників
+[Charity Org.]
+Благодійна організація
+[Club/Social Org.]
+Клуб
+[Community Org.]
+Громадське об'єднання
+[Cultural Org.]
+Культурне об'єднання
+[Fan Clubs]
+Фан-клуб
+[Fraternity/Sorority]
+Студентська організація
+[Hobbyists Org.]
+Організація за захопленнями
+[International Org.]
+Міжнародна організація
+[Nature and Environment Org.]
+Природоохоронна організація
+[Professional Org.]
+Профспілка
+[Scientific/Technical Org.]
+Науково-технічна організація
+[Self Improvement Group]
+Група самовдосконалення
+[Spiritual/Religious Org.]
+Релігійна організація
+[Sports Org.]
+Спортивна організація
+[Support Org.]
+Організація підтримки
+[Trade and Business Org.]
+Торгова організація
+[Union]
+Об'єднання
+[Volunteer Org.]
+Волонтерська організація
+[Elementary School]
+Початкова школа
+[High School]
+Середня школа
+[College]
+Коледж
+[University]
+Університет
+[Past Work Place]
+Минула робота
+[Past Organization]
+Минула організація
+[Single]
+Неодружений/Незаміжня
+[Close relationships]
+Зустрічаюсь
+[Engaged]
+Заручений(а)
+[Married]
+Одружений/Заміжня
+[Divorced]
+Розлучений(а)
+[Separated]
+Проживаємо окремо
+[Widowed]
+Вдівець/Вдова
+[Actively searching]
+В активному пошуку
+[In love]
+Закоханий(а)
+[It's complicated]
+Усе складно
+[In a civil union]
+
+[jun.]
+мол.
+[sen.]
+ст.
+;file \plugins\UserInfoEx\src\svc_constants.h
+;file \plugins\UserInfoEx\src\svc_email.cpp
+[Send e-mail]
+Надіслати E-mail
+[Memory allocation error!]
+Помилка розподілу пам'яті.
+;file \plugins\UserInfoEx\src\svc_homepage.cpp
+[User has no valid homepage]
+У користувача немає правильної домашньої сторінки
+[View Homepage]
+Сайт
+[&Homepage]
+&Сайт
+;file \plugins\UserInfoEx\src\svc_refreshci.cpp
+[[b]%s (%S)...[/b]\n%d Contacts remaining]
+\[b]%s (%S)...[/b]\n%d контактів залишилось
+[Abort Refreshing Contact Details]
+Скасувати оновлення даних контактів
+[Miranda must be online for refreshing contact information!]
+Для оновлення даних необхідно, щоб протоколи були в мережі.
+[Do you want to cancel the current refresh procedure?]
+Справді скасувати оновлення даних?
+;file \plugins\UserInfoEx\src\svc_reminder.cpp
+[%s has %s today.]
+%s святкує %s сьогодні.
+[an anniversary]
+свято
+[He/she has the following anniversaries:]
+Він/вона відзначає такі свята:
+[He has the following anniversaries:]
+Він відзначає такі свята:
+[She has the following anniversaries:]
+Вона відзначає такі свята:
+[%d. %s today]
+%d років. %s сьогодні
+[%d. %s tomorrow]
+%d років. %s завтра
+[%d. %s in %d days]
+%d років. %s через %d днів
+[%s has birthday today.]
+%s святкує день народження сьогодні.
+[%s has birthday tomorrow.]
+%s святкує день народження завтра.
+[%s has birthday in %d days.]
+%s святкує день народження через %d днів.
+[\nHe/she becomes %d years old.]
+\nЙому/їй виповнюється %d.
+[\nHe becomes %d years old.]
+\nЙому виповнюється %d.
+[\nShe becomes %d years old.]
+\nЇй виповнюється %d.
+[No anniversaries to remind of]
+Немає свят, про які треба нагадати
+[Reminders]
+Нагадування
+[Birthday reminder]
+Нагадування про день народження
+[Birthday reminder: it's coming]
+Нагадування про день народження, що наближається
+[Anniversary reminder]
+Нагадування про свято
+[Reminder (UInfoEx)]
+Нагадування (UInfoEx)
+;file \plugins\UserInfoEx\src\ex_import\classExImContactBase.cpp
+[contact identification]
+ідентифікація контакту
+[The contact %s(%s) has no unique ID in the vCard,\nbut there is a contact in your contact list with the same nick and protocol.\nDo you wish to use this contact?]
+У користувача %s(%s) немає унікального номера у vCard,\nале в списку контактів є контакт з таким самим ніком і протоколом.\nВикористати його номер для цього контакту?
+;file \plugins\UserInfoEx\src\ex_import\classExImContactXML.cpp
+[Importing a new contact was aborted!]
+Імпорт нового контакту скасовано.
+[You aborted import of a new contact.\nSome information may be missing for this contact.\n\nDo you want to delete the incomplete contact?]
+Ви скасували імпорт нового контакту.\nДеякі дані для цього контакту можуть бути неправильними.\n\nВидалити незавершений контакт?
+[Importing a new meta subcontact failed!]
+Помилка імпорту нового субконтакту.
+[The newly created meta subcontact '%s'\ncould not be added to metacontact '%s'!\n\nDo you want to delete this contact?]
+Щойно створений субконтакт '%s'\nне можна додати до метаконтакту '%s'.\n\nВидалити цей контакт?
+[Settings: %S]
+Налаштування: %S
+[Events: %S]
+Події: %S
+;file \plugins\UserInfoEx\src\ex_import\dlg_ExImModules.cpp
+[All Contacts]
+Усі контакти
+[Required modules]
+Обов'язкові модулі
+[Optional modules]
+Додаткові модулі
+;file \plugins\UserInfoEx\src\ex_import\dlg_ExImOpenSaveFile.cpp
+[Shows Miranda's installation directory.]
+Показувати папку, де встановлена Miranda NG.
+[Shows the directory with all your Miranda's profiles.]
+Показувати папку з профілями Miranda NG.
+[The OpenFileDialog returned an error: %d!]
+OpenFileDialog повернув помилку: %d
+[The SaveFileDialog returned an error: %d!]
+SaveFileDialog повернув помилку: %d
+;file \plugins\UserInfoEx\src\ex_import\svc_ExImINI.cpp
+[The ini-file "%s"\nfor saving contact information could not be opened.]
+Файл INI "%s"\nне можна відкрити для збереження контакту.
+[The ini-file "%s"\nfor reading contact information could not be opened.]
+Файл INI "%s"\nне можна відкрити для читання контакту.
+[None of the %d contacts, stored in the ini-file, match the selected contact!\nNothing will be imported]
+Жоден з %d контактів у файлі не відповідає вибраному контакту.\nНічого імпортувати.
+[Import complete]
+Імпорт завершено
+[Some basic statistics]
+Статистика
+[Added %d of %d contacts stored in the ini-file.]
+Додано %d з %d контактів з ini-файлу.
+;file \plugins\UserInfoEx\src\ex_import\svc_ExImport.cpp
+[all Contacts]
+Усі контакти
+[Select a destination file...]
+Виберіть ім'я файлу для експорту
+[Import User Details from VCard]
+Імпорт деталей користувача з vCard
+;file \plugins\UserInfoEx\src\ex_import\svc_ExImXML.cpp
+[Can't create xml file!\n%S]
+Неможливо створити XML-файл.\n%S
+[Contact: %s (%S)]
+Контакт: %s (%S)
+[Parser is unable to load XMLCard "%s"\nError: %d\nDescription: %s]
+Неможливо завантажити XML-картку "%s"\nПомилка: %d\nОпис: %s
+[File not found]
+
+[The selected file is no valid XMLCard]
+Вибраний файл не є XML-карткою
+[The version of the XMLCard is not supported by UserInfoEx]
+Ця версія XML-картки не підтримується плагіном UserInfoEx
+[Complete]
+Готово
+[Owner contact successfully imported.]
+Інформацію Власника успішно імпортовано.
+[Selected XMLCard does not contain an owner contact!]
+Вибрана XML-картка не містить інформації власника.
+[added contacts: %u / %u\nadded settings: %u / %u\nadded events %u / %u\nduplicated events: %u]
+Додано контактів: %u / %u\nДодано налаштувань: %u / %u\nДодано подій %u / %u\nПродубльовано подій: %u
+;file \plugins\UserInfoEx\src\Flags\svc_flags.cpp
+[Flags (UInfoEx)]
+Прапори (UInfoEx)
+;file \plugins\UserInfoEx\src\Flags\svc_flagsicons.cpp

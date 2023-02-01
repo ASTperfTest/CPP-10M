@@ -1,0 +1,151 @@
+﻿// Ini.h: Schnittstelle f�r die Klasse CIni.
+
+// Autor: Michael Schikora
+// Mail:  schiko@schikos.de
+//
+// If you found this code useful,
+// please let me know
+//
+// How to use:
+//
+//
+//void CMyClass::UpdateFromIni(bool bFromIni)
+//{
+//   CIni ini(m_strFileName,m_strSection);
+//   ini.SER_GET(bFromIni,m_nValueXY);
+//   ini.SER_GET(bFromIni,m_strValue);
+//   ini.SER_ARR(bFromIni,m_arValue,MAX_AR);
+//   ini.SER_ARR(bFromIni,m_ar3D,3);
+//   //ore with default values
+//   ini.SER_GETD(bFromIni,m_nValueXY,5);
+//   ini.SER_GETD(bFromIni,m_strValue,"Hello");
+//   ini.SER_ARRD(bFromIni,m_arValue,MAX_AR,10);
+//   ini.SER_ARRD(bFromIni,m_ar3D,3,5);
+//}
+
+
+
+
+
+
+
+class CIni
+{
+public:
+
+
+   // MAKRO:
+   int SerGet(bool bGet,int value,"int value");
+   // MAKRO:
+   int SerGet(bGet,int* value,int n,"int* value");
+
+   // If the IniFilename contains no path,
+   // the module-directory will be add to the FileName,
+   // to avoid storing in the windows-directory
+   // bModulPath=true: ModulDir, bModulPath=false: CurrentDir
+ static void AddModulPath(CString& strFileName, bool bModulPath = true);
+ static CString GetDefaultSection();
+ static CString GetDefaultIniFile(bool bModulPath = true);
+
+ CIni();
+ CIni(CIni const& Ini);
+ CIni(CString const& strFileName);
+ CIni(CString const& strFileName, CString const& strSection);
+ virtual ~CIni();
+
+ void SetFileName(const CString& strFileName);
+ void SetSection(const CString& strSection);
+ const CString& GetFileName() const;
+ const CString& GetSection() const;
+
+ CString  GetString(const char* lpszEntry, const char*  lpszDefault = NULL,    const char* lpszSection = NULL);
+ CString  GetStringUTF8(const char* lpszEntry,const char*  lpszDefault = NULL,    const char* lpszSection = NULL);
+ CString  GetStringLong(const char* lpszEntry,const char*  lpszDefault = NULL,    const char* lpszSection = NULL);
+ double  GetDouble(const char* lpszEntry, double  fDefault = 0.0,     const char* lpszSection = NULL);
+ float  GetFloat(const char* lpszEntry,  float  fDefault = 0.0F,    const char* lpszSection = NULL);
+ int   GetInt(const char* lpszEntry,  int   nDefault = 0,     const char* lpszSection = NULL);
+ unsigned long GetUInt64(const char* lpszEntry, unsigned long nDefault = 0,     const char* lpszSection = NULL);
+ unsigned short  GetWORD(const char* lpszEntry,  unsigned short  nDefault = 0,     const char* lpszSection = NULL);
+ bool  GetBool(const char* lpszEntry,  bool  bDefault = false,    const char* lpszSection = NULL);
+ CPoint  GetPoint(const char* lpszEntry,  CPoint  ptDefault = CPoint(0,0),  const char* lpszSection = NULL);
+ CRect  GetRect(const char* lpszEntry,  CRect  rectDefault = CRect(0,0,0,0), const char* lpszSection = NULL);
+ unsigned long GetColRef(const char* lpszEntry, unsigned long crDefault = RGB(128,128,128), const char* lpszSection = NULL);
+ bool  GetBinary(const char* lpszEntry, unsigned char** ppData, unsigned int* pBytes,    const char* lpszSection = NULL);
+
+ void  WriteString(const char* strEntry, const char*  s,        const char* lpszSection = NULL);
+ void  WriteStringUTF8(const char* strEntry,const char*    s,        const char* lpszSection = NULL);
+ void  WriteDouble(const char* lpszEntry, double  f,        const char* lpszSection = NULL);
+ void  WriteFloat(const char* lpszEntry, float  f,        const char* lpszSection = NULL);
+ void  WriteInt(const char* lpszEntry,  int   n,        const char* lpszSection = NULL);
+ void  WriteUInt64(const char* lpszEntry, unsigned long n,        const char* lpszSection = NULL);
+ void  WriteWORD(const char* lpszEntry, unsigned short  n,        const char* lpszSection = NULL);
+ void  WriteBool(const char* lpszEntry, bool  b,        const char* lpszSection = NULL);
+ void  WritePoint(const char* lpszEntry, CPoint  pt,        const char* lpszSection = NULL);
+ void  WriteRect(const char* lpszEntry, CRect  rect,       const char* lpszSection = NULL);
+ void  WriteColRef(const char* lpszEntry, unsigned long cr,        const char* lpszSection = NULL);
+ bool  WriteBinary(const char* lpszEntry, LPBYTE pData, unsigned int nBytes,     const char* lpszSection = NULL);
+
+ void  SerGetString( bool bGet, CString&  s, const char* lpszEntry, const char* lpszSection = NULL, const char* strDefault = NULL);
+ void  SerGetDouble( bool bGet, double&  f, const char* lpszEntry, const char* lpszSection = NULL, double fDefault = 0.0);
+ void  SerGetFloat( bool bGet, float&  f, const char* lpszEntry, const char* lpszSection = NULL, float fDefault = 0.0);
+ void  SerGetInt(  bool bGet, int&   n, const char* lpszEntry, const char* lpszSection = NULL, int nDefault = 0);
+ void  SerGetDWORD( bool bGet, unsigned long&  n, const char* lpszEntry, const char* lpszSection = NULL, unsigned long nDefault = 0);
+ void  SerGetBool(  bool bGet, bool&  b, const char* lpszEntry, const char* lpszSection = NULL, bool bDefault = false);
+ void  SerGetPoint( bool bGet, CPoint&  pt, const char* lpszEntry, const char* lpszSection = NULL, CPoint ptDefault = CPoint(0,0));
+ void  SerGetRect(  bool bGet, CRect&  rc, const char* lpszEntry, const char* lpszSection = NULL, CRect rectDefault = CRect(0,0,0,0));
+ void  SerGetColRef( bool bGet, unsigned long& cr, const char* lpszEntry, const char* lpszSection = NULL, unsigned long crDefault = RGB(128,128,128));
+
+ void  SerGet( bool bGet, CString&  s,  const char* lpszEntry, const char* lpszSection = NULL, const char* lpszDefault = NULL);
+ void  SerGet( bool bGet, double&  f,  const char* lpszEntry, const char* lpszSection = NULL, double fDefault = 0.0);
+ void  SerGet( bool bGet, float&  f,  const char* lpszEntry, const char* lpszSection = NULL, float fDefault = 0.0F);
+ void  SerGet( bool bGet, int&   n,  const char* lpszEntry, const char* lpszSection = NULL, int nDefault = 0);
+ void  SerGet( bool bGet, short&  n,  const char* lpszEntry, const char* lpszSection = NULL, int nDefault = 0);
+ void  SerGet( bool bGet, unsigned long&  n,  const char* lpszEntry, const char* lpszSection = NULL, unsigned long nDefault = 0);
+ void  SerGet( bool bGet, unsigned short&  n,  const char* lpszEntry, const char* lpszSection = NULL, unsigned long nDefault = 0);
+// void  SerGet( bool bGet, bool&  b,  const char* lpszEntry, const char* lpszSection = NULL, bool bDefault = false);
+ void  SerGet( bool bGet, CPoint&  pt, const char* lpszEntry, const char* lpszSection = NULL, CPoint ptDefault = CPoint(0,0));
+ void  SerGet( bool bGet, CRect&  rc, const char* lpszEntry, const char* lpszSection = NULL, CRect rectDefault = CRect(0,0,0,0));
+// void  SerGet( bool bGet, unsigned long& cr, const char* lpszEntry, const char* lpszSection = NULL, unsigned long crDefault = RGB(128,128,128));
+
+//ARRAYs
+ void  SerGet( bool bGet, CString* s, int nCount, const char* lpszEntry, const char* lpszSection = NULL, const char* lpszDefault = NULL);
+ void  SerGet( bool bGet, double* f, int nCount, const char* lpszEntry, const char* lpszSection = NULL, double fDefault = 0.0);
+ void  SerGet( bool bGet, float* f, int nCount, const char* lpszEntry, const char* lpszSection = NULL, float fDefault = 0.0F);
+ void  SerGet( bool bGet, unsigned char* n, int nCount, const char* lpszEntry, const char* lpszSection = NULL, unsigned char nDefault = 0);
+ void  SerGet( bool bGet, int*  n, int nCount, const char* lpszEntry, const char* lpszSection = NULL, int nDefault = 0);
+ void  SerGet( bool bGet, short* n, int nCount, const char* lpszEntry, const char* lpszSection = NULL, int nDefault = 0);
+ void  SerGet( bool bGet, unsigned long* n, int nCount, const char* lpszEntry, const char* lpszSection = NULL, unsigned long nDefault = 0);
+ void  SerGet( bool bGet, unsigned short* n, int nCount, const char* lpszEntry, const char* lpszSection = NULL, unsigned long nDefault = 0);
+ void  SerGet( bool bGet, CPoint* pt, int nCount, const char* lpszEntry, const char* lpszSection = NULL, CPoint ptDefault = CPoint(0,0));
+ void  SerGet( bool bGet, CRect* rc, int nCount, const char* lpszEntry, const char* lpszSection = NULL, CRect rectDefault = CRect(0,0,0,0));
+
+ int   Parse(const CString&, int nOffset, CString &strOut);
+ void  DeleteKey(const char* pszKey);
+   //MAKRO :
+   //SERGET(bGet,value)
+
+private:
+ void Init(const char* lpszIniFile, const char* lpszSection = NULL);
+ char * GetLPCSTR(const char* lpszEntry, const char* lpszSection, const char* lpszDefault);
+
+ bool  m_bModulPath;  //true: Filenames without path take the Modulepath
+                        //false: Filenames without path take the CurrentDirectory
+
+
+ char  m_chBuffer[256           ];
+ CString m_strFileName;
+ CString m_strSection;
+//////////////////////////////////////////////////////////////////////
+// statische Methoden
+//////////////////////////////////////////////////////////////////////
+public:
+ static CString Read( const char* strFileName, const char* strSection, const char* strEntry, const char* strDefault);
+ static void  Write(const char* strFileName, const char* strSection, const char* strEntry, const char* strValue);
+};
+
+
+
+
+
+
+ 

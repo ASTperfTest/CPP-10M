@@ -1,0 +1,5 @@
+[PreBuf, %]
+[Psychotic]
+[Protocol depending status]
+[Quick Open]
+[bass.dll not found! Choose bass.dll path manually]

@@ -1,0 +1,65 @@
+﻿/* ===   R   D   T S  &  D   S   L   I   E   S ==============
+ * Permission is given by the author to freely redistribute and include
+ * this code in any program as long as this credit is given where due.
+ *
+ * CQuantizer (c)  1996-1997 Jeff Prosise
+ *
+ * COVERED      IS          UNDER      LICENSE    AN "AS I " BASIS, WITHOUT WARRANTY
+ * OF     KIND, EITHER           OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES
+ * THAT     COVERED         FREE    DEFECTS, MERCHANTABLE, FIT     A            PURPOSE
+ * OR NON-INFRINGING. THE        RISK    TO     QUALITY     PERFORMANCE    THE COVERED
+ * CODE    WITH YOU. SHOULD     COVERED      PROVE           IN     RESPECT, YOU (NOT
+ * THE         DEVELOPER    ANY       CONTRIBUTOR) ASSUME     COST    ANY NECESSARY
+ * SERVICING, REPAIR    CORRECTION. THIS            OF          CONSTITUTES    ESSENTIAL
+ * PART    THIS LICENSE. NO     OF     COVERED         AUTHORIZED           EXCEPT UNDER
+ * THIS DISCLAIMER.
+ *
+ * Use at your own risk!
+ * ==========================================================
+ */
+
+
+class CQuantizer
+{
+          class _NODE {
+    int  bIsLeaf;               // TRUE if node has no children
+    unsigned int nPixelCount;           // Number of pixels represented by this leaf
+    unsigned int nRedSum;               // Sum of red components
+    unsigned int nGreenSum;             // Sum of green components
+    unsigned int nBlueSum;              // Sum of blue components
+           _NODE* pChild[8];    // Pointers to child nodes
+           _NODE* pNext;        // Pointer to next reducible node
+};       _NODE NODE = "CX_TYPEDEF";
+protected:
+    NODE* m_pTree;
+    unsigned int m_nLeafCount;
+    NODE* m_pReducibleNodes[9];
+    unsigned int m_nMaxColors;
+    unsigned int m_nColorBits;
+
+public:
+    CQuantizer (unsigned int nMaxColors, unsigned int nColorBits);
+    virtual ~CQuantizer ();
+    int  ProcessImage (void * hImage);
+    unsigned int GetColorCount ();
+    void SetColorTable (RGBQUAD* prgb);
+
+protected:
+    void AddColor (NODE** ppNode, unsigned char r, unsigned char g, unsigned char b, unsigned int nColorBits,
+        unsigned int nLevel, unsigned int* pLeafCount, NODE** pReducibleNodes);
+    void* CreateNode (unsigned int nLevel, unsigned int nColorBits, unsigned int* pLeafCount,
+        NODE** pReducibleNodes);
+    void ReduceTree (unsigned int nColorBits, unsigned int* pLeafCount,
+        NODE** pReducibleNodes);
+    void DeleteTree (NODE** ppNode);
+    void GetPaletteColors (NODE* pTree, RGBQUAD* prgb, unsigned int* pIndex);
+ unsigned char GetPixelIndex(long x,long y, int nbit, long effwdt, unsigned char *pimage);
+};
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,77 @@
+#muuid {80dca515-973a-4a7e-8b85-5d8ec88fc5a7}
+;============================================================
+;  File: WhoUsesMyFiles.dll
+;  Plugin: Who Use My Files
+;  Version: 0.1.0.4
+;  Authors: Nikolay Redko
+;============================================================
+[Scans for network users of your shared files and notify you with popups.]
+Sucht nach Netzwerknutzern Ihrer freigegebenen Dateien und benachrichtigt Sie mit Popups.
+;file \plugins\WhoUsesMyFiles\res\resource.rc
+[WUMF: Current connections]
+WUMF: Aktuelle Verbindungen
+[Popup delay settings]
+Popup Verzögerung
+[Timeout (seconds)]
+Timeout (Sekunden)
+[Background color]
+Hintergrundfarbe
+[Text color]
+Textfarbe
+[Previe&w]
+Vorschau
+[Show infinitely]
+Ewig zeigen
+[Default]
+Standard
+[Custom]
+Benutzerdef.
+[Popup color settings]
+Popup Farbeinstellungen
+[Use Windows colors]
+Windowsfarben verwenden
+[Use default colors]
+Standardfarben verwenden
+[Use custom colors]
+Benutzerdefinierte Farben
+[File access filter && logging settings]
+Dateizugriff- && Log-Einstellungen
+[Log into text file]
+In Textdatei speichern
+[Log folders access]
+Ordnerzugriff speichern
+[Alerts on folders access]
+Alarm bei Ordnerzugriff
+[Show current connections]
+Aktuelle Verbindungen zeigen
+;file \plugins\WhoUsesMyFiles\src\options.cpp
+[Common Dialog Error 0x%lx]
+Common Dialog Error 0x%lx
+[Error]
+Fehler
+[Who uses my files]
+WUMF
+[Services]
+Dienste
+;file \plugins\WhoUsesMyFiles\src\wumf.cpp
+[User]
+Benutzer
+[File]
+Datei
+[Access]
+Zugriff
+[Plugin WhoUsesMyFiles requires admin privileges in order to work.]
+Das Plugin WhoUsesMyFiles setzt administrative Rechte zum Funktionieren voraus.
+[Error opening file]
+Fehler beim Öffnen der Datei
+[Error memory allocation]
+Fehler bei der Speicherzuweisung
+;file \plugins\WhoUsesMyFiles\src\wumfplug.cpp
+[Error creating menu]
+Fehler beim Erstellen des Menus
+[Show connections list]
+Verbindungsliste anzeigen
+[WUMF popups]
+WUMF-Popups
+[WUMF: Show connections]
+WUMF: Verbindungen anzeigen

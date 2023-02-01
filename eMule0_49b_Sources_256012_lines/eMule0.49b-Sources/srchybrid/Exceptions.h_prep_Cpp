@@ -1,0 +1,77 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+// This type of "last chance" exception handling is to be used at least in several callback functions to avoid memory leaks.
+// It is *not* thought as a proper handling of exceptions in general!
+// -> Use explicit exception handlers where needed!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class CMsgBoxException :        CException
+{
+ //DECLARE_DYNAMIC(CMsgBoxException)
+public:
+ explicit CMsgBoxException(const char* pszMsg, unsigned int uType = MB_ICONWARNING, unsigned int uHelpID = 0)
+ {
+  m_strMsg = pszMsg;
+  m_uType = uType;
+  m_uHelpID = uHelpID;
+ }
+
+ CString m_strMsg;
+ unsigned int m_uType;
+ unsigned int m_uHelpID;
+};
+
+class CClientException :        CException
+{
+ //DECLARE_DYNAMIC(CClientException)
+public:
+ CClientException(const char* pszMsg, bool bDelete)
+ {
+  m_strMsg = pszMsg;
+  m_bDelete = bDelete;
+ }
+
+ CString m_strMsg;
+ bool m_bDelete;
+};
+
+
+
+
+
+
+ 

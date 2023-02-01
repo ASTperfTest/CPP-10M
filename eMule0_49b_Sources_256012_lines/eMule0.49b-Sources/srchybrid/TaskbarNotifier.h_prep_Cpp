@@ -1,0 +1,133 @@
+﻿// CTaskbarNotifier Header file
+// By John O'Byrne - 15 July 2002
+// Modified by kei-kun
+
+
+
+
+
+
+
+//START - enkeyDEV(kei-kun) -TaskbarNotifier-
+enum TbnMsg {
+ TBN_NONOTIFY,
+ TBN_NULL,
+ TBN_CHAT,
+ TBN_DOWNLOADFINISHED,
+ TBN_LOG,
+ TBN_IMPORTANTEVENT,
+ TBN_NEWVERSION,
+ TBN_DOWNLOADADDED
+};
+//END - enkeyDEV(kei-kun) -TaskbarNotifier-
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CTaskbarNotifierHistory
+
+class CTaskbarNotifierHistory :        CObject
+{
+public:
+ CTaskbarNotifierHistory() {}
+ virtual ~CTaskbarNotifierHistory() {}
+
+ CString m_strMessage;
+ int m_nMessageType;
+ CString m_strLink;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CTaskbarNotifier
+
+class CTaskbarNotifier :        CWnd
+{
+ //DECLARE_DYNAMIC(CTaskbarNotifier)
+public:
+ CTaskbarNotifier();
+ virtual ~CTaskbarNotifier();
+
+ int Create(CWnd *pWndParent);
+ int  LoadConfiguration(const char* pszFileName);
+ void Show(const char* pszCaption, int nMsgType, const char* pszLink, int  bAutoClose = TRUE);
+ void ShowLastHistoryMessage();
+ int GetMessageType();
+ void Hide();
+
+ int  SetBitmap(unsigned int nBitmapID, int red = -1, int green = -1, int blue = -1);
+ int  SetBitmap(const char* pszFileName,int red = -1, int green = -1, int blue = -1);
+ int  SetBitmap(CBitmap* pBitmap, int red, int green, int blue);
+
+ void SetTextFont(const char* pszFont, int nSize, int nNormalStyle, int nSelectedStyle);
+ void SetTextDefaultFont();
+ void SetTextColor(unsigned long crNormalTextColor, unsigned long crSelectedTextColor);
+ void SetTextRect(RECT rcText);
+ void SetCloseBtnRect(RECT rcCloseBtn);
+ void SetHistoryBtnRect(RECT rcHistoryBtn);
+ void SetTextFormat(unsigned int uTextFormat);
+ void SetAutoClose(int  bAutoClose);
+
+protected:
+ CString m_strConfigFilePath;
+ time_t m_tConfigFileLastModified;
+ CWnd *m_pWndParent;
+ CFont m_fontNormal;
+ CFont m_fontSelected;
+ unsigned long m_crNormalTextColor;
+ unsigned long m_crSelectedTextColor;
+ HCURSOR m_hCursor;
+ CBitmap m_bitmapBackground;
+ void* m_hBitmapRegion;
+ int m_nBitmapWidth;
+ int m_nBitmapHeight;
+ bool m_bBitmapAlpha;
+ CString m_strCaption;
+ CString m_strLink;
+ CRect m_rcText;
+ CRect m_rcCloseBtn;
+ CRect m_rcHistoryBtn;
+ CPoint m_ptMousePosition;
+ unsigned int m_uTextFormat;
+ int  m_bMouseIsOver;
+ int  m_bTextSelected;
+ int  m_bAutoClose;
+ int m_nAnimStatus;
+ int m_nTaskbarPlacement;
+ unsigned long m_dwTimerPrecision;
+ unsigned long m_dwTimeToStay;
+ unsigned long m_dwShowEvents;
+ unsigned long m_dwHideEvents;
+ unsigned long m_dwTimeToShow;
+ unsigned long m_dwTimeToHide;
+ int m_nCurrentPosX;
+ int m_nCurrentPosY;
+ int m_nCurrentWidth;
+ int m_nCurrentHeight;
+ int m_nIncrementShow;
+ int m_nIncrementHide;
+ int m_nHistoryPosition;    //<<--enkeyDEV(kei-kun) -TaskbarNotifier-
+ int m_nActiveMessageType;   //<<--enkeyDEV(kei-kun) -TaskbarNotifier-
+ CObList m_MessageHistory;   //<<--enkeyDEV(kei-kun) -TaskbarNotifier-
+ void *  m_hMsImg32Dll;
+ int  (       *m_pfnAlphaBlend)(void*, int, int, int, int, void*, int, int, int, int, BLENDFUNCTION);
+
+ void* CreateRgnFromBitmap(void *  hBmp, unsigned long color);
+
+
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         long *  OnMouseHover(int *  wParam, long * lParam);
+         long *  OnMouseLeave(int *  wParam, long * lParam);
+         int  OnEraseBkgnd(CDC* pDC);
+         void OnPaint();
+         int  OnSetCursor(CWnd* pWnd, unsigned int nHitTest, unsigned int message);
+         void OnTimer(unsigned int nIDEvent);
+         void OnSysColorChange();
+};
+
+
+
+
+
+
+ 

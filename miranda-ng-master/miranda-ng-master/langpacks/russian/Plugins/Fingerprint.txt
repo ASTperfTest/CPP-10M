@@ -1,0 +1,200 @@
+#muuid {687364af-58b0-4af2-a4ee-20f40a8d9afb}
+;============================================================
+;  File: Fingerprint.dll
+;  Plugin: Fingerprint NG
+;  Version: 0.2.0.1
+;  Authors: faith_healer, ghazan, Mataes
+;============================================================
+[Fingerprint NG (client version) icons module for Miranda NG.]
+Fingerprint NG отображает значки клиентов, используемых вашими собеседниками.
+;file \plugins\FingerprintNG\res\resource.rc
+[Fingerprint overlays icons]
+Оверлеи значков клиентов
+[Miranda clients]
+Клиенты Miranda
+[Miranda packs overlays]
+Оверлеи сборок Miranda
+[Show Miranda version at Overlay#2]
+Значок версии на оверлее #2
+[Resource overlays]
+Оверлеи ресурсов
+[Platform overlays]
+Оверлеи платформы
+[Protocols overlays]
+Оверлеи протоколов
+[Unicode overlay]
+Оверлей Unicode
+[Secure overlays]
+Оверлеи шифрования
+[Select protocols]
+Протоколы
+[Facebook clients]
+Клиенты Facebook
+[Gadu-Gadu clients]
+Клиенты Gadu-Gadu
+[ICQ clients]
+Клиенты ICQ
+[IRC clients]
+Клиенты IRC
+[Jabber clients]
+Клиенты Jabber
+[RSS clients]
+Клиенты RSS
+[VKontakte clients]
+Клиенты VKontakte
+[Weather clients]
+Клиенты погоды
+[Multi-protocol clients]
+Мульти-протокольные клиенты
+[Other (rare) protocols]
+Клиенты редких протоколов
+[Other icons]
+Другие значки
+[Show client icon in message window status bar]
+Показывать значок клиента в строке состояния окна сообщений
+;file \plugins\FingerprintNG\src\fingerprint.cpp
+[Fingerprint]
+Значки клиентов
+;file \plugins\FingerprintNG\src\finger_groups.h
+[Client icons]
+Клиенты
+[Pack overlays]
+Оверлеи сборок
+[Multi-proto clients]
+Мульти-протокол
+[Other protocols]
+Другие протоколы
+[Overlays]
+Оверлеи
+[Resource]
+Ресурс
+[Platform]
+Операционная система
+[Security]
+Безопасность
+[Protocol]
+Протокол
+;file \plugins\FingerprintNG\src\masks.cpp
+[Miranda NG stable]
+Стабильная Miranda NG
+[Miranda IM (old versions)]
+Miranda IM (старая версия)
+[Miranda (unknown)]
+Miranda (неизвестно)
+[PHP Jabber Client]
+PHP Jabber клиент
+[MP3 Script for mIRC]
+MP3 скрипт для mIRC
+[Gadu-Gadu client]
+Gadu-Gadu клиент
+[Python-based clients]
+Клиенты на основе Python
+[Jabber client]
+Jabber клиент
+[XMPP client]
+XMPP клиент
+[Client not found]
+Ненайденный клиент
+[Unknown client]
+Неизвестный клиент
+[Undetected client]
+Неопределённый клиент
+[ICQ overlay]
+Оверлей ICQ
+[IRC overlay]
+Оверлей IRC
+[JGmail overlay]
+Оверлей JGmail
+[JGTalk overlay]
+Оверлей JGTalk
+[Jabber overlay]
+Оверлей Jabber
+[VK overlay]
+Оверлей VK
+[Skype overlay]
+Оверлей Skype
+[ICQ v8.x overlay]
+ICQ v8.x оверлей
+[Gadu-Gadu v11 client]
+Gadu-Gadu v11 клиент
+[Gadu-Gadu v10 client]
+Gadu-Gadu v10 клиент
+[Gadu-Gadu v9 client]
+Gadu-Gadu v9 клиент
+[Gadu-Gadu v8 client]
+Gadu-Gadu v8 клиент
+[Windows overlay]
+Оверлей Windows
+[iOS overlay (iPhone/iPad)]
+Оверлей iOS (iPhone/iPad)
+[MacOS overlay]
+Оверлей MacOS
+[Linux overlay]
+Оверлей Linux
+[Flash overlay]
+Оверлей Flash
+[Java overlay]
+Оверлей Java
+[Symbian overlay]
+Оверлей Symbian
+[Amiga overlay]
+Оверлей Amiga
+[Android overlay]
+Оверлей Android
+[Website overlay]
+Оверлей веб-сайта
+[Windows Phone overlay]
+Оверлей Windows Phone
+[Mobile overlay]
+Оверлей mobile
+[debug overlay]
+Оверлей debug
+[office overlay]
+Оверлей office
+[mobile overlay]
+Оверлей mobile
+[home overlay]
+Оверлей home
+[work overlay]
+Оверлей work
+[notebook overlay]
+Оверлей notebook
+[Miranda NG v0.6 #2 overlay]
+Miranda NG v0.6 #2 оверлей
+[Miranda NG v0.5 #2 overlay]
+Miranda NG v0.5 #2 оверлей
+[Miranda NG v0.4 #2 overlay]
+Miranda NG v0.4 #2 оверлей
+[Miranda NG v0.3 #2 overlay]
+Miranda NG v0.3 #2 оверлей
+[Miranda NG v0.2 #2 overlay]
+Miranda NG v0.2 #2 оверлей
+[Miranda NG v0.1 #2 overlay]
+Miranda NG v0.1 #2 оверлей
+[Miranda IM v0.10 #2 overlay]
+Miranda IM v0.10 #2 оверлей
+[Miranda IM v0.9 #2 overlay]
+Miranda IM v0.9 #2 оверлей
+[Miranda IM v0.8 #2 overlay]
+Miranda IM v0.8 #2 оверлей
+[Miranda IM v0.7 #2 overlay]
+Miranda IM v0.7 #2 оверлей
+[Miranda IM v0.6 #2 overlay]
+Miranda IM v0.6 #2 оверлей
+[Miranda IM v0.5 #2 overlay]
+Miranda IM v0.5 #2 оверлей
+[Miranda IM v0.4 #2 overlay]
+Miranda IM v0.4 #2 оверлей
+[x64 overlay]
+Оверлей x64
+[x32 overlay]
+Оверлей x32
+[NewGPG overlay]
+NewGPG оверлей
+[MirOTR overlay]
+MirOTR оверлей
+[SecureIM overlay]
+Оверлей SecureIM
+;file \plugins\FingerprintNG\src\options.cpp
+[Icons]
+Значки

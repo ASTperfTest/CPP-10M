@@ -1,0 +1,24 @@
+﻿
+
+       _EXCEPTION_POINTERS;
+
+class CMiniDumper
+{
+public:
+ static void Enable(const char* pszAppName, bool bShowErrors);
+
+private:
+ static char  m_szAppName[MAX_PATH];
+
+ static void *  GetDebugHelperDll(FARPROC* ppfnMiniDumpWriteDump, bool bShowErrors);
+ static long        TopLevelFilter(       _EXCEPTION_POINTERS* pExceptionInfo);
+};
+
+extern CMiniDumper theCrashDumper;
+
+
+
+
+
+
+ 

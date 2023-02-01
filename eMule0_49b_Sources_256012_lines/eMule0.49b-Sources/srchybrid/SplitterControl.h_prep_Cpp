@@ -1,0 +1,75 @@
+﻿/**************CSplitterControl interface***********
+* Class name :CSplitterControl
+* Purpose: Implement splitter control for dialog
+*   or any other windows.
+* Author: Nguyen Huy Hung, Vietnamese student.
+* Date: May 29th 2002.
+* Note: You can use it for any purposes. Feel free
+*   to change, modify, but please do not
+*   remove this.
+* No warranty of any risks.
+* (:-)
+*/
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CSplitterControl window
+
+
+
+
+
+
+
+
+
+          class SPC_NMHDR
+{
+ NMHDR hdr;
+ int delta;
+};       SPC_NMHDR SPC_NMHDR = "CX_TYPEDEF";
+
+class CSplitterControl :        CStatic
+{
+public:
+ CSplitterControl();
+ virtual ~CSplitterControl();
+
+ void Create(unsigned long dwStyle, const CRect& rect, CWnd* pParent, unsigned int nID);
+ int GetStyle();
+ int SetStyle(int nStyle = 1           );
+ void SetRange(int nMin, int nMax);
+ void SetRange(int nSubtraction, int nAddition, int nRoot);
+ void SetDrawBorder(bool bEnable = true);
+
+ static void ChangePos(CWnd* pWnd, int dx, int dy);
+ static void ChangeWidth(CWnd* pWnd, int dx, unsigned long dwFlag = 1           );
+ static void ChangeHeight(CWnd* pWnd, int dy, unsigned long dwFlag = 3          );
+
+protected:
+ static HCURSOR m_hcurMoveVert;
+ static HCURSOR m_hcurMoveHorz;
+ int  m_bIsPressed;
+ int  m_nType;
+ int  m_nX, m_nY;
+ int  m_nMin, m_nMax;
+ int  m_nSavePos;  // Save point on the lbutton down message
+ bool m_bDrawBorder;
+
+ void MoveWindowTo(CPoint pt);
+ virtual void DrawLine(CDC* pDC, int x, int y);
+
+
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+         int  OnSetCursor(CWnd* pWnd, unsigned int nHitTest, unsigned int message);
+         void OnLButtonDown(unsigned int nFlags, CPoint point);
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         void OnPaint();
+};
+
+
+
+
+
+
+ 

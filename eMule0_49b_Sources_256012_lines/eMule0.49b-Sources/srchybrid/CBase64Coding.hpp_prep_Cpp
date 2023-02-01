@@ -1,0 +1,57 @@
+﻿
+
+
+
+/*
+** Author: Samuel R. Blackburn
+** Internet: wfc@pobox.com
+**
+** You can use it any way you like as long as you don't try to sell it.
+**
+** Any attempt to sell     in source code form must have the permission
+** of the original author. You can produce commercial executables with
+** WFC but you can't sell WFC.
+**
+** Copyright, 2000, Samuel R. Blackburn
+**
+** $Workfile: CBase64Coding.hpp $
+** $Revision: 3 $
+** $Modtime: 1/04/00 4:39a $
+*/
+
+
+
+class CBase64Coding
+{
+   private:
+
+      // Don't allow canonical
+
+
+      CBase64Coding( const CBase64Coding& ) {};
+      CBase64Coding& operator__Assign( const CBase64Coding& ) { return( *this ); };
+
+   public:
+
+      // Construction
+
+      CBase64Coding();
+
+      /*
+      ** Destructor should be virtual according to     article in Sept 1992
+      ** "Do More with Less Code:..."
+      */
+
+      virtual ~CBase64Coding();
+
+      virtual int  Encode( const char * source, int len, char * destination );
+};
+
+       //
+
+
+
+
+
+
+ 

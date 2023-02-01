@@ -1,0 +1,51 @@
+﻿
+//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+class CSmileySelector :        CWnd
+{
+ //DECLARE_DYNAMIC(CSmileySelector)
+
+public:
+ CSmileySelector();
+ virtual ~CSmileySelector();
+
+ int  Create(CWnd *pWndParent, const RECT *pRect, CEdit *pwndEdit);
+
+protected:
+ int m_iBitmaps;
+ CEdit *m_pwndEdit;
+ CToolBarCtrl m_tb;
+
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ virtual int  PreTranslateMessage(MSG* pMsg);
+
+
+         void OnActivateApp(int  bActive, unsigned long dwThreadID);
+         void OnKillFocus(CWnd* pNewWnd);
+         void OnTbnSmileyGetInfoTip(NMHDR *pNMHDR, long *  *pResult);
+         void OnDestroy();
+};
+
+
+
+
+
+
+ 

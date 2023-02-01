@@ -1,0 +1,5 @@
+[Simple Auto Replier.]
+[mins]
+[Turn off Autoanswer]
+[Turn on Autoanswer]
+[Simple Auto Replier]

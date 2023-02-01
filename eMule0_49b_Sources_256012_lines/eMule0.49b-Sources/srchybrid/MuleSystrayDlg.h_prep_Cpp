@@ -1,0 +1,92 @@
+﻿
+
+class CInputBox :        CEdit
+{
+protected:
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+
+
+};
+
+void INCLUDEREPLACE(){CX_INCL("TrayMenuBtn.h");}
+void INCLUDEREPLACE(){CX_INCL("GradientStatic.h");}
+void INCLUDEREPLACE(){CX_INCL("resource.h");}
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CMuleSystrayDlg dialog
+
+class CMuleSystrayDlg :        CDialog
+{
+// Construction
+public:
+ CMuleSystrayDlg(CWnd* pParent, CPoint pt, int iMaxUp, int iMaxDown, int iCurUp, int iCurDown);
+ ~CMuleSystrayDlg();
+
+// Dialog Data
+ //{{        (CMuleSystrayDlg)
+ enum { IDD = IDD_MULETRAYDLG };
+ CStatic m_ctrlUpArrow;
+ CStatic m_ctrlDownArrow;
+ CGradientStatic m_ctrlSidebar;
+ CSliderCtrl m_ctrlUpSpeedSld;
+ CSliderCtrl m_ctrlDownSpeedSld;
+ CInputBox m_DownSpeedInput;
+ CInputBox m_UpSpeedInput;
+ int  m_nDownSpeedTxt;
+ int  m_nUpSpeedTxt;
+ //}}        
+
+
+// Overrides
+ // ClassWizard generated virtual function overrides
+ //{{           (CMuleSystrayDlg)
+ protected:
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ //}}           
+
+// Implementation
+protected:
+ CTrayMenuBtn m_ctrlSpeed;
+ CTrayMenuBtn m_ctrlAllToMax;
+ CTrayMenuBtn m_ctrlAllToMin;
+ CTrayMenuBtn m_ctrlRestore;
+ CTrayMenuBtn m_ctrlDisconnect;
+ CTrayMenuBtn m_ctrlConnect;
+ CTrayMenuBtn m_ctrlExit;
+ CTrayMenuBtn m_ctrlPreferences;
+
+ bool m_bClosingDown;
+
+ int m_iMaxUp;
+ int m_iMaxDown;
+ CPoint m_ptInitialPosition;
+
+ void* m_hUpArrow;
+ void* m_hDownArrow;
+
+ unsigned int m_nExitCode;
+
+ // Generated message map functions
+ //{{       (CMuleSystrayDlg)
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+ virtual int  OnInitDialog();
+         void OnChangeDowntxt();
+         void OnChangeUptxt();
+         void OnHScroll(unsigned int nSBCode, unsigned int nPos, CScrollBar* pScrollBar);
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         void OnRButtonDown(unsigned int nFlags, CPoint point);
+         void OnKillFocus(CWnd* pNewWnd);
+         void OnShowWindow(int  bShow, unsigned int nStatus);
+         void OnCaptureChanged(CWnd *pWnd);
+ //}}       
+
+};
+
+
+
+
+
+
+ 

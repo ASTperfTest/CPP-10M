@@ -1,0 +1,44 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizableSheet.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlItemWalk.h");}
+
+// CListViewWalkerPropertySheet
+
+class CListViewWalkerPropertySheet :        CResizableSheet
+{
+ //DECLARE_DYNAMIC(CListViewWalkerPropertySheet)
+
+public:
+ CListViewWalkerPropertySheet(CListCtrlItemWalk* pListCtrl)
+ {
+  m_pListCtrl = pListCtrl;
+ }
+ CListViewWalkerPropertySheet(unsigned int nIDCaption, CWnd* pParentWnd = NULL, unsigned int iSelectPage = 0);
+ CListViewWalkerPropertySheet(const char* pszCaption, CWnd* pParentWnd = NULL, unsigned int iSelectPage = 0);
+ virtual ~CListViewWalkerPropertySheet();
+
+ CPtrArray& GetPages() { return m_pages; }
+ const CSimpleArray           &GetItems() const { return m_aItems; }
+ void InsertPage(int iIndex, CPropertyPage* pPage);
+
+protected:
+ CListCtrlItemWalk* m_pListCtrl;
+ CSimpleArray           m_aItems;
+ CButton m_ctlPrev;
+ CButton m_ctlNext;
+
+ void ChangeData(CObject* pObj);
+
+ virtual int  OnInitDialog();
+
+
+         void OnNext();
+         void OnPrev();
+};
+
+
+
+
+
+
+ 

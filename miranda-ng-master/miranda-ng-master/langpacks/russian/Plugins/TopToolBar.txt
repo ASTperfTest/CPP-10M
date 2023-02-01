@@ -1,0 +1,96 @@
+#muuid {f593c752-51d8-4d46-ba27-37577953f55c}
+;============================================================
+;  File: TopToolBar.dll
+;  Plugin: TopToolBar
+;  Version: 0.8.0.5
+;  Authors: Bethoven
+;============================================================
+[ToptoolBar adds buttons in top frame for fast access.]
+Панель кнопок для быстрого доступа к функциям Miranda и вашим программам.
+;file \plugins\TopToolBar\res\main.rc
+[Buttons order and visibility]
+Порядок и видимость кнопок
+[Button height]
+Высота кнопки
+[Button width]
+Ширина кнопки
+[Interval between buttons]
+Промежуток
+[Use flat mode]
+Кнопки без границы
+[Auto resize]
+Авторазмер
+[Single line]
+Панель в одну строку
+[Buttons order:]
+Показывать кнопки:
+[Add separator]
+Добавить разделитель
+[Add launch]
+Добавить кнопку
+[Delete separator/launch button]
+Удалить разделитель/кнопку
+[Name:]
+Имя:
+[Path:]
+Путь:
+[Set]
+Выбрать
+;file \plugins\TopToolBar\src\InternalButtons.cpp
+[Show main menu]
+Главное меню
+[Show options page]
+Открыть настройки
+[Show accounts manager]
+Открыть менеджер учётных записей
+[Find/add contacts]
+Найти/Добавить контакты
+[Show status menu]
+Открыть меню статусов
+[Show/hide offline contacts]
+Показать/скрыть отключённых
+[Show offline contacts]
+Показать отключённых
+[Hide offline contacts]
+Скрыть отключённых
+[Enable/disable metacontacts]
+Вкл/Выкл метаконтакты
+[Enable metacontacts]
+Включить метаконтакты
+[Disable metacontacts]
+Отключить метаконтакты
+[Enable/disable groups]
+Вкл/Выкл группы
+[Disable groups]
+Отключить группы
+[Enable groups]
+Включить группы
+[Enable/disable sounds]
+Вкл/Выкл звуки
+[Enable sounds]
+Включить звуки
+[Disable sounds]
+Отключить звуки
+[Minimize contact list]
+Скрыть список контактов
+[Exit]
+Выход
+;file \plugins\TopToolBar\src\main.cpp
+[Execute]
+Выполнить
+[Separator]
+Разделитель
+;file \plugins\TopToolBar\src\toolbar.cpp
+[TopToolBar background]
+Фон панели кнопок
+[Frames service has not been found, so plugin will be disabled.\nTo run it you need to install and / or enable contact list plugin that supports it:\n- Modern contact list\n- Clist nicer\nYou can get them at https://wiki.miranda-ng.org/Download]
+Текущий плагин списка контактов не поддерживает сервис фреймов, поэтому плагин ToptoolBar был выключен.\nДля работы панели кнопок нужно установить и / или включить один из следующих плагинов списка контактов:\n- Modern contact list\n- Clist nicer\nВы можете скачать их на https://wiki.miranda-ng.org/Download
+[TopToolBar]
+Панель кнопок
+;file \plugins\TopToolBar\src\ttbopt.cpp
+[Default]
+По умолчанию
+[Contact list]
+Список контактов
+[Toolbar]
+Панель кнопок

@@ -1,0 +1,9 @@
+#muuid {4bb5b4aa-c364-4f23-9746-d5b708a286a5}
+;============================================================
+;  File: ConnectionNotify.dll
+;  Plugin: Connection Notify
+;  Version: 0.1.0.6
+;  Authors: MaKaR
+;============================================================
+[Set popup colors]
+Set popup colours

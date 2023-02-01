@@ -1,0 +1,66 @@
+#muuid {7993ab24-1fda-428c-a89b-be377a10be3a}
+;============================================================
+;  File: ShlExt.dll
+;  Plugin: Shell extension
+;  Version: 2.2.0.4
+;  Authors: Sam Kothari, Miranda NG team
+;============================================================
+[Windows Explorer extension for Miranda NG.]
+Windows Explorer Erweiterung für Miranda NG.
+;file \plugins\ShellExt\res\shldlgs.rc
+[Display contacts in their assigned groups (if any)]
+Zeige Kontakte in ihren zugewiesenen Gruppen
+[Only if/when the contact list is using them]
+Nur, wenn Kontaktliste Gruppen anzeigt
+[Display hidden, ignored or temporary contacts]
+Versteckte, ignorierte oder temporäre Kontakte anzeigen
+[Menus]
+Menüs
+[Shell Status]
+Status der Einbindung
+[Shell context menus]
+Shell-Kontextmenüs
+[Do not display the profile name in use]
+Namen des benutzten Profils nicht anzeigen
+[Show contacts that you have set privacy rules for]
+Kontakte anzeigen, für die andere Privatsphärenregeln gelten
+[Remove]
+Entfernen
+[Do not show status icons in menus]
+Kein Statusicon in den Menüs anzeigen
+[Do not show contacts that are offline, even if my contact list does]
+Keine Offlinekontakte anzeigen, unabhängig von Einstellungen der Kontaktliste
+;file \plugins\ShellExt\src\options.cpp
+[Problem, registration missing/deleted.]
+Fehler, Registrierung fehlgeschlagen/gelöscht.
+[Successfully created shell registration.]
+Erfolgreich im Explorer integriert.
+[Not Approved]
+Nicht bestätigt
+[Approved]
+Bestätigt
+[Are you sure? This will remove all the settings stored in your database and all registry entries created for shlext to work with Explorer]
+Sind Sie sich sicher? Alle Einstellungen im Profil sowie alle Registrierungseinträge, die Miranda in den Explorer einbinden, werden gelöscht
+[Disable/Remove shlext]
+ShlExt deaktivieren/entfernen
+[Services]
+Dienste
+;file \plugins\ShellExt\src\shlcom.cpp
+[Recently]
+Zuletzt
+[Clear entries]
+Einträge löschen
+[Unable to delete registry key for 'shlext COM', this key may already be deleted or you may need admin rights.]
+Konnte Registryeintrag 'shlext COM' nicht löschen, dieser Eintrag wurde vielleicht schon gelöscht oder Sie brauchen Administratorrechte.
+[Problem]
+Problem
+[Unable to delete registry key for 'File context menu handlers', this key may already be deleted or you may need admin rights.]
+Konnte Registryeintrag 'File context menu handlers' nicht löschen, dieser Eintrag wurde vielleicht schon gelöscht oder Sie brauchen Administratorrechte.
+[Unable to delete registry key for 'Directory context menu handlers', this key may already be deleted or you may need admin rights.]
+Konnte Registryeintrag 'Directory context menu handlers' nicht löschen, dieser Eintrag wurde vielleicht schon gelöscht oder Sie brauchen Administratorrechte.
+[Unable to delete registry entry for 'Approved context menu handlers', this key may already be deleted or you may need admin rights.]
+Konnte Registryeintrag 'Approved context menu handlers' nicht löschen, dieser Eintrag wurde vielleicht schon gelöscht oder Sie brauchen Administratorrechte.
+[Shell context menus requires your permission to register with Windows Explorer (one time only).]
+Shell-Kontextmenüs erfordert Ihre (einmalige) Erlaubnis um sich mit dem Windows-Explorer zu registrieren.
+[Miranda NG - Shell context menus (shellext.dll)]
+Miranda NG - Shell-Kontextmenü (shellext.dll)

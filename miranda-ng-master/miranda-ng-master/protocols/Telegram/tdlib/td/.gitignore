@@ -1,0 +1,7 @@
+**/*build*/
+**/.*.swp
+**/.DS_Store
+db_backup
+*.pyc
+docs/
+vcpkg/

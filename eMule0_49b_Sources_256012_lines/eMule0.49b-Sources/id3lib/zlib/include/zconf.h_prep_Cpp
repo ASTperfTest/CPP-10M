@@ -1,0 +1,286 @@
+﻿/* zconf.h -- configuration of the zlib compression library
+ * Copyright (C) 1995-2002 Jean-loup Gailly.
+ * For conditions of distribution and use, see copyright notice in zlib.h
+ */
+
+/* @(#) $Id: zconf.h,v 1.5 2002/06/28 12:00:31 t1mpy Exp $ */
+
+
+
+
+/*
+ * If you *really* need a unique prefix for all types and library functions,
+ * compile with -DZ_PREFIX. The "standard" zlib should be compiled without it.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Compile with -DMAXSEG_64K if the alloc function cannot allocate more
+ * than 64k bytes at a time (needed on systems with 16-bit int).
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Some Mac compilers merge all .h files incorrectly: */
+
+
+
+
+/* Old Borland   incorrectly complains about missing returns: */
+
+
+
+
+
+/* Maximum value for memLevel in deflateInit2 */
+
+
+
+
+
+
+
+
+/* Maximum value for windowBits in deflateInit2 and inflateInit2.
+ * WARNING: reducing           makes minigzip unable to extract .gz files
+ * created by gzip. (Files created by minigzip can still be extracted by
+ * gzip.)
+ */
+
+
+
+
+/* The memory requirements for z_deflate are (in bytes):
+            (1 << (windowBits+2)) +  (1 << (memLevel+9))
+ that is: 128K for windowBits=15  +  128K for memLevel = 8  (default values)
+ plus a few kilobytes for small objects. For example, if you want to reduce
+ the default memory requirements from 256K to 128K, compile with
+     make CFLAGS="-O -DMAX_WBITS=14 -DMAX_MEM_LEVEL=7"
+ Of course this will generally degrade compression (there's no free lunch).
+
+   The memory requirements for z_inflate 1 << windowBits
+ that is, 32K for windowBits=15 (default value) plus a few kilobytes
+ for small objects.
+*/
+
+                        /* Type declarations */
+
+
+
+
+
+
+
+
+
+/* The following definitions for     are needed only for       mixed
+ * model programming (small or medium model with some     allocations).
+ * This was tested only with MSC; for other       compilers you may have
+ * to define           in zutil.h.  If you don't need the mixed model,
+ * just define     to be empty.
+ */
+
+   /* MSC small or medium model */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Compile with -DZLIB_DLL for Windows     support */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        unsigned char  z_Byte = "CX_TYPEDEF";  /* 8 bits */
+
+        unsigned int   z_uInt = "CX_TYPEDEF";  /* 16 bits or more */
+        unsigned long  z_uLong = "CX_TYPEDEF"; /* 32 bits or more */
+
+
+   /* Borland C/C++ and some old     versions ignore     inside         */
+
+
+
+
+        char      z_charf = "CX_TYPEDEF";
+        int       z_intf = "CX_TYPEDEF";
+        z_uInt      z_uIntf = "CX_TYPEDEF";
+        z_uLong     z_uLongf = "CX_TYPEDEF";
+
+
+           void     *z_voidpf = "CX_TYPEDEF";
+           void     *z_voidp = "CX_TYPEDEF";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MVS linker does not support external names larger than 8 bytes */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /*          */
+
+
+
+
+
+
+ 

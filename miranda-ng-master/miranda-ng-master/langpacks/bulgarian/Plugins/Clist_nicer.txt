@@ -1,0 +1,664 @@
+#muuid {8f79b4ee-eb48-4a03-873e-27be6b7e9a25}
+;============================================================
+;  File: Clist_nicer.dll
+;  Plugin: Clist nicer
+;  Version: 0.9.3.2
+;  Authors: Pixel, egoDust, cyreve, Nightwish
+;============================================================
+[Displays contacts, event notifications, protocol status.]
+Изобразява контакти, уведомявания за събития, състояние на протоколите.
+;file \plugins\Clist_nicer\res\resource.rc
+[Clist nicer exception]
+CList nicer изключение
+[Copy to clipboard]
+Запис в клипборда
+[Continue]
+Продължение
+[Exit Miranda]
+Изход от Miranda
+[Although the exception was caught and you may continue working with Miranda, you should restart the program as soon as possible. The exception may have damaged internal data structures and can have a serious impact on stability.]
+Въпреки проблемът ви можете да продължите работата си с Miranda, но е наложително да рестарти-\nрате програмата възможно най-скоро. Има вероятност грешката да е повредила вътрешната струк-\nтура на данните, което може да се отрази сериозно на стабилността.
+[Delete contact]
+Изтриване на контакта
+[No]
+Не
+[Yes]
+Да
+[Hide from list only, in order to keep their history and ignore/visibility settings]
+Скриване (запазва историята и настройките за игнориране/видимост)
+[Use Options -> Contacts -> Ignore to unhide contacts.]
+Може да отмените скриването от "Настройки > Контакти > Игнориране".
+[Are you sure you want to delete %s?]
+Сигурни ли сте, че желаете контактът "%s" да бъде изтрит?
+[This will erase all history and settings for this contact!]
+Ще бъде изтрита изтрита историята и настройките за контакта!
+[Contact list]
+Списък с контакти
+[Apply last active view mode]
+Ползвай последния режим за преглед
+[Show menu and status buttons]
+Бутони "Меню" и "Състояние"
+[Draw sunken edge]
+Изобразяване на вграден ръб
+[Event area]
+Зона за събития
+[Set base visibility on the frames menu]
+
+[Auto mode]
+Авторежим
+[System tray icon when using multiple protocols]
+Режим на иконата в трея, когато се използват няколко протокола
+[Show]
+Показване
+[icon when statuses differ]
+икона при различни състояния
+[Cycle icons every]
+Смяна на иконата всеки
+[seconds, when statuses differ]
+секунди, при различни състояния
+[Show multiple icons]
+Всички икони
+[Only when statuses differ]
+Само при различни състояния
+[Do not show system tray icon tooltips on mouse over]
+Без подсказка при посочване на трей иконата с курсора
+[Groups]
+Групи
+[Draw a line alongside group names]
+Добавяне на линия до имената на групите
+[Show number of contacts in a group]
+Показване на броя контакти в група
+[Hide numbers when all offline]
+Скриване на броя, когато всички са "Извън линия"
+[Sort groups alphabetically]
+Сортиране на групите по азбучен ред
+[Quick search in open groups only]
+Бързо търсене само в отворените групи
+[No expand/collapse icon]
+Без икона за разгръщане/сгъване
+[Center group names horizontally]
+Хоризонтално центриране имената на групите
+[Alignment]
+Подреждане
+[Margins (left/right)]
+Ръбове (ляво/дясно)
+[Row gap]
+Пролука между редовете
+[Minimum row height:]
+Мин. височина на реда:
+[Group row height]
+Височина на реда на групите
+[Indent groups by:]
+Отстъп на групите:
+[Inner row vertical padding]
+
+[Margins and spacing]
+Ръбове и разстояние
+[Contact list sorting]
+Сортиране на списъка с контакти по:
+[First by]
+Първо по
+[Then by]
+След това според
+[Finally by]
+Накрая по
+[Move events to the top of list or group]
+Премествай събитията на върха на списъка (или групата)
+[Do not separate offline contacts]
+Без отделяне на контактите "Извън линия"
+[Right align contacts]
+Подреждане на контактите отдясно
+[Avatars]
+Аватари
+[Show avatars]
+Показване на аватари
+[Height]
+Височина
+[Draw a border around avatars]
+Добавяне на рамка около аватарите
+[Rounded avatars]
+Закръглени аватари
+[Radius]
+Радиус
+[Always align icons and text for missing avatars]
+Икони и текст на мястото на липсващ аватар
+[Avatar alignment]
+Подравняване на аватарите
+[Don't request avatars for offline contacts]
+Без заявки за аватари на контактите "Извън линия"
+[Second text line]
+Втори текстови ред
+[Display status message when available]
+Изобразяване на текст за състояние, когато е наличен
+[Show second text line:]
+Показване на втори ред:
+[Show contacts local time]
+Показване местно време на контактите
+[Only when timezone differs]
+Само при различен часови пояс
+[Icons]
+Икони
+[Show status icons]
+Икони за състояние
+[Centered when possible]
+Центриране (ако е възможно)
+[When possible, draw status icons in avatar space]
+Насложено състояние върху аватара, ако е възможно
+[Use metacontact protocol icons instead of subcontacts]
+Замяна иконите на подконтакти с тези на метапротокола
+[Use overlay icons on avatars]
+Наслагване на икони върху аватара
+[Dim idle contacts]
+Потъмняване на бездействащите контакти
+[Replace status icons with xStatus]
+Замяна на иконата за състояние с икона за xСъстояние
+[Window]
+Прозорец
+[Always on top]
+Винаги отгоре
+[Show menu bar]
+Лента за менюто
+[Easy move]
+Лесно местене
+[Rounded border]
+Обла рамка
+[Border]
+Рамка
+[Title bar text:]
+Заглавна лента:
+[Pin to desktop]
+Прилепване към работния плот
+[Show drop shadow (restart required)]
+Сенки под менютата (изисква рестарт)
+[Hide contact list after it has been idle for]
+Скриване на списъка след бездействие за:
+[seconds]
+секунди
+[Automatically resize window to height of list]
+Автооразмеряване към височината на списъка
+[maximum]
+максимум
+[% of screen]
+% от екрана
+[Size upwards]
+Оразмеряване нагоре
+[If window is partially covered, bring to front instead of hiding]
+Извеждане на прозорецът отпред, ако е частично покрит, вместо скриване
+[Always hide on taskbar]
+Скриване от лентата със задачи
+[Client margins]
+
+[Clip border by]
+
+[Gap between frames]
+Пролука между рамките
+[Translucency options]
+Настройки за прозрачност
+[Transparent contact list]
+Прозрачност на списъка с контакти
+[Inactive opacity:]
+Неактивен прозорец:
+[Active opacity:]
+Активен прозорец:
+[Fade contact list in/out]
+Избледняване/Изсветляване на списъка
+[Fully transparent (like TweakUI)]
+Пълна прозрачност (като TweakUI)
+[Items]
+Елементи
+[Show divider between online and offline contacts]
+Разделител м/у контактите "На/Извън линия"
+[Hot track items as mouse passes over]
+Изтъкване на посочените с курсора елементи
+[Disable drag and drop of items]
+Без влачене на елементите
+[Disable rename of items by clicking twice]
+Без преименуване чрез двукратно натискане
+[Show selection even when list is not focused]
+Показване на маркираното при дефокусиран списък
+[Make selection highlight translucent]
+Полупрозрачност на отличения текст
+[Use full row for selection and hottracking]
+Цялостно маркиране на ред и изтъкване
+[Double click on avatar opens user info]
+Двукратно натискане върху аватар отваря подробностите за потребителя
+[Visual]
+Визуално
+[Scroll list smoothly]
+Плавно придвижване
+[Time:]
+Време:
+[milliseconds]
+милисекунди
+[Hide vertical scroll bar]
+Без вертикална лента за придвижване
+[Gray out entire list when:]
+Посивяване на списъка, когато:
+[Contact list background]
+Фон на списъка с контакти
+[Use Windows colors]
+Цветове от Windows
+[Use background image]
+Фоново изображение
+[Stretch to width]
+Разтягане на ширина
+[Stretch to height]
+Разтягане на височина
+[Tile horizontally]
+Мозаично по хоризонтала
+[Tile vertically]
+Мозаично по вертикала
+[Scroll with text]
+Придвижване с текста
+[Stretch proportionally]
+Пропорционално разтягане
+[Use these settings to skin the entire background]
+Ползване на настройките за целия фон
+[If you enable this, the background settings will affect the entire contact list frame.]
+Ако включите опцията, ще бъдат засегнати настройките за фон и цялата рамка на списъка с контакти.
+[Status bar]
+Лента за състояние
+[Show status bar]
+Показване на лента за състояние
+[Show icons]
+Показване на икони
+[Show protocol names]
+Показване името на протокола
+[Show status text]
+Показване на текст за състоянието
+[Right click opens status menu]
+Десен бутон = меню на състоянието
+[Right click opens Miranda NG menu]
+Десен бутон отваря главното меню
+[Make sections equal width]
+Еднакво широки панели
+[Show bevels on panels]
+Разделител между панелите
+[Show resize grip indicator]
+Индикатор за ръчна промяна на размера
+[Draw background skin]
+
+[Show ICQ extended status icons]
+Показване на ICQ икони за разширено състояние
+[Mark protocols locked from global status changes]
+Маркиране на протоколите, чието състояние не се променя с общото
+[Available view modes]
+Налични режими за преглед
+[Include protocols]
+Включени протоколи
+[New]
+Нов
+[Include groups]
+Включени групи
+[Include status modes]
+Включени състояния
+[Cancel]
+Отказ
+[Apply]
+Прилагане
+[Sticky contacts]
+Постоянни видими контакти
+[Clear all]
+Изчисти всички
+[Using the contact list on the left side, you can select contacts which will be "sticky" for this view mode. These contacts will ignore the standard filter rules and only use the status mode filter below.]
+Поставяйки списъка с контакти на лявата страна ще можете да изберете контакти, които ще се виждат постоянно при този режим за преглед. За тях няма да важат филтрите, а само посоченият по-долу режим.
+[Protocol]
+Протокол
+[Group]
+Група
+[Status mode]
+Състояние
+[Automatically clear this view mode after]
+Автоизчистване на режима за преглед след
+[View mode options]
+Настройки на режима за преглед
+[Editing view mode]
+Редактиране на режима за преглед
+[Last message]
+Последно съобщение
+[Per contact skins:]
+
+[< Reload]
+< Презареждане
+[Contact list skin]
+Облик на списъка с контакти
+[Load this skin on startup]
+Зареждане на облика при стартиране
+[Apply skin now]
+Прилагане на облика
+[Unload skin]
+
+[Make selection shape equal to selected item]
+
+[Blend selection with background]
+
+[Automatically fill background with wallpaper (tiled wallpaper only)]
+Автозапълване на фона с изображение (само при мозаична настройка)
+[Apply group indent values to background drawing]
+
+[Use per protocol/contact skinning]
+
+[Protocol skins override status text colors]
+
+[Set all buttons to skinned mode]
+Облицоване на всички бутони
+[Use fast gradient drawing]
+Бързо поставяне на градиента
+[Corner radius]
+Радиус на ъгъла
+[Skin options]
+Настройки на облика
+[Group top padding]
+
+[Frame title bar height]
+Височина на имената на рамките
+[Ignore selection for groups]
+
+[Download more skins]
+Сваляне на още облици
+[Load from skin file]
+Зареждане от файл
+[Export to skin file]
+Износ като облик
+;file \plugins\Clist_nicer\src\CLCButton.cpp
+[Show menu]
+Главно меню
+[Show/Hide offline contacts]
+Показване/Скриване на контактите "Извън линия"
+[Use/Disable groups]
+Ползване на групи / Без групи
+[Find and add contacts]
+Търсене и добавяне на контакти
+[Accounts]
+Акаунти
+[Open preferences]
+Настройване
+[Enable/Disable sounds]
+Включване/Изключване на звука
+[Minimize contact list]
+Минимизиране на списъка с контакти
+[Status menu]
+Меню на състоянието
+[Select view mode]
+Изберете режим за преглед
+[Setup view modes]
+Настройване на режимите за преглед
+[Clear view mode]
+Изчистване на режима за преглед
+;file \plugins\Clist_nicer\src\clcopts.cpp
+[Nothing]
+Нищо
+[Name]
+Име
+[Status]
+Състояние
+[Message frequency]
+Честота на съобщенията
+[Never]
+Никога
+[Always]
+Винаги
+[For RTL only]
+Само при Л<Д
+[RTL TEXT only]
+Само за текст Л<Д
+[Always left]
+Винаги отляво
+[Always right]
+Винаги отдясно
+[Automatic (RTL)]
+Автоматично Л<Д
+[When space allows it]
+Когато мястото позволява
+[When needed]
+Ако е необходимо
+[With nickname - left]
+С прякора вляво
+[Far left]
+Далеч вляво
+[Far right]
+Далеч вдясно
+[With nickname - right]
+С прякора вдясно
+[Row items]
+Елементи на реда
+[Contacts]
+Контакти
+[Groups and layout]
+Групи и изглед
+[Advanced]
+Разширени
+;file \plugins\Clist_nicer\src\clcpaint.cpp
+[No events...]
+Няма събития...
+;file \plugins\Clist_nicer\src\clistopts.cpp
+[Global]
+Общо
+[Not focused]
+Дефокусирано
+[Offline]
+Извън линия
+[Online]
+На линия
+[Away]
+Отсъстващ
+[Not available]
+Недостъпен
+[Occupied]
+Зает
+[Do not disturb]
+Не безпокойте
+[Free for chat]
+Готов за чат
+[Invisible]
+Невидим
+[Title bar]
+Заглавна лента
+[Tool Window]
+
+[Thin border]
+Тънка рамка
+[No border]
+Без рамка
+[General]
+Основни
+[List layout]
+Изглед на списъка
+[Background]
+Фон
+;file \plugins\Clist_nicer\src\clui.cpp
+[Toggle show online/offline]
+Показване/Скриване на контактите "Извън линия"
+[Toggle groups]
+Включване/Изключване на групите
+[Find contacts]
+Намери контакти
+[Toggle sounds]
+Включване/Изключване на звука
+[Show TabSRMM session list]
+Показване списък на разговорите
+[Show TabSRMM menu]
+Показване на TabSRMM меню
+[Sounds are off]
+Звука е изключен
+[Reset view mode]
+Анулиране на режима за преглед
+[Configure view modes]
+Настройване на режимите за преглед
+[Setup accounts]
+Настройване на акаунтите
+[My contacts]
+Моите контакти
+[Default]
+Стандарт
+[Overlay icons]
+
+[%s connecting]
+%s свързване
+[Connecting icons]
+
+[Menu]
+Меню
+[Open main menu]
+Отваря главното меню
+[Set status modes]
+Задаване режим на състояние
+[The requested action requires a valid contact selection. Please select a contact from the contact list and repeat.]
+Заявеното действие изисква да изберете валиден контакт. Моля, повторете като изберете контакт от списъка с контакти.
+[Parameter mismatch]
+Несъвпадащи параметри
+[The service %S specified by the %S button definition was not found. You may need to install additional plugins.]
+Услугата "%S", определена от дефиницията на бутона "%S" не е открита. Вероятно трябва да инсталирате някой допълнителна приставка.
+[Service failure]
+
+[You need the FloatingContacts plugin, cause the embedded floating contacts were removed.]
+Нуждаете се от приставката FloatingContacts. Функционалността бе\nотстранена от приставката за списъка с контакти.
+[Warning]
+Предупреждение
+[Standard contacts]
+Стандартни контакти
+[Online contacts to whom you have a different visibility]
+Контакти, към които имате различна видимост
+[Offline contacts]
+Контакти "Извън линия"
+[Contacts which are 'not on list']
+Контакти, които не са в списъка
+[Group member counts]
+Брой контакти в групата
+[Dividers]
+Разделители
+[Offline contacts to whom you have a different visibility]
+Контакти "Извън линия", към които имате различна видимост
+[Frame titles]
+Заглавие на рамките
+[Contact list local time]
+Местно време в списъка с контакти
+[Selected text]
+Маркиран текст
+[Hottrack text]
+Посочен текст
+[Quicksearch text]
+Бързо търсен текст
+[Embedded frames border]
+Граница на рамките
+;file \plugins\Clist_nicer\src\cluiframes.cpp
+[&FrameTitle]
+Заглавие на рамката
+[&Visible]
+Видима
+[&Show title bar]
+Показване на заглавна лента
+[&Locked]
+Заключена
+[&Collapsed]
+Сгъната
+[&Floating mode]
+Плаващ режим
+[&Border]
+Рамка
+[&Skinned frame]
+Облицована рамка
+[&Align]
+Подреждане
+[&Top]
+Горе
+[&Client]
+Клиент
+[&Bottom]
+Долу
+[&Position]
+Позиция
+[&Up]
+Нагоре
+[&Down]
+Надолу
+[Lock frame]
+Заключване на рамката
+[Visible]
+Видима
+[Show title bar]
+Заглавна лента
+[Skinned frame]
+Облицована рамка
+[Floating]
+Плаващо
+[Frames]
+Рамки
+[Show all frames]
+Показване на всички рамки
+[Show all title bars]
+Показване на всички заглавни ленти
+[Hide all title bars]
+Скриване на всички заглавни ленти
+;file \plugins\Clist_nicer\src\Docking.cpp
+[The contact list cannot be docked when using the default title bar and border. Use a toolwindow or borderless style instead.]
+Загнездването на списъка е невъзможно, когато се използва стандартната заглавна лента и рамка. Използвайте рамка Tool Window или стил без рамка.
+[Contact list docking]
+Загнездване на списъка
+;file \plugins\Clist_nicer\src\extBackg.cpp
+[Load and apply]
+Зареждане и прилагане
+[Skins]
+Облици
+;file \plugins\Clist_nicer\src\groupmenu.cpp
+[Show metacontact protocol icons]
+
+[Show additional buttons]
+Показване на допълнителни бутони
+[Draw sunken frame]
+Вградена рамка
+[&Hide/show]
+Показване/Скриване
+[&Find/add contacts...]
+Търсене/Добавяне на контакти
+[&Main menu]
+Главно меню
+[&Status]
+Състояние
+[Appearance]
+Външен вид
+[&Options...]
+Настройки...
+;file \plugins\Clist_nicer\src\viewmodes.cpp
+[Ungrouped contacts]
+Негрупирани контакти
+[And]
+И
+[Or]
+Или
+[Older than]
+По-стари от
+[Newer than]
+По-нови от
+[Minutes]
+Минути
+[Hours]
+Часове
+[Days]
+Дни
+[Current view mode: %S]
+Текущ режим за преглед: %S
+[Filtering]
+Филтриране
+[*** All contacts ***]
+*** Всички контакти ***
+[Really delete this view mode? This cannot be undone]
+Наистина ли желаете режимът за преглед да бъде изтрит? Това действие не може да бъде отменено.
+[Delete a view mode]
+Изтриване на режим за преглед
+[No view mode]
+Няма зададен режим за преглед
+[A view mode with this name does already exist]
+Вече съществува режим за преглед с въведеното име
+[Duplicate name]
+Повтарящо се име
+[Setup view modes...]
+Настройване на режимите за преглед...
+[Clear current view mode]
+Изчистване на текущия режим за преглед
+[Select a view mode]
+Изберете режим за преглед
+[Clear view mode and return to default display]
+Изчистване на режима за преглед и връщане към стандартния
+[View modes]
+Режими за преглед

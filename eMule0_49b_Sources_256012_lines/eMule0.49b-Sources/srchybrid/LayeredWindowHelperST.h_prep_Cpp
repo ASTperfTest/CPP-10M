@@ -1,0 +1,60 @@
+﻿//
+// Class:  CLayeredWindowHelperST
+//
+// Compiler: Visual C++
+// Tested on: Visual C++ 6.0
+//
+// Version: See or GetVersionI()
+//
+// Created: 17/January/2002
+// Updated: 15/February/2002
+//
+// Author:  Davide Calabro'  davide_calabro@yahoo.com
+//         http://www.softechsoftware.it
+//
+// Disclaimer
+// ----------
+// THIS          AND     ACCOMPANYING       ARE DISTRIBUTED "AS I " AND WITHOUT
+// ANY            WHETHER           OR IMPLIED. NO                 FOR POSSIBLE
+// DAMAGES    EVEN               CAN    TAKEN. THE      MUST        THE ENTIRE
+// RISK    USING      SOFTWARE.
+//
+// Terms of use
+// ------------
+// THIS          IS      FOR          USE    FREEWARE APPLICATIONS.
+// IF     USE               IN            OR           APPLICATIONS YOU
+// ARE        ASKED    DONATE 1$ (ONE U.S. DOLLAR) TO     AUTHOR:
+//
+//  Davide Calabro'
+//  P.O. Box 65
+//  21019 Somma Lombardo (VA)
+//  Italy
+//
+
+
+class CLayeredWindowHelperST
+{
+public:
+ CLayeredWindowHelperST();
+ virtual ~CLayeredWindowHelperST();
+
+ long AddLayeredStyle(void* hWnd);
+ long RemoveLayeredStyle(void* hWnd);
+ int  SetLayeredWindowAttributes(void* hWnd, unsigned long crKey, unsigned char bAlpha, unsigned long dwFlags);
+ int  SetTransparentPercentage(void* hWnd, unsigned int byPercentage);
+
+ static short GetVersionI()  {return 11;}
+ static const char* GetVersionC() {return (const char*)_T("1.1");}
+
+private:
+         int  (      * lpfnSetLayeredWindowAttributes)(void* hWnd, unsigned long crKey, unsigned char bAlpha, unsigned long dwFlags) = "CX_TYPEDEF";
+
+ void *   m_hDll;
+};
+
+
+
+
+
+
+ 

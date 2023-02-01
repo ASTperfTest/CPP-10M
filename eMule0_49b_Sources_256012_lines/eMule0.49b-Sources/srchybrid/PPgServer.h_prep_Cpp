@@ -1,0 +1,36 @@
+﻿
+
+class CPPgServer :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgServer)
+
+public:
+ CPPgServer();
+ virtual ~CPPgServer();
+
+ // Dialog Data
+ enum { IDD = IDD_PPG_SERVER };
+
+ void Localize(void);
+
+protected:
+ void LoadSettings(void);
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnSettingsChange()     { SetModified(); }
+         void OnBnClickedEditadr();
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+};
+
+
+
+
+
+
+ 

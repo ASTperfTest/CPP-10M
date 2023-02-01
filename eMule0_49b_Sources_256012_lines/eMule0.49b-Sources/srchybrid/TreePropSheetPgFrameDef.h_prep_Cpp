@@ -1,0 +1,100 @@
+﻿/********************************************************************
+*
+* Copyright (c) 2002 Sven Wiegand <mail@sven-wiegand.de>
+*
+* You can use this and modify this in any way you want,
+* BUT       THIS        INTACT.
+*
+* Redistribution is appreciated.
+*
+* $Workfile:$
+* $Revision:$
+* $Modtime:$
+* $Author:$
+*
+* Revision History:
+* $History:$
+*
+*********************************************************************/
+
+void INCLUDEREPLACE(){CX_INCL("TreePropSheetPgFrame.h");}
+
+/**
+An implementation of CPropPageFrame, that works well for Windows   
+styled systems and older windows versions (without themes).
+
+@author Sven Wiegand
+*/
+class /*             */ CPropPageFrameDefault :        CWnd,
+                                                   CPropPageFrame
+{
+// construction/destruction
+public:
+ CPropPageFrameDefault();
+ virtual ~CPropPageFrameDefault();
+
+// operations
+public:
+
+// overridings
+public:
+ virtual int  Create(unsigned long dwWindowStyle, const RECT &rect, CWnd *pwndParent, unsigned int nID);
+ virtual CWnd* GetWnd();
+ virtual void SetCaption(const char* lpszCaption, void* hIcon = NULL);
+
+protected:
+ virtual CRect CalcMsgArea();
+ virtual CRect CalcCaptionArea();
+ virtual void DrawCaption(CDC *pDc, CRect rect, const char* lpszCaption, void* hIcon);
+
+// Implementation helpers
+protected:
+ /**
+ Fills a rectangular area with a gradient color starting at the left
+ side with the color clrLeft and ending at the right sight with the
+ color clrRight.
+
+ @param pDc
+  Device context to draw the rectangle in.
+ @param rect
+  Rectangular area to fill.
+ @param clrLeft
+  Color on the left side.
+ @param clrRight
+  Color on the right side.
+ */
+ void FillGradientRectH(CDC *pDc, const RECT &rect, unsigned long clrLeft, unsigned long clrRight);
+
+ /**
+ Returns      if Windows    theme support is available, FALSE
+ otherwise.
+ */
+ int  ThemeSupport() const;
+
+protected:
+ //{{           (CPropPageFrameDefault)
+ //}}           
+
+// message handlers
+protected:
+ //{{       (CPropPageFrameDefault)
+         void OnPaint();
+         int  OnEraseBkgnd(CDC* pDC);
+ //}}       
+
+
+// attributes
+protected:
+ /**
+ Image list that contains only the current icon or nothing if there
+ is no icon.
+ */
+ CImageList m_Images;
+};
+
+
+
+
+
+
+ 

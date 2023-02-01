@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>CloudFile</ProjectName>
+    <ProjectGuid>{E876FE63-0701-4CDA-BED5-7C73A379C1D1}</ProjectGuid>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\build\vc.common\plugin.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cloud_file.cpp" />
+    <ClCompile Include="src\events.cpp" />
+    <ClCompile Include="src\icons.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\menus.cpp" />
+    <ClCompile Include="src\oauth.cpp" />
+    <ClCompile Include="src\options.cpp" />
+    <ClCompile Include="src\services.cpp" />
+    <ClCompile Include="src\Services\dropbox_service.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Services\google_service.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Services\microsoft_service.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Services\yandex_service.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\srmm.cpp" />
+    <ClCompile Include="src\stdafx.cxx">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\transfers.cpp" />
+    <ClCompile Include="src\utils.cpp" />
+    <ClInclude Include="src\Services\dropbox_api.h" />
+    <ClInclude Include="src\Services\dropbox_service.h" />
+    <ClInclude Include="src\Services\google_api.h" />
+    <ClInclude Include="src\Services\google_service.h" />
+    <ClInclude Include="src\Services\microsoft_api.h" />
+    <ClInclude Include="src\Services\microsoft_service.h" />
+    <ClInclude Include="src\Services\yandex_api.h" />
+    <ClInclude Include="src\Services\yandex_service.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\version.h" />
+    <None Include="res\dropbox.ico" />
+    <None Include="res\gdrive.ico" />
+    <None Include="res\onedrive.ico" />
+    <None Include="res\upload.ico" />
+    <None Include="res\yadisk.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\cloud_file.h" />
+    <ClInclude Include="src\file_transfer.h" />
+    <ClInclude Include="src\http_request.h" />
+    <ClInclude Include="src\oauth.h" />
+    <ClInclude Include="src\options.h" />
+    <ClInclude Include="src\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\resource.rc" />
+    <ResourceCompile Include="res\version.rc" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>comctl32.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,19 @@
+#muuid {bc09a71b-b86e-4d33-b18d-82d30451dd3c}
+;============================================================
+;  File: Twitter.dll
+;  Plugin: Twitter protocol
+;  Version: 1.3.1.7
+;  Authors: dentist, omniwolf, Thief
+;============================================================
+[Colors]
+Colours
+[Use Windows colors]
+Use Windows colours
+[Use default colors]
+Use default colours
+[Use custom colors]
+Use custom colours
+[OAuth variables are out of sequence, they have been reset. Please reconnect and reauthorize Miranda to Twitter.com (do the PIN stuff again)]
+OAuth variables are out of sequence, they have been reset. Please reconnect and reauthorise Miranda to Twitter.com (do the PIN stuff again)
+[Unable to initialize Netlib for %s.]
+Unable to initialise Netlib for %s.

@@ -1,0 +1,85 @@
+#include "stdafx.h"
+
+enum IconIndex
+{
+	I_OVERLAY
+};
+
+static IconItem iconList[] =
+{
+	{ LPGEN("Avatar overlay"),	"avh_overlay",  IDI_AVATAROVERLAY }
+};
+
+static HICON LoadIconEx(IconIndex i)
+{
+	return IcoLib_GetIconByHandle(iconList[(int)i].hIcolib);
+}
+
+static void ReleaseIconEx(HICON hIcon)
+{
+	IcoLib_ReleaseIcon(hIcon);
+}
+
+static void IcoLibUpdateMenus()
+{
+	HICON hIcon = createDefaultOverlayedIcon(FALSE);
+	Menu_ModifyItem(hMenu, nullptr, hIcon, 0);
+	DestroyIcon(hIcon);
+}
+
+int IcoLibIconsChanged(WPARAM, LPARAM)
+{
+	IcoLibUpdateMenus();
+	return 0;
+}
+
+void SetupIcoLib()
+{
+	g_plugin.registerIcon(LPGEN("Avatar history"), iconList);
+
+	IcoLibUpdateMenus();
+}
+
+static HICON getOverlayedIcon(HICON icon, HICON overlay, BOOL big)
+{
+	HIMAGELIST il = ImageList_Create(
+		GetSystemMetrics(big ? SM_CXICON : SM_CXSMICON),
+		GetSystemMetrics(big ? SM_CYICON : SM_CYSMICON),
+		ILC_COLOR32 | ILC_MASK, 2, 2);
+	ImageList_AddIcon(il, icon);
+	ImageList_AddIcon(il, overlay);
+	HIMAGELIST newImage = ImageList_Merge(il, 0, il, 1, 0, 0);
+	ImageList_Destroy(il);
+	HICON hIcon = ImageList_GetIcon(newImage, 0, 0);
+	ImageList_Destroy(newImage);
+	return hIcon; // the result should be destroyed by DestroyIcon()
+}
+
+
+HICON createDefaultOverlayedIcon(BOOL)
+{
+	HICON icon0 = Skin_LoadIcon(SKINICON_OTHER_HISTORY);
+	HICON icon1 = LoadIconEx(I_OVERLAY);
+
+	HICON resIcon = getOverlayedIcon(icon0, icon1, FALSE);
+
+	ReleaseIconEx(icon0);
+	ReleaseIconEx(icon1);
+
+	return resIcon;
+}
+
+
+HICON createProtoOverlayedIcon(MCONTACT hContact)
+{
+	HICON icon1 = LoadIconEx(I_OVERLAY);
+
+	char *szProto = Proto_GetBaseAccountName(hContact);
+	HICON icon0 = Skin_LoadProtoIcon(szProto, ID_STATUS_ONLINE);
+
+	HICON resIcon = getOverlayedIcon(icon0, icon1, FALSE);
+
+	ReleaseIconEx(icon1);
+	IcoLib_ReleaseIcon(icon0);
+	return resIcon;
+}

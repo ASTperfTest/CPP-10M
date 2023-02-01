@@ -1,0 +1,78 @@
+#muuid {2fd0df15-7098-41ce-aa92-ff621806e38b}
+;============================================================
+;  File: Exchange.dll
+;  Plugin: Exchange notifier plugin
+;  Version: 0.1.3.4
+;  Authors: Cristian Libotean, Attila Vajda, MaKaR (NG)
+;============================================================
+[Notifies you if you have unread email on an exchange server.]
+Уведомляет о непрочитанной почте на сервере Exchange.
+;file \plugins\Exchange\res\exchange.rc
+[Unread emails]
+Непрочитанные письма
+[Close]
+Закрыть
+[Mark as read]
+Прочитанное
+[Connection]
+Подключение
+[Username:]
+Пользователь:
+[Password:]
+Пароль:
+[Server:]
+Сервер:
+[Preferences]
+Настройки
+[Check every]
+Пров. каждые
+[seconds]
+секунд
+[Force reconnect every]
+Принудительно переподключаться каждые
+[minutes]
+минут(ы)
+[Check server before trying to connect]
+Проверять сервер перед подключением
+[Try to connect]
+Подключиться
+[times before giving up]
+раз, прежде чем отказаться
+[Show email notifications using popup module]
+Показывать уведомления о почте во всплывающих окнах
+;file \plugins\Exchange\src\dlg_handlers.cpp
+[Entry ID]
+ID записи
+[Subject]
+Тема
+[Sender]
+Отправитель
+;file \plugins\Exchange\src\emails.cpp
+[Maximum number of retries reached.\nPlugin will stop trying to connect automatically.]
+Исчерпано ограничение количества попыток.\nПлагин прекратит попытки подключиться автоматически.
+[Server not available]
+Сервер недоступен
+[Server is not configured...]
+Сервер не настроен...
+[You have %d unread emails...]
+У вас %d непрочитанных писем...
+[You have one unread email...]
+У вас 1 непрочитанное письмо...
+[Cannot connect to Exchange server...]
+Невозможно подключиться к серверу Exchange...
+[Exchange email]
+Почта Exchange
+[Do you want to see the email headers?]
+Вы хотите видеть заголовки писем?
+;file \plugins\Exchange\src\hooked_events.cpp
+[Check exchange mailbox]
+Проверить почтовый ящик Exchange
+[Exchange notify]
+Уведомление Exchange
+[Plugins]
+Плагины
+[Forcefully reconnecting to Exchange server ...]
+Принудительное подключение к серверу Exchange...
+;file \plugins\Exchange\src\MirandaExchange.cpp
+[Connecting to Exchange ...]
+Подключение к Exchange...

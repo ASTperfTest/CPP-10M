@@ -1,0 +1,32 @@
+﻿
+
+void INCLUDEREPLACE(){CX_INCL("barshader.h");}
+
+// C3DPreviewControl
+
+class C3DPreviewControl :        CStatic
+{
+ //DECLARE_DYNAMIC(C3DPreviewControl)
+
+public:
+ C3DPreviewControl();
+ virtual ~C3DPreviewControl();
+
+protected:
+
+ int m_iSliderPos;
+ static CBarShader s_preview;
+public:
+ // Sets "slider" position for type of preview
+ void SetSliderPos(int iPos);
+         void OnPaint();
+};
+
+
+
+
+
+
+
+
+ 

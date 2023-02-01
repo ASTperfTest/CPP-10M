@@ -1,0 +1,171 @@
+#muuid {760ea901-c0c2-446c-8029-94c3bc47c45e}
+;============================================================
+;  File: Ping.dll
+;  Plugin: Ping
+;  Version: 0.9.1.2
+;  Authors: Scott Ellis
+;============================================================
+[Ping labelled IP addresses or domain names.]
+Пингует IP адрес или доменное имя.
+;file \plugins\Ping\res\ping.rc
+[Delay between pings (secs):]
+Задержка между пингами (сек):
+[Timeout]
+Время истекло
+[Ping timeout (secs):]
+Время ожидания (сек):
+[Logging]
+История
+[Log to File]
+Лог файл
+[Log Filename:]
+Имя лог файла:
+[Network]
+Сеть
+[Popups]
+Всплывающие окна
+[Reply]
+Ответ
+[Block Repetitions]
+Без повторов
+[View Log]
+Журнал
+[Browse...]
+Открыть...
+[Interface]
+Интерфейс
+[Do not change icon when testing]
+Не менять значок при тестировании
+[Use Options -> Customize -> Fonts and colors to change text size and color.]
+Размер и цвет текста настраиваются в разделе "Настройки -> Тонкая настройка -> Шрифты и цвета".
+[Indent:]
+Отступ:
+[Row height:]
+Высота строки:
+[Repeats for success/failure:]
+Повторять до результата:
+[Attach to contact list]
+Добавить в список контактов
+[Use CSV format]
+Формат CSV
+[Add]
+Добавить
+[Remove]
+Удалить
+[Edit]
+Изменить
+[Up]
+Вверх
+[Down]
+Вниз
+[Edit Host]
+Править хост
+[Contact]
+Контакт
+[Address:]
+Адрес:
+[Label:]
+Метка:
+[TCP Connect]
+TCP соединение
+[Port:]
+Порт:
+[Protocols]
+Протоколы
+[Control Protocol:]
+Протокол:
+[On success, if my status is:]
+При успехе, если мой статус:
+[Set my status to:]
+Установить мой статус в:
+[Execute the following command on double-click:]
+Выполнить следующую команду по двойному клику:
+[(Optional) Command Parameters:]
+Параметры команды (дополнительно):
+[Cancel]
+Отмена
+[Menu]
+Меню
+[Graph]
+Граф
+[Enable]
+Включено
+[Disable all pings]
+Выключить все пинги
+[Enable all pings]
+Включить все пинги
+[Options...]
+Настройки...
+[Hosts...]
+Хосты...
+;file \plugins\Ping\src\menu.cpp
+[Ping]
+Пинг
+;file \plugins\Ping\src\options.cpp
+[<none>]
+<нет>
+[<all>]
+<все>
+[Text Files (*.txt)]
+Текстовые файлы (*.txt)
+[All Files]
+Все файлы
+[Open log file]
+Открыть журнал
+[Settings]
+Настройки
+[Hosts]
+Хосты
+;file \plugins\Ping\src\ping.cpp
+[Responding]
+Отвечает
+[Not Responding]
+Не отвечает
+[Testing]
+Тестирование
+[Disabled]
+Выключен
+;file \plugins\Ping\src\pinggraph.cpp
+[Show grid lines]
+Показывать линии
+[Show stats]
+Статистика
+[%d ms]
+%d мс
+[AVG %.1lf ms]
+СРДН %.1lf мс
+[MAX %hd ms]
+МАКС %hd мс
+[MIN %hd ms]
+МИН %hd мс
+[Ping Graph]
+Граф пингов
+;file \plugins\Ping\src\pingthread.cpp
+[%s - setting status of protocol '%S' (%d)]
+%s - установка статуса протокола '%S' (%d)
+[Ping Reply]
+Пинг ответ
+[%s - reply, %d]
+%s - ответ, %d
+[Ping Timeout]
+Время истекло
+[%s - timeout]
+%s - время истекло
+[Disable]
+Выключить
+[enabled]
+включён
+[double clicked]
+двойное нажатие
+[Show/Hide &Ping Window]
+Показать/скрыть &окно
+[List]
+Список
+;file \plugins\Ping\src\rawping.cpp
+[Host %s requests that you reduce the amount of traffic you are sending.]
+Хост %s требует уменьшить количество посылаемого вами трафика.
+;file \plugins\Ping\src\utils.cpp
+[Unknown Address]
+Неизвестный адрес
+[Unknown]
+Неизвестно

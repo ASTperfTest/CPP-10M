@@ -1,0 +1,27 @@
+﻿
+
+class CEditX :        CEdit
+{
+public:
+ CEditX();
+
+protected:
+ unsigned long m_dwLastDblClick;
+ unsigned long m_dwThirdClickTime;
+ void UpdateMetrics();
+
+ virtual void PreSubclassWindow();
+
+
+         void OnLButtonDown(unsigned int nFlags, CPoint point);
+         void OnLButtonDblClk(unsigned int nFlags, CPoint point);
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnSettingChange(unsigned int uFlags, const char* lpszSection);
+};
+
+
+
+
+
+
+ 

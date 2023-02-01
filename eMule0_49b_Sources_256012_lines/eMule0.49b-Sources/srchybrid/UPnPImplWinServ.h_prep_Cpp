@@ -1,0 +1,233 @@
+﻿//
+// UPnPFinder.h
+//
+// Copyright (c) Shareaza Development Team, 2002-2005.
+// This file is part of SHAREAZA (www.shareaza.com)
+//
+// this file is part of eMule
+// Copyright (C)2007 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("UPnPImpl.h");}
+void INCLUDEREPLACE(){CX_INCL("upnp.h");}
+void INCLUDEREPLACE(){CX_INCL("iphlpapi.h");}
+void INCLUDEREPLACE(){CX_INCL("comdef.h");}
+void INCLUDEREPLACE(){CX_INCL("winsvc.h");}
+
+void INCLUDEREPLACE(){CX_INCL("vector");}
+void INCLUDEREPLACE(){CX_INCL("exception");}
+void INCLUDEREPLACE(){CX_INCL("functional");}
+
+
+        _com_ptr_t<_com_IIID<IUPnPDeviceFinder,&IID_IUPnPDeviceFinder> > FinderPointer = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IUPnPDevice,&IID_IUPnPDevice> >    DevicePointer = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IUPnPService,&IID_IUPnPService> >    ServicePointer = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IUPnPDeviceFinderCallback,&IID_IUPnPDeviceFinderCallback> > DeviceFinderCallback = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IUPnPServiceCallback,&IID_IUPnPServiceCallback> >    ServiceCallback = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IEnumUnknown,&IID_IEnumUnknown> >    EnumUnknownPtr = "CX_TYPEDEF";
+        _com_ptr_t<_com_IIID<IUnknown,&IID_IUnknown> >      UnknownPtr = "CX_TYPEDEF";
+
+        unsigned long (      * TGetBestInterface) (
+  IPAddr dwDestAddr,
+  PDWORD pdwBestIfIndex
+);
+
+        unsigned long (      * TGetIpAddrTable) (
+  PMIB_IPADDRTABLE pIpAddrTable,
+  PULONG pdwSize,
+  int  bOrder
+);
+
+        unsigned long (      * TGetIfEntry) (
+  PMIB_IFROW pIfRow
+);
+
+CString translateUPnPResult(unsigned long hr);
+unsigned long UPnPMessage(unsigned long hr);
+
+class CUPnPImplWinServ:        CUPnPImpl
+{
+ friend class CDeviceFinderCallback;
+ friend class CServiceCallback;
+// Construction
+public:
+ virtual ~CUPnPImplWinServ();
+ CUPnPImplWinServ();
+
+ virtual void StartDiscovery(uint16 nTCPPort, uint16 nUDPPort)  { StartDiscovery(nTCPPort, nUDPPort, false); }
+ virtual void StopAsyncFind();
+ virtual void DeletePorts();
+ virtual bool IsReady();
+ virtual int  GetImplementationID()         { return UPNP_IMPL_WINDOWSERVICE; }
+
+protected:
+ void StartDiscovery(uint16 nTCPPort, uint16 nUDPPort, bool bSecondTry);
+ void AddDevice(DevicePointer pDevice, bool bAddChilds, int nLevel = 0);
+ void RemoveDevice(CComBSTR bsUDN);
+ bool OnSearchComplete();
+ void Init();
+
+ inline bool IsAsyncFindRunning()
+ {
+  if ( m_pDeviceFinder != NULL && m_bAsyncFindRunning && GetTickCount() - m_tLastEvent > 10000 )
+  {
+   m_pDeviceFinder->CancelAsyncFind( m_nAsyncFindHandle );
+   m_bAsyncFindRunning = false;
+  }
+  MSG msg;
+  while ( PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) )
+  {
+   TranslateMessage( &msg );
+   DispatchMessage( &msg );
+  }
+  return m_bAsyncFindRunning;
+ }
+
+ TRISTATE   m_bUPnPDeviceConnected;
+
+// Implementation
+ // API functions
+ SC_HANDLE (       *m_pfnOpenSCManager)(const char*, const char*, unsigned long);
+ SC_HANDLE (       *m_pfnOpenService)(SC_HANDLE, const char*, unsigned long);
+ int  (       *m_pfnQueryServiceStatusEx)(SC_HANDLE, SC_STATUS_TYPE, LPBYTE, unsigned long, unsigned long *);
+ int  (       *m_pfnCloseServiceHandle)(SC_HANDLE);
+ int  (       *m_pfnStartService)(SC_HANDLE, unsigned long, const char**);
+ int  (       *m_pfnControlService)(SC_HANDLE, unsigned long, LPSERVICE_STATUS);
+
+ TGetBestInterface  m_pfGetBestInterface;
+ TGetIpAddrTable   m_pfGetIpAddrTable;
+ TGetIfEntry    m_pfGetIfEntry;
+
+ static FinderPointer CreateFinderInstance();
+  class FindDevice : std::unary_function
+ {
+  FindDevice(const CComBSTR& udn) : m_udn( udn ) {}
+  result_type operator__FunctionCall(argument_type device) const
+  {
+   CComBSTR deviceName;
+   unsigned long hr = device->get_UniqueDeviceName( &deviceName );
+
+   if ( FAILED( hr ) )
+    return UPnPMessage( hr ), false;
+
+   return wcscmp( deviceName.m_str, m_udn ) == 0;
+  }
+  CComBSTR m_udn;
+ };
+
+ void ProcessAsyncFind(CComBSTR bsSearchType);
+ unsigned long GetDeviceServices(DevicePointer pDevice);
+ void StartPortMapping();
+ unsigned long MapPort(const ServicePointer& service);
+ void DeleteExistingPortMappings(ServicePointer pService);
+ void CreatePortMappings(ServicePointer pService);
+ unsigned long SaveServices(EnumUnknownPtr pEU, const long nTotalItems);
+ unsigned long InvokeAction(ServicePointer pService, CComBSTR action,
+  const char* pszInArgString, CString& strResult);
+ void StopUPnPService();
+
+ // Utility functions
+ unsigned long CreateSafeArray(const         vt, const unsigned long nArgs, SAFEARRAY** ppsa);
+ int     CreateVarFromString(const CString& strArgs, VARIANT*** pppVars);
+ int     GetStringFromOutArgs(const VARIANT* pvaOutArgs, CString& strArgs);
+ void DestroyVars(const int     nCount, VARIANT*** pppVars);
+ unsigned long GetSafeArrayBounds(SAFEARRAY* psa, long* pLBound, long* pUBound);
+ unsigned long GetVariantElement(SAFEARRAY* psa, long pos, VARIANT* pvar);
+ CString GetLocalRoutableIP(ServicePointer pService);
+
+// Private members
+private:
+ unsigned long m_tLastEvent; // When the last event was received?
+ std::vector                   m_pDevices;
+ std::vector                   m_pServices;
+ FinderPointer   m_pDeviceFinder;
+ DeviceFinderCallback m_pDeviceFinderCallback;
+ ServiceCallback   m_pServiceCallback;
+
+ long m_nAsyncFindHandle;
+ bool m_bCOM;
+ bool m_bPortIsFree;
+ CString m_sLocalIP;
+ CString m_sExternalIP;
+ bool m_bADSL;  // Is the device ADSL?
+ bool m_ADSLFailed; // Did port mapping failed for the      device?
+ bool m_bInited;
+ bool m_bAsyncFindRunning;
+ void *  m_hADVAPI32_DLL;
+ void *  m_hIPHLPAPI_DLL;
+ bool m_bSecondTry;
+ bool m_bServiceStartedByEmule;
+ bool m_bDisableWANIPSetup;
+ bool m_bDisableWANPPPSetup;
+
+};
+
+// DeviceFinder Callback
+class CDeviceFinderCallback
+ :        IUPnPDeviceFinderCallback
+{
+public:
+ CDeviceFinderCallback(CUPnPImplWinServ& instance)
+  : m_instance( instance )
+ { m_lRefCount = 0; }
+
+   STDMETHODIMP QueryInterface(IID *  iid, void* * ppvObject);
+ AddRef();
+ Release();
+
+// implementation
+private:
+ unsigned long           DeviceAdded(long nFindData, IUPnPDevice* pDevice);
+ unsigned long           DeviceRemoved(long nFindData, char* bsUDN);
+ unsigned long           SearchComplete(long nFindData);
+
+private:
+ CUPnPImplWinServ& m_instance;
+ long m_lRefCount;
+};
+
+// Service Callback
+class CServiceCallback
+ :        IUPnPServiceCallback
+{
+public:
+ CServiceCallback(CUPnPImplWinServ& instance)
+  : m_instance( instance )
+ { m_lRefCount = 0; }
+
+   STDMETHODIMP QueryInterface(IID *  iid, void* * ppvObject);
+ AddRef();
+ Release();
+
+// implementation
+private:
+ unsigned long           StateVariableChanged(IUPnPService* pService, const long* pszStateVarName, VARIANT varValue);
+ unsigned long           ServiceInstanceDied(IUPnPService* pService);
+
+private:
+ CUPnPImplWinServ& m_instance;
+ long m_lRefCount;
+};
+
+
+
+
+
+
+ 

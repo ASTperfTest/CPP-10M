@@ -1,0 +1,102 @@
+;============================================================
+;  File: yweather.ini
+;  Plugin: Weather
+;============================================================
+[ENE]
+С-Пн-С
+[ESE]
+С-Пд-С
+[E]
+С
+[East]
+Схід
+[Feel]
+Відчуття
+[Forecast Day 1 Condition]
+Прогноз: День 1 Умови
+[Forecast Day 1 Date]
+Прогноз: День 1 дата
+[Forecast Day 1 Day]
+Прогноз: День 1 день
+[Forecast Day 1 High]
+Прогноз: День 1 Макс
+[Forecast Day 1 Low]
+Прогноз: День 1 Мін
+[Forecast Day 1]
+Прогноз: День 1
+[Fri]
+ПТ
+[Heat Index]
+Індекс спеки
+[Mon]
+ПН
+[Mostly Clear]
+Переважно ясно
+[Mostly Cloudy]
+Переважно хмарно
+[Mostly Sunny]
+Переважно сонячно
+[NE]
+Пн-С
+[NNE]
+Пн-Пн-С
+[NNW]
+Пн-Пн-З
+[NW]
+Пн-З
+[N]
+Пн
+[North]
+Північ
+[Northeast]
+Північно-схід
+[Northwest]
+Північно-захід
+[Partly Cloudy]
+Місцями хмарно
+[Partly Sunny]
+Місцями сонячно
+[SE]
+Пд-С
+[SSE]
+Пд-Пд-С
+[SSW]
+Пд-Пд-З
+[SW]
+Пд-З
+[S]
+Пд
+[Sat]
+СБ
+[Scattered Clouds]
+Змінна хмарність
+[South]
+Південь
+[Southeast]
+Південно-схід
+[Southwest]
+Південно-захід
+[Sun]
+НД
+[Sunny]
+Сонячно
+[Thu]
+ЧТ
+[Tue]
+ВТ
+[WNW]
+З-Пн-З
+[WSW]
+З-Пд-З
+[W]
+З
+[Wed]
+СР
+[West]
+Захід
+[Wind Direction Degrees]
+Вітер: напрям (град)
+[Wind Direction]
+Вітер: напрям
+[Wind Speed]
+Вітер: швидкість

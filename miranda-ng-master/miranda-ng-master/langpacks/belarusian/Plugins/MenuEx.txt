@@ -1,0 +1,86 @@
+#muuid {b1902a52-9114-4d7e-ac2e-b3a52e01d574}
+;============================================================
+;  File: MenuEx.dll
+;  Plugin: Menu item ext
+;  Version: 1.3.2.0
+;  Authors: Heiko Schillinger, Baloo, Billy_Bons, Robert Pösel
+;============================================================
+[Adds some useful options to a contacts menu.]
+Дадае дадатковыя пункты меню кантактаў.
+;file \plugins\MenuItemEx\res\resource.rc
+[Shown menu items]
+Паказаны пункты меню
+[Visibility]
+Бачнасць
+[Show alpha icons]
+Альфа-значкі
+[Hide from list]
+Схаваць са спісу
+[Ignore]
+Ігнараваць
+[Copy to Account (Ctrl+click for move to Account)]
+Капіяваць у конт (Ctrl+клік - перасоўванне)
+[Browse Received Files]
+Прынятыя файлы
+[Copy IP]
+Капіяваць IP
+[Copy MirVer]
+Капіяваць ID кліента
+[Copy Status Message]
+Капіяваць статус
+[Add item name]
+Дадаць імя элемента
+[Copy ID]
+Капіяваць ID
+[Add protocol name]
+Дадаць пратакол
+[Show ID in menu item]
+Паказаць ID у кантэкстным меню
+[Trim too long ID]
+Абразаць доўгі ID
+[* Use Ctrl+click to see popup with the copied text]
+* Выкарыстоўвайце Ctrl+клік для паказу ўсплывальнага вакна са скапіяваным тэкстам
+[Hide contact on 'Ignore all']
+Хаваць пры 'Ignore all'
+;file \plugins\MenuItemEx\src\main.cpp
+[Always visible]
+Заўсёды бачны
+[Never visible]
+Заўсёды нябачны
+[Copy to Account]
+Капіяваць ва ўліковы запіс
+[Show in list]
+Паказваць у спісе
+[Copy xStatus Message]
+Капіяваць паведамленне xСтатусу
+[Status message]
+Паведамленне статусу
+[xStatus title]
+Загаловак xСтатуса
+[xStatus message]
+Паведамленне xСтатуса
+[Listening to]
+Слухаю
+[Activity title]
+Актыўная назва
+[Activity text]
+Актыўны тэкст
+[All]
+Усё
+[Messages]
+Паведамленні
+[Files]
+Файлы
+[User Online]
+Кантакт далучаны
+[Authorization]
+Аўтарызацыя
+[Typing Notify]
+Набірае тэкст
+[Open ignore settings]
+Адкрыць налады ігнаравання
+[MenuItemEx]
+Дадатковае меню
+;file \plugins\MenuItemEx\src\options.cpp
+[Customize]
+Тонкая налада

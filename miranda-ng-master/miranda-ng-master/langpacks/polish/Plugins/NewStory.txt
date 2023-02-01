@@ -1,0 +1,313 @@
+#muuid {1ad11c86-caab-4372-a0a4-8b1168d51b9e}
+;============================================================
+;  File: NewStory.dll
+;  Plugin: NewStory
+;  Version: 0.1.0.2
+;  Authors: nullbie
+;============================================================
+[History viewer for Miranda NG.]
+Pokazuje historię wiadomości.
+;file \plugins\NewStory\res\resource.rc
+[Messages]
+Wiadomości
+[Files]
+Pliki
+[URLs]
+Linki
+[Total]
+Wszystkie
+[Incoming]
+Przych.
+[Outgoing]
+Wych.
+[since]
+od
+[till]
+do
+[Group messages]
+Grupuj wiadomości
+[Log window]
+Okno dziennika
+[Enable vertical scroll bar]
+Włącz pionowy pasek przewijania
+[Draw window edge]
+Rysuj krawędź okna
+[Template list:]
+Lista szablonów:
+[Edit template:]
+Edytuj szablon:
+[Text preview:]
+Podgląd tekstowy:
+[Graphic preview:]
+Podgląd graficzny:
+[Filter]
+Filtruj
+[Show all events]
+Pokaż wszystkie zdarzenia
+[Show incoming events only]
+Pokaż tylko przychodzące zdarzenia
+[Show outgoing events only]
+Pokaż tylko wychodzące zdarzenia
+[Use custom filter...]
+Użyj niestandardowego filtra ...
+[Incoming events]
+Przychodzące zdarzenia
+[Outgoing events]
+Wychodzące zdarzenia
+[Show messages]
+Pokaż wiadomości
+[Show file transfers]
+Pokaż transfery plików
+[Show URLs]
+Pokaż Linki
+[Show sign in/out events]
+Pokaż zdarzenia logowania/wylogowania
+[Show other events]
+Pokaż inne zdarzenia
+[Auto search]
+Wyszukiwanie automatyczne
+[Log options]
+Opcje dziennika
+[Options]
+Opcje
+[Templates]
+Szablony
+[Copy]
+Kopiuj
+[Edit]
+Edytuj
+[Delete]
+Usuń
+[Select all]
+Zaznacz wszystko
+;file \plugins\NewStory\src\fonts.cpp
+[Incoming messages]
+Przychodzące wiadomości
+[Outgoing messages]
+Wychodzące wiadomości
+[Incoming files]
+Przychodzące pliki
+[Outgoing files]
+Wychodzące pliki
+[Status changes]
+Zmiany statusu
+[Other incoming events]
+Inne przychodzące zdarzenia
+[Other outgoing events]
+Inne wychodzące zdarzenia
+[Selected item's text]
+Tekst wybranego elementu
+[Selected item's background]
+Tło wybranego elementu
+[Selected item's frame]
+Ramka wybranego elementu
+[Grid background]
+Kolor tła
+[Separator]
+Separator
+[Incoming name]
+Przychodząca nazwa
+[Outgoing name]
+Wychodząca nazwa
+;file \plugins\NewStory\src\history.cpp
+[FirstName]
+Imię
+[LastName]
+Nazwisko
+[e-mail]
+E-mail
+[Nick]
+Nick
+[Age]
+Wiek
+[Gender]
+Płeć
+[City]
+Miasto
+[State]
+Stan
+[Phone]
+Telefon
+[Homepage]
+Strona WWW
+[About]
+O wtyczce
+[History search results]
+Wyniki wyszukiwania w historii
+[Export...]
+Eksportuj...
+[Delete...]
+Usuń...
+[Search...]
+Znajdź...
+[Send message]
+Wyślij wiadomość
+[Jump to date]
+Idź do daty
+[User info]
+Informacje użytkownika
+[User menu]
+Menu użytkownika
+[Find next]
+Wyszukaj następny
+[Find previous]
+Wyszukaj poprzedni
+[Conversations]
+Rozmowa
+[It is metacontact. For export use one of this subcontacts:\r\n%s]
+To jest metakontakt. Do eksportu użyj jednego z tych podkontaktów:\r\n%s
+[Export warning]
+Ostrzeżenie dotyczące eksportu
+[JSON files]
+Pliki JSON
+[Export %s history]
+Eksport historii %s
+[Complete]
+Zakończone
+[History export]
+Eksport historii
+;file \plugins\NewStory\src\history_control.cpp
+[Are you sure to remove selected event(s)?]
+Czy na pewno chcesz usunąć wybrane wydarzenia?
+;file \plugins\NewStory\src\history_menus.cpp
+[User history]
+Historia użytkownika
+;file \plugins\NewStory\src\main.cpp
+[Main icon]
+Główna ikona
+[Search]
+Szukaj
+[Export]
+Eksportuj
+[Incoming message]
+Przychodząca wiadomość
+[Outgoing message]
+Wychodząca wiadomość
+[User signed in]
+Zalogowany użytkownik
+[Unknown event]
+Nieznane zdarzenie
+[Template group]
+Szablon grup
+[Cancel edit]
+Anuluj edycję
+[Update preview]
+Uaktualnij podgląd
+[Help]
+Pomoc
+;file \plugins\NewStory\src\options.cpp
+[Reset to default]
+Przywróć domyślne
+[Variables help]
+Pomoc o zmiennych
+[Test contact]
+Testowy kontakt
+[The quick brown fox jumps over the lazy dog.]
+Szybki, brązowy lis przeskoczył nad leniwym psem.
+[simply % character]
+znak %
+[a "hard" line break (cr/lf - will break indent)]
+„twardy” podział wiersza (cr/lf - spowoduje złamanie wcięcia)
+[my nickname]
+moja nazwa
+[buddy\'s nickname]
+nazwa kontaktu
+[event count]
+liczba zdarzeń
+[icon]
+ikona
+[direction icon]
+ikona kierunku
+[direction symbol]
+symbol kierunku
+[timestamp]
+czas
+[hour (24 hour format, 0-23)]
+godzina (format 24 godzinny, 0-23)
+[hour (12 hour format)]
+godzina (format 12 godzinny)
+[minute]
+minuty
+[second]
+sekundy
+[month]
+miesiąc
+[day of month]
+dni miesiąca
+[year (4 digits)]
+rok (4 znaki)
+[day of week (Sunday, Monday... translatable)]
+dzień tygodnia (Niedziela, Poniedziałek… przetłumaczalny)
+[AM/PM symbol]
+symbol AM/PM
+[name of month, translatable]
+nazwa miesiąca, przetłumaczalny
+[the message string itself]
+sam ciąg wiadomości
+[History]
+Historia
+[Advanced]
+Zaawansowane
+;file \plugins\NewStory\src\templates.cpp
+[Sunday]
+Niedziela
+[Monday]
+Poniedziałek
+[Tuesday]
+Wtorek
+[Wednesday]
+Środa
+[Thursday]
+Czwartek
+[Friday]
+Piątek
+[Saturday]
+Sobota
+[January]
+Styczeń
+[February]
+Luty
+[March]
+Marzec
+[April]
+Kwiecień
+[May]
+Maj
+[June]
+Czerwiec
+[July]
+Lipiec
+[August]
+Sierpień
+[September]
+Wrzesień
+[October]
+Październik
+[November]
+Listopad
+[December]
+Grudzień
+[System history]
+Historia systemowa
+[System event]
+Zdarzenia systemowe
+[Interface]
+Interfejs
+[Window title]
+Tytuł okna
+[Message log]
+Dziennik wiadomości
+[Grouped messages]
+Pogrupowane wiadomości
+[Presence requests]
+Prośby o obecność
+[Other events]
+Inne zdarzenia
+[Authorization requests]
+Prośby o autoryzację
+['You were added' events]
+Zdarzenia „Zostałeś dodany”
+['You were deleted' events]
+Zdarzenia „Zostałeś usunięty”
+[Clipboard]
+Schowek

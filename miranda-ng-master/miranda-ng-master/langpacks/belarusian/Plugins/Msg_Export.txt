@@ -1,0 +1,213 @@
+#muuid {46102b07-c215-4162-9c83-d377881da7cc}
+;============================================================
+;  File: Msg_Export.dll
+;  Plugin: Message export
+;  Version: 3.1.2.8
+;  Authors: Kennet Nielsen, mod by ring0
+;============================================================
+[Exports every message, URL or file you receive to a text file.]
+Экспарт паведамленняў, спасылак і прынятых файлаў у тэкставы файл.
+;file \plugins\Msg_Export\res\resource.rc
+[Export directory]
+Каталог экспарту
+[Browse]
+Агляд
+[Default file]
+Імя файла
+[File viewer]
+Прагляд файлаў
+[Use internal viewer]
+Унутраны прагляд
+[Replace Miranda history]
+Замяніць гісторыю
+[Export format]
+Фармат экспарту
+[Max column width]
+Макс. шырыня радка
+[Note: 0 = no limit]
+Нататка: 0=неабмежавана
+[Time format]
+Фармат часу
+[Use JSON format for export]
+
+[Use UTF-8 in new files]
+UTF-8 у новых файлах
+[Append extra new line]
+Дад. пераклад радка
+[Use << and >>]
+Знакі << і >>
+[Help]
+Даведка
+[Exporting old messages]
+Экспарт старых паведамленняў
+[History file for %s (%s, format %s)]
+Файл гісторыі для %s (%s, фармат %s)
+[&Find...]
+&Знайсці
+[&External]
+Вонкавае
+[&Close]
+&Зачыніць
+[When filename changes]
+Пры пераназванні файла
+[Prompt for action]
+Спытаць
+[Rename file]
+Пераназваць файл
+[Do nothing]
+Нічога не рабіць
+[When user is deleted]
+Пры выдаленні кантакта
+[Delete file]
+Выдаліць файл
+[Debug]
+Адладка
+[User &details]
+&Інфармацыя
+[Export]
+Экспарт
+[Set to default filename]
+Імя файла па змаўчанні
+[Select all]
+Вылучыць усё
+[Select none]
+
+[Auto filename]
+Аўта імёны
+[Clear all]
+Сцерці
+[Copy]
+Капіяваць
+;file \plugins\Msg_Export\src\FileViewer.cpp
+[Miranda database contains %d events]
+
+[Failed to open file]
+
+[Search string was not found!]
+Радок не знойдзена!
+[Save as RTF]
+Захаваць у RTF
+[Color...]
+Колер...
+[Font...]
+Шрыфт
+[Syntax highlight]
+Падсвятленне сінтаксісу
+[History was saved successfully in file\r\n]
+
+;file \plugins\Msg_Export\src\main.cpp
+[Export history]
+
+[Open E&xported History]
+Экспартаваная гісторыя
+;file \plugins\Msg_Export\src\options.cpp
+[Reading database information (Phase 1 of 2)]
+
+[Sorting and writing database information (Phase 2 of 2)]
+Крок 2: Сартаванне і запіс інфармацыі
+[Failed to open or create file:\n]
+Не атрымалася адкрыць ці стварыць файл:\n
+[Max line width must be at least %d. Or use 0 for no limit.]
+
+[You need to restart Miranda to change the history function]
+Змены функцыі гісторыі адбудуцца пасля перазапуску
+[Executable files]
+Прыкладанні
+[All files]
+Усе файлы
+[Select Destination Directory]
+Абраць тэчку для запісу
+[File]
+Файл
+[Nick]
+Мянушка
+[Account]
+Уліковы запіс
+[User ID]
+ID кантакта
+[No contacts found to export]
+Няма кантактаў для экспарту
+[Export accounts]
+
+[Message export]
+Экспарт паведамленняў
+[History]
+Гісторыя
+[General]
+Агульнае
+[Contacts]
+Кантакты
+[Additional]
+Дадаткова
+;file \plugins\Msg_Export\src\stdafx.h
+[Miranda NG (Message Export Plugin)]
+Miranda NG (Плагін экспарту паведамленняў)
+;file \plugins\Msg_Export\src\utils.cpp
+[No_Group]
+Без_Гурта
+[File name for the user "%s" has changed!\n\nfrom:\t%s\nto:\t%s\n\nDo you wish to rename file?]
+
+[Failed to rename file\n\nfrom:\t%s\nto:\t%s\n\nFailed with error: %s]
+Не атрымалася пераназваць файл\n\n старое імя:\t%s\n новае імя:\t%s\n\n Памылка: %s
+[\nError: ]
+\nПамылка:\s
+[\nMessage has not been saved!\n]
+\nПаведамленне не захаванае!\n
+[Do you wish to save debug information?]
+
+[All\0*.*\0Text\0*.TXT\0\0]
+
+[FirstName]
+Імя
+[LastName]
+Прозвішча
+[e-mail]
+Пошта
+[Age]
+Узрост
+[Gender]
+Род
+[City]
+Горад 
+[State]
+Штат
+[Phone]
+Тэлефон
+[Homepage]
+Сайт
+[About]
+Інфармацыя
+[      History for]
+     Гісторыя для
+[User]
+Кантакт
+[File: ]
+Файл:\s
+[Description: ]
+Апісанне:\s
+[Nick      :]
+Мянушка    :
+[FirstName :]
+Імя       :
+[LastName  :]
+Прозвішча   :
+[e-mail    :]
+Пошта     :
+[Reason    :]
+Чыннік   :
+[Invalid Database event received. Type %d, size %d]
+Няслушная падзея базы. Тып %d, памер %d
+[The following user made an authorization request:]
+Наступны кантакт запытаў аўтарызацыю:
+[The following user added you to their contact list:]
+Кантакт дадаў вас у свой спіс кантактаў:
+[UIN       :]
+Нумар     :
+[Unknown event type %d, size %d]
+Невядомы тып падзеі %d, памер %d
+[User has been deleted. Do you want to delete the file?]
+Кантакт выдалены. Хочаце выдаліць файл?
+[Failed to delete the file]
+Не атрымалася выдаліць файл
+[No_Nick]
+

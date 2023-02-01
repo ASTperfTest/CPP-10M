@@ -1,0 +1,35 @@
+﻿
+
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizableDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("RichEditCtrlX.h");}
+
+// CNetworkInfoDlg dialog
+
+class CNetworkInfoDlg :        CResizableDialog
+{
+ //DECLARE_DYNAMIC(CNetworkInfoDlg)
+
+public:
+ CNetworkInfoDlg(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CNetworkInfoDlg();
+
+// Dialog Data
+ enum { IDD = IDD_NETWORK_INFO };
+
+protected:
+ CRichEditCtrlX m_info;
+
+ virtual int  OnInitDialog();
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+
+
+};
+
+void CreateNetworkInfo(CRichEditCtrlX& rCtrl, CHARFORMAT& rcfDef, CHARFORMAT& rcfBold, bool bFullInfo = false);
+
+
+
+
+
+
+ 

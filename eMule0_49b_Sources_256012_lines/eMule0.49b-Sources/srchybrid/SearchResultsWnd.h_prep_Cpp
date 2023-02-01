@@ -1,0 +1,167 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("INVALID_INCLUDE_FILE_NAME_ResizableLibResizableFormView.h");}
+void INCLUDEREPLACE(){CX_INCL("SearchListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("ClosableTabCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("IconStatic.h");}
+void INCLUDEREPLACE(){CX_INCL("EditX.h");}
+void INCLUDEREPLACE(){CX_INCL("EditDelayed.h");}
+void INCLUDEREPLACE(){CX_INCL("ComboBoxEx2.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlEditable.h");}
+
+class CCustomAutoComplete;
+class Packet;
+class CSafeMemFile;
+class CSearchParamsWnd;
+       SSearchParams;
+class CDropDownButton;
+class CButtonsTabCtrl;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CSearchResultsSelector
+
+class CSearchResultsSelector :        CClosableTabCtrl
+{
+public:
+ CSearchResultsSelector(){}
+
+protected:
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// CSearchResultsWnd dialog
+
+class CSearchResultsWnd :        CResizableFormView
+{
+ //DECLARE_DYNCREATE(CSearchResultsWnd)
+
+public:
+ CSearchResultsWnd(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CSearchResultsWnd();
+
+ enum { IDD = IDD_SEARCH };
+
+ CSearchListCtrl searchlistctrl;
+ CSearchResultsSelector searchselect;
+ CSearchParamsWnd* m_pwndParams;
+ CStringArray m_astrFilter;
+
+ void Localize();
+
+ void StartSearch(SSearchParams* pParams);
+ bool SearchMore();
+ void CancelSearch(unsigned int uSearchID = 0);
+
+ bool DoNewEd2kSearch(SSearchParams* pParams);
+ void CancelEd2kSearch();
+ bool IsLocalEd2kSearchRunning() const { return (m_uTimerLocalServer != 0); }
+ bool IsGlobalEd2kSearchRunning() const { return (global_search_timer != 0); }
+ void LocalEd2kSearchEnd(unsigned int count, bool bMoreResultsAvailable);
+ void AddGlobalEd2kSearchResults(unsigned int count);
+ void SetNextSearchID(uint32 uNextID)    {m_nEd2kSearchID = uNextID;}
+
+ bool DoNewKadSearch(SSearchParams* pParams);
+ void CancelKadSearch(unsigned int uSearchID);
+
+ bool CanSearchRelatedFiles() const;
+ void SearchRelatedFiles(CPtrList& listFiles);
+
+ void DownloadSelected();
+ void DownloadSelected(bool bPaused);
+
+ bool CanDeleteSearch(uint32 nSearchID) const;
+ bool CanDeleteAllSearches() const;
+ void DeleteSearch(uint32 nSearchID);
+ void DeleteAllSearches();
+ void DeleteSelectedSearch();
+
+ bool CreateNewTab(SSearchParams* pParams, bool bActiveIcon = true);
+ void ShowSearchSelector(bool visible);
+ int  GetSelectedCat();
+ void UpdateCatTabs();
+
+ SSearchParams* GetSearchResultsParams(unsigned int uSearchID) const;
+
+ uint32 GetFilterColumn() const    { return m_nFilterColumn; }
+
+protected:
+ Packet*  searchpacket;
+ bool  m_b64BitSearchPacket;
+ unsigned int global_search_timer;
+ unsigned int  m_uTimerLocalServer;
+ CProgressCtrl searchprogress;
+ CHeaderCtrl m_ctlSearchListHeader;
+ CEditDelayed m_ctlFilter;
+ CButton  m_ctlOpenParamsWnd;
+ bool  canceld;
+ uint16  servercount;
+ bool  globsearch;
+ uint32  m_nEd2kSearchID;
+ CImageList m_imlSearchResults;
+ CButtonsTabCtrl *m_cattabs;
+ CDropDownButton* m_btnSearchListMenu;
+ int   m_iSentMoreReq;
+ uint32  m_nFilterColumn;
+
+ bool StartNewSearch(SSearchParams* pParams);
+ void SearchStarted();
+ void SearchCanceled(unsigned int uSearchID);
+ CString CreateWebQuery(SSearchParams* pParams);
+ void ShowResults(const SSearchParams* pParams);
+ void SetAllIcons();
+ void SetSearchResultsIcon(unsigned int uSearchID, int iImage);
+ void SetActiveSearchResultsIcon(unsigned int uSearchID);
+ void SetInactiveSearchResultsIcon(unsigned int uSearchID);
+
+
+ virtual void OnInitialUpdate();
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+
+
+         void OnDblClkSearchList(NMHDR *pNMHDR, long *  *pResult);
+         void OnSelChangeTab(NMHDR *pNMHDR, long *  *pResult);
+         long *  OnCloseTab(int *  wParam, long * lParam);
+         long *  OnDblClickTab(int *  wParam, long * lParam);
+         void OnDestroy();
+         void OnSysColorChange();
+         void OnTimer(unsigned int nIDEvent);
+         void OnBnClickedDownloadSelected();
+         void OnBnClickedClearAll();
+         void OnSize(unsigned int nType, int cx, int cy);
+         void OnClose();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         long *  OnIdleUpdateCmdUI(int *  wParam, long * lParam);
+         void OnBnClickedOpenParamsWnd();
+         void OnSysCommand(unsigned int nID, long * lParam);
+         long *  OnChangeFilter(int *  wParam, long * lParam);
+         void OnSearchListMenuBtnDropDown(NMHDR* pNMHDR, long * * pResult);
+         void*  OnCtlColor(CDC* pDC, CWnd* pWnd, unsigned int nCtlColor);
+};
+
+
+
+
+
+
+ 

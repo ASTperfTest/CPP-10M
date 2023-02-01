@@ -1,0 +1,664 @@
+#muuid {8f79b4ee-eb48-4a03-873e-27be6b7e9a25}
+;============================================================
+;  File: Clist_nicer.dll
+;  Plugin: Clist nicer
+;  Version: 0.9.3.2
+;  Authors: Pixel, egoDust, cyreve, Nightwish
+;============================================================
+[Displays contacts, event notifications, protocol status.]
+Паказвае кантакты, з'явы, статусы протоколаў.
+;file \plugins\Clist_nicer\res\resource.rc
+[Clist nicer exception]
+Выключэнні Clist nicer
+[Copy to clipboard]
+Капіяваць у буфер абмену
+[Continue]
+Працягнуць
+[Exit Miranda]
+Выйсці з Міранды
+[Although the exception was caught and you may continue working with Miranda, you should restart the program as soon as possible. The exception may have damaged internal data structures and can have a serious impact on stability.]
+Было злоўлена выключэнне. Вы можаце і далей працаваць з праграмай, але пажадана перазапусціць Міранду як мага хутчэй. Магчыма, пашкоджаны ўнутраныя структуры дадзеных і гэта можа аказаць сур'ёзны ўплыў на стабільнасць.
+[Delete contact]
+Выдаліць кантакт
+[No]
+Не
+[Yes]
+Так
+[Hide from list only, in order to keep their history and ignore/visibility settings]
+Схаваць са спісу (захаваецца гісторыя і налады бачнасці)
+[Use Options -> Contacts -> Ignore to unhide contacts.]
+"Налады -> Кантакты -> Ігнараваць", каб адлюстраваць кантакты.
+[Are you sure you want to delete %s?]
+Выдаліць %s са спісу?
+[This will erase all history and settings for this contact!]
+Гэта выдаліць усю гісторыю і налады для дадзенага кантакту!
+[Contact list]
+Спіс кантактаў
+[Apply last active view mode]
+Ужыць апошні актыўны рэжым
+[Show menu and status buttons]
+Паказваць кнопкі меню і статусу
+[Draw sunken edge]
+Патоплены край
+[Event area]
+Вобласць падзей
+[Set base visibility on the frames menu]
+Усталяваць базавую бачнасць меню фрэймаў
+[Auto mode]
+Рэжым аўта
+[System tray icon when using multiple protocols]
+Абразкі пратаколаў у сістэмным лапку
+[Show]
+Паказаць
+[icon when statuses differ]
+пры розных статусах
+[Cycle icons every]
+Змяняць кожныя
+[seconds, when statuses differ]
+секунд, пры розных статусах
+[Show multiple icons]
+Некалькі абразкоў
+[Only when statuses differ]
+Пры розных статусах
+[Do not show system tray icon tooltips on mouse over]
+Не паказваць усплывальныя падказкі пры навядзенні на абразок у трэі
+[Groups]
+Гурты
+[Draw a line alongside group names]
+Лінія ўздоўж назваў гуртоў
+[Show number of contacts in a group]
+Паказаць колькасць кантактаў у гурце
+[Hide numbers when all offline]
+Хаваць лічыльнік калі ўсё адключаны
+[Sort groups alphabetically]
+Сартаваць гурты па алфавіце
+[Quick search in open groups only]
+Хуткі пошук толькі ў адчыненых гуртах
+[No expand/collapse icon]
+Не паказваць абразок згортвання/разгортванні
+[Center group names horizontally]
+Выраўняць назвы гуртоў па цэнтры
+[Alignment]
+Выраўняць
+[Margins (left/right)]
+Палі (справа/злева)
+[Row gap]
+Прамежак паміж радкамі
+[Minimum row height:]
+Мін. вышыня радка
+[Group row height]
+Мін. вышыня гурта
+[Indent groups by:]
+Водступ для гуртоў:
+[Inner row vertical padding]
+Вертыкальны водступ паміж шэрагамі
+[Margins and spacing]
+Палі і водступы
+[Contact list sorting]
+Сартаванне спісу кантактаў
+[First by]
+Спачатку
+[Then by]
+потым
+[Finally by]
+апошняе
+[Move events to the top of list or group]
+Перасоўваць падзеі наверх спісу ці гурта
+[Do not separate offline contacts]
+Не адлучаць адключаныя кантакты
+[Right align contacts]
+Выраўняць па правым краі
+[Avatars]
+Аватары
+[Show avatars]
+Аватары
+[Height]
+Вышыня
+[Draw a border around avatars]
+Рамка вакол аватараў
+[Rounded avatars]
+Закругленыя аватары
+[Radius]
+Радыус
+[Always align icons and text for missing avatars]
+Заўсёды выраўняць значкі і тэкст, калі аватар адсутнічае
+[Avatar alignment]
+Выраўноўванне аватара
+[Don't request avatars for offline contacts]
+Не запытваць аватары для адключаных кантактаў
+[Second text line]
+Другі радок тэксту
+[Display status message when available]
+Паказаць паведамленне статусу калі магчыма
+[Show second text line:]
+Паказваць другі радок:
+[Show contacts local time]
+Паказваць мясцовы час кантакту
+[Only when timezone differs]
+Толькі калі гадзінны пояс адрозніваецца
+[Icons]
+Абразкі
+[Show status icons]
+Значкі статусу
+[Centered when possible]
+Цэнтраваць(калі магч.)
+[When possible, draw status icons in avatar space]
+Калі магчыма, маляваць значкі статусу ў аватары
+[Use metacontact protocol icons instead of subcontacts]
+Абразок конта метакантакта замест субкантакту
+[Use overlay icons on avatars]
+Выкарыстоўваць накладанне значкоў на аватары
+[Dim idle contacts]
+Прыцьміць неактыўных
+[Replace status icons with xStatus]
+Замяніць значкі статусу xСтатусам
+[Window]
+Акно
+[Always on top]
+Па-над усімі вокнамі
+[Show menu bar]
+Паказваць меню
+[Easy move]
+Простае перасоўванне
+[Rounded border]
+Закругленыя
+[Border]
+Рамка
+[Title bar text:]
+Загаловак вакна:
+[Pin to desktop]
+Прымацаваць ды стала
+[Show drop shadow (restart required)]
+Цень (патрэбен перазапуск)
+[Hide contact list after it has been idle for]
+Схаваць спіс, калі не актыўны на працягу:
+[seconds]
+секунд(ы)
+[Automatically resize window to height of list]
+Аўтаматычна змяняць памер вакна
+[maximum]
+максімум
+[% of screen]
+% ад экрана
+[Size upwards]
+Расцягваць угару
+[If window is partially covered, bring to front instead of hiding]
+Змясціць вакно на пярэдні план, калі яно прычынена іншымі вокнамі
+[Always hide on taskbar]
+Заўсёды хаваць у трэі.
+[Client margins]
+Палі спісу
+[Clip border by]
+Закругліць на
+[Gap between frames]
+Прамежак фрэймаў
+[Translucency options]
+Налады празрыстасці
+[Transparent contact list]
+Празрысты спіс кантактаў
+[Inactive opacity:]
+Акно неактыўнае:
+[Active opacity:]
+Акно актыўнае:
+[Fade contact list in/out]
+Плыўна схаваць спіс
+[Fully transparent (like TweakUI)]
+Цалкам празрыстае (як TweakUI)
+[Items]
+Элементы
+[Show divider between online and offline contacts]
+Мяжа паміж далучанымі і адключанымі
+[Hot track items as mouse passes over]
+Падсвятленне пад курсорам мышы
+[Disable drag and drop of items]
+Адключыць перацягванне элементаў
+[Disable rename of items by clicking twice]
+Адключыць пераназванне па дзвюх пстрычках
+[Show selection even when list is not focused]
+Вылучэнне, нават калі вакно неактыўнае
+[Make selection highlight translucent]
+Напаўпразрыстае вылучэнне
+[Use full row for selection and hottracking]
+Выкарыстоўваць вылучэнне ўсяго радка
+[Double click on avatar opens user info]
+Падвойны клік па аватары адкрывае інфармацыю пра кантакт
+[Visual]
+Візуальныя налады
+[Scroll list smoothly]
+Плыўная прагортка
+[Time:]
+Час:
+[milliseconds]
+мс
+[Hide vertical scroll bar]
+Схаваць паласу прагорткі
+[Gray out entire list when:]
+Зрабіць шэрым, калі:
+[Contact list background]
+Фон спісу
+[Use Windows colors]
+Колеры Windows
+[Use background image]
+Выкарыстоўваць фон
+[Stretch to width]
+Расцягнуць па шырыні
+[Stretch to height]
+Расцягнуць па вышыні
+[Tile horizontally]
+Гарызантальная мазаіка
+[Tile vertically]
+Вертыкальная мазаіка
+[Scroll with text]
+Пракручваць з тэкстам
+[Stretch proportionally]
+Расцягнуць
+[Use these settings to skin the entire background]
+Выкарыстоўваць дадзеныя налады для ўсяго фону
+[If you enable this, the background settings will affect the entire contact list frame.]
+Пры ўключэнні налады фону будуць скарыстаны для ўсяго фрэйма спісу кантактаў
+[Status bar]
+Панэль статусу
+[Show status bar]
+Паказваць панэль статусу
+[Show icons]
+Паказваць абразкі
+[Show protocol names]
+Паказваць пратаколы
+[Show status text]
+Паказваць тэкст статусу
+[Right click opens status menu]
+Правая пстрычка - меню статусу
+[Right click opens Miranda NG menu]
+Правая пстрычка - галоўнае меню
+[Make sections equal width]
+Часткі роўнай шырыні
+[Show bevels on panels]
+Бардзюры на панэлях
+[Show resize grip indicator]
+Індыкатар зм. памеру
+[Draw background skin]
+Выкарыстоўваць скін для фону
+[Show ICQ extended status icons]
+Паказваць значкі xСтатуса
+[Mark protocols locked from global status changes]
+Пазначаць пратаколы, для якіх не ўжываецца змена статусу
+[Available view modes]
+Даступныя рэжымы выгляду
+[Include protocols]
+Уключыць пратаколы
+[New]
+Стварыць
+[Include groups]
+Уключыць гурты
+[Include status modes]
+Уключыць статусы
+[Cancel]
+Скасаваць
+[Apply]
+Ужыць
+[Sticky contacts]
+Замацаваныя кантакты
+[Clear all]
+Сцерці ўсё
+[Using the contact list on the left side, you can select contacts which will be "sticky" for this view mode. These contacts will ignore the standard filter rules and only use the status mode filter below.]
+Пры карыстанні спісам кантактаў з левага боку, вы можаце абраць кантакты, якія будуць замацаваны за гэтым рэжымам прагляду. Гэтыя кантакты ібудуць ігнараваць стандартныя правілы фільтра і выкарыстоўваць толькі фільтр статусу ніжэй.
+[Protocol]
+Пратакол
+[Group]
+Гурт
+[Status mode]
+Рэжым статусу
+[Automatically clear this view mode after]
+Аўтаматычна скідаць гэты рэжым пасля
+[View mode options]
+Налады рэжыму выгляду
+[Editing view mode]
+Рэжым прагляду па змаўчанні
+[Last message]
+Апошняе паведамленне
+[Per contact skins:]
+Скіны кантактаў
+[< Reload]
+< Перазагрузіць
+[Contact list skin]
+Скін спісу
+[Load this skin on startup]
+Загружаць гэты скін пры старце
+[Apply skin now]
+Ужыць скін
+[Unload skin]
+Прыбраць скін
+[Make selection shape equal to selected item]
+Вылучаемая вобласць роўная абранаму эл-тую
+[Blend selection with background]
+Змешваць вылучэнне з фонам
+[Automatically fill background with wallpaper (tiled wallpaper only)]
+Аўтаматычна запаўняць фон шпалерамі (для забрукаваных шпалер)
+[Apply group indent values to background drawing]
+Ужыць налады водступу для гурта да фону
+[Use per protocol/contact skinning]
+Вык. скіны для пратаколаў/кантактаў
+[Protocol skins override status text colors]
+Выкарыстоўваць колеру скіна для тэксту статусу
+[Set all buttons to skinned mode]
+Выкарыстоўваць скін для кнопак
+[Use fast gradient drawing]
+Хуткая адмалёўка градыенту
+[Corner radius]
+Радыус кутоў
+[Skin options]
+Налады скіна
+[Group top padding]
+Верх. водступ гуртоў
+[Frame title bar height]
+Вышыня назвы фрэйма
+[Ignore selection for groups]
+Ігнараваць вылучэнне для гуртоў
+[Download more skins]
+Запампаваць скіны
+[Load from skin file]
+Загрузіць з файла
+[Export to skin file]
+Захаваць у файл
+;file \plugins\Clist_nicer\src\CLCButton.cpp
+[Show menu]
+Меню
+[Show/Hide offline contacts]
+Паказаць/схаваць адключаных
+[Use/Disable groups]
+Уключыць/Выключыць гурты
+[Find and add contacts]
+Знайсці і дадаць кантакты
+[Accounts]
+Конты
+[Open preferences]
+Адкрыць налады
+[Enable/Disable sounds]
+Уключыць/Выключыць гукі
+[Minimize contact list]
+Схаваць спіс кантактаў
+[Status menu]
+Меню статусаў
+[Select view mode]
+Абраць рэжым выгляду
+[Setup view modes]
+Наладзіць рэжымы выгляду
+[Clear view mode]
+Сцерці рэжым выгляду
+;file \plugins\Clist_nicer\src\clcopts.cpp
+[Nothing]
+Нічога
+[Name]
+Імя
+[Status]
+Статус
+[Message frequency]
+Па чашчыні паведамленняў
+[Never]
+Не выкарыстоўваць
+[Always]
+Заўсёды
+[For RTL only]
+Толькі для RTL
+[RTL TEXT only]
+Для RTL тэксту
+[Always left]
+Заўсёды злева
+[Always right]
+Заўсёды справа
+[Automatic (RTL)]
+Аўтаматычна (RTL)
+[When space allows it]
+Калі дазваляе памер
+[When needed]
+Калі неабходна
+[With nickname - left]
+Злева ад мянушкі
+[Far left]
+Па левым краі
+[Far right]
+Па правым краі
+[With nickname - right]
+Справа ад мянушкі
+[Row items]
+Радкі кантактаў
+[Contacts]
+Кантакты
+[Groups and layout]
+Гурты і размяшчэнне
+[Advanced]
+Дадаткова
+;file \plugins\Clist_nicer\src\clcpaint.cpp
+[No events...]
+Падзей няма...
+;file \plugins\Clist_nicer\src\clistopts.cpp
+[Global]
+Глабальныя
+[Not focused]
+Не ў фокусе
+[Offline]
+Адключаны
+[Online]
+Далучаны
+[Away]
+Адсутнічаю
+[Not available]
+Недаступны
+[Occupied]
+Заняты
+[Do not disturb]
+Не турбаваць
+[Free for chat]
+Вольны
+[Invisible]
+Нябачны
+[Title bar]
+Загаловак
+[Tool Window]
+Акно прылады
+[Thin border]
+Тонкая рамка
+[No border]
+Без рамкі
+[General]
+Агульнае
+[List layout]
+Размяшчэнне спісу
+[Background]
+Фон
+;file \plugins\Clist_nicer\src\clui.cpp
+[Toggle show online/offline]
+Укл/Выкл адключаных карыстачоў
+[Toggle groups]
+Укл/Выкл гурты
+[Find contacts]
+Знайсці кантакты
+[Toggle sounds]
+Укл/выкл гукі
+[Show TabSRMM session list]
+Спіс сесій TabSRMM
+[Show TabSRMM menu]
+Меню TabSRMM
+[Sounds are off]
+Гукі выкл.
+[Reset view mode]
+Скінуць рэжым
+[Configure view modes]
+Налада рэжымаў выгляду
+[Setup accounts]
+Конты
+[My contacts]
+Мае кантакты
+[Default]
+Змаўчанні
+[Overlay icons]
+
+[%s connecting]
+%s Далучэнне
+[Connecting icons]
+
+[Menu]
+Меню
+[Open main menu]
+Галоўнае меню
+[Set status modes]
+Усталяваць рэжымы статусу
+[The requested action requires a valid contact selection. Please select a contact from the contact list and repeat.]
+Для гэтага дзеяння неабходны правільны выбар кантакту. Абярыце кантакт са спісу і паўтарыце.
+[Parameter mismatch]
+Неадпаведнасць параметру
+[The service %S specified by the %S button definition was not found. You may need to install additional plugins.]
+Сервіс %S пазначаны кнопкай %S не знойдзены. Магчыма, для гэтага патрэбны дадатковы плагін.
+[Service failure]
+Збой службы
+[You need the FloatingContacts plugin, cause the embedded floating contacts were removed.]
+Вам патрэбны FloatingContacts плагін, убудаваныя плаваючыя кантакты былі выдаленыя.
+[Warning]
+Увага
+[Standard contacts]
+Стандартныя кантакты
+[Online contacts to whom you have a different visibility]
+Са змененай бачнасцю (далучаны)
+[Offline contacts]
+Адключаныя кантакты
+[Contacts which are 'not on list']
+Кантакты 'не ў спісе'
+[Group member counts]
+Лічыльнікі гуртоў
+[Dividers]
+Падзельнікі
+[Offline contacts to whom you have a different visibility]
+Са змененай бачнасцю (адключаныя)
+[Frame titles]
+Загалоўкі фрэймаў
+[Contact list local time]
+Лакальны час кантакту
+[Selected text]
+Вылучаны тэкст
+[Hottrack text]
+Пад курсорам
+[Quicksearch text]
+Хуткі пошук
+[Embedded frames border]
+Мяжа фрэймаў
+;file \plugins\Clist_nicer\src\cluiframes.cpp
+[&FrameTitle]
+&Загаловак фрэйма
+[&Visible]
+&Бачнасць
+[&Show title bar]
+Паказваць назву
+[&Locked]
+Замацаваць
+[&Collapsed]
+Згорнутае
+[&Floating mode]
+Плывучы рэжым
+[&Border]
+&Рамка
+[&Skinned frame]
+Скін фрэйма
+[&Align]
+Выраўняць
+[&Top]
+Верх
+[&Client]
+Уручную
+[&Bottom]
+Ніз
+[&Position]
+Становішча
+[&Up]
+&Уверх
+[&Down]
+У&ніз
+[Lock frame]
+Замацаваць фрэйм
+[Visible]
+Мабыць
+[Show title bar]
+Паказаць загаловак
+[Skinned frame]
+Ужываць скін да фрэйма
+[Floating]
+Плывучае
+[Frames]
+Фрэймы
+[Show all frames]
+Паказаць усе фрэймы
+[Show all title bars]
+Паказваць назвы
+[Hide all title bars]
+Схаваць назвы
+;file \plugins\Clist_nicer\src\Docking.cpp
+[The contact list cannot be docked when using the default title bar and border. Use a toolwindow or borderless style instead.]
+Немагчыма паркаваць спіс кантактаў пры выкарыстанні мяжы і загалоўка па змаўчанні. Выкарыстоўвайце стыль "Без меж" ці "Панэль"
+[Contact list docking]
+Паркоўка
+;file \plugins\Clist_nicer\src\extBackg.cpp
+[Load and apply]
+Загрузіць і ўжыць
+[Skins]
+Скіны
+;file \plugins\Clist_nicer\src\groupmenu.cpp
+[Show metacontact protocol icons]
+Паказваць значкі метакантактаў
+[Show additional buttons]
+Паказваць дадатковыя кнопкі
+[Draw sunken frame]
+Патоплены фрэйм
+[&Hide/show]
+С&хаваць/паказаць
+[&Find/add contacts...]
+Дадаць &кантакты
+[&Main menu]
+Галоўнае меню
+[&Status]
+Статус
+[Appearance]
+Знешні выгляд
+[&Options...]
+&Налады
+;file \plugins\Clist_nicer\src\viewmodes.cpp
+[Ungrouped contacts]
+Кантакты па-за гуртамі
+[And]
+І
+[Or]
+ЦІ
+[Older than]
+старэй, чым
+[Newer than]
+навей, чым
+[Minutes]
+Хвілін
+[Hours]
+Гадзін
+[Days]
+Дзён
+[Current view mode: %S]
+Бягучы рэжым выгляду: %S
+[Filtering]
+Фільтраванне
+[*** All contacts ***]
+*** Усе кантакты ***
+[Really delete this view mode? This cannot be undone]
+Сапраўды выдаліць рэжым? Адмена не магчымая!
+[Delete a view mode]
+Выдаленне рэжыму прагляду
+[No view mode]
+Няма рэжыму прагляду
+[A view mode with this name does already exist]
+Рэжым адлюстравання з такім імем ужо прысутнічае
+[Duplicate name]
+Супадальнае імя
+[Setup view modes...]
+Наладзіць рэжымы выгляду...
+[Clear current view mode]
+Сцерці бягучы рэжым выгляду
+[Select a view mode]
+Выбар рэжыму прагляду
+[Clear view mode and return to default display]
+Скінуць рэжым і перайсці ў рэжым па змаўчанні
+[View modes]
+Рэжымы выгляду

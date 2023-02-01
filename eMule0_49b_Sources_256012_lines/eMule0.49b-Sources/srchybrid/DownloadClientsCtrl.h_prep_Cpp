@@ -1,0 +1,68 @@
+﻿//--- xrmb:downloadclientslist ---
+
+//this file is part of eMule
+//Copyright (C)2002 Merkur ( merkur-@users.sourceforge.net / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+void INCLUDEREPLACE(){CX_INCL("MuleListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlItemWalk.h");}
+
+class CUpDownClient;
+class CPartFile;
+
+class CDownloadClientsCtrl :        CMuleListCtrl,        CListCtrlItemWalk
+{
+ //DECLARE_DYNAMIC(CDownloadClientsCtrl)
+
+public:
+ CDownloadClientsCtrl();
+ virtual ~CDownloadClientsCtrl();
+
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+ void Init();
+ void AddClient(CUpDownClient* client);
+ void RemoveClient(CUpDownClient* client);
+ void RefreshClient(CUpDownClient* client);
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+ void Hide() { ShowWindow(SW_HIDE); }
+ void Show() { ShowWindow(SW_SHOW); }
+ void Localize();
+ void ShowSelectedUserDetails();
+
+protected:
+ CImageList  m_ImageList;
+ CImageList  m_overlayimages;
+
+ void SetAllIcons();
+
+
+         void OnSysColorChange();
+         void OnNMRclick(NMHDR *pNMHDR, long *  *pResult);
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+         void OnColumnClick( NMHDR* pNMHDR, long * * pResult);
+         void OnNMDblclkDownloadClientlist(NMHDR *pNMHDR, long *  *pResult);
+         void OnGetDispInfo(NMHDR* pNMHDR, long * * pResult);
+ static int          SortProc(long * lParam1, long * lParam2, long * lParamSort);
+ static int Compare(CUpDownClient* client1, CUpDownClient* client2, CPartFile* file1, CPartFile* file2, long * lParamSort, int sortMod);
+};
+
+
+
+
+
+ 

@@ -1,0 +1,55 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizablePage.h");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlX.h");}
+void INCLUDEREPLACE(){CX_INCL("list");}
+
+class CAbstractFile;
+namespace Kademlia
+{
+ class CKadTag;
+         std::list           TagList = "CX_TYPEDEF";
+};
+
+class CMetaDataDlg :        CResizablePage
+{
+ //DECLARE_DYNAMIC(CMetaDataDlg)
+
+public:
+ CMetaDataDlg();
+ virtual ~CMetaDataDlg();
+
+ void SetFiles(const CSimpleArray          * paFiles) { m_paFiles = paFiles; m_bDataChanged = true; }
+ void SetTagList(Kademlia::TagList* taglist);
+ CString GetTagNameByID(unsigned int id);
+
+// Dialog Data
+ enum { IDD = IDD_META_DATA };
+
+protected:
+ const CSimpleArray          * m_paFiles;
+ bool m_bDataChanged;
+ Kademlia::TagList* m_taglist;
+ CString m_strCaption;
+ CMenu* m_pMenuTags;
+ CListCtrlX m_tags;
+
+ void RefreshData();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnSetActive();
+
+
+         void OnLvnKeydownTags(NMHDR *pNMHDR, long *  *pResult);
+         void OnCopyTags();
+         void OnSelectAllTags();
+         void OnDestroy();
+         long *  OnDataChanged(int * , long *);
+};
+
+
+
+
+
+
+ 

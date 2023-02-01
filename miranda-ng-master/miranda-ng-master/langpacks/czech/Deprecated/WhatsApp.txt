@@ -1,0 +1,139 @@
+#muuid {4f1ff7fa-4d75-44b9-93b0-2ced2e4f9e3e}
+;============================================================
+;  File: WhatsApp.dll
+;  Plugin: WhatsApp protocol
+;  Version: 0.1.3.3
+;  Authors: Uli Hecht
+;============================================================
+[WhatsApp protocol support for Miranda NG.]
+WhatsApp protokol pro Mirandu NG.
+;file \protocols\WhatsApp\res\whatsapp.rc
+[Phone number]
+Telefonní číslo
+[Nickname]
+Přezdívka
+[Default group:]
+Výchozí skupina:
+[Use SSL connection (port 443)]
+Použít SSL připojení (port 443)
+[Use remote message timestamps]
+Použít časové razítko zpráv ze serveru
+[Automatically open group chats]
+Automaticky otevírat skupinové rozhovory
+[Registration]
+Registrace
+[Enter code]
+Zadejte kód
+[Request SMS code]
+Vyžádat SMS kód
+[Request Voice code]
+Vyžádat hlasový kód
+[Register code]
+Zaregistrovat kód
+[Including country code, without '+' or '00']
+Včetně kódu oblasti, bez '+' či '00'
+[Invite users]
+Pozvat uživatele
+[Choose a user]
+Zvolte uživatele
+[Other user:]
+Uživatel:
+[&Invite]
+&Pozvat
+[Cancel]
+Zrušit
+;file \protocols\WhatsApp\src\chat.cpp
+[Members]
+Členové
+[Owners]
+Vlastníci
+[&Invite a user]
+Pozvat už&ivatele
+[&Room options]
+Na&stavení místnosti
+[View/change &topic]
+Zobrazit/změnit &téma
+[&Quit chat session]
+&Opustit diskusi
+[Set &avatar]
+Nastavit &avatar
+[Copy room &JID]
+Zkopírovat &JID místnosti
+[Copy room topic]
+Zkopírovat téma místnosti
+[Set new subject for %s]
+Nastavit nové téma pro %s
+[&Add to roster]
+Přid&at do seznamu
+[&Kick]
+Vy&kopnout
+[Copy &nickname]
+Zkopírovat &přezdívku
+[Copy real &JID]
+Zkopírovat &JID
+[Unknown user]
+Neznámý uživatel
+;file \protocols\WhatsApp\src\connection.cpp
+[Please enter a country code.]
+Zadejte prosím kód oblasti.
+[Please enter a phone number without country code.]
+Zadejte prosím telefonní číslo bez kódu oblasti.
+[Please enter a nickname.]
+Zadejte prosím přezdívku.
+[Please enter a password.]
+Zadejte prosím heslo.
+;file \protocols\WhatsApp\src\contacts.cpp
+[is now known as '%s']
+je nyní znám jako '%s'
+[Last online on %x at %X]
+Naposledy online na %x v %X
+[Denied: Last online on %x at %X]
+Zakázáno: Naposledy online na %x v %X
+[Last seen on %x at %X]
+Naposledy spatřen %x v %X
+;file \protocols\WhatsApp\src\dialogs.cpp
+[An SMS with registration code will be sent to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+SMS s registračním kódem bude odeslána na váš mobilní telefon.\nPoznámka: Není možné používat WhatsApp aplikaci a tento doplněk zároveň!\nPokračovat?
+[A call with registration code will be made to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+Hovor s registračním kódem bude proveden na váš mobilní telefon.\nPoznámka: Není možné používat WhatsApp aplikaci a tento doplněk zároveň!\nPokračovat?
+[Your password has been set automatically. You can proceed with login now.]
+Vaše heslo bylo nastaveno automaticky. Nyní můžete pokračovat v přihlášení.
+[Please correctly specify your registration code received by SMS/Voice.]
+Zadejte váš registrační kód, který vám přišel v SMS/hovoru.
+[Changes will be applied after protocol restart]
+Změny budou použity při dalším načtení protokolu
+[Network]
+Sítě
+[Account]
+Účet
+;file \protocols\WhatsApp\src\messages.cpp
+[server]
+Server
+[Message received: %s by %s]
+Zpráva přijata: %s - %s
+;file \protocols\WhatsApp\src\proto.cpp
+[%s server connection]
+%s - spojení se serverem
+[Unable to initialize Netlib for %s.]
+Nelze inicializovat síťovou komunikaci pro %s.
+[Network connection error.]
+Chyba síťového připojení.
+[Registration failed. Invalid server response.]
+Registrace se nezdařila. Neplatná odpověď serveru.
+[Registration failed due to stale code. Please request a new code]
+Registrace se nezdařila. Kód již není platný, vyžádejte si nový kód.
+[Registration failed. Reason: %s]
+Registrace se nezdařila. Důvod: %s
+[Please try again in %i seconds]
+Zkuste to znovu za %i sekund
+[Registration code has been sent to your phone.]
+Registrační kód byl odeslán do vašeho telefonu.
+[Registration failed.]
+Registrace se nezdařila.
+;file \protocols\WhatsApp\src\theme.cpp
+[WhatsApp icon]
+WhatsApp ikona
+[Create chat group]
+Vytvořit diskuzní skupinu
+[Create group]
+Vytvořit skupinu

@@ -1,0 +1,82 @@
+#muuid {f62c1d7a-ffa4-4065-a251-4c9dd9101cc8}
+;============================================================
+;  File: CrashDumper.dll
+;  Plugin: Crash dumper
+;  Version: 0.2.0.1
+;  Authors: borkra
+;============================================================
+[Crash Dumper and Version Information for Miranda NG.]
+Výpisy chyb a informace o verzi pro Mirandu NG.
+;file \plugins\CrashDumper\res\crshdmp.rc
+[View Version Information]
+Informace o verzi
+[Close]
+Zavřít
+[Copy To Clipboard]
+Kopírovat do schránky
+[To File]
+Do souboru
+[Crash reports]
+Výpisy chyb
+[Generate crash reports]
+Vytvářet výpisy chyb
+[Create reports in subfolders naming as current date]
+Vytvářet výpisy chyb v podsložkách s názvem aktuálního data
+[Use classic dates]
+Použít klasický formát data
+[* You need to restart Miranda NG to apply changes]
+* Je vyžadován restart Mirandy NG pro uvedení změn v platnost
+[Display popups about successful actions]
+
+[View]
+Zobrazit
+[&Copy]
+Z&kopírovat
+[Co&py All]
+Zko&pírovat vše
+[Select &All]
+Vybr&at vše
+;file \plugins\CrashDumper\src\crshdmp.cpp
+[Version Info stored into file %s]
+Informace o verzi ukládat do %s
+[Version Info file %s is inaccessible]
+Soubor s informacemi o verzi %s je nedostupný
+[Version Information To Clipboard]
+Informace o verzi do schránky
+[Version Information To File]
+Informace o verzi do souboru
+[Show Version Information]
+Zobrazit Informace o verzi
+[Version Information]
+Informace o verzi
+[Copy to clipboard]
+Zkopírovat do schránky
+[Store to file]
+Uložit do souboru
+[Show]
+Zobrazit
+[Show with DLLs]
+Zobrazit s DLL knihovnami
+[Open crash report directory]
+Otevřít složku s výpisem chyb
+[Copy Version Info to clipboard]
+Zkopírovat informace o verzi do schránky
+[Show Version Info]
+Zobrazit informace o verzi
+;file \plugins\CrashDumper\src\crshdmp_icons.cpp
+[Upload]
+Nahrát na server
+[Copy link to clipboard]
+Zkopírovat odkaz do schránky
+[Crash Dumper]
+Crash Dumper
+;file \plugins\CrashDumper\src\exhndlr.cpp
+[Crash Report write location is not available]
+Crash report: nedostupná lokace zápisu
+[Miranda crashed. Crash report stored in the folder:\n %s\n\n Would you like store it in the clipboard as well?]
+Miranda spadla. Crash report uložen ve složce:\n %s\n\n Chcete záznam uložit i do schránky?
+;file \plugins\CrashDumper\src\ui.cpp
+[View Version Information (with DLLs)]
+Zobrazit informace o verzi (s DLL knihovnami)
+[Services]
+Služby

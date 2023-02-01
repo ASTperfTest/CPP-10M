@@ -1,0 +1,4 @@
+[Provides Miranda database support: global settings, contacts, history, settings per contact.]
+[Miranda has detected corruption in your database. Miranda will now shut down.]
+[This profile is too old to be updated with PluginUpdater, your database must be converted first.\n\nWould you like to read how to fix this?]
+[Obsolete database format]

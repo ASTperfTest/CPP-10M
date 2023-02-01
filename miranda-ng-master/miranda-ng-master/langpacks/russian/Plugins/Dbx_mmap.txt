@@ -1,0 +1,25 @@
+#muuid {f7a6b27c-9d9c-4a42-be86-a448ae109161}
+;============================================================
+;  File: Dbx_mmap.dll
+;  Plugin: Miranda NG mmap database driver
+;  Version: 0.95.8.1
+;  Authors: Miranda-NG project
+;============================================================
+[Provides Miranda database support: global settings, contacts, history, settings per contact.]
+Поддержка базы Miranda NG: глобальные настройки, контакты, история, настройки контактов и т.п.
+;file \plugins\Db3x_mmap\src\database.cpp
+[Miranda has detected corruption in your database. Miranda will now shut down.]
+Miranda нашла повреждения в вашей базе. Miranda будет закрыта.
+[Disk is full. Miranda will now shut down.]
+Диск полон. Miranda завершает работу.
+[Database failure. Miranda will now shut down.]
+Ошибка базы. Miranda NG будет закрыта.
+[Database Error]
+Ошибка базы
+[Database Panic]
+Проблема с базой
+;file \plugins\Db3x_mmap\src\dbheaders.cpp
+[This profile is too old to be updated with PluginUpdater, your database must be converted first.\n\nWould you like to read how to fix this?]
+Формат вашей базы является устаревшим. Чтобы получать обновления через PluginUpdater, нужно преобразовать базу в современный формат.\n\nНажмите Да, чтобы получить информацию, как это исправить.
+[Obsolete database format]
+Устаревший формат базы

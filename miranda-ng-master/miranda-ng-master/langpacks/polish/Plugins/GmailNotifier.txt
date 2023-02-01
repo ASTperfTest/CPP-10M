@@ -1,0 +1,79 @@
+#muuid {243955e0-75d9-4cc3-9b28-6f9c5af4532d}
+;============================================================
+;  File: GmailNotifier.dll
+;  Plugin: Gmail Multiple Notifier
+;  Version: 1.0.1.2
+;  Authors: Mixwind
+;============================================================
+[Check your Gmail inboxes locally.]
+Lokalnie sprawdź swoje skrzynki Gmail
+;file \protocols\GmailNotifier\res\options.rc
+[Gmail account]
+Konto Gmail
+[Name:]
+Nazwa użytkownika:
+[Password:]
+Hasło:
+[Add]
+Dodaj
+[Save]
+Zapisz
+[Delete]
+Usuń
+[Configuration]
+Konfiguracja
+[Check Gmail inbox every]
+Sprawdzaj skrzynkę Gmail co
+[minutes]
+minut
+[Notify using:]
+Powiadomienia:
+[Duration:]
+Czas trwania:
+[seconds]
+sekund
+[Text|Background:]
+Tekst|Tło:
+[On double click:]
+Po podwójnym kliknięciu:
+[System tray]
+Zasobnik sys.
+[Popup plugin]
+Wtyczka Popup
+[Login using default browser]
+Zaloguj używając domyślnej przeglądarki
+[Login using Internet Explorer]
+Zaloguj używając Internet Explorera
+[Run custom program]
+Uruchom własny program
+[Use online contacts when no new mail]
+Używaj dostępnych kontaktów przy braku nowych wiadomości
+[Enable icon selection and icon in status bar (restart)]
+Używaj wyboru ikon oraz ikon w pasku stanu (wymagane ponowne uruchomienie)
+[This is a shared computer so disable auto login]
+To jest komputer współdzielony, więc wyłącz automatyczne logowanie
+[Log unread threads into database (enable history)]
+Zapisuj nieczytane wątki w bazie danych (włącz historię)
+;file \protocols\GmailNotifier\src\check.cpp
+[Checking...]
+Sprawdzanie...
+[Can't send account data!]
+Nie udało się wysłać danych konta!
+[Wrong name or password!]
+Błędna nazwa użytkownika lub hasło!
+[Can't get RSS feed!]
+Nie można pobrać kanału RSS!
+;file \protocols\GmailNotifier\src\main.cpp
+[Other]
+Inne
+[Gmail: New thread(s)]
+Gmail: Nowy wątek(ki)
+[GmailNotifier]
+GmailNotifier
+[&Check all Gmail inboxes]
+Sprawdź wszystkie skrzynki Gmail
+[&Check Gmail inbox]
+Sprawdź skrzynkę Gmail
+;file \protocols\GmailNotifier\src\options.cpp
+[Network]
+Protokoły

@@ -1,0 +1,33 @@
+#muuid {315b3800-8258-44c4-b60e-58c50b9303b6}
+;============================================================
+;  File: HwHotKeys.dll
+;  Plugin: Hardware HotKeys
+;  Version: 1.0.0.6
+;  Authors: Eugene f2065
+;============================================================
+[Allows you to assign expanded multimedia keys (only for PS/2 keyboards).]
+Pozwala na przypisanie rozszerzonych klawiszy multimedialnych (jedynie dla klawiatur PS/2).
+;file \plugins\HwHotKeys\res\HwHotKeys.rc
+[Close Miranda]
+Wyłącz Mirandę NG
+[Assign]
+Przypisz
+[Clear]
+Wyczyść
+[Show/Hide contact list]
+Pokaż/ukryj listę kontaktów
+[Read message]
+Przeczytaj wiadomość
+[Last pressed key]
+Ostatnio naciśnięty klawisz
+[Extended flag (1xx), Hardware scan code (x23), KeyName]
+Rozszerzona flaga (1xx), Kod skanowania sprzętowego (x23), KeyName
+[Combine left/right keys Shift, Ctrl, Win, Alt]
+Połącz klawisze lewe i prawe Shift, Ctrl, Win, Alt
+[Combination of keys for assignment]
+Kombinacja klawiszy do przypisania
+;file \plugins\HwHotKeys\src\HwHotKeys_DllMain.cpp
+[Customize]
+Personalizacja
+[Hardware HotKeys]
+Sprzętowe skróty klawiszowe

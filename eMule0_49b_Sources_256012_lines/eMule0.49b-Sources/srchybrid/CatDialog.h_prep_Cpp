@@ -1,0 +1,57 @@
+﻿//this file is part of eMule
+// added by quekky
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("ColorButton.h");}
+
+       Category_Struct;
+class CCustomAutoComplete;
+
+class CCatDialog :        CDialog
+{
+ //DECLARE_DYNAMIC(CCatDialog)
+public:
+ CCatDialog(int catindex);   // standard constructor
+ virtual ~CCatDialog();
+
+ enum { IDD = IDD_CAT };
+
+protected:
+ Category_Struct* m_myCat;
+ unsigned long newcolor;
+ CColorButton m_ctlColor;
+ CComboBox m_prio;
+ CCustomAutoComplete* m_pacRegExp;
+
+ void Localize();
+ void UpdateData();
+
+ virtual int  OnInitDialog();
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+
+
+         long OnSelChange(unsigned int lParam, long wParam);
+         void OnBnClickedBrowse();
+         void OnBnClickedOk();
+         void OnDDBnClicked();
+};
+
+
+
+
+
+
+ 

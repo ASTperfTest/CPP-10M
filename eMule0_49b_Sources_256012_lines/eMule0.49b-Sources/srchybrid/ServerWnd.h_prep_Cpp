@@ -1,0 +1,116 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("INVALID_INCLUDE_FILE_NAME_ResizableLibResizableDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("ServerListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("IconStatic.h");}
+void INCLUDEREPLACE(){CX_INCL("RichEditCtrlX.h");}
+void INCLUDEREPLACE(){CX_INCL("ClosableTabCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("SplitterControl.h");}
+
+class CHTRichEditCtrl;
+class CCustomAutoComplete;
+
+class CServerWnd :        CResizableDialog
+{
+ //DECLARE_DYNAMIC(CServerWnd)
+
+public:
+ CServerWnd(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CServerWnd();
+ void Localize();
+ bool UpdateServerMetFromURL(CString strURL);
+ void ToggleDebugWindow();
+ void UpdateMyInfo();
+ void UpdateLogTabSelection();
+ void SaveAllSettings();
+ int  SaveServerMetStrings();
+ void ShowNetworkInfo();
+ void UpdateControlsState();
+ void ResetHistory();
+ void PasteServerFromClipboard();
+ bool AddServer(uint16 uPort, CString strAddress, CString strName = _T(""), bool bShowErrorMB = true);
+ CString GetMyInfoString();
+
+// Dialog Data
+ enum { IDD = IDD_SERVER };
+
+ enum ELogPaneItems
+ {
+  PaneServerInfo = 0, // those are CTabCtrl item indices
+  PaneLog   = 1,
+  PaneVerboseLog = 2
+ };
+
+ CServerListCtrl serverlistctrl;
+ CHTRichEditCtrl* servermsgbox;
+ CHTRichEditCtrl* logbox;
+ CHTRichEditCtrl* debuglog;
+ CClosableTabCtrl StatusSelector;
+ CSplitterControl m_wndSplitter;
+
+private:
+ void DoResize(int delta);
+ void UpdateSplitterRange();
+ void DoSplitResize(int delta);
+ void ShowSplitWindow(bool bReDraw = false);
+ void InitSplitter();
+ void ReattachAnchors();
+
+ CIconStatic m_ctrlNewServerFrm;
+ CIconStatic m_ctrlUpdateServerFrm;
+ CIconStatic m_ctrlMyInfoFrm;
+ CImageList m_imlLogPanes;
+ void* icon_srvlist;
+ bool debug;
+ CRichEditCtrlX m_MyInfo;
+ CHARFORMAT m_cfDef;
+ CHARFORMAT m_cfBold;
+ CCustomAutoComplete* m_pacServerMetURL;
+ CString m_strClickNewVersion;
+
+protected:
+ void SetAllIcons();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  PreTranslateMessage(MSG* pMsg);
+ virtual long *  DefWindowProc(unsigned int message, int *  wParam, long * lParam);
+
+
+         void OnBnClickedAddserver();
+         void OnBnClickedUpdateServerMetFromUrl();
+         void OnBnClickedResetLog();
+         void OnBnConnect();
+         void OnTcnSelchangeTab3(NMHDR *pNMHDR, long *  *pResult);
+         void OnEnLinkServerBox(NMHDR *pNMHDR, long *  *pResult);
+         void OnSysColorChange();
+         void OnDDClicked();
+         void OnSvrTextChange();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         void OnStnDblclickServlstIco();
+         void OnSplitterMoved(NMHDR *pNMHDR, long *  *pResult);
+         void OnWindowPosChanged(WINDOWPOS* lpwndpos);
+         void*  OnCtlColor(CDC* pDC, CWnd* pWnd, unsigned int nCtlColor);
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>WebView</ProjectName>
+    <ProjectGuid>{475ED6ED-C311-4188-ACB2-1C41830B22EE}</ProjectGuid>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\build\vc.common\plugin.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\stdafx.cxx">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\webview.cpp" />
+    <ClCompile Include="src\webview_alerts.cpp" />
+    <ClCompile Include="src\webview_cleanup.cpp" />
+    <ClCompile Include="src\webview_ui.cpp" />
+    <ClCompile Include="src\webview_datawnd.cpp" />
+    <ClCompile Include="src\webview_getdata.cpp" />
+    <ClCompile Include="src\webview_opts.cpp" />
+    <ClCompile Include="src\webview_services.cpp" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\version.h" />
+    <ClInclude Include="src\webview.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\version.rc" />
+    <ResourceCompile Include="res\webview.rc" />
+  </ItemGroup>
+</Project>

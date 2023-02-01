@@ -1,0 +1,46 @@
+#muuid {46bf191f-8dfb-4656-88b2-4c20be4cfa44}
+;============================================================
+;  File: SimpleAR.dll
+;  Plugin: Simple auto replier
+;  Version: 2.0.2.6
+;  Authors: Stark Wong, Mataes, Mikel-Ard-Ri
+;============================================================
+[Simple Auto Replier.]
+Простой автоответчик.
+;file \plugins\SimpleAR\res\Resource.rc
+[Enable Auto Replier]
+Автоответ включён
+[Reply Message Heading:]
+Заголовок автоответа:
+[Reply Message when]
+Автоответ когда
+[No-repeat Interval:]
+Не повторять:
+[mins]
+мин.
+[&Default]
+По &умолчанию
+;file \plugins\SimpleAR\src\Main.cpp
+[I am currently away. I will reply to you when I am back.]
+Сейчас меня нет на месте, отвечу как только вернусь.
+[I am currently very busy and can't spare any time to talk with you. Sorry...]
+Прошу не беспокоить.
+[I am not available right now.]
+Меня нет.
+[I am now doing something, I will talk to you later.]
+Сейчас я чем-то занят, поговорим позже.
+[Disable Auto&reply]
+Отключить авто&ответ
+[Enable Auto&reply]
+Включить авто&ответ
+[Turn off Autoanswer]
+Отключить автоответ
+[Turn on Autoanswer]
+Включить автоответ
+[Dear %user%, the owner left the following message:]
+Приветствую %user%, %username% оставил вам сообщение:
+;file \plugins\SimpleAR\src\Options.cpp
+[Simple Auto Replier]
+Автоответчик
+[Message sessions]
+Беседы

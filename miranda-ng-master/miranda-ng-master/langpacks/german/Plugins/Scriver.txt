@@ -1,0 +1,675 @@
+#muuid {84636f78-2057-4302-8a65-23a16d46844c}
+;============================================================
+;  File: Scriver.dll
+;  Plugin: Scriver
+;  Version: 3.0.2.4
+;  Authors: Miranda NG team
+;============================================================
+[Scriver - send and receive instant messages.]
+Scriver - Sofortnachrichten senden und empfangen.
+;file \plugins\Scriver\res\resource.rc
+[Behavior]
+Verhalten
+[Automatically pop up the window when]
+Automatisch das Fenster öffnen bei
+[and stay minimized]
+und minimiert bleiben
+[Cascade new windows]
+Neue Fenster überlappend
+[Save size and location for each contact]
+Größe und Position pro Kontakt speichern
+[Minimize on send]
+Beim Senden minimieren
+[Hide windows on close]
+Fenster beim Schließen verstecken
+[Remember unsent messages]
+Ungesendete Nachrichten merken
+[Delete temporary contacts on closing]
+Temporäre Kontakte beim Schließen entfernen
+[Show warning when message has not been received after]
+Warnung anzeigen, wenn Nachricht nicht zugestellt wurde nach
+[seconds]
+Sekunden
+[Tabs]
+Tabs
+[Enable tabs]
+Tabs aktivieren
+[Only show tab bar when it's needed]
+Tableiste nur zeigen, wenn sie benötigt wird
+[Tabs at the bottom]
+Tabs unten anzeigen
+[Limit names on tabs to]
+Namen auf Tabs kürzen auf
+[characters]
+Zeichen
+[Show close button on each tab]
+Schließen-Button auf jedem Tab anzeigen
+[Switch to active tab]
+Zum aktiven Tab wechseln
+[Limit number of tabs per window to]
+Maximale Anzahl an Tabs in einem Fenster
+[Use separate windows for group chats]
+Seperate Fenster für Gruppenchats verwenden
+[Limit number of group chats tabs per window to]
+Maximale Anzahl an Gruppenchats in einem Fenster
+[Layout]
+Layout
+[Show title bar]
+Titelleiste anzeigen
+[Show status bar]
+Statusleiste anzeigen
+[Show toolbar]
+Toolbar anzeigen
+[Show info bar]
+Infoleiste anzeigen
+[Show avatars]
+Avatare anzeigen
+[Show progress indicator]
+'Sende'-Benachrichtigungen anzeigen
+[Enable transparency]
+Transparenz aktivieren
+[active]
+aktiv
+[inactive]
+inaktiv
+[Min input area size]
+Min. Größe Eingabefeld
+[lines]
+Linien
+[You can use embedded variables here: %name% for contact's name, %status% for its status, %statusmsg% for its status message and %account% for its account's name]
+Sie können Variablen verwenden: %name% für den Namen des Kontaktes, %status% für seinen Status, %statusmsg% für seine Statusnachricht und %account% für den Kontonamen.
+[Message window event log]
+Nachrichtenfenster-Ereignisverlauf
+[Show icons]
+Icons anzeigen
+[Show time]
+Zeit anzeigen
+[Show seconds]
+Sekunden anzeigen
+[Show date]
+Datum anzeigen
+[Long date format]
+Langes Datumsformat
+[Relative date]
+Relatives Datum
+[Hide names]
+Namen ausblenden
+[Enable message grouping]
+Nachrichtengruppierung nutzen
+[Mark follow-up messages with timestamp]
+Nachfolgende Nachrichten mit Zeitstempel versehen
+[Start message text on a new line]
+Nachrichtentext in einer neuen Zeile
+[Show lines between messages]
+Linie zwischen Nachrichten
+[Indent text]
+Text einrücken
+[Customize fonts and colors]
+Schriften & Farben ändern
+[Preload]
+Laden
+[Unread events only]
+Nur ungelesene Ereignisse
+[Last]
+Letzte
+[Events in the last]
+Ereignisse in den letzten
+[events]
+Ereignisse
+[minutes]
+Minuten
+[Typing notification options]
+Tippbenachrichtigungseinstellungen
+[Send typing notifications to the following users when you are typing a message to them:]
+An folgende Kontakte eine Benachrichtigung senden, wenn Sie gerade eine Nachricht tippen:
+[Show typing notification switch in the status bar]
+Zeige Umschalter für Tippbenachrichtigung in Statusleiste
+[Show typing notifications when a user is typing a message]
+Benachrichtigungen anzeigen, wenn ein Kontakt eine Nachricht tippt
+[Update message window icons when a user is typing]
+Aktualisiere Nachrichtenfenstericon, wenn Kontakt tippt
+[Show typing notification when no message dialog is open]
+Benachrichtigungen anzeigen, wenn kein Nachrichtenfenster offen ist
+[Flash in the system tray and in the contact list]
+Im Systemtray und der Kontaktliste blinken
+[Show balloon popup]
+Ballonpopup anzeigen
+[Send error]
+Fehler beim Senden
+[An error has occurred. The protocol reported the following error:]
+Es ist ein Fehler aufgetreten. Das Protokoll meldete folgenden Fehler:
+[while sending the following message:]
+Während des Sendens folgender Nachricht:
+[Try again]
+Erneut versuchen
+[Cancel]
+Abbrechen
+[Message session]
+Nachrichtensitzung
+[Send to all tabs]
+An alle Tabs senden
+[You are about to send a message to all open tabs.\nAre you sure?]
+Sie sind dabei, eine Nachricht an alle offenen Tabs zu senden.\nSind Sie sich sicher?
+[Remember my choice for this container]
+Meine Entscheidung für diesen Container merken.
+[Yes]
+Ja
+[No]
+Nein
+[Show these events only:]
+Nur folgende Ereignisse anzeigen:
+[Actions]
+Aktionen
+[Messages]
+Nachrichten
+[Nick changes]
+Nickänderungen
+[Users joining]
+Benutzer betritt
+[Users leaving]
+Benutzer verlässt
+[Topic changes]
+Themenänderungen
+[Status changes]
+Statusänderungen
+[Information]
+Information
+[Disconnects]
+Verbindungsabbrüche
+[User kicks]
+Gekickte Benutzer
+[Notices]
+Notizen
+[Options]
+Einstellungen
+[Other]
+Sonstige
+[Add new rooms to group:]
+Gruppe für neue Räume:
+[Nick list row height]
+Höhe einer Benutzerzeile
+[pixels]
+Pixel
+[Log options]
+Verlaufseinstellungen
+[Your name]
+Ihr Nick
+[Other name]
+Andere Nicks
+[Timestamp]
+Zeitstempel
+[Log timestamp]
+Zeitstempel in Verlaufsdatei
+[Limit log text to (events):]
+Textbegrenzung (Ereignisse):
+[Enable highlighting]
+Hervorhebungen aktivieren
+[Words to highlight (wildcards allowed)]
+Wörter zum Hervorheben (Wildcards möglich)
+[Save logs]
+Verlauf speichern
+[Location]
+Ort
+[Trim to]
+bis max.
+[KB]
+KB
+[Message]
+Nachricht
+[Undo]
+Rückgängig
+[Redo]
+Wiederherstellen
+[Cut]
+Ausschneiden
+[Copy]
+Kopieren
+[Paste]
+Einfügen
+[Paste && send]
+Einfügen && Senden
+[Delete]
+Löschen
+[Select &all]
+&Alles auswählen
+[Clear]
+Löschen
+[Close other tabs]
+andere Tabs schließen
+[Close tab]
+Tab schließen
+;file \plugins\Scriver\src\chat_main.cpp
+[Messaging]
+Nachrichten
+[Group chats]
+Gruppenchats
+[Action: Send message]
+Aktion: Nachricht senden
+;file \plugins\Scriver\src\chat_options.cpp
+[Flash when someone speaks]
+Blinken, wenn jemand schreibt
+[Flash when a word is highlighted]
+Blinken, wenn ein Wort hervorgehoben wird
+[Show chat nick list]
+Chatbenutzerliste zeigen
+[Show topic on your contact list (if supported)]
+Thema in Kontaktliste zeigen (falls unterstützt)
+[Do not play sounds when focused]
+Keine Klänge abspielen, wenn im Vordergrund
+[Do not pop up the window when joining a chat room]
+Fenster nicht automatisch anzeigen, wenn man einen Raum betritt
+[Show contact statuses (if supported)]
+Kontaktstatus zeigen (falls unterstützt)
+[Display contact status icon before role icon]
+Statusicon vor Rollenicon zeigen
+[Add ':' to auto-completed names]
+Autom. vervollständigten Namen ':' anfügen
+[Prefix all events with a timestamp]
+Zeitstempel bei allen Ereignissen
+[Only prefix with timestamp if it has changed]
+Zeitstempel nur bei Änderungen
+[Timestamp has same color as the event]
+Zeitstempel hat die gleiche Farbe wie das Ereignis
+[Indent the second line of a message]
+Zweite Zeile einer Nachricht einziehen
+[Limit user names to 20 characters]
+Benutzernamen auf 20 Zeichen beschränken
+[Strip colors from messages]
+Farben aus Nachrichten entfernen
+[Enable 'event filter' for new rooms]
+Ereignisfilter für neue Räume aktivieren
+[Appearance and functionality of chat windows]
+Erscheinungsbild und Funktionen der Chatfenster
+[nick of current contact (if defined)]
+Nick des aktuellen Kontaktes (falls definiert)
+[protocol name of current contact (if defined). Account name is used when protocol supports multiple accounts]
+Protokollname des aktuellen Nutzers (falls definiert). Kontoname wird verwendet, falls das Protokoll Multikonten unterstützt.
+[user-defined account name of current contact (if defined).]
+Selbstgewählter Kontenname des aktuellen Kontaktes (falls definiert).
+[user ID of current contact (if defined). It is like UIN for ICQ, JID for Jabber, etc.]
+BenutzerID des aktuellen Kontaktes (falls definiert). Es ist wie UIN-Nummer für ICQ, JID für Jabber, etc.
+[path to Miranda root folder]
+Pfad zum Miranda-Hauptverzeichnis
+[path to folder containing Miranda profiles]
+Pfad zum Verzeichnis mit den Miranda-Profilen
+[name of current Miranda profile (filename, without extension)]
+Name des aktuellen Miranda-Profils (Dateiname, ohne Endung)
+[will return parsed string %miranda_profilesdir%\\%miranda_profilename%]
+Gibt umgewandelten String %miranda_profilesdir%\\%miranda_profilename zurück
+[will return parsed string %miranda_userdata%\\Logs]
+Gibt umgewandelten String %miranda_userdata%\\Logs zurück
+[same as environment variable %APPDATA% for currently logged-on Windows user]
+wie Umgebungsvariable %APPDATA% für den aktuell angemeldeten Windows-Benutzer
+[username for currently logged-on Windows user]
+Benutzername für den aktuell angemeldeten Windows-Benutzer.
+["My Documents" folder for currently logged-on Windows user]
+"Meine Dokumente"-Verzeichnis für den aktuell angemeldeten Windows-Benutzer
+["Desktop" folder for currently logged-on Windows user]
+"Desktop"-Verzeichnis für den aktuell angemeldeten Windows-Benutzer
+[any environment variable defined in current Windows session (like %systemroot%, %allusersprofile%, etc.)]
+Irgendeine Umgebungsvariable definiert die aktuelle Windows-Sitzung (z.B. %systemroot%, %allusersprofile% usw.)
+[day of month, 1-31]
+Tag des Monats, 1-31
+[day of month, 01-31]
+Tag des Monats, 01-31
+[month number, 1-12]
+Monatsnummer, 1-12
+[month number, 01-12]
+Monatsnummer, 01-12
+[abbreviated month name]
+abgekürzter Monatsname
+[full month name]
+voller Monatsname
+[year without century, 01-99]
+Jahr ohne Jahrhundert, 01-99
+[year with century, 1901-9999]
+Jahr mit Jahrhundert, 1901-1999
+[abbreviated weekday name]
+abgekürzter Wochentag
+[full weekday name]
+voller Wochentag
+[Variables]
+Variablen
+[Appearance]
+Erscheinungsbild
+[Select folder]
+Ordner wählen
+[Message sessions]
+Nachrichtensitzungen
+[General]
+Allgemein
+[Log formatting]
+Verlaufsformatierung
+;file \plugins\Scriver\src\globals.cpp
+[Add contact]
+Kontakt hinzufügen
+[User's details]
+Benutzerdetails
+[User's history]
+Verlauf
+[Send message]
+Nachricht senden
+[Smiley button]
+Smileybutton
+[User is typing]
+Kontakt schreibt
+[Typing notification off]
+Tippbenachrichtigung aus
+[Sending]
+Senden
+[Quote button]
+Zitierbutton
+[Close button]
+Schließen-Button
+[Icon overlay]
+Neue Nachricht Tab
+[Incoming message (10x10)]
+Eingehende Nachricht (10x10)
+[Outgoing message (10x10)]
+Ausgehende Nachricht (10x10)
+[Notice (10x10)]
+Notiz (10x10)
+[Window Icon]
+Fenstericon
+[Text color]
+Textfarbe
+[Background color]
+Hintergrundfarbe
+[Bold]
+Fett
+[Italics]
+Kursiv
+[Underlined]
+Unterstrichen
+[Room history]
+Raumverlauf
+[Room settings]
+Raumeinstellungen
+[Event filter disabled]
+Ereignisfilter deaktiviert
+[Event filter enabled]
+Ereignisfilter aktiviert
+[Hide nick list]
+Benutzerliste ausblenden
+[Show nick list]
+Benutzerliste einblenden
+[Message in (10x10)]
+Eingehende Nachricht (10x10)
+[Message out (10x10)]
+Ausgehende Nachrichten (10x10)
+[Action (10x10)]
+Aktion (10x10)
+[Add Status (10x10)]
+Status hinzufügen (10x10)
+[Remove status (10x10)]
+Status entfernen (10x10)
+[Join (10x10)]
+Betreten (10x10)
+[Leave (10x10)]
+Verlassen (10x10)
+[Quit (10x10)]
+Beenden (10x10)
+[Kick (10x10)]
+Kick (10x10)
+[Nick change (10x10)]
+Nick ändern (10x10)
+[Topic (10x10)]
+Thema (10x10)
+[Highlight (10x10)]
+Hervorhebung (10x10)
+[Information (10x10)]
+Information (10x10)
+[Single Messaging]
+Einzelchats
+[Thai]
+Thailändisch
+[Japanese]
+Japanisch
+[Simplified Chinese]
+Vereinfachtes Chinesisch
+[Korean]
+Koreanisch
+[Traditional Chinese]
+Traditionelles Chinesisch
+[Central European]
+Mitteleuropäisch
+[Cyrillic]
+Kyrillisch
+[Latin I]
+Lateinisch
+[Greek]
+Griechisch
+[Turkish]
+Türkisch
+[Hebrew]
+Hebräisch
+[Arabic]
+Arabisch
+[Baltic]
+Baltisch
+[Vietnamese]
+Vietnamesisch
+[Korean (Johab)]
+Koreanisch, Johab
+;file \plugins\Scriver\src\input.cpp
+[Navigate: Previous tab]
+Wechseln: Voriger Tab
+[Navigate: Next tab]
+Wechseln: Nächster Tab
+[Navigate: Tab %d]
+Wechseln: Tab %d
+[Window: Toggle status bar]
+Fenster: Statusleiste umschalten
+[Window: Toggle title bar]
+Fenster: Titelleiste umschalten
+[Window: Toggle toolbar]
+Fenster: Toolbar umschalten
+[Window: Toggle info bar]
+Fenster: Infoleiste umschalten
+[Window: Clear log]
+Fenster: Verlauf leeren
+[Window: Minimize]
+Fenster: Minimieren
+[Window: Close tab]
+Fenster: Tab schließen
+[Action: Quote]
+Aktion: Zitiere
+[Action: Send to all]
+Aktion: Sende an alle
+[Action: Paste and send]
+Aktion: Einfügen und senden
+;file \plugins\Scriver\src\msgdialog.cpp
+[User menu - %s]
+Benutzermenü - %s
+[Nickname]
+Nickname
+[Unique ID]
+Unique ID
+[Status]
+Status
+;file \plugins\Scriver\src\msglog.cpp
+[Me]
+Ich
+[O Lord, bless this Thy hand grenade that with it Thou mayest blow Thine enemies]
+O Herr, segne diese deine Handgranate, mit ihr darfst du deine Feinde schlagen
+[to tiny bits, in Thy mercy]
+in winzige Stücke, in deiner Barmherzigkeit
+[My contact]
+Mein Kontakt
+[Lorem ipsum dolor sit amet,]
+Hallo Welt! Liebe ist,
+[consectetur adipisicing elit]
+sie zu erhalten.
+[Today]
+Heute
+[Yesterday]
+Gestern
+[File sent]
+Datei gesendet
+[File received]
+Datei empfangen
+;file \plugins\Scriver\src\msgoptions.cpp
+[Outgoing messages]
+Ausgehende Nachrichten
+[Outgoing background]
+Ausgehender Hintergrund
+[Incoming messages]
+Eingehende Nachrichten
+[Incoming background]
+Eingehender Hintergrund
+[Outgoing name]
+Ausgehender Name
+[Outgoing time]
+Ausgehende Zeit
+[Outgoing colon]
+Ausgehender Doppelpunkt
+[Incoming name]
+Eingehender Name
+[Incoming time]
+Eingehende Zeit
+[Incoming colon]
+Eingehender Doppelpunkt
+[Message area]
+Nachrichtenbereich
+[Input area background]
+Nachrichteneingabefeld Hintergrund
+[Unused]
+Ungenutzt
+[Info bar contact name]
+Statusleisten Kontaktname
+[Info bar background]
+Infoleiste Hintergrund
+[Info bar status message]
+Infoleiste Statusnachricht
+[Background]
+Hintergrund
+[Line between messages]
+Linie zwischen Nachrichten
+[Offline]
+Offline
+[Online]
+Online
+[Away]
+Abwesend
+[Not available]
+Außer Haus
+[Occupied]
+Beschäftigt
+[Do not disturb]
+Bitte nicht stören
+[Free for chat]
+Für Chat bereit
+[Invisible]
+Unsichtbar
+[** New contacts **]
+** Neue Kontakte **
+[** Unknown contacts **]
+** Unbekannte Kontakte **
+[Event log]
+Ereignisverlauf
+[Typing notify]
+Tippbenachrichtigungen
+;file \plugins\Scriver\src\msgs.cpp
+[Message from %s]
+Nachricht von %s
+[%s is typing a message]
+%s tippt eine Nachricht
+[Typing notification]
+Tippbenachrichtigungen
+[&Quote]
+&Zitieren
+[Quote]
+Zitat
+[&Add]
+&Hinzufügen
+[Add contact permanently to list]
+Kontakt dauerhaft zur Liste hinzufügen
+[&User menu]
+Ben&utzermenü
+[User menu]
+Kontaktmenü
+[User &details]
+Benutzer&details
+[View user's details]
+Benutzerdetails anzeigen
+[&History]
+&Verlauf
+[View user's history (Ctrl+H)]
+Verlauf anzeigen (Strg+H)
+[&Bold]
+&Fett
+[Make the text bold (Ctrl+B)]
+Fett (Strg+B)
+[&Italic]
+&Kursiv
+[Make the text italicized (Ctrl+I)]
+Kursiv (Strg+I)
+[&Underline]
+&Unterstrichen
+[Make the text underlined (Ctrl+U)]
+Unterstrichen (Strg+U)
+[&Color]
+&Farbe
+[Select a foreground color for the text (Ctrl+K)]
+Schriftfarbe wählen (Strg+K)
+[&Background color]
+&Hintergrundfarbe
+[Select a background color for the text (Ctrl+L)]
+Schrifthintergrundfarbe wählen (Strg+L)
+[&Room settings]
+&Raumeinstellungen
+[Control this room (Ctrl+O)]
+Raumeinstellungen (Strg+O)
+[&Show/hide nick list]
+Nickliste &anzeigen/verbergen
+[Show/hide the nick list (Ctrl+N)]
+Benutzerliste anzeigen/verstecken (Strg+N)
+[&Filter]
+&Filter
+[Enable/disable the event filter (Ctrl+F)]
+Ereignisfilter aktivieren/deaktivieren (Strg+F)
+[&Message]
+Nachricht
+[Miranda could not load the built-in message module, Msftedit.dll is missing. If you are using WINE, please make sure you have Msftedit.dll installed. Press 'Yes' to continue loading Miranda.]
+Miranda konnte das eingebaute Nachrichtenmodul nicht laden, Msftedit.dll fehlt. Falls Sie Wine benutzen, stellen Sie sicher, dass sie die Msftedit.dll installiert haben. Klicken Sie auf 'Ja', um das Laden von Miranda fortzusetzen.
+[Instant messages]
+Sofortnachrichten
+[Incoming (focused window)]
+Eingehend (Fenster im Vordergrund)
+[Incoming (unfocused window)]
+Eingehend (Fenster im Hintergrund)
+[Incoming (new session)]
+Eingehend (Neue Sitzung)
+[Outgoing]
+Ausgehend
+[Contact started typing]
+Kontakt beginnt zu tippen
+[Contact stopped typing]
+Kontakt tippt nicht mehr
+;file \plugins\Scriver\src\msgtimedout.cpp
+[An unknown error has occurred.]
+Ein unbekannter Fehler ist aufgetreten.
+;file \plugins\Scriver\src\msgutils.cpp
+[Sending in progress: %d message(s) left...]
+%d Nachricht(en) werden momentan gesendet.
+[%s is typing a message...]
+%s tippt eine Nachricht...
+[Last message received on %s at %s.]
+Letzte Nachricht am %s um %s erhalten.
+[%s: chat room (%u user)]
+%s: Chatraum (%u Benutzer)
+[%s: chat room (%u users)]
+%s: Chatraum (%u Benutzer)
+[%s: message session]
+%s: Nachrichtensitzung
+[%s: message session (%u users)]
+%s: Nachrichtensitzung (%u Benutzer)
+;file \plugins\Scriver\src\sendqueue.cpp
+[The message send timed out.]
+Timeout beim Nachrichtenversand
+;file \plugins\Scriver\src\srmm.cpp
+[Scriver internal log]
+Scriver interner Verlauf
+;file \plugins\Scriver\src\tabs.cpp
+[Always on top]
+Immer im Vordergrund

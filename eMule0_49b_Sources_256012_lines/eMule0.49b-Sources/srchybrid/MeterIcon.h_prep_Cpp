@@ -1,0 +1,47 @@
+﻿// MeterIcon.h: interface for the CMeterIcon class.
+//
+// Created: 04/02/2001 {mm/dm/yyyyy}
+// Written by: Anish Mistry http://am-productions.yi.org/
+/* This code is licensed under the     GPL.  See License.txt or (http://www.gnu.org/copyleft/gpl.html). */
+//////////////////////////////////////////////////////////////////////
+
+
+class CMeterIcon
+{
+public:
+ CMeterIcon();
+ virtual ~CMeterIcon();
+
+ bool SetColorLevels(const int* pLimits, const unsigned long* pColors, int nEntries);
+ unsigned long SetBorderColor(unsigned long crColor);
+ int SetNumBars(int nNum);
+ int SetMaxValue(int nVal);
+ int SetWidth(int nWidth);
+ SIZE SetDimensions(int nWidth, int nHeight);
+ bool Init(void* hFrame, int nMaxVal, int nNumBars, int nSpacingWidth, int nWidth, int nHeight, unsigned long crColor);
+ void* Create(const int* pBarData);
+ void* SetFrame(void* hIcon);
+
+protected:
+ int m_nEntries;
+ bool m_bInit;
+ void* m_hFrame;
+ int m_nSpacingWidth;
+ int m_nMaxVal;
+ SIZE m_sDimensions;
+ int m_nNumBars;
+ unsigned long m_crBorderColor;
+ int* m_pLimits;
+ unsigned long* m_pColors;
+
+ bool DrawIconMeter(void* destDC, void* destDCMask, int nLevel, int nPos);
+ void* CreateMeterIcon(const int* pBarData);
+ unsigned long GetMeterColor(int nLevel) const;
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,81 @@
+#muuid {b908773a-86f7-4a91-8674-6a20ba0e67d1}
+;============================================================
+;  File: Dropbox.dll
+;  Plugin: Dropbox
+;  Version: 0.12.2.4
+;  Authors: Miranda NG team
+;============================================================
+[Allows you to transfer files via Dropbox.]
+Загрузка и пересылка файлов с помощью Dropbox.
+[Authorization]
+Авторизация
+[To allow Miranda NG access in your Dropbox account:]
+Дать доступ Miranda NG к вашей учётной записи Dropbox:
+[Go to this link]
+Перейти по ссылке
+[Allow access to app folder]
+Разрешить доступ к папке приложения
+[Enter authorization code]
+Ввести код авторизации
+[Initiate authorization]
+Инициировать авторизацию
+[Authorize]
+Авторизовать
+[Download link]
+Ссылка
+[Generate temporary link]
+Создавать временную ссылку
+[Check status of authorization]
+Проверить статус авторизации
+[Autosend download link to contact]
+Автоматически отправлять ссылку контакту
+[Paste download link into message input area]
+Вставить сылку в поле ввода
+[Copy download link to clipboard]
+Копировать ссылку в буфер обмена
+[Here you can choose the protocols in which Dropbox will be used instead of regular file transfers (sending), used by this protocol.]
+Здесь вы можете выбрать протоколы, в которых Dropbox будет использоваться вместо обычной передачи файлов (отправка), используемой этим протоколом.
+[in process...]
+в процессе...
+[server does not respond]
+сервер не отвечает
+[you have been authorized]
+авторизация прошла успешно
+[Dropbox supports the following commands:]
+Доступны следующие команды:
+[shows all files in folder "path" ("path" is relative from root and can be omitted for root folder)]
+показывает все файлы в папке "path" ("path" относительно корневой папки и может быть опущен для корневой папки)
+[returns download link for file or folder with specified path ("path" is relative from root folder)]
+возвращает ссылку на файл или папку, расположенную по указанному пути (относительно корневой папки)
+[deletes file or folder with specified path ("path" is relative from root folder)]
+удаляет файл или папку по указанному пути (относительно корневой папки)
+["%s" command has invalid parameter.\nUse "/help" for more info.]
+неверный параметр команды "%s".\nИспользуйте "/help" для получения справки.
+[is empty]
+пустая
+[is not found]
+не найдено
+[is deleted]
+удалён
+[Upload files to Dropbox]
+Файл через Dropbox
+[Protocol icon]
+Значок протокола
+[Upload file(s)]
+Загрузить файл(ы)
+[you are already authorized]
+вы уже авторизованы
+[you are not authorized yet]
+вы ещё не авторизованы
+[Account name]
+Учётная запись
+[Protocol]
+Протокол
+[Network]
+Сеть
+[General]
+Общее
+[Interception]
+Перехват
+["%s" is not valid.\nUse "/help" for more info.]
+"%s" не действительна.\nИспользуйте "/help" для получения справки.

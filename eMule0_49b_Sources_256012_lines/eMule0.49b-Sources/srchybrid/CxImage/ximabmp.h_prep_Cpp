@@ -1,0 +1,86 @@
+﻿/*
+ * File: ximabmp.h
+ * Purpose: BMP Image Class Loader and Writer
+ */
+/* ==========================================================
+ * CxImageBMP (c) 07/Aug/2001 Davide Pizzolato - www.xdp.it
+ * For conditions of distribution and use, see copyright notice in ximage.h
+ *
+ * Special thanks to Troels Knakkergaard for neW features, enhancements and bugfixes
+ *
+ * original CImageBMP  and CImageIterator implementation are:
+ * Copyright: (c) 1995, Alejandro Aguilar Sierra
+ *
+ * ==========================================================
+ */
+
+
+
+
+void INCLUDEREPLACE(){CX_INCL("ximage.h");}
+
+const int RLE_COMMAND     = 0;
+const int RLE_ENDOFLINE   = 0;
+const int RLE_ENDOFBITMAP = 1;
+const int RLE_DELTA       = 2;
+
+
+
+
+
+
+
+
+
+
+class CxImageBMP:        CxImage
+{
+public:
+ CxImageBMP(): CxImage(CXIMAGE_FORMAT_BMP) {};
+
+ bool Decode(CxFile * hFile);
+ bool Decode(FILE *hFile) { CxIOFile file(hFile); return Decode(&file); }
+
+
+ bool Encode(CxFile * hFile);
+ bool Encode(FILE *hFile) { CxIOFile file(hFile); return Encode(&file); }
+       // CXIMAGE_SUPPORT_ENCODE
+
+protected:
+ bool DibReadBitmapInfo(CxFile* fh, BITMAPINFOHEADER *pdib);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

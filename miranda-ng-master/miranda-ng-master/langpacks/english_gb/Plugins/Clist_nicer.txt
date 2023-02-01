@@ -1,0 +1,19 @@
+#muuid {8f79b4ee-eb48-4a03-873e-27be6b7e9a25}
+;============================================================
+;  File: Clist_nicer.dll
+;  Plugin: Clist nicer
+;  Version: 0.9.3.2
+;  Authors: Pixel, egoDust, cyreve, Nightwish
+;============================================================
+[Center group names horizontally]
+Centre group names horizontally
+[Centered when possible]
+Centred when possible
+[Gray out entire list when:]
+Grey out entire list when:
+[Use Windows colors]
+Use Windows colours
+[Protocol skins override status text colors]
+Protocol skins override status text colours
+[Minimize contact list]
+Minimise contact list

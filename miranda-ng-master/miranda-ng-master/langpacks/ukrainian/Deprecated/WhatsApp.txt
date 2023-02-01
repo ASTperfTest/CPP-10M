@@ -1,0 +1,131 @@
+#muuid {4f1ff7fa-4d75-44b9-93b0-2ced2e4f9e3e}
+;============================================================
+;  File: WhatsApp.dll
+;  Plugin: WhatsApp protocol
+;  Version: 0.1.3.3
+;  Authors: Uli Hecht
+;============================================================
+[WhatsApp protocol support for Miranda NG.]
+Підтримка протоколу WhatsApp для Miranda NG.
+[Phone number]
+Телефон
+[Nickname]
+Нік
+[Default group:]
+Група:
+[Use SSL connection (port 443)]
+Підключення по SSL (порт 443)
+[Use remote message timestamps]
+Час за сервером замість локального
+[Automatically open group chats]
+Автоматично відкривати чат-кімнати
+[Registration]
+Реєстраційний код
+[Enter code]
+Ввести
+[Request SMS code]
+Запит по SMS
+[Request Voice code]
+Запит дзвінка
+[Register code]
+Підтвердити
+[Including country code, without '+' or '00']
+З кодом країни, без "+" чи "00"
+[Invite users]
+Запрошення користувачів
+[Choose a user]
+Виберіть користувача
+[Other user:]
+Інший користувач:
+[&Invite]
+&Запросити
+[Cancel]
+Скасувати
+[Members]
+Учасники
+[Owners]
+Власники
+[&Invite a user]
+&Запросити користувача
+[&Room options]
+&Налаштування чат-кімнати
+[View/change &topic]
+Перегляд/зміна &теми
+[&Quit chat session]
+&Вийти з чату
+[Set &avatar]
+Встановити &аватар
+[Copy room &JID]
+Копіювати &JID чат-кімнати
+[Copy room topic]
+Копіювати тему
+[Set new subject for %s]
+Встановити нову тему для %s
+[&Add to roster]
+&Додати в ростер
+[&Kick]
+&Вигнати
+[Copy &nickname]
+Копіювати &нік
+[Copy real &JID]
+Копіювати &JID
+[Unknown user]
+Невідомий користувач
+[Please enter a country code.]
+Введіть код країни.
+[Please enter a phone number without country code.]
+Введіть номер телефону без коду країни.
+[Please enter a nickname.]
+Введіть нік
+[Please enter a password.]
+Введіть пароль
+[is now known as '%s']
+змінив ім'я на %s
+[Last online on %x at %X]
+Був у мережі %x о %X
+[Denied: Last online on %x at %X]
+Відхилено: Був у мережі %x о %X
+[Last seen on %x at %X]
+Остання поява %x о %X
+[An SMS with registration code will be sent to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+SMS-повідомлення з реєстраційним кодом буде відправлено на ваш мобільний телефон.\nНагадуємо, що ви не зможете використовувати справжній WhatsApp і цей плагін одночасно!\nПродовжити?
+[A call with registration code will be made to your mobile phone.\nNotice that you are not able to use the real WhatsApp and this plugin simultaneously!\nContinue?]
+Реєстраційний код буде повідомлено під час дзвінка на ваш телефон.\nНагадуємо, що ви не зможете використовувати справжній WhatsApp і цей плагін одночасно!\nПродовжити?
+[Your password has been set automatically. You can proceed with login now.]
+Ваш пароль встановлений автоматично, можете підключитися до протоколу.
+[Please correctly specify your registration code received by SMS/Voice.]
+Будь ласка, правильно вкажіть ваш реєстраційний код, отриманий через SMS/дзвінок.
+[Changes will be applied after protocol restart]
+Зміни будуть застосовані після перезапуску протоколу
+[Network]
+Мережа
+[Account]
+Обліковий запис
+[server]
+сервер
+[Message received: %s by %s]
+Повідомлення отримане о: %s користувачем %s
+[%s server connection]
+З'єднання з сервером %s
+[Unable to initialize Netlib for %s.]
+Не вдається встановити з'єднання Netlib для %s.
+[Network connection error.]
+Помилка з'єднання.
+[Registration failed. Invalid server response.]
+Не вдалося зареєструватися: неправильна відповідь сервера.
+[Registration failed due to stale code. Please request a new code]
+Не вдалося зареєструватися: код застарів. Будь ласка, зробіть запит на новий код.
+[Registration failed. Reason: %s]
+Не вдалося зареєструватися: %s
+[Please try again in %i seconds]
+Будь ласка, спробуйте знову через %i секунд.
+[Registration code has been sent to your phone.]
+Реєстраційний код відправлено на ваш телефон.
+[Registration failed.]
+Не вдалося зареєструватися.
+[WhatsApp icon]
+Значок протоколу
+[Create chat group]
+Створити чат-групу
+[Create group]
+Створити групу

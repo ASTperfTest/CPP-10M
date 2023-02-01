@@ -1,0 +1,349 @@
+#muuid {a8a417ef-07aa-4f37-869f-7bfd74886534}
+;============================================================
+;  File: DbEditorPP.dll
+;  Plugin: Database editor++
+;  Version: 4.1.0.3
+;  Authors: Bio, Jonathan Gordon
+;============================================================
+[Advanced Database Editor.]
+Пашыраны рэдактар базы.
+;file \plugins\DbEditorPP\res\resource.rc
+[Search and replace]
+Знайсці і замяніць
+[Search for]
+Шукаць
+[Exact match]
+Дакладна
+[&Search]
+&Шукаць
+[Module name]
+Плагін
+[Setting name]
+Імя налады
+[Setting value]
+Значэнне
+[Case sensitive]
+Улік рэгістра
+[&Cancel]
+С&касаваць
+[Replace with]
+Замяніць на
+[Entirely]
+Цалкам
+[&Replace]
+&Замяніць
+[Restore last opened position]
+Аднавіць апошняе становішча
+[Automatically expand "Settings" when Database Editor++ starts]
+Адкрываць галінку "Налады" пры запуску
+[Warn when deleting modules]
+Папярэджваць пры выдаленні плагінаў
+[Use popups when watched settings change values]
+Усплывальныя вокны пры змене назіраных значэнняў
+[Popup timeout (0 for infinite)]
+Працягласць (0 = пакінуць)
+[Background color]
+Колер фону
+[Text color]
+Колер тэксту
+[Add a module to contact]
+Дадаць плагін у кантакт
+[Add a module named]
+Дадаць плагін з назвай
+[Add to all contacts (including Settings)]
+Ва ўсе кантакты (уключаючы налады)
+[Cancel]
+Скасаваць
+[Edit setting]
+Рэдагаваць наладу
+[Name]
+Імя
+[Value]
+Значэнне
+[Base]
+Падстава
+[Hexadecimal]
+
+[Decimal]
+
+[Save value as:]
+Захаваць як:
+[Byte]
+байт
+[Word]
+слова
+[Dword]
+дв. слова
+[String]
+радок
+[Watched database settings]
+Зменныя пад назіраннем
+[Copy module to contact]
+Капіяваць плагін у кантакт
+[Contact to copy module and settings to]
+Капіяваць плагін і налады ў
+[Copy to all contacts (including Settings)]
+Ва ўсе кантакты (і агульныя налады)
+[Import]
+Імпартаваць
+[Paste the settings to import here:]
+Устаўце налады сюды:
+[Database Editor++]
+Рэдактар базы
+[&Main]
+&Галоўнае
+[&Refresh modules]
+Абнавіць плагіны
+[Refresh &settings]
+Абнавіць &налады
+[E&xit]
+Выхад
+[&Actions]
+Дзеянні
+[&Search and replace]
+Знайсці і замяніць...
+[Delete &resident settings]
+
+[&Delete module]
+Выдаліць плагін...
+[&Watches]
+&Назіранні
+[&View all]
+&Глядзець усё...
+[&Delete all]
+&Выдаліць усё
+[&Export]
+Экспарт
+[Entire &database]
+Усю &базу...
+[All &settings]
+Усе &налады...
+[All &contacts]
+Усе &кантакты...
+[&Import]
+Імпарт
+[From a &file]
+З &файла...
+[From pasted &text]
+З устаўленага &тэксту...
+[&Options]
+&Налады
+[&Sort by protocol]
+Сартаваць па &пратаколе
+[Show &all]
+Паказаць &усё
+[Show only &loaded]
+Паказаць толькі &загружаныя
+[Show only &unloaded]
+Паказаць толькі выгружаныя
+[Edit &Bytes in Hex]
+Байты ў шаснаццатковым выглядзе
+[Edit &Words in Hex]
+Словы ў шаснаццатковым выглядзе
+[Edit &Dwords in Hex]
+Падвойныя словы ў шаснаццатковым выглядзе
+[&Inline edit]
+
+[&Restore position]
+Аднаўляць становішча
+[&Open options]
+Адчыніць налады
+[&Edit]
+Кіраваць
+[&Copy]
+Капіяваць
+[&Delete]
+Выдаліць
+[Convert to]
+Перавесці ў
+[&Byte]
+Байт
+[&Word]
+Слова
+[&Dword]
+Падвойнае слова
+[&String]
+Радок
+[&Unicode]
+Юнікод
+[New]
+Стварыць
+[BL&OB]
+
+[&Watch]
+Назіраць
+[&Refresh]
+Абнавіць
+[&Rename]
+Пераназваць
+[Copy to contact]
+Капіяваць у кантакт...
+[Export module]
+Экспартаваць плагін...
+[&Add module]
+Дадаць плагін...
+[Export contact]
+Экспартаваць кантакт...
+[Import settings]
+Імпартаваць налады
+[From a file]
+З файла...
+[From pasted text]
+З устаўленага тэксту...
+[Export settings]
+Экспартаваць налады
+[Export contacts]
+Экспартаваць кантакты...
+[Import contacts]
+Імпартаваць кантакты
+[Export module from all contacts]
+Экспартаваць плагін з усіх кантактаў...
+[Watch window]
+Акно назіранняў
+[Reload watch list]
+Абнавіць спіс назіранняў
+;file \plugins\DbEditorPP\src\copymodule.cpp
+[Copy module "%s"]
+
+;file \plugins\DbEditorPP\src\deletemodule.cpp
+[Are you sure you want to delete module "%S"?]
+Выдаліць плагін "%S"?
+[Delete module from database]
+Выдаліць плагін з базы
+[Delete module from database... Loading]
+Выдаленне плагіна з базы... Загрузка
+[Delete from all contacts (including Settings)]
+Выдаліць з усіх кантактаў (з наладамі)
+;file \plugins\DbEditorPP\src\exportimport.cpp
+[INI Files]
+INI файлы
+[All Files]
+Усе файлы
+[Export to file]
+Экспарт
+[Couldn't open file for writing]
+Не атрымоўваецца адкрыць файл на запіс
+[Import to "%s"]
+
+[Import from files]
+Імпарт з файлаў
+;file \plugins\DbEditorPP\src\findwindow.cpp
+[Result]
+Вынік
+[Contact]
+Кантакт
+[Module]
+Плагін
+[Setting]
+Налада
+[Searching...]
+Пошук...
+[Finished. Items found: %d / replaced: %d / deleted: %d]
+Пошук завершаны, знойдзена %d / заменена %d / выдалена %d элемент(аў)
+[Replaced]
+Заменена
+[Deleted]
+Выдалена
+[Found]
+Знойдзена
+[Enter a string to search the database for]
+Увядзіце радок пошуку
+[Stop]
+Спыніць
+;file \plugins\DbEditorPP\src\icons.cpp
+[Main icon]
+Галоўны абразок
+[Closed module]
+
+[Open module]
+
+[Settings]
+Налады
+[Contacts group]
+Гурт кантактаў
+[Unknown contact]
+Невядомы кантакт
+[Known contact]
+Вядомы кантакт
+[Open user tree]
+
+[Empty setting]
+
+[BLOB setting]
+
+[Byte setting]
+
+[Word setting]
+
+[Dword setting]
+
+[String setting]
+
+[Unicode setting]
+
+[Handle]
+Назва
+;file \plugins\DbEditorPP\src\main.cpp
+[Open Database Editor]
+Рэдактар базы
+[Database]
+Профіль
+[Open user tree in DBE++]
+Рэдактары базы
+;file \plugins\DbEditorPP\src\main_window.cpp
+[Are you sure you want to delete contact "%s"?]
+Вы ўпэўнены, што жадаеце выдаліць кантакт "%s"?
+[Type]
+Тып
+[Size]
+Памер
+[Delete resident settings from database?]
+
+[%d items deleted.]
+
+;file \plugins\DbEditorPP\src\modsettingenum.cpp
+[Error loading module list]
+Памылка загрузкі спісу плагінаў
+[Error loading setting list]
+Памылка загрузкі спісу налад
+;file \plugins\DbEditorPP\src\moduletree.cpp
+[Loading contacts...]
+Загрузка кантактаў...
+[Loading modules...]
+Загрузка плагінаў...
+[Contacts]
+Кантакты
+;file \plugins\DbEditorPP\src\options.cpp
+[Popups]
+Усплывальныя вокны
+;file \plugins\DbEditorPP\src\renamemodule.cpp
+[Add module to "%s"]
+
+;file \plugins\DbEditorPP\src\settinglist.cpp
+[Unable to store value in this data type!]
+
+[Are you sure you want to delete %d contact(s)?]
+
+[Are you sure you want to delete %d setting(s)?]
+
+[*** encrypted ***]
+*** зашыфравана ***
+[*** buggy resident ***]
+
+;file \plugins\DbEditorPP\src\settingsdlg.cpp
+[Unknown DBVariant type!]
+
+[Edit setting (%s)]
+Рэдагаваць наладу (%s)
+[New setting (%s)]
+
+;file \plugins\DbEditorPP\src\utils.cpp
+[<UNKNOWN>]
+<НЕВЯДОМА>
+[[UNLOADED]]
+
+;file \plugins\DbEditorPP\src\watchedvars.cpp
+[*** resident ***]
+
+[Database Setting Changed: \nModule: "%s", Setting: "%s"\nNew Value (%s): "%s"]
+Зменена налада базы: \nМодуль: "%s", налада: "%s"\nНовае значэнне (%s): "%s"

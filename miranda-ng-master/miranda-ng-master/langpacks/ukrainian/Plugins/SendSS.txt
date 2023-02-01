@@ -1,0 +1,270 @@
+#muuid {ed39af7c-becd-404e-9499-4d04f711b9cb}
+;============================================================
+;  File: SendSS.dll
+;  Plugin: Send ScreenShot+
+;  Version: 0.9.0.2
+;  Authors: Merlin
+;============================================================
+[Take a screenshot and send it to a contact.]
+Створення та надсилання знімків екрану контактам.
+;file \plugins\SendScreenshotPlus\res\resource.rc
+[Dialog]
+Діалог
+[All]
+Усі
+[None]
+Немає
+[Cancel]
+Скасувати
+[Send screenshot to <unknown>]
+Надіслати знімок екрану для <невідомий контакт>
+[Take a screenshot and send it to a contact]
+Створюйте та надсилайте знімки екрану
+[Ti&med capture]
+&Затримка захоплення
+[Time (secs):]
+Секунд:
+[&Format:]
+&Формат:
+[Send b&y:]
+&Через:
+[E&xplore]
+&Огляд
+[&Fill description textbox.]
+&Заповнити рядок опису
+[Delete &after send]
+Видалити &після відправки
+[Open editor before sending]
+Редагувати перед надсиланням
+[Open again]
+Відкрити знову
+[&Capture]
+&Захопити
+[About]
+Інформація
+[Copyright]
+Права
+[&Close]
+&Закрити
+[Edit]
+Змінити
+[Caption:]
+Заголовок:
+[Size (HxW):]
+Розмір (ВхШ):
+[C&lient area]
+В&міст
+[Indirect capture]
+
+[Target tool]
+Приціл
+[File:]
+Файл:
+[Description:]
+Опис:
+[Result]
+Результат
+[Thumbnail]
+Мініатюра
+[&Copy]
+&Копіювати
+[Close]
+Закрити
+;file \plugins\SendScreenshotPlus\src\CSend.cpp
+[Resulting URL from\n]
+
+[Copy]
+Копіювати
+[Copy BBCode]
+
+[Copy BBCode w/ link]
+
+[%s requires a valid contact!]
+
+[Error]
+Помилка
+[GCHAT error]
+Помилка GCHAT
+[An unknown error has occurred.]
+Невідома помилка.
+;file \plugins\SendScreenshotPlus\src\CSend.h
+[Unable to initiate %s.]
+Не вдалося ініціювати %s.
+[MAPI error (%i):\n%s.]
+Помилка MAPI (%i):\n%s.
+[Unknown response from %s (%i)]
+Невідома відповідь від %s (%i)
+[Got no response from %s (%i)]
+Немає відповіді від %s (%i)
+;file \plugins\SendScreenshotPlus\src\CSendCloudFile.cpp
+[CloudFile transfer]
+
+[%s (%i):\nCould not add a share to the CloudFile plugin.]
+%s (%i):\nНеможливо додати ресурс у плагін CloudFile.
+;file \plugins\SendScreenshotPlus\src\CSendEmail.cpp
+[Email transfer]
+
+[A recipient matched more than one of the recipient descriptor structures and MAPI_DIALOG was not set]
+
+[The specified attachment was not found]
+Вкладення не знайдено
+[The specified attachment could not be opened]
+Вкладення неможливо відкрити
+[The type of a recipient was not MAPI_TO, MAPI_CC, or MAPI_BCC]
+Тип одержувача не MAPI_TO, MAPI_CC або MAPI_BCC
+[One or more unspecified errors occurred]
+Одна чи декілька невизначених помилок
+[There was insufficient memory to proceed]
+Недостатньо пам'яті для продовження
+[One or more recipients were invalid or did not resolve to any address]
+Один або декілька одержувачів є недійсними або не відповідають жодній із вказаних адрес.
+[There was no default logon, and the user failed to log on successfully when the logon dialog box was displayed]
+Не виконано входу в систему за замовчанням, і користувач не зміг увійти в систему, коли відображалося діалогове вікно входу.
+[The text in the message was too large]
+Текст повідомлення був занадто великий
+[There were too many file attachments]
+Забагато вкладених файлів
+[There were too many recipients]
+Забагато одержувачів
+[A recipient did not appear in the address list]
+Одержувача немає в списку адрес
+[The user canceled one of the dialog boxes]
+Користувач скасував одне з діалогових вікон
+[Unknown Error]
+Невідома помилка
+;file \plugins\SendScreenshotPlus\src\CSendFile.cpp
+[File transfer]
+Передача файлу
+;file \plugins\SendScreenshotPlus\src\CSendFTPFile.cpp
+[FTPFile transfer]
+Передача FTPFile
+[%s (%i):\nCould not add a share to the FTP File plugin.]
+%s (%i):\nНеможливо додати ресурс у плагін FTP File.
+;file \plugins\SendScreenshotPlus\src\CSendHost_ImageShack.cpp
+[Image upload]
+
+;file \plugins\SendScreenshotPlus\src\CSendHost_imgur.cpp
+;file \plugins\SendScreenshotPlus\src\CSendHost_uploadpie.cpp
+;file \plugins\SendScreenshotPlus\src\CSendHTTPServer.cpp
+[HTTPServer transfer]
+
+[Could not start the HTTP Server plugin.]
+Неможливо запустити плагін HTTP Server.
+[%s (%i):\nCould not add a share to the HTTP Server plugin.]
+%s (%i):\nНеможливо додати ресурс у плагін HTTP Server.
+;file \plugins\SendScreenshotPlus\src\dlg_msgbox.cpp
+[Retry]
+Ще раз
+[Yes]
+Так
+[No]
+Ні
+[Abort]
+Скасувати
+[Ignore]
+Ігнорувати
+;file \plugins\SendScreenshotPlus\src\Main.cpp
+[Main Icon]
+Головний значок
+[Target Cursor]
+Ціль вікно у фокусі
+[Target Desktop]
+Ціль робочий стіл
+[Help]
+Довідка
+[Open Folder]
+Відкрити папку
+[Description off]
+Опис вимк.
+[Description on]
+Опис увімк.
+[Delete off]
+Видалення вимк.
+[Delete on]
+Видалення ввімк.
+[Prev]
+Попереднє
+[Next]
+Наступне
+[Update]
+Оновити
+[Edit on]
+
+[BBCode]
+BBCode ([b][i][u])
+[BBCode link]
+
+[Down arrow]
+Стрілка вниз
+[Could not create screenshot folder (error code: %d):\n%s\nDo you have write permissions?]
+Не вдалося створити папку знімків екрану (код помилки: %d):\n%s\nУ вас є права на запис?
+[Could not create main dialog.]
+Неможливо створити головний діалог.
+[SendSS]
+Надіслати скріншот
+[Screenshots]
+Знімки екрану
+[Buttons]
+Кнопки
+[Take a screenshot]
+Зробити скріншот
+[Send screenshot]
+Надіслати знімок екрану
+[Send desktop screenshot]
+Надіслати знімок усього екрану
+[Open SendSS+]
+Відкрити SendSS
+;file \plugins\SendScreenshotPlus\src\stdafx.h
+[SendScreenshot - Error]
+Помилка SendSS
+;file \plugins\SendScreenshotPlus\src\UMainForm.cpp
+[Drag&Drop the target on the desired window.]
+Перетягніть приціл на потрібне вікно.
+[Send screenshot to %s]
+Надіслати знімок екрану для %s
+[Window]
+Вікно
+[Desktop]
+Робочий стіл
+[<Entire Desktop>]
+<Весь Робочий стіл>
+[Monitor]
+Монітор
+[ (primary)]
+ (основний)
+[File]
+Файл
+[<Only save>]
+<Тільки зберегти>
+[File Transfer]
+Передача файлу
+[E-mail]
+Пошта
+[FTP File]
+Файл на FTP
+[Upload Pie (30m)]
+Upload Pie (30 хв)
+[Upload Pie (1d)]
+Upload Pie (1 дн)
+[Upload Pie (1w)]
+Upload Pie (1 тижд)
+[Fill description textbox.]
+Заповніть опис у текстовому полі.
+[Delete after send]
+Видалити після відправки
+[Capture]
+Створити скріншот
+[Couldn't take a screenshot]
+Неможливо створити знімок екрану
+[Select a file]
+Виберіть файл
+[Select a target window.]
+Виберіть вікно, щоб зробити знімок.
+[Screenshot of "%s"]
+Знімок "%s"
+[Screenshot for client area of "%s" window]
+Знімок вмісту вікна "%s"
+[Screenshot of "%s" window]
+Знімок вікна "%s"
+[Send screenshot?]
+Надіслати знімок екрану?

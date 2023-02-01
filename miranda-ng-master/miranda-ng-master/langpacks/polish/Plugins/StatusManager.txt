@@ -1,0 +1,370 @@
+#muuid {fadd4a8a-1fd0-4398-83bd-e378b85ed8f1}
+;============================================================
+;  File: StatusManager.dll
+;  Plugin: Status manager
+;  Version: 1.2.0.6
+;  Authors: P Boon
+;============================================================
+[A connection checker and auto away module. Also allows you to define the status Miranda should set on startup, configurable per protocol.]
+Moduł "bezczynności" i sprawdzania połączenia. Pozwala także na określenie statusu jaki Miranda ustawi na starcie dla danych kont.
+;file \plugins\StatusManager\res\resource.rc
+[Available modules]
+Dostępne moduły
+[Keep status]
+Przywracanie statusu
+[Automatically reconnects your accounts after protocol error or internet drop.]
+Automatycznie łączy ponownie Twoje konto po błędzie protokołu lub utracie sieci.
+[Startup status]
+Status podczas uruchamiania
+[Allows you to define the status Miranda should set on startup, configurable per account.]
+Pozwala na określenie statusu Mirandy podczas uruchamiania, konfigurowalna dla protokołów.
+[Advanced auto away]
+Zaawansowana obsługa bezczynności
+[Improved auto away module with some more options than the built in, configurable per account.]
+Ulepszony moduł obsługi bezczynności z większą liczbą opcji niż podstawowy, z konfiguracją dla każdego konta z osobna.
+[Note: Miranda NG will have to be restarted for changes to take effect.]
+Info: Musisz ponownie uruchomić Mirandę NG aby wprowadzić zmiany.
+[General]
+Ogólne
+[Show popups]
+Pokaż powiadomienia
+[Account connection]
+Połączenie konta
+[Check connection]
+Sprawdź połączenie
+[Maximum retries (0 - infinite)]
+Maksimum prób (0 - nieskończenie)
+[Delay between retries (secs)]
+Przerwa między powtórzeniami
+[Accounts to check]
+Konta do sprawdzenia
+[Dial-up]
+Połączenie
+[Don't reconnect if no internet connection seems available]
+Nie próbuj łączyć ponownie, jeśli nie wykryjesz połączenia z internetem
+[Continuously check for internet connection]
+Cały czas szukaj połączenia z internetem
+[Do so by pinging host]
+Poprzez pingowanie hosta
+[Confirm status]
+Potwierdź status
+[Close]
+Zamknij
+[Cancel]
+Anuluj
+[Profile]
+Profil
+[Message]
+Opis
+[Account:]
+Konto:
+[Away mode]
+Tryb nieobecności
+[Set]
+Ustaw
+[when full-screen mode is active]
+gdy aktywny tryb pełnoekranowy
+[when screen saver engages]
+gdy włączy się wygaszacz
+[when workstation is locked]
+kiedy komputer jest zablokowany
+[when terminal session is disconnected]
+gdy sesja terminala jest rozłączona
+[after]
+po
+[minutes of inactivity]
+minutach bezczynności
+[After away]
+Po nieobecności
+[minutes of level 1 mode]
+minutach trybu poziomu 1
+[only set when inactive]
+ustaw tylko przy bezczynności
+[Monitor Miranda's activity only]
+Monitoruj tylko aktywność Mirandy
+[Reset status on return]
+Przywróć status po powrocie
+[Confirm resetting status]
+Potwierdź resetowanie statusu
+[Enter idle mode]
+Przejdź do trybu bezczynności
+[Only set if current status is]
+Ustaw tylko, gdy obecny status to:
+[Command line]
+Linia poleceń
+[Copy to clipboard]
+Kopiuj do schowka
+[Command line:]
+Linia poleceń:
+[Create shortcut]
+Utwórz skrót
+[Add new profile]
+Dodaj nowy profil
+[Profile name]
+Nazwa profilu
+[Set window state]
+Stan okna
+[Show dialog]
+Pokaż okno
+[Set status to offline before exit]
+Przy wyjściu zmień na rozłączony
+[Show CMDL]
+Pokaż CMDL
+[Activate status profile]
+Włącz profil statusu
+[Set docked]
+Strona dokowania
+[Other]
+Inne
+[Status on startup]
+Status podczas uruchamiania
+[ms]
+ms
+[Set after]
+Ustaw po
+[Timeout]
+Wyświetlaj
+[s]
+s
+[Set window location]
+Położenie okna
+[Left]
+Lewa
+[Top]
+Góra
+[Set window size]
+Rozmiar okna
+[Width]
+Szerokość
+[Height]
+Wysokość
+[Allow override]
+Nadpisuj
+[Note: status profiles can be created in the 'Status profiles' options screen]
+Info: profile statusów mogą zostać utworzone w menu "Profile statusów"
+[Window on startup]
+Okno podczas uruchamiania
+[Automatically dial on startup]
+Automatycznie łącz na starcie
+[Automatically hang up on exit]
+Automatycznie rozłącz przy wyjściu
+[Dial-up (experimental)]
+Połączenie (eksperymentalne)
+[Background color]
+Kolor tła
+[Text color]
+Kolor tekstu
+[Use Windows colors]
+Użyj kolorów Windows
+[Use default colors]
+Użyj domyślnych kolorów
+[On left click]
+LPM
+[On right click]
+PPM
+[Do nothing]
+Nic nie rób
+[Close popup]
+Zamknij powiadomienie
+[Cancel reconnecting]
+Anuluj ponowne łączenie
+[Colors]
+Kolory
+[Preview]
+Podgląd
+[Events]
+Zdarzenia
+[Show when connection is lost]
+Pokaż po utarcie połączenia
+[Show when a connection attempt is made]
+Pokaż w trakcie próby połączenia
+[Show when reconnection has finished]
+Pokaż po ponownym połączeniu
+[Show other messages]
+Pokaż inne wiadomości
+[Default]
+Domyślny
+[Custom]
+Niestandardowe
+[Permanent]
+Trwale
+[Show additional information in popups]
+Pokaż dodatkowe informacje w powiadomieniach
+[Use Miranda's message setting]
+Użyj ustawień opisu Mirandy
+[Use this message:]
+Użyj tego opisu:
+[Use %time% for the current time, %date% for the current date]
+Użyj %time% dla czasu obecnego, %date% dla aktualnej daty
+[Variables...]
+Zmienne...
+[Specify settings for each account]
+Ustaw każde konto osobno
+[Use same settings for all accounts]
+Użyj takich samych ustawień dla wszystkich kont
+[Ignore Caps Lock, Num Lock and Scroll Lock keys]
+Ignoruj Caps Lock, Num Lock i Scroll Lock
+[Check interval (secs)]
+Sprawdzaj co (s)
+[Confirm dialog timeout (secs)]
+Czas wyświetlania okna potwierdzenia
+[Monitor keyboard activity]
+Śledź aktywność klawiatury
+[Monitor mouse activity]
+Śledź aktywność myszki
+[Ignore Ctrl, Alt, Shift, Tab, Esc and Windows keys]
+Ignoruj Ctrl, Alt, Shift, Tab, Esc i klawisz Windows
+[Ignore any key combination with above keys]
+Ignoruj wszystkie kombinacje z tymi klawiszami
+[Accounts]
+Konta
+[Enable checking]
+Włącz sprawdzanie
+[Disable checking]
+Wyłącz sprawdzanie
+[Set status message]
+Ustaw opis
+[Account]
+Konto
+[Status]
+Status
+[Add...]
+Dodaj...
+[Delete]
+Usuń
+[Create a TopToolBar button]
+Utwórz przycisk paska narzędzi
+[Show confirm dialog when loading]
+Okno potwierdzania przy uruchamianiu
+[Create a status menu item]
+Utwórz wpis w menu
+[Status profiles]
+Profile statusów
+[Hotkey]
+Skrót
+[In submenu]
+W podmenu
+[Timers]
+Stopery
+[Maximum delay (secs)]
+Opóźnienie (s)
+[Maximum account connecting time (secs)]
+Maksymalny czas prób łączenia konta
+[Reconnecting]
+Ponowne łączenie
+[Ignore locked status of accounts]
+Ignoruj zablokowane statusy
+[Increase delay exponential]
+Zwiększ opóźnienie wyświetlania
+[Set account offline before a connection attempt]
+Rozłącz konto przed próbą połączenia
+[Cancel all if an account connects from another location]
+Anuluj wszystko, jeśli konto łączy się z innej lokalizacji
+[Reconnect on APM resume]
+Połącz po przywróceniu APM
+[React on login errors]
+Reakcja na błędy logowania
+[Stop trying to reconnect]
+Przerwij próby ponownego łączenia
+[Set delay to]
+Ustaw opóźnienie na
+[seconds]
+s
+[Consider connection lost after]
+Reaguj na utratę połączenia po
+[failed pings]
+stracone pingi
+[Continuously check interval (secs)]
+Ciągłe odstępy sprawdzania (s)
+;file \plugins\StatusManager\src\aaa_options.cpp
+[minutes of %s mode]
+minutach "%s"
+[Auto away]
+Zmiany statusu
+[Rules]
+Zasady
+[Status messages]
+Opisy
+;file \plugins\StatusManager\src\confirmdialog.cpp
+[Set %s message for %s.]
+Ustaw opis %s dla %s.
+[<last>]
+<ostatni>
+[<current>]
+<aktualny>
+[<n/a>]
+<niedostępna>
+[Protocol]
+Protokół
+[Closing in %d]
+Zamykanie w %d
+;file \plugins\StatusManager\src\ks_main.cpp
+[%s connected from another location]
+%s połączono z innej lokalizacji.
+[%s login error, cancel reconnecting]
+%s błąd logowania, zatrzymano wznawianie.
+[%s login error (next retry (%d) in %d s)]
+%s błąd logowania (następna próba (%d) za %d s)
+[%s status error (next retry (%d) in %d s)]
+%s błąd połączenia (następna próba (%d) za %d s)
+[Status error (next retry (%d) in %d s)]
+Błąd połączenia (następna próba (%d) za %d s)
+[Resetting status... (last try (%d))]
+Zerowanie statusu...(ostatnia próba (%d))
+[Resetting status... (next retry (%d) in %d s)]
+Zerowanie statusu... (następna próba (%d) za %d s)
+[%s\t(will be set to %s)\r\n]
+%s\t (przywracany na %s)\r\n
+[No internet connection seems available... (last try (%d))]
+Brak połączenia z internetem... (ostatnia próba (%d))
+[No internet connection seems available... (next retry (%d) in %d s)]
+Brak połączenia z internetem... (następna próba (%d) za %d s)
+[Status was set ok]
+Status przywrócony pomyślnie.
+[Giving up]
+Rezygnacja z przywracania statusu.
+;file \plugins\StatusManager\src\ks_options.cpp
+[You broke the Internet!]
+Problem z nawiązaniem połączenia!
+[Basic]
+Podstawowe
+[Advanced]
+Zaawansowane
+[Popups]
+Powiadomienia
+;file \plugins\StatusManager\src\options.cpp
+[Status manager]
+Menedżer statusu
+;file \plugins\StatusManager\src\ss_options.cpp
+[<unknown>]
+<nieznany>
+[default]
+domyślny
+[Hidden]
+Ukryte
+[Minimized]
+Zminimalizowany
+[Normal]
+Normalne
+[Right]
+Prawa
+[None]
+Brak
+[size: %d x %d]
+rozmiar: %d x %d
+[loc: %d x %d]
+poł: %d x %d
+[unknown]
+nieznany
+[At least one profile must exist]
+Musi istnieć przynajmniej 1 profil
+[Your default profile will be changed]
+Twój domyślny profil zostanie zmieniony
+;file \plugins\StatusManager\src\ss_profiles.cpp
+;file \plugins\StatusManager\src\ss_toolbars.cpp
+[Pressed toolbar icon]
+Wciśnięty przycisk
+[Released toolbar icon]
+Normalny przycisk
+[Toolbar]
+Pasek narzędzi

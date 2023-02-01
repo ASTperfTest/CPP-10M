@@ -1,0 +1,35 @@
+#muuid {211f6277-6f9b-4b77-a939-84d04b26b38c}
+;============================================================
+;  File: StartPosition.dll
+;  Plugin: Start position
+;  Version: 0.3.0.4
+;  Authors: Felipe Brahm - souFrag
+;============================================================
+[Plugin supports starting position of Contact List relative to the taskbar and screen side.]
+Приставката определя позицията на списъка (спрямо лентат със задачи и размера на екрана) при стартиране на Miranda NG.
+;file \plugins\StartPosition\res\resource.rc
+[Contact list window start position]
+Стартова позиция за списъка с контакти
+[Pixels from Top]
+Пик-ла под върха
+[Pixels from Bottom]
+Пик-ла от дъното
+[Pixels from Side]
+Пиксела от ръба
+[Left]
+Ляво
+[Right]
+Дясно
+[Width]
+Ширина
+[Always start...]
+Винаги стартирай...
+[minimized to system tray]
+минимизиран в трея
+[opened]
+отворен
+;file \plugins\StartPosition\src\startposition.cpp
+[Contact list]
+Списък с контакти
+[Start position]
+

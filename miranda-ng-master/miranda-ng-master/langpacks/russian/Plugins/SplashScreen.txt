@@ -1,0 +1,49 @@
+#muuid {c64cc8e0-cf03-474a-8b11-8bd4565ccf04}
+;============================================================
+;  File: SplashScreen.dll
+;  Plugin: Splash screen
+;  Version: 0.1.2.3
+;  Authors: nullbie, Thief
+;============================================================
+[Shows a splash at Miranda startup.]
+Показывает всплывающее окно при старте Miranda NG.
+;file \plugins\SplashScreen\res\splash.rc
+[Splash Options]
+Настройки заставки
+[Show splash]
+Заставка
+[Show random splash]
+Показывать случайную заставку
+[Play sound]
+Играть звук
+[Show Miranda Version]
+Показывать версию Miranda NG
+[Enable]
+Включено
+[Prefix:]
+Префикс:
+[Appearance]
+Внешний вид
+[Display time:]
+Отображать:
+[ms]
+мс
+[Fade in:]
+Появление:
+[steps]
+шагов
+[Fade out:]
+Исчезновение:
+[Preview...]
+Просмотр...
+[Download more splash screens]
+Скачать заставки
+;file \plugins\SplashScreen\src\options.cpp
+[Graphic files]
+Графические файлы
+[Sound Files]
+Звуковые файлы
+[Skins]
+Скины
+[Splash Screen]
+Заставка

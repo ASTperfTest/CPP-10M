@@ -1,0 +1,35 @@
+#muuid {84636f78-2057-4302-8a65-23a16d46844c}
+;============================================================
+;  File: Scriver.dll
+;  Plugin: Scriver
+;  Version: 3.0.2.4
+;  Authors: Miranda NG team
+;============================================================
+[Behavior]
+Behaviour
+[and stay minimized]
+and stay minimised
+[Minimize on send]
+Minimise on send
+[Customize fonts and colors]
+Customise fonts and colours
+[Timestamp has same color as the event]
+Timestamp has same colour as the event
+[Strip colors from messages]
+Strip colours from messages
+[Text color]
+Text colour
+[Background color]
+Background colour
+[Window: Minimize]
+Window: Minimise
+[Make the text italicized (Ctrl+I)]
+Make the text italicised (Ctrl+I)
+[&Color]
+&Colour
+[Select a foreground color for the text (Ctrl+K)]
+Select a foreground colour for the text (Ctrl+K)
+[&Background color]
+&Background colour
+[Select a background color for the text (Ctrl+L)]
+Select a background colour for the text (Ctrl+L)

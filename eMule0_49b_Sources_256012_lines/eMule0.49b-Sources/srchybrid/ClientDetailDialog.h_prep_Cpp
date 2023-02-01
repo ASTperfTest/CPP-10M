@@ -1,0 +1,84 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizablePage.h");}
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizableSheet.h");}
+void INCLUDEREPLACE(){CX_INCL("ListViewWalkerPropertySheet.h");}
+
+class CUpDownClient;
+
+///////////////////////////////////////////////////////////////////////////////
+// CClientDetailPage
+
+class CClientDetailPage :        CResizablePage
+{
+ //DECLARE_DYNAMIC(CClientDetailPage)
+
+public:
+ CClientDetailPage();   // standard constructor
+ virtual ~CClientDetailPage();
+
+ void SetClients(const CSimpleArray          * paClients) { m_paClients = paClients; m_bDataChanged = true; }
+
+ enum { IDD = IDD_SOURCEDETAILWND };
+
+protected:
+ const CSimpleArray          * m_paClients;
+ bool m_bDataChanged;
+
+ void Localize();
+ void RefreshData();
+
+ virtual int  OnInitDialog();
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnSetActive();
+
+
+         long *  OnDataChanged(int * , long *);
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CClientDetailDialog
+
+class CClientDetailDialog :        CListViewWalkerPropertySheet
+{
+ //DECLARE_DYNAMIC(CClientDetailDialog)
+
+public:
+ CClientDetailDialog(CUpDownClient* pClient, CListCtrlItemWalk* pListCtrl = NULL);
+ CClientDetailDialog(const CSimpleArray                * paClients, CListCtrlItemWalk* pListCtrl = NULL);
+ virtual ~CClientDetailDialog();
+
+protected:
+ CClientDetailPage m_wndClient;
+
+ void Construct();
+
+ virtual int  OnInitDialog();
+
+
+         void OnDestroy();
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,144 @@
+#muuid {53e095a3-2695-490a-9dad-d20479093831}
+;============================================================
+;  File: Clist_blind.dll
+;  Plugin: BClist
+;  Version: 0.9.0.1
+;  Authors: Ricardo Pescuma Domenecci, based on previous work from Miranda IM project
+;============================================================
+[A contact list for blind folks.]
+Список контактів для людей з проблемами зору.
+;file \plugins\Clist_blind\res\resource.rc
+[Sort contacts by name]
+за ім'ям
+[Sort contacts by status]
+за статусом
+[Sort contacts by protocol]
+за протоколом
+[Disable icon blinking]
+Вимкнути блимання
+[ms delay]
+Затримка (мс)
+[Show]
+Показати
+[icon when statuses differ]
+при різних статусах
+[Cycle icons every]
+Змінювати значок кожні
+[seconds, when statuses differ]
+секунд при різних статусах
+[Show multiple icons]
+Декілька значків
+[Only when statuses differ]
+при різних статусах
+[System tray icon]
+Значок у треї
+[System tray icon when using multiple protocols]
+Значки протоколів у треї
+[Contact list sorting]
+Впорядкування списку
+[Window]
+Вікно
+[Always on top]
+Поверх усіх вікон
+[Tool style main window]
+Вікно як панель інструментів
+[Minimize to tray]
+Згортати до трею
+[Hide contact list after it has been idle for]
+Ховати список після неактивності:
+[seconds]
+секунд
+[Automatically resize window to height of list]
+Автоматично змінювати розмір вікна
+[maximum]
+максимум
+[% of screen]
+% екрану
+[Size upwards]
+Розтягувати вгору
+[Title bar text:]
+Заголовок:
+[Translucency options]
+Прозорість
+[Fade contact list in/out]
+Плавно згортати/розгортати список
+[Transparent contact list]
+Прозорий список контактів
+[Inactive opacity:]
+Вікно неактивне:
+[Active opacity:]
+Вікно активне:
+[Show menu bar]
+Показувати кнопки
+[Easy move]
+Просте переміщення
+[Show title bar]
+Показувати заголовок
+[If window is partially covered, bring to front instead of hiding]
+Помістити вікно на передній план, якщо його перекрито іншими вікнами
+[Show drop shadow (restart required)]
+Увімкнути тінь (потрібен перезапуск)
+[Pin to desktop]
+Прикріпити до столу
+[Groups]
+Групи
+[Show counts of number of contacts in a group]
+Показувати кількість користувачів у групах
+[Hide group counts when there are none online]
+Ховати лічильник, якщо нема користувачів у мережі
+[Sort groups alphabetically]
+Впорядкувати групи за абеткою
+[Quick search in open groups only]
+Швидкий пошук лише у відкритих групах
+[Templates]
+Шаблони
+[Contact:]
+Контакт:
+[Group:]
+Група:
+[Divider:]
+Роздільник:
+[Info:]
+Інфо:
+[Status bar]
+Панель статусів
+[Show status bar]
+Показувати панель статусів
+[Show icons]
+Показувати значки
+[Show protocol names]
+Показувати протоколи
+[Show status text]
+Показувати текст статусу
+[Right click opens status menu]
+Правий клік - меню статусу
+[Right click opens Miranda NG menu]
+Правий клік - головне меню
+[Make sections equal width]
+Розділи однакової ширини
+[Show bevels on panels]
+Бордюр на панелях
+[Show resize grip indicator]
+Індикатор зміни розміру
+;file \plugins\Clist_blind\src\clc.cpp
+[Unknown protocol]
+Невідомий протокол
+[Group: %name% %count% [%mode%]]
+Група: %name% %count% [%mode%]
+[Divider: %s]
+Роздільник: %s
+[Info: %s]
+Інфо: %s
+[Expanded]
+розгорнута
+[Collapsed]
+згорнута
+;file \plugins\Clist_blind\src\clcopts.cpp
+[Contact list]
+Список контактів
+[List]
+Список
+;file \plugins\Clist_blind\src\clistopts.cpp
+[Global]
+Глобальні
+;file \plugins\Clist_blind\src\cluiopts.cpp

@@ -1,0 +1,65 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("DialogMinTrayBtn.h");}
+void INCLUDEREPLACE(){CX_INCL("INVALID_INCLUDE_FILE_NAME_ResizableLibResizableDialog.h");}
+
+
+
+class CTrayDialog :        CDialogMinTrayBtn
+{
+protected:
+         CDialogMinTrayBtn                   CTrayDialogBase = "CX_TYPEDEF";
+
+public:
+ CTrayDialog(unsigned int uIDD, CWnd* pParent = NULL);   // standard constructor
+
+ void TraySetMinimizeToTray(bool* pbMinimizeToTray);
+ int  TraySetMenu(unsigned int nResourceID);
+ int  TraySetMenu(void* hMenu);
+ int  TraySetMenu(const char* lpszMenuName);
+ int  TrayUpdate();
+ int  TrayShow();
+ int  TrayHide();
+ void TraySetToolTip(const char* lpszToolTip);
+ void TraySetIcon(void* hIcon, bool bDelete = false);
+ void TraySetIcon(unsigned int nResourceID);
+ void TraySetIcon(const char* lpszResourceName);
+ int  TrayIsVisible();
+
+ virtual void TrayMinimizeToTrayChange();
+ virtual void RestoreWindow();
+ virtual void OnTrayLButtonDown(CPoint pt);
+ virtual void OnTrayLButtonUp(CPoint pt);
+ virtual void OnTrayLButtonDblClk(CPoint pt);
+ virtual void OnTrayRButtonUp(CPoint pt);
+ virtual void OnTrayRButtonDblClk(CPoint pt);
+ virtual void OnTrayMouseMove(CPoint pt);
+
+protected:
+ bool* m_pbMinimizeToTray;
+    bool m_bCurIconDelete;
+    void* m_hPrevIconDelete;
+ bool m_bLButtonDblClk;
+ bool m_bLButtonDown;
+ int  m_bTrayIconVisible;
+ NOTIFYICONDATA m_nidIconData;
+ CMenu m_mnuTrayMenu;
+ unsigned int m_nDefaultMenuItem;
+ unsigned int m_uSingleClickTimer;
+
+ void KillSingleClickTimer();
+
+
+         long *  OnTrayNotify(int *  wParam, long * lParam);
+         long *  OnTaskBarCreated(int *  wParam, long * lParam);
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnDestroy();
+         void OnSysCommand(unsigned int nID, long * lParam);
+         void OnTimer(unsigned int nIDEvent);
+};
+
+
+
+
+
+
+ 

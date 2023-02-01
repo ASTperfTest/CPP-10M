@@ -1,0 +1,65 @@
+#muuid {2a1081d1-aee3-4091-b70d-ae46d09f9a7f}
+;============================================================
+;  File: Dummy.dll
+;  Plugin: Dummy protocol
+;  Version: 0.2.0.1
+;  Authors: Robert Pösel
+;============================================================
+[Dummy protocol for Miranda NG. Could be used for holding contacts and history from deprecated protocols or for creating virtual contacts.]
+Протокол-заглушка для Miranda NG. Предназначен для создания виртуальных контактов или для сохранения истории и контактов, оставшихся от неподдерживаемых протоколов.
+;file \protocols\Dummy\res\resource.rc
+[Protocol template:]
+Шаблон протокола:
+[Unique ID setting:]
+Уникальные настройки ID
+[Name of setting that holds unique identifier of contacts]
+Название настроек содержит уникальный идентификатор контактов
+[Unique ID text:]
+Уникальный текст ID
+[Visible name of unique identifier of contacts]
+Видимое имя уникального идентификатора контактов
+[Restart is required to apply these changes.]
+Для применения настроек нужен перезапуск.
+[Allow sending messages to contacts]
+Разрешить отправку сообщений
+;file \protocols\Dummy\src\dummy_proto.cpp
+[Custom]
+Настроить
+[Screen name]
+Ник
+[Discord ID]
+Discord ID
+[User name]
+Имя пользователя
+[Facebook ID]
+Facebook ID
+[Gadu-Gadu number]
+Номер Gadu-Gadu
+[User ID]
+ID пользователя
+[ICQ number]
+Номер ICQ
+[Nickname]
+Ник
+[Visible name]
+Видимое имя
+[E-mail address]
+Адрес e-mail
+[Live ID]
+Live ID
+[Skype name]
+Логин Skype
+[Steam ID]
+Steam ID
+[Tlen login]
+Tlen login
+[Tox ID]
+Tox ID
+[Username]
+Имя пользователя
+[VKontakte ID]
+VKontakte ID
+[WhatsApp ID]
+WhatsApp ID
+[This Dummy account has disabled sending messages. Enable it in account options.]
+Отправка сообщений запрещена. Включите её в настройках этой учётной записи-заглушки.

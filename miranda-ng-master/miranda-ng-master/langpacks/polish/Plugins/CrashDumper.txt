@@ -1,0 +1,82 @@
+#muuid {f62c1d7a-ffa4-4065-a251-4c9dd9101cc8}
+;============================================================
+;  File: CrashDumper.dll
+;  Plugin: Crash dumper
+;  Version: 0.2.0.1
+;  Authors: borkra
+;============================================================
+[Crash Dumper and Version Information for Miranda NG.]
+Tworzenie raportów o błędach oraz informacji o wersji Mirandy NG.
+;file \plugins\CrashDumper\res\crshdmp.rc
+[View Version Information]
+Pokaż Informacje o wersji
+[Close]
+Zamknij
+[Copy To Clipboard]
+Kopiuj do schowka
+[To File]
+Do pliku
+[Crash reports]
+Raporty o błędach
+[Generate crash reports]
+Generuj raporty o błędach
+[Create reports in subfolders naming as current date]
+Twórz raporty w podfolderach używając bieżącej daty
+[Use classic dates]
+Użyj klasycznych dat
+[* You need to restart Miranda NG to apply changes]
+* Musisz uruchomić ponownie Mirandę NG, aby zastosować zmiany
+[Display popups about successful actions]
+Wyświetl powiadomienie po udanym wykonaniu zadania
+[View]
+Pokaż
+[&Copy]
+&Kopiuj
+[Co&py All]
+Ko&piuj wszystko
+[Select &All]
+Zaznacz &wszystko
+;file \plugins\CrashDumper\src\crshdmp.cpp
+[Version Info stored into file %s]
+Informacje o wersji zachowano w pliku: %s
+[Version Info file %s is inaccessible]
+Plik z informacją o wersji%s jest niedostępny
+[Version Information To Clipboard]
+Kopiuj do schowka
+[Version Information To File]
+Zapisz do pliku
+[Show Version Information]
+Pokaż wersję programu
+[Version Information]
+Informacje o wersji
+[Copy to clipboard]
+Kopiuj do schowka
+[Store to file]
+Zapisz do pliku
+[Show]
+Pokaż
+[Show with DLLs]
+Pokaż z bibliotekami
+[Open crash report directory]
+Otwórz folder z raportami
+[Copy Version Info to clipboard]
+Kopiuj informacje o wersji do schowka
+[Show Version Info]
+Pokaż Informacje o wersji
+;file \plugins\CrashDumper\src\crshdmp_icons.cpp
+[Upload]
+Wyślij
+[Copy link to clipboard]
+Kopiuj link do schowka
+[Crash Dumper]
+Raporty błędów
+;file \plugins\CrashDumper\src\exhndlr.cpp
+[Crash Report write location is not available]
+Ścieżka zapisu raportów błędów jest niedostępna
+[Miranda crashed. Crash report stored in the folder:\n %s\n\n Would you like store it in the clipboard as well?]
+Wystąpił błąd Mirandy. Raport błędów zachowany w folderze:\n %s\n\n Czy zapisać raport?
+;file \plugins\CrashDumper\src\ui.cpp
+[View Version Information (with DLLs)]
+Pokaż Informacje o wersji (z bibliotekami)
+[Services]
+Usługi

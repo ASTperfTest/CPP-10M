@@ -1,0 +1,33 @@
+#muuid {043909b6-aad8-4d82-8eb5-9f64cfe867cd}
+;============================================================
+;  File: Clist_modern.dll
+;  Plugin: Modern contact list
+;  Version: 0.9.1.12
+;  Authors: Artem Shpynov, Ricardo Pescuma Domenecci and Anton Senko based on clist_mw by Bethoven
+;============================================================
+[Background color:]
+Background colour:
+[Selection color:]
+Selection colour:
+[Use Windows colors]
+Use Windows colours
+[Hold [Shift] to inverse [Right Click] behavior.]
+Hold [Shift] to inverse [Right Click] behaviour.
+[Behavior]
+Behaviour
+[Minimize to tray]
+Minimise to tray
+[Border color:]
+Border colour:
+[Use old render method (fast, but has artifacts)]
+Use old render method (fast, but has artefacts)
+[Special colors]
+Special colours
+[3rd party frames transparent back color]
+3rd party frames transparent back colour
+[Center group names]
+Centre group names
+[Center]
+Centre
+[Minimize]
+Minimise

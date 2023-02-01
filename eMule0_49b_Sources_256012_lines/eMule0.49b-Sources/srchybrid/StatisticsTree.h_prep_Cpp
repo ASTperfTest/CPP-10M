@@ -1,0 +1,94 @@
+﻿/* CStatisticsTree Class Header File by Khaos
+ Copyright (C) 2003
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the     General Public License
+ as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but         ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the     General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+ This file is a part of the    mod, and more
+ specifically, it is a part of my statistics
+ add-on.
+
+ The purpose of deriving a custom class from CTreeCtrl
+ was to provide another level of customization and control.
+ This allows us to easily code complicated parsing features
+ and a context menu.
+*/
+
+void INCLUDEREPLACE(){CX_INCL("TitleMenu.h");}
+
+// -khaos--+++> Items for our stat's tree context menu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    For GetItemText overloaded function of CStatisticsTree
+
+
+// <-----khaos--
+
+class CStatisticsTree :        CTreeCtrl
+{
+ //DECLARE_DYNAMIC(CStatisticsTree)
+public:
+ CStatisticsTree();
+ ~CStatisticsTree();
+ virtual  int  OnCommand( int *  wParam, long * lParam );
+
+protected:
+
+          void OnLButtonUp( unsigned int nFlags, CPoint point );
+          void OnRButtonDown( unsigned int nFlags, CPoint point );
+          void OnContextMenu( CWnd* pWnd, CPoint point );
+          void OnItemExpanded( NMHDR* pNMHDR, long * * pResult );
+
+public:
+ void    Init();
+    void    ExportHTML();
+ bool    CopyHTML( int copyMode = 10955                   );
+ CString    GetHTML( bool onlyVisible = true, HTREEITEM theItem = NULL, int theItemLevel = 0, bool firstItem = true );
+ CString    GetHTMLForExport(HTREEITEM theItem = NULL, int theItemLevel = 0, bool firstItem = true);
+ bool    CopyText( int copyMode = 10952               );
+ CString    GetText( bool onlyVisible = true, HTREEITEM theItem = NULL, int theItemLevel = 0, bool firstItem = true );
+ CString    GetItemText( HTREEITEM theItem );
+ CString    GetItemText( HTREEITEM theItem, int getPart );
+ int     IsBold( HTREEITEM theItem );
+ int     IsExpanded( HTREEITEM theItem );
+ int     CheckState( HTREEITEM hItem, unsigned int state );
+ void    DoMenu();
+ void    DoMenu(CPoint doWhere);
+ void    DoMenu(CPoint doWhere, unsigned int nFlags);
+ void    ExpandAll(bool onlyBold = false, HTREEITEM theItem = NULL);
+ void    CollapseAll(HTREEITEM theItem = NULL);
+ CString    GetExpandedMask(HTREEITEM theItem = NULL);
+ int     ApplyExpandedMask(CString theMask, HTREEITEM theItem = NULL, int theStringIndex = 0);
+private:
+ CTitleMenu   mnuContext;
+ CTitleMenu   mnuHTML;
+ bool    m_bExpandingAll;
+};
+
+
+
+
+
+ 

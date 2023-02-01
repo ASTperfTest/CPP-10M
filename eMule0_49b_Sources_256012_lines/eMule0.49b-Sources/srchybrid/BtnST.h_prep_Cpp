@@ -1,0 +1,310 @@
+﻿//
+// Class:  CButtonST
+//
+// Compiler: Visual C++
+// Tested on: Visual C++ 5.0
+//    Visual C++ 6.0
+//
+// Version: See or GetVersionI()
+//
+// Created: xx/xxxx/1998
+// Updated: 22/July/2002
+//
+// Author:  Davide Calabro'  davide_calabro@yahoo.com
+//         http://www.softechsoftware.it
+//
+// Note:  Code for the PreSubclassWindow and OnSetStyle functions
+//    has been taken from the COddButton class
+//    published by Paolo Messina and Jerzy Kaczorowski
+//
+// Disclaimer
+// ----------
+// THIS          AND     ACCOMPANYING       ARE DISTRIBUTED "AS I " AND WITHOUT
+// ANY            WHETHER           OR IMPLIED. NO                 FOR POSSIBLE
+// DAMAGES    EVEN               CAN    TAKEN. THE      MUST        THE ENTIRE
+// RISK    USING      SOFTWARE.
+//
+// Terms of use
+// ------------
+// THIS          IS      FOR          USE    FREEWARE APPLICATIONS.
+// IF     USE               IN            OR           APPLICATIONS YOU
+// ARE        ASKED    DONATE 1$ (ONE U.S. DOLLAR) TO     AUTHOR:
+//
+//  Davide Calabro'
+//  P.O. Box 65
+//  21019 Somma Lombardo (VA)
+//  Italy
+//
+
+
+
+// Uncomment the following 2 lines to enable support for BCMenu class
+//#define BTNST_USE_BCMENU
+//#include "BCMenu.h"
+
+// Uncomment the following line to enable support for sound effects
+//#define BTNST_USE_SOUND
+
+
+
+       // _MSC_VER >= 1000
+
+// Return values
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Dummy identifier for grayscale icon
+
+
+
+
+class CButtonST :        CButton
+{
+public:
+    CButtonST();
+ ~CButtonST();
+
+    enum { ST_ALIGN_HORIZ = 0,   // Icon/bitmap on the left, text on the right
+    ST_ALIGN_VERT,     // Icon/bitmap on the top, text on the bottom
+    ST_ALIGN_HORIZ_RIGHT,   // Icon/bitmap on the right, text on the left
+    ST_ALIGN_OVERLAP    // Icon/bitmap on the same space as text
+   };
+
+ enum { BTNST_COLOR_BK_IN = 0,  // Background color when mouse is INside
+    BTNST_COLOR_FG_IN,    // Text color when mouse is INside
+    BTNST_COLOR_BK_OUT,    // Background color when mouse is OUTside
+    BTNST_COLOR_FG_OUT,    // Text color when mouse is OUTside
+    BTNST_COLOR_BK_FOCUS,   // Background color when the button is focused
+    BTNST_COLOR_FG_FOCUS,   // Text color when the button is focused
+    BTNST_MAX_COLORS
+   };
+
+    enum { BTNST_PRESSED_LEFTRIGHT = 0, // Pressed style from left to
+    BTNST_PRESSED_TOPBOTTOM   // Pressed style from top to bottom
+   };
+
+ // ClassWizard generated virtual function overrides
+    //{{           (CButtonST)
+ public:
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+ virtual int  PreTranslateMessage(MSG* pMsg);
+ protected:
+ virtual void PreSubclassWindow();
+ //}}           
+
+public:
+ unsigned long SetDefaultColors(int  bRepaint = TRUE);
+ unsigned long SetColor(unsigned char byColorIndex, unsigned long crColor, int  bRepaint = TRUE);
+ unsigned long GetColor(unsigned char byColorIndex, unsigned long* crpColor);
+ unsigned long OffsetColor(unsigned char byColorIndex, short shOffset, int  bRepaint = TRUE);
+ void  SetLeftAlign(bool in) {leftAligned=in;}
+ bool  GetLeftAlign() {return leftAligned;}
+ void  SetMarked(int  in) {marked=in;}
+ unsigned long SetCheck(int nCheck, int  bRepaint = TRUE);
+ int GetCheck();
+
+ unsigned long SetURL(const char* lpszURL = NULL);
+ void DrawTransparent(int  bRepaint = FALSE);
+ unsigned long SetBk(CDC* pDC);
+
+ int  GetDefault();
+ unsigned long SetAlwaysTrack(int  bAlwaysTrack = TRUE);
+
+ void SetTooltipText(int nText, int  bActivate = TRUE);
+ void SetTooltipText(const char* lpszText, int  bActivate = TRUE);
+ void ActivateTooltip(int  bEnable = TRUE);
+ void Repaint() {Invalidate();}
+
+ unsigned long SetBtnCursor(int nCursorId = NULL, int  bRepaint = TRUE);
+
+ unsigned long SetFlat(int  bFlat = TRUE, int  bRepaint = TRUE);
+ unsigned long SetAlign(unsigned char byAlign, int  bRepaint = TRUE);
+ unsigned long SetPressedStyle(unsigned char byStyle, int  bRepaint = TRUE);
+
+ unsigned long DrawBorder(int  bDrawBorder = TRUE, int  bRepaint = TRUE);
+ unsigned long DrawFlatFocus(int  bDrawFlatFocus, int  bRepaint = TRUE);
+
+ unsigned long SetIcon(void* hIconIn, void* hIconOut = NULL);
+ unsigned long SetIcon(const char* hIconIn, const char* hIconOut = NULL);
+
+ unsigned long SetBitmaps(int nBitmapIn, unsigned long crTransColorIn, int nBitmapOut = NULL, unsigned long crTransColorOut = 0);
+ unsigned long SetBitmaps(void *  hBitmapIn, unsigned long crTransColorIn, void *  hBitmapOut = NULL, unsigned long crTransColorOut = 0);
+
+ void SizeToContent();
+
+
+ unsigned long SetMenu(unsigned int nMenu, void* hParentWnd, int  bWinXPStyle = TRUE, unsigned int nToolbarID = NULL, CSize sizeToolbarIcon = CSize(16, 16), unsigned long crToolbarBk = RGB(255, 0, 255), int  bRepaint = TRUE);
+
+
+
+ unsigned long SetMenuCallback(void* hWnd, unsigned int nMessage, long * lParam = 0);
+
+
+ unsigned long SetSound(const char* lpszSound, void *  hMod = NULL, int  bPlayOnClick = FALSE, int  bPlayAsync = TRUE);
+
+
+ static short GetVersionI()  {return 37;}
+ static const char* GetVersionC() {return (const char*)_T("3.7");}
+
+ int  m_bShowDisabledBitmap;
+ POINT m_ptImageOrg;
+ POINT m_ptPressedOffset;
+
+protected:
+    //{{       (CButtonST)
+         int  OnSetCursor(CWnd* pWnd, unsigned int nHitTest, unsigned int message);
+         void OnKillFocus(CWnd* pNewWnd);
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+         void OnSysColorChange();
+         int  OnClicked();
+         void OnActivate(unsigned int nState, CWnd* pWndOther, int  bMinimized);
+         void OnEnable(int  bEnable);
+         void OnCancelMode();
+         unsigned int OnGetDlgCode();
+ //}}       
+
+
+         long *  OnMenuChar(unsigned int nChar, unsigned int nFlags, CMenu* pMenu);
+         void OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct);
+
+
+         void*  CtlColor(CDC* pDC, unsigned int nCtlColor);
+ void* CreateGrayscaleIcon(void* hIcon);
+ virtual unsigned long OnDrawBackground(CDC* pDC, const RECT* pRect);
+ virtual unsigned long OnDrawBorder(CDC* pDC, const RECT* pRect);
+
+ int   m_bIsFlat;   // Is a flat button?
+ int   m_bMouseOnButton; // Is mouse over the button?
+ int   m_bDrawTransparent; // Draw transparent?
+ int   m_bIsPressed;  // Is button pressed?
+ int   m_bIsFocused;  // Is button focused?
+ int   m_bIsDisabled;  // Is button disabled?
+ int   m_bIsDefault;  // Is default button?
+ int   m_bIsCheckBox;  // Is the button a checkbox?
+ unsigned char  m_byAlign;   // Align mode
+ int   m_bDrawBorder;  // Draw border?
+ int   m_bDrawFlatFocus; // Draw focus rectangle for flat button?
+ unsigned long m_crColors[BTNST_MAX_COLORS]; // Colors to be used
+ void*  m_hParentWndMenu; // Handle to window for menu selection
+ int   m_bMenuDisplayed; // Is menu displayed ?
+
+
+ BCMenu  m_menuPopup;  // BCMenu class instance
+
+
+
+
+private:
+ long *  OnSetCheck(int *  wParam, long * lParam);
+ long *  OnGetCheck(int *  wParam, long * lParam);
+ long *  OnSetStyle(int *  wParam, long * lParam);
+ long *  OnMouseLeave(int *  wParam, long * lParam);
+
+ void FreeResources(int  bCheckForNULL = TRUE);
+ void PrepareImageRect(int  bHasTitle, RECT* rpItem, CRect* rpTitle, int  bIsPressed, unsigned long dwWidth, unsigned long dwHeight, CRect* rpImage);
+ void *  CreateBitmapMask(void *  hSourceBitmap, unsigned long dwWidth, unsigned long dwHeight, unsigned long crTransColor);
+ virtual void DrawTheIcon(CDC* pDC, int  bHasTitle, RECT* rpItem, CRect* rpCaption, int  bIsPressed, int  bIsDisabled);
+ virtual void DrawTheBitmap(CDC* pDC, int  bHasTitle, RECT* rpItem, CRect* rpCaption, int  bIsPressed, int  bIsDisabled);
+ virtual void DrawTheText(CDC* pDC, const char* lpszText, RECT* rpItem, CRect* rpCaption, int  bIsPressed, int  bIsDisabled);
+ void PaintBk(CDC* pDC);
+
+ void InitToolTip();
+
+ HCURSOR  m_hCursor;   // Handle to cursor
+ CToolTipCtrl m_ToolTip;   // Tooltip
+
+ CDC   m_dcBk;
+ CBitmap  m_bmpBk;
+ CBitmap* m_pbmpOldBk;
+
+ void CancelHover();
+ int   m_bAlwaysTrack;  // Always hilight button?
+ int   m_nCheck;   // Current value for checkbox
+ bool  leftAligned;
+ int   marked;
+ unsigned int  m_nTypeStyle;  // Button style
+
+ char   m_szURL[_MAX_PATH]; // URL to open when clicked
+
+
+           class _STRUCT_ICONS
+ {
+  void*  hIcon;   // Handle to icon
+  unsigned long  dwWidth;  // Width of icon
+  unsigned long  dwHeight;  // Height of icon
+ };       _STRUCT_ICONS STRUCT_ICONS = "CX_TYPEDEF";
+
+
+
+           class _STRUCT_BITMAPS
+ {
+  void *   hBitmap;  // Handle to bitmap
+  unsigned long  dwWidth;  // Width of bitmap
+  unsigned long  dwHeight;  // Height of bitmap
+  void *   hMask;   // Handle to mask bitmap
+  unsigned long crTransparent; // Transparent color
+ };       _STRUCT_BITMAPS STRUCT_BITMAPS = "CX_TYPEDEF";
+
+
+
+           class _STRUCT_CALLBACK
+ {
+  void*  hWnd;   // Handle to window
+  unsigned int  nMessage;  // Message identifier
+  int *   wParam;
+  long *  lParam;
+ };       _STRUCT_CALLBACK STRUCT_CALLBACK = "CX_TYPEDEF";
+
+
+ STRUCT_ICONS m_csIcons[2];
+ STRUCT_BITMAPS m_csBitmaps[2];
+
+ STRUCT_CALLBACK m_csCallbacks;
+
+
+
+           class _STRUCT_SOUND
+ {
+  char   szSound[_MAX_PATH];
+  const char*  lpszSound;
+  void *   hMod;
+  unsigned long  dwFlags;
+ };       _STRUCT_SOUND STRUCT_SOUND = "CX_TYPEDEF";
+
+
+ STRUCT_SOUND m_csSounds[2]; // Index 0 =      1 = Clicked
+
+
+
+};
+
+//{{                   }}
+// Microsoft Developer Studio will insert additional declarations immediately before the previous line.
+
+
+
+
+
+
+
+
+ 

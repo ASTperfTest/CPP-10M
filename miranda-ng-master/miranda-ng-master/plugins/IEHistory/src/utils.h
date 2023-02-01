@@ -1,0 +1,72 @@
+/*
+IEView history viewer plugin for Miranda IM
+
+Copyright © 2005-2006 Cristian Libotean
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+
+#ifndef M_IEHISTORY_UTILS_H
+#define M_IEHISTORY_UTILS_H
+
+#define DIRECTION_BACK			0x000001
+#define DIRECTION_FORWARD		0x000002
+
+#define SEARCH_TEXT					0x000001
+#define SEARCH_TIME					0x000002
+
+/*
+#define SIDE_LEFT				  0x000001
+#define SIDE_TOP				  0x000002
+#define SIDE_RIGHT			  0x000004
+#define SIDE_BOTTOM		  	0x000008
+#define SIDE_TOPLEFT		  SIDE_TOP | SIDE_LEFT
+#define SIDE_TOPRIGHT		  SIDE_TOP | SIDE_RIGHT
+#define SIDE_BOTTOMLEFT   SIDE_BOTTOM | SIDE_LEFT
+#define SIDE_BOTTOMRIGHT	SIDE_BOTTOM | SIDE_RIGHT
+*/
+
+#define TSDF_TIME_SET						0x00000001
+#define TSDF_DATE_SET						0x00000002
+
+struct TimeSearchData{
+	int flags;
+	SYSTEMTIME time;
+};
+
+struct SearchResult{
+	long index;
+	MEVENT hEvent;
+};
+
+#ifdef _DEBUG
+int LogInit();
+int Log(char *format, ...);
+#else
+#	define LogInit()
+#	define Log(fmt,...)
+#endif
+
+void ScreenToClient(HWND hWnd, LPRECT rect);
+
+int Info(char *title, char *format, ...);
+
+void UnixTimeToFileTime(time_t t, LPFILETIME pft);
+void UnixTimeToSystemTime(time_t t, LPSYSTEMTIME pst);
+
+MEVENT GetNeededEvent(MCONTACT contact, MEVENT hLastFirstEvent, int num, int direction);
+SearchResult SearchHistory(MCONTACT contact, MEVENT hFirstEvent,  void *searchData, int direction, int type);
+
+#endif

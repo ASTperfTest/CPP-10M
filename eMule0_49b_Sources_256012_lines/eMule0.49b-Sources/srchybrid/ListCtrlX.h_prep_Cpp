@@ -1,0 +1,154 @@
+﻿
+
+//////////////////////////////////////////////////////////////////////////////
+// LCX_SORT_ORDER
+
+ enum LCX_SORT_ORDER
+{
+ DESCENDING = 0,
+ ASCENDING,
+ NONE
+} ;
+
+
+// Sort state image list
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+// LCX_COLUMN_INIT
+
+  class LCX_COLUMN_INIT
+{
+ int    iColID;
+ const char*   pszHeading;
+ unsigned int   uHeadResID;  // optional, set to 0, if not needed
+ unsigned int   uFormat;
+ int    iWidth;
+ int    iOrder;
+ LCX_SORT_ORDER eDfltSortOrder;
+ LCX_SORT_ORDER eSortOrder;  // changed during runtime
+ const char*   pszSample;
+} ;
+
+
+//////////////////////////////////////////////////////////////////////////////
+// Common List Ctrl helpers
+void ReadColumnStats(int iColumns, LCX_COLUMN_INIT* pColumns, const char* pszSection, const char* pszPrefix);
+void WriteColumnStats(CListCtrl& lv, int iColumns, const LCX_COLUMN_INIT* pColumns, const char* pszSection, const char* pszPrefix);
+
+void InitColumnOrders(CListCtrl& lv, int iColumns, const LCX_COLUMN_INIT* pColumns);
+void SetItemFocus(CListCtrl& lv);
+void UpdateHdrImageList(CListCtrl& lv, CImageList& imlHdr, unsigned int uIDHdrImgList, CSize sizeHdrImgListIcon, int iHdrImgListImages);
+void CreateItemReport(CListCtrl& lv, CString& rstrReport);
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CListCtrlX window
+
+class CListCtrlX;
+        bool (*LCX_FINDITEMFN)(const CListCtrlX& lv, int iItem, unsigned long lParam) = "CX_TYPEDEF";
+
+class CListCtrlX :        CListCtrl
+{
+// Construction
+public:
+ CListCtrlX();
+ virtual ~CListCtrlX();
+
+// Attributes
+public:
+ CWnd* m_pParent;
+ CMenu* m_pMenu;
+ unsigned int m_uIDMenu;
+ int  m_bRouteMenuCmdsToMainFrame;
+ unsigned int m_uIDAccel;
+ LCX_FINDITEMFN m_pfnFindItem;
+ unsigned long m_lFindItemParam;
+
+ void SetRegistryKey(const char* pszRegKey) { m_strRegKey = pszRegKey; }
+ void SetRegistryPrefix(const char* pszPrefix) { m_strRegPrefix = pszPrefix; }
+
+ void EnableHdrCtrlSortBitmaps(int  bUseHdrCtrlSortBitmaps = TRUE);
+ void SetHdrImgList(unsigned int uResID, int cx, int cy, int iImages);
+ int GetSortBitmapWidth() const { return m_bUseHdrCtrlSortBitmaps ? 12 : 8                         ; }
+
+ int GetSortColumn() const { return m_iSortColumn; }
+ void SetSortColumn(int iColumns, LCX_COLUMN_INIT* pColumns, int iSortColumn);
+ void UpdateSortColumn(int iColumns, LCX_COLUMN_INIT* pColumns);
+
+// Operations
+public:
+ void CreateColumns(int iColumns, LCX_COLUMN_INIT* pColumns);
+ void ReadColumnStats(int iColumns, LCX_COLUMN_INIT* pColumns);
+ void ReadColumnStats(int iColumns, LCX_COLUMN_INIT* pColumns, const char* pszSection);
+ void WriteColumnStats(int iColumns, const LCX_COLUMN_INIT* pColumns);
+ void WriteColumnStats(int iColumns, const LCX_COLUMN_INIT* pColumns, const char* pszSection);
+
+ void InitColumnOrders(int iColumns, const LCX_COLUMN_INIT* pColumns);
+
+ void SelectAllItems();
+ void DeselectAllItems();
+ void CheckSelectedItems(int nCurrItem);
+
+ void UpdateSortOrder(LPNMLISTVIEW pnmlv, int iColumns, LCX_COLUMN_INIT* pColumns);
+ void UpdateHdrCtrlSortBitmap(int iSortedColumn, LCX_SORT_ORDER eSortOrder);
+
+ void UpdateHdrImageList();
+ void ApplyImageList(HIMAGELIST himl);
+
+ void OnFindStart();
+ void OnFindNext();
+ void OnFindPrev();
+ int GetFindColumn() const { return m_iFindColumn; }
+ const CString& GetFindText() const { return m_strFindText; }
+ bool GetFindMatchCase() const { return m_bFindMatchCase; }
+ static bool FindItem(const CListCtrlX& lv, int iItem, unsigned long lParam);
+
+protected:
+ CString m_strRegKey;
+ CString m_strRegPrefix;
+ int  m_bUseHdrCtrlSortBitmaps;
+ int m_iSortColumn;
+ void*  m_hAccel;
+
+ unsigned int m_uIDHdrImgList;
+ CSize m_sizeHdrImgListIcon;
+ int m_iHdrImgListImages;
+ CImageList m_imlHdr;
+
+ CString m_strFindText;
+ bool m_bFindMatchCase;
+ int m_iFindDirection;
+ int m_iFindColumn;
+ void DoFindNext(int  bShowError);
+ void DoFind(int iStartItem, int iDirection /*1=down, 0 = up*/, int  bShowError);
+
+ virtual int  PreTranslateMessage(MSG* pMsg);
+ virtual void PreSubclassWindow();
+
+
+         void OnKeyDown(unsigned int nChar, unsigned int nRepCnt, unsigned int nFlags);
+         void OnSysColorChange();
+         void OnSetFocus(CWnd* pOldWnd);
+         void OnDestroy();
+         int OnCreate(LPCREATESTRUCT lpCreateStruct);
+         void OnInitMenuPopup(CMenu* pPopupMenu, unsigned int nIndex, int  bSysMenu);
+         void OnMenuSelect(unsigned int nItemID, unsigned int nFlags, void* hSysMenu);
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+         int  OnHdrBeginDrag(unsigned int, NMHDR*, long * *);
+         int  OnHdrEndDrag(unsigned int, NMHDR*, long * *);
+         long *  OnCopy(int *  wParam, long * lParam);
+};
+
+
+
+
+
+
+ 

@@ -1,0 +1,48 @@
+﻿
+
+class CEditableListCtrl :        CListCtrl
+{
+public:
+ CEditableListCtrl();
+
+ CEdit* GetEditCtrl() const { return m_pctrlEdit; }
+ void CommitEditCtrl();
+
+ virtual int  PreTranslateMessage(MSG* pMsg);
+
+protected:
+ CEdit* m_pctrlEdit;
+ CComboBox* m_pctrlComboBox;
+ int m_iRow;
+ int m_iCol;
+ int m_iEditRow;
+ int m_iEditCol;
+
+ void ShowEditCtrl();
+ void ShowComboBoxCtrl();
+ void ResetTopPosition();
+ void ResetBottomPosition();
+ void VerifyScrollPos();
+
+ int  OnNotify(int *  wParam, long * lParam, long * * pResult);
+
+
+         void OnVScroll(unsigned int nSBCode, unsigned int nPos, CScrollBar* pScrollBar);
+         void OnHScroll(unsigned int nSBCode, unsigned int nPos, CScrollBar* pScrollBar);
+         void OnColumnclick(NMHDR* pNMHDR, long * * pResult);
+         void OnKeydown(NMHDR* pNMHDR, long * * pResult);
+         void OnDestroy();
+         void OnEnKillFocus();
+         void OnLButtonDown(unsigned int nFlags, CPoint point);
+         void OnSetFocus(CWnd* pOldWnd);
+         void OnNMCustomDraw(NMHDR *pNMHDR, long *  *pResult);
+         void OnLvnEndScroll(NMHDR *pNMHDR, long *  *pResult);
+         void OnLvnBeginScroll(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

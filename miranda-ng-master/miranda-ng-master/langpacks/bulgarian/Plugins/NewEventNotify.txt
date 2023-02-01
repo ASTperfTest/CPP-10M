@@ -1,0 +1,128 @@
+#muuid {3503D584-6234-4BEF-A553-6C1B9CD471F2}
+;============================================================
+;  File: NewEventNotify.dll
+;  Plugin: NewEventNotify
+;  Version: 0.2.2.6
+;  Authors: icebreaker, Prezes, vj, vlko, Joe @ Whale
+;============================================================
+[Notifies you when you receive a message, URL, file or any other event by displaying a popup.]
+
+;file \plugins\NewEventNotify\res\resource.rc
+[Limit message preview to]
+Ограничаване текста в образеца до
+[characters]
+знака
+[Message]
+Съобщение
+[File]
+Файл
+[Errors]
+Грешки
+[Others]
+Други
+[Text]
+Текст
+[Background]
+Фон
+[Use default colors]
+Стандартни цветове
+[Timeout, secs]
+
+[Preview]
+Образец
+[(timeout -1 means forever, 0 - default)]
+
+[Don't show popup when message dialog is already open]
+
+[Hide popup when sending new message]
+
+[Open reply dialog instead of reading the message]
+
+[Merge popups from one user]
+
+[Show date]
+Показване на дата
+[Show time]
+Показване на час
+[Show headers]
+Показване на горните колонтитули
+[Number of messages being shown]
+
+[Last message display first]
+
+[Last message display last]
+
+;file \plugins\NewEventNotify\src\main.cpp
+[New event notifications]
+
+;file \plugins\NewEventNotify\src\options.cpp
+[General options]
+Основни настройки
+[Show preview of event in popup]
+
+[Enable event notifications for instant messages]
+
+[Enable event notifications for group chats]
+
+[Notify me of...]
+
+[Error]
+Грешка
+[Left click actions]
+
+[Dismiss popup]
+Затваряне на Popup
+[Open event]
+Отваряне на събитието
+[Dismiss event]
+Затваряне на събитието
+[Right click actions]
+
+[Timeout actions]
+
+[Misc options]
+
+[No popups for RSS contacts]
+
+[No popups for read messages]
+
+[Event Notify]
+
+[Popups]
+Рopups
+[Main options]
+
+[Message events]
+Текстови събития
+[Event types]
+
+;file \plugins\NewEventNotify\src\popup.cpp
+[Received %d contacts.]
+
+[ added you to the contact list]
+
+[ requested authorization]
+ заявено упълномощаване
+[This is a sample message event :-)]
+Пример за текстово събитие :-)
+[This is a sample file event :-D]
+Пример за файлово събитие :-D
+[This is a sample error event :-D]
+
+[This is a sample other event ;-D]
+Пример за друго събитие ;-D
+[Plugin Test]
+
+[[b]Number of new message(s): %d[/b]\n]
+[b]Брой нови съобщения: %d[/b]\n
+;file \plugins\NewEventNotify\src\stdafx.h
+[Contacts]
+Контакти
+[You were added!]
+Вие бяхте добавен!
+[Requests your authorization]
+Желае упълномощаване от ваша страна
+[Unknown Event]
+Неизвестно събитие
+[Notify of new events]
+

@@ -1,0 +1,69 @@
+#muuid {EFB2355B-82B3-4759-b7d8-95f8e9506291}
+;============================================================
+;  File: ICQ.dll
+;  Plugin: ICQ-WIM protocol
+;  Version: 0.96.2.3
+;  Authors: George Hazan
+;============================================================
+[ICQ protocol support for Miranda NG.]
+;file \protocols\ICQ-WIM\res\resources.rc
+[Edit server groups]
+[UIN/e-mail:]
+[Password:]
+[Sign in/sign up using phone]
+[Do not open chat windows on creation]
+[Use tray icon notifications]
+[Launch mailbox in a browser on click]
+[Show error popups]
+[Notifications]
+[If a contact goes Offline, set this status instead and cache it for given timeout in seconds (0 - disabled)]
+[After that, set this status to a contact and move it offline after specified timeout in seconds (0 - disabled)]
+[Send group chat invitation]
+[&Invite]
+[Cancel]
+[Account registration]
+[Enter full phone number]
+[Send me registration code via SMS]
+[Enter registration code]
+[UIN:]
+[Online since:]
+[Idle since:]
+[Nick:]
+[Member since:]
+[Last seen:]
+[Phone number:]
+[Enter ICQ Password]
+[Enter a password:]
+[Remember this session password]
+;file \protocols\ICQ-WIM\src\groupchats.cpp
+[&Invite a user]
+[&Leave/destroy chat]
+;file \protocols\ICQ-WIM\src\main.cpp
+[E-mail]
+[E-mail notification]
+;file \protocols\ICQ-WIM\src\options.cpp
+[Network]
+[General]
+[Advanced]
+;file \protocols\ICQ-WIM\src\poll.cpp
+[You received e-mail from %s: %s]
+[You have %d unread emails]
+;file \protocols\ICQ-WIM\src\proto.cpp
+[Synchronize server groups]
+[Edit my web profile]
+[Name]
+[Rename]
+[Delete]
+[Enter new group name]
+[UIN/e-mail/phone]
+;file \protocols\ICQ-WIM\src\server.cpp
+[SmileyAdd plugin required to support stickers]
+[You have not entered a login or password.\nConfigure this in Options -> Network -> ICQ and try again.]
+[Connection failed.\nYour login or password was rejected (%d).]
+[Connection failed.\nThe server is temporarily unavailable (%d).]
+[Connection failed.\nUnknown error during sign on: %d]
+[admin]
+[member]
+[Unknown sticker]
+[User sent a sticker:]
+[Buddy addition failed]

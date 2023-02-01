@@ -1,0 +1,78 @@
+#muuid {2fd0df15-7098-41ce-aa92-ff621806e38b}
+;============================================================
+;  File: Exchange.dll
+;  Plugin: Exchange notifier plugin
+;  Version: 0.1.3.4
+;  Authors: Cristian Libotean, Attila Vajda, MaKaR (NG)
+;============================================================
+[Notifies you if you have unread email on an exchange server.]
+Powiadamia o nieprzeczytanych wiadomościach na serwerze Exchange.
+;file \plugins\Exchange\res\exchange.rc
+[Unread emails]
+Nieprzeczytane e-maile
+[Close]
+Zamknij
+[Mark as read]
+Oznacz jako przeczytane
+[Connection]
+Połączenie
+[Username:]
+Użytkownik:
+[Password:]
+Hasło:
+[Server:]
+Serwer:
+[Preferences]
+Opcje
+[Check every]
+Sprawdzaj co
+[seconds]
+s
+[Force reconnect every]
+Wymuszaj połączenie co
+[minutes]
+minut
+[Check server before trying to connect]
+Sprawdź serwer przed próbą połączenia
+[Try to connect]
+Próba łączenia
+[times before giving up]
+razy przed rezygnacją
+[Show email notifications using popup module]
+Powiadomienia o nowej poczcie (wtyczka Popup)
+;file \plugins\Exchange\src\dlg_handlers.cpp
+[Entry ID]
+ID wpisu
+[Subject]
+Temat
+[Sender]
+Nadawca
+;file \plugins\Exchange\src\emails.cpp
+[Maximum number of retries reached.\nPlugin will stop trying to connect automatically.]
+Maksymalna liczba prób ponownego połączenia osiągnięta.\nWtyczka zaprzestanie dalszych prób ponownego połączenia.
+[Server not available]
+Serwer niedostępny
+[Server is not configured...]
+Serwer nie jest skonfigurowany
+[You have %d unread emails...]
+Masz %d nieprzeczytane wiadomości...
+[You have one unread email...]
+Masz jedną nieprzeczytaną wiadomość...
+[Cannot connect to Exchange server...]
+Nie można połączyć się z serwerem Exchange...
+[Exchange email]
+E-mail Exchange
+[Do you want to see the email headers?]
+Czy chcesz widzieć nagłówki wiadomości?
+;file \plugins\Exchange\src\hooked_events.cpp
+[Check exchange mailbox]
+Sprawdź skrzynkę Exchange
+[Exchange notify]
+Powiadomienia Exchange
+[Plugins]
+Wtyczki
+[Forcefully reconnecting to Exchange server ...]
+Wymuszone ponowne łączenie z serwerem Exchange ...
+;file \plugins\Exchange\src\MirandaExchange.cpp
+[Connecting to Exchange ...]
+Łączenie z Exchange ...

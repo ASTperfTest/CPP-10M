@@ -1,0 +1,89 @@
+﻿void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("ColorFrameCtrl.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CColorFrameCtrl
+
+/* BEGIN_MESSAGE_MAP(CColorFrameCtrl, CWnd)
+ ON_WM_PAINT()
+
+END_MESSAGE_MAP() */ //)
+
+CColorFrameCtrl::CColorFrameCtrl()
+{
+ m_crBackColor = RGB(0, 0, 0);  // see also SetBackgroundColor
+ m_crFrameColor = RGB(0, 255, 255);  // see also SetFrameColor
+
+ m_brushBack.CreateSolidBrush(m_crBackColor);
+ m_brushFrame.CreateSolidBrush(m_crFrameColor);
+}
+
+CColorFrameCtrl::~CColorFrameCtrl()
+{
+ m_brushFrame.DeleteObject();
+ m_brushBack.DeleteObject();
+}
+
+int  CColorFrameCtrl::Create(unsigned long dwStyle, const RECT& rect, CWnd* pParentWnd, unsigned int nID)
+{
+ int  result;
+ static CString className = AfxRegisterWndClass(CS_HREDRAW | CS_VREDRAW, AfxGetApp()->LoadStandardCursor(IDC_ARROW));
+
+ result = CWnd::CreateEx( WS_EX_STATICEDGE,
+                        className, NULL, dwStyle,
+                        rect.left, rect.top, rect.right-rect.left, rect.bottom-rect.top,
+                        pParentWnd->GetSafeHwnd(), (void*)nID);
+ if (result != 0)
+  Invalidate();
+ return result;
+}
+
+void CColorFrameCtrl::SetFrameColor( unsigned long color )
+{
+ m_crFrameColor = color;
+ m_brushFrame.DeleteObject();
+ m_brushFrame.CreateSolidBrush(m_crFrameColor);
+
+ // clear out the existing garbage, re-start with a clean plot
+ Invalidate();
+}
+
+void CColorFrameCtrl::SetBackgroundColor(unsigned long color)
+{
+ m_crBackColor = color;
+
+ m_brushBack.DeleteObject();
+ m_brushBack.CreateSolidBrush(m_crBackColor);
+
+ // clear out the existing garbage, re-start with a clean plot
+ Invalidate();
+}
+
+void CColorFrameCtrl::OnPaint()
+{
+ CPaintDC dc(this);  // device context for painting
+
+ dc.FillRect(m_rectClient, &m_brushBack);
+ dc.FrameRect(m_rectClient, &m_brushFrame);
+}
+
+void CColorFrameCtrl::OnSize(unsigned int nType, int cx, int cy)
+{
+ // NOTE: OnSize automatically gets called during the setup of the control
+ CWnd::OnSize(nType, cx, cy);
+ GetClientRect(m_rectClient);
+}
+
+
+
+
+
+
+ 

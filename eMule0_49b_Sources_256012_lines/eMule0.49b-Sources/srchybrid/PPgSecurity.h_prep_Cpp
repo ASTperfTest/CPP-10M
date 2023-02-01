@@ -1,0 +1,50 @@
+﻿
+
+class CCustomAutoComplete;
+
+class CPPgSecurity :        CPropertyPage
+{
+ //DECLARE_DYNAMIC(CPPgSecurity)
+
+public:
+ CPPgSecurity();
+ virtual ~CPPgSecurity();
+
+// Dialog Data
+ enum { IDD = IDD_PPG_SECURITY };
+
+ void Localize(void);
+ void DeleteDDB();
+
+protected:
+ CCustomAutoComplete* m_pacIPFilterURL;
+
+ void LoadSettings(void);
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  OnApply();
+ virtual int  PreTranslateMessage(MSG* pMsg);
+ virtual int  OnCommand(int *  wParam, long * lParam);
+
+
+         void OnSettingsChange()     { SetModified(); }
+         void OnReloadIPFilter();
+         void OnEditIPFilter();
+         void OnLoadIPFFromURL();
+         void OnEnChangeUpdateUrl();
+         void OnDDClicked();
+         void OnHelp();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         void OnBnClickedRunAsUser();
+         void OnDestroy();
+         void OnObfuscatedDisabledChange();
+         void OnObfuscatedRequestedChange();
+};
+
+
+
+
+
+
+ 

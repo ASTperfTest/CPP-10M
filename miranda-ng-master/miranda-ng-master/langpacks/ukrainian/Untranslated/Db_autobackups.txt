@@ -1,0 +1,4 @@
+[Backup file mask:]
+[Uploading to cloud failed]
+[AutoBackups notifications]
+[Next backup is scheduled to]

@@ -1,0 +1,103 @@
+#muuid {e47cc215-0d28-462d-a0f6-3ae4443d2926}
+;============================================================
+;  File: Nudge.dll
+;  Plugin: Nudge
+;  Version: 0.2.0.2
+;  Authors: Tweety/GouZ, FREAK_THEMIGHTY
+;============================================================
+[Plugin to shake the contact list and chat window.]
+Встряхивает список контактов и окно сообщений.
+;file \plugins\Nudge\res\resource.rc
+[Protocol options]
+Настройки протокола
+[Specify options for each protocol]
+Индивидуальные настройки протоколов
+[Open contact list]
+Открыть список контактов
+[Enable contact list shaking]
+Трясти список контактов
+[Open message window]
+Открыть окно сообщений
+[Enable message window shaking]
+Встряхивать окно сообщений
+[Show as status change]
+Показывать как смену статуса
+[Auto resend nudge after]
+Повторять встряску каждые
+[s]
+с
+[Enable popup notification]
+Включить всплывающие окна
+[Respect ignore settings (status changes)]
+Учесть настройки игнорирования (смены статусов)
+[Sending text]
+Текст отправки
+[Receiving text]
+Текст приёма
+[Privacy]
+Приватность
+[Allow sending* one nudge to the same contact every:]
+Отправка встряски одному и тому же контакту каждые:
+[Allow receiving one nudge from the same contact every:]
+Приём встряски от одного контакта каждые:
+[* Nudge sending delay is hardcoded and cannot be changed.]
+* Это значение невозможно изменить, оно задано в коде плагина.
+[Preview]
+Тест
+[Text]
+Текст
+[Allow nudges when you're:]
+Разрешать встряску когда вы:
+[Offline]
+Не в сети
+[Online]
+В сети
+[Away]
+Отсутствую
+[Not available]
+Недоступен
+[Occupied]
+Занят
+[Do not disturb]
+Не беспокоить
+[Free for chat]
+Готов болтать
+[Invisible]
+Невидимый
+[Shaking contact list options]
+Настройки встряски списка контактов
+[Number of moves]
+Кол-во движений
+[Width of move]
+Ширина движений
+[Static]
+Статический
+[Shaking Message Window Options]
+Встряска окна сообщений
+;file \plugins\Nudge\src\main.cpp
+[Nudge as Default]
+Встряхнуть (по умолчанию)
+[You are not allowed to send too much nudge (only 1 each %d sec, %d sec left)]
+Нельзя отправлять много встрясок (только 1 каждые %d сек, %d сек осталось)
+[Show Nudge]
+Встряска
+[Nudge for %s]
+Встряска для %s
+[Nudge]
+Встряска
+[Default Nudge]
+Встряска по умолчанию
+[Send nudge]
+Встряхнуть
+[Send &nudge]
+&Встряхнуть
+;file \plugins\Nudge\src\nudge.cpp
+[You received a nudge]
+Вас встряхнули
+[You sent a nudge]
+Вы встряхнули
+;file \plugins\Nudge\src\options.cpp
+[Events]
+События
+[Window Shaking]
+Встряска окна

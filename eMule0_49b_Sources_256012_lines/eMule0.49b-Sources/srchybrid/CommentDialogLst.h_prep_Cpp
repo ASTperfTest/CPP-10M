@@ -1,0 +1,52 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("ResizableLib/ResizablePage.h");}
+void INCLUDEREPLACE(){CX_INCL("CommentListCtrl.h");}
+
+class CPartFile;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CCommentDialogLst
+
+class CCommentDialogLst :        CResizablePage
+{
+ //DECLARE_DYNAMIC(CCommentDialogLst)
+
+public:
+ CCommentDialogLst();
+ virtual ~CCommentDialogLst();
+
+ void SetFiles(const CSimpleArray          * paFiles) { m_paFiles = paFiles; m_bDataChanged = true; }
+
+// Dialog Data
+ enum { IDD = IDD_COMMENTLST };
+
+protected:
+ CString m_strCaption;
+ CCommentListCtrl m_lstComments;
+ const CSimpleArray          * m_paFiles;
+ bool m_bDataChanged;
+ uint32 m_timer;
+
+ void Localize();
+ void RefreshData(bool deleteOld = true);
+
+ virtual int  OnInitDialog();
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnSetActive();
+
+
+         void OnBnClickedApply();
+         void OnBnClickedSearchKad();
+         void OnBnClickedFilter();
+         long *  OnDataChanged(int * , long *);
+         void OnDestroy();
+         void OnTimer(unsigned int nIDEvent);
+};
+
+
+
+
+
+
+ 

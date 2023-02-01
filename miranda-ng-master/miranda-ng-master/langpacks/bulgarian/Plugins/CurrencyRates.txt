@@ -1,0 +1,244 @@
+#muuid {e882056d-0d1d-4131-9a98-404cbaea6a9c}
+;============================================================
+;  File: CurrencyRates.dll
+;  Plugin: Currency Rates
+;  Version: 0.2.1.2
+;  Authors: Dioksin
+;============================================================
+[Shows currency rates.]
+
+;file \protocols\CurrencyRates\res\Forex.rc
+[Variable List]
+Списък с променливи
+[Edit Settings]
+Редактиране на настройките
+[Use contact specific settings]
+Ползване на частните настройки за контакта
+[Log]
+Дневник
+[Use &Internal History]
+Ползване на историята
+[&Format:]
+Формат:
+[&Variables...]
+Променливи..
+[&Add to History only if Value Changed]
+Добавяне на елемент само при промяна на стойността
+[Use &External File]
+Външен файл
+[&Select File:]
+Файл:
+[&Browse...]
+Разглеждане.
+[Variables Allowed: %miranda_userdata%,%currencyratename%]
+Позволени променливи: %miranda_userdata%,%currencyratename%
+[F&ormat:]
+Формат:
+[V&ariables...]
+Променливи..
+[Add to &Log only if Value Changed]
+Добавяне на елемент само при промяна на стойността
+[Show &Popup Window]
+Показване на Popup прозорец
+[Show Popup Window Only if Value &Changed]
+Показване на popup само при промяна на стойността
+[Cancel]
+Отказ
+[Popup settings...]
+Popup настройки...
+[Currency Converter]
+Конвертор на валута
+[&to:]
+в:
+[&Swap]
+Размяна
+[Convert]
+Превръщане
+[Info provided by <a href="http://www.google.com">Google</a>]
+Източник на информацията Google
+[Close]
+Затваряне
+[Popup settings]
+
+[Colors]
+Цветове
+[Use default colors]
+Стандартни цветове
+[Use custom colors]
+Зададени цветове
+[Background color]
+Цвят на фона
+[Text color]
+Цвят на текста
+[Timeout]
+Времетраене
+[Default]
+Стандарт
+[Custom]
+Избор
+[Permanent]
+Постоянно
+[Do not add to popup's history]
+Без добавяне към popup историята
+[Preview]
+Образец
+[Current Rate:]
+Текущ курс:
+[Rate Fetch Time:]
+Получен в:
+[Previous Rate:]
+Предишен курс:
+[&Convert:]
+Превръщане на:
+[&Add]
+Добавяне
+[&Watched currency rates:]
+Наблюдавани валутни курсове:
+[&Remove]
+Премахване
+[&Refresh Rates Every:]
+Обновяване през:
+[&Display in Contact List as:]
+Изобразяване като:
+[&Status Message:]
+Текст за състояние:
+[&Tendency:]
+Тенденция:
+[&Personal key:]
+
+[&Advanced Settings...]
+Допълнителни настройки...
+[Rate Info]
+Инф. за курса
+;file \protocols\CurrencyRates\src\Chart.h
+[There is nothing to show]
+Няма за изобразяване
+;file \protocols\CurrencyRates\src\CommonOptionDlg.cpp
+[Seconds]
+Секунди
+[Minutes]
+Минути
+[Hours]
+Часове
+[Enter integer value between 1 and 60.]
+Въведете цяла стойност между 1 и 60.
+[Enter integer value between 1 and 24.]
+Въведете цяла стойност между 1 и 24.
+[Enter text to display in contact list.]
+Въведете текст за изобразяване в списъка с контакти.
+;file \protocols\CurrencyRates\src\CurrencyConverter.cpp
+[Info provided by]
+Източник
+[Enter positive number.]
+Въведете положително число.
+;file \protocols\CurrencyRates\src\CurrencyRateInfoDlg.cpp
+[Currency Rate]
+
+;file \protocols\CurrencyRates\src\CurrencyRatesProviderBase.cpp
+[Source of information]
+Източник на информация
+[Rate value]
+Стойност на курса
+[Rate delta]
+
+[Previous rate value]
+Предишен курс
+[Fetch time]
+Час на получаване
+[Fetch date]
+Дата на получаване
+[Fetch time and date]
+Часа и дата на получаване
+[Percent character (%)]
+Знак за проценти (%)
+[Tabulation]
+
+[Left slash (\\)]
+Черта наклонена наляво
+;file \protocols\CurrencyRates\src\CurrencyRatesProviderCurrencyConverter.cpp
+[Error occurred during HTML parsing.]
+
+[Error occurred during site access.]
+
+[From Currency Full Name]
+От валута (цялото име)
+[From Currency Short Name]
+От валута (кратко име)
+[Into Currency Full Name]
+Във валута (цялото име)
+[Into Currency Short Name]
+Във валута (кратко име)
+[Short notation for "%f/%i"]
+Кратко означаване на "%f/%i"
+;file \protocols\CurrencyRates\src\Forex.cpp
+[Auto Update Enabled]
+Автообновяването е включено
+[Auto Update Disabled]
+Автообновяването е изключено
+[Currency Rates]
+Валутни курсове
+[Enable/Disable Auto Update]
+Вкл / Изкл на автоматично обновяване
+[Refresh All Rates]
+Обновяване на всички курсове
+[Currency Converter...]
+Конвертиране на валута...
+[Export All Currency Rates]
+Изнасяне на всички курсове
+[Import All Currency Rates]
+Внасяне на всички курсове
+[Refresh]
+Обновяване
+[Open Log File...]
+Отваряне на дневника...
+[Chart...]
+Диаграма...
+[Edit Settings...]
+Редактиране на настройките...
+[Enable/Disable Currency Rates Auto Update]
+
+[Currency Rates Auto Update Enabled]
+
+[Currency Rates Auto Update Disabled]
+
+[Currency Symbol]
+
+[Network]
+Мрежа
+[Protocol icon]
+Икона на протокола
+[Currency Rate up]
+Покачване на курс
+[Currency Rate down]
+Спадане на курс
+[Currency Rate not changed]
+Курс без промяна
+[Currency Rate Section]
+
+[Export]
+Износ
+[Swap button]
+Бутон за размяна
+[Import]
+Внос
+;file \protocols\CurrencyRates\src\HTTPSession.cpp
+[This plugin requires a personal key. Press Yes to obtain it at the site and then enter the result in the Options dialog, otherwise this plugin will fail.]
+
+;file \protocols\CurrencyRates\src\ImportExport.cpp
+[XML File (*.xml)]
+XML файлове (*.xml)
+[All files (*.*)]
+Всички файлове (*.*)
+;file \protocols\CurrencyRates\src\SettingsDlg.cpp
+[Log Files (*.txt,*.log)]
+
+[Enter integer value]
+
+[Enter log file name.]
+Въведете име на дневника.
+[Enter log file format.]
+Въведете формат за името.
+[Enter history format.]
+Въведете формат за историята.
+[Enter popup window format.]
+

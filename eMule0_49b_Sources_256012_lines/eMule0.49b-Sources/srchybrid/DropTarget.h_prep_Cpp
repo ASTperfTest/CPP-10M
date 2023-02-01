@@ -1,0 +1,37 @@
+﻿
+
+       PASTEURLDATA;
+
+//////////////////////////////////////////////////////////////////////////////
+// CMainFrameDropTarget
+
+class CMainFrameDropTarget :        COleDropTarget
+{
+public:
+ CMainFrameDropTarget();
+
+ virtual            OnDragEnter(CWnd* pWnd, COleDataObject* pDataObject, unsigned long dwKeyState, CPoint point);
+ virtual            OnDragOver(CWnd* pWnd, COleDataObject* pDataObject, unsigned long dwKeyState, CPoint point);
+ virtual int  OnDrop(CWnd* pWnd, COleDataObject* pDataObject, DROPEFFECT dropEffect, CPoint point);
+ virtual void OnDragLeave(CWnd* pWnd);
+
+protected:
+ int  m_bDropDataValid;
+ CLIPFORMAT m_cfHTML;
+ CLIPFORMAT m_cfShellURL;
+
+ int  IsSupportedDropData(COleDataObject* pDataObject);
+ unsigned long PasteHTMLDocument(IHTMLDocument2* doc, PASTEURLDATA* pPaste);
+ unsigned long PasteHTML(PASTEURLDATA* pPaste);
+ unsigned long PasteHTML(COleDataObject &data);
+ unsigned long PasteText(CLIPFORMAT cfData, COleDataObject& data);
+ unsigned long PasteHDROP(COleDataObject &data);
+ unsigned long AddUrlFileContents(const char* pszFileName);
+};
+
+
+
+
+
+
+ 

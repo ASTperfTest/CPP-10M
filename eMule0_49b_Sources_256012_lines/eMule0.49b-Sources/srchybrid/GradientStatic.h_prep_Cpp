@@ -1,0 +1,78 @@
+﻿
+
+/////////////////////////////////////////////////////////////////////////////
+// CGradientStatic window
+
+class CGradientStatic :        CStatic
+{
+// Construction
+public:
+ CGradientStatic();
+
+// Attributes
+public:
+
+// Operations
+public:
+
+// Overrides
+ // ClassWizard generated virtual function overrides
+ //{{           (CGradientStatic)
+ //}}           
+
+// Implementation
+public:
+ void SetFont(CFont *pFont);
+ virtual ~CGradientStatic();
+
+ void SetInit(bool bInit)    { m_bInit = bInit;   }
+ void SetHorizontal(bool bHorz = true) { m_bHorizontal = bHorz; }
+ void SetInvert(bool bInvert = false) { m_bInvert = bInvert;  }
+ void SetColors(unsigned long crText, unsigned long crLB, unsigned long crRT)
+ {
+  m_crTextColor = crText;
+  m_crColorLB = crLB;
+  m_crColorRT = crRT;
+ }
+
+ // Generated message map functions
+protected:
+ bool m_bInit;
+ bool m_bHorizontal;
+ bool m_bInvert;
+
+ unsigned long m_crColorRT;
+ unsigned long m_crColorLB;
+ unsigned long m_crTextColor;
+
+ CFont m_cfFont;
+
+  class _TAG_GRADIENTSTATIC_MEM_
+ {
+  CDC  dc;
+  CBitmap bmp;
+  CBitmap *pold;
+  int  cx;
+  int  cy;
+
+ }m_Mem;
+
+ //{{       (CGradientStatic)
+         void OnPaint();
+ //}}       
+
+
+private:
+ void DrawVerticalText(CRect *pRect);
+ void DrawHorizontalText(CRect *pRect);
+ void DrawVerticalGradient();
+ void DrawHorizontalGradient();
+ void CreateGradient(CDC *pDC, CRect *pRect);
+};
+
+
+
+
+
+
+ 

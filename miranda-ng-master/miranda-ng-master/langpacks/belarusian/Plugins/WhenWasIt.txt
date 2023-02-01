@@ -1,0 +1,228 @@
+#muuid {2ff96c84-b0b5-470e-bbf9-907b9f3f5d2f}
+;============================================================
+;  File: WhenWasIt.dll
+;  Plugin: Birthday reminder
+;  Version: 0.4.0.1
+;  Authors: Cristian Libotean
+;============================================================
+[Notifies you of upcoming birthdays.]
+Абвестка пра дні нараджэння.
+;file \plugins\WhenWasIt\res\WhenWasIt.rc
+[Popups]
+Усплывальныя вокны
+[Popup timeout:]
+Працягласць:
+[Preview]
+Прагляд
+[Don't show popups for subcontacts]
+Не паказваць для sub-кантактаў
+[Show popup when no birthdays are near]
+Паведамляць, нават калі блізкіх дзён нараджэння няма
+[Popup mouse click]
+Пстрычка па вакне кнопкай
+[Left]
+Злева
+[Right]
+Справа
+[Sounds]
+Гукі
+[Play sounds when there are]
+Прайграць, калі засталося
+[days or less to birthday.]
+ дзён ці меней да ІНШ.
+[Start notifying]
+Нагадаць за
+[days in advance and]
+дзён да даты
+[Check every]
+Правяраць праз
+[hours]
+гадзін(ы)
+[Only notify once per day.]
+Нагадваць раз у дзень
+[Show]
+Паказаць
+[in birthday list window]
+у спісе дзён нараджэнняў
+[Dialog]
+Гутарка
+[Timeout:]
+Затрымка:
+[seconds]
+секунд
+[Notify for]
+Абвесткі
+[afterwards]
+ пасля
+[In background]
+У фоне
+[Birthday list]
+Спіс дзён нараджэння
+[Close]
+Зачыніць
+[Show all contacts]
+Паказаць усе кантакты
+[Set birthday:]
+Вызначыць Дзень нараджэння:
+[Manage anniversaries]
+Кіраванне юбілеямі
+[Title:]
+Загаловак:
+[Description:]
+Апісанне:
+[Date:]
+Дата:
+[Save]
+Захаваць
+[Delete]
+Выдаліць
+[Upcoming birthdays]
+Надыходзячыя дні нараджэння
+;file \plugins\WhenWasIt\src\add_birthday.cpp
+[Set birthday for %s:]
+Дзень нараджэння %s
+;file \plugins\WhenWasIt\src\dlg_handlers.cpp
+[N/A]
+Недаступны
+[Protocol Module]
+Плагін пратаколу
+[Birthday list (%d)]
+Спіс дзён нараджэння (%d)
+[Unknown]
+Невядома
+[Protocol]
+Пратакол
+[Contact]
+Кантакт
+[DTB]
+Дзён да ДН
+[Birthday]
+Дзень нараджэння
+[Age]
+Узрост
+[Module]
+Плагін
+;file \plugins\WhenWasIt\src\hooked_events.cpp
+[Check for birthdays]
+Праверыць дні нараджэння
+;file \plugins\WhenWasIt\src\icons.cpp
+[WhenWasIt]
+Дні нараджэння
+[Check birthdays menu item]
+Праверыць дні нараджэння
+[List birthdays menu item]
+Спіс дзён нараджэння
+[Add/change birthday]
+Кіраваць дзень нараджэння
+[Refresh user details]
+Абнавіць дадзеныя кантактаў
+[Import birthdays]
+Імпарт дзён нараджэння
+[Export birthdays]
+Экспарт дзён нараджэння
+[Birthday today]
+Дзень нараджэння сёння
+[1 day to birthday]
+1 дзень да свята
+[%d days to birthday]
+%d дзён да свята
+[More than %d days to birthday]
+Больш %d дзён да свята
+[WhenWasIt birthday reminder]
+Дні нараджэння
+;file \plugins\WhenWasIt\src\notifiers.cpp
+[No upcoming birthdays.]
+Блізкіх дзён нараджэння няма.
+[%s has birthday in %d days.]
+%s адзначае дзень нараджэння праз %d дзён.
+[%s has birthday tomorrow.]
+%s адзначае Дзень нараджэння заўтра.
+[%s has birthday today.]
+%s адзначае Дзень нараджэння сёння.
+[%s had birthday %d days ago.]
+У %s быў дзень нараджэння %d дзён назад.
+[%s had birthday yesterday.]
+У %s учора быў дзень нараджэння.
+[%s has birthday today (Should not happen, please report).]
+%s святкуе сёння дзень нараджэння.
+[Birthday - %s]
+Дзень нараджэння %s
+[He]
+Яму
+[She]
+Ёй
+[He/She]
+Ёй/яму
+[%s\n%s will be %d years old.]
+%s\n%s будзе %d .
+[%s\n%s just turned %d.]
+%s\n%s споўнілася %d
+[Closing in %d seconds]
+Закрыецца праз %d секунд...
+[Closing in %d second]
+Зачыненне праз %d секунд
+;file \plugins\WhenWasIt\src\options.cpp
+[Upcoming age]
+Будучы ўзрост
+[Current age]
+Бягучы ўзрост
+[Nothing]
+Нічога
+[Dismiss]
+Прыбраць
+[Message window]
+Гутарка
+[All contacts]
+Усе кантакты
+[All contacts except hidden ones]
+Усё, акрамя ўтоеных
+[All contacts except ignored ones]
+Усё, акрамя ігнаруемых
+[All contacts except hidden and ignored ones]
+Усё, акрамя ўтоеных і ігнаруемых
+[Set popup delay when notifying of upcoming birthdays.\nFormat: default delay [ | delay for birthdays occurring today]]
+Устаноўвае затрымку абвесткі пра надыходзячыя інш.\n Фармат: затрымка па змаўчанні [ | затрымка для інш сёння]
+[Birthdays]
+Дні нараджэння
+[Contacts]
+Кантакты
+;file \plugins\WhenWasIt\src\services.cpp
+[Starting to refresh user details]
+Пачатак абнаўлення інфармацыі пра кантакты
+[Done refreshing user details]
+Абнаўленне інфармацыі пра кантакты завершана
+[Birthdays files]
+Файлы дзён нараджэнняў
+[Please select a file to import birthdays from...]
+Абярыце файл для імпарту дзён нараджэння
+[Importing birthdays from file: %s]
+Ідзе імпарт у файл %s
+[Done importing birthdays]
+Імпарт завершаны
+[All Files]
+Усе файлы
+[Please select a file to export birthdays to...]
+Абярыце файл для экспарту дзён нараджэння
+[Exporting birthdays to file: %s]
+Ідзе экспарт у файл %s
+[Done exporting birthdays]
+Экспарт завершаны
+[Could not open file to import birthdays]
+Не атрымалася адкрыць файл імпарту дзён нараджэння
+[Error]
+Памылка
+[Could not find UID '%s [%S]' in current database, skipping]
+Не знайшоўся UID '%s [%S]' у бягучай базе дадзеных, пропуск
+[Warning]
+Увага
+[Could not open file to export birthdays]
+Не атрымалася адкрыць файл каб экспартаваць дні нараджэння
+[Please do not edit this file by hand. Use the export function of WhenWasIt plugin.\n]
+Не трэба рэдагаваць гэты файл ўручную. Карыстайцеся функцыяй экспарту плагіна WhenWasIt.\n
+;file \plugins\WhenWasIt\src\WhenWasIt.cpp
+[Birthdays (When Was It)]
+Дні нараджэння
+[Add/change user &birthday]
+Дзень нараджэння кантакта
+[Birthday near]
+Дзень нараджэння хутка

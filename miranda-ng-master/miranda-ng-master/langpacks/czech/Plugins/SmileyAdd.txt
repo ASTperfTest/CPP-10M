@@ -1,0 +1,105 @@
+#muuid {bd542bb4-5ae4-4d0e-a435-ba8dbe39607f}
+;============================================================
+;  File: SmileyAdd.dll
+;  Plugin: SmileyAdd
+;  Version: 0.3.2.2
+;  Authors: Peacow, nightwish, bid, borkra
+;============================================================
+[Smiley support for Miranda NG.]
+Podpora smajlíků pro Mirandu NG.
+;file \plugins\SmileyAdd\res\resource.rc
+[Display]
+Zobrazení
+[Replace only smileys surrounded by spaces]
+Nahradit pouze smajlíky ohraničené mezerami
+[Scale smiley to text height]
+Sjednotit velikost smajlíků s textem
+[High quality smiley scaling]
+Zapnout kvalitní přepočet velikosti
+[Animate]
+Animovat
+[Maximum sticker height]
+
+[Minimum smiley height]
+Min. velikost smajlíků
+[Smiley selector]
+Použití smajlíku
+[Input area]
+Oblast psaní zprávy
+[Enable smileys]
+Povolit smajlíky
+[Don't replace at cursor]
+Nenahrazovat během psaní
+[Surround inserted smiley with spaces]
+Přidat mezeru z každé strany smajlíku
+[Use first smiley for selection size]
+Velikost smajlíku definovat dle prvního
+[IEView style window]
+Vzhled okna nastavit dle IEView
+[Horizontal sorting]
+Horizontální řazení
+[Download more smileys]
+
+[Specify smiley pack for each category]
+Pro každou kategorii definovat jinou sadu
+[Name:]
+Název:
+[Author:]
+Autor:
+[Version:]
+Verze:
+[Preview]
+Náhled
+[Use per protocol global smiley packs]
+Používat globální sady smajlíků pro celý protokol
+;file \plugins\SmileyAdd\src\dlgboxsubclass.cpp
+[Show smiley selection window]
+Zobrazit okno s výběrem smajlíků
+;file \plugins\SmileyAdd\src\download.cpp
+[SmileyAdd]
+Smajlíky
+[Smiley packs' folder]
+
+[Smiley cache]
+Cache vlastních smajlíků
+;file \plugins\SmileyAdd\src\main.cpp
+[Button smiley]
+Tlačítko smajlíků
+[Assign smiley category]
+Přiřazení kategorie smajlíků
+[Background color]
+Barva pozadí
+[Only one instance of SmileyAdd could be executed.\nRemove duplicate instances from 'Plugins' directory]
+Pouze jedna instance doplňku SmileyAdd může běžet.\nOdstraňte duplicitní instance ze složky 'Plugins'
+;file \plugins\SmileyAdd\src\options.cpp
+[Smiley packs]
+Sady smajlíků
+[All files]
+Všechny soubory
+[Smileys]
+Smajlíky
+[Customize]
+Vlastní úpravy
+[General]
+Obecné
+[Categories]
+Sady
+;file \plugins\SmileyAdd\src\services.cpp
+[Protocol specific]
+Závisí na protokolu
+;file \plugins\SmileyAdd\src\smileys.cpp
+[Smiley pack %s for category "%s" not found.\nSelect correct smiley pack in the Options -> Customize -> Smileys.]
+Knihovna smajlíků %s pro kategorii "%s" nebyla nalezena.\nVyberte platnou knihovnu smajlíků v Možnosti -> Vlastní úpravy -> Smajlíky.
+[There were problems loading smiley pack (it should be corrected).\nSee network log for details.]
+Nepodařilo se načíst požadovanou knihovnu smajlíků.\nDalší informace naleznete v záznamu komunikace po síti.
+[Smiley #%u in file %s for smiley pack %s not found.]
+Smajlík č.%u v souboru %s sady smajlíků %s nebyl nalezen.
+[%s global smiley pack]
+%s globální sada smajlíků
+[Standard]
+Standardní
+[Regular expression "%s" in smiley pack "%s" malformed.]
+Regulární výraz "%s" v knihovně smajlíků "%s" je neplatný.
+;file \plugins\SmileyAdd\src\smltool.cpp
+[d'Oh!]
+A sakra!

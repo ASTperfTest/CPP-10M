@@ -1,0 +1,102 @@
+;============================================================
+;  File: yweather.ini
+;  Plugin: Weather
+;============================================================
+[ENE]
+ВСВ
+[ESE]
+ВЮВ
+[E]
+В
+[East]
+Восток
+[Feel]
+Ощущение
+[Forecast Day 1 Condition]
+Прогноз: День 1 Условия
+[Forecast Day 1 Date]
+Прогноз: День 1 дата
+[Forecast Day 1 Day]
+Прогноз: День 1 день
+[Forecast Day 1 High]
+Прогноз: День 1 Макс
+[Forecast Day 1 Low]
+Прогноз: День 1 Мин
+[Forecast Day 1]
+Прогноз: День 1
+[Fri]
+ПТ
+[Heat Index]
+Индекс жары
+[Mon]
+ПН
+[Mostly Clear]
+Преимущественно ясно
+[Mostly Cloudy]
+Преимущественно облачно
+[Mostly Sunny]
+Преимущественно солнечно
+[NE]
+СВ
+[NNE]
+ССВ
+[NNW]
+ССЗ
+[NW]
+СЗ
+[N]
+С
+[North]
+Север
+[Northeast]
+Северо-восток
+[Northwest]
+Северо-запад
+[Partly Cloudy]
+Местами облачно
+[Partly Sunny]
+Местами солнечно
+[SE]
+ЮВ
+[SSE]
+ЮЮВ
+[SSW]
+ЮЮЗ
+[SW]
+ЮЗ
+[S]
+Ю
+[Sat]
+СБ
+[Scattered Clouds]
+Переменная облачность
+[South]
+Юг
+[Southeast]
+Юго-восток
+[Southwest]
+Юго-запад
+[Sun]
+ВС
+[Sunny]
+Солнечно
+[Thu]
+ЧТ
+[Tue]
+ВТ
+[WNW]
+ЗСЗ
+[WSW]
+ЗЮЗ
+[W]
+З
+[Wed]
+СР
+[West]
+Запад
+[Wind Direction Degrees]
+Ветер: направление (град)
+[Wind Direction]
+Ветер: направление
+[Wind Speed]
+Ветер: скорость

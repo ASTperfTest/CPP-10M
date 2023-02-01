@@ -1,0 +1,200 @@
+#muuid {687364af-58b0-4af2-a4ee-20f40a8d9afb}
+;============================================================
+;  File: Fingerprint.dll
+;  Plugin: Fingerprint NG
+;  Version: 0.2.0.1
+;  Authors: faith_healer, ghazan, Mataes
+;============================================================
+[Fingerprint NG (client version) icons module for Miranda NG.]
+
+;file \plugins\FingerprintNG\res\resource.rc
+[Fingerprint overlays icons]
+
+[Miranda clients]
+
+[Miranda packs overlays]
+
+[Show Miranda version at Overlay#2]
+
+[Resource overlays]
+
+[Platform overlays]
+
+[Protocols overlays]
+
+[Unicode overlay]
+
+[Secure overlays]
+
+[Select protocols]
+Vybrat protokoly
+[Facebook clients]
+Klienti Facebook
+[Gadu-Gadu clients]
+Klienti Gadu-Gadu
+[ICQ clients]
+Klienti ICQ
+[IRC clients]
+Klienti IRC
+[Jabber clients]
+Klienti Jabber
+[RSS clients]
+Klienti RSS
+[VKontakte clients]
+Klienti VKontakte
+[Weather clients]
+Klienti počasí
+[Multi-protocol clients]
+Více-protokoloví klienti
+[Other (rare) protocols]
+Ostatní (ojedinělé) protokoly
+[Other icons]
+Ostatní ikony
+[Show client icon in message window status bar]
+Zobrazit ikonu klienta ve stavovém řádku komunikačního okna
+;file \plugins\FingerprintNG\src\fingerprint.cpp
+[Fingerprint]
+Fingerprint
+;file \plugins\FingerprintNG\src\finger_groups.h
+[Client icons]
+Ikony klientů
+[Pack overlays]
+Překryvné ikony
+[Multi-proto clients]
+Více-protokoloví klienti
+[Other protocols]
+Ostatní protokoly
+[Overlays]
+Překryvné
+[Resource]
+Zdroj
+[Platform]
+Platforma
+[Security]
+Zabezpečení
+[Protocol]
+Protokol
+;file \plugins\FingerprintNG\src\masks.cpp
+[Miranda NG stable]
+Miranda NG stabilní
+[Miranda IM (old versions)]
+Miranda IM (staré verze)
+[Miranda (unknown)]
+Miranda (neznámá)
+[PHP Jabber Client]
+PHP Jabber Client
+[MP3 Script for mIRC]
+MP3 skript pro mIRC
+[Gadu-Gadu client]
+Klient Gadu-Gadu
+[Python-based clients]
+Klienti v Pythonu
+[Jabber client]
+Klient Jabber
+[XMPP client]
+Klient XMPP
+[Client not found]
+Klient nenalezen
+[Unknown client]
+Neznámý klient
+[Undetected client]
+Nezjištěný klient
+[ICQ overlay]
+
+[IRC overlay]
+
+[JGmail overlay]
+
+[JGTalk overlay]
+
+[Jabber overlay]
+
+[VK overlay]
+
+[Skype overlay]
+
+[ICQ v8.x overlay]
+
+[Gadu-Gadu v11 client]
+
+[Gadu-Gadu v10 client]
+
+[Gadu-Gadu v9 client]
+
+[Gadu-Gadu v8 client]
+
+[Windows overlay]
+
+[iOS overlay (iPhone/iPad)]
+
+[MacOS overlay]
+
+[Linux overlay]
+
+[Flash overlay]
+
+[Java overlay]
+
+[Symbian overlay]
+
+[Amiga overlay]
+
+[Android overlay]
+
+[Website overlay]
+
+[Windows Phone overlay]
+
+[Mobile overlay]
+
+[debug overlay]
+
+[office overlay]
+
+[mobile overlay]
+
+[home overlay]
+
+[work overlay]
+
+[notebook overlay]
+
+[Miranda NG v0.6 #2 overlay]
+
+[Miranda NG v0.5 #2 overlay]
+
+[Miranda NG v0.4 #2 overlay]
+
+[Miranda NG v0.3 #2 overlay]
+
+[Miranda NG v0.2 #2 overlay]
+
+[Miranda NG v0.1 #2 overlay]
+
+[Miranda IM v0.10 #2 overlay]
+
+[Miranda IM v0.9 #2 overlay]
+
+[Miranda IM v0.8 #2 overlay]
+
+[Miranda IM v0.7 #2 overlay]
+
+[Miranda IM v0.6 #2 overlay]
+
+[Miranda IM v0.5 #2 overlay]
+
+[Miranda IM v0.4 #2 overlay]
+
+[x64 overlay]
+
+[x32 overlay]
+
+[NewGPG overlay]
+
+[MirOTR overlay]
+
+[SecureIM overlay]
+
+;file \plugins\FingerprintNG\src\options.cpp
+[Icons]
+Ikony

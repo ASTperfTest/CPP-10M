@@ -1,0 +1,83 @@
+#muuid {4bb5b4aa-c364-4f23-9746-d5b708a286a5}
+;============================================================
+;  File: ConnectionNotify.dll
+;  Plugin: Connection Notify
+;  Version: 0.1.0.6
+;  Authors: MaKaR
+;============================================================
+[Notify with popup if some connection established]
+Сповіщає в спливаючих вікнах про встановлене з'єднання
+;file \protocols\ConnectionNotify\res\ConnectionNotify.rc
+[Set popup colors]
+Кольори
+[Popup options]
+Спливаючі вікна
+[Background]
+Фон
+[Text]
+Текст
+[Close after:]
+Тривалість:
+[sec (0 default, -1 disabled)]
+с (0 - замовчання, -1 - постійно)
+[Settings]
+Налаштування
+[try resolve addresses]
+визначати імена за IP-адресами
+[Show notification if no filter defined]
+Сповіщати, якщо жоден фільтр не визначений
+[Attempt interval (ms)]
+Інтервал спроб (мс)
+[Delete]
+Видалити
+['Online' means:]
+"В мережі" означає:
+[Filters]
+Фільтри
+[Move down]
+Нижче
+[Move up]
+Вище
+[Add]
+Додати
+[Rule editor]
+Редактор правил
+[Application name]
+Програма
+[Local IP:Port]
+Локальний IP:Порт
+[Action:]
+Дія:
+[Cancel]
+Скасувати
+[* and ? wildcard characters also available (for port enter number or *)]
+Дозволені символи підстановки ? і * (у полі "Порт" - цифри або *)
+[Remote IP:Port]
+Віддалений IP:Порт
+;file \protocols\ConnectionNotify\src\ConnectionNotify.cpp
+[New Connection Notification]
+Сповіщення про нове підключення
+;file \protocols\ConnectionNotify\src\filter.cpp
+[Always show popup]
+Показувати сплив. вікно
+[Never show popup]
+Не показувати сплив. вікно
+[First close options window]
+Спочатку закрийте вікно налаштувань
+;file \protocols\ConnectionNotify\src\options.cpp
+[Show]
+Показати
+[Hide]
+Сховати
+[Status]
+Статус
+[Application]
+Програма
+[Internal socket]
+Внутрішній сокет
+[External socket]
+Зовнішній сокет
+[Action]
+Дія
+[Plugins]
+Плагіни

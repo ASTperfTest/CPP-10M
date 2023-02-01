@@ -1,0 +1,20 @@
+#muuid {7eeeb55e-9d83-4e1a-a12f-8f13f1a124fb}
+;============================================================
+;  File: PManagerEx.dll
+;  Plugin: Miranda NG profile changer
+;  Version: 0.0.0.5
+;  Authors: Roman Gemini
+;============================================================
+[Adds a menu item to change or load a different profile of Miranda NG or restart.]
+Fügt einen Hauptmenüeintrag hinzu, um ein neues Profil zu laden oder neuzustarten.
+;file \plugins\ProfileManager\src\pmanagerEx.cpp
+[Load profile]
+Profil laden
+[Change profile]
+Profil ändern
+[Restart]
+Neustart
+[Profile manager]
+Profilmanager
+[Database]
+Datenbank

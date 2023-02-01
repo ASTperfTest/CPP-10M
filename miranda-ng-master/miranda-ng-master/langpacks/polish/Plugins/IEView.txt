@@ -1,0 +1,129 @@
+#muuid {0495171b-7137-4ded-97f8-ce6fed67d691}
+;============================================================
+;  File: IEView.dll
+;  Plugin: IEView
+;  Version: 1.6.0.5
+;  Authors: Piotr Piastucki, Francois Mean
+;============================================================
+[IE Based Chat Log.]
+Dziennik rozmów oparty o silnik Internet Explorera.
+;file \plugins\IEView\res\ieview.rc
+[Copy]
+Kopiuj
+[Copy Link]
+Kopiuj link
+[Select All]
+Zaznacz wszystko
+[Save Image As...]
+Zapisz obrazek jako...
+[Print]
+Drukuj
+[Clear Log]
+Wyczyść dziennik
+[Show source]
+Pokaż źródło
+[Options]
+Opcje
+[Enable BBCodes]
+Włącz BBCode
+[Currently the following BBCodes are supported: [b][i][u][s][img][size][color][url]]
+Obecnie wspierane znaczniki BBCode to: [b][i][u][s][img][size][color][url]
+[Enable support for Flash files in smileys and BBCodes]
+Włącz wsparcie dla plików Flash w emotikonach i BBCode
+[Replace smileys in user names]
+Zamień emotikony w nazwach użytkowników
+[Hide window border]
+Ukryj obramowanie okna
+[Embed YouTube videos]
+Osadzone wideo z YouTube
+[Size:]
+Rozmiar:
+[Mode]
+Tryb
+[Compatibility Mode]
+Tryb kompatybilności
+[Use External CSS]
+Zewnętrzny plik CSS
+[Use Templates]
+Szablon
+[Background image]
+Obraz tła
+[Scroll with text]
+Przewijaj z tekstem
+[Template Options]
+Opcje szablonu
+[Use message grouping]
+Grupuj wiadomości
+[Show nicknames]
+Pokaż nicki
+[Show time]
+Pokaż czas
+[Show seconds]
+Pokaż sekundy
+[Show date]
+Pokaż datę
+[Use long date format]
+Użyj długiego formatu daty
+[Use relative timestamp]
+Użyj relatywnego czasu i daty
+[Download more templates]
+Pobierz więcej szablonów
+;file \plugins\IEView\src\HistoryHTMLBuilder.cpp
+[Outgoing File Transfer]
+Wychodzące transfery
+[Incoming File Transfer]
+Przychodzący transfer plików
+;file \plugins\IEView\src\HTMLBuilder.cpp
+[ requested authorization]
+ poprosił(a) o autoryzację
+[ was added.]
+ został dodany.
+;file \plugins\IEView\src\ieview_main.cpp
+[Code]
+
+[RTL On]
+RTL wł.
+[RTL Off]
+RTL wył.
+[Group On]
+Grupowanie wł.
+[Group Off]
+Grupowanie wył.
+[Format text as code]
+
+;file \plugins\IEView\src\Options.cpp
+[Default]
+Domyślny
+[Template]
+Szablon
+[All Files]
+Wszystkie pliki
+[All Images]
+Wszystkie obrazki
+[Style Sheet]
+Karta stylu
+[Message sessions]
+Okno rozmowy
+[IEView]
+IEView
+[General]
+Ogólne
+[Skins]
+Skórki
+[Message Log]
+Dziennik wiadomości
+[Group chats]
+Czaty
+[History]
+Historia
+;file \plugins\IEView\src\ScriverHTMLBuilder.cpp
+[Today]
+Dzisiaj
+[Yesterday]
+Wczoraj
+[File sent]
+Wysłano plik
+[File received]
+Otrzymano plik
+;file \plugins\IEView\src\TabSRMMHTMLBuilder.cpp
+;file \plugins\IEView\src\TemplateHTMLBuilder.cpp

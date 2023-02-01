@@ -1,0 +1,200 @@
+#muuid {687364af-58b0-4af2-a4ee-20f40a8d9afb}
+;============================================================
+;  File: Fingerprint.dll
+;  Plugin: Fingerprint NG
+;  Version: 0.2.0.1
+;  Authors: faith_healer, ghazan, Mataes
+;============================================================
+[Fingerprint NG (client version) icons module for Miranda NG.]
+Fingerprint NG адлюстроўвае абразкі кліентаў, выкарыстованых вашымі суразмоўцамі.
+;file \plugins\FingerprintNG\res\resource.rc
+[Fingerprint overlays icons]
+Адбіткі кліентаў
+[Miranda clients]
+Кліенты Miranda
+[Miranda packs overlays]
+Адбіткі зборак
+[Show Miranda version at Overlay#2]
+Абразок версіі на адбітку #2
+[Resource overlays]
+Адбіткі рэсурсаў
+[Platform overlays]
+Адбіткі платформы
+[Protocols overlays]
+Адбіткі пратаколаў
+[Unicode overlay]
+Адбітак Unicode
+[Secure overlays]
+Адбітак шыфравання
+[Select protocols]
+Пратаколы
+[Facebook clients]
+Кліенты Facebook
+[Gadu-Gadu clients]
+Кліенты Gadu-Gadu
+[ICQ clients]
+Кліенты ICQ
+[IRC clients]
+Кліенты IRC
+[Jabber clients]
+Кліенты Jabber
+[RSS clients]
+Кліенты RSS
+[VKontakte clients]
+Кліенты VKontakte
+[Weather clients]
+Кліенты надвор'я
+[Multi-protocol clients]
+Мульты-пратакольныя кліенты
+[Other (rare) protocols]
+Кліенты рэдкіх пратаколаў
+[Other icons]
+Іншыя абразкі
+[Show client icon in message window status bar]
+Паказаць абразок у статусным радку гутаркі
+;file \plugins\FingerprintNG\src\fingerprint.cpp
+[Fingerprint]
+Адбітак
+;file \plugins\FingerprintNG\src\finger_groups.h
+[Client icons]
+Кліенты
+[Pack overlays]
+Адбіткі зборак
+[Multi-proto clients]
+Мульты-пратакол
+[Other protocols]
+Іншыя пратаколы
+[Overlays]
+Адбіткі
+[Resource]
+Рэсурс
+[Platform]
+Аперацыйная сістэма
+[Security]
+Бяспека
+[Protocol]
+Пратакол
+;file \plugins\FingerprintNG\src\masks.cpp
+[Miranda NG stable]
+Стабільная Miranda NG
+[Miranda IM (old versions)]
+Miranda IM (старая)
+[Miranda (unknown)]
+Miranda (невядома)
+[PHP Jabber Client]
+PHP Jabber кліент
+[MP3 Script for mIRC]
+MP3 скрыпт для mIRC
+[Gadu-Gadu client]
+Gadu-Gadu
+[Python-based clients]
+Кліенты на Python
+[Jabber client]
+Jabber
+[XMPP client]
+XMPP
+[Client not found]
+Нязнойдзены кліент
+[Unknown client]
+Невядомы кліент
+[Undetected client]
+Нязнойдзены кліент
+[ICQ overlay]
+ICQ
+[IRC overlay]
+IRC
+[JGmail overlay]
+JGmail
+[JGTalk overlay]
+JGTalk
+[Jabber overlay]
+Jabber
+[VK overlay]
+
+[Skype overlay]
+
+[ICQ v8.x overlay]
+
+[Gadu-Gadu v11 client]
+
+[Gadu-Gadu v10 client]
+
+[Gadu-Gadu v9 client]
+
+[Gadu-Gadu v8 client]
+
+[Windows overlay]
+Windows
+[iOS overlay (iPhone/iPad)]
+iOS
+[MacOS overlay]
+MacOS
+[Linux overlay]
+Linux
+[Flash overlay]
+Flash
+[Java overlay]
+Java
+[Symbian overlay]
+Symbian
+[Amiga overlay]
+Amiga
+[Android overlay]
+Android
+[Website overlay]
+
+[Windows Phone overlay]
+
+[Mobile overlay]
+Мабільны
+[debug overlay]
+debug
+[office overlay]
+праца
+[mobile overlay]
+мабільны
+[home overlay]
+дом
+[work overlay]
+праца
+[notebook overlay]
+ноутбук
+[Miranda NG v0.6 #2 overlay]
+
+[Miranda NG v0.5 #2 overlay]
+
+[Miranda NG v0.4 #2 overlay]
+
+[Miranda NG v0.3 #2 overlay]
+
+[Miranda NG v0.2 #2 overlay]
+
+[Miranda NG v0.1 #2 overlay]
+
+[Miranda IM v0.10 #2 overlay]
+
+[Miranda IM v0.9 #2 overlay]
+
+[Miranda IM v0.8 #2 overlay]
+
+[Miranda IM v0.7 #2 overlay]
+
+[Miranda IM v0.6 #2 overlay]
+
+[Miranda IM v0.5 #2 overlay]
+
+[Miranda IM v0.4 #2 overlay]
+
+[x64 overlay]
+x64
+[x32 overlay]
+x32
+[NewGPG overlay]
+Шыфраванне NewGPG
+[MirOTR overlay]
+Шыфраванне MirOTR
+[SecureIM overlay]
+SecureIM
+;file \plugins\FingerprintNG\src\options.cpp
+[Icons]
+Абразкі

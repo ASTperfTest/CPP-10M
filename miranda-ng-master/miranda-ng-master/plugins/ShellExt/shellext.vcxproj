@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>ShlExt</ProjectName>
+    <ProjectGuid>{B27B85B5-0EF1-496D-99D7-0702A98A342A}</ProjectGuid>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\build\vc.common\plugin.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\options.cpp" />
+    <ClCompile Include="src\shlcom.cpp" />
+    <ClCompile Include="src\shlext.cpp" />
+    <ClCompile Include="src\shlfactory.cpp" />
+    <ClCompile Include="src\shlicons.cpp" />
+    <ClCompile Include="src\shlipc.cpp" />
+    <ClCompile Include="src\stdafx.cxx">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\utils.cpp" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\shlcom.h" />
+    <ClInclude Include="src\shlicons.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\shldlgs.rc" />
+    <ResourceCompile Include="res\Version.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ShellExt.def" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>mir_core.mir;mir_app.mir</DelayLoadDLLs>
+      <DelayLoadDLLs Condition="'$(Configuration)'=='Debug'">ucrtbased.dll;VCRUNTIME140D.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <DelayLoadDLLs Condition="'$(Configuration)'=='Release'">ucrtbase.dll;VCRUNTIME140.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <ModuleDefinitionFile>src/ShellExt.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

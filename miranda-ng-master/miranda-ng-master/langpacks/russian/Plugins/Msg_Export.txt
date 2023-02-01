@@ -1,0 +1,213 @@
+#muuid {46102b07-c215-4162-9c83-d377881da7cc}
+;============================================================
+;  File: Msg_Export.dll
+;  Plugin: Message export
+;  Version: 3.1.2.8
+;  Authors: Kennet Nielsen, mod by ring0
+;============================================================
+[Exports every message, URL or file you receive to a text file.]
+Экспорт сообщений, ссылок или принятых файлов в текстовый файл.
+;file \plugins\Msg_Export\res\resource.rc
+[Export directory]
+Каталог экспорта
+[Browse]
+Обзор
+[Default file]
+Имя файла
+[File viewer]
+Просмотр файлов
+[Use internal viewer]
+Внутренний просмотрщик
+[Replace Miranda history]
+Заменить историю
+[Export format]
+Формат экспорта
+[Max column width]
+Максимальная ширина строки
+[Note: 0 = no limit]
+0 = неограниченная
+[Time format]
+Формат времени
+[Use JSON format for export]
+Экспортировать в формат JSON
+[Use UTF-8 in new files]
+UTF-8 в новых файлах
+[Append extra new line]
+Дополнительный перевод строки
+[Use << and >>]
+Знаки << и >>
+[Help]
+Справка
+[Exporting old messages]
+Экспорт старых сообщений
+[History file for %s (%s, format %s)]
+Файл истории для %s (%s, формат %s)
+[&Find...]
+&Найти...
+[&External]
+&Внешнее
+[&Close]
+&Закрыть
+[When filename changes]
+При переименовании файла
+[Prompt for action]
+Спросить
+[Rename file]
+Переименовать файл
+[Do nothing]
+Ничего не делать
+[When user is deleted]
+При удалении пользователя
+[Delete file]
+Удалить файл
+[Debug]
+Отладка
+[User &details]
+&Информация
+[Export]
+Экспорт
+[Set to default filename]
+Имя файла по умолчанию
+[Select all]
+Выделить всё
+[Select none]
+Снять выделение
+[Auto filename]
+Авт. имена
+[Clear all]
+Очистить
+[Copy]
+Копировать
+;file \plugins\Msg_Export\src\FileViewer.cpp
+[Miranda database contains %d events]
+Событий в базе: %d
+[Failed to open file]
+Невозможно открыть файл
+[Search string was not found!]
+Строка не найдена!
+[Save as RTF]
+Сохранить в формате RTF
+[Color...]
+Цвет...
+[Font...]
+Шрифт...
+[Syntax highlight]
+Подсветка синтаксиса
+[History was saved successfully in file\r\n]
+История успешно сохранена в файл\r\n
+;file \plugins\Msg_Export\src\main.cpp
+[Export history]
+Экспортировать историю
+[Open E&xported History]
+Эк&спортированная история
+;file \plugins\Msg_Export\src\options.cpp
+[Reading database information (Phase 1 of 2)]
+Шаг 1: Чтение базы данных
+[Sorting and writing database information (Phase 2 of 2)]
+Шаг 2: Сортировка и запись информации в базу данных
+[Failed to open or create file:\n]
+Не удалось открыть или создать файл:\n
+[Max line width must be at least %d. Or use 0 for no limit.]
+
+[You need to restart Miranda to change the history function]
+Изменения функции истории вступят в силу после перезапуска программы
+[Executable files]
+Исполняемые файлы
+[All files]
+Все файлы
+[Select Destination Directory]
+Выбрать папку для записи
+[File]
+Файл
+[Nick]
+Псевдоним
+[Account]
+Учётная запись
+[User ID]
+ID пользователя
+[No contacts found to export]
+Нет контактов для экспорта
+[Export accounts]
+Экспорт учётных записей
+[Message export]
+Экспорт сообщений
+[History]
+История
+[General]
+Общее
+[Contacts]
+Контакты
+[Additional]
+Дополнительно
+;file \plugins\Msg_Export\src\stdafx.h
+[Miranda NG (Message Export Plugin)]
+
+;file \plugins\Msg_Export\src\utils.cpp
+[No_Group]
+
+[File name for the user "%s" has changed!\n\nfrom:\t%s\nto:\t%s\n\nDo you wish to rename file?]
+Имя файла для контакта "%s" изменилось!\n\nс:\t%s\nна:\t%s\n\nХотите переименовать файл?
+[Failed to rename file\n\nfrom:\t%s\nto:\t%s\n\nFailed with error: %s]
+Не удалось переименовать файл\n\nстарое имя:\t%s\nновое имя:\t%s\n\nОшибка: %s
+[\nError: ]
+\nОшибка:\s
+[\nMessage has not been saved!\n]
+\nСообщение не сохранено!\n
+[Do you wish to save debug information?]
+Сохранить отладочную информацию?
+[All\0*.*\0Text\0*.TXT\0\0]
+Все файлы\0*.*\0Текстовые файлы\0*.txt\0\0
+[FirstName]
+Имя
+[LastName]
+Фамилия
+[e-mail]
+Почта
+[Age]
+Возраст
+[Gender]
+Пол
+[City]
+Город
+[State]
+Штат
+[Phone]
+Телефон
+[Homepage]
+Сайт
+[About]
+Информация
+[      History for]
+      История переписки с
+[User]
+Контакт
+[File: ]
+Файл:\s
+[Description: ]
+Описание:\s
+[Nick      :]
+Псевдоним :
+[FirstName :]
+Имя       :
+[LastName  :]
+Фамилия   :
+[e-mail    :]
+Почта     :
+[Reason    :]
+Причина   :
+[Invalid Database event received. Type %d, size %d]
+Получено некорректное событие базы. Тип %d, размер %d
+[The following user made an authorization request:]
+Следующий пользователь запросил авторизацию:
+[The following user added you to their contact list:]
+Пользователь добавил вас в свой список контактов:
+[UIN       :]
+Номер     :
+[Unknown event type %d, size %d]
+Неизвестный тип события %d, размер %d
+[User has been deleted. Do you want to delete the file?]
+Контакт удалён. Хотите удалить файл?
+[Failed to delete the file]
+Не удалось удалить файл
+[No_Nick]
+

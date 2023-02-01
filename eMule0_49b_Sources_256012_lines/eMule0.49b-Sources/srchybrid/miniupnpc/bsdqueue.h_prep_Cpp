@@ -1,0 +1,538 @@
+﻿/* $OpenBSD: queue.h,v 1.31 2005/11/25 08:06:25 otto Exp $ */
+/* $NetBSD: queue.h,v 1.11 1996/05/16 05:17:14 mycroft Exp $ */
+
+/*
+ * Copyright (c) 1991, 1993
+ * The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS          IS          BY     REGENTS     CONTRIBUTORS ``AS I '' AND
+ * ANY         OR         WARRANTIES, INCLUDING, BUT             TO, THE
+ * IMPLIED            OF                 AND         FOR   PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN    EVENT       THE         OR              BE LIABLE
+ * FOR     DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT             TO, PROCUREMENT    SUBSTITUTE GOODS
+ * OR SERVICES; LOSS    USE, DATA, OR PROFITS; OR          INTERRUPTION)
+ * HOWEVER        AND    ANY        OF LIABILITY, WHETHER    CONTRACT, STRICT
+ * LIABILITY, OR         IN     WAY
+ * OUT    THE     OF      SOFTWARE, EVEN    ADVISED    THE             OF
+ * SUCH DAMAGE.
+ *
+ * @(#)queue.h 8.5 (Berkeley) 8/20/94
+ */
+
+
+
+
+/*
+ * This file defines five types of data  classures: singly-linked lists,
+ * lists, simple queues, tail queues, and circular queues.
+ *
+ *
+ * A singly-linked list is headed by a single forward pointer. The elements
+ * are singly linked for minimum space and pointer manipulation overhead at
+ * the expense of removal for arbitrary elements. New elements can be
+ * added to the list after an existing element or at the head of the list.
+ * Elements being removed from the head of the list should use the explicit
+ * macro for this purpose for optimum efficiency. A singly-linked list may
+ * only be traversed in the forward direction.  Singly-linked lists are ideal
+ * for applications with large datasets and few or no removals or for
+ * implementing a      queue.
+ *
+ * A list is headed by a single forward pointer (or an array of forward
+ * pointers for a hash table header). The elements are doubly linked
+ * so that an arbitrary element can be removed without a need to
+ * traverse the list. New elements can be added to the list before
+ * or after an existing element or at the head of the list. A list
+ * may only be traversed in the forward direction.
+ *
+ * A simple queue is headed by a pair of pointers, one the head of the
+ * list and the other to the tail of the list. The elements are singly
+ * linked to save space, so elements can only be removed from the
+ * head of the list. New elements can be added to the list before or after
+ * an existing element, at the head of the list, or at the end of the
+ * list. A simple queue may only be traversed in the forward direction.
+ *
+ * A tail queue is headed by a pair of pointers, one to the head of the
+ * list and the other to the tail of the list. The elements are doubly
+ * linked so that an arbitrary element can be removed without a need to
+ * traverse the list. New elements can be added to the list before or
+ * after an existing element, at the head of the list, or at the end of
+ * the list. A tail queue may be traversed in either direction.
+ *
+ * A circle queue is headed by a pair of pointers, one to the head of the
+ * list and the other to the tail of the list. The elements are doubly
+ * linked so that an arbitrary element can be removed without a need to
+ * traverse the list. New elements can be added to the list before or after
+ * an existing element, at the head of the list, or at the end of the list.
+ * A circle queue may be traversed in either direction, but has a more
+ * complex end of list detection.
+ *
+ * For details on the use of these macros, see the manual page.
+ */
+
+
+
+
+
+
+
+/*
+ * Singly-linked List definitions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Singly-linked List access methods.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Singly-linked List functions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * List definitions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * List access methods
+ */
+
+
+
+
+
+
+
+
+
+
+/*
+ * List functions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Simple queue definitions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Simple queue access methods.
+ */
+
+
+
+
+
+
+
+
+
+
+/*
+ * Simple queue functions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Tail queue definitions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * tail queue access methods
+ */
+
+
+
+
+
+/* XXX */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Tail queue functions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Circular queue definitions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Circular queue access methods
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Circular queue functions.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /* !              */
+
+
+
+
+
+
+ 

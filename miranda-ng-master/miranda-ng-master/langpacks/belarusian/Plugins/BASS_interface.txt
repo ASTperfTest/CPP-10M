@@ -1,0 +1,70 @@
+#muuid {2f07ea05-05b5-4ff0-875d-c590da2ddac1}
+;============================================================
+;  File: BASS_interface.dll
+;  Plugin: BASS Interface
+;  Version: 0.0.0.14
+;  Authors: tico-tico
+;============================================================
+[Un4seen's BASS interface Miranda NG plugin.]
+Падтрымка бібліятэкі BASS.
+;file \plugins\BASS_interface\res\Bass.rc
+[Un4seen's BASS interface]
+Падтрымка бібліятэкі BASS
+[bass.dll loading error]
+Памылка загрузкі бібліятэкі bass.dll
+[Current bass.dll path:]
+Бягучы шлях да bass.dll:
+[Maximum number of BASS internal channels:]
+Максімальная колькасць каналаў:
+[Output device:]
+Прылада высновы:
+[Volume:]
+Узровень гучнасці:
+[Quiet time:]
+Ціхая гадзіна:
+[download BASS library]
+загрузіць бібліятэку BASS
+[Play only if]
+Граць, калі
+[Offline]
+Адключаны
+[Online]
+Далучаны
+[Away]
+Адсутнічаю
+[Not available]
+Недаступны
+[Occupied]
+Заняты
+[Do not disturb]
+Не турбаваць
+[Free for chat]
+Вольны
+[Invisible]
+Нябачны
+[Preview]
+Прагляд
+;file \plugins\BASS_interface\src\Main.cpp
+[Un4seen's BASS version: %d.%d.%d.%d]
+Версія бібліятэкі BASS: %d.%d.%d.%d
+[--default device--]
+--прылада па змаўчанні--
+[Sounds]
+Гукі
+[Disable sounds]
+Адключыць гукі
+[Enable sounds]
+Уключыць гукі
+[Frame background]
+Колер фону
+[BASS Interface]
+Бібліятэка BASS
+[Bass Interface]
+Бібліятэка BASS
+[Bass library]
+Бібліятэка BASS
+[Sounds enabled]
+Гукі ўключаны
+[Sounds disabled]
+Гукі выключаны
+;file \plugins\BASS_interface\src\stdafx.h

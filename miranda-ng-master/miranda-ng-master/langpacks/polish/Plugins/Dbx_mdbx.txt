@@ -1,0 +1,23 @@
+#muuid {7c3d0a33-2646-4001-9107-f35ea299d292}
+;============================================================
+;  File: Dbx_mdbx.dll
+;  Plugin: Miranda NG MDBX database driver
+;  Version: 0.95.9.1
+;  Authors: Miranda-NG project
+;============================================================
+[Provides Miranda database support: global settings, contacts, history, settings per contact.]
+Zapewnia wsparcie profilu Mirandy: ustawień globalnych, kontaktów, historii, ustawień dla każdego kontaktu z osobna.
+;file \plugins\Dbx_mdbx\src\dbcheck.cpp
+[Orphaned sorting event with wrong contact ID %d, deleting]
+Utracone zdarzenie sortowania z nieprawidłowym identyfikatorem kontaktu %d, usuwanie
+[Orphaned sorting event with wrong event ID %d:%08X, deleting]
+Utracone zdarzenie sortowania z nieprawidłowym identyfikatorem zdarzenia %d:%08X, usuwanie
+[Orphaned event id with wrong event ID %08X, deleting]
+Utracony identyfikator zdarzenia z nieprawidłowym identyfikatorem zdarzenia %08X, usuwanie
+[Orphaned setting with wrong contact ID %08X, deleting]
+Utracone ustawienie z nieprawidłowym identyfikatorem kontaktu %08X, usuwanie
+;file \plugins\Dbx_mdbx\src\dbintf.cpp
+[Your database is in the obsolete format. Click OK to read the upgrade instructions or Cancel to exit]
+Format bazy danych jest przestarzały. Kliknij OK, aby uzyskać szczegóły aktualizacji, lub Anuluj, aby wyjść.
+[Error]
+Błąd

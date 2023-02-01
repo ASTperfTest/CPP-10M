@@ -1,0 +1,79 @@
+#muuid {b908773a-86f7-4a91-8674-6a20ba0e67d1}
+;============================================================
+;  File: Dropbox.dll
+;  Plugin: Dropbox
+;  Version: 0.12.2.4
+;  Authors: Miranda NG team
+;============================================================
+[Allows you to transfer files via Dropbox.]
+Завантаження і пересилання файлів за допомогою Dropbox.
+[Authorization]
+Авторизація
+[To allow Miranda NG access in your Dropbox account:]
+Щоб надати Miranda NG доступ до свого облікового запису Dropbox:
+[Go to this link]
+Перейдіть на сайт
+[Allow access to app folder]
+Дозвольте доступ до файлів у папці apps
+[Enter authorization code]
+Введіть код
+[Initiate authorization]
+Натисніть кнопку
+[Authorize]
+Авторизувати
+[Download link]
+Посилання
+[Check status of authorization]
+Перевірка стану авторизації:
+[Autosend download link to contact]
+Автоматично надсилати посилання контакту
+[Paste download link into message input area]
+Вставляти посилання в поле вводу
+[Copy download link to clipboard]
+Копіювати посилання в буфер обміну
+[Here you can choose the protocols in which Dropbox will be used instead of regular file transfers (sending), used by this protocol.]
+Виберіть протоколи, для яких Dropbox використовуватиметься замість звичайної передачі файлів (надсилання).
+[in process...]
+зачекайте...
+[server does not respond]
+сервер не відповідає
+[you have been authorized]
+авторизація пройшла успішно
+[Dropbox supports the following commands:]
+Доступні команди:
+[shows all files in folder "path" ("path" is relative from root and can be omitted for root folder)]
+показує всі файли в папці "path" (відносно кореневої папки; для кореневої папки "path" можна пропустити)
+[returns download link for file or folder with specified path ("path" is relative from root folder)]
+повертає посилання на файл або папку за вказаним шляхом "path" (відносно кореневої папки)
+[deletes file or folder with specified path ("path" is relative from root folder)]
+видаляє файл або папку за вказаним шляхом "path" (відносно кореневої папки)
+["%s" command has invalid parameter.\nUse "/help" for more info.]
+Неправильний параметр команди "%s".\nНаберіть "/help" для довідки.
+[is empty]
+порожня
+[is not found]
+не знайдено
+[is deleted]
+видалений
+[Upload files to Dropbox]
+Файл через Dropbox
+[Protocol icon]
+Значок протоколу
+[Upload file(s)]
+Завантажити файл(и)
+[you are already authorized]
+ви вже авторизовані
+[you are not authorized yet]
+ви ще не авторизовані
+[Account name]
+Обліковий запис
+[Protocol]
+Протокол
+[Network]
+Мережа
+[General]
+Загальне
+[Interception]
+Перехват
+["%s" is not valid.\nUse "/help" for more info.]
+"%s" не дійсна.\nНаберіть "/help" для довідки.

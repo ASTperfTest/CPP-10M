@@ -1,0 +1,124 @@
+#muuid {EFB2355B-82B3-4759-b7d8-95f8e9506291}
+;============================================================
+;  File: ICQ.dll
+;  Plugin: ICQ-WIM protocol
+;  Version: 0.96.2.3
+;  Authors: George Hazan
+;============================================================
+[ICQ protocol support for Miranda NG.]
+ICQ-Protokollunterstützung für Miranda NG.
+;file \protocols\ICQ-WIM\res\resources.rc
+[Edit server groups]
+Servergruppen bearbeiten
+[UIN/e-mail:]
+UIN/E-Mail:
+[Password:]
+Passwort:
+[Sign in/sign up using phone]
+Anmelden/Registrieren mit Telefon
+[Do not open chat windows on creation]
+Chatfenster bei der Erzeugung nicht öffnen
+[Use tray icon notifications]
+Benachrichtigungen mittels Systemtray-Symbol
+[Launch mailbox in a browser on click]
+Beim anklicken Postfach im Browser öffnen
+[Show error popups]
+Fehler-Popups anzeigen
+[Notifications]
+Benachrichtigung
+[If a contact goes Offline, set this status instead and cache it for given timeout in seconds (0 - disabled)]
+Wenn ein Kontakt Offline geht, stattdessen folgenden Status für folgende Anzahl Sekunden setzen (0 - deaktivieren)
+[After that, set this status to a contact and move it offline after specified timeout in seconds (0 - disabled)]
+Danach diesen Status setzen und nach folgender Anzahl Sekunden Offline setzen (0 - deaktivieren)
+[Send group chat invitation]
+Gruppenchateinladung senden
+[&Invite]
+E&inladen
+[Cancel]
+Abbrechen
+[Account registration]
+Konto registrieren
+[Enter full phone number]
+Komplette Telefonnummer angeben
+[Send me registration code via SMS]
+Registrierungscode per SMS senden
+[Enter registration code]
+Registrierungscode eingeben
+[UIN:]
+UIN:
+[Online since:]
+Online seit:
+[Idle since:]
+Untätig seit:
+[Nick:]
+Nick:
+[Member since:]
+Mitglied seit:
+[Last seen:]
+Zuletzt gesehen:
+[Phone number:]
+Telefonnummer:
+[Enter ICQ Password]
+ICQ-Passwort eingeben
+[Enter a password:]
+Passwort eingeben:
+[Remember this session password]
+Dieses Sitzungspasswort merken
+;file \protocols\ICQ-WIM\src\groupchats.cpp
+[&Invite a user]
+Benutzer e&inladen
+[&Leave/destroy chat]
+Chat ver&lassen/zerstören
+;file \protocols\ICQ-WIM\src\main.cpp
+[E-mail]
+E-Mail
+[E-mail notification]
+E-Mail Benachrichtigung
+;file \protocols\ICQ-WIM\src\options.cpp
+[Network]
+Netzwerk
+[General]
+Allgemein
+[Advanced]
+Erweitert
+;file \protocols\ICQ-WIM\src\poll.cpp
+[You received e-mail from %s: %s]
+Sie haben eine E-Mail von %s erhalten: %s
+[You have %d unread emails]
+Sie haben %d ungelesene E-Mails
+;file \protocols\ICQ-WIM\src\proto.cpp
+[Synchronize server groups]
+Servergruppen synchronisieren
+[Edit my web profile]
+
+[Name]
+Name
+[Rename]
+Umbenennen
+[Delete]
+Löschen
+[Enter new group name]
+Neuen Gruppennamen eingeben
+[UIN/e-mail/phone]
+UIN/E-Mail/Telefon
+;file \protocols\ICQ-WIM\src\server.cpp
+[SmileyAdd plugin required to support stickers]
+Zur Unterstützung von Stickern wird das Plugin SmileyAdd benötigt
+[You have not entered a login or password.\nConfigure this in Options -> Network -> ICQ and try again.]
+Sie haben keinen Anmeldenamen oder Password eingegeben.\nGeben Sie dies unter Einstellungen > Netzwerk > ICQ ein und versuchen Sie es nochmal.
+[Connection failed.\nYour login or password was rejected (%d).]
+Verbindung fehlgeschlagen.\nDer Anmeldename oder das Password wurden abgelehnt (%d).
+[Connection failed.\nThe server is temporarily unavailable (%d).]
+Verbindung fehlgeschlagen.\nDer Server ist temporär nicht verfügbar (%d).
+[Connection failed.\nUnknown error during sign on: %d]
+Verbindung fehlgeschlagen.\nUnbekannter Fehler beim Anmelden: %d
+[admin]
+Administrator
+[member]
+Mitglied
+[Unknown sticker]
+Unbekannter Sticker
+[User sent a sticker:]
+Benutzer hat einen Sticker gesendet:
+[Buddy addition failed]
+Hinzufügen eines Freundes fehlgeschlagen

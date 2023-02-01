@@ -1,0 +1,184 @@
+#muuid {57e90ac6-1067-423b-8ca3-70a39d200d4f}
+;============================================================
+;  File: SkypeWeb.dll
+;  Plugin: Skype protocol (Web)
+;  Version: 0.95.13.3
+;  Authors: Miranda NG team
+;============================================================
+[Skype protocol support for Miranda NG. Based on new Skype for Web.]
+Wsparcie protokołu Skype dla Mirandy NG. Oparte na nowym Skype w przeglądarce.
+;file \protocols\SkypeWeb\res\resource.rc
+[Create group chat]
+Utwórz czat grupowy
+[Cancel]
+Anuluj
+[Mark users you want to invite to a new chat]
+Zaznacz użytkowników, których chcesz zaprosić do nowego czatu
+[Invite user to chat]
+Zaproś użytkownika do czatu
+[Choose one of your contacts to be invited:]
+Wybierz jeden z kontaktów, który chcesz zaprosić:
+[Skypename:]
+Nazwa Skype:
+[Password:]
+Hasło:
+[Default group:]
+Domyślna grupa:
+[Account]
+Konto
+[Others]
+Inne
+[Automatic messages synchronization]
+Automatyczna synchronizacja wiadomości
+[Always notify as unread for all incoming message]
+Zawsze powiadamiaj o nieprzeczytanych wiadomościach dla wszystkich przychodzących
+[Place:]
+Miejsce:
+[Use hostname]
+Używaj nazwy hosta
+[Use BBCode]
+Używaj BBCode
+[Change password]
+Zmień hasło
+[Enter password]
+Wprowadź hasło
+[Save password]
+Zapisz hasło
+[Enter the password to continue.]
+Wprowadź hasło, by kontynuować.
+;file \protocols\SkypeWeb\src\main.cpp
+[Skype Link Protocol]
+Powiązanie protokołu Skype
+;file \protocols\SkypeWeb\src\skype_chatrooms.cpp
+[Admin]
+Admin
+[User]
+Użytkownik
+[Enter new nickname]
+Wprowadź nowy nick
+[This chat is going to be destroyed forever with all its contents. This action cannot be undone. Are you sure?]
+Ten czat zostanie zniszczony wraz z zawartością. Ta operacja nie będzie mogła zostać cofnięta. Czy jesteś pewien?
+[Warning]
+Ostrzeżenie
+[&Invite user...]
+&Zaproś użytkownika...
+[&Leave chat session]
+&Opuść pokój
+[&Change topic...]
+&Zmień temat...
+[Kick &user]
+Wykop &użytkownika
+[Set &role]
+Wybierz &rolę
+[&Admin]
+&Admin
+[&User]
+&Użytkownik
+[Change nick...]
+Zmień nick...
+[Enter new chatroom topic]
+Wprowadź nowy temat pokoju
+;file \protocols\SkypeWeb\src\skype_contacts.cpp
+[Are you sure?]
+Jesteś pewien?
+;file \protocols\SkypeWeb\src\skype_db.cpp
+[Incoming call]
+Połączenie przychodzące
+[Edited message]
+Wiadomość edytowana
+[Action]
+Akcja
+[Call information]
+Informacje o rozmowie
+[File transfer information]
+Informacje o transferze pliku
+[URI object]
+Obiekt URI
+[Moji]
+Moji
+[File]
+Plik
+[Unknown event]
+Nieznane zdarzenie
+;file \protocols\SkypeWeb\src\skype_events.cpp
+[SkypeWeb error: Invalid data!]
+Błąd SkypeWeb: Nieprawidłowe dane!
+[[b]Original message:[/b]\n%s\n]
+\[b]Wiadomość oryginalna:[/b]\n%s\n
+[Original message:\n%s\n]
+Wiadomość oryginalna:\n%s\n
+[[b]Edited at %s:[/b]\n%s\n]
+\[b]edytowana %s:[/b]\n%s\n
+[Edited at %s:\n%s\n]
+edytowana %s:\n%s\n
+[Call]
+Zadzwoń
+[Call missed]
+Rozmowa nieodebrana
+[Call ended (%s)]
+Rozmowa zakończona (%s)
+[File transfer:\n\tFile name: %s \n\tSize: %lld bytes \n]
+Transfer pliku:\n\tNazwa pliku: %s \n\tRozmiar: %lld bajtów \n
+[Preview]
+Podgląd
+[Full image]
+
+[Unknown event, please send this text for developer: "%s"]
+Nieznane zdarzenie, proszę prześlij ten tekst programistom: "%s"
+;file \protocols\SkypeWeb\src\skype_icons.cpp
+[Protocol icon]
+Ikona protokołu
+[Create new chat icon]
+Ikona tworzenia nowego czatu
+[Block user icon]
+Ikona blokowania użytkownika
+[Unblock user icon]
+Ikona odblokowania użytkownika
+[Incoming call icon]
+Ikona rozmowy przychodzącej
+[Notification icon]
+Ikona powiadomienia
+[Error icon]
+Ikona błędu
+[Action icon]
+Ikona działania
+[Protocols]
+Protokoły
+;file \protocols\SkypeWeb\src\skype_login.cpp
+[Authentication failed. Invalid username.]
+Autoryzacja nie powiodła się. Nieprawidłowa nazwa użytkownika.
+[Authentication failed. Bad username or password.]
+Autoryzacja nie powiodła się. Błędna nazwa użytkownika lub hasło.
+[Too many failed authentication attempts with given username or IP.]
+Zbyt wiele nieudanych prób autoryzacji z podaną nazwą użytkownika lub IP.
+[Authentication failed. Unknown error.]
+Autoryzacja nie powiodła się. Nieznany błąd.
+;file \protocols\SkypeWeb\src\skype_menus.cpp
+[Block contact]
+Zablokuj kontakt
+[Unblock contact]
+Odblokuj kontakt
+[Create new chat]
+Utwórz nowy czat
+;file \protocols\SkypeWeb\src\skype_messages.cpp
+[You cannot send when you are offline.]
+Nie możesz wysyłać będąc rozłączonym.
+[Unknown error!]
+Nieznany błąd!
+[Network error!]
+Błąd sieciowy!
+;file \protocols\SkypeWeb\src\skype_options.cpp
+[Network]
+Protokoły
+;file \protocols\SkypeWeb\src\skype_popups.cpp
+[Notifications]
+Powiadomienia
+[Errors]
+Błędy
+[Calls]
+Rozmowy
+;file \protocols\SkypeWeb\src\skype_proto.cpp
+[Incoming call canceled]
+
+[Skypename]
+Nazwa Skype

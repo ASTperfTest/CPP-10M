@@ -1,0 +1,108 @@
+#muuid {23eacc0d-bab0-49c0-8f37-5e259ece527f}
+;============================================================
+;  File: LotusNotify.dll
+;  Plugin: LotusNotify
+;  Version: 0.1.23.1
+;  Authors: MaKaRSoFT - http://maciej.wycik.pl/miranda
+;============================================================
+[Notify about new mail in Lotus Database]
+Сповіщає про нову пошту в Lotus Database
+;file \protocols\LotusNotify\res\LotusNotify.rc
+[Lotus connection settings]
+Налаштування з'єднання Lotus
+[Primary server:]
+Основний сервер:
+[Secondary server:]
+Вторинний сервер:
+[Database:]
+База даних:
+[Password:]
+Пароль:
+[try detect]
+спробувати виявити
+[autoregister]
+Автореєстрація
+[Check interval:]
+Інтервал перевірки:
+[min.]
+хв
+[(0-disabled)]
+(0 - вимкнено)
+[Keep connection on error]
+Підтримувати з'єднання
+[Set popup colors]
+Кольори
+[Background]
+Фон
+[Text]
+Текст
+[Close after:]
+Затримка:
+[sec (0 default, -1 disabled)]
+с (0 - замовчання, -1 - вимкнено)
+[Left button click cmd:]
+Команда лівої кнопки миші:
+[Command parameters:]
+Параметри команди:
+[Show again if still unread]
+Показувати непрочитане ще раз
+[...but only if popup not clicked]
+...тільки якщо спливаюче вікно не натиснуте
+[Show error messages]
+Повідомляти про помилки
+[Remember newest message ID and don't show older]
+Пам'ятати ID останнього повідомлення і не показувати старі
+[...even if popup not clicked]
+...навіть якщо спливаюче вікно не натиснуте
+[Clear popups history]
+Очистити історію спливаючих вікон
+[Filter messages containing the following:]
+Фільтрувати повідомлення, що містять:
+[Sender]
+Відправник
+[Subject]
+Тема
+[To / CopyTo]
+Кому / Копія Кому
+[Offline status mean:]
+Автономний статус:
+;file \protocols\LotusNotify\src\LotusNotify.cpp
+[Unable to load all required Lotus API functions]
+Не вдається завантажити всі необхідні функцій Lotus API
+[Lotus Notes Client not detected. Check plugin configuration description at https://miranda-ng.org/p/LotusNotify]
+Клієнт Lotus Notes не виявлено. Перевірте опис конфігурації плагіна в https://miranda-ng.org/p/LotusNotify
+[Unable to initialize Notes.]
+Не вдалося ініціалізувати Notes.
+[Lotus Notes Extension Manager was not registered. Authentication function will not work properly]
+Lotus Notes Extension Manager не зареєстровано. Функція аутентифікації не буде працювати належним чином.
+[In notes.ini file there is no required entry EXTMGR_ADDINS=plugindllnamewithout".dll"]
+У файлі notes.ini немає потрібного запису EXTMGR_ADDINS=plugindllnamewithout".dll"
+[This utility check your notes.ini file if it's set to authenticate this plugin as safe. Plugin is not added as Lotus Extension, so plugin built-in authentication will not work properly. Do you want to add plugin as Lotus Extension (modify notes.ini by adding "EXTMGR_ADDINS=PLUGINNAME")?]
+Плагін не додано у Lotus Extension, тому вбудована функція аутентифікації не буде працювати належним чином. Щоб додати плагін у Lotus Extension, необхідно вписати "EXTMGR_ADDINS=PLUGINNAME" в notes.ini. Зробити це зараз?
+[LotusNotify plugin configuration]
+Конфігурація плагіна LotusNotify
+[notes.ini modified correctly. Miranda restart required.]
+notes.ini модифіковано коректно. Необхідно перезапустити програму.
+[notes.ini seem to be set correctly.]
+Здається, налаштування notes.ini правильні.
+[Now checking Lotus, try again later]
+Триває перевірка Lotus, повторіть спробу пізніше
+[Attachments: %d bytes]
+Вкладення: %d байт
+[&Check Lotus]
+&Перевірити Lotus
+[Lotus Notify]
+Повідомлення Lotus
+[New Lotus document detected]
+Виявлено новий документ Lotus
+;file \protocols\LotusNotify\src\options.cpp
+[Status]
+Статус
+[Plugins]
+Плагіни
+[Connection]
+З'єднання
+[Popup]
+Спливаючі вікна
+[Miscellaneous]
+Інше

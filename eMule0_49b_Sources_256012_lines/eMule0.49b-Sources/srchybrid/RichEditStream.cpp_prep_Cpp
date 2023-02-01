@@ -1,0 +1,121 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+void INCLUDEREPLACE(){CX_INCL("stdafx.h");}
+void INCLUDEREPLACE(){CX_INCL("resource.h");}
+void INCLUDEREPLACE(){CX_INCL("MenuCmds.h");}
+void INCLUDEREPLACE(){CX_INCL("RichEditStream.h");}
+void INCLUDEREPLACE(){CX_INCL("OtherFunctions.h");}
+
+
+
+
+static char THIS_FILE[] =  "FILE" ;
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CRichEditStream
+
+/* BEGIN_MESSAGE_MAP(CRichEditStream, CRichEditCtrl)
+END_MESSAGE_MAP() */ //)
+
+CRichEditStream::CRichEditStream()
+{
+ memset(&m_cfDef, 0, sizeof m_cfDef);
+ memset(&m_cfBold, 0, sizeof m_cfDef);
+ memset(&m_cfRed, 0, sizeof m_cfDef);
+}
+
+CRichEditStream::~CRichEditStream()
+{
+}
+
+CRichEditStream& CRichEditStream::operator__bLeftShift(const char* psz)
+{
+ ReplaceSel(psz);
+ return *this;
+}
+
+CRichEditStream& CRichEditStream::operator__bLeftShift(char* psz)
+{
+ USES_CONVERSION;
+ ReplaceSel(A2T(psz));
+ return *this;
+}
+
+CRichEditStream& CRichEditStream::operator__bLeftShift(unsigned int uVal)
+{
+ CString strVal;
+ strVal.Format(_T("%u"), uVal);
+ ReplaceSel(strVal);
+ return *this;
+}
+
+CRichEditStream& CRichEditStream::operator__bLeftShift(int iVal)
+{
+ CString strVal;
+ strVal.Format(_T("%d"), iVal);
+ ReplaceSel(strVal);
+ return *this;
+}
+
+CRichEditStream& CRichEditStream::operator__bLeftShift(double fVal)
+{
+ CString strVal;
+ strVal.Format(_T("%.3f"), fVal);
+ ReplaceSel(strVal);
+ return *this;
+}
+
+void CRichEditStream::InitColors()
+{
+ m_cfDef.cbSize = sizeof m_cfDef;
+ if (GetSelectionCharFormat(m_cfDef))
+ {
+  m_cfBold = m_cfDef;
+  m_cfBold.dwMask |= CFM_BOLD;
+  m_cfBold.dwEffects |= CFE_BOLD;
+
+  m_cfRed = m_cfDef;
+  m_cfRed.dwMask |= CFM_COLOR;
+  m_cfRed.dwEffects &= ~CFE_AUTOCOLOR;
+  m_cfRed.crTextColor = RGB(255, 0, 0);
+ }
+}
+
+unsigned long          CRichEditStream::StreamOutCallback(unsigned long dwCookie, LPBYTE pbBuff, long cb, long *pcb)
+{
+ CStringA* pStreamBuffA = (CStringA*)dwCookie;
+ pStreamBuffA->Append((const char*)pbBuff, cb);
+ *pcb = cb;
+ return 0;
+}
+
+void CRichEditStream::GetRTFText(CStringA& rstrText)
+{
+ EDITSTREAM es = {0};
+ es.pfnCallback = StreamOutCallback;
+ es.dwCookie = (unsigned long)&rstrText;
+ StreamOut(SF_RTF, es);
+}
+
+
+
+
+
+
+ 

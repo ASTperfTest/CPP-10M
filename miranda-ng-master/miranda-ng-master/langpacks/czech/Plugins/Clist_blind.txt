@@ -1,0 +1,144 @@
+#muuid {53e095a3-2695-490a-9dad-d20479093831}
+;============================================================
+;  File: Clist_blind.dll
+;  Plugin: BClist
+;  Version: 0.9.0.1
+;  Authors: Ricardo Pescuma Domenecci, based on previous work from Miranda IM project
+;============================================================
+[A contact list for blind folks.]
+Seznam kontaktů pro nevidomé.
+;file \plugins\Clist_blind\res\resource.rc
+[Sort contacts by name]
+Řadit kontakty dle jména
+[Sort contacts by status]
+Řadit kontakty dle stavu
+[Sort contacts by protocol]
+Řadit kontakty dle protokolu
+[Disable icon blinking]
+Vypnout blikání ikon
+[ms delay]
+ms (prodleva)
+[Show]
+Zobrazit
+[icon when statuses differ]
+(v případě, že se stavy liší)
+[Cycle icons every]
+Měnit ikony co
+[seconds, when statuses differ]
+sek. (v případě, že se stavy liší)
+[Show multiple icons]
+Zobrazit více ikon
+[Only when statuses differ]
+Pouze v případě, že se stavy liší
+[System tray icon]
+Ikona v oznamovací oblasti
+[System tray icon when using multiple protocols]
+Ikona v oznamovací oblasti při použití více protokolů
+[Contact list sorting]
+Řazení seznamu kontaktů
+[Window]
+Okno
+[Always on top]
+Vždy navrchu
+[Tool style main window]
+Zjednodušené záhlaví okna
+[Minimize to tray]
+Minimalizovat do ozn. oblasti
+[Hide contact list after it has been idle for]
+Skrýt seznam kontaktů, byl-li neaktivní po dobu
+[seconds]
+sek.
+[Automatically resize window to height of list]
+Podle položek automaticky změnit výšku okna
+[maximum]
+max. však
+[% of screen]
+% obrazovky
+[Size upwards]
+Zvětšovat okno směrem nahoru
+[Title bar text:]
+Text v záhlaví:
+[Translucency options]
+Průhlednost
+[Fade contact list in/out]
+Plynule přejít mezi zobrazením a skrytím
+[Transparent contact list]
+Povolit průhlednost seznamu kontaktů
+[Inactive opacity:]
+Neaktivní okno:
+[Active opacity:]
+Aktivní okno:
+[Show menu bar]
+Zobrazit menu
+[Easy move]
+Vylepšené přesouvání
+[Show title bar]
+Zobrazit záhlaví
+[If window is partially covered, bring to front instead of hiding]
+Je-li okno částečně zakryto, zobrazit na popředí namísto skrytí
+[Show drop shadow (restart required)]
+Zobrazit stín (vyžaduje restart)
+[Pin to desktop]
+Připíchnout na plochu
+[Groups]
+Skupiny
+[Show counts of number of contacts in a group]
+Zobrazit počet kontaktů ve skupině
+[Hide group counts when there are none online]
+Skrýt počet kontaktů ve skupině, jsou-li všichni offline
+[Sort groups alphabetically]
+Seřadit skupiny podle abecedy
+[Quick search in open groups only]
+Rychle hledat jen v otevř. skupinách
+[Templates]
+Šablony
+[Contact:]
+Kontakt:
+[Group:]
+Skupina:
+[Divider:]
+Oddělovač:
+[Info:]
+Informace:
+[Status bar]
+Stavová lišta
+[Show status bar]
+Zobrazit stavovou lištu
+[Show icons]
+Zobrazit ikony
+[Show protocol names]
+Zobrazit názvy protokolů
+[Show status text]
+Zobrazit stav
+[Right click opens status menu]
+Pravým tlačítkem seznam stavů
+[Right click opens Miranda NG menu]
+Pravým tlačítkem nabídku Mirandy
+[Make sections equal width]
+Shodná šířka všech položek
+[Show bevels on panels]
+Zobrazit efekt zkosení panelů
+[Show resize grip indicator]
+Zobrazit tlač. změny velik.
+;file \plugins\Clist_blind\src\clc.cpp
+[Unknown protocol]
+neznámý protokol
+[Group: %name% %count% [%mode%]]
+Skupina: %name% %count% [%mode%]
+[Divider: %s]
+Oddělovač: %s
+[Info: %s]
+Informace: %s
+[Expanded]
+Rozbalený
+[Collapsed]
+Sbalený
+;file \plugins\Clist_blind\src\clcopts.cpp
+[Contact list]
+Seznam kontaktů
+[List]
+Seznam
+;file \plugins\Clist_blind\src\clistopts.cpp
+[Global]
+Globální
+;file \plugins\Clist_blind\src\cluiopts.cpp

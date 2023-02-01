@@ -1,0 +1,155 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("MuleListCtrl.h");}
+void INCLUDEREPLACE(){CX_INCL("TitleMenu.h");}
+void INCLUDEREPLACE(){CX_INCL("map");}
+void INCLUDEREPLACE(){CX_INCL("ListCtrlItemWalk.h");}
+
+
+
+
+
+// Foward declaration
+class CPartFile;
+class CUpDownClient;
+class CDownloadListCtrl;
+class CToolTipCtrlX;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CtrlItem_Struct
+
+enum ItemType {FILE_TYPE = 1, AVAILABLE_SOURCE = 2, UNAVAILABLE_SOURCE = 3};
+
+class CtrlItem_Struct :        CObject
+{
+ //DECLARE_DYNAMIC(CtrlItem_Struct)
+
+public:
+ ~CtrlItem_Struct() { status.DeleteObject(); }
+
+ ItemType         type;
+ CPartFile*       owner;
+ void*            value; // could be both CPartFile or CUpDownClient
+ CtrlItem_Struct* parent;
+ unsigned long            dwUpdated;
+ CBitmap          status;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CDownloadListListCtrlItemWalk
+
+class CDownloadListListCtrlItemWalk :        CListCtrlItemWalk
+{
+public:
+ CDownloadListListCtrlItemWalk(CDownloadListCtrl* pListCtrl);
+
+ virtual CObject* GetNextSelectableItem();
+ virtual CObject* GetPrevSelectableItem();
+
+ void SetItemType(ItemType eItemType) { m_eItemType = eItemType; }
+
+protected:
+ CDownloadListCtrl* m_pDownloadListCtrl;
+ ItemType m_eItemType;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// CDownloadListCtrl
+
+class CDownloadListCtrl :        CMuleListCtrl,        CDownloadListListCtrlItemWalk
+{
+ //DECLARE_DYNAMIC(CDownloadListCtrl)
+ friend class CDownloadListListCtrlItemWalk;
+
+public:
+ CDownloadListCtrl();
+ virtual ~CDownloadListCtrl();
+
+ unsigned int curTab;
+
+ void UpdateItem(void* toupdate);
+ void Init();
+ void AddFile(CPartFile* toadd);
+ void AddSource(CPartFile* owner, CUpDownClient* source, bool notavailable);
+ void RemoveSource(CUpDownClient* source, CPartFile* owner);
+ bool RemoveFile(const CPartFile* toremove);
+ void ClearCompleted(int incat=-2);
+ void ClearCompleted(const CPartFile* pFile);
+ void SetStyle();
+ void CreateMenues();
+ void Localize();
+ void ShowFilesCount();
+ void ChangeCategory(int newsel);
+ CString getTextList();
+ void ShowSelectedFileDetails();
+ void HideFile(CPartFile* tohide);
+ void ShowFile(CPartFile* tohide);
+ void ExpandCollapseItem(int iItem, int iAction, bool bCollapseSource = false);
+ void HideSources(CPartFile* toCollapse);
+ void GetDisplayedFiles(CArray                        * list);
+ void MoveCompletedfilesCat(uint8 from, uint8 to);
+ int  GetCompleteDownloads(int cat,int &total);
+ void UpdateCurrentCategoryView();
+ void UpdateCurrentCategoryView(CPartFile* thisfile);
+
+protected:
+ CImageList  m_ImageList;
+ CTitleMenu m_PrioMenu;
+ CTitleMenu m_FileMenu;
+ CMenu  m_SourcesMenu;
+ bool  m_bRemainSort;
+         std::pair                          ListItemsPair = "CX_TYPEDEF";
+         std::multimap                          ListItems = "CX_TYPEDEF";
+    ListItems m_ListItems;
+ CFont  m_fontBold;
+ CToolTipCtrlX* m_tooltip;
+
+ void ShowFileDialog(unsigned int uInvokePage);
+ void ShowClientDialog(CUpDownClient* pClient);
+ void SetAllIcons();
+ void DrawFileItem(CDC *dc, int nColumn, const RECT* lpRect, CtrlItem_Struct *lpCtrlItem);
+ void DrawSourceItem(CDC *dc, int nColumn, const RECT* lpRect, CtrlItem_Struct *lpCtrlItem);
+ int GetFilesCountInCurCat();
+
+ static int          SortProc(long * lParam1, long * lParam2, long * lParamSort);
+    static int Compare(const CPartFile* file1, const CPartFile* file2, long * lParamSort);
+    static int Compare(const CUpDownClient* client1, const CUpDownClient* client2, long * lParamSort);
+
+ virtual int  OnCommand(int *  wParam, long * lParam);
+ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+
+
+         void OnSysColorChange();
+         void OnItemActivate(NMHDR *pNMHDR, long *  *pResult);
+         void OnContextMenu(CWnd* pWnd, CPoint point);
+         void OnColumnClick( NMHDR* pNMHDR, long * * pResult);
+         void OnListModified(NMHDR *pNMHDR, long *  *pResult);
+         void OnNMDblclkDownloadlist(NMHDR *pNMHDR, long *  *pResult);
+         void OnGetDispInfo(NMHDR* pNMHDR, long * * pResult);
+         void OnLvnGetInfoTip(NMHDR *pNMHDR, long *  *pResult);
+};
+
+
+
+
+
+
+ 

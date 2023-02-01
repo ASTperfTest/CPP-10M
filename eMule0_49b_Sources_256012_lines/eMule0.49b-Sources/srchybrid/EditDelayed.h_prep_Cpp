@@ -1,0 +1,95 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+// CIconWnd
+
+class CIconWnd :        CStatic
+{
+public:
+ CIconWnd();
+ virtual ~CIconWnd();
+
+ void SetImageList(CImageList* pImageList) { m_pImageList = pImageList; }
+ void ShowIcon(int nIconNumber);
+
+protected:
+ int m_nCurrentIcon;
+ CImageList* m_pImageList;
+
+
+         void OnPaint();
+         int  OnEraseBkgnd(CDC* pDC);
+};
+
+
+//////////////////////////////////////////////////////////////////////////////
+// CEditDelayed
+
+class CEditDelayed :        CEdit
+{
+public:
+ CEditDelayed();
+
+ void OnInit(CHeaderCtrl* pColumnHeader, CArray          * paIgnoredColums = NULL);
+
+  // when not using pColumnHeader this text will be shown when the control is empty and has no focus
+ void SetAlternateText(const CString& rstrText) { m_strAlternateText = rstrText; }
+
+protected:
+ bool  m_bShuttingDown;
+ unsigned int m_uTimerResult;
+ unsigned long  m_dwLastModified;
+ CString  m_strLastEvaluatedContent;
+ CIconWnd m_iwReset;
+ CIconWnd m_iwColumn;
+ HCURSOR  m_hCursor;
+ CPoint  m_pointMousePos;
+ bool  m_bShowResetButton;
+ bool  m_bShowsColumnText;
+ int   m_nCurrentColumnIdx;
+ CString  m_strAlternateText;
+ CHeaderCtrl* m_pctrlColumnHeader;
+ CArray           m_aIgnoredColums;
+
+ void DoDelayedEvalute(bool bForce = false);
+ void SetEditRect(bool bUpdateResetButtonPos, bool bUpdateColumnButton = false);
+ void ShowColumnText(bool bShow);
+
+
+         void OnSetFocus(CWnd* pOldWnd);
+         void OnKillFocus(CWnd* pNewWnd);
+         void OnTimer(unsigned int nIDEvent);
+         void OnEnChange();
+         void OnDestroy();
+         void OnLButtonDown(unsigned int nFlags, CPoint point);
+         void OnLButtonUp(unsigned int nFlags, CPoint point);
+         int  OnSetCursor(CWnd* pWnd, unsigned int nHitTest, unsigned int message);
+         void OnMouseMove(unsigned int nFlags, CPoint point);
+         void*  CtlColor(CDC* pDC, unsigned int nCtlColor);
+         int  OnCommand(int *  wParam, long * lParam);
+         void OnSize(unsigned int nType, int cx, int cy);
+};
+
+
+
+
+
+
+ 

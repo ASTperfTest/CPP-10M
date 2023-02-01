@@ -1,0 +1,91 @@
+﻿//this file is part of eMule
+//Copyright (C)2002-2008 Merkur ( strEmail.Format("%s@%s", "devteam", "emule-project.net") / http://www.emule-project.net )
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the     General Public License
+//as published by the Free Software Foundation; either
+//version 2 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but         ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or         FOR   PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the     General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+void INCLUDEREPLACE(){CX_INCL("LayeredWindowHelperST.h");}
+
+
+
+// CMiniMule dialog
+
+class CMiniMule :        CDHtmlDialog
+{
+ //DECLARE_DYNCREATE(CMiniMule)
+
+public:
+ CMiniMule(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CMiniMule();
+
+// Dialog Data
+ enum { IDD = IDD_MINIMULE, IDH = IDR_HTML_MINIMULE };
+
+ bool GetAutoClose() const { return m_bAutoClose; }
+ void SetAutoClose(bool bAutoClose) { m_bAutoClose = bAutoClose; }
+ bool IsInCallback() const { return m_iInCallback != 0; }
+ void UpdateContent(unsigned int uUpDatarate = (unsigned int)-1, unsigned int uDownDatarate = (unsigned int)-1);
+ void Localize();
+
+protected:
+ int m_iInCallback;
+ bool m_bResolveImages;
+ bool m_bRestoreMainWnd;
+ unsigned int m_uWndTransparency;
+ CLayeredWindowHelperST m_layeredWnd;
+
+ // Auto-close
+ bool m_bAutoClose;
+ unsigned int m_uAutoCloseTimer;
+ void CreateAutoCloseTimer();
+ void KillAutoCloseTimer();
+
+ void AutoSizeAndPosition(CSize sizClient);
+ void RestoreMainWindow();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  CreateControlSite(COleControlContainer* pContainer, COleControlSite** ppSite, unsigned int nID, CLSID *  clsid);
+ virtual void PostNcDestroy();
+
+ virtual void OnBeforeNavigate(LPDISPATCH pDisp, const char* szUrl);
+ virtual void OnNavigateComplete(LPDISPATCH pDisp, const char* szUrl);
+ virtual void OnDocumentComplete(LPDISPATCH pDisp, const char* szUrl);
+
+ STDMETHOD(GetOptionKeyPath)(long  *  *pchKey, unsigned long dw);
+ STDMETHOD(TranslateUrl)(unsigned long dwTranslate, OLECHAR* pchURLIn, OLECHAR** ppchURLOut);
+ STDMETHOD(ShowContextMenu)(unsigned long dwID, POINT* ppt, IUnknown* pcmdtReserved, IDispatch* pdispReserved);
+ STDMETHOD(TranslateAccelerator)(LPMSG lpMsg, const GUID* pguidCmdGroup, unsigned long nCmdID);
+
+
+ void _OnBeforeNavigate2(LPDISPATCH pDisp, VARIANT* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers, int * Cancel);
+
+
+ unsigned long OnRestoreMainWindow(IHTMLElement* pElement);
+ unsigned long OnOpenIncomingFolder(IHTMLElement* pElement);
+ unsigned long OnOptions(IHTMLElement* pElement);
+
+
+         void OnClose();
+         void OnDestroy();
+         void OnTimer(unsigned int nIDEvent);
+         void OnNcLButtonDblClk(unsigned int nHitTest, CPoint point);
+};
+
+
+
+
+
+
+ 

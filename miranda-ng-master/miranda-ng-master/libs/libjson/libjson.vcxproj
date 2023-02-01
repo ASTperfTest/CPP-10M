@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F6A9340E-B8D9-4C75-BE30-47DC66D0ABC7}</ProjectGuid>
+    <ProjectName>libjson</ProjectName>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\build\vc.common\lib.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="src\internalJSONNode.cpp" />
+    <ClCompile Include="src\JSONChildren.cpp" />
+    <ClCompile Include="src\JSONDebug.cpp" />
+    <ClCompile Include="src\JSONIterators.cpp" />
+    <ClCompile Include="src\JSONMemory.cpp" />
+    <ClCompile Include="src\JSONNode.cpp" />
+    <ClCompile Include="src\JSONNode_Mutex.cpp" />
+    <ClCompile Include="src\JSONWorker.cpp" />
+    <ClCompile Include="src\JSONWriter.cpp" />
+    <ClCompile Include="src\libJSON.cpp" />
+    <ClCompile Include="src\stdafx.cxx">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="src\internalJSONNode.h" />
+    <ClInclude Include="src\JSONChildren.h" />
+    <ClInclude Include="src\JSONDebug.h" />
+    <ClInclude Include="src\JSONDefs.h" />
+    <ClInclude Include="src\JSONMemory.h" />
+    <ClInclude Include="src\JSONNode.h" />
+    <ClInclude Include="src\JSONOptions.h" />
+    <ClInclude Include="src\JSONWorker.h" />
+    <ClInclude Include="src\NumberToString.h" />
+    <ClInclude Include="src\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\libjson.def" />
+    <None Include="src\libjson64.def" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions Condition="'$(Configuration)'=='Debug'">LIBJSON_EXPORTS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)'=='Release'">LIBJSON_EXPORTS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4197 %(AdditionalOptions)</AdditionalOptions>
+      <ModuleDefinitionFile Condition="'$(Platform)'=='Win32'">src/libjson.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile Condition="'$(Platform)'=='x64'">src/libjson64.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

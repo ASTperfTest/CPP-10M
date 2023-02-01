@@ -1,0 +1,266 @@
+#muuid {a71f8335-7b87-4432-b8a3-81479431c6f5}
+;============================================================
+;  File: SkypeClassic.dll
+;  Plugin: Skype protocol (Classic)
+;  Version: 0.0.0.56
+;  Authors: leecher, tweety, jls17
+;============================================================
+[Skype protocol support for Miranda NG. Classic implementation which requires running original Skype client.]
+Wsparcie dla protokołu Skype w Miranda NG. Klasyczna implementacja wymagająca oryginalnego klienta Skype uruchomionego w tle.
+;file \protocols\SkypeClassic\res\Resource.rc
+[Set]
+Ustaw
+[Delete]
+Usuń
+[Start Skype with Miranda NG if not running using the following command line options:]
+Uruchom Skype wraz z Mirandą (jeśli nie jest jeszcze uruchomiony) używając następujących parametrów:
+[/NOSPLASH - Don't show splash screen on startup]
+/NOSPLASH - nie pokazuj okna powitalnego podczas uruchamiania
+[/MINIMIZED - Start Skype minimized]
+/MINIMIZED - uruchom Skype zminimalizowany
+[/NOTRAY - Skype tray icon becomes gray and is therefore "invisible"]
+/NOTRAY - ikona Skype w zasobniku staje się szara, dzięki czemu jest "niewidoczna"
+[/REMOVEABLE - For running portable Skype]
+/REMOVEABLE - w celu uruchomienia przenośnej kopii Skype
+[/SECONDARY - This is the second instance]
+/SECoNDARY - w przypadku uruchamiania drugiej instancji
+[/DATAPATH - Specify Skype data folder*]
+/DATAPATH - określ folder z danymi Skype
+[Use custom Skype executable*]
+Używaj własnego pliku wykonywalnego Skype
+[* Relative path root is Miranda NG folder]
+* Głównym folderem ścieżki względnej jest folder Mirandy
+[Shutdown Skype when you close Miranda NG]
+Zamknij Skype wraz z Mirandą
+[Unload Skype when you change to Offline status]
+Zamknij Skype, gdy zmieniasz status na Rozłączony
+[Try at least]
+Spróbuj przynajmniej
+[times to connect to Skype API before giving up]
+razy połączyć się z API Skype przed zaniechaniem
+[User name:]
+Użytkownik:
+[Password:]
+Hasło:
+[Dial]
+Zadzwoń
+[Number:]
+Numer:
+[Cancel]
+Anuluj
+[%s is calling]
+%s dzwoni
+[Join conference with %s]
+Przyłącz się do rozmowy grupowej z %s
+[Answer call; set call to %s on hold]
+Odbierz rozmowę; zawieś rozmowę z %s
+[Hang up]
+Rozłącz się
+[Dialog]
+Okno
+[Use Skype proxy connection over network instead of local Skype API]
+Używaj połączenia z serwerem proxy Skype zamiast lokalnego API Skype
+[Host:]
+Host:
+[Port:]
+Port:
+[* You must restart Miranda NG in order to let the settings take effect]
+Aby ustawienia mogły wejść w życie, musisz zrestartować Mirandę
+[This Skype proxy requires password authentication:]
+To proxy Skype wymaga uwierzytelnienia hasłem:
+[Name:]
+Nazwa:
+[Birthday:]
+Urodziny:
+[Sex:]
+Płeć:
+[City:]
+Miasto:
+[Country:]
+Kraj:
+[Province:]
+Województwo:
+[Home phone:]
+Telefon domowy:
+[Office phone:]
+Telefon służbowy:
+[Homepage:]
+Strona domowa:
+[Save]
+Zapisz
+[Enable Skype menu options (currently: Find/Add user)]
+Włącz elementy menu Skype (obecnie Szukaj/Dodaj kontakty)
+[Use popup plugin for displaying messages]
+Używaj wtyczki Popup do wyświetlania komunikatów
+[Suppress all error messages (not recommended, but if it annoys you... ;)]
+Ignoruj wszystkie komunikaty o błędach (niezalecane, ale jeśli cię denerwują... ;)
+[Use group chat interface for conversations (requires group chat module)]
+Używaj interfejsu rozmów grupowych dla konwersacji (wymaga modułu czatów grupowych)
+[Mark group chat message as read to avoid notification]
+Oznacz wiadomości z czatów grupowych jako przeczytane, aby uniknąć powiadomienia
+[Keep requested online status on startup under every circumstance]
+Utrzymuj żądany status dostępny podczas uruchamiania w każdych warunkach
+[Use time zone patch]
+Używaj poprawki stref czasowych
+[Ignore time zones]
+Ignoruj strefy czasowe
+[Show default Skype avatar for contacts]
+Pokazuj domyślny awatar Skype dla kontaktów
+[Suppress call summary chat message]
+Ignoruj wiadomość czatu z podsumowaniem rozmowy
+[Disable support for N/A and SkypeMe status (for Skype 4+)]
+Wyłącz wsparcie dla statusów "wrócę później" oraz "SkypeMe" (dla Skype 4+)
+[Show full name in contact list instead of nickname]
+Pokaż nazwę wyświetlaną, zamiast nazwy użytkownika, na liście kontaktów
+[SkypeOut contacts are in status:]
+Status kontaktów SkypeOut
+[Cleanup nicknames]
+Czyszczenie nicków
+[Do not wait for message SENT acknowledgment (for some buggy Skype versions >6)]
+Nie czekaj na potwierdzenie wysłania wiadomości (dla wadliwych wersji Skype'a >6)
+[Skype popups]
+Popupy Skype
+[Incoming calls]
+Przychodzące rozmowy
+[Show incoming calls]
+Pokazuj rozmowy przychodzące
+[seconds]
+s
+[Background]
+Tło
+[Use Windows colors]
+Użyj kolorów Windows
+[Text]
+Tekst
+[Preview]
+Podgląd
+[Error messages]
+Komunikaty błędów
+[Display error messages]
+Wyświetlaj komunikaty błędów
+;file \protocols\SkypeClassic\src\contacts.cpp
+[Call (Skype)]
+Zadzwoń ze Skype
+[Call using SkypeOut]
+Zadzwoń przy użyciu SkypeOut
+[Hang up call (Skype)]
+Zakończ rozmowę na Skype
+[Hang up SkypeOut call]
+Zakończ rozmowę SkypeOut
+[Hold call]
+Zawieś
+[Resume call]
+Wznów
+[&File]
+&Plik
+[&Open group chat]
+&Otwórz czat grupowy
+[Block contact]
+Zablokuj kontakt
+[Import Skype history]
+Importuj historię Skype
+[Add Skype contact]
+Dodaj kontakt Skype
+[Unblock contact]
+Odblokuj kontakt
+;file \protocols\SkypeClassic\src\gchat.cpp
+[Unknown]
+Nieznany
+[&Invite user...]
+&Zaproś użytkownika...
+[Me]
+Ja
+[&Leave chat session]
+&Opuść pokój
+[Set &topic...]
+Ustaw &temat...
+[User &details]
+&Dane kontaktu
+[User &history]
+&Historia użytkownika
+[&Kick user]
+&Wyrzuć użytkownika
+;file \protocols\SkypeClassic\src\skype.cpp
+[Username '%s' provided by Skype API doesn't match username '%s' in your settings. Please either remove username setting in your configuration or correct it. Will not connect!]
+Nazwa użytkownika "%s" podana przez API Skype nie zgadza się z nazwą użytkownika "%s" w twoich ustawieniach. Usuń ustawienie nazwy użytkownika ze swojej konfiguracji lub je popraw. Połączenie niemożliwe!
+[Cannot reach Skype API, plugin disfunct.]
+Nie można połączyć się z API Skype, wtyczka uszkodzona.
+[Do a SkypeOut-call]
+Rozpocznij rozmowę SkypeOut
+[Unable to register with group chat module!]
+Nie udało się zarejestrować w module czatów grupowych!
+[invited]
+zaproszony
+[Phone call]
+Rozmowa telefoniczna
+[Incoming Skype call]
+Przychodząca rozmowa Skype
+[Incoming call from %s]
+Przychodząca rozmowa od %s
+[Connection to Skype lost]
+Utracono połączenie ze Skype
+[Cleanup finished.]
+Oczyszczanie zakończone.
+[Cannot create window.]
+Nie można stworzyć okna.
+[Memory allocation error on startup.]
+Błąd przydzielania pamięci podczas uruchamiania.
+[This seems to be the first time that you're running the Skype protocol plugin. Do you want to enable the protocol for this Miranda profile? If you chose NO, you can always enable it in the plugin options later.]
+Wygląda na to, że po raz pierwszy uruchamiasz wtyczkę protokołu Skype. Czy chcesz włączyć protokół dla tego profilu Mirandy? Jeśli wybierzesz "Nie" możesz to później zmienić w opcjach wtyczek.
+[Cannot register window message.]
+Nie można zarejestrować komunikatu okna.
+[Unable to create mutex!]
+Nie udało się stworzyć Mutexu!
+;file \protocols\SkypeClassic\src\skypeapi.cpp
+[Misc. error]
+Inne. Błąd
+[User does not exist, check username]
+Użytkownik nie istnieje, sprawdź nazwę użytkownika
+[Trying to send IM to a user, who is not online]
+Próba wysłania wiadomości do rozłączonego użytkownika
+[IM blocked by recipient]
+Wiadomość zablokowana przez odbiorcę
+[Type unsupported]
+Niewspierany typ
+[Sending IM message to user, who has not added you to friend list and has chosen 'only people in my friend list can start IM']
+Wysyłanie wiadomości do użytkownika, który nie dodał Cię do znajomych, a wybrał inicjowanie czatów tylko ze znajomymi
+[Sending IM message to user, who has not authorized you and has chosen 'only people whom I have authorized can start IM']
+Wysyłanie wiadomości do użytkownika, który cię nie autoryzował, a wybrał inicjowanie czatów tylko z osobami, które autoryzował
+[Unknown error]
+Nieznany błąd
+[Cannot resolve host!]
+Nie można odnaleźć hosta!
+[Cannot find valid host to connect to.]
+Nie można znaleźć prawidłowego hosta, z którym możnaby się połączyć.
+[Authentication is not supported/needed for this Skype proxy server. It will be disabled.]
+Autoryzacja nie jest wspierana/wymagana przez ten serwer proxy Skype. Zostanie ona wyłączona.
+[Authentication failed for this server, connection was not successful. Verify that your password is correct!]
+Autoryzacja na tym serwerze nie powiodła się, połączenie nieudane. Upewnij się, że twoje hasło jest poprawne!
+[The server you specified requires authentication, but you have not supplied a password for it. Check the Skype plugin settings and try again.]
+Serwer, który podałeś wymaga autoryzacji, ale nie wpisałeś jego hasła. Sprawdź ustawienia wtyczki Skype i spróbuj ponownie.
+[ERROR: Skype not running / too old / not working!]
+Błąd: Skype nie jest uruchomiony / zbyt stara wersja / nie działa
+[Skype refused the connection :(]
+Skype odrzucił połączenie :(
+[The Skype API is not available]
+API Skype jest niedostępne
+[Wheee, Skype won't let me use the API. :(]
+Buuu, Skype nie pozwala mi użyć API. :(
+;file \protocols\SkypeClassic\src\skypeopt.cpp
+[Preview error message]
+Podgląd komunikatu błędu
+[Skype default]
+Domyślny Skype
+[Skype advanced]
+Zaawansowany Skype
+[Skype proxy]
+Proxy Skype
+[Details]
+Szczegóły
+[MALE]
+Mężczyzna
+[FEMALE]
+Kobieta
+;file \protocols\SkypeClassic\src\skypesvc.cpp
+[Skype ID]
+ID Skype

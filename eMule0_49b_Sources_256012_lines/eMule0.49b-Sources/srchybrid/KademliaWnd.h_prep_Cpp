@@ -1,0 +1,71 @@
+﻿
+void INCLUDEREPLACE(){CX_INCL("INVALID_INCLUDE_FILE_NAME_ResizableLibResizableDialog.h");}
+void INCLUDEREPLACE(){CX_INCL("IconStatic.h");}
+void INCLUDEREPLACE(){CX_INCL("kademlia/routing/contact.h");}
+
+class CKadContactListCtrl;
+class CKadContactHistogramCtrl;
+class CKadSearchListCtrl;
+class CCustomAutoComplete;
+
+class CKademliaWnd :        CResizableDialog
+{
+ //DECLARE_DYNAMIC(CKademliaWnd)
+
+public:
+ CKademliaWnd(CWnd* pParent = NULL);   // standard constructor
+ virtual ~CKademliaWnd();
+
+ // Dialog Data
+ enum { IDD = IDD_KADEMLIAWND };
+
+ // Contacts
+ unsigned int GetContactCount() const;
+ void UpdateKadContactCount();
+ void ShowContacts();
+ void HideContacts();
+ bool ContactAdd(const Kademlia::CContact* contact);
+ void ContactRem(const Kademlia::CContact* contact);
+ void ContactRef(const Kademlia::CContact* contact);
+ void UpdateNodesDatFromURL(CString strURL);
+
+ // Searches
+ CKadSearchListCtrl* searchList;
+
+ void Localize();
+ void UpdateControlsState();
+ int  SaveAllSettings();
+
+protected:
+ CStatic kadContactLab;
+ CStatic kadSearchLab;
+ CIconStatic m_ctrlBootstrap;
+ CKadContactListCtrl* m_contactListCtrl;
+ CKadContactHistogramCtrl* m_contactHistogramCtrl;
+ CCustomAutoComplete* m_pacONBSIPs;
+ void* icon_kadcont;
+ void* icon_kadsea;
+
+ void SetAllIcons();
+
+ virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+ virtual int  OnInitDialog();
+ virtual int  PreTranslateMessage(MSG* pMsg);
+
+
+         void OnBnClickedBootstrapbutton();
+         void OnBnConnect();
+         void OnBnClickedFirewallcheckbutton();
+         void OnSysColorChange();
+         void OnEnSetfocusBootstrapip();
+         void OnEnSetfocusBootstrapNodesdat();
+         int  OnHelpInfo(HELPINFO* pHelpInfo);
+         void*  OnCtlColor(CDC* pDC, CWnd* pWnd, unsigned int nCtlColor);
+};
+
+
+
+
+
+
+ 

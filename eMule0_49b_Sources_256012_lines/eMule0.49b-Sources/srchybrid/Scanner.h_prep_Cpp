@@ -1,0 +1,12 @@
+﻿
+
+int yylex();
+void LexInit(const char* pszInput, bool bKeepQuotedStrings);
+void LexFree();
+
+
+
+
+
+
+ 

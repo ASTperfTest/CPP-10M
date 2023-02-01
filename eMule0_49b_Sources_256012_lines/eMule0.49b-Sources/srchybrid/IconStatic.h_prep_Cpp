@@ -1,0 +1,31 @@
+﻿
+
+/////////////////////////////////////////////////////////////////////////////
+// CIconStatic
+
+class CIconStatic :        CStatic
+{
+ //DECLARE_DYNAMIC(CIconStatic)
+public:
+ CIconStatic();
+ virtual ~CIconStatic();
+
+ void SetIcon(const char* pszIconID);
+ void SetWindowText(const char* lpszString);
+
+protected:
+ CStatic m_wndPicture;
+ CString m_strIconID;
+ CString m_strText;
+ CBitmap m_MemBMP;
+
+
+         void OnSysColorChange();
+};
+
+
+
+
+
+
+ 

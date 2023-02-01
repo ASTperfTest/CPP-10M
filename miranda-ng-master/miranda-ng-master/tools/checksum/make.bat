@@ -1,0 +1,1 @@
+@cl /MT /O2 /GL /Fechecksum.exe md5.cpp checksum.cpp /link /filealign:512

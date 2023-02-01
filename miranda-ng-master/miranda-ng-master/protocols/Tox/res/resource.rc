@@ -1,0 +1,350 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "..\src\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian (Russia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "..\\src\\resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian (Russia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_TOX                 ICON                    "tox.ico"
+
+IDI_ME                  ICON                    "me.ico"
+
+IDI_COPY                ICON                    "copy.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ACCOUNT_MANAGER DIALOGEX 0, 0, 186, 119
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Tox ID:",IDC_STATIC,0,5,49,8
+    EDITTEXT        IDC_PASSWORD,49,52,135,12,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "Create",IDC_PROFILE_NEW,49,19,65,13
+    PUSHBUTTON      "Import",IDC_PROFILE_IMPORT,120,19,65,13
+    PUSHBUTTON      "Copy ID",IDC_CLIPBOARD,49,19,65,13,NOT WS_VISIBLE
+    PUSHBUTTON      "Export",IDC_PROFILE_EXPORT,120,19,65,13,NOT WS_VISIBLE
+    LTEXT           "Name:",IDC_STATIC,0,38,49,12
+    EDITTEXT        IDC_NAME,49,36,135,12,ES_AUTOHSCROLL
+    LTEXT           "Password:",IDC_STATIC,0,54,49,12,NOT WS_VISIBLE
+    EDITTEXT        IDC_TOXID,49,3,135,12,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED
+    LTEXT           "Default group:",IDC_STATIC,0,70,49,12
+    EDITTEXT        IDC_GROUP,49,68,135,12,ES_AUTOHSCROLL
+END
+
+IDD_OPTIONS_MAIN DIALOGEX 0, 0, 310, 230
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Tox",IDC_STATIC,7,7,296,90
+    LTEXT           "Tox ID:",IDC_STATIC,12,17,69,11
+    EDITTEXT        IDC_TOXID,81,15,217,12,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED
+    LTEXT           "Name:",IDC_STATIC,12,48,69,11
+    EDITTEXT        IDC_NAME,81,46,217,12,ES_AUTOHSCROLL
+    LTEXT           "Default group:",IDC_STATIC,12,80,69,12
+    EDITTEXT        IDC_GROUP,81,78,217,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Create Tox profile",IDC_PROFILE_NEW,81,30,107,13
+    PUSHBUTTON      "Import Tox profile",IDC_PROFILE_IMPORT,191,30,107,13
+    PUSHBUTTON      "Copy Tox ID",IDC_CLIPBOARD,81,30,107,13,NOT WS_VISIBLE
+    PUSHBUTTON      "Export Tox profile",IDC_PROFILE_EXPORT,191,30,107,13,NOT WS_VISIBLE
+    GROUPBOX        "Connection settings",IDC_STATIC,7,99,296,106
+    CONTROL         "Enable UDP (otherwise force Tox to use TCP)",IDC_ENABLE_UDP,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,111,286,10
+    CONTROL         "Enable IPv6",IDC_ENABLE_IPV6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,139,286,10
+    LTEXT           "Max connect retries:",IDC_STATIC,12,171,121,8
+    EDITTEXT        IDC_MAXCONNECTRETRIES,133,168,43,14,ES_NUMBER
+    CONTROL         "",IDC_MAXCONNECTRETRIESSPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,166,168,10,14
+    EDITTEXT        IDC_MAXRECONNECTRETRIES,133,184,43,14,ES_NUMBER
+    CONTROL         "",IDC_MAXRECONNECTRETRIESSPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,166,184,10,14
+    LTEXT           "Max reconnect retries:",IDC_STATIC,12,186,121,8
+    CONTROL         "Enable UDP hole-punching",IDC_ENABLE_HOLEPUNCHING,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,125,274,10
+    CONTROL         "Enable local network peer discovery",IDC_ENABLE_LOCALDISCOVERY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,153,286,10
+    PUSHBUTTON      "Remove password",IDC_PASSWORD_REMOVE,81,62,107,13
+    PUSHBUTTON      "Change password",IDC_PASSWORD_CHANGE,191,62,107,13
+    PUSHBUTTON      "Set password",IDC_PASSWORD_CREATE,136,62,107,13
+END
+
+IDD_SEARCH DIALOGEX 0, 0, 109, 113
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_SEARCH,0,4,109,14,ES_AUTOHSCROLL
+    LTEXT           "If this field contains Tox address (76 hex characters), you will be prompted to add it in your friend list. Otherwise, Miranda will search this query via toxme.io.",IDC_STATIC,0,20,109,93
+END
+
+IDD_USER_INFO DIALOGEX 0, 0, 221, 152
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "DNS name:",IDC_STATIC,2,3,217,8
+    EDITTEXT        IDC_DNS_ID,2,13,217,14,ES_AUTOHSCROLL
+END
+
+IDD_PASSWORD_ENTER DIALOGEX 0, 0, 211, 70
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW | WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+CAPTION "Enter password"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_PASSWORD,7,24,199,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,101,51,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,156,51,50,14
+    LTEXT           "Tox profile is encrypted. Enter the password to continue.",IDC_STATIC,7,5,199,18
+END
+
+IDD_OPTIONS_NODES DIALOGEX 0, 0, 310, 230
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_NODESLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,8,7,295,201
+    PUSHBUTTON      "Add",IDC_ADDNODE,253,213,50,14
+    PUSHBUTTON      "Update",IDC_UPDATENODES,8,213,50,14
+END
+
+IDD_NODE_EDITOR DIALOGEX 0, 0, 213, 118
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_NOFAILCREATE | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CTEXT           "IPv4 address/ Host",IDC_STATIC,7,4,199,8
+    EDITTEXT        IDC_IPV4,7,12,199,14,ES_AUTOHSCROLL
+    CTEXT           "IPv6 address (optional)",IDC_STATIC,7,32,155,8
+    EDITTEXT        IDC_IPV6,7,40,155,14,ES_AUTOHSCROLL
+    CTEXT           "Port",IDC_STATIC,167,32,39,8
+    EDITTEXT        IDC_PORT,167,40,39,14,ES_AUTOHSCROLL
+    CTEXT           "Public key",IDC_STATIC,7,59,199,8
+    EDITTEXT        IDC_PKEY,7,67,199,21,ES_MULTILINE
+    DEFPUSHBUTTON   "OK",IDOK,103,97,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,156,97,50,14
+END
+
+IDD_PASSWORD_CHANGE DIALOGEX 0, 0, 209, 112
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW | WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+CAPTION "Change password"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_PASSWORD,7,14,197,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,101,93,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,154,93,50,14
+    EDITTEXT        IDC_PASSWORD_NEW,7,40,197,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Old password:",IDC_STATIC,7,4,197,8
+    LTEXT           "New password:",IDC_STATIC,7,30,197,8
+    EDITTEXT        IDC_PASSWORD_CONFIRM,7,65,197,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Confirm password:",IDC_STATIC,7,55,197,8
+    LTEXT           "",IDC_PASSWORD_VALIDATION,7,81,197,8
+END
+
+IDD_PASSWORD_CREATE DIALOGEX 0, 0, 209, 84
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW | WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+CAPTION "Set password"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,101,65,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,154,65,50,14
+    EDITTEXT        IDC_PASSWORD_NEW,7,14,197,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "New password:",IDC_STATIC,7,4,197,8
+    EDITTEXT        IDC_PASSWORD_CONFIRM,7,39,197,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Confirm password:",IDC_STATIC,7,29,197,8
+    LTEXT           "",IDC_PASSWORD_VALIDATION,7,55,197,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ACCOUNT_MANAGER, DIALOG
+    BEGIN
+        VERTGUIDE, 49
+        BOTTOMMARGIN, 112
+        HORZGUIDE, 19
+    END
+
+    IDD_OPTIONS_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        VERTGUIDE, 12
+        VERTGUIDE, 24
+        VERTGUIDE, 81
+        VERTGUIDE, 133
+        VERTGUIDE, 298
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_SEARCH, DIALOG
+    BEGIN
+    END
+
+    IDD_USER_INFO, DIALOG
+    BEGIN
+        VERTGUIDE, 2
+        VERTGUIDE, 219
+    END
+
+    IDD_PASSWORD_ENTER, DIALOG
+    BEGIN
+        RIGHTMARGIN, 206
+        VERTGUIDE, 7
+        BOTTOMMARGIN, 65
+    END
+
+    IDD_OPTIONS_NODES, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+    END
+
+    IDD_NODE_EDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        VERTGUIDE, 162
+        BOTTOMMARGIN, 111
+        HORZGUIDE, 12
+        HORZGUIDE, 40
+        HORZGUIDE, 67
+    END
+
+    IDD_PASSWORD_CHANGE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 204
+        VERTGUIDE, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_PASSWORD_CREATE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 204
+        VERTGUIDE, 7
+        BOTTOMMARGIN, 79
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_OPTIONS_MAIN AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PASSWORD_ENTER AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PASSWORD_CHANGE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PASSWORD_CHANGE2 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PASSWORD_CREATE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_SEARCH AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,112 @@
+#muuid {81c220a6-0226-4ad6-bfca-217b17a16053}
+;============================================================
+;  File: Db_autobackups.dll
+;  Plugin: Db autobackuper
+;  Version: 0.1.0.7
+;  Authors: chaos.persei, sje, Kildor, Billy_Bons
+;============================================================
+[Database autobackuper plugin.]
+Automatische Sicherungen der Datenbank.
+;file \plugins\Db_autobackups\res\db_autobackups.rc
+[Automatic backups]
+Automatische Sicherungen
+[Enabled]
+Aktiviert
+[When Miranda starts]
+Während des Startvorgangs
+[When Miranda exits]
+Während des Beendens
+[Every:]
+Alle:
+[Number of backups to keep:]
+Anzahl der gespeicherten Sicherungen:
+[Backup to folder:]
+Ordner für Sicherungen:
+[Browse...]
+Durchsuchen...
+[Go to the "Options -> Customize -> Folders" to change settings]
+Gehen Sie zu Customize -> Verzeichnisse, um die Einstellungen zu ändern.
+[Backup file mask:]
+Backup-Dateimaske:
+[Compress backup to zip-archive]
+Sicherungen in Zip-Archiven komprimieren
+[Backup profile folder]
+Profilverzeichnis sichern
+[Enable progress bar]
+Fortschrittsanzeige aktivieren
+[Use CloudFile]
+CloudFile verwenden
+[Backup NOW]
+Jetzt sichern
+[Backup progress]
+Fortschritt der Sicherung
+[Cancel]
+Abbrechen
+;file \plugins\Db_autobackups\src\backup.cpp
+[Backup in progress]
+Sicherheitskopie wird erstellt
+[Copying database file...]
+Kopiere Datenbank...
+[Uploading to cloud failed]
+Hochladen in die Cloud fehlgeschlagen
+[Error]
+Fehler
+[Database backed up]
+Datenbank gesichert
+[Database back up in process...]
+Datenbank wird gerade gesichert...
+;file \plugins\Db_autobackups\src\main.cpp
+[Backup profile]
+Sicherheitskopie des Profils erstellen
+[Save profile as...]
+Profil speichern unter...
+[Miranda NG databases]
+Miranda-NG-Datenbanken
+[Compressed Miranda NG databases]
+Komprimierte Miranda-NG-Datenbanken
+[All files]
+Alle Dateien
+[Database]
+Datenbank
+[Database backups]
+Datenbanksicherung
+[Backup folder]
+Sicherungsordner
+[AutoBackups notifications]
+AutoBackups-Benachrichtigung
+;file \plugins\Db_autobackups\src\options.cpp
+[days]
+Tage
+[hours]
+Stunden
+[minutes]
+Minuten
+[path to Miranda root folder]
+Pfad zum Miranda-Hauptverzeichnis
+[path to folder containing Miranda profiles]
+Pfad zum Verzeichnis mit den Miranda-Profilen
+[name of current Miranda profile (filename, without extension)]
+Name des aktuellen Miranda-Profils (Dateiname, ohne Endung)
+[will return parsed string %miranda_profilesdir%\\%miranda_profilename%]
+Gibt umgewandelten String %miranda_profilesdir%\\%miranda_profilename% zurück
+[same as environment variable %APPDATA% for currently logged-on Windows user]
+wie Umgebungsvariable %APPDATA% für den aktuell angemeldeten Windows-Benutzer
+[username for currently logged-on Windows user]
+Benutzername für den aktuell angemeldeten Windows-Benutzer.
+["My Documents" folder for currently logged-on Windows user]
+"Meine Dokumente" Verzeichnis für den aktuell angemeldeten Windows-Benutzer
+["Desktop" folder for currently logged-on Windows user]
+"Desktop" Verzeichnis für den aktuell angemeldeten Windows-Benutzer
+[any environment variable defined in current Windows session (like %systemroot%, %allusersprofile%, etc.)]
+Irgendeine Umgebungsvariable definiert die aktuelle Windows-Sitzung (z.B. %systemroot%, %allusersprofile% usw.)
+[Variables]
+Variablen
+[Error creating backup folder]
+Fehler beim Erstellen des Backup-Verzeichnisses.
+[Next backup is scheduled to]
+Nächste Sicherung geplant am
+[Select backup folder]
+Backup-Verzeichnis auswählen
+;file \plugins\Db_autobackups\src\zip.cpp
+[Miranda NG [%s] database backup]
+Miranda NG [%s] Datenbanksicherung

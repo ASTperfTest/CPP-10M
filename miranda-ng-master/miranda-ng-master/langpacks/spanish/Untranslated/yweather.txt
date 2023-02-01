@@ -1,0 +1,8 @@
+[ENE]
+[ESE]
+[NNE]
+[NNW]
+[SSE]
+[SSW]
+[WNW]
+[WSW]

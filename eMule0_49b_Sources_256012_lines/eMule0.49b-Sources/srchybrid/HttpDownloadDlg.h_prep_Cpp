@@ -1,0 +1,101 @@
+﻿/*
+Module : HTTPDOWNLOADDLG.H
+Purpose: Defines the interface for an     dialog which performs      downloads
+   similiar to the Internet Explorer download dialog
+
+Copyright (c) 1999 - 2000 by    Naughter.
+All rights reserved.
+
+*/
+
+
+////////////////////////////////// Macros ///////////////////////////
+
+void INCLUDEREPLACE(){CX_INCL("afxinet.h");}
+
+
+/////////////////////////// Classes /////////////////////////////////
+
+class CHttpDownloadDlg :        CDialog
+{
+public:
+//Constructors / Destructors
+ CHttpDownloadDlg(CWnd* pParent = NULL);
+
+//Public Member variables
+ CString m_strTitle;
+ CString m_sURLToDownload;
+ CString m_sFileToDownloadInto;
+ CString m_sUserName;
+ CString m_sPassword;
+
+ const CString& GetError() const { return m_sError; }
+
+protected:
+ //{{        (CHttpDownloadDlg)
+ enum { IDD = IDD_HTTPDOWNLOAD };
+ CStatic m_ctrlStatus;
+ CStatic m_ctrlTransferRate;
+ CStatic m_ctrlTimeLeft;
+ CProgressCtrl m_ctrlProgress;
+ CStatic m_ctrlFileStatus;
+ CAnimateCtrl m_ctrlAnimate;
+ //}}        
+
+ //{{           (CHttpDownloadDlg)
+ virtual void DoDataExchange(CDataExchange* pDX);
+ //}}           
+
+ //{{       (CHttpDownloadDlg)
+ virtual int  OnInitDialog();
+         void OnDestroy();
+ virtual void OnCancel();
+         void OnClose();
+ //}}       
+         long *  OnThreadFinished(int *  wParam, long * lParam);
+
+
+ //DECLARE_DYNAMIC(CHttpDownloadDlg);
+
+ static void          _OnStatusCallBack(HINTERNET hInternet, unsigned long dwContext, unsigned long dwInternetStatus,
+             void*  lpvStatusInformation, unsigned long dwStatusInformationLength);
+ void OnStatusCallBack(HINTERNET hInternet, unsigned long dwInternetStatus,
+        void*  lpvStatusInformation, unsigned long dwStatusInformationLength);
+ CString GetStatusInfo(void*  lpvStatusInformation);
+ static unsigned int _DownloadThread(void*  pParam);
+ void HandleThreadErrorWithLastError(CString strIDError, unsigned long dwLastError = 0);
+ void HandleThreadError(CString strIDError);
+ void DownloadThread();
+ void SetPercentage(int nPercentage);
+ void SetTimeLeft(unsigned long dwSecondsLeft, unsigned long dwBytesRead, unsigned long dwFileSize);
+ void SetProgressRange(unsigned long dwFileSize);
+ void SetStatus(const CString& sCaption);
+ void SetStatus(CString strFmt, const char* lpsz1);
+ void SetTransferRate(double KbPerSecond);
+ void PlayAnimation();
+ void SetProgress(unsigned long dwBytesRead);
+ void UpdateControlsDuringTransfer(unsigned long dwStartTicks, unsigned long& dwCurrentTicks, unsigned long dwTotalBytesRead, unsigned long& dwLastTotalBytes,
+           unsigned long& dwLastPercentage, int  bGotFileSize, unsigned long dwFileSize);
+
+ CString  m_sError;
+ CString  m_sServer;
+ CString  m_sObject;
+ CString  m_sFilename;
+ INTERNET_PORT m_nPort;
+ unsigned long  m_dwServiceType;
+ HINTERNET m_hInternetSession;
+ HINTERNET m_hHttpConnection;
+ HINTERNET m_hHttpFile;
+ int   m_bAbort;
+ int   m_bSafeToClose;
+ CFile  m_FileToWrite;
+ CWinThread* m_pThread;
+ static unsigned long sm_ullWinInetVer;
+};
+
+
+
+
+
+
+ 

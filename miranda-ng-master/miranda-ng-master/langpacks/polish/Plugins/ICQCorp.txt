@@ -1,0 +1,61 @@
+;#muuid for ICQCorp not found, please specify manually!
+;============================================================
+;  File: ICQCorp.dll
+;  Plugin: ICQ corporate protocol
+;  Version: 0.2.0.3
+;  Authors: Miranda NG team, Eugene Tarasenko
+;============================================================
+[ICQ corporate protocol support for Miranda NG.]
+Wsparcie protokołu ICQ Crporate dla Mirandy NG.
+;file \protocols\ICQCorp\res\resource.rc
+[UIN:]
+UIN:
+[External IP:]
+Zewnętrzne IP:
+[Internal IP:]
+IP wewnętrzne:
+[Port:]
+Port:
+[ICQ Version:]
+Wersja ICQ:
+[Miranda Version:]
+Wersja Mirandy:
+[Ping:]
+Ping:
+[Login Server:]
+Serwer:
+[ICQ number:]
+Numer ICQ:
+[Password:]
+Hasło:
+[These changes will take effect the next time you connect to the ICQ network.]
+Te zmiany zostaną wprowadzone gdy ponownie połączysz się z siecią ICQ.
+;file \protocols\ICQCorp\src\options.cpp
+[Network]
+Protokoły
+;file \protocols\ICQCorp\src\protocol.cpp
+[ICQ Corporate plugin used only WinSock v2.2 or later.]
+ wtyczka ICQ Corporate używa jedynie Winsock v2.2 lub nowszego
+[You need specify ICQ Corporate login server.]
+Musisz określić serwer logowania ICQ Corporate
+[Your ICQ Corp number and password combination was rejected by the ICQ Corporate server. Please go to Options -> Network -> ICQCorp and try again.]
+Twoja Kombinacja numeru i hasła ICQ Corp została odrzucona przez serwer ICQ Corporate. Przejdź do Opcje -> Sieć -> ICQCorp i spróbuj ponownie.
+;file \protocols\ICQCorp\src\services.cpp
+[ICQ number]
+Numer ICQ
+[%d file]
+%d plik
+[%d files]
+%d pliki
+[%d directory]
+%d folder
+[%d directories]
+%d lokalizacje
+;file \protocols\ICQCorp\src\transfer.cpp
+[Your file transfer has been aborted because one of the files that you selected to send is no longer readable from the disk. You may have deleted or moved it.]
+Transfer pliku został przerwany, ponieważ jeden z wybranych przez ciebie plików nie mógł zostać odczytany z dysku. Być może go usunąłeś lub przeniosłeś.
+[Your file receive has been aborted because Miranda could not open the destination file in order to write to it. You may be trying to save to a read-only folder.]
+Odbieranie pliku zostało przerwane, ponieważ Miranda nie mogła otworzyć pliku docelowego w celu dokonania zapisu. Być może próbujesz zapisać plik w folderze tylko do odczytu.
+;file \protocols\ICQCorp\src\user.cpp
+[<not specified>]
+<nieokreślone>

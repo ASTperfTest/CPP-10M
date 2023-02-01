@@ -1,0 +1,81 @@
+#muuid {0324785E-74CE-4600-B781-851773B3EFC5}
+;============================================================
+;  File: Contacts.dll
+;  Plugin: Send/receive contacts
+;  Version: 1.6.0.0
+;  Authors: Joe Kucera, Todor Totev
+;============================================================
+[Allows you to send and receive contacts.]
+Дозволяє надсилати та отримувати контакти.
+;file \plugins\ContactsPlus\res\contacts.rc
+[Send contacts]
+Надіслати контакти
+[&Add]
+&Додати
+[&User menu]
+&Меню користувача
+[User &details]
+Деталі &користувача
+[&History]
+&Історія
+[Choose contacts to be send:]
+Вибрати контакти для надсилання:
+[&Send]
+&Надіслати
+[Cancel]
+Скасувати
+[&Select All]
+&Вибрати все
+[Received contacts]
+Отримані контакти
+[Add to &group:]
+Додати в групу:
+[&Details]
+Деталі
+[Close]
+Закрити
+[Contacts send error]
+Помилка надсилання контактів
+[An error has occurred. The protocol reported the following error:]
+Протокол повідомляє про наступну помилку:
+[Try again]
+Повторити
+[Popup]
+Спливаюче вікно
+[Add to list]
+Додати
+[User details]
+Про користувача
+[Send message]
+Надіслати
+;file \plugins\ContactsPlus\src\main.cpp
+[Contacts received from]
+Отримано контакти від
+[Contacts]
+Контакти
+[Events]
+Події
+[Incoming Contacts]
+Вхідні контакти
+[Outgoing Contacts]
+Вихідні контакти
+;file \plugins\ContactsPlus\src\receive.cpp
+[Nick]
+Нік
+[First Name]
+Ім'я
+[Last Name]
+Прізвище
+[Add Contact Permanently to List]
+Додати в список
+[View User's Details]
+Інформація про користувача
+[View User's History]
+Історія повідомлень
+[User Menu]
+Меню користувача
+[Contacts from]
+Контакти від
+;file \plugins\ContactsPlus\src\send.cpp
+[Send Contacts to]
+Надіслати контакти

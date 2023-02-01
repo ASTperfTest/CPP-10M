@@ -1,0 +1,270 @@
+#muuid {ed39af7c-becd-404e-9499-4d04f711b9cb}
+;============================================================
+;  File: SendSS.dll
+;  Plugin: Send ScreenShot+
+;  Version: 0.9.0.2
+;  Authors: Merlin
+;============================================================
+[Take a screenshot and send it to a contact.]
+Создание и отправка снимков экрана контакту.
+;file \plugins\SendScreenshotPlus\res\resource.rc
+[Dialog]
+Диалог
+[All]
+Все
+[None]
+Нет
+[Cancel]
+Отмена
+[Send screenshot to <unknown>]
+Отправить снимок экрана для <неизвестный контакт>
+[Take a screenshot and send it to a contact]
+Сделать снимок экрана и отправить его контакту
+[Ti&med capture]
+За&держка захвата
+[Time (secs):]
+Секунд:
+[&Format:]
+&Формат:
+[Send b&y:]
+Че&рез:
+[E&xplore]
+Об&зор
+[&Fill description textbox.]
+&Заполнить строки описания.
+[Delete &after send]
+Удалить &после отправки
+[Open editor before sending]
+Редактировать перед отправкой
+[Open again]
+Откр. снова
+[&Capture]
+&Захват
+[About]
+Информация
+[Copyright]
+Авторские права
+[&Close]
+&Закрыть
+[Edit]
+Изменить
+[Caption:]
+Заголовок:
+[Size (HxW):]
+Размер (ВxШ):
+[C&lient area]
+Сод&ержимое
+[Indirect capture]
+косвенный захват
+[Target tool]
+Прицел
+[File:]
+Файл:
+[Description:]
+Описание:
+[Result]
+Результат
+[Thumbnail]
+Миниатюра
+[&Copy]
+&Копировать
+[Close]
+Закрыть
+;file \plugins\SendScreenshotPlus\src\CSend.cpp
+[Resulting URL from\n]
+
+[Copy]
+Копировать
+[Copy BBCode]
+
+[Copy BBCode w/ link]
+
+[%s requires a valid contact!]
+
+[Error]
+Ошибка
+[GCHAT error]
+Ошибка GCHAT
+[An unknown error has occurred.]
+Неизвестная ошибка.
+;file \plugins\SendScreenshotPlus\src\CSend.h
+[Unable to initiate %s.]
+Не удалось инициировать %s.
+[MAPI error (%i):\n%s.]
+Ошибка MAPI (%i):\n%s.
+[Unknown response from %s (%i)]
+Неизвестный ответ от %s (%i)
+[Got no response from %s (%i)]
+Нет ответа от %s (%i)
+;file \plugins\SendScreenshotPlus\src\CSendCloudFile.cpp
+[CloudFile transfer]
+Передача через CloudFile
+[%s (%i):\nCould not add a share to the CloudFile plugin.]
+%s (%i):\nНе удалось поделиться файлом через плагин CloudFile.
+;file \plugins\SendScreenshotPlus\src\CSendEmail.cpp
+[Email transfer]
+
+[A recipient matched more than one of the recipient descriptor structures and MAPI_DIALOG was not set]
+
+[The specified attachment was not found]
+Вложение не найдено
+[The specified attachment could not be opened]
+Невозможно открыть вложение
+[The type of a recipient was not MAPI_TO, MAPI_CC, or MAPI_BCC]
+
+[One or more unspecified errors occurred]
+Одна или несколько неизвестных ошибок
+[There was insufficient memory to proceed]
+Недостаточно памяти для продолжения
+[One or more recipients were invalid or did not resolve to any address]
+
+[There was no default logon, and the user failed to log on successfully when the logon dialog box was displayed]
+
+[The text in the message was too large]
+Сообщение слишком длинное
+[There were too many file attachments]
+Слишком много вложенных файлов
+[There were too many recipients]
+Слишком много получателей
+[A recipient did not appear in the address list]
+
+[The user canceled one of the dialog boxes]
+
+[Unknown Error]
+Неизвестная ошибка
+;file \plugins\SendScreenshotPlus\src\CSendFile.cpp
+[File transfer]
+Передача файла
+;file \plugins\SendScreenshotPlus\src\CSendFTPFile.cpp
+[FTPFile transfer]
+
+[%s (%i):\nCould not add a share to the FTP File plugin.]
+
+;file \plugins\SendScreenshotPlus\src\CSendHost_ImageShack.cpp
+[Image upload]
+Загрузка изображения
+;file \plugins\SendScreenshotPlus\src\CSendHost_imgur.cpp
+;file \plugins\SendScreenshotPlus\src\CSendHost_uploadpie.cpp
+;file \plugins\SendScreenshotPlus\src\CSendHTTPServer.cpp
+[HTTPServer transfer]
+Передача HTTPServer
+[Could not start the HTTP Server plugin.]
+Не могу запустить плагин HTTP Server.
+[%s (%i):\nCould not add a share to the HTTP Server plugin.]
+
+;file \plugins\SendScreenshotPlus\src\dlg_msgbox.cpp
+[Retry]
+Ещё раз
+[Yes]
+Да
+[No]
+Нет
+[Abort]
+Отмена
+[Ignore]
+Игнорировать
+;file \plugins\SendScreenshotPlus\src\Main.cpp
+[Main Icon]
+Главный значок
+[Target Cursor]
+Курсор цель
+[Target Desktop]
+Курсор рабочий стол
+[Help]
+Справка
+[Open Folder]
+Открыть папку
+[Description off]
+Описание выкл
+[Description on]
+Описание вкл
+[Delete off]
+Удаление выкл
+[Delete on]
+Удаление вкл
+[Prev]
+Назад
+[Next]
+Вперёд
+[Update]
+Обновить
+[Edit on]
+
+[BBCode]
+BBCode
+[BBCode link]
+
+[Down arrow]
+Вниз
+[Could not create screenshot folder (error code: %d):\n%s\nDo you have write permissions?]
+Не удалось создать папку для скриншотов (код ошибки: %d):\n%s\nУ вас точно есть права на запись?
+[Could not create main dialog.]
+Невозможно создать главный диалог.
+[SendSS]
+Отправить скриншот
+[Screenshots]
+Снимки экрана
+[Buttons]
+Кнопки
+[Take a screenshot]
+Сделать скриншот
+[Send screenshot]
+Отправить скриншот
+[Send desktop screenshot]
+Отправить скриншот экрана
+[Open SendSS+]
+Открыть SendSS+
+;file \plugins\SendScreenshotPlus\src\stdafx.h
+[SendScreenshot - Error]
+SendScreenshot - Ошибка
+;file \plugins\SendScreenshotPlus\src\UMainForm.cpp
+[Drag&Drop the target on the desired window.]
+Перетащите прицел на нужное окно.
+[Send screenshot to %s]
+Отправить снимок экрана для %s
+[Window]
+Окно
+[Desktop]
+Рабочий стол
+[<Entire Desktop>]
+<Весь Рабочий стол>
+[Monitor]
+Монитор
+[ (primary)]
+ (основной)
+[File]
+Файл
+[<Only save>]
+<Только сохранить>
+[File Transfer]
+Передача файла
+[E-mail]
+Почта
+[FTP File]
+Файл на FTP
+[Upload Pie (30m)]
+Upload Pie (30 мин)
+[Upload Pie (1d)]
+Upload Pie (1 дн)
+[Upload Pie (1w)]
+Upload Pie (1 нед)
+[Fill description textbox.]
+
+[Delete after send]
+Удалить после отправки
+[Capture]
+Создать скриншот
+[Couldn't take a screenshot]
+Не удалось создать снимок экрана
+[Select a file]
+Выберите файл
+[Select a target window.]
+Выберите окно для отправки.
+[Screenshot of "%s"]
+Снимок "%s"
+[Screenshot for client area of "%s" window]
+Снимок содержимого окна "%s"
+[Screenshot of "%s" window]
+Снимок окна "%s"
+[Send screenshot?]
+Отправить скриншот?

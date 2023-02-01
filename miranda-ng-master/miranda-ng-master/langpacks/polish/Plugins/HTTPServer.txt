@@ -1,0 +1,131 @@
+#muuid {67848b07-83d2-49e9-8844-7e3de268e304}
+;============================================================
+;  File: HTTPServer.dll
+;  Plugin: HTTPServer
+;  Version: 0.1.2.4
+;  Authors: Kennet Nielsen, modified by Vampik, Houdini
+;============================================================
+[HTTP Web Server plugin for Miranda.]
+Wtyczka serwera sieci HTTP.
+;file \plugins\HTTPServer\res\resource.rc
+[IPAddress1]
+Adres IP1
+[IPAddress2]
+Adres IP2
+[Max downloads]
+Maks. pobrań
+[Address]
+Adres
+[Mask]
+Maska
+[Share name]
+Nazwa udziału
+[Allowed IP]
+Dozwolone IP
+[HTTP Server statistics view]
+Widok statystyk serwera HTTP
+[Display hidden shares]
+Wyświetl ukryte udziały
+[New share]
+Nowy udział
+[Set to default]
+Domyślne
+[External server name]
+Nazwa serwera zewnętrznego
+[This is the link pasted to the message window]
+To jest link wklejany do okna rozmowy
+[Write log file]
+Utwórz dziennik
+[Open log]
+Otwórz
+[Show popups]
+Pokaż powiadomienia
+[Page keyword]
+Słowo kluczowe strony
+[URL address]
+Adres
+[%ExternalIP% variable]
+Zmienna %ExternalIP%
+[Test]
+Test
+[Transfer limit (Kb/s)]
+Limit transferu (Kb/s)
+[No control when Away or Not available]
+Brak, gdy Zaraz wracam, Wrócę później
+[Connection control]
+Kontrola połączenia
+[Index creation]
+Tworzenie indeksu
+[Disable]
+Wyłącz
+[Create HTML (compatibility)]
+Utwórz HTML (kompatybilny)
+[Create XML]
+Utwórz XML
+[Notifications]
+Powiadomienia
+[Total connection limit]
+Całkowity limit połączeń
+[Connections per user limit]
+Limit połączeń na użytkownika
+[Default download limit]
+Domyślny limit pobierania
+[&Edit share]
+&Edytuj udział
+[&Remove share]
+&Usuń udział
+[&Open in Browser]
+&Otwórz w przeglądarce
+[&Copy link]
+&Kopiuj link
+;file \plugins\HTTPServer\src\GuiElements.cpp
+[Share Current Directory]
+Udostępnij obecny folder
+[All files]
+Wszystkie pliki
+[Specify a file to share]
+Określ plik do udostępnienia
+[Failed to share new file]
+Nie udało się udostępnić nowego pliku
+[Max Downloads]
+Maks. pobierań
+[Allowed Mask]
+Dozwolone maski
+[Real path]
+Prawdziwa ścieżka
+[User]
+Użytkownik
+[Agent]
+Agent
+[Completed]
+Zakończone
+[Speed]
+Prędkość
+[Current IP Address: ]
+Aktualny adres IP:\s
+[Current Address: ]
+Aktualny adres:\s
+[IP Address: ]
+Adres IP:\s
+[You are browsing from]
+Przeglądasz z
+[Your external IP was detected as %d.%d.%d.%d\r\nby: %s]
+Twoje IP zewnętrzne zostało wykryte jako %d.%d.%d.%d\r\nprzez: %s
+[HTTP Server]
+Serwer HTTP
+[Network]
+Protokoły
+[HTTP Share new file]
+HTTP udostępnij plik
+[Show HTTP server statistics]
+Pokaż statystyki serwera HTTP
+;file \plugins\HTTPServer\src\HttpUser.cpp
+[Share removed]
+Usunięto udział
+;file \plugins\HTTPServer\src\main.cpp
+[Failed to bind to port %s\r\nThis is most likely because another program or service is using this port]
+Nie udało się połączyć do portu %s\r\nPrawdopodobnie inny program lub usługa używa tego portu.
+[Disable HTTP server]
+Wyłącz serwer HTTP
+[Enable HTTP server]
+Włącz serwer HTTP

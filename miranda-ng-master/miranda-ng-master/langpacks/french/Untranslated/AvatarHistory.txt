@@ -1,0 +1,8 @@
+[This plugin keeps backups of all your contacts' avatar changes and/or shows popups.]
+[Permanent]
+[Track]
+[Avatar path is null.]
+[Avatar overlay]
+[Do nothing]
+[Close popup]
+[Avatar history: Unable to create shortcut]
